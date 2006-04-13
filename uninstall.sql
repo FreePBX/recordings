@@ -1,1 +1,1 @@
-DROP TABLE recordings;
+DROP TABLE IF EXISTS recordings;
