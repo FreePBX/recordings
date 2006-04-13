@@ -7,6 +7,6 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/recordings-1.0.tgz</location>
+	<location>release/recordings-2.0.tgz</location>
 	<info>http://freepbx.org/wiki/Recordings</info>
 </module>
