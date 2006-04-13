@@ -1,6 +1,7 @@
 <?php
 
 global $amp_conf;
+global $db;
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
 
@@ -15,6 +16,13 @@ $fcc->setDescription('Check Recording');
 $fcc->setDefault('*99');
 $fcc->update();
 unset($fcc);
+
+// Make sure table exists
+$sql = "CREATE TABLE IF NOT EXISTS recordings ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, displayname VARCHAR(50) , filename VARCHAR(80), description VARCHAR(254));";
+$result = $db->query($sql);
+if(DB::IsError($result)) {
+        die($result->getDebugInfo());
+}
 
 // load up any recordings that might be in the directory
 $recordings_directory = "/var/lib/asterisk/sounds/custom/";
