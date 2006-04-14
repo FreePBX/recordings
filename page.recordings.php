@@ -19,6 +19,11 @@ $id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
 $notes = isset($_REQUEST['notes'])?$_REQUEST['notes']:'';
 $rname = isset($_REQUEST['rname'])?$_REQUEST['rname']:'';
 $usersnum = isset($_REQUEST['usersnum'])?$_REQUEST['usersnum']:'';
+if (empty($usersnum)) {
+	$dest = "unnumbered-";
+} else {
+	$dest = "{$usersnum}-";
+}
 
 // get feature codes for diplay purposes
 $fcc = new featurecode('recordings', 'record_save');
@@ -33,42 +38,59 @@ $fc_check = ($fc_check != '' ? $fc_check : _('** MISSING FEATURE CODE **'));
 echo "</div>\n";
 
 switch ($action) {
+	
 	case "recorded":
-		if (empty($usersnum)) {
-			$dest = "unnumbered-";
-		} else {
-			$dest = "{$usersnum}-";
-		}
 		// Clean up the filename, take out any nasty characters
 		$filename = escapeshellcmd(strtr($rname, '/ ', '__'));
-		rename("/var/lib/asterisk/sounds/{$dest}ivrrecording.wav","/var/lib/asterisk/sounds/custom/{$filename}.wav");
-		$isok = recordings_add($rname, "custom/{$filename}.wav");
-		recording_sidebar(null, $usersnum);
-		recording_addpage($usersnum);
-		if ($isok) 
-			echo '<div class="content"><h5>'._("System Recording").' "'.$rname.'" '._("Saved").'!</h5>';
+		if (!file_exists($recordings_astsnd_path."custom")) {
+			if (!mkdir($recordings_astsnd_path."custom", 0775)) {
+					echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
+			}		
+		}
+		if (!file_exists($recordings_astsnd_path."custom")) {
+			rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
+			$isok = recordings_add($rname, "custom/{$filename}.wav");
+
+			recording_sidebar(null, $usersnum);
+			recording_addpage($usersnum);
+			if ($isok) 
+				echo '<div class="content"><h5>'._("System Recording").' "'.$rname.'" '._("Saved").'!</h5>';
+		}
 		break;
+		
 	case "edit":
+		$filename = $_REQUEST['filename'];
+		copy($recordings_astsnd_path."{$filename}.wav", $recordings_save_path."{$dest}ivrrecording.wav");
+		
 		recording_sidebar($id, $usersnum);	
 		recording_editpage($id, $usersnum);
 		break;
+		
 	case "edited":
+		$filename = $_REQUEST['filename'];
+		rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."{$filename}.wav");
+
 		recordings_update($id, $rname, $notes);
-		recording_sidebar($id, $usernsnum);
+		recording_sidebar($id, $usersnum);
 		recording_editpage($id, $usersnum);
 		echo '<div class="content"><h5>'._("System Recording").' "'.$rname.'" '._("Updated").'!</h5></div>';
 		break;
+		
 	case "delete";
 		recordings_del($id);
+		
 	default:
 		recording_sidebar($id, $usersnum);
 		recording_addpage($usersnum);
 		break;
+		
 }
 	
 function recording_addpage($usersnum) {
 	global $fc_save;
 	global $fc_check;
+	global $recordings_save_path;
+	
 	?>
 	<div class="content">
 	<h2><?php echo _("System Recordings")?></h2>
@@ -104,7 +126,10 @@ function recording_addpage($usersnum) {
 		} else {
 			$dest = $usersnum;
 		}
-		move_uploaded_file($_FILES['ivrfile']['tmp_name'], "/var/lib/asterisk/sounds/".$dest."ivrrecording.wav");
+		$destfilename = $recordings_save_path.$dest."ivrrecording.wav";
+		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
+		system("chgrp asterisk ".$destfilename);
+		system("chmod g+rw ".$destfilename);
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
 	} ?>
 	</p>
@@ -129,16 +154,7 @@ function recording_addpage($usersnum) {
 	</table>
 	<h6><?php echo _("Click \"SAVE\" when you are satisfied with your recording")?>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6> 
-	<script language="javascript">
-	<!--
-	var theForm = document.prompt;
-	function rec_onsubmit() {
-	defaultEmptyOK = false;
-	if (!isAlphanumeric(theForm.rname.value))
-		return warnInvalid(theForm.rname, "Please enter a valid Name for this System Recording");
-	}
-	-->
-	</script>
+	<?php recordings_form_jscript(); ?>
 	</form>
 	</div>
 <?php
@@ -159,10 +175,11 @@ function recording_editpage($id, $num) { ?>
 	echo "<a href=config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num);
 	echo "&amp;id=$id>Remove Recording</a> <i style='font-size: x-small'>(Note, does not delete file from computer)</i>";
 	?>
-	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="edited">
 	<input type="hidden" name="display" value="recordings">
 	<input type="hidden" name="usersnum" value="<?php echo $num ?>">
+	<input type="hidden" name="filename" value="<?php echo $this_recording['filename'] ?>">
 	<input type="hidden" name="id" value="<?php echo $id ?>">
 	<table>
 	<tr><td colspan=2><hr></td></tr>
@@ -176,6 +193,7 @@ function recording_editpage($id, $num) { ?>
 	</tr>
 	</table>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6>
+	<?php recordings_form_jscript(); ?>	
 	</form>
 	</div>
 <?php
@@ -186,41 +204,53 @@ function recording_sidebar($id, $num) {
         <div class="rnav">
         <li><a id="<?php echo empty($id)?'current':'nul' ?>" href="config.php?display=recordings&amp;usersnum=<?php echo urlencode($num) ?>"><?php echo _("Add Recording")?></a></li>
 <?php
-
+		$wrapat = 18;
         $tresults = recordings_list();
         if (isset($tresults)){
                 foreach ($tresults as $tresult) {
-                        echo "<li><a id=\"".($id==$tresult[0] ? 'current':'nul')."\" href=\"config.php?display=recordings";
-                        echo "&amp;action=edit&amp;usersnum=".urlencode($num)."&amp;id={$tresult['0']}\">{$tresult['1']}</a></li>\n";
+                        echo "<li>";
+                        echo "<a id=\"".($id==$tresult[0] ? 'current':'nul')."\" href=\"config.php?display=recordings&amp;";
+                        echo "action=edit&amp;";
+                        echo "usersnum=".urlencode($num)."&amp;";
+                        echo "filename=".urlencode($tresult[2])."&amp;";
+                        echo "id={$tresult[0]}\">";
+                        $dispname = $tresult[1];
+                        while (strlen($dispname) > (1+$wrapat)) {
+                        	$part = substr($dispname, 0, $wrapat);
+	                        echo htmlspecialchars($part);
+                        	$dispname = substr($dispname, $wrapat);
+                        	if ($dispname != '')
+                        		echo "<br>";
+                        }
+                        echo htmlspecialchars($dispname);
+                        echo "</a>";
+                        echo "</li>\n";
                 }
         }
         echo "</div>\n";
 }
 
-/* 
-function runModuleSQL($moddir,$type){
-        global $db;
-        $data='';
-        if (is_file("modules/{$moddir}/{$type}.sql")) {
-                // run sql script
-                $fd = fopen("modules/{$moddir}/{$type}.sql","r");
-                while (!feof($fd)) {
-                        $data .= fread($fd, 1024);
-                }
-                fclose($fd);
+function recordings_form_jscript() {
+?>
+	<script language="javascript">
+	<!--
 
-                preg_match_all("/((SELECT|INSERT|UPDATE|DELETE|CREATE|DROP).*);\s*\n/Us", $data, $matches);
+	var theForm = document.prompt;
+	
+	function rec_onsubmit() {
+		var msgInvalidFilename = "<?php echo _("Please enter a valid Name for this System Recording"); ?>";
+		
+		defaultEmptyOK = false;
+		if (!isFilename(theForm.rname.value))
+			return warnInvalid(theForm.rname, msgInvalidFilename);
+			
+		return true;
+	}
 
-                foreach ($matches[1] as $sql) {
-                                $result = $db->query($sql);
-                                if(DB::IsError($result)) {
-                                        return false;
-                                }
-                }
-                return true;
-        }
-                return true;
+	//-->
+	</script>
+
+<?php
 }
-*/
 
 ?>
