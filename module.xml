@@ -1,13 +1,13 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 	<type>setup</type>
 	<category>Module</category>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/recordings-2.0.1.tgz</location>
+	<location>release/recordings-2.0.2.tgz</location>
 	<info>http://freepbx.org/wiki/Recordings</info>
-	<md5sum>acbd6d7ecef998abd396882ae32c5c5d</md5sum>
+	<md5sum>7ac8c598cccbaec6727b3fd0423c5be3</md5sum>
 </module>
