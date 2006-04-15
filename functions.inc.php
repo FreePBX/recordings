@@ -117,7 +117,7 @@ function recordings_add($displayname, $filename) {
 
 	// Check to make sure we can actually read the file
 	if (!is_readable($recordings_astsnd_path.$filename)) {
-		print "Unable to add $filename - Can't read file!";
+		print "<p>Unable to add ".$recordings_astsnd_path.$filename." - Can not read file!</p>";
 		return false;
 	}
 	// Now, we don't want a .wav on the end if there is one.

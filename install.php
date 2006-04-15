@@ -2,6 +2,7 @@
 
 global $amp_conf;
 global $db;
+global $recordings_astsnd_path;
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
 
@@ -25,7 +26,7 @@ if(DB::IsError($result)) {
 }
 
 // load up any recordings that might be in the directory
-$recordings_directory = "/var/lib/asterisk/sounds/custom/";
+$recordings_directory = $recordings_astsnd_path."custom/";
 if (!is_writable($recordings_directory)) {
 	print "<h2>Error</h2><br />I can not access the directory $recordings_directory. ";
 	print "Please make sure that it exists, and is writable by the web server.";
