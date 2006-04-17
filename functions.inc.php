@@ -33,16 +33,19 @@ function recordings_get_config($engine) {
 				if ($fc_save != '') {
 					$ext->add($appcontext, $fc_save, '', new ext_macro('user-callerid'));
 					$ext->add($appcontext, $fc_save, '', new ext_wait('2'));
-					$ext->add($appcontext, $fc_save, '', new ext_goto('1', 'dorecord'));
+					$ext->add($appcontext, $fc_save, '', new ext_macro('systemrecording', 'dorecord'));
+					//$ext->add($appcontext, $fc_save, '', new ext_goto('1', 'dorecord'));
 				}
 
 				if ($fc_check != '') {
 					$ext->add($appcontext, $fc_check, '', new ext_macro('user-callerid'));
 					$ext->add($appcontext, $fc_check, '', new ext_wait('2'));
-					$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
+					$ext->add($appcontext, $fc_check, '', new ext_macro('systemrecording', 'docheck'));
+					//$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
 				}
 				
-				
+				/*
+				MOVED TO A MACRO IN extensions.conf OTHERWISE, DIALING '1' WOULD PICK UP THE DOCHECK ROUTINE
 				$ext->add($appcontext, 'dorecord', '', new ext_record($recordings_save_path.'${CALLERID(number)}-ivrrecording:wav'));
 				$ext->add($appcontext, 'dorecord', '', new ext_wait('1'));
 				$ext->add($appcontext, 'dorecord', '', new ext_goto('1', 'confmenu'));
@@ -68,6 +71,7 @@ function recordings_get_config($engine) {
 				$ext->add($appcontext, 'i', '', new ext_goto('1', 'confmenu'));
 
 				$ext->add($appcontext, 'h', '', new ext_hangup(''));
+				*/
 				
 			}
 		break;
