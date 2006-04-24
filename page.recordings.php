@@ -46,8 +46,7 @@ switch ($action) {
 			if (!mkdir($recordings_astsnd_path."custom", 0775)) {
 					echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
 			}		
-		}
-		if (!file_exists($recordings_astsnd_path."custom")) {
+		} else {
 			rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
 			$isok = recordings_add($rname, "custom/{$filename}.wav");
 
