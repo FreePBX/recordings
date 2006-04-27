@@ -124,8 +124,8 @@ function recordings_add($displayname, $filename) {
 		print "<p>Unable to add ".$recordings_astsnd_path.$filename." - Can not read file!</p>";
 		return false;
 	}
-	// Now, we don't want a .wav on the end if there is one.
-	if (strstr($filename, '.wav')) 
+	// Now, we don't want a .wav or .gsm on the end if there is one.
+	if (strstr($filename, '.wav') || strstr($filename, '.gsm')) 
 		$nowav = substr($filename, 0, -4);
 	sql("INSERT INTO recordings values ('', '$displayname', '$nowav', 'No long description available')");
 	return true;
