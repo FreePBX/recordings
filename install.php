@@ -37,7 +37,7 @@ while (false !== ($file = readdir($dh))) { // http://au3.php.net/readdir
 	if ($file[0] != "." && $file != "CVS" && $file != "svn") {
 		// Ignore the suffix..
 		$fname = ereg_replace('.wav', '', $file);
-		$fname = ereg_replace('.gsm', '', $file);
+		$fname = ereg_replace('.gsm', '', $fname);
 		if (recordings_get_id("custom/$fname") == null)
 			recordings_add($fname, "custom/$file");
 	}
