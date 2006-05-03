@@ -47,7 +47,9 @@ switch ($action) {
 					echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
 			}		
 		} else {
-			rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
+			// can't rename a file from one partition to another, must use mv or cp
+			// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
+			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.wav " . $recordings_astsnd_path."custom/{$filename}.wav");
 			$isok = recordings_add($rname, "custom/{$filename}.wav");
 
 			recording_sidebar(null, $usersnum);
@@ -66,9 +68,11 @@ switch ($action) {
 		break;
 		
 	case "edited":
-		$filename = $_REQUEST['filename'];
-		rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."{$filename}.wav");
-
+		$filename = $_REQUEST['filenam'];
+		// can't rename a file from one partition to another, must use mv or cp
+		// this line also appeared to be missinthe 'custom' prefix
+		// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");                                                                              exec("mv " . $recordings_save_path . "{$dest}ivrrecording.wav " . $recordings_astsnd_path."custom/{$filename}.wav");
+					 
 		recordings_update($id, $rname, $notes);
 		recording_sidebar($id, $usersnum);
 		recording_editpage($id, $usersnum);
