@@ -123,7 +123,7 @@ function recording_addpage($usersnum) {
 		if (empty($usersnum)) {
 			$dest = "unnumbered-";
 		} else {
-			$dest = $usersnum;
+			$dest = "{$usersnum}-";
 		}
 		$destfilename = $recordings_save_path.$dest."ivrrecording.wav";
 		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
