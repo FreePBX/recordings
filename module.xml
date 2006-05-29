@@ -1,13 +1,13 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>2.0.7</version>
+	<version>2.1</version>
 	<type>setup</type>
 	<category>Module</category>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/recordings-2.0.7.tgz</location>
+	<location>release/recordings-2.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>13c7971ed3de9638453ba4c6920ed6da</md5sum>
+	<md5sum>f954b6201dc355d94f9fef1ebbefd54c</md5sum>
 </module>
