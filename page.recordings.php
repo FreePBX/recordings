@@ -44,7 +44,7 @@ switch ($action) {
 		$filename = escapeshellcmd(strtr($rname, '/ ', '__'));
 		if (!file_exists($recordings_astsnd_path."custom")) {
 			if (!mkdir($recordings_astsnd_path."custom", 0775)) {
-					echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
+				echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
 			}		
 		} else {
 			// can't rename a file from one partition to another, must use mv or cp
@@ -61,18 +61,19 @@ switch ($action) {
 		
 	case "edit":
 		$filename = $_REQUEST['filename'];
-		copy($recordings_astsnd_path."{$filename}.wav", $recordings_save_path."{$dest}ivrrecording.wav");
+		if (file_exists($recordings_astsnd_path."{$filename}.wav")) {
+			copy($recordings_astsnd_path."{$filename}.wav", $recordings_save_path."{$dest}ivrrecording.wav");
+		} elseif (file_exists($recordings_astsnd_path."{$filename}.gsm")) {
+			copy($recordings_astsnd_path."{$filename}.gsm", $recordings_save_path."{$dest}ivrrecording.gsm");
+		} else {
+			echo '<div class="content"><h5>'._("Unable to locate").' '.$recordings_astsnd_path.$filename.' '._("with a wav or gsm suffix").'</h5>';
+		}
 		
 		recording_sidebar($id, $usersnum);	
 		recording_editpage($id, $usersnum);
 		break;
 		
 	case "edited":
-		$filename = $_REQUEST['filenam'];
-		// can't rename a file from one partition to another, must use mv or cp
-		// this line also appeared to be missinthe 'custom' prefix
-		// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");                                                                              exec("mv " . $recordings_save_path . "{$dest}ivrrecording.wav " . $recordings_astsnd_path."custom/{$filename}.wav");
-					 
 		recordings_update($id, $rname, $notes);
 		recording_sidebar($id, $usersnum);
 		recording_editpage($id, $usersnum);
