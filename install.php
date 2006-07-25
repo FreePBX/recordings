@@ -38,7 +38,7 @@ if (!isset($results['filename'])) {
 	sql("INSERT INTO recordings values ('', '__invalid', 'install done', '')");
 	$dh = opendir($recordings_directory);
 	while (false !== ($file = readdir($dh))) { // http://au3.php.net/readdir 
-		if ($file[0] != "." && $file != "CVS" && $file != "svn") {
+		if ($file[0] != "." && $file != "CVS" && $file != "svn" && !is_dir("$recordings_directory/$file")) {
 			// Ignore the suffix..
 			$fname = ereg_replace('.wav', '', $file);
 			$fname = ereg_replace('.gsm', '', $fname);
