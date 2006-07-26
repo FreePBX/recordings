@@ -2,10 +2,12 @@
 
 // Source and Destination Dirctories for recording
 $recordings_save_path = "/tmp/";
-if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
+//if ( (isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'') == '') {
+if ( (isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'') =='') {
 	$recordings_astsnd_path = "/var/lib/asterisk";
 } else {
-	$recordings_astsnd_path = $amp_conf['ASTVARLIBDIR'];
+//	$recordings_astsnd_path = $amp_conf['ASTVARLIBDIR'];
+	$recordinds_astsnd_path = $asterisk_conf['astvarlibdir'];
 }
 $recordings_astsnd_path .= "/sounds/";
 
