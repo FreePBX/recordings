@@ -7,7 +7,7 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/recordings-2.2.1.tgz</location>
+	<location>release//2.2/recordings-2.2.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>200b850a4863a0891455fac473bbf0c6</md5sum>
+	<md5sum>178419844371b4bbeabd281301ffd70d</md5sum>
 </module>
