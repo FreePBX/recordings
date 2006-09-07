@@ -120,7 +120,7 @@ function recording_addpage($usersnum) {
 		<input type="hidden" name="action" value="recordings_start">
                 <input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
 		<input type="file" name="ivrfile"/>
-		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo _("Please wait until the page reloads.")?>');"/>
+		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page reloads."))?>');"/>
 	</form>
 	<?php
 
