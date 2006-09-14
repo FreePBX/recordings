@@ -27,6 +27,10 @@ if(DB::IsError($result)) {
 
 // load up any recordings that might be in the directory
 $recordings_directory = $recordings_astsnd_path."custom/";
+
+if (!file_exists($recordings_directory)) { 
+	mkdir ($recordings_directory);
+}
 if (!is_writable($recordings_directory)) {
 	print "<h2>Error</h2><br />I can not access the directory $recordings_directory. ";
 	print "Please make sure that it exists, and is writable by the web server.";

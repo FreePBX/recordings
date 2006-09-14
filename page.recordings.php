@@ -19,6 +19,7 @@ $id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
 $notes = isset($_REQUEST['notes'])?$_REQUEST['notes']:'';
 $rname = isset($_REQUEST['rname'])?$_REQUEST['rname']:'';
 $usersnum = isset($_REQUEST['usersnum'])?$_REQUEST['usersnum']:'';
+$sysrec = isset($_REQUEST['sysrec'])?$_REQUEST['sysrec']:'';
 if (empty($usersnum)) {
 	$dest = "unnumbered-";
 } else {
@@ -39,6 +40,23 @@ echo "</div>\n";
 
 switch ($action) {
 	
+	case "system":
+		recording_sidebar(-1, null);
+		recording_sysfiles();
+		break;
+	case "newsysrec":
+		$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+		$astsnd .= "/sounds/";
+		$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
+		if (recordings_add($sysrecs[$sysrec], $sysrecs[$sysrec])) {
+			$id = recordings_get_id($sysrecs[$sysrec]);
+		} else {
+			$id = 0;
+		}
+		recording_sidebar($id, null);
+		recording_editpage($id, null);
+		needreload();
+		break;
 	case "recorded":
 		// Clean up the filename, take out any nasty characters
 		$filename = escapeshellcmd(strtr($rname, '/ ', '__'));
@@ -60,13 +78,22 @@ switch ($action) {
 		break;
 		
 	case "edit":
-		$filename = $_REQUEST['filename'];
-		if (file_exists($recordings_astsnd_path."{$filename}.wav")) {
-			copy($recordings_astsnd_path."{$filename}.wav", $recordings_save_path."{$dest}ivrrecording.wav");
-		} elseif (file_exists($recordings_astsnd_path."{$filename}.gsm")) {
-			copy($recordings_astsnd_path."{$filename}.gsm", $recordings_save_path."{$dest}ivrrecording.gsm");
-		} else {
-			echo '<div class="content"><h5>'._("Unable to locate").' '.$recordings_astsnd_path.$filename.' '._("with a wav or gsm suffix").'</h5>';
+		$arr = recordings_get($id);
+		$filename=$arr['filename'];
+		// Check all possibilities of uploaded file types.
+		$valid = Array("au","g723","g723sf","g729","gsm","h263","ilbc","ogg","pcm","alaw","ulaw","al","ul","mu","sln","raw","vox","WAV","wav","wav49");
+		$fileexists = false;
+		if (strpos($filename, '&') === false) {
+			foreach ($valid as $xtn) {
+				$checkfile = $recordings_astsnd_path.$filename.".".$xtn;
+				if (file_exists($checkfile)) {
+					copy($checkfile, $recordings_save_path."{$dest}ivrrecording.wav");
+					$fileexists = true;
+				}
+			}
+			if ($fileexists === false) {
+				echo '<div class="content"><h5>'._("Unable to locate").' '.$recordings_astsnd_path.$filename.' '._("with a a valid suffix").'</h5>';
+			}
 		}
 		
 		recording_sidebar($id, $usersnum);	
@@ -74,14 +101,16 @@ switch ($action) {
 		break;
 		
 	case "edited":
-		recordings_update($id, $rname, $notes);
+		recordings_update($id, $rname, $notes, $_REQUEST);
 		recording_sidebar($id, $usersnum);
 		recording_editpage($id, $usersnum);
 		echo '<div class="content"><h5>'._("System Recording").' "'.$rname.'" '._("Updated").'!</h5></div>';
+		needreload();
 		break;
 		
 	case "delete";
 		recordings_del($id);
+		needreload();
 		
 	default:
 		recording_sidebar($id, $usersnum);
@@ -123,7 +152,6 @@ function recording_addpage($usersnum) {
 		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page reloads."))?>');"/>
 	</form>
 	<?php
-
 	if (isset($_FILES['ivrfile']['tmp_name']) && is_uploaded_file($_FILES['ivrfile']['tmp_name'])) {
 		if (empty($usersnum)) {
 			$dest = "unnumbered-";
@@ -156,6 +184,7 @@ function recording_addpage($usersnum) {
 			<td style="text-align:left"><input type="text" name="rname"></td>
 		</tr>
 	</table>
+	
 	<h6><?php echo _("Click \"SAVE\" when you are satisfied with your recording")?>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6> 
 	<?php recordings_form_jscript(); ?>
@@ -183,7 +212,6 @@ function recording_editpage($id, $num) { ?>
 	<input type="hidden" name="action" value="edited">
 	<input type="hidden" name="display" value="recordings">
 	<input type="hidden" name="usersnum" value="<?php echo $num ?>">
-	<input type="hidden" name="filename" value="<?php echo $this_recording['filename'] ?>">
 	<input type="hidden" name="id" value="<?php echo $id ?>">
 	<table>
 	<tr><td colspan=2><hr></td></tr>
@@ -196,6 +224,22 @@ function recording_editpage($id, $num) { ?>
 	    	<td>&nbsp;<textarea name="notes" rows="3" cols="40"><?php echo $this_recording['description'] ?></textarea></td>
 	</tr>
 	</table>
+	<hr />
+	Files:<br />
+	<table>
+	<?php 
+	$rec = recordings_get($id);
+	$fn = $rec['filename'];
+	$files = explode('&', $fn);
+	$counter = 0;
+	$arraymax = count($files)-1;
+	foreach ($files as $item) {
+		recordings_display_sndfile($item, $counter, $arraymax);
+		$counter++;
+	}	
+	recordings_display_sndfile('', $counter);
+	?>
+	</table>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6>
 	<?php recordings_form_jscript(); ?>	
 	</form>
@@ -207,6 +251,7 @@ function recording_sidebar($id, $num) {
 ?>
         <div class="rnav">
         <li><a id="<?php echo empty($id)?'current':'nul' ?>" href="config.php?display=recordings&amp;usersnum=<?php echo urlencode($num) ?>"><?php echo _("Add Recording")?></a></li>
+        <li><a id="<?php echo ($id===-1)?'current':'nul' ?>" href="config.php?display=recordings&amp;action=system"><?php echo _("Built-in Recordings")?></a></li>
 <?php
 		$wrapat = 18;
         $tresults = recordings_list();
@@ -216,7 +261,7 @@ function recording_sidebar($id, $num) {
                         echo "<a id=\"".($id==$tresult[0] ? 'current':'nul')."\" href=\"config.php?display=recordings&amp;";
                         echo "action=edit&amp;";
                         echo "usersnum=".urlencode($num)."&amp;";
-                        echo "filename=".urlencode($tresult[2])."&amp;";
+//                        echo "filename=".urlencode($tresult[2])."&amp;";
                         echo "id={$tresult[0]}\">";
                         $dispname = $tresult[1];
                         while (strlen($dispname) > (1+$wrapat)) {
@@ -255,6 +300,61 @@ function recordings_form_jscript() {
 	</script>
 
 <?php
+}
+
+function recording_sysfiles() {
+	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+	$astsnd .= "/sounds/";
+	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
+?>
+	<div class="content">
+	<h2><?php echo _("System Recordings")?></h2>
+	<h3><?php echo _("Built-in Recordings") ?></h3>
+	<h5><?php echo _("Select System Recording:")?></h5>
+	<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+	<input type="hidden" name="action" value="newsysrec">
+	<input type="hidden" name="display" value="recordings">
+	<select name="sysrec"/>
+<?php
+	$srcount=0;
+	foreach ($sysrecs as $sr) {
+		// echo '<option value="'.$vmc.'"'.($vmc == $ivr_details['dircontext'] ? ' SELECTED' : '').'>'.$vmc."</option>\n";
+		echo '<option value="'.$srcount.'">'.$sr."</option>\n";
+		$srcount++;
+		}
+	?>
+	</select>
+	<input name="Submit" type="submit" value="<?php echo _("Go"); ?>">
+	<p />
+	</div>
+<?php
+}
+
+function recordings_display_sndfile($item, $count, $max) {
+	// Note that when using this, it needs a <table> definition around it.
+	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+	$astsnd .= "/sounds/";
+	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
+	print "<tr><td><select name='sysrec$count'>\n";
+	echo '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
+	$srcount = 0;
+	foreach ($sysrecs as $sr) {
+		echo '<option value="'.$srcount.'"'.($sr == $item ? ' SELECTED' : '').'>'.$sr."</option>\n";
+		$srcount++;
+	}
+	print "</select></td>\n";
+	if ($count==0) {
+		 print "<td></td>\n"; 
+	} else {
+		echo '<td><input name="up'.$count.'" type="submit" value="'._("Move Up")."\"></td>\n";
+	}
+	if ($count > $max) {
+		 print "<td></td>\n"; 
+	} else {
+		echo '<td><input name="down'.$count.'" type="submit" value="'._("Move Down")."\"></td>\n";
+	}
+	echo '<td><input name="del'.$count.'" type="submit" value="'._("Delete")."\"></td>\n";
+	print "</tr>\n";
 }
 
 ?>
