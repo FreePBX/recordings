@@ -237,7 +237,7 @@ function recording_editpage($id, $num) { ?>
 		recordings_display_sndfile($item, $counter, $arraymax);
 		$counter++;
 	}	
-	recordings_display_sndfile('', $counter);
+	recordings_display_sndfile('', $counter, $arraymax);
 	?>
 	</table>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6>
