@@ -19,7 +19,7 @@ $fcc->update();
 unset($fcc);
 
 // Make sure table exists
-$sql = "CREATE TABLE IF NOT EXISTS recordings ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, displayname VARCHAR(50) , filename VARCHAR(80), description VARCHAR(254));";
+$sql = "CREATE TABLE IF NOT EXISTS recordings ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, displayname VARCHAR(50) , filename BLOB, description VARCHAR(254));";
 $result = $db->query($sql);
 if(DB::IsError($result)) {
         die($result->getDebugInfo());
@@ -50,6 +50,16 @@ if (!isset($results['filename'])) {
 				recordings_add($fname, "custom/$file");
 		}
 	}
+}
+
+global $db;
+
+// Upgrade to recordings 3.0
+// Change filename from VARCHAR(80) to BLOB
+$sql = 'ALTER TABLE recordings CHANGE filename filename BLOB';
+$result = $db->query($sql);
+if(DB::IsError($result)) {
+	die($result->getDebugInfo());
 }
 
 ?>
