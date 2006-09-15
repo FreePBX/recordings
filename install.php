@@ -1,8 +1,11 @@
 <?php
 
 global $amp_conf;
+global $asterisk_conf;
 global $db;
-global $recordings_astsnd_path;
+$recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+$recordings_astsnd_path .= "/sounds/";
+
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
 
