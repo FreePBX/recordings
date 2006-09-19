@@ -11,6 +11,7 @@ function recordings_get_config($engine) {
 	
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
+	$contextname = 'ext-recordings';
 	
 	switch($engine) {
 		case "asterisk":
@@ -68,7 +69,16 @@ function recordings_get_config($engine) {
 
 				$ext->add($appcontext, 'h', '', new ext_hangup(''));
 				*/
-				
+
+				/* Create a context for recordings as destinations */
+				$recordings =  recordings_list();
+				if (is_array($recordings)) {
+					foreach ($recordings as $r) {
+						$ext->add($contextname, 'recording-'.$r[0], '', new ext_answer());
+						$ext->add($contextname, 'recording-'.$r[0], '', new ext_playback($r[2]));
+						$ext->add($contextname, 'recording-'.$r[0], '', new ext_hangup());
+					}
+				}
 			}
 		break;
 	}
@@ -253,5 +263,19 @@ function recordings_getdir($snddir) {
 }
 	
 	
+
+
+// returns a associative arrays with keys 'destination' and 'description'
+// it allows system recording to be chosen as destinations
+function recordings_destinations() {
+	$recordings =  recordings_list();
+	if (is_array($recordings)) {
+		foreach ($recordings as $r) {
+			$extens[] = array('destination' => 'ext-recordings,recording-'.$r[0].',1', 'description' => $r[1]);
+		}
+	}
+
+	return $extens;
+}
 
 ?>
