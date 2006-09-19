@@ -69,17 +69,17 @@ function recordings_get_config($engine) {
 
 				$ext->add($appcontext, 'h', '', new ext_hangup(''));
 				*/
-
-				/* Create a context for recordings as destinations */
-				$recordings =  recordings_list();
-				if (is_array($recordings)) {
-					foreach ($recordings as $r) {
-						$ext->add($contextname, 'recording-'.$r[0], '', new ext_answer());
-						$ext->add($contextname, 'recording-'.$r[0], '', new ext_playback($r[2]));
-						$ext->add($contextname, 'recording-'.$r[0], '', new ext_hangup());
-					}
-				}
 			}
+
+		/* Create a context for recordings as destinations */
+		$recordings =  recordings_list();
+		if (is_array($recordings)) {
+			foreach ($recordings as $r) {
+				$ext->add($contextname, 'recording-'.$r[0], '', new ext_answer());
+				$ext->add($contextname, 'recording-'.$r[0], '', new ext_playback($r[2]));
+				$ext->add($contextname, 'recording-'.$r[0], '', new ext_hangup());
+			}
+		}
 		break;
 	}
 }			
