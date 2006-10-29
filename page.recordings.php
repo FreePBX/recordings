@@ -249,7 +249,7 @@ function recording_editpage($id, $num) { ?>
 
 function recording_sidebar($id, $num) {
 ?>
-        <div class="rnav">
+        <div class="rnav"><ul>
         <li><a id="<?php echo empty($id)?'current':'nul' ?>" href="config.php?display=recordings&amp;usersnum=<?php echo urlencode($num) ?>"><?php echo _("Add Recording")?></a></li>
         <li><a id="<?php echo ($id===-1)?'current':'nul' ?>" href="config.php?display=recordings&amp;action=system"><?php echo _("Built-in Recordings")?></a></li>
 <?php
@@ -276,7 +276,7 @@ function recording_sidebar($id, $num) {
                         echo "</li>\n";
                 }
         }
-        echo "</div>\n";
+        echo "</ul></div>\n";
 }
 
 function recordings_form_jscript() {
