@@ -36,8 +36,6 @@ unset($fcc);
 $fc_save = ($fc_save != '' ? $fc_save : _('** MISSING FEATURE CODE **'));
 $fc_check = ($fc_check != '' ? $fc_check : _('** MISSING FEATURE CODE **'));
 
-echo "</div>\n";
-
 switch ($action) {
 	
 	case "system":
