@@ -1,14 +1,15 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.1.0</version>
+	<version>3.2</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
+	<changelog>*3.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.2/recordings-3.1.0.tgz</location>
+	<location>release/2.2/recordings-3.2.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>0e47723425bad6aacb29e95acaf035eb</md5sum>
+	<md5sum>1947c8ed1aa606734ac297198eb22c09</md5sum>
 </module>
