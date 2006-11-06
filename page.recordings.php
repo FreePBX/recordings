@@ -314,11 +314,9 @@ function recording_sysfiles() {
 	<input type="hidden" name="display" value="recordings">
 	<select name="sysrec"/>
 <?php
-	$srcount=0;
-	foreach ($sysrecs as $sr) {
+	foreach ($sysrecs as $srcount => $sr) {
 		// echo '<option value="'.$vmc.'"'.($vmc == $ivr_details['dircontext'] ? ' SELECTED' : '').'>'.$vmc."</option>\n";
-		echo '<option value="'.$srcount.'">'.$sr."</option>\n";
-		$srcount++;
+		echo "<option value=\"$srcount\">$sr</option>\n";
 		}
 	?>
 	</select>
@@ -337,7 +335,7 @@ function recordings_display_sndfile($item, $count, $max) {
 	echo '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
 	$srcount = 0;
 	foreach ($sysrecs as $sr) {
-		echo '<option value="'.$srcount.'"'.($sr == $item ? ' SELECTED' : '').'>'.$sr."</option>\n";
+		echo '<option value="'.$srcount.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
 		$srcount++;
 	}
 	print "</select></td>\n";
