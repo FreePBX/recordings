@@ -1,6 +1,7 @@
 <?php
 
 // Source and Destination Dirctories for recording
+global $recordings_astsnd_path; // PHP5 needs extra convincing of a global
 $recordings_save_path = "/tmp/";
 $recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
