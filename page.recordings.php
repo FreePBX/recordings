@@ -333,10 +333,8 @@ function recordings_display_sndfile($item, $count, $max) {
 	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
 	print "<tr><td><select name='sysrec$count'>\n";
 	echo '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
-	$srcount = 0;
 	foreach ($sysrecs as $sr) {
-		echo '<option value="'.$srcount.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
-		$srcount++;
+		echo '<option value="'.$sr.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
 	}
 	print "</select></td>\n";
 	if ($count==0) {

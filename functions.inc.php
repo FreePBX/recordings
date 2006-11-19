@@ -156,14 +156,16 @@ function recordings_update($id, $rname, $descr, $_REQUEST) {
 	// Build the file list from _REQUEST
         $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
         $astsnd .= "/sounds/";
-        $sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
 	$recordings = Array();
 
 	// Set the file names from the submitted page, sysrec[N]
 	foreach ($_REQUEST as $key => $val) {
 		$res = strpos($key, 'sysrec');
 		if ($res !== false) {
-			$recordings[substr($key,6)]=$sysrecs[$val];
+			// strip out any relative paths, since this is coming from a URL
+			str_replace('..','',$val);
+
+			$recordings[substr($key,6)]=$val;
 		}
 	}
 
