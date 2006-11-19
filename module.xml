@@ -1,18 +1,19 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.2.2</version>
+	<version>3.2.3</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+	*3.2.3* Fix for possible wrong recording being selected
 	*3.2.2* Fix for PHP5 not picking up ast recording path
 	*3.2.1* Resolved issue with wrong recording being selected when there's more than one encoding of file (eg, foo.wav and foo.gsm)
 	*3.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.2/recordings-3.2.2.tgz</location>
+	<location>release/2.2/recordings-3.2.3.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>1d1fb7a72b1964b4aee5f41f25dd715d</md5sum>
+	<md5sum>55c119dbbd001bbb1e85804659cb7301</md5sum>
 </module>
