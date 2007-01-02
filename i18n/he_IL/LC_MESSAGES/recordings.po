@@ -1,0 +1,142 @@
+# Hebrew version for Recordings FreePBX Module.
+# Copyright (C) 2006
+# This file is distributed under the same license as the PACKAGE package.
+# Shimi <shimi@shimi.net>, 2006.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FreePBX 2.2.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2006-10-17 17:20+0300\n"
+"PO-Revision-Date: 2006-10-17 17:30+0300\n"
+"Last-Translator: Shimi <shimi@shimi.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: page.recordings.php:65
+msgid "Failed to create"
+msgstr "כשלון ביצירת"
+
+#: page.recordings.php:76 page.recordings.php:107
+msgid "System Recording"
+msgstr "הקלטות מערכת"
+
+#: page.recordings.php:76
+msgid "Saved"
+msgstr "נשמר"
+
+#: page.recordings.php:95
+msgid "Unable to locate"
+msgstr "לא מצליח לאתר"
+
+#: page.recordings.php:95
+msgid "with a a valid suffix"
+msgstr "עם סיומת תקנית"
+
+#: page.recordings.php:107
+msgid "Updated"
+msgstr "עודכן"
+
+#: page.recordings.php:129 page.recordings.php:199 page.recordings.php:311
+msgid "System Recordings"
+msgstr "הקלטות מערכת"
+
+#: page.recordings.php:130 page.recordings.php:253
+msgid "Add Recording"
+msgstr "הוספת הקלטה"
+
+#: page.recordings.php:131
+msgid "Step 1: Record or upload"
+msgstr "שלב 1: הקלט או העלה"
+
+#: page.recordings.php:133
+msgid "Using your phone,"
+msgstr "באמצעות הטלפון שלך,"
+
+#: page.recordings.php:133 page.recordings.php:175
+msgid "dial"
+msgstr "חייג"
+
+#: page.recordings.php:134
+msgid "Start speaking at the tone. Hangup when finished."
+msgstr "התחל לדבר אחרי הצליל. נתק כשסיימת."
+
+#: page.recordings.php:135
+msgid "and speak the message you wish to record."
+msgstr "ואמור את ההודעה שברצונך להקליט."
+
+#: page.recordings.php:140
+msgid ""
+"If you wish to make and verify recordings from your phone, please enter your "
+"extension number here:"
+msgstr "אם ברצונך לוודא הקלטה שנעשתה מהטלפון שלך, אנא הכנס את מספר השלוחה שלך כאן:"
+
+#: page.recordings.php:147
+msgid ".wav format"
+msgstr "פורמט wav"
+
+#: page.recordings.php:147
+msgid "The .wav file _must_ be 16 bit PCM Encoded at a sample rate of 8000Hz"
+msgstr "קובץ ה-wav _חייב_ להיות מקודד בפורמט 16 ביט בקצב דגימה של 8000 הרץ."
+
+#: page.recordings.php:165
+msgid "Successfully uploaded"
+msgstr "הועלה בהצלחה"
+
+#: page.recordings.php:174
+msgid "Step 2: Verify"
+msgstr "שלב 2: ודא"
+
+#: page.recordings.php:175
+msgid "After recording or uploading,"
+msgstr "אחרי הקלטה או העלאה,"
+
+#: page.recordings.php:175
+msgid "to listen to your recording."
+msgstr "כדי להאזין להקלטתך."
+
+#: page.recordings.php:176
+msgid "If you wish to re-record your message, dial"
+msgstr "אם ברצונך להקליט מחדש את הודעתך, חייג"
+
+#: page.recordings.php:177
+msgid "Step 3: Name"
+msgstr "שלב 3: שם"
+
+#: page.recordings.php:179
+msgid "Step 2: Name"
+msgstr "שלב 2: שם"
+
+#: page.recordings.php:183
+msgid "Name this Recording"
+msgstr "תן שם להקלטה זו"
+
+#: page.recordings.php:188
+msgid "Click \"SAVE\" when you are satisfied with your recording"
+msgstr "לחץ על \"שמור\" כאשר אתה מרוצה מהקלטתך"
+
+#: page.recordings.php:200
+msgid "Edit Recording"
+msgstr "ערוך הקלטה"
+
+#: page.recordings.php:254 page.recordings.php:312
+msgid "Built-in Recordings"
+msgstr "הקלטות מובנות"
+
+#: page.recordings.php:313
+msgid "Select System Recording:"
+msgstr "בחר הקלטת מערכת:"
+
+#: page.recordings.php:349
+msgid "Move Up"
+msgstr "הזז למעלה"
+
+#: page.recordings.php:354
+msgid "Move Down"
+msgstr "הזז למטה"
+
+#: page.recordings.php:356
+msgid "Delete"
+msgstr "מחק"
