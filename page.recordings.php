@@ -20,6 +20,7 @@ $notes = isset($_REQUEST['notes'])?$_REQUEST['notes']:'';
 $rname = isset($_REQUEST['rname'])?$_REQUEST['rname']:'';
 $usersnum = isset($_REQUEST['usersnum'])?$_REQUEST['usersnum']:'';
 $sysrec = isset($_REQUEST['sysrec'])?$_REQUEST['sysrec']:'';
+$suffix = isset($_REQUEST['suffix'])?$_REQUEST['suffix']:'wav';
 if (empty($usersnum)) {
 	$dest = "unnumbered-";
 } else {
@@ -65,8 +66,8 @@ switch ($action) {
 		} else {
 			// can't rename a file from one partition to another, must use mv or cp
 			// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
-			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.wav " . $recordings_astsnd_path."custom/{$filename}.wav");
-			$isok = recordings_add($rname, "custom/{$filename}.wav");
+			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $recordings_astsnd_path."custom/{$filename}.$suffix");
+			$isok = recordings_add($rname, "custom/{$filename}.$suffix");
 
 			recording_sidebar(null, $usersnum);
 			recording_addpage($usersnum);
@@ -85,7 +86,8 @@ switch ($action) {
 			foreach ($valid as $xtn) {
 				$checkfile = $recordings_astsnd_path.$filename.".".$xtn;
 				if (file_exists($checkfile)) {
-					copy($checkfile, $recordings_save_path."{$dest}ivrrecording.wav");
+					$suffix = substr(strrchr($filename, "."), 1);
+					copy($checkfile, $recordings_save_path."{$dest}ivrrecording.".$suffix);
 					$fileexists = true;
 				}
 			}
@@ -142,7 +144,7 @@ function recording_addpage($usersnum) {
 	</p>
 	<p>
 	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
-		<?php echo _('Alternatively, upload a recording in')?> <a href="#" class="info"><?php echo _(".wav format")?><span><?php echo _("The .wav file _must_ be 16 bit PCM Encoded at a sample rate of 8000Hz")?></span></a>:<br>
+		<?php echo _('Alternatively, upload a recording in')?> <?php echo _("any supported asterisk format.")?> <?php echo _("Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?></span></a>:<br>
 		<input type="hidden" name="display" value="recordings">
 		<input type="hidden" name="action" value="recordings_start">
                 <input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
@@ -156,11 +158,13 @@ function recording_addpage($usersnum) {
 		} else {
 			$dest = "{$usersnum}-";
 		}
-		$destfilename = $recordings_save_path.$dest."ivrrecording.wav";
+		$suffix = substr(strrchr($_FILES['ivrfile']['name'], "."), 1);
+		$destfilename = $recordings_save_path.$dest."ivrrecording.".$suffix;
 		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
 		system("chgrp asterisk ".$destfilename);
 		system("chmod g+rw ".$destfilename);
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
+		$rname = rtrim(basename($_FILES['ivrfile']['name'], $suffix), '.');
 	} ?>
 	</p>
 	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
@@ -179,11 +183,13 @@ function recording_addpage($usersnum) {
 	<table style="text-align:right;">
 		<tr valign="top">
 			<td valign="top"><?php echo _("Name this Recording")?>: </td>
-			<td style="text-align:left"><input type="text" name="rname"></td>
+			<td style="text-align:left"><input type="text" name="rname" value="<?php echo $rname; ?>"></td>
 		</tr>
 	</table>
 	
-	<h6><?php echo _("Click \"SAVE\" when you are satisfied with your recording")?>
+	<h6><?php 
+	echo _("Click \"SAVE\" when you are satisfied with your recording");
+	echo "<input type=\"hidden\" name=\"suffix\" value=\"$suffix\">\n"; ?>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6> 
 	<?php recordings_form_jscript(); ?>
 	</form>

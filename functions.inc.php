@@ -41,35 +41,6 @@ function recordings_get_config($engine) {
 					$ext->add($appcontext, $fc_check, '', new ext_macro('systemrecording', 'docheck'));
 					//$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
 				}
-				
-				/*
-				MOVED TO A MACRO IN extensions.conf OTHERWISE, DIALING '1' WOULD PICK UP THE DOCHECK ROUTINE
-				$ext->add($appcontext, 'dorecord', '', new ext_record($recordings_save_path.'${CALLERID(number)}-ivrrecording:wav'));
-				$ext->add($appcontext, 'dorecord', '', new ext_wait('1'));
-				$ext->add($appcontext, 'dorecord', '', new ext_goto('1', 'confmenu'));
-
-				$ext->add($appcontext, 'docheck', '', new ext_playback($recordings_save_path.'${CALLERID(number)}-ivrrecording'));
-				$ext->add($appcontext, 'docheck', '', new ext_wait('1'));
-				$ext->add($appcontext, 'docheck', '', new ext_goto('1', 'confmenu'));
-
-				$ext->add($appcontext, 'confmenu', '', new ext_playback('to-listen-to-it'));
-				$ext->add($appcontext, 'confmenu', '', new ext_playback('press-1'));
-				$ext->add($appcontext, 'confmenu', '', new ext_playback('to-rerecord-it'));
-				$ext->add($appcontext, 'confmenu', '', new ext_playback('press-star'));
-				$ext->add($appcontext, 'confmenu', '', new ext_wait('4'));
-				$ext->add($appcontext, 'confmenu', '', new ext_goto('1'));
-
-				$ext->add($appcontext, '1', '', new ext_goto('1', 'docheck'));
-				$ext->add($appcontext, '*', '', new ext_goto('1', 'dorecord'));
-
-				$ext->add($appcontext, 't', '', new ext_playback('goodbye'));
-				$ext->add($appcontext, 't', '', new ext_hangup(''));
-
-				$ext->add($appcontext, 'i', '', new ext_playback('pm-invalid-option'));
-				$ext->add($appcontext, 'i', '', new ext_goto('1', 'confmenu'));
-
-				$ext->add($appcontext, 'h', '', new ext_hangup(''));
-				*/
 			}
 
 		/* Create a context for recordings as destinations */

@@ -1,11 +1,13 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.2.3</version>
+	<version>3.3</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+	*3.3* Stop assuming that files being uploaded are .wav's, also highlight the correct format for files to be uploaded in.
+	*3.2.4* Add he_IL translation
 	*3.2.3* Fix for possible wrong recording being selected
 	*3.2.2* Fix for PHP5 not picking up ast recording path
 	*3.2.1* Resolved issue with wrong recording being selected when there's more than one encoding of file (eg, foo.wav and foo.gsm)
@@ -13,7 +15,7 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.2/recordings-3.2.3.tgz</location>
+	<location>release/2.2/recordings-3.3.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>55c119dbbd001bbb1e85804659cb7301</md5sum>
+	<md5sum>36b2f983adce45b00da66b3b345f0b90</md5sum>
 </module>
