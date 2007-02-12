@@ -104,12 +104,12 @@ function recordings_add($displayname, $filename) {
 
 	// Check to make sure we can actually read the file if it has an extension (if it doesn't, 
 	// it was put here by system recordings, so we know it's there.
-	if (preg_match("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", $filename)) {
+	if (preg_match("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", $filename)) {
 		if (!is_readable($recordings_astsnd_path.$filename)) {
 			print "<p>Unable to add ".$recordings_astsnd_path.$filename." - Can not read file!</p>";
 			return false;
 		}
-		$fname = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $filename);
+		$fname = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $filename);
 
 	} else {
 		$fname = $filename;
@@ -217,7 +217,7 @@ function recordings_readdir($snddir) {
 		$ptr++;
 	}
 	// Strip off every possible file extension
-	$flist = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $files);
+	$flist = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $files);
 	sort($flist);
 	return array_unique($flist);
 }

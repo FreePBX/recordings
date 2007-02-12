@@ -80,7 +80,7 @@ switch ($action) {
 		$arr = recordings_get($id);
 		$filename=$arr['filename'];
 		// Check all possibilities of uploaded file types.
-		$valid = Array("au","g723","g723sf","g729","gsm","h263","ilbc","ogg","pcm","alaw","ulaw","al","ul","mu","sln","raw","vox","WAV","wav","wav49");
+		$valid = Array("au","g723","g723sf","g729","gsm","h263","ilbc","mp3","ogg","pcm","alaw","ulaw","al","ul","mu","sln","raw","vox","WAV","wav","wav49");
 		$fileexists = false;
 		if (strpos($filename, '&') === false) {
 			foreach ($valid as $xtn) {
