@@ -1,11 +1,12 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3</version>
+	<version>3.3.1</version>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+	*3.3.1* Fix mp3 upload bug (#1764)
 	*3.3* Stop assuming that files being uploaded are .wav's, also highlight the correct format for files to be uploaded in.
 	*3.2.4* Add he_IL translation
 	*3.2.3* Fix for possible wrong recording being selected
@@ -15,7 +16,7 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.3/recordings-3.3.tgz</location>
+	<location>release/2.3/recordings-3.3.1.tgz</location>
 	<info>http://aussievoip.com.au/wiki/freePBX-SysRec</info>
-	<md5sum>f23755a21af4d03f35bd999e3621d9be</md5sum>
+	<md5sum>f055d0f1f09b21cafe1e932a818b248a</md5sum>
 </module>
