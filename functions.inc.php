@@ -149,9 +149,12 @@ function recordings_update($id, $rname, $descr, $_REQUEST) {
 	// del[N] - Delete fid N
 	
 	foreach ($_REQUEST as $key => $val) {
-		$up = strpos($key, "up");
-		$down = strpos($key, "down");
-		$del = strpos($key, "del");
+		if (strpos($key,"_") == 0) {
+	      		$up = strpos($key, "up");
+
+			$down = strpos($key, "down");
+			$del = strpos($key, "del");
+		}
 		if ( $up !== false ) {
 			$up = substr($key, 2);
 			recordings_move_file_up($id, $up);

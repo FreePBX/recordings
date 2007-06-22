@@ -212,7 +212,7 @@ function recording_editpage($id, $num) { ?>
 	echo "<a href=config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num);
 	echo "&amp;id=$id>Remove Recording</a> <i style='font-size: x-small'>(Note, does not delete file from computer)</i>";
 	?>
-	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
+	<form name="prompt"  action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="edited">
 	<input type="hidden" name="display" value="recordings">
 	<input type="hidden" name="usersnum" value="<?php echo $num ?>">
@@ -237,14 +237,19 @@ function recording_editpage($id, $num) { ?>
 	$files = explode('&', $fn);
 	$counter = 0;
 	$arraymax = count($files)-1;
+	// globals seem to busted in PHP5 define here for now
+	$recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+	$recordings_astsnd_path .= "/sounds/";
+
 	foreach ($files as $item) {
-		recordings_display_sndfile($item, $counter, $arraymax);
+		recordings_display_sndfile($item, $counter, $arraymax, $recordings_astsnd_path);
 		$counter++;
 	}	
-	recordings_display_sndfile('', $counter, $arraymax);
+	recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path);
 	?>
 	</table>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6>
+	<?php recordings_popup_jscript(); ?>	
 	<?php recordings_form_jscript(); ?>	
 	</form>
 	</div>
@@ -281,6 +286,23 @@ function recording_sidebar($id, $num) {
                 }
         }
         echo "</ul></div>\n";
+}
+
+function recordings_popup_jscript() {
+?>
+        <script language="javascript">
+	<!-- Begin
+	function popUp(URL,optionId) {
+		var selIndex=optionId.selectedIndex
+		var file=optionId.options[selIndex].value
+
+		/*alert(selIndex);*/
+		if (file != "")
+			popup = window.open(URL+file, 'play', 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=320,height=110');
+	}
+	// End -->
+	</script>
+<?php
 }
 
 function recordings_form_jscript() {
@@ -332,28 +354,45 @@ function recording_sysfiles() {
 <?php
 }
 
-function recordings_display_sndfile($item, $count, $max) {
+function recordings_display_sndfile($item, $count, $max, $astpath) {
 	// Note that when using this, it needs a <table> definition around it.
 	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 	$astsnd .= "/sounds/";
 	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
-	print "<tr><td><select name='sysrec$count'>\n";
+	print "<tr><td><select id='sysrec$count' name='sysrec$count'>\n";
 	echo '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
 	foreach ($sysrecs as $sr) {
 		echo '<option value="'.$sr.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
 	}
 	print "</select></td>\n";
+
+	echo "<td>";
+	$audio=$astpath.$item;
+	$audio=$astpath;
+	$recurl="modules/recordings/popup.php?recording=".$audio;
+	echo "<a href='#' type='submit' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'  >";
+        echo "<img border='0' width='20'  height='20' src='images/play.png' title='Click here to play this recording' />";
+        echo "</img></td>";
+
 	if ($count==0) {
 		 print "<td></td>\n"; 
 	} else {
-		echo '<td><input name="up'.$count.'" type="submit" value="'._("Move Up")."\"></td>\n";
-	}
-	if ($count > $max) {
-		 print "<td></td>\n"; 
+		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		echo '<td><input name="up'.$count.'" width=10 height=20 border=5  title="Move Up" type="image" src="images/scrollup.gif"  value="'._("Move Up").'"/>';
+		print "</td>\n"; 
+	} if ($count > $max) {
+		print "<td></td>\n"; 
 	} else {
-		echo '<td><input name="down'.$count.'" type="submit" value="'._("Move Down")."\"></td>\n";
+		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		echo '<td><input name="down'.$count.'" width=10 height=20 border=0 title="Move Down" type="image" src="images/scrolldown.gif"  value="'._("Move Down")."\">\n";
+		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		print "</td>\n"; 
 	}
-	echo '<td><input name="del'.$count.'" type="submit" value="'._("Delete")."\"></td>\n";
+	echo '<td><input name="del'.$count.'" type="image" border=0 title="Delete" src="images/trash.png" value="'._("Delete")."\">\n";
+	echo "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+	echo "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+	print "</td>\n"; 
+
 	print "</tr>\n";
 }
 
