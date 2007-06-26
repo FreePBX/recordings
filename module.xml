@@ -1,13 +1,15 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.1.1</version>
+	<version>3.3.3</version>
 	<candisable>no</candisable>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
-	*3.3.1.1* added candisable = no for module admin
+	*3.3.3* fixed bug not able to save recorded message from *77 featurecode
+	*3.3.2* use urlencode/decode in the crypt functions
+	*3.3.1.1* added candisable = no for module admin, and new play button
 	*3.3.1* Fix mp3 upload bug (#1764)
 	*3.3* Stop assuming that files being uploaded are .wav's, also highlight the correct format for files to be uploaded in.
 	*3.2.4* Add he_IL translation

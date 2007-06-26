@@ -20,7 +20,11 @@ $notes = isset($_REQUEST['notes'])?$_REQUEST['notes']:'';
 $rname = isset($_REQUEST['rname'])?$_REQUEST['rname']:'';
 $usersnum = isset($_REQUEST['usersnum'])?$_REQUEST['usersnum']:'';
 $sysrec = isset($_REQUEST['sysrec'])?$_REQUEST['sysrec']:'';
-$suffix = isset($_REQUEST['suffix'])?$_REQUEST['suffix']:'wav';
+$suffix = isset($_REQUEST['suffix']) && trim($_REQUEST['suffix'] != "") ? $_REQUEST['suffix'] : 'wav';
+
+$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+$astsnd .= "/sounds/";
+
 if (empty($usersnum)) {
 	$dest = "unnumbered-";
 } else {
@@ -44,8 +48,6 @@ switch ($action) {
 		recording_sysfiles();
 		break;
 	case "newsysrec":
-		$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
-		$astsnd .= "/sounds/";
 		$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
 		if (recordings_add($sysrecs[$sysrec], $sysrecs[$sysrec])) {
 			$id = recordings_get_id($sysrecs[$sysrec]);
@@ -59,14 +61,14 @@ switch ($action) {
 	case "recorded":
 		// Clean up the filename, take out any nasty characters
 		$filename = escapeshellcmd(strtr($rname, '/ ', '__'));
-		if (!file_exists($recordings_astsnd_path."custom")) {
-			if (!mkdir($recordings_astsnd_path."custom", 0775)) {
-				echo '<div class="content"><h5>'._("Failed to create").' '.$recordings_astsnd_path.'custom'.'</h5>';			
+		if (!file_exists($astsnd."custom")) {
+			if (!mkdir($astsnd."custom", 0775)) {
+				echo '<div class="content"><h5>'._("Failed to create").' '.$astsnd.'custom'.'</h5>';			
 			}		
 		} else {
 			// can't rename a file from one partition to another, must use mv or cp
 			// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
-			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $recordings_astsnd_path."custom/{$filename}.$suffix");
+			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $astsnd."custom/{$filename}.$suffix");
 			$isok = recordings_add($rname, "custom/{$filename}.$suffix");
 
 			recording_sidebar(null, $usersnum);
