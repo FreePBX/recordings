@@ -238,21 +238,5 @@ function recordings_getdir($snddir) {
 	}
 	return $files;
 }
-	
-	
-
-
-// returns a associative arrays with keys 'destination' and 'description'
-// it allows system recording to be chosen as destinations
-function recordings_destinations() {
-	$recordings =  recordings_list();
-	if (is_array($recordings)) {
-		foreach ($recordings as $r) {
-			$extens[] = array('destination' => 'ext-recordings,recording-'.$r[0].',1', 'description' => $r[1]);
-		}
-	}
-
-	return $extens;
-}
 
 ?>
