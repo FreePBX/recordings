@@ -1,12 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.4</version>
+	<version>3.3.5</version>
 	<candisable>no</candisable>
+	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+	*3.3.5* #2092 can't cannot save/read file fix some errors, better messages
 	*3.3.4* #2032 remove recordings as a destination, no purpose (use annoucement module)
 	*3.3.3* fixed bug not able to save recorded message from *77 featurecode
 	*3.3.2* use urlencode/decode in the crypt functions

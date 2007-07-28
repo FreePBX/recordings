@@ -68,8 +68,32 @@ switch ($action) {
 		} else {
 			// can't rename a file from one partition to another, must use mv or cp
 			// rename($recordings_save_path."{$dest}ivrrecording.wav",$recordings_astsnd_path."custom/{$filename}.wav");
-			exec("mv " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $astsnd."custom/{$filename}.$suffix");
-			$isok = recordings_add($rname, "custom/{$filename}.$suffix");
+			if (!file_exists($recordings_save_path."{$dest}ivrrecording.$suffix")) {
+				echo "<hr><h5>"._("[ERROR] The Recorded File Does Not exists:")."</h5>";
+				echo $recordings_save_path."{$dest}ivrrecording.$suffix<br><br>";
+				echo "make sure you uploaded or recorded a file with the entered extension<hr>";
+			} else {
+				exec("cp " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $astsnd."custom/{$filename}.$suffix", $outarray, $ret);
+				if (!$ret) {
+					$isok = recordings_add($rname, "custom/{$filename}.$suffix");
+				} else {
+					echo "<hr><h5>"._("[ERROR] SAVING RECORDING:")."</h5>";
+					foreach ($outarray as $line) {
+						echo "$line<br>";
+					}
+					echo _("Make sure you have entered a proper name");
+					echo "<hr>";
+				}
+				exec("rm " . $recordings_save_path . "{$dest}ivrrecording.$suffix ", $outarray, $ret);
+				if ($ret) {
+					echo "<hr><h5>"._("[ERROR] REMOVING TEMPORARY RECORDING:")."</h5>";
+					foreach ($outarray as $line) {
+						echo "$line<br>";
+					}
+					echo _("Make sure Asterisk is not running as root ");
+					echo "<hr>";
+				}
+			}
 
 			recording_sidebar(null, $usersnum);
 			recording_addpage($usersnum);
