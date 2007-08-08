@@ -25,7 +25,7 @@ unset($fcc);
 $sql = "CREATE TABLE IF NOT EXISTS recordings ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, displayname VARCHAR(50) , filename BLOB, description VARCHAR(254));";
 $result = $db->query($sql);
 if(DB::IsError($result)) {
-        die($result->getDebugInfo());
+        die_freepbx($result->getDebugInfo());
 }
 
 // load up any recordings that might be in the directory
@@ -62,7 +62,7 @@ global $db;
 $sql = 'ALTER TABLE recordings CHANGE filename filename BLOB';
 $result = $db->query($sql);
 if(DB::IsError($result)) {
-	die($result->getDebugInfo());
+	die_freepbx($result->getDebugInfo());
 }
 
 ?>

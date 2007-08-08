@@ -32,7 +32,7 @@ if (isset($_GET['recording'])) {
   elseif (is_file("$path.WAV")) { $path="$path.WAV"; }
   elseif (is_file("$path.mp3")) { $path=$path.mp3; }
   elseif (is_file("$path.gsm")) { $path="$path.gsm"; }
-  elseif (!is_file($path)) { die("<b>404 File not found!: $opath </b>"); }
+  elseif (!is_file($path)) { die_freepbx("<b>404 File not found!: $opath </b>"); }
 
   // Gather relevent info about file
   $size = filesize($path);
@@ -49,7 +49,7 @@ if (isset($_GET['recording'])) {
     case "gsm": $ctype="audio/x-gsm"; break;
 
     // not downloadable
-    default: die("<b>404 File not found! foo</b>"); break ;
+    default: die_freepbx("<b>404 File not found! foo</b>"); break ;
   }
 
   // need to check if file is mislabeled or a liar.
