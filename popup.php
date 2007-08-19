@@ -5,7 +5,6 @@
  * popup window for playing recording
  */
 
-chdir("..");
 include_once("crypt.php");
 
 ?>
@@ -21,29 +20,20 @@ include_once("crypt.php");
 
 <?php
 
-
-  global $amp_conf;
-
-
-  //$REC_CRYPT_PASSWORD="moufdsuu3nma0";
-  $REC_CRYPT_PASSWORD= (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY]']):'moufdsuu3nma0';
-
+  $REC_CRYPT_PASSWORD = urlencode((isset($_REQUEST['cryptpass']) && trim($_REQUEST['cryptpass']) != "")?trim($_REQUEST['cryptpass']):'moufdsuu3nma0');
 
   $crypt = new Crypt();
 
-  $file = $crypt->encrypt($_GET['recording'],$REC_CRYPT_PASSWORD);
-  $ufile = $_GET['recording'];
-  $file = $_GET['recording'];
+  $file = $crypt->encrypt($_REQUEST['recording'],$REC_CRYPT_PASSWORD);
+  $ufile = $_REQUEST['recording'];
+  $file = $_REQUEST['recording'];
 
-  //echo("<text>$file</text>");
   if (isset($file)) {
     echo("<br>");
-    echo("<embed src='audio.php?recording=" . $file . "' width=300, height=20 autoplay=true loop=false></embed><br>");
-    echo("<br><a class='popup_download' href=/admin/modules/recordings/audio.php?recording="  . $ufile . ">" . _("download: $ufile") . "</a><br>");
+    echo("<embed src='audio.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$file' width=300, height=20 autoplay=true loop=false></embed><br>");
+    echo("<br><a class='popup_download' href=".dirname(__FILE__)."/audio.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$ufile>" . _("download: $ufile") . "</a><br>");
   }
-
 ?>
-
   </body>
 </html>
 

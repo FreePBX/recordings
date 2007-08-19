@@ -5,22 +5,16 @@
  * plays recording file
  */
 
-
-
 if (isset($_GET['recording'])) {
 
-  chdir("..");
   include_once("crypt.php");
 
-  //$REC_CRYPT_PASSWORD="moufdsuu3nma0";
-  $REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY]']):'moufdsuu3nma0';
-
-
+  $REC_CRYPT_PASSWORD = (isset($_REQUEST['cryptpass']) && trim($_REQUEST['cryptpass']) != "")?trim($_REQUEST['cryptpass']):'moufdsuu3nma0';
 
   $crypt = new Crypt();
 
   $opath = $_GET['recording'];
-  $path = $crypt->decrypt($opath,$REC_CRYPT_PASSWORD);
+  $path = $crypt->decrypt($opath,urldecode($REC_CRYPT_PASSWORD));
   $path=$opath;
 
   // strip ".." from path for security
@@ -32,7 +26,7 @@ if (isset($_GET['recording'])) {
   elseif (is_file("$path.WAV")) { $path="$path.WAV"; }
   elseif (is_file("$path.mp3")) { $path=$path.mp3; }
   elseif (is_file("$path.gsm")) { $path="$path.gsm"; }
-  elseif (!is_file($path)) { die_freepbx("<b>404 File not found!: $opath </b>"); }
+  elseif (!is_file($path)) { die("<b>404 File not found!: $opath </b>"); }
 
   // Gather relevent info about file
   $size = filesize($path);

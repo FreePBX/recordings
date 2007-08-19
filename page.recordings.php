@@ -381,6 +381,7 @@ function recording_sysfiles() {
 }
 
 function recordings_display_sndfile($item, $count, $max, $astpath) {
+	global $amp_conf;
 	// Note that when using this, it needs a <table> definition around it.
 	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 	$astsnd .= "/sounds/";
@@ -393,9 +394,11 @@ function recordings_display_sndfile($item, $count, $max, $astpath) {
 	print "</select></td>\n";
 
 	echo "<td>";
-	$audio=$astpath.$item;
 	$audio=$astpath;
-	$recurl="modules/recordings/popup.php?recording=".$audio;
+
+	$REC_CRYPT_PASSWORD = urlencode((isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0');
+	$recurl="modules/recordings/popup.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$audio";
+
 	echo "<a href='#' type='submit' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'  >";
         echo "<img border='0' width='20'  height='20' src='images/play.png' title='Click here to play this recording' />";
         echo "</img></td>";
