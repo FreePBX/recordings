@@ -24,7 +24,7 @@ if (isset($_GET['recording'])) {
   if (is_file("$path.wav")) { $path="$path.wav"; }
   elseif (is_file("$path.Wav")) { $path="$path.Wav"; }
   elseif (is_file("$path.WAV")) { $path="$path.WAV"; }
-  elseif (is_file("$path.mp3")) { $path=$path.mp3; }
+  elseif (is_file("$path.mp3")) { $path="$path.mp3"; }
   elseif (is_file("$path.gsm")) { $path="$path.gsm"; }
   elseif (!is_file($path)) { die("<b>404 File not found!: $opath </b>"); }
 
