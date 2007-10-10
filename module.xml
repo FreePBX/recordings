@@ -27,6 +27,6 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.3/recordings-3.3.5.3.tgz</location>
-	<md5sum>1b2afe48ae31f169a6504d1c12468263</md5sum>
+	<location>release/2.4/recordings-3.3.5.4.tgz</location>
+	<md5sum>de99a729920e412d3a7c69c2fe46c72f</md5sum>
 </module>
