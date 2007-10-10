@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.5.3</version>
+	<version>3.3.5.4</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.5.4* #2426 remove non-functioning download link
 		*3.3.5.3* #2409 syntax error in audio.php could cause playback problems
 		*3.3.5.2* #2016 allow amportal.conf AMPLAYKEY override hardcoded crypt key
 		*3.3.5.1* bump for rc1

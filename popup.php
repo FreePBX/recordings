@@ -31,7 +31,7 @@ include_once("crypt.php");
   if (isset($file)) {
     echo("<br>");
     echo("<embed src='audio.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$file' width=300, height=20 autoplay=true loop=false></embed><br>");
-    echo("<br><a class='popup_download' href=".dirname(__FILE__)."/audio.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$ufile>" . _("download: $ufile") . "</a><br>");
+    echo("<br><h1 class='popup_download'>playing: $file</h1><br>");
   }
 ?>
   </body>
