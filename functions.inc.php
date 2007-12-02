@@ -12,7 +12,6 @@ function recordings_get_config($engine) {
 	
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
-	$contextname = 'ext-recordings';
 	
 	switch($engine) {
 		case "asterisk":
@@ -42,16 +41,6 @@ function recordings_get_config($engine) {
 					//$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
 				}
 			}
-
-		/* Create a context for recordings as destinations */
-		$recordings =  recordings_list();
-		if (is_array($recordings)) {
-			foreach ($recordings as $r) {
-				$ext->add($contextname, 'recording-'.$r[0], '', new ext_answer());
-				$ext->add($contextname, 'recording-'.$r[0], '', new ext_playback($r[2]));
-				$ext->add($contextname, 'recording-'.$r[0], '', new ext_hangup());
-			}
-		}
 		break;
 	}
 }			
