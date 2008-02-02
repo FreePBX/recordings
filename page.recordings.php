@@ -73,7 +73,7 @@ switch ($action) {
 				echo $recordings_save_path."{$dest}ivrrecording.$suffix<br><br>";
 				echo "make sure you uploaded or recorded a file with the entered extension<hr>";
 			} else {
-				exec("cp " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $astsnd."custom/{$filename}.$suffix", $outarray, $ret);
+				exec("cp " . $recordings_save_path . "{$dest}ivrrecording.$suffix " . $astsnd."custom/{$filename}.$suffix 2>&1", $outarray, $ret);
 				if (!$ret) {
 					$isok = recordings_add($rname, "custom/{$filename}.$suffix");
 				} else {
