@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.6</version>
+	<version>3.3.6.1</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.6.1* #2591, enhance code so bad directory copy errors are reported
 		*3.3.6* it translations, removed legacy ext-recordings left in error
 		*3.3.5.4* #2426 remove non-functioning download link
 		*3.3.5.3* #2409 syntax error in audio.php could cause playback problems
@@ -24,10 +25,11 @@
 		*3.2.3* Fix for possible wrong recording being selected
 		*3.2.2* Fix for PHP5 not picking up ast recording path
 		*3.2.1* Resolved issue with wrong recording being selected when there's more than one encoding of file (eg, foo.wav and foo.gsm)
-		*3.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI</changelog>
+		*3.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
+	</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.4/recordings-3.3.6.tgz</location>
-	<md5sum>60443b1fd56ce4b9c4299235d58c817d</md5sum>
+	<location>release/2.4/recordings-3.3.6.1.tgz</location>
+	<md5sum>1f77ab194e78ac38b256386f4db1513a</md5sum>
 </module>
