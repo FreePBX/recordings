@@ -170,7 +170,7 @@ function recording_addpage($usersnum) {
 	</p>
 	<p>
 	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
-		<?php echo _('Alternatively, upload a recording in')?> <?php echo _("any supported asterisk format.")?> <?php echo _("Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?></span></a>:<br>
+		<?php echo _("Alternatively, upload a recording in")?> <?php echo _("any supported asterisk format.")?> <?php echo _("Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?></span></a>:<br>
 		<input type="hidden" name="display" value="recordings">
 		<input type="hidden" name="action" value="recordings_start">
                 <input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
@@ -236,7 +236,11 @@ function recording_editpage($id, $num) { ?>
 	}?>
 	<?php 
 	echo "<a href=config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num);
-	echo "&amp;id=$id>Remove Recording</a> <i style='font-size: x-small'>(Note, does not delete file from computer)</i>";
+	echo "&amp;id=$id>";
+	echo _("Remove Recording");
+	echo "</a> <i style='font-size: x-small'>(";
+	echo _("Note, does not delete file from computer");
+	echo ")</i>";
 	?>
 	<form name="prompt"  action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="edited">
@@ -246,16 +250,16 @@ function recording_editpage($id, $num) { ?>
 	<table>
 	<tr><td colspan=2><hr></td></tr>
 	<tr>
-		<td><a href="#" class="info">Change Name<span>This changes the short name, visible on the right, of this recording</span></a></td>
+		<td><a href="#" class="info"><?php echo _("Change Name");?><span><?php echo _("This changes the short name, visible on the right, of this recording");?></span></a></td>
 		<td><input type="text" name="rname" value="<?php echo $this_recording['displayname'] ?>"></td>
 	</tr>
 	<tr>
-	    	<td><a href="#" class="info">Descriptive Name<span>This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc</span></a></td>
+	    	<td><a href="#" class="info"><?php echo _("Descriptive Name");?><span><?php echo _("This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc");?></span></a></td>
 	    	<td>&nbsp;<textarea name="notes" rows="3" cols="40"><?php echo $this_recording['description'] ?></textarea></td>
 	</tr>
 	</table>
 	<hr />
-	Files:<br />
+	<?php echo _("Files");?>:<br />
 	<table>
 	<?php 
 	$rec = recordings_get($id);
