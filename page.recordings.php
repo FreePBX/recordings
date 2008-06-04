@@ -370,7 +370,7 @@ function recording_sysfiles() {
 	<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 	<input type="hidden" name="action" value="newsysrec">
 	<input type="hidden" name="display" value="recordings">
-	<select name="sysrec"/>
+	<select name="sysrec">
 <?php
 	foreach ($sysrecs as $srcount => $sr) {
 		// echo '<option value="'.$vmc.'"'.($vmc == $ivr_details['dircontext'] ? ' SELECTED' : '').'>'.$vmc."</option>\n";
