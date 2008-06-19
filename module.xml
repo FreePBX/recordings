@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.6.1</version>
+	<version>3.3.6.2</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.6.2* #2604, #2843 fix mal-formed html tags, Russian Translation
 		*3.3.6.1* #2591, enhance code so bad directory copy errors are reported
 		*3.3.6* it translations, removed legacy ext-recordings left in error
 		*3.3.5.4* #2426 remove non-functioning download link
@@ -30,6 +31,6 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
-	<location>release/2.4/recordings-3.3.6.1.tgz</location>
-	<md5sum>1f77ab194e78ac38b256386f4db1513a</md5sum>
+	<location>release/2.4/recordings-3.3.6.2.tgz</location>
+	<md5sum>61d64bfca0e3ca1e407ed0a32f60f594</md5sum>
 </module>
