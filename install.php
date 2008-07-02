@@ -5,6 +5,7 @@ global $asterisk_conf;
 global $db;
 $recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
+$autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
 
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
@@ -22,7 +23,12 @@ $fcc->update();
 unset($fcc);
 
 // Make sure table exists
-$sql = "CREATE TABLE IF NOT EXISTS recordings ( id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, displayname VARCHAR(50) , filename BLOB, description VARCHAR(254));";
+$sql = "CREATE TABLE IF NOT EXISTS recordings ( 
+	id INTEGER NOT NULL  PRIMARY KEY $autoincrement,
+	displayname VARCHAR(50) , 
+	filename BLOB, 
+	description VARCHAR(254))
+;";
 $result = $db->query($sql);
 if(DB::IsError($result)) {
         die_freepbx($result->getDebugInfo());
@@ -42,7 +48,7 @@ if (!is_writable($recordings_directory)) {
 $sql = "SELECT * FROM recordings where displayname = '__invalid'";
 $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
 if (!isset($results['filename'])) {
-	sql("INSERT INTO recordings values ('', '__invalid', 'install done', '')");
+       sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '__invalid', 'install done', '');" );
 	$dh = opendir($recordings_directory);
 	while (false !== ($file = readdir($dh))) { // http://au3.php.net/readdir 
 		if ($file[0] != "." && $file != "CVS" && $file != "svn" && !is_dir("$recordings_directory/$file")) {
@@ -59,10 +65,16 @@ global $db;
 
 // Upgrade to recordings 3.0
 // Change filename from VARCHAR(80) to BLOB
-$sql = 'ALTER TABLE recordings CHANGE filename filename BLOB';
-$result = $db->query($sql);
-if(DB::IsError($result)) {
-	die_freepbx($result->getDebugInfo());
-}
-
+// Upgrade to recordings 3.0
+// Change filename from VARCHAR(80) to BLOB
+// no need to add this if we are on sqlite, since the initial tables will
+// include the correct columns already.
+if  (($amp_conf["AMPDBENGINE"] != "sqlite") && ($amp_conf["AMPDBENGINE"] != "sqlite3")) 
+{
+	$sql = 'ALTER TABLE recordings CHANGE filename filename BLOB';
+	$result = $db->query($sql);
+	if(DB::IsError($result)) {
+		die($result->getDebugInfo());
+	}
+ }
 ?>

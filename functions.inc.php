@@ -103,7 +103,8 @@ function recordings_add($displayname, $filename) {
 	} else {
 		$fname = $filename;
 	}
-	sql("INSERT INTO recordings values ('', '$displayname', '$fname', 'No long description available')");
+	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', 'No long description available')");
+
 	return true;
 	
 }
