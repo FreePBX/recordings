@@ -164,7 +164,7 @@ function recording_addpage($usersnum) {
 		<input type="hidden" name="display" value="recordings">
 		<?php
 		echo _("If you wish to make and verify recordings from your phone, please enter your extension number here:"); ?>
-		<input type="text" size="6" name="usersnum"> <input name="Submit" type="submit" value="<?php echo _("Go"); ?>">
+		<input type="text" size="6" name="usersnum" tabindex="<?php echo ++$tabindex;?>"> <input name="Submit" type="submit" value="<?php echo _("Go"); ?>" tabindex="<?php echo ++$tabindex;?>">
 		</form>
 	<?php } ?>
 	</p>
@@ -174,8 +174,8 @@ function recording_addpage($usersnum) {
 		<input type="hidden" name="display" value="recordings">
 		<input type="hidden" name="action" value="recordings_start">
                 <input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
-		<input type="file" name="ivrfile"/>
-		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page reloads."))?>');"/>
+		<input type="file" name="ivrfile" tabindex="<?php echo ++$tabindex;?>"/>
+		<input type="button" value="<?php echo _("Upload")?>" onclick="document.upload.submit(upload);alert('<?php echo addslashes(_("Please wait until the page reloads."))?>');" tabindex="<?php echo ++$tabindex;?>"/>
 	</form>
 	<?php
 	if (isset($_FILES['ivrfile']['tmp_name']) && is_uploaded_file($_FILES['ivrfile']['tmp_name'])) {
@@ -209,14 +209,14 @@ function recording_addpage($usersnum) {
 	<table style="text-align:right;">
 		<tr valign="top">
 			<td valign="top"><?php echo _("Name this Recording")?>: </td>
-			<td style="text-align:left"><input type="text" name="rname" value="<?php echo $rname; ?>"></td>
+			<td style="text-align:left"><input type="text" name="rname" value="<?php echo $rname; ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 		</tr>
 	</table>
 	
 	<h6><?php 
 	echo _("Click \"SAVE\" when you are satisfied with your recording");
 	echo "<input type=\"hidden\" name=\"suffix\" value=\"$suffix\">\n"; ?>
-	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6> 
+	<input name="Submit" type="submit" value="<?php echo _("Save")?>" tabindex="<?php echo ++$tabindex;?>"></h6> 
 	<?php recordings_form_jscript(); ?>
 	</form>
 	</div>
@@ -251,11 +251,11 @@ function recording_editpage($id, $num) { ?>
 	<tr><td colspan=2><hr></td></tr>
 	<tr>
 		<td><a href="#" class="info"><?php echo _("Change Name");?><span><?php echo _("This changes the short name, visible on the right, of this recording");?></span></a></td>
-		<td><input type="text" name="rname" value="<?php echo $this_recording['displayname'] ?>"></td>
+		<td><input type="text" name="rname" value="<?php echo $this_recording['displayname'] ?>" tabindex="<?php echo ++$tabindex;?>"></td>
 	</tr>
 	<tr>
 	    	<td><a href="#" class="info"><?php echo _("Descriptive Name");?><span><?php echo _("This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc");?></span></a></td>
-	    	<td>&nbsp;<textarea name="notes" rows="3" cols="40"><?php echo $this_recording['description'] ?></textarea></td>
+	    	<td>&nbsp;<textarea name="notes" rows="3" cols="40" tabindex="<?php echo ++$tabindex;?>"><?php echo $this_recording['description'] ?></textarea></td>
 	</tr>
 	</table>
 	<hr />
@@ -278,7 +278,7 @@ function recording_editpage($id, $num) { ?>
 	recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path);
 	?>
 	</table>
-	<input name="Submit" type="submit" value="<?php echo _("Save")?>"></h6>
+	<input name="Submit" type="submit" value="<?php echo _("Save")?>" tabindex="<?php echo ++$tabindex;?>"></h6>
 	<?php recordings_popup_jscript(); ?>	
 	<?php recordings_form_jscript(); ?>	
 	</form>
