@@ -235,10 +235,11 @@ function recording_editpage($id, $num) { ?>
 		return;
 	}?>
 	<?php 
-	echo "<a href=config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num);
-	echo "&amp;id=$id>";
-	echo _("Remove Recording");
-	echo "</a> <i style='font-size: x-small'>(";
+	$delURL = "config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num)."&amp;id=$id";
+	$tlabel = _("Remove Recording");
+	$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
+	echo "<a href=".$delURL.">".$label."</a>";
+	echo "<i style='font-size: x-small'>(";
 	echo _("Note, does not delete file from computer");
 	echo ")</i>";
 	?>
