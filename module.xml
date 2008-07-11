@@ -8,7 +8,7 @@
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
-		*3.3.7.0* Version 2.5
+		*3.3.7* #2889 add optional feature codes linked to recordings to be able to easily change
 		*3.3.6.2* #2604, #2843 fix mal-formed html tags, Russian Translation
 		*3.3.6.1* #2591, enhance code so bad directory copy errors are reported
 		*3.3.6* it translations, removed legacy ext-recordings left in error
