@@ -22,6 +22,12 @@ $usersnum = isset($_REQUEST['usersnum'])?$_REQUEST['usersnum']:'';
 $sysrec = isset($_REQUEST['sysrec'])?$_REQUEST['sysrec']:'';
 $suffix = isset($_REQUEST['suffix']) && trim($_REQUEST['suffix'] != "") ? $_REQUEST['suffix'] : 'wav';
 
+$fcode  = isset($_REQUEST['fcode']) && $_REQUEST['fcode'] != '' ? 1 : 0;
+$fcode_pass = isset($_REQUEST['fcode_pass'])?$_REQUEST['fcode_pass']:'';
+
+$fcbase = '*29';
+$default_pos = 0;
+
 $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $astsnd .= "/sounds/";
 
@@ -127,7 +133,7 @@ switch ($action) {
 		break;
 		
 	case "edited":
-		recordings_update($id, $rname, $notes, $_REQUEST);
+		recordings_update($id, $rname, $notes, $_REQUEST, $fcode, $fcode_pass);
 		recording_sidebar($id, $usersnum);
 		recording_editpage($id, $usersnum);
 		echo '<div class="content"><h5>'._("System Recording").' "'.$rname.'" '._("Updated").'!</h5></div>';
@@ -223,8 +229,12 @@ function recording_addpage($usersnum) {
 <?php
 }
 
-function recording_editpage($id, $num) { ?>
-	
+function recording_editpage($id, $num) { 
+	global $fcbase;
+	global $default_pos;
+	global $fcode;
+	global $fcode_pass;
+?>
 	<div class="content">
 	<h2><?php echo _("System Recordings")?></h2>
 	<h3><?php echo _("Edit Recording") ?></h3>
@@ -239,7 +249,7 @@ function recording_editpage($id, $num) { ?>
 	$tlabel = _("Remove Recording");
 	$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
 	echo "<a href=".$delURL.">".$label."</a>";
-	echo "<i style='font-size: x-small'>(";
+	echo "<i style='font-size: x-small'>&nbsp;(";
 	echo _("Note, does not delete file from computer");
 	echo ")</i>";
 	?>
@@ -258,30 +268,94 @@ function recording_editpage($id, $num) { ?>
 	    	<td><a href="#" class="info"><?php echo _("Descriptive Name");?><span><?php echo _("This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc");?></span></a></td>
 	    	<td>&nbsp;<textarea name="notes" rows="3" cols="40" tabindex="<?php echo ++$tabindex;?>"><?php echo $this_recording['description'] ?></textarea></td>
 	</tr>
-	</table>
-	<hr />
-	<?php echo _("Files");?>:<br />
-	<table>
-	<?php 
-	$rec = recordings_get($id);
+
+<?php 
+	// This was being called twice: $rec = recordings_get($id);
+	$rec = $this_recording;
 	$fn = $rec['filename'];
 	$files = explode('&', $fn);
 	$counter = 0;
 	$arraymax = count($files)-1;
+	$sndfile_html = "";
+	foreach ($files as $item) {
+		$sndfile_html .=  recordings_display_sndfile($item, $counter, $arraymax, $recordings_astsnd_path, $rec['fcode']);
+		$counter++;
+	}	
+	$sndfile_html .=  recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path, $rec['fcode']);
+	if ($arraymax == 0 && isset($files[0]) && substr($files[0],0,7) == 'custom/') {
+?>
+	<tr>
+		<td><a class="info" href="#"><?php echo _("Link to Feature Code")?><span><?php echo _("Check this box to create an options feature code that will allow this recording to be changed directly.")?></span></a>:
+		</td>
+		<td>
+	<input type='checkbox' tabindex="<?php echo ++$tabindex;?>"name='fcode' id="fcode" <?php if ($rec['fcode']=="1") { echo 'CHECKED'; }?> OnClick="resetDefaultSound();"; return true;'><?php echo sprintf(_("Optional Feature Code %s"),$fcbase.$id)?>
+		</td>
+	</tr>
+	<tr>
+		<td><a href="#" class="info"><?php echo _("Feature Code Password");?><span><?php echo _("Optional password to protect access to this feature code which allows a user to re-record it.");?></span></a></td>
+		<td><input type="text" name="fcode_pass" id="fcode_pass" value="<?php echo $rec['fcode_pass'] ?>" tabindex="<?php echo ++$tabindex;?>"></td>
+	</tr>
+<?php 
+	} else {
+?>
+	<tr>
+    <td colspan="2"><a class="info" href="#"><?php echo _("Direct Access Feature Code Not Available")?><span><?php echo _("Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multipe individual ones.")?></span></a>:
+    </td>
+	</tr>
+<?php 
+	}
+?>
+
+	<tr><td colspan="2"><hr /></td></tr>
+	</table>
+	<?php echo _("Files");?>:<br />
+	<table>
+	<?php 
 	// globals seem to busted in PHP5 define here for now
 	$recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 	$recordings_astsnd_path .= "/sounds/";
 
-	foreach ($files as $item) {
-		recordings_display_sndfile($item, $counter, $arraymax, $recordings_astsnd_path);
-		$counter++;
-	}	
-	recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path);
+	// recordings_display_sndfile functions need to be run above so we have $default_pos set
+	//
+	echo $sndfile_html;
 	?>
 	</table>
 	<input name="Submit" type="submit" value="<?php echo _("Save")?>" tabindex="<?php echo ++$tabindex;?>"></h6>
 	<?php recordings_popup_jscript(); ?>	
 	<?php recordings_form_jscript(); ?>	
+	<script language="javascript">
+	<!-- Begin
+	var sysrec0_idx;
+	function initPage() {
+		sysrec0_idx = document.getElementById("sysrec0").selectedIndex;
+		alert('Got here with sysrec0_idx as:'.sysrec0_idx);
+	}
+	function resetDefaultSound() {
+		if (document.getElementById('fcode').checked) {
+			document.getElementById('sysrec0').selectedIndex=<?php echo $default_pos ?>;
+			document.getElementById('sysrec1').selectedIndex=0;
+
+			document.getElementById('sysrec0').disabled=true;
+			document.getElementById('sysrec1').disabled=true;
+			document.getElementById('play0').style.visibility='hidden';
+			document.getElementById('play1').style.visibility='hidden';
+			document.getElementById('down0').style.visibility='hidden';
+			document.getElementById('up1').style.visibility='hidden';
+			document.getElementById('del0').style.visibility='hidden';
+			document.getElementById('del1').style.visibility='hidden';
+		} else {
+			document.getElementById('sysrec0').disabled=false;
+			document.getElementById('sysrec1').disabled=false;
+			document.getElementById('play0').style.visibility='visible';
+			document.getElementById('play1').style.visibility='visible';
+			document.getElementById('down0').style.visibility='visible';
+			document.getElementById('up1').style.visibility='visible';
+			document.getElementById('del0').style.visibility='visible';
+			document.getElementById('del1').style.visibility='visible';
+		}
+	}
+	// End -->
+	</script>
 	</form>
 	</div>
 <?php
@@ -385,49 +459,61 @@ function recording_sysfiles() {
 <?php
 }
 
-function recordings_display_sndfile($item, $count, $max, $astpath) {
+function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
+	global $default_pos;
 	global $amp_conf;
+
+	$disabled_state = $fcode == 0 ? "" : "disabled='true' ";
+	$hidden_state = $fcode == 0 ? "" : "style='visibility:hidden' ";
+
+	$html_text = "";
 	// Note that when using this, it needs a <table> definition around it.
 	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 	$astsnd .= "/sounds/";
 	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
-	print "<tr><td><select id='sysrec$count' name='sysrec$count'>\n";
-	echo '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
+	$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count'>\n";
+	$html_txt .=  '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
+	$index=0;
 	foreach ($sysrecs as $sr) {
-		echo '<option value="'.$sr.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
+		$html_txt .=  '<option value="'.$sr.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
+		if ($sr == $item) {
+			$default_pos = $index+1;
+		}
+		$index++;
 	}
-	print "</select></td>\n";
+	$html_txt .=  "</select></td>\n";
 
-	echo "<td>";
+	$html_txt .=  "<td>";
 	$audio=$astpath;
 
 	$REC_CRYPT_PASSWORD = urlencode((isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0');
 	$recurl="modules/recordings/popup.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$audio";
 
-	echo "<a href='#' type='submit' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'  >";
-        echo "<img border='0' width='20'  height='20' src='images/play.png' title='Click here to play this recording' />";
-        echo "</img></td>";
+	$html_txt .=  "<a href='#' $hidden_state type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
+	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='Click here to play this recording' />";
+	$html_txt .=  "</img></td>";
 
 	if ($count==0) {
-		 print "<td></td>\n"; 
+		 $html_txt .=  "<td></td>\n"; 
 	} else {
-		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		echo '<td><input name="up'.$count.'" width=10 height=20 border=5  title="Move Up" type="image" src="images/scrollup.gif"  value="'._("Move Up").'"/>';
-		print "</td>\n"; 
+		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		$html_txt .=  "<td><input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='Move Up' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
+		$html_txt .=  "</td>\n"; 
 	} if ($count > $max) {
-		print "<td></td>\n"; 
+		$html_txt .=  "<td></td>\n"; 
 	} else {
-		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		echo '<td><input name="down'.$count.'" width=10 height=20 border=0 title="Move Down" type="image" src="images/scrolldown.gif"  value="'._("Move Down")."\">\n";
-		echo "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		print "</td>\n"; 
+		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		$html_txt .=  "<td><input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='Move Down' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
+		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		$html_txt .=  "</td>\n"; 
 	}
-	echo '<td><input name="del'.$count.'" type="image" border=0 title="Delete" src="images/trash.png" value="'._("Delete")."\">\n";
-	echo "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-	echo "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-	print "</td>\n"; 
+	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' border=0 title='Delete' src='images/trash.png' value='"._("Delete")."'>\n";
+	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+	$html_txt .=  "</td>\n"; 
 
-	print "</tr>\n";
+	$html_txt .=  "</tr>\n";
+	return $html_txt;
 }
 
 ?>

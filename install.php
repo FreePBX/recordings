@@ -3,6 +3,19 @@
 global $amp_conf;
 global $asterisk_conf;
 global $db;
+
+if (! function_exists("out")) {
+	function out($text) {
+		echo $text."<br />";
+	}
+}
+
+if (! function_exists("outn")) {
+	function outn($text) {
+		echo $text;
+	}
+}
+
 $recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
@@ -77,4 +90,34 @@ if  (($amp_conf["AMPDBENGINE"] != "sqlite") && ($amp_conf["AMPDBENGINE"] != "sql
 		die($result->getDebugInfo());
 	}
  }
+
+	// Version 2.5 upgrade
+	outn(_("checking for fcode field.."));
+	$sql = "SELECT `fcode` FROM recordings";
+	$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+	if(DB::IsError($check)) {
+		// add new field
+		$sql = "ALTER TABLE recordings ADD `fcode` TINYINT( 1 ) DEFAULT 0 ;";
+		$result = $db->query($sql);
+		if(DB::IsError($result)) {
+			die_freepbx($result->getDebugInfo());
+		}
+		out(_("OK"));
+	} else {
+		out(_("already exists"));
+	}
+	outn(_("checking for fcode_pass field.."));
+	$sql = "SELECT `fcode_pass` FROM recordings";
+	$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+	if(DB::IsError($check)) {
+		// add new field
+		$sql = "ALTER TABLE recordings ADD `fcode_pass` VARCHAR( 20 ) NULL ;";
+		$result = $db->query($sql);
+		if(DB::IsError($result)) {
+			die_freepbx($result->getDebugInfo());
+		}
+		out(_("OK"));
+	} else {
+		out(_("already exists"));
+	}
 ?>

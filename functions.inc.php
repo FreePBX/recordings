@@ -41,9 +41,40 @@ function recordings_get_config($engine) {
 					//$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
 				}
 			}
+
+			// Now generate the Feature Codes to edit recordings
+			//
+			$recordings = recordings_list();
+			foreach ($recordings as $item) {
+
+				// Get the feature code, and do a sanity check if it is not suppose to be active and delete it
+				//
+				if ($item['fcode'] != 0) {
+					$fcc = new featurecode($modulename, 'edit-recording-'.$item['id']);
+					$fcode = $fcc->getCodeActive();
+					unset($fcc);
+				} else {
+					$fcc = new featurecode('recordings', 'edit-recording-'.$item['id']);
+					$fcc->delete();
+					unset($fcc);	
+					continue; // loop back to foreach
+				}
+
+				if ($fcode != '') {
+					// Do a sanity check, there should be no compound files
+					//
+					if (strpos($item['filename'], '&') === false && trim($item['filename']) != '') {
+						$fcode_pass = (trim($item['fcode_pass']) != '') ? ','.$item['fcode_pass'] : '';
+						$ext->add($appcontext, $fcode, '', new ext_macro('user-callerid'));
+						$ext->add($appcontext, $fcode, '', new ext_wait('2'));
+						$ext->add($appcontext, $fcode, '', new ext_macro('systemrecording', 'docheck,'.$item['filename'].$fcode_pass));
+						//$ext->add($appcontext, $fcode, '', new ext_macro('hangup'));
+					}
+				}
+			}
 		break;
 	}
-}			
+}
 
 function recordings_get_id($fn) {
 	global $db;
@@ -69,12 +100,21 @@ function recordings_list() {
 	// I'm not clued on how 'Department's' work. There obviously should be 
 	// somee checking in here for it.
 
-        $sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
-        $results = $db->getAll($sql);
-        if(DB::IsError($results)) {
-                $results = null;
-        }
-        return $results;
+	$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
+	$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
+	if(DB::IsError($results)) {
+		return array();
+	}
+	// Make array backward compatible, put first 4 columns as numeric
+	$count = 0;
+	foreach($results as $item) {
+		$results[$count][0] = $item['id'];
+		$results[$count][1] = $item['displayname'];
+		$results[$count][2] = $item['filename'];
+		$results[$count][3] = $item['description'];
+		$count++;
+	}
+	return $results;
 }
 
 function recordings_get($id) {
@@ -109,10 +149,11 @@ function recordings_add($displayname, $filename) {
 	
 }
 
-function recordings_update($id, $rname, $descr, $_REQUEST) {
+function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass='') {
 
 	// Update the descriptive fields
-	$results = sql("UPDATE recordings SET displayname = \"$rname\", description = \"$descr\" WHERE id = \"$id\"");
+	$fcode_pass = preg_replace("/[^0-9*]/" ,"", trim($fcode_pass));
+	$results = sql("UPDATE recordings SET displayname = '".addslashes($rname)."', description = '".addslashes($descr)."', fcode='$fcode', fcode_pass='".$fcode_pass."' WHERE id = '$id'");
 	
 	// Build the file list from _REQUEST
         $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
@@ -120,18 +161,37 @@ function recordings_update($id, $rname, $descr, $_REQUEST) {
 	$recordings = Array();
 
 	// Set the file names from the submitted page, sysrec[N]
-	foreach ($_REQUEST as $key => $val) {
-		$res = strpos($key, 'sysrec');
-		if ($res !== false) {
-			// strip out any relative paths, since this is coming from a URL
-			str_replace('..','',$val);
+	// We don't set if feature code was selected, we use what was already there
+	// because the fields will have been disabled and won't be accessible in the
+	// $_REQUEST array anyhow
+	//
+	if ($fcode != 1) {
+		// delete the feature code if it existed
+		//
+		$fcc = new featurecode('recordings', 'edit-recording-'.$id);
+		$fcc->delete();
+		unset($fcc);	
+		foreach ($_REQUEST as $key => $val) {
+			$res = strpos($key, 'sysrec');
+			if ($res !== false) {
+				// strip out any relative paths, since this is coming from a URL
+				str_replace('..','',$val);
 
-			$recordings[substr($key,6)]=$val;
+				$recordings[substr($key,6)]=$val;
+			}
 		}
-	}
 
-	// Stick the filename in the database
-	recordings_set_file($id, implode('&', $recordings));
+		// Stick the filename in the database
+		recordings_set_file($id, implode('&', $recordings));
+	} else {
+		// Add the feature code if it is needed
+		//
+		$fcc = new featurecode('recordings', 'edit-recording-'.$id);
+		$fcc->setDescription("Edit Recording: $rname");
+		$fcc->setDefault('*29'.$id);
+		$fcc->update();
+		unset($fcc);	
+	}
 
 	// In _REQUEST there are also various actions (possibly) 
 	// up[N] - Move file id N up one place
@@ -192,12 +252,17 @@ function recordings_delete_file($id, $src) {
 
 function recordings_del($id) {
 	$results = sql("DELETE FROM recordings WHERE id = \"$id\"");
+
+	// delete the feature code if it existed
+	$fcc = new featurecode('recordings', 'edit-recording-'.$id);
+	$fcc->delete();
+	unset($fcc);	
 }
 
 function recordings_set_file($id, $filename) {
 	// Strip off any dangling &'s on the end:
 	$filename = rtrim($filename, '&');
-	$results = sql("UPDATE recordings SET filename = \"$filename\" WHERE id = \"$id\"");
+	$results = sql("UPDATE recordings SET filename = '".addslashes($filename)."' WHERE id = '$id'");
 }
 
 
