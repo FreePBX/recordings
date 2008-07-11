@@ -31,14 +31,12 @@ function recordings_get_config($engine) {
 					$ext->add($appcontext, $fc_save, '', new ext_macro('user-callerid'));
 					$ext->add($appcontext, $fc_save, '', new ext_wait('2'));
 					$ext->add($appcontext, $fc_save, '', new ext_macro('systemrecording', 'dorecord'));
-					//$ext->add($appcontext, $fc_save, '', new ext_goto('1', 'dorecord'));
 				}
 
 				if ($fc_check != '') {
 					$ext->add($appcontext, $fc_check, '', new ext_macro('user-callerid'));
 					$ext->add($appcontext, $fc_check, '', new ext_wait('2'));
 					$ext->add($appcontext, $fc_check, '', new ext_macro('systemrecording', 'docheck'));
-					//$ext->add($appcontext, $fc_check, '', new ext_goto('1', 'docheck'));
 				}
 			}
 
