@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.7</version>
+	<version>3.3.7.1</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.7.1* dependency to 2.5
 		*3.3.7* #2889 add optional feature codes linked to recordings to be able to easily change
 		*3.3.6.2* #2604, #2843 fix mal-formed html tags, Russian Translation
 		*3.3.6.1* #2591, enhance code so bad directory copy errors are reported
@@ -32,6 +33,9 @@
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
+	<depends>
+		<version>2.5.0alpha1</version>
+	</depends>
 	<location>release/2.5/recordings-3.3.7.tgz</location>
 	<md5sum>b6af903a8dee32912c2173004d3a9747</md5sum>
 </module>
