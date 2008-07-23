@@ -245,13 +245,25 @@ function recording_editpage($id, $num) {
 		return;
 	}?>
 	<?php 
-	$delURL = "config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num)."&amp;id=$id";
-	$tlabel = _("Remove Recording");
-	$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
-	echo "<a href=".$delURL.">".$label."</a>";
-	echo "<i style='font-size: x-small'>&nbsp;(";
-	echo _("Note, does not delete file from computer");
-	echo ")</i>";
+	$usage_list = recordings_list_usage($id);
+	if (count($usage_list)) {
+?>
+		<a href="#" class="info"><?php echo _("Usage List");?><span><?php echo _("This recording is being used in the following instances. You can not remove this recording while being used. To rec-record, you can enable and use the feature code below if allowed.");?></span></a>
+<?php
+		$count = 0;
+		foreach ($usage_list as $link) {
+			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="images/application_link.png"/>&nbsp;'.$link['description'].'</span>';
+			echo "<br /><a href=".$link['url_query'].">".$label."</a>";
+		}
+	} else {
+		$delURL = "config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num)."&amp;id=$id";
+		$tlabel = _("Remove Recording");
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
+		echo "<a href=".$delURL.">".$label."</a>";
+		echo "<i style='font-size: x-small'>&nbsp;(";
+		echo _("Note, does not delete file from computer");
+		echo ")</i>";
+	}
 	?>
 	<form name="prompt"  action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="edited">

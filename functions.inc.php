@@ -74,6 +74,36 @@ function recordings_get_config($engine) {
 	}
 }
 
+function recordings_get_or_create_id($fn, $module) {
+	$id = recordings_get_id($fn);
+	if ($id != null) {
+		return $id;
+	} else {
+		// Create the id, name it the file name or if multi-part ...
+		//
+		$dname = explode('&',$displayname);
+		$displayname = 'auto-created: ';
+		$displayname .= count($dname) == 1 ? $fn : $dname[0]."&...";
+		$description = sprintf(_("Missing Sound file auto-created from migration of %s module"),$module);
+		recordings_add($displayname, $fn, $description='');
+
+		// get the id we just created
+		//
+		$id = recordings_get_id($fn);
+
+		// Notify of issue
+		//
+		$nt =& notifications::create($db);
+		$text = sprintf(_("Non-Existent Recording in module %s"),$module);
+		$extext = sprintf(_("The %s referenced a recording file listed below that does not exists. An entry has been generated, named %s, with the referenced file(s) but you should confirm that it really works and the real files exist. The file(s) referenced: %s "),$module, $displayname, $fn);
+		$nt->add_error('recordings', 'NEWREC-'.$id, $text, $extext, '', true, true);
+		unset($nt);
+
+		// return the id just created
+		return $id;
+	}
+}
+
 function recordings_get_id($fn) {
 	global $db;
 	
@@ -125,7 +155,7 @@ function recordings_get($id) {
 	return $results;
 }
 
-function recordings_add($displayname, $filename) {
+function recordings_add($displayname, $filename, $description='') {
 	global $db;
 	global $recordings_astsnd_path;
 
@@ -141,7 +171,9 @@ function recordings_add($displayname, $filename) {
 	} else {
 		$fname = $filename;
 	}
-	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', 'No long description available')");
+	$description = ($description != '') ? addslashes($description) : _("No long description available");
+	$displayname = addslashes($displayname);
+	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', '$description')");
 
 	return true;
 	
@@ -290,6 +322,22 @@ function recordings_getdir($snddir) {
 		$files[] = $snddir.'/'.$fn;
 	}
 	return $files;
+}
+
+function recordings_list_usage($id) {
+	global $active_modules;
+	$full_usage_arr = array();
+
+	foreach(array_keys($active_modules) as $mod) {
+		$function = $mod."_recordings_usage";
+		if (function_exists($function)) {
+			$recordings_usage = $function($id);
+			if (!empty($recordings_usage)) {
+				$full_usage_arr = array_merge($full_usage_arr, $recordings_usage);
+			}
+		}
+	}
+	return $full_usage_arr;
 }
 
 ?>
