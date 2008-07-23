@@ -122,7 +122,7 @@ function recordings_get_file($id) {
 }
 	
 
-function recordings_list() {
+function recordings_list($compound=true) {
 	global $db;
 
 	// I'm not clued on how 'Department's' work. There obviously should be 
@@ -136,10 +136,14 @@ function recordings_list() {
 	// Make array backward compatible, put first 4 columns as numeric
 	$count = 0;
 	foreach($results as $item) {
-		$results[$count][0] = $item['id'];
-		$results[$count][1] = $item['displayname'];
-		$results[$count][2] = $item['filename'];
-		$results[$count][3] = $item['description'];
+		if (!$coumpound && strstr($item['filename'],'&') !== false) {
+			unset($results[$count]);
+		} else {
+			$results[$count][0] = $item['id'];
+			$results[$count][1] = $item['displayname'];
+			$results[$count][2] = $item['filename'];
+			$results[$count][3] = $item['description'];
+		}
 		$count++;
 	}
 	return $results;
