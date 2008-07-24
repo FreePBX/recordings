@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.8</version>
+	<version>3.3.8.1</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.8.1* fixed typo in recordings_list
 		*3.3.8* #2063, #2064, #2065, #2066, #2067, #2068, #2069
 		*3.3.7.1* dependency to 2.5
 		*3.3.7* #2889 add optional feature codes linked to recordings to be able to easily change

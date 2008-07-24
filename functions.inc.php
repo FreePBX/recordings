@@ -136,7 +136,7 @@ function recordings_list($compound=true) {
 	// Make array backward compatible, put first 4 columns as numeric
 	$count = 0;
 	foreach($results as $item) {
-		if (!$coumpound && strstr($item['filename'],'&') !== false) {
+		if (!$compound && strstr($item['filename'],'&') !== false) {
 			unset($results[$count]);
 		} else {
 			$results[$count][0] = $item['id'];
