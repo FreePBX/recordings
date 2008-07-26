@@ -349,7 +349,6 @@ function recording_editpage($id, $num) {
 
 			document.getElementById('sysrec0').disabled=true;
 			document.getElementById('sysrec1').disabled=true;
-			document.getElementById('play0').style.visibility='hidden';
 			document.getElementById('play1').style.visibility='hidden';
 			document.getElementById('down0').style.visibility='hidden';
 			document.getElementById('up1').style.visibility='hidden';
@@ -358,7 +357,6 @@ function recording_editpage($id, $num) {
 		} else {
 			document.getElementById('sysrec0').disabled=false;
 			document.getElementById('sysrec1').disabled=false;
-			document.getElementById('play0').style.visibility='visible';
 			document.getElementById('play1').style.visibility='visible';
 			document.getElementById('down0').style.visibility='visible';
 			document.getElementById('up1').style.visibility='visible';
@@ -501,25 +499,25 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$REC_CRYPT_PASSWORD = urlencode((isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0');
 	$recurl="modules/recordings/popup.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$audio";
 
-	$html_txt .=  "<a href='#' $hidden_state type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
-	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='Click here to play this recording' />";
+	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
+	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='"._("Click here to play this recording")."' />";
 	$html_txt .=  "</img></td>";
 
 	if ($count==0) {
 		 $html_txt .=  "<td></td>\n"; 
 	} else {
 		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<td><input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='Move Up' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
+		$html_txt .=  "<td><input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='"._("Move Up")."' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
 		$html_txt .=  "</td>\n"; 
 	} if ($count > $max) {
 		$html_txt .=  "<td></td>\n"; 
 	} else {
 		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<td><input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='Move Down' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
+		$html_txt .=  "<td><input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='"._("Move Down")."' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
 		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
 		$html_txt .=  "</td>\n"; 
 	}
-	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' border=0 title='Delete' src='images/trash.png' value='"._("Delete")."'>\n";
+	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' border=0 title='"._("Delete")."' src='images/trash.png' value='"._("Delete")."'>\n";
 	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
 	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
 	$html_txt .=  "</td>\n"; 
