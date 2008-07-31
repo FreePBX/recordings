@@ -5,7 +5,7 @@
  * plays recording file
  */
 
-if (isset($_GET['recording'])) {
+if (isset($_REQUEST['recording'])) {
 
   include_once("crypt.php");
 
@@ -13,7 +13,7 @@ if (isset($_GET['recording'])) {
 
   $crypt = new Crypt();
 
-  $opath = $_GET['recording'];
+  $opath = $_REQUEST['recording'];
   $path = $crypt->decrypt($opath,$REC_CRYPT_PASSWORD);
 
   // strip ".." from path for security

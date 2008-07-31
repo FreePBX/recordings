@@ -24,8 +24,10 @@ include_once("crypt.php");
   $crypt = new Crypt();
 
 	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
-  $file = $crypt->encrypt($_REQUEST['recording'],$REC_CRYPT_PASSWORD);
-  $ufile = basename($_REQUEST['recording']);
+
+  $path = $crypt->decrypt($_REQUEST['recordingpath'],$REC_CRYPT_PASSWORD);
+  $file = $crypt->encrypt($path.$_REQUEST['recording'],$REC_CRYPT_PASSWORD);
+  $ufile = $_REQUEST['recording'];
 
   if (isset($file)) {
     echo("<br>");

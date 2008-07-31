@@ -509,7 +509,11 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$html_txt .=  "<td>";
 	$audio=$astpath;
 
-	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&recording=$audio";
+	include_once("crypt.php");
+  $crypt = new Crypt();
+	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
+  $audio = $crypt->encrypt($audio,$REC_CRYPT_PASSWORD);
+	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&recordingpath=$audio&recording=";
 
 	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
 	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='"._("Click here to play this recording")."' />";
