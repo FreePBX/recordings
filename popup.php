@@ -23,14 +23,13 @@ include_once("crypt.php");
 
   $crypt = new Crypt();
 
-  $REC_CRYPT_PASSWORD = (isset($_REQUEST['cryptpass']) && trim($_REQUEST['cryptpass']) != "")?trim($_REQUEST['cryptpass']):'moufdsuu3nma0';
+	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
   $file = $crypt->encrypt($_REQUEST['recording'],$REC_CRYPT_PASSWORD);
   $ufile = basename($_REQUEST['recording']);
-  $REC_CRYPT_PASSWORD = urlencode($REC_CRYPT_PASSWORD);
 
   if (isset($file)) {
     echo("<br>");
-    echo("<embed src='".$_SERVER['PHP_SELF']."?display=recordings&action=audio&cryptpass=$REC_CRYPT_PASSWORD&recording=$file' width=300, height=20 autoplay=true loop=false></embed><br>");
+    echo("<embed src='".$_SERVER['PHP_SELF']."?display=recordings&action=audio&recording=$file' width=300, height=20 autoplay=true loop=false></embed><br>");
     echo("<br><h1 class='popup_download'>playing: $ufile</h1><br>");
   }
 ?>

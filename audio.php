@@ -9,12 +9,12 @@ if (isset($_GET['recording'])) {
 
   include_once("crypt.php");
 
-  $REC_CRYPT_PASSWORD = (isset($_REQUEST['cryptpass']) && trim($_REQUEST['cryptpass']) != "")?trim($_REQUEST['cryptpass']):'moufdsuu3nma0';
+	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
 
   $crypt = new Crypt();
 
   $opath = $_GET['recording'];
-  $path = $crypt->decrypt($opath,urldecode($REC_CRYPT_PASSWORD));
+  $path = $crypt->decrypt($opath,$REC_CRYPT_PASSWORD);
 
   // strip ".." from path for security
   $path = preg_replace('/\.\./','',$path);
