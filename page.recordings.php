@@ -15,6 +15,18 @@
 //GNU General Public License for more details.
 
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
+
+// Lite weight popup code here, don't need everything else below
+//
+switch ($action) {
+	case 'popup':
+	case 'audio':
+  	include_once("$action.php");
+		exit;
+		break;
+	default:
+		break;
+}
 $id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
 $notes = isset($_REQUEST['notes'])?$_REQUEST['notes']:'';
 $rname = isset($_REQUEST['rname'])?$_REQUEST['rname']:'';
@@ -234,6 +246,7 @@ function recording_editpage($id, $num) {
 	global $default_pos;
 	global $fcode;
 	global $fcode_pass;
+	global $recordings_astsnd_path;
 ?>
 	<div class="content">
 	<h2><?php echo _("System Recordings")?></h2>
@@ -497,7 +510,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$audio=$astpath;
 
 	$REC_CRYPT_PASSWORD = urlencode((isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0');
-	$recurl="modules/recordings/popup.php?cryptpass=$REC_CRYPT_PASSWORD&recording=$audio";
+	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&cryptpass=$REC_CRYPT_PASSWORD&recording=$audio";
 
 	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
 	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='"._("Click here to play this recording")."' />";

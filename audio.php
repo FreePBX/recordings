@@ -15,7 +15,6 @@ if (isset($_GET['recording'])) {
 
   $opath = $_GET['recording'];
   $path = $crypt->decrypt($opath,urldecode($REC_CRYPT_PASSWORD));
-  $path=$opath;
 
   // strip ".." from path for security
   $path = preg_replace('/\.\./','',$path);
