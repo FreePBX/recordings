@@ -36,12 +36,20 @@ $fcc->update();
 unset($fcc);
 
 // Make sure table exists
-$sql = "CREATE TABLE IF NOT EXISTS recordings ( 
-	id INTEGER NOT NULL  PRIMARY KEY $autoincrement,
-	displayname VARCHAR(50) , 
-	filename BLOB, 
-	description VARCHAR(254))
-;";
+if ($amp_conf["AMPDBENGINE"] == 'sqlite3') {
+	$sql = "CREATE TABLE IF NOT EXISTS recordings ( 
+		`id` integer NOT NULL PRIMARY KEY AUTOINCREMENT, 
+		displayname VARCHAR(50) , filename BLOB, description 
+		VARCHAR(254))
+	;";
+}  else  {
+	$sql = "CREATE TABLE IF NOT EXISTS recordings ( 
+		id INTEGER NOT NULL  PRIMARY KEY $autoincrement,
+		displayname VARCHAR(50) , 
+		filename BLOB, 
+		description VARCHAR(254))
+	;";
+}
 $result = $db->query($sql);
 if(DB::IsError($result)) {
         die_freepbx($result->getDebugInfo());
