@@ -261,7 +261,7 @@ function recording_editpage($id, $num) {
 	$usage_list = recordings_list_usage($id);
 	if (count($usage_list)) {
 ?>
-		<a href="#" class="info"><?php echo _("Usage List");?><span><?php echo _("This recording is being used in the following instances. You can not remove this recording while being used. To rec-record, you can enable and use the feature code below if allowed.");?></span></a>
+		<a href="#" class="info"><?php echo _("Usage List");?><span><?php echo _("This recording is being used in the following instances. You can not remove this recording while being used. To re-record, you can enable and use the feature code below if allowed.");?></span></a>
 <?php
 		$count = 0;
 		foreach ($usage_list as $link) {
@@ -324,7 +324,7 @@ function recording_editpage($id, $num) {
 	} else {
 ?>
 	<tr>
-    <td colspan="2"><a class="info" href="#"><?php echo _("Direct Access Feature Code Not Available")?><span><?php echo _("Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multipe individual ones.")?></span></a>:
+    <td colspan="2"><a class="info" href="#"><?php echo _("Direct Access Feature Code Not Available")?><span><?php echo _("Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multiple individual ones.")?></span></a>:
     </td>
 	</tr>
 <?php 
