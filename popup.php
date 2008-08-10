@@ -14,6 +14,14 @@ include_once("crypt.php");
 	<head>
 		<TITLE>FreePBX Recording Review</TITLE>
 		<link rel="stylesheet" href="modules/recordings/popup.css" type="text/css">
+			<style type="text/css">
+				.popup_download {
+					color: #105D90; 
+					margin: 5px; 
+					font-size: 12px; 
+					text-align: left;
+				}
+			</style>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 	</head>
 	<body>
