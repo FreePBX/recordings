@@ -74,7 +74,6 @@ switch ($action) {
 		}
 		recording_sidebar($id, null);
 		recording_editpage($id, null);
-		needreload();
 		break;
 	case "recorded":
 		// Clean up the filename, take out any nasty characters
