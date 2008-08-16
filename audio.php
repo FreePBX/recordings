@@ -16,17 +16,6 @@ if (isset($_REQUEST['recording'])) {
   $opath = $_REQUEST['recording'];
   $path = $crypt->decrypt($opath,$REC_CRYPT_PASSWORD);
 
-  // strip ".." from path for security
-  $path = preg_replace('/\.\./','',$path);
-  
-  // See if the file exists, otherwise check for extensions
-  if (is_file("$path.wav")) { $path="$path.wav"; }
-  elseif (is_file("$path.Wav")) { $path="$path.Wav"; }
-  elseif (is_file("$path.WAV")) { $path="$path.WAV"; }
-  elseif (is_file("$path.mp3")) { $path="$path.mp3"; }
-  elseif (is_file("$path.gsm")) { $path="$path.gsm"; }
-  elseif (!is_file($path)) { die("<b>404 File not found!: $opath </b>"); }
-
   // Gather relevent info about file
   $size = filesize($path);
   $name = basename($path);

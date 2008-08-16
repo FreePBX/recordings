@@ -62,7 +62,7 @@ class Crypt {
    */
   function decrypt($enc, $salt, $iv_len = 16) {
 
-     $enc = base64_decode(urldecode($enc));
+     $enc = urldecode(base64_decode($enc));
      $n = strlen($enc);
      $i = $iv_len;
      $str = '';

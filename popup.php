@@ -33,9 +33,24 @@ include_once("crypt.php");
 
 	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
 
-  $path = $crypt->decrypt($_REQUEST['recordingpath'],$REC_CRYPT_PASSWORD);
-  $file = $crypt->encrypt($path.$_REQUEST['recording'],$REC_CRYPT_PASSWORD);
-  $ufile = $_REQUEST['recording'];
+  $path = $crypt->decrypt($_REQUEST['recordingpath'],$REC_CRYPT_PASSWORD).$_REQUEST['recording'];
+
+  // strip ".." from path for security
+  $path = preg_replace('/\.\./','',$path);
+	$ufile = basename($path);
+  
+  // See if the file exists, otherwise check for extensions
+  if (is_file("$path.wav")) { $path="$path.wav"; }
+  elseif (is_file("$path.Wav")) { $path="$path.Wav"; }
+  elseif (is_file("$path.WAV")) { $path="$path.WAV"; }
+  elseif (is_file("$path.mp3")) { $path="$path.mp3"; }
+  elseif (is_file("$path.gsm")) { $path="$path.gsm"; }
+  else {
+		echo("<br /><h1 class='popup_download'>".sprintf(_("No compatible wav, mp3 or gsm format found to play:<br /><br />%s"),$ufile)."</h1><br>");
+		exit;
+	}
+
+  $file = $crypt->encrypt($path,$REC_CRYPT_PASSWORD);
 
   if (isset($file)) {
     echo("<br>");
