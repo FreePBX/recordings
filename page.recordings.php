@@ -421,7 +421,7 @@ function recordings_popup_jscript() {
 	<!-- Begin
 	function popUp(URL,optionId) {
 		var selIndex=optionId.selectedIndex
-		var file=optionId.options[selIndex].value
+		var file=encodeURIComponent(optionId.options[selIndex].value)
 
 		/*alert(selIndex);*/
 		if (file != "")
@@ -511,7 +511,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	include_once("crypt.php");
   $crypt = new Crypt();
 	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
-  $audio = $crypt->encrypt($audio,$REC_CRYPT_PASSWORD);
+  $audio = urlencode($crypt->encrypt($audio,$REC_CRYPT_PASSWORD));
 	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&recordingpath=$audio&recording=";
 
 	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";

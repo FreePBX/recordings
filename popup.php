@@ -50,7 +50,7 @@ include_once("crypt.php");
 		exit;
 	}
 
-  $file = $crypt->encrypt($path,$REC_CRYPT_PASSWORD);
+  $file = urlencode($crypt->encrypt($path,$REC_CRYPT_PASSWORD));
 
   if (isset($file)) {
     echo("<br>");
