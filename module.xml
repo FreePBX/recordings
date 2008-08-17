@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.8.4</version>
+	<version>3.3.8.5</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.8.5* #3058 again, revert crypt.php again
 		*3.3.8.4* #3058 properly display messages for unplayble formats and revert r6234 for crypt.php
 		*3.3.8.3* #2987, #3011, #3036 sqlite3 install, spelling, remove popup.css
 		*3.3.8.2* #2547, #2983 remove access violation so modules dir can be locked down, fix bug in sound file path, add back encryption
