@@ -13,7 +13,6 @@ include_once("crypt.php");
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
 		<TITLE>FreePBX Recording Review</TITLE>
-		<link rel="stylesheet" href="modules/recordings/popup.css" type="text/css">
 			<style type="text/css">
 				.popup_download {
 					color: #105D90; 
