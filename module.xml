@@ -23,19 +23,7 @@
 		*3.3.5.4* #2426 remove non-functioning download link
 		*3.3.5.3* #2409 syntax error in audio.php could cause playback problems
 		*3.3.5.2* #2016 allow amportal.conf AMPLAYKEY override hardcoded crypt key
-		*3.3.5.1* bump for rc1
-		*3.3.5* #2092 can't cannot save/read file fix some errors, better messages
-		*3.3.4* #2032 remove recordings as a destination, no purpose (use annoucement module)
-		*3.3.3* fixed bug not able to save recorded message from *77 featurecode
-		*3.3.2* use urlencode/decode in the crypt functions
-		*3.3.1.1* added candisable = no for module admin, and new play button
-		*3.3.1* Fix mp3 upload bug (#1764)
-		*3.3* Stop assuming that files being uploaded are .wav's, also highlight the correct format for files to be uploaded in.
-		*3.2.4* Add he_IL translation
-		*3.2.3* Fix for possible wrong recording being selected
-		*3.2.2* Fix for PHP5 not picking up ast recording path
-		*3.2.1* Resolved issue with wrong recording being selected when there's more than one encoding of file (eg, foo.wav and foo.gsm)
-		*3.2* First release for FreePBX 2.2 - Fixed compatibility issue with new UI
+		*3.3.5.1* CHANGELOG TRUNCATED See SVN Repository
 	</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
