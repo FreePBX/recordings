@@ -175,8 +175,8 @@ function recordings_add($displayname, $filename, $description='') {
 	} else {
 		$fname = $filename;
 	}
-	$description = ($description != '') ? addslashes($description) : _("No long description available");
-	$displayname = addslashes($displayname);
+	$description = ($description != '') ? $db->escapeSimple($description) : _("No long description available");
+	$displayname = $db->escapeSimple($displayname);
 	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', '$description')");
 
 	return true;
@@ -184,10 +184,11 @@ function recordings_add($displayname, $filename, $description='') {
 }
 
 function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass='') {
+	global $db;
 
 	// Update the descriptive fields
 	$fcode_pass = preg_replace("/[^0-9*]/" ,"", trim($fcode_pass));
-	$results = sql("UPDATE recordings SET displayname = '".addslashes($rname)."', description = '".addslashes($descr)."', fcode='$fcode', fcode_pass='".$fcode_pass."' WHERE id = '$id'");
+	$results = sql("UPDATE recordings SET displayname = '".$db->escapeSimple($rname)."', description = '".$db->escapeSimple($descr)."', fcode='$fcode', fcode_pass='".$fcode_pass."' WHERE id = '$id'");
 	
 	// Build the file list from _REQUEST
         $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
@@ -294,9 +295,10 @@ function recordings_del($id) {
 }
 
 function recordings_set_file($id, $filename) {
+	global $db;
 	// Strip off any dangling &'s on the end:
 	$filename = rtrim($filename, '&');
-	$results = sql("UPDATE recordings SET filename = '".addslashes($filename)."' WHERE id = '$id'");
+	$results = sql("UPDATE recordings SET filename = '".$db->escapeSimple($filename)."' WHERE id = '$id'");
 }
 
 
