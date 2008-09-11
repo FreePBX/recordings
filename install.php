@@ -23,14 +23,16 @@ $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENG
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
 
+$saverecording = _("Save Recording");
 $fcc = new featurecode('recordings', 'record_save');
-$fcc->setDescription('Save Recording');
+$fcc->setDescription($saverecording);
 $fcc->setDefault('*77');
 $fcc->update();
 unset($fcc);
 
+$checkrecording = _("Check Recording");
 $fcc = new featurecode('recordings', 'record_check');
-$fcc->setDescription('Check Recording');
+$fcc->setDescription($checkrecording);
 $fcc->setDefault('*99');
 $fcc->update();
 unset($fcc);
