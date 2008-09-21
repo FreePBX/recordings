@@ -66,7 +66,7 @@ if (!file_exists($recordings_directory)) {
 if (!is_writable($recordings_directory)) {
 	print "<h2>Error</h2><br />I can not access the directory $recordings_directory. ";
 	print "Please make sure that it exists, and is writable by the web server.";
-	die;
+	return false;
 }
 $sql = "SELECT * FROM recordings where displayname = '__invalid'";
 $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
