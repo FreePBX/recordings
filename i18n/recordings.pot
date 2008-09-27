@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-09-27 15:08+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: functions.inc.php:87
+#, php-format
+msgid "Missing Sound file auto-created from migration of %s module"
+msgstr ""
+
+#: functions.inc.php:97
+#, php-format
+msgid "Non-Existent Recording in module %s"
+msgstr ""
+
+#: functions.inc.php:98
+#, php-format
+msgid ""
+"The %s referenced a recording file listed below that does not exists. An "
+"entry has been generated, named %s, with the referenced file(s) but you "
+"should confirm that it really works and the real files exist. The file(s) "
+"referenced: %s "
+msgstr ""
+
+#: functions.inc.php:178
+msgid "No long description available"
+msgstr ""
+
+#: install.php:26
+msgid "Save Recording"
+msgstr ""
+
+#: install.php:33
+msgid "Check Recording"
+msgstr ""
+
+#: install.php:105
+msgid "checking for fcode field.."
+msgstr ""
+
+#: install.php:115 install.php:129
+msgid "OK"
+msgstr ""
+
+#: install.php:117 install.php:131
+msgid "already exists"
+msgstr ""
+
+#: install.php:119
+msgid "checking for fcode_pass field.."
+msgstr ""
+
+#: page.recordings.php:59 page.recordings.php:60
+msgid "** MISSING FEATURE CODE **"
+msgstr ""
+
+#: page.recordings.php:83
+msgid "Failed to create"
+msgstr ""
+
+#: page.recordings.php:89
+msgid "[ERROR] The Recorded File Does Not exists:"
+msgstr ""
+
+#: page.recordings.php:97
+msgid "[ERROR] SAVING RECORDING:"
+msgstr ""
+
+#: page.recordings.php:101
+msgid "Make sure you have entered a proper name"
+msgstr ""
+
+#: page.recordings.php:106
+msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
+msgstr ""
+
+#: page.recordings.php:110
+msgid "Make sure Asterisk is not running as root "
+msgstr ""
+
+#: page.recordings.php:118 page.recordings.php:150
+msgid "System Recording"
+msgstr ""
+
+#: page.recordings.php:118
+msgid "Saved"
+msgstr ""
+
+#: page.recordings.php:138
+msgid "Unable to locate"
+msgstr ""
+
+#: page.recordings.php:138
+msgid "with a a valid suffix"
+msgstr ""
+
+#: page.recordings.php:150
+msgid "Updated"
+msgstr ""
+
+#: page.recordings.php:172 page.recordings.php:251 page.recordings.php:464
+msgid "System Recordings"
+msgstr ""
+
+#: page.recordings.php:173 page.recordings.php:389
+msgid "Add Recording"
+msgstr ""
+
+#: page.recordings.php:174
+msgid "Step 1: Record or upload"
+msgstr ""
+
+#: page.recordings.php:176
+msgid "Using your phone,"
+msgstr ""
+
+#: page.recordings.php:176 page.recordings.php:220
+msgid "dial"
+msgstr ""
+
+#: page.recordings.php:177
+msgid "Start speaking at the tone. Hangup when finished."
+msgstr ""
+
+#: page.recordings.php:178
+msgid "and speak the message you wish to record."
+msgstr ""
+
+#: page.recordings.php:183
+msgid ""
+"If you wish to make and verify recordings from your phone, please enter your "
+"extension number here:"
+msgstr ""
+
+#: page.recordings.php:184 page.recordings.php:478
+msgid "Go"
+msgstr ""
+
+#: page.recordings.php:190
+msgid "Alternatively, upload a recording in"
+msgstr ""
+
+#: page.recordings.php:190
+msgid "any supported asterisk format."
+msgstr ""
+
+#: page.recordings.php:190
+msgid ""
+"Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the "
+"file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr ""
+
+#: page.recordings.php:195
+msgid "Upload"
+msgstr ""
+
+#: page.recordings.php:195
+msgid "Please wait until the page reloads."
+msgstr ""
+
+#: page.recordings.php:209
+msgid "Successfully uploaded"
+msgstr ""
+
+#: page.recordings.php:219
+msgid "Step 2: Verify"
+msgstr ""
+
+#: page.recordings.php:220
+msgid "After recording or uploading,"
+msgstr ""
+
+#: page.recordings.php:220
+msgid "to listen to your recording."
+msgstr ""
+
+#: page.recordings.php:221
+msgid "If you wish to re-record your message, dial"
+msgstr ""
+
+#: page.recordings.php:222
+msgid "Step 3: Name"
+msgstr ""
+
+#: page.recordings.php:224
+msgid "Step 2: Name"
+msgstr ""
+
+#: page.recordings.php:228
+msgid "Name this Recording"
+msgstr ""
+
+#: page.recordings.php:234
+msgid "Click \"SAVE\" when you are satisfied with your recording"
+msgstr ""
+
+#: page.recordings.php:236 page.recordings.php:347
+msgid "Save"
+msgstr ""
+
+#: page.recordings.php:252
+msgid "Edit Recording"
+msgstr ""
+
+#: page.recordings.php:263
+msgid "Usage List"
+msgstr ""
+
+#: page.recordings.php:263
+msgid ""
+"This recording is being used in the following instances. You can not remove "
+"this recording while being used. To re-record, you can enable and use the "
+"feature code below if allowed."
+msgstr ""
+
+#: page.recordings.php:272
+msgid "Remove Recording"
+msgstr ""
+
+#: page.recordings.php:276
+msgid "Note, does not delete file from computer"
+msgstr ""
+
+#: page.recordings.php:288
+msgid "Change Name"
+msgstr ""
+
+#: page.recordings.php:288
+msgid "This changes the short name, visible on the right, of this recording"
+msgstr ""
+
+#: page.recordings.php:292
+msgid "Descriptive Name"
+msgstr ""
+
+#: page.recordings.php:292
+msgid ""
+"This is displayed, as a hint, when selecting this recording in Queues, "
+"Digital Receptionist, etc"
+msgstr ""
+
+#: page.recordings.php:312
+msgid "Link to Feature Code"
+msgstr ""
+
+#: page.recordings.php:312
+msgid ""
+"Check this box to create an options feature code that will allow this "
+"recording to be changed directly."
+msgstr ""
+
+#: page.recordings.php:315
+#, php-format
+msgid "Optional Feature Code %s"
+msgstr ""
+
+#: page.recordings.php:319
+msgid "Feature Code Password"
+msgstr ""
+
+#: page.recordings.php:319
+msgid ""
+"Optional password to protect access to this feature code which allows a user "
+"to re-record it."
+msgstr ""
+
+#: page.recordings.php:326
+msgid "Direct Access Feature Code Not Available"
+msgstr ""
+
+#: page.recordings.php:326
+msgid ""
+"Direct Access Feature Codes for recordings are not available for built in "
+"system recordings or compound recordings made of multiple individual ones."
+msgstr ""
+
+#: page.recordings.php:335
+msgid "Files"
+msgstr ""
+
+#: page.recordings.php:390 page.recordings.php:465
+msgid "Built-in Recordings"
+msgstr ""
+
+#: page.recordings.php:443
+msgid "Please enter a valid Name for this System Recording"
+msgstr ""
+
+#: page.recordings.php:466
+msgid "Select System Recording:"
+msgstr ""
+
+#: page.recordings.php:518
+msgid "Click here to play this recording"
+msgstr ""
+
+#: page.recordings.php:525
+msgid "Move Up"
+msgstr ""
+
+#: page.recordings.php:531
+msgid "Move Down"
+msgstr ""
+
+#: page.recordings.php:535
+msgid "Delete"
+msgstr ""
+
+#: popup.php:48
+#, php-format
+msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
+msgstr ""
