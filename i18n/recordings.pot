@@ -323,3 +323,7 @@ msgstr ""
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr ""
+
+#: module.xml
+msgid "Recordings"
+msgstr ""

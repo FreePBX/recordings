@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-14 21:51+0200\n"
-"PO-Revision-Date: 2008-09-14 22:46+0100\n"
+"POT-Creation-Date: 2008-09-27 15:08+0200\n"
+"PO-Revision-Date: 2008-09-28 16:58+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -36,21 +36,29 @@ msgstr "%s refererade till en inspelningsfil som inte finns. En post har generer
 msgid "No long description available"
 msgstr "Ingen beskrivning tillgänglig"
 
-#: install.php:103
+#: install.php:26
+msgid "Save Recording"
+msgstr "Spara inspelning"
+
+#: install.php:33
+msgid "Check Recording"
+msgstr "Kontrollera inspelning"
+
+#: install.php:105
 msgid "checking for fcode field.."
 msgstr "kontrollerar fältet fcode.."
 
-#: install.php:113
-#: install.php:127
+#: install.php:115
+#: install.php:129
 msgid "OK"
 msgstr "OK"
 
-#: install.php:115
-#: install.php:129
+#: install.php:117
+#: install.php:131
 msgid "already exists"
 msgstr "finns redan"
 
-#: install.php:117
+#: install.php:119
 msgid "checking for fcode_pass field.."
 msgstr "kontrollerar fältet fcode_pass.."
 
@@ -308,4 +316,8 @@ msgstr "Ta bort"
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr "Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
+
+#: module.xml
+msgid "Recordings"
+msgstr "Inspelningar"
 
