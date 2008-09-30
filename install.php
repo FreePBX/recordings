@@ -1,4 +1,10 @@
 <?php
+//for translation only
+if (false) {
+_("Recordings");
+_("Save Recording");
+_("Check Recording");
+}
 
 global $amp_conf;
 global $asterisk_conf;
@@ -23,16 +29,14 @@ $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENG
 
 require_once($amp_conf['AMPWEBROOT'] . '/admin/modules/recordings/functions.inc.php');
 
-$saverecording = _("Save Recording");
 $fcc = new featurecode('recordings', 'record_save');
-$fcc->setDescription($saverecording);
+$fcc->setDescription('Save Recording');
 $fcc->setDefault('*77');
 $fcc->update();
 unset($fcc);
 
-$checkrecording = _("Check Recording");
 $fcc = new featurecode('recordings', 'record_check');
-$fcc->setDescription($checkrecording);
+$fcc->setDescription('Check Recording');
 $fcc->setDefault('*99');
 $fcc->update();
 unset($fcc);
