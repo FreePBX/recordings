@@ -1,13 +1,14 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.8.7</version>
+	<version>3.3.8.8</version>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<type>setup</type>
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.8.8* localization fixes, misc
 		*3.3.8.7* #3108, #3138 Sqlite3 fix
 		*3.3.8.6* #3058 really again, use encodeURIComponent() in javascript, and remove urlencoding from crypt function
 		*3.3.8.5* #3058 again, revert crypt.php again
@@ -32,6 +33,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.5/recordings-3.3.8.7.tgz</location>
-	<md5sum>161ad269ee33374887cedf04dd30ba31</md5sum>
+	<location>release/2.5/recordings-3.3.8.8.tgz</location>
+	<md5sum>03fdcc2baf854463a31eec32dc2bce33</md5sum>
 </module>
