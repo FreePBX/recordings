@@ -5,48 +5,49 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 2.5\n"
+"Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-27 15:08+0200\n"
-"PO-Revision-Date: 2008-11-06 00:42+0100\n"
-"Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
-"Language-Team: Italian\n"
+"PO-Revision-Date: 2008-11-05 14:17+0200\n"
+"Last-Translator: \n"
+"Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Italian\n"
-"X-Poedit-Country: ITALY\n"
+"X-Poedit-Language: Bulgarian\n"
+"X-Poedit-Country: BULGARIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
 
 #: functions.inc.php:87
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "File Audio mancante auto-creato durante la migrazione del modulo %s"
+msgstr "Missing Sound файл автоматично създаден при преместване от %s модул"
 
 #: functions.inc.php:97
 #, php-format
 msgid "Non-Existent Recording in module %s"
-msgstr "Registrazione inesistente nel modulo %s"
+msgstr "Не Съществуващ Запис в модул %s"
 
 #: functions.inc.php:98
 #, php-format
 msgid "The %s referenced a recording file listed below that does not exists. An entry has been generated, named %s, with the referenced file(s) but you should confirm that it really works and the real files exist. The file(s) referenced: %s "
-msgstr "%s fa riferimento ad un file di registrazione che non esiste. Una voce è stata generata, nominata %s, insieme ai file di riferimento ma dovresti confermare che questi realmente esistono. I file sono : %s"
+msgstr "%s спомянава че файла на записа показан по-долу не съществува. Въвеждането беше генерирано, именувано %s, но ще трябва да потвърдите че наистина работи и истинския файл съществува. Споменатия файл(ове): %s "
 
 #: functions.inc.php:178
 msgid "No long description available"
-msgstr "Nessuna descrizione completa disponibile"
+msgstr "Не е достъпно описание."
 
 #: install.php:26
 msgid "Save Recording"
-msgstr "Salva Registrazione"
+msgstr "Направи Запис"
 
 #: install.php:33
 msgid "Check Recording"
-msgstr "Controllo Registrazione"
+msgstr "Провери Запис"
 
 #: install.php:105
 msgid "checking for fcode field.."
-msgstr "controllo il campo fcode.."
+msgstr "проверка за fcode поле .."
 
 #: install.php:115
 #: install.php:129
@@ -56,268 +57,268 @@ msgstr "OK"
 #: install.php:117
 #: install.php:131
 msgid "already exists"
-msgstr "già esiste"
+msgstr "вече съществуват"
 
 #: install.php:119
 msgid "checking for fcode_pass field.."
-msgstr "controllo il campo fcode_pass.."
+msgstr "проверка за fcode_pass поле .."
 
 #: page.recordings.php:59
 #: page.recordings.php:60
 msgid "** MISSING FEATURE CODE **"
-msgstr "** CODICE SERVIZIO MANCANTE **"
+msgstr "** ЛИПСВАЩ СПЕЦИАЛЕН КОД **"
 
 #: page.recordings.php:83
 msgid "Failed to create"
-msgstr "Impossibile creare"
+msgstr "Грешка при създаване"
 
 #: page.recordings.php:89
 msgid "[ERROR] The Recorded File Does Not exists:"
-msgstr "[ERRORE] Il file registrato non esiste:"
+msgstr "[ГРЕШКА] Записаният Файл Не Съществува:"
 
 #: page.recordings.php:97
 msgid "[ERROR] SAVING RECORDING:"
-msgstr "[ERRORE] DURANTE IL SALVATAGGIO DELLA REGISTRAZIONE:"
+msgstr "[ГРЕШКА] ЗАПАЗВАНЕ НА ЗАПИС:"
 
 #: page.recordings.php:101
 msgid "Make sure you have entered a proper name"
-msgstr "Assicurarsi di aver inserito un nome corretto"
+msgstr "Убедете се че сте въвели правилно име"
 
 #: page.recordings.php:106
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
-msgstr "[ERRORE] DURANTE LA RIMOZIONE DELLA REGISTRAZIONE TEMPORANEA:"
+msgstr "[ГРЕШКА] ПРЕМАХВАНЕ НА ВРЕМЕНЕН ЗАПИС:"
 
 #: page.recordings.php:110
 msgid "Make sure Asterisk is not running as root "
-msgstr "Assicurarsi che Asterisk non sia in esecuzione come root"
+msgstr "Убедете се че Атериск не работи като root"
 
 #: page.recordings.php:118
 #: page.recordings.php:150
 msgid "System Recording"
-msgstr "Registrazione di Sistema"
+msgstr "Системен Запис"
 
 #: page.recordings.php:118
 msgid "Saved"
-msgstr "Salvato"
+msgstr "Записан"
 
 #: page.recordings.php:138
 msgid "Unable to locate"
-msgstr "Impossibile trovare"
+msgstr "Не мога да намеря"
 
 #: page.recordings.php:138
 msgid "with a a valid suffix"
-msgstr "con un suffisso valido"
+msgstr "с правилна наставка"
 
 #: page.recordings.php:150
 msgid "Updated"
-msgstr "Aggiornato"
+msgstr "Обновен"
 
 #: page.recordings.php:172
 #: page.recordings.php:251
 #: page.recordings.php:464
 msgid "System Recordings"
-msgstr "Registrazioni di Sistema"
+msgstr "Системни Записи"
 
 #: page.recordings.php:173
 #: page.recordings.php:389
 msgid "Add Recording"
-msgstr "Aggiungi Registrazione"
+msgstr "Добави Запис"
 
 #: page.recordings.php:174
 msgid "Step 1: Record or upload"
-msgstr "Fase 1: Registrazione o caricamento"
+msgstr "Стъпка 1: Запис или добавяне"
 
 #: page.recordings.php:176
 msgid "Using your phone,"
-msgstr "Utilizzando il proprio telefono,"
+msgstr "Използвайки вашия телефон,"
 
 #: page.recordings.php:176
 #: page.recordings.php:220
 msgid "dial"
-msgstr "chiamare"
+msgstr "наберете"
 
 #: page.recordings.php:177
 msgid "Start speaking at the tone. Hangup when finished."
-msgstr "Parlare dopo il segnale acustico. Riagganciare quando terminato."
+msgstr "Започнете да говорите след тона. Като приключите затворете."
 
 #: page.recordings.php:178
 msgid "and speak the message you wish to record."
-msgstr "e registrare il messaggio."
+msgstr "и кажете съобщението което искате да запишете."
 
 #: page.recordings.php:183
 msgid "If you wish to make and verify recordings from your phone, please enter your extension number here:"
-msgstr "Se si desidera registrare o ascoltare una registrazione da telefono, immettere il numero del proprio interno:"
+msgstr "Ако желаете да направите и проверите записа от вашия телефон, моля въведете вътрешен номер тук:"
 
 #: page.recordings.php:184
 #: page.recordings.php:478
 msgid "Go"
-msgstr "Vai"
+msgstr "Добави"
 
 #: page.recordings.php:190
 msgid "Alternatively, upload a recording in"
-msgstr "In alternativa, caricare una registrazione"
+msgstr "Също така можете да добавите запис във"
 
 #: page.recordings.php:190
 msgid "any supported asterisk format."
-msgstr "in uno dei formati supportati da asterisk."
+msgstr "всеки поддържан от Астериск формат."
 
 #: page.recordings.php:190
 msgid "Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr "Se si utilizza il formato .wav (registrato per esempio con il Registratore di Microsoft Windows) il file <b>deve</b> essere del formato PCM, 16Bit, 8000Hz"
+msgstr "Имайте впредвид, че ако използвате .wav, (като записани с Microsoft Recorder) файла <b>трябва</b> да е PCM, 16 Бита, на 8000Hz"
 
 #: page.recordings.php:195
 msgid "Upload"
-msgstr "Carica"
+msgstr "Добави"
 
 #: page.recordings.php:195
 msgid "Please wait until the page reloads."
-msgstr "Prego attendere che la pagina si ricarichi"
+msgstr "Моля изчакайте докато страницата се презареди."
 
 #: page.recordings.php:209
 msgid "Successfully uploaded"
-msgstr "Caricato con successo"
+msgstr "Успешно добавен"
 
 #: page.recordings.php:219
 msgid "Step 2: Verify"
-msgstr "Fase 2: Verifica"
+msgstr "Стъпка 2: Прослушване"
 
 #: page.recordings.php:220
 msgid "After recording or uploading,"
-msgstr "Dopo la registrazione o il caricamento,"
+msgstr "След запис или добавяне,"
 
 #: page.recordings.php:220
 msgid "to listen to your recording."
-msgstr "per ascoltare il messaggio"
+msgstr "за да прослушате вашия запис."
 
 #: page.recordings.php:221
 msgid "If you wish to re-record your message, dial"
-msgstr "Se si vuole registrare nuovamente il messaggio, chiamare"
+msgstr "Ако желаете да презапишете вашето съобщение, наберете"
 
 #: page.recordings.php:222
 msgid "Step 3: Name"
-msgstr "Fase 3: Nome"
+msgstr "Стъпка 3: Име"
 
 #: page.recordings.php:224
 msgid "Step 2: Name"
-msgstr "Fase 2: Nome"
+msgstr "Стъпка 2: Име"
 
 #: page.recordings.php:228
 msgid "Name this Recording"
-msgstr "Nome"
+msgstr "Име на Записа"
 
 #: page.recordings.php:234
 msgid "Click \"SAVE\" when you are satisfied with your recording"
-msgstr "Fare click su \"SALVA\" quando terminato"
+msgstr "Кликнете \"ЗАПИС\" кагото останете доволен от записа"
 
 #: page.recordings.php:236
 #: page.recordings.php:347
 msgid "Save"
-msgstr "Salva"
+msgstr "Запис"
 
 #: page.recordings.php:252
 msgid "Edit Recording"
-msgstr "Modifica Registrazione"
+msgstr "Редактирай Записа"
 
 #: page.recordings.php:263
 msgid "Usage List"
-msgstr "Lista"
+msgstr "Списък Употребяващи"
 
 #: page.recordings.php:263
 msgid "This recording is being used in the following instances. You can not remove this recording while being used. To re-record, you can enable and use the feature code below if allowed."
-msgstr "Questa registrazione è utilizzata dalle seguenti istanze. Non puoi rimuovere questa registrazione quando è in uso. Per ri-registrarla, puoi attivare ed utilizzare il codice servizio qui sotto se permesso."
+msgstr "Този запис се използва от следните инстанции. Не можете да премахнете записа докато се използва. За презаписване, можете да разрешите и използвате специалния код по-долу ако е позволен."
 
 #: page.recordings.php:272
 msgid "Remove Recording"
-msgstr "Rimuovi Registrazione"
+msgstr "Премахни Записа"
 
 #: page.recordings.php:276
 msgid "Note, does not delete file from computer"
-msgstr "Nota: non rimuove il file dal computer"
+msgstr "Забележка: Файлът не се изтрива от компютъра"
 
 #: page.recordings.php:288
 msgid "Change Name"
-msgstr "Cambia Nome"
+msgstr "Промени Името"
 
 #: page.recordings.php:288
 msgid "This changes the short name, visible on the right, of this recording"
-msgstr "Questo cambia il nome breve della registrazione, visibile sulla destra"
+msgstr "Променете името на записа, показвано вдясно."
 
 #: page.recordings.php:292
 msgid "Descriptive Name"
-msgstr "Nome Descrittivo"
+msgstr "Описващо Име"
 
 #: page.recordings.php:292
 msgid "This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc"
-msgstr "Questo è visualizzato come consiglio, quando si seleziona questa registrazione nelle Code, nell'IVR, ecc."
+msgstr "Това се показва като подсказка, когато изберете този запис в Опашки, IVR и други."
 
 #: page.recordings.php:312
 msgid "Link to Feature Code"
-msgstr "Collega ad un Codice Servizio"
+msgstr "Свържи Специален Код"
 
 #: page.recordings.php:312
 msgid "Check this box to create an options feature code that will allow this recording to be changed directly."
-msgstr "Attivare questa opzione per creare un codice servizio che permetterà di cambiare questa registrazione direttamente."
+msgstr "Маркирайте тази отметка за да създадете допълнителен специален код, който ще ви позволи да променяте записа директно."
 
 #: page.recordings.php:315
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "Codice Servizio Opzionale %s"
+msgstr "Допълнителен Специален Код %s"
 
 #: page.recordings.php:319
 msgid "Feature Code Password"
-msgstr "Password Codice Servizio"
+msgstr "Парола на Специален Код"
 
 #: page.recordings.php:319
 msgid "Optional password to protect access to this feature code which allows a user to re-record it."
-msgstr "Password opzionale per proteggere l'accesso a questo codice servizio che permette ad un utente di riregistrarlo."
+msgstr "Незадължителна парола за ограничаване достъпа до специалния код, който позволява на потребителя да презапише записа."
 
 #: page.recordings.php:326
 msgid "Direct Access Feature Code Not Available"
-msgstr "Codice Servizio diretto non disponibile"
+msgstr "Не е Наличен Специален Код за Директен Достъп"
 
 #: page.recordings.php:326
 msgid "Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multiple individual ones."
-msgstr "I Codici Servizi diretti non sono disponibili per le registrazioni interne di sistema o per le registrazioni composte da più file."
+msgstr "Специалните Кодове за Директен Достъп за записите не са достъпни за вградените системни записи или обединени записи направени от различни индивидуални такива."
 
 #: page.recordings.php:335
 msgid "Files"
-msgstr "File"
+msgstr "Файлове"
 
 #: page.recordings.php:390
 #: page.recordings.php:465
 msgid "Built-in Recordings"
-msgstr "Registrazioni interne"
+msgstr "Вградени Записи"
 
 #: page.recordings.php:443
 msgid "Please enter a valid Name for this System Recording"
-msgstr "Prego immettere un Nome valido per questa Registrazione di Sistema"
+msgstr "Моля въведете правилно Име за този Системен Запис"
 
 #: page.recordings.php:466
 msgid "Select System Recording:"
-msgstr "Selezionare la Registrazione di Sistema:"
+msgstr "Изберете Системен Запис:"
 
 #: page.recordings.php:518
 msgid "Click here to play this recording"
-msgstr "Fare Click qui per riprodurre la registrazione"
+msgstr "Кликнете тук за да възпроизведете този запис"
 
 #: page.recordings.php:525
 msgid "Move Up"
-msgstr "Sposta Su"
+msgstr "Премести Нагоре"
 
 #: page.recordings.php:531
 msgid "Move Down"
-msgstr "Sposta Giù"
+msgstr "Премести Надолу"
 
 #: page.recordings.php:535
 msgid "Delete"
-msgstr "Elimina"
+msgstr "Изтрий"
 
 #: popup.php:48
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
-msgstr "Nessun formato compatibile wav, mp3 o gsm trovato da riprodurre:<br /><br />%s"
+msgstr "Не е намерен съвместим wav, mp3 или gsm формат за възпроизвеждане:<br /><br />%s"
 
 #: module.xml
 msgid "Recordings"
-msgstr "Registrazioni"
+msgstr "Записи"
 
