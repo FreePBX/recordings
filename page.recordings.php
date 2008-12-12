@@ -301,9 +301,24 @@ function recording_editpage($id, $num) {
 	$counter = 0;
 	$arraymax = count($files)-1;
 	$sndfile_html = "";
+	$jq_autofill = "";
 	foreach ($files as $item) {
 		$sndfile_html .=  recordings_display_sndfile($item, $counter, $arraymax, $recordings_astsnd_path, $rec['fcode']);
 		$counter++;
+
+		// create the jquery autofill statements in advance of the next iteration or the blank one at the end
+		// on mouseover to the <td> element (since select doesn't have mouseover event), we clone the populated
+		// select options and put them into this one which is created just with the selected tag. Then set the
+		// selected value based on what is in the hidden tag. (we skip the hidden tag but for now ...)
+		//
+		$jq_autofill .= '
+		$("#sysrec'.$counter.'").parent().one("mouseover", function(){
+			$selectload = $("#selectload'.$counter.'").show(80,function(){
+				$("#sysrec'.$counter.'").empty().append($optlist.clone()).val($("#sysrecval'.$counter.'").val());
+				$(this).hide();
+			});
+		});
+		';
 	}	
 	$sndfile_html .=  recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path, $rec['fcode']);
 	if ($arraymax == 0 && isset($files[0]) && substr($files[0],0,7) == 'custom/') {
@@ -376,6 +391,17 @@ function recording_editpage($id, $num) {
 			document.getElementById('del1').style.visibility='visible';
 		}
 	}
+
+	$(document).ready(function(){
+		var $reclist = $("#sysrec0");
+		var $optlist = $("#sysrec0 option");
+		//$(".slclass").css({ visibility: "visible" }).hide();
+		$(".slclass").css("visibility", "visible").hide();
+		$(".autofill").width($reclist.width());
+		<?php echo $jq_autofill; ?>
+	});
+
+
 	// End -->
 	</script>
 	</form>
@@ -490,20 +516,31 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 
 	$html_text = "";
 	// Note that when using this, it needs a <table> definition around it.
-	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
-	$astsnd .= "/sounds/";
-	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
-	$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count'>\n";
-	$html_txt .=  '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
-	$index=0;
-	foreach ($sysrecs as $sr) {
-		$html_txt .=  '<option value="'.$sr.'"'.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
-		if ($sr == $item) {
-			$default_pos = $index+1;
+
+	if ($count == 0) {
+		$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+		$astsnd .= "/sounds/";
+		$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
+		$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count' class='autofill'>\n";
+		$html_txt .=  '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
+		$index=0;
+		foreach ($sysrecs as $sr) {
+			// value= not needed since text and value are same
+			//
+			$html_txt .=  '<option '.($sr == $item ? ' SELECTED' : '').">$sr</option>\n";
+			if ($sr == $item) {
+				$default_pos = $index+1;
+			}
+			$index++;
 		}
-		$index++;
+		$html_txt .=  "</select></td>\n";
+	} else {
+		$html_txt .=  "<tr><td>";
+		$html_txt .=  "<input type='hidden' id='sysrecval$count' value='$item' />";
+		$html_txt .=  "<select $disabled_state id='sysrec$count' name='sysrec$count' class='autofill'>\n";
+		$html_txt .=  "<option  SELECTED>$item</option>\n";
+		$html_txt .=  "</select></td>\n";
 	}
-	$html_txt .=  "</select></td>\n";
 
 	$html_txt .=  "<td>";
 	$audio=$astpath;
@@ -534,8 +571,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	}
 	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' border=0 title='"._("Delete")."' src='images/trash.png' value='"._("Delete")."'>\n";
 	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-	$html_txt .=  "</td>\n"; 
+	$html_txt .=  "</td><td id='selectload$count' class='slclass' style='visibility:hidden' width='16'><img border='0' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/rec_hourglass.png'></td>\n"; 
 
 	$html_txt .=  "</tr>\n";
 	return $html_txt;
