@@ -322,12 +322,22 @@ function recording_editpage($id, $num) {
 	}	
 	$sndfile_html .=  recordings_display_sndfile('', $counter, $arraymax, $recordings_astsnd_path, $rec['fcode']);
 	if ($arraymax == 0 && isset($files[0]) && substr($files[0],0,7) == 'custom/') {
+		if ($rec['fcode']) {
+			$fcc = new featurecode("recordings", 'edit-recording-'.$id);
+			$rec_code = $fcc->getCode();
+			unset($fcc);
+			if ($rec_code == '') {
+				$rec_code = $fcbase.$id;
+			}
+		} else {
+				$rec_code = $fcbase.$id;
+		}
 ?>
 	<tr>
 		<td><a class="info" href="#"><?php echo _("Link to Feature Code")?><span><?php echo _("Check this box to create an options feature code that will allow this recording to be changed directly.")?></span></a>:
 		</td>
 		<td>
-	<input type='checkbox' tabindex="<?php echo ++$tabindex;?>"name='fcode' id="fcode" <?php if ($rec['fcode']=="1") { echo 'CHECKED'; }?> OnClick="resetDefaultSound();"; return true;'><?php echo sprintf(_("Optional Feature Code %s"),$fcbase.$id)?>
+	<input type='checkbox' tabindex="<?php echo ++$tabindex;?>"name='fcode' id="fcode" <?php if ($rec['fcode']=="1") { echo 'CHECKED'; }?> OnClick="resetDefaultSound();"; return true;'><?php echo sprintf(_("Optional Feature Code %s"),$rec_code)?>
 		</td>
 	</tr>
 	<tr>
