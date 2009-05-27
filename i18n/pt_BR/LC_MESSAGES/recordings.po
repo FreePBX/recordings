@@ -1,18 +1,30 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# Copyright 2009, Marcelo Araujo
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2008-09-27 15:08+0200\n"
-"PO-Revision-Date: 2009-05-05 15:28-0300\n"
+"PO-Revision-Date: 2009-05-11 20:08-0300\n"
 "Last-Translator: Marcelo Araujo <marcelo.araujo@voffice.com.br>\n"
 "Language-Team: MidiVTS Team <team@midivts.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
@@ -126,7 +138,7 @@ msgstr "Adicionar gravação"
 
 #: page.recordings.php:174
 msgid "Step 1: Record or upload"
-msgstr "Passo 1: Gravar ou subir"
+msgstr "Passo 1: Gravar ou upload"
 
 #: page.recordings.php:176
 msgid "Using your phone,"
@@ -152,7 +164,7 @@ msgstr "Se você deseja fazer e verificar gravações do seu telefone, por favor
 #: page.recordings.php:184
 #: page.recordings.php:478
 msgid "Go"
-msgstr "Ir"
+msgstr "OK"
 
 #: page.recordings.php:190
 msgid "Alternatively, upload a recording in"
@@ -184,7 +196,7 @@ msgstr "Passo 2: Verificar"
 
 #: page.recordings.php:220
 msgid "After recording or uploading,"
-msgstr "Após gravar ou subir,"
+msgstr "Após gravar ou, executar o upload"
 
 #: page.recordings.php:220
 msgid "to listen to your recording."
@@ -208,7 +220,7 @@ msgstr "Dê um nome a esta gravação"
 
 #: page.recordings.php:234
 msgid "Click \"SAVE\" when you are satisfied with your recording"
-msgstr "Clique \"SAVE\" quando você estiver satisfeito com a gravação"
+msgstr "Clique \"SALVAR\" quando você estiver satisfeito com a gravação"
 
 #: page.recordings.php:236
 #: page.recordings.php:347
@@ -225,7 +237,7 @@ msgstr "Listar o uso"
 
 #: page.recordings.php:263
 msgid "This recording is being used in the following instances. You can not remove this recording while being used. To re-record, you can enable and use the feature code below if allowed."
-msgstr "Esta gravação está sendo usada nas seguintes instância. Você não pode remover esta gravação enquanto ela está sendo usado. Para re-gravar, você pode habilitar e usar o código de recurso abaixo se permitido."
+msgstr "Esta gravação está sendo usada nas seguintes instância. Você não pode remover esta gravação enquanto ela está sendo usado. Para re-gravar, você pode habilitar e usar o código de facilidade abaixo se permitido."
 
 #: page.recordings.php:272
 msgid "Remove Recording"
@@ -237,7 +249,7 @@ msgstr "Nota, não apaga o arquivo do computador"
 
 #: page.recordings.php:288
 msgid "Change Name"
-msgstr "Mudar nome"
+msgstr "Modificar nome"
 
 #: page.recordings.php:288
 msgid "This changes the short name, visible on the right, of this recording"
@@ -253,32 +265,32 @@ msgstr "Isto é mostrado, como uma dica , quando selecionando esta gravação na
 
 #: page.recordings.php:312
 msgid "Link to Feature Code"
-msgstr "Link para o código de recurso"
+msgstr "Link para o código de facilidade"
 
 #: page.recordings.php:312
 msgid "Check this box to create an options feature code that will allow this recording to be changed directly."
-msgstr "Selecione esta caixa para criar um código de recurso que irá permitir que esta gravação seja mudada diretamente. "
+msgstr "Selecione esta caixa para criar um código de facilidade que irá permitir que esta gravação seja mudada diretamente. "
 
 #: page.recordings.php:315
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "Código de recurso opcional %s"
+msgstr "Código de facilidade opcional %s"
 
 #: page.recordings.php:319
 msgid "Feature Code Password"
-msgstr "Senha do código de recurso"
+msgstr "Senha do código de facilidade"
 
 #: page.recordings.php:319
 msgid "Optional password to protect access to this feature code which allows a user to re-record it."
-msgstr "Senha opcional para proteger o acesso a este recurso que permite a um usuário regravá-lo. "
+msgstr "Senha opcional para proteger o acesso a esta facilidade que permite a um usuário regravá-lo. "
 
 #: page.recordings.php:326
 msgid "Direct Access Feature Code Not Available"
-msgstr "Acesso direto ao código de acesso ao recurso não disponível"
+msgstr "Acesso direto ao código de acesso à facilidade não disponível"
 
 #: page.recordings.php:326
 msgid "Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multiple individual ones."
-msgstr "Códigos de acesso direto ao recurso nào estão disponíveis para gravações padrão ou gravações compostas feitas de múltiplas gravações individuais. "
+msgstr "Códigos de acesso direto à facilidade o não estão disponíveis para gravações padrão ou gravações compostas feitas de múltiplas gravações individuais. "
 
 #: page.recordings.php:335
 msgid "Files"
@@ -287,7 +299,7 @@ msgstr "Arquivos"
 #: page.recordings.php:390
 #: page.recordings.php:465
 msgid "Built-in Recordings"
-msgstr "Gravações pré-prontas"
+msgstr "Gravações do sistema"
 
 #: page.recordings.php:443
 msgid "Please enter a valid Name for this System Recording"
@@ -311,7 +323,7 @@ msgstr "Mover para baixo"
 
 #: page.recordings.php:535
 msgid "Delete"
-msgstr "Apagar"
+msgstr "Excluír"
 
 #: popup.php:48
 #, php-format
