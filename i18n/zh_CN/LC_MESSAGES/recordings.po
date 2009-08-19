@@ -155,16 +155,8 @@ msgid "Go"
 msgstr "开始"
 
 #: page.recordings.php:190
-msgid "Alternatively, upload a recording in"
-msgstr "另一种方法是上传一个录音文件。"
-
-#: page.recordings.php:190
-msgid "any supported asterisk format."
-msgstr "录音文件可以是任何Asterisk支持的格式。"
-
-#: page.recordings.php:190
-msgid "Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr "请注意，如果你使用的是.WAV格式（比如从微软录音机录下的格式），录音文件的格式<b>必须</b>是PCM编码，16 Bit采样宽度，8000Hz采样率"
+msgid "Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr "另一种方法是上传一个录音文件。录音文件可以是任何Asterisk支持的格式。请注意，如果你使用的是.WAV格式（比如从微软录音机录下的格式），录音文件的格式<b>必须</b>是PCM编码，16 Bit采样宽度，8000Hz采样率"
 
 #: page.recordings.php:195
 msgid "Upload"

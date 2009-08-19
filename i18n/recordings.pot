@@ -150,15 +150,8 @@ msgid "Go"
 msgstr ""
 
 #: page.recordings.php:190
-msgid "Alternatively, upload a recording in"
-msgstr ""
-
-#: page.recordings.php:190
-msgid "any supported asterisk format."
-msgstr ""
-
-#: page.recordings.php:190
 msgid ""
+"Alternatively, upload a recording in any supported asterisk format. "
 "Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the "
 "file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
 msgstr ""
