@@ -568,14 +568,14 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	if ($count==0) {
 		 $html_txt .=  "<td></td>\n"; 
 	} else {
-		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<td><input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='"._("Move Up")."' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
+		$html_txt .=  "<td><img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		$html_txt .=  "<input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='"._("Move Up")."' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
 		$html_txt .=  "</td>\n"; 
 	} if ($count > $max) {
 		$html_txt .=  "<td></td>\n"; 
 	} else {
-		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<td><input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='"._("Move Down")."' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
+		$html_txt .=  "<td><img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+		$html_txt .=  "<input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='"._("Move Down")."' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
 		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
 		$html_txt .=  "</td>\n"; 
 	}
