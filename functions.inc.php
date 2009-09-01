@@ -2,13 +2,17 @@
 
 // Source and Destination Dirctories for recording
 global $recordings_astsnd_path; // PHP5 needs extra convincing of a global
-$recordings_save_path = "/tmp/";
+global $amp_conf;
+$recordings_save_path = $amp_conf['ASTSPOOLDIR']."/tmp/";
 $recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
 
 function recordings_get_config($engine) {
 	global $ext;  // is this the best way to pass this?
 	global $recordings_save_path;
+	global $version;
+
+  $ast_ge_14 = version_compare($version, '1.4', 'ge');
 	
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
@@ -70,6 +74,61 @@ function recordings_get_config($engine) {
 					}
 				}
 			}
+
+			// moved from modules/core to modules/recordings
+			// since it really belongs here and not there
+			// also provides direct access to $recordings_save_path
+			// which removes a hard-coded value in the macro
+
+			$context = 'macro-systemrecording';
+			
+			$ext->add($context, 's', '', new ext_setvar('RECFILE','${IF($["${ARG2}" = ""]?'.$recordings_save_path.'${AMPUSER}-ivrrecording:${ARG2})}'));
+			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
+			$ext->add($context, 's', '', new ext_goto(1, '${ARG1}'));
+			
+			$exten = 'dorecord';
+			
+			// Delete all versions of the current sound file (does not consider languages though
+			// otherwise you might have some versions that are not re-recorded
+			//
+			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
+			$ext->add($context, $exten, '', new ext_record('${RECFILE}:wav'));
+			$ext->add($context, $exten, '', new ext_wait(1));
+			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
+
+			$exten = 'docheck';
+			
+			$ext->add($context, $exten, '', new ext_playback('beep'));
+			if ($ast_ge_14) {
+				$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},macro-systemrecording'));
+			} else {
+				$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${LANGUAGE},macro-systemrecording'));
+			}
+			$ext->add($context, $exten, '', new ext_wait(1));
+			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
+
+			$exten = 'confmenu';
+			if ($ast_ge_14) {
+				$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-rerecord-it&press-star&astcc-followed-by-pound,m,${CHANNEL(language)},macro-systemrecording'));
+			} else {
+				$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-rerecord-it&press-star&astcc-followed-by-pound,m,${LANGUAGE},macro-systemrecording'));
+			}
+			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', 'docheck,2'));
+			$ext->add($context, $exten, '', new ext_goto(1));
+			
+			$ext->add($context, '1', '', new ext_goto('dc_start', 'docheck'));
+			$ext->add($context, '*', '', new ext_goto(1, 'dorecord'));
+			
+			$ext->add($context, 't', '', new ext_playback('goodbye'));
+			$ext->add($context, 't', '', new ext_hangup());
+			
+			$ext->add($context, 'i', '', new ext_playback('pm-invalid-option'));
+			$ext->add($context, 'i', '', new ext_goto(1, 'confmenu'));
+
+			$ext->add($context, 'h', '', new ext_hangup());
+
 		break;
 	}
 }
