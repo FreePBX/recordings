@@ -1,7 +1,7 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.9.4</version>
+	<version>3.3.9.5</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -10,6 +10,7 @@
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.9.5* #4262
 		*3.3.9.4* localizations
 		*3.3.9.3* #3529
 		*3.3.9.2* #3779
