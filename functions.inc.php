@@ -182,16 +182,10 @@ function recordings_get_file($id) {
 	
 
 function recordings_list($compound=true) {
-	global $db;
-
-	// I'm not clued on how 'Department's' work. There obviously should be 
-	// somee checking in here for it.
 
 	$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
-	$results = $db->getAll($sql, DB_FETCHMODE_ASSOC);
-	if(DB::IsError($results)) {
-		return array();
-	}
+	$results = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
+
 	// Make array backward compatible, put first 4 columns as numeric
 	$count = 0;
 	foreach($results as $item) {
