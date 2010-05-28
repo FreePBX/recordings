@@ -183,23 +183,31 @@ function recordings_get_file($id) {
 
 function recordings_list($compound=true) {
 
+  static $initialized=false;
+  static $full_list;
+  static $filter_list=array();
+
+  if ($initialized) {
+    return ($compound ? $full_list : $filter_list);
+  }
+  $initialized=true;
+
 	$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
-	$results = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
+	$full_list = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
 
 	// Make array backward compatible, put first 4 columns as numeric
 	$count = 0;
-	foreach($results as $item) {
-		if (!$compound && strstr($item['filename'],'&') !== false) {
-			unset($results[$count]);
-		} else {
-			$results[$count][0] = $item['id'];
-			$results[$count][1] = $item['displayname'];
-			$results[$count][2] = $item['filename'];
-			$results[$count][3] = $item['description'];
+	foreach($full_list as $item) {
+		$full_list[$count][0] = $item['id'];
+		$full_list[$count][1] = $item['displayname'];
+		$full_list[$count][2] = $item['filename'];
+		$full_list[$count][3] = $item['description'];
+		if (strstr($item['filename'],'&') === false) {
+      $filter_list[] = $full_list[$count];
 		}
 		$count++;
 	}
-	return $results;
+  return ($compound ? $full_list : $filter_list);
 }
 
 function recordings_get($id) {
