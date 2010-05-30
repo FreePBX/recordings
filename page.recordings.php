@@ -172,10 +172,12 @@ function recording_addpage($usersnum) {
 	<h2><?php echo _("System Recordings")?></h2>
 	<h3><?php echo _("Add Recording") ?></h3>
 	<h5><?php echo _("Step 1: Record or upload")?></h5>
-	<p> <?php if (!empty($usersnum)) {
+	<?php if (!empty($usersnum)) {
+    echo '<p>';
 		echo _("Using your phone,")."<a href=\"#\" class=\"info\">"._("dial")."&nbsp;".$fc_save." <span>";
 		echo _("Start speaking at the tone. Hangup when finished.")."</span></a>";
 		echo _("and speak the message you wish to record.")."\n";
+    echo '</p>';
 	} else { ?>
 		<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 		<input type="hidden" name="display" value="recordings">
@@ -184,10 +186,9 @@ function recording_addpage($usersnum) {
 		<input type="text" size="6" name="usersnum" tabindex="<?php echo ++$tabindex;?>"> <input name="Submit" type="submit" value="<?php echo _("Go"); ?>" tabindex="<?php echo ++$tabindex;?>">
 		</form>
 	<?php } ?>
-	</p>
-	<p>
-	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST"/>
-		<?php echo _("Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?></span></a>:<br>
+  <p></p>
+	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+		<?php echo _("Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?>:<br>
 		<input type="hidden" name="display" value="recordings">
 		<input type="hidden" name="action" value="recordings_start">
                 <input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
@@ -209,7 +210,6 @@ function recording_addpage($usersnum) {
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
 		$rname = rtrim(basename($_FILES['ivrfile']['name'], $suffix), '.');
 	} ?>
-	</p>
 	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="recorded">
 	<input type="hidden" name="display" value="recordings">
