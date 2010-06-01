@@ -1,7 +1,7 @@
 <module>
 	<rawname>recordings</rawname>
 	<name>Recordings</name>
-	<version>3.3.9.5</version>
+	<version>3.3.10.0</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -10,7 +10,7 @@
 	<category>Internal Options &amp; Configuration</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
-		*3.3.9.5* #4262
+		*3.3.10.0* #4244, #4309
 		*3.3.9.4* localizations
 		*3.3.9.3* #3529
 		*3.3.9.2* #3779
@@ -41,6 +41,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.8/recordings-3.3.9.5.tgz</location>
-	<md5sum>7e10dba5fd4feddf909779d090868406</md5sum>
+	<location>release/2.8/recordings-3.3.10.0.tgz</location>
+	<md5sum>f46431b92aa5574df335235e94e448d1</md5sum>
 </module>
