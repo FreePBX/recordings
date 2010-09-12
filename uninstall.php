@@ -11,4 +11,13 @@ foreach ($recordings as $item) {
 
 sql('DROP TABLE IF EXISTS recordings');
 
+$fcc = new featurecode('recordings', 'record_save');
+$fcc->delete();
+unset($fcc);
+
+$fcc = new featurecode('recordings', 'record_check');
+$fcc->delete();
+unset($fcc);
+
+
 ?>
