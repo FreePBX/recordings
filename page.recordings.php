@@ -43,7 +43,9 @@ $default_pos = 0;
 $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 $astsnd .= "/sounds/";
 
-if (empty($usersnum)) {
+// check ctype_digit() to avoid very obscure vulnerability that can be made if certain proxy's are used
+// with the PBX system
+if (empty($usersnum) || !ctype_digit($usersnum)) {
 	$dest = "unnumbered-";
 } else {
 	$dest = "{$usersnum}-";
@@ -197,7 +199,7 @@ function recording_addpage($usersnum) {
 	</form>
 	<?php
 	if (isset($_FILES['ivrfile']['tmp_name']) && is_uploaded_file($_FILES['ivrfile']['tmp_name'])) {
-		if (empty($usersnum)) {
+    if (empty($usersnum) || !ctype_digit($usersnum)) {
 			$dest = "unnumbered-";
 		} else {
 			$dest = "{$usersnum}-";
