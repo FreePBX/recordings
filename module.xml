@@ -43,6 +43,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.9/recordings-3.3.10.1.tgz</location>
-	<md5sum>b9cfdf88b0e04de3d35c094a1cf32029</md5sum>
+	<location>release/2.9/recordings-3.3.10.2.tgz</location>
+	<md5sum>4f79d1eb94d4a7d8f5f21a7693bba482</md5sum>
 </module>
