@@ -204,7 +204,7 @@ function recording_addpage($usersnum) {
 		} else {
 			$dest = "{$usersnum}-";
 		}
-		$suffix = substr(strrchr($_FILES['ivrfile']['name'], "."), 1);
+		$suffix = preg_replace('/[^0-9a-zA-Z]/','',substr(strrchr($_FILES['ivrfile']['name'], "."), 1));
 		$destfilename = $recordings_save_path.$dest."ivrrecording.".$suffix;
 		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
 		system("chgrp asterisk ".$destfilename);
