@@ -18,6 +18,7 @@ $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 
 // Lite weight popup code here, don't need everything else below
 //
+
 switch ($action) {
 	case 'popup':
 	case 'audio':
@@ -78,8 +79,9 @@ switch ($action) {
 		recording_editpage($id, null);
 		break;
 	case "recorded":
-		// Clean up the filename, take out any nasty characters
+		// Clean up the filename,suffix, take out any nasty characters
 		$filename = escapeshellcmd(strtr($rname, '/ ', '__'));
+		$suffix = escapeshellcmd(strtr($suffix, '/ ', '__'));
 		if (!file_exists($astsnd."custom")) {
 			if (!mkdir($astsnd."custom", 0775)) {
 				echo '<div class="content"><h5>'._("Failed to create").' '.$astsnd.'custom'.'</h5>';			
