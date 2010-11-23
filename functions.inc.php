@@ -285,6 +285,7 @@ function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass
 		$fcc = new featurecode('recordings', 'edit-recording-'.$id);
 		$fcc->setDescription("Edit Recording: $rname");
 		$fcc->setDefault('*29'.$id);
+    $fcc->setProvideDest();
 		$fcc->update();
 		unset($fcc);	
 	}
