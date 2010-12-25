@@ -13,6 +13,7 @@ function recordings_get_config($engine) {
 	global $version;
 
   $ast_ge_14 = version_compare($version, '1.4', 'ge');
+  $ast_ge_16 = version_compare($version, '1.6', 'ge');
 	
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
@@ -91,8 +92,16 @@ function recordings_get_config($engine) {
 			// Delete all versions of the current sound file (does not consider languages though
 			// otherwise you might have some versions that are not re-recorded
 			//
+			// If we get here from *77 then we don't have ARG2, so just skip the remove, otherwise we have two paths
+			$ext->add($context, $exten, '', new ext_gotoif('$["${ARG2}" = ""]','skipremove'));
 			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
-			$ext->add($context, $exten, '', new ext_record('${RECFILE}:wav'));
+			if ($ast_ge_16) {
+				// Added in Asterisk 1.6: "If the user hangs up during a recording, all data is lost".
+				// Third option - k: Keep recorded file upon hangup.
+				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
+			} else {
+				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav'));
+			}
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
