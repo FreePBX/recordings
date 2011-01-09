@@ -1,5 +1,6 @@
 <module>
 	<rawname>recordings</rawname>
+	<repo>standard</repo>
 	<name>Recordings</name>
 	<version>3.3.10.3</version>
 	<publisher>FreePBX</publisher>
