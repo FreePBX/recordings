@@ -134,6 +134,8 @@ if  (($amp_conf["AMPDBENGINE"] != "sqlite") && ($amp_conf["AMPDBENGINE"] != "sql
 		out(_("already exists"));
 	}
 
+$freepbx_conf =& freepbx_conf::create();
+
   // AMPPLAYKEY
   //
   $set['value'] = '';
