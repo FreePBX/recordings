@@ -133,4 +133,18 @@ if  (($amp_conf["AMPDBENGINE"] != "sqlite") && ($amp_conf["AMPDBENGINE"] != "sql
 	} else {
 		out(_("already exists"));
 	}
-?>
+
+  // AMPPLAYKEY
+  //
+  $set['value'] = '';
+  $set['defaultval'] =& $set['value'];
+  $set['readonly'] = 0;
+  $set['hidden'] = 0;
+  $set['level'] = 0;
+  $set['module'] = 'recordings';
+  $set['category'] = '';
+  $set['emptyok'] = 1;
+  $set['description'] = 'Crypt key used by this recordings module when accessing the recording files. Change from the default of "moufdsuu3nma0" if desired.';
+  $set['type'] = CONF_TYPE_TEXT;
+  $freepbx_conf->define_conf_setting('AMPPLAYKEY',$set,true);
+
