@@ -9,18 +9,6 @@ _("Check Recording");
 global $amp_conf;
 global $db;
 
-if (! function_exists("out")) {
-	function out($text) {
-		echo $text."<br />";
-	}
-}
-
-if (! function_exists("outn")) {
-	function outn($text) {
-		echo $text;
-	}
-}
-
 $recordings_astsnd_path = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
