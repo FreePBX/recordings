@@ -62,13 +62,12 @@ if (!is_writable($recordings_directory)) {
 $sql = "SELECT * FROM recordings where displayname = '__invalid'";
 $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
 if (!isset($results['filename'])) {
-       sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '__invalid', 'install done', '');" );
+  sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '__invalid', 'install done', '');" );
 	$dh = opendir($recordings_directory);
 	while (false !== ($file = readdir($dh))) { // http://au3.php.net/readdir 
 		if ($file[0] != "." && $file != "CVS" && $file != "svn" && !is_dir("$recordings_directory/$file")) {
 			// Ignore the suffix..
-			$fname = ereg_replace('.wav', '', $file);
-			$fname = ereg_replace('.gsm', '', $fname);
+      $fname = str_replace(array('.wav','.gsm'), array('',''), $file);
 			if (recordings_get_id("custom/$fname") == null)
 				recordings_add($fname, "custom/$file");
 		}
