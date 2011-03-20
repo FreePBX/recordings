@@ -1,315 +1,309 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# This file is part of FreePBX.
+#
+#    FreePBX is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 2 of the License, or
+#    (at your option) any later version.
+#
+#    FreePBX is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with FreePBX.  If not, see <http://www.gnu.org/licenses/>.
+#
+# FreePBX language for recordings
+# Copyright (C) 2009, 2010, 2011 Mikael Carlsson
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-27 15:08+0200\n"
-"PO-Revision-Date: 2008-09-28 16:58+0100\n"
+"POT-Creation-Date: 2011-03-18 08:25+0100\n"
+"PO-Revision-Date: 2011-03-20 00:00+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: functions.inc.php:87
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
 
-#: functions.inc.php:97
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Inspelningen finns inte i modul %s"
 
-#: functions.inc.php:98
 #, php-format
-msgid "The %s referenced a recording file listed below that does not exists. An entry has been generated, named %s, with the referenced file(s) but you should confirm that it really works and the real files exist. The file(s) referenced: %s "
-msgstr "%s refererade till en inspelningsfil som inte finns. En post har genererats med namnet %s, med den refererande filen/filerna men du måste kontrollera att detta verkligen fungerar och att filen/filerna finns. Filen/filerna som refereras är %s"
+msgid ""
+"The %s referenced a recording file listed below that does not exists. An "
+"entry has been generated, named %s, with the referenced file(s) but you "
+"should confirm that it really works and the real files exist. The file(s) "
+"referenced: %s "
+msgstr ""
+"%s refererade till en inspelningsfil som inte finns. En post har genererats "
+"med namnet %s, med den refererande filen/filerna men du måste kontrollera "
+"att detta verkligen fungerar och att filen/filerna finns. Filen/filerna som "
+"refereras är %s"
 
-#: functions.inc.php:178
 msgid "No long description available"
 msgstr "Ingen beskrivning tillgänglig"
 
-#: install.php:26
+msgid "Recordings"
+msgstr "Inspelningar"
+
 msgid "Save Recording"
 msgstr "Spara inspelning"
 
-#: install.php:33
 msgid "Check Recording"
 msgstr "Kontrollera inspelning"
 
-#: install.php:105
 msgid "checking for fcode field.."
 msgstr "kontrollerar fältet fcode.."
 
-#: install.php:115
-#: install.php:129
 msgid "OK"
 msgstr "OK"
 
-#: install.php:117
-#: install.php:131
 msgid "already exists"
 msgstr "finns redan"
 
-#: install.php:119
 msgid "checking for fcode_pass field.."
 msgstr "kontrollerar fältet fcode_pass.."
 
-#: page.recordings.php:59
-#: page.recordings.php:60
 msgid "** MISSING FEATURE CODE **"
 msgstr "** FUKTIONSKOD FATTAS ***"
 
-#: page.recordings.php:83
 msgid "Failed to create"
 msgstr "Kunde inte skapa"
 
-#: page.recordings.php:89
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "[FEL] Den inspelade filen finns inte:"
 
-#: page.recordings.php:97
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "[FEL] vid sparande av inspelning:"
 
-#: page.recordings.php:101
 msgid "Make sure you have entered a proper name"
 msgstr "Kontrollera att det är ett giltigt namn"
 
-#: page.recordings.php:106
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[FEL] vid radering av temporär inspelning:"
 
-#: page.recordings.php:110
 msgid "Make sure Asterisk is not running as root "
 msgstr "Kontrollera att Aserisk inte körs som root"
 
-#: page.recordings.php:118
-#: page.recordings.php:150
 msgid "System Recording"
 msgstr "Systeminspelning"
 
-#: page.recordings.php:118
 msgid "Saved"
 msgstr "Sparad"
 
-#: page.recordings.php:138
 msgid "Unable to locate"
 msgstr "Kan inte hitta"
 
-#: page.recordings.php:138
 msgid "with a a valid suffix"
 msgstr "med en giltig ändelse"
 
-#: page.recordings.php:150
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: page.recordings.php:172
-#: page.recordings.php:251
-#: page.recordings.php:464
 msgid "System Recordings"
 msgstr "Systeminspelningar"
 
-#: page.recordings.php:173
-#: page.recordings.php:389
 msgid "Add Recording"
 msgstr "Lägg till inspelning"
 
-#: page.recordings.php:174
 msgid "Step 1: Record or upload"
 msgstr "Steg 1: Spela in eller ladda upp"
 
-#: page.recordings.php:176
 msgid "Using your phone,"
 msgstr "Använd din telefon,"
 
-#: page.recordings.php:176
-#: page.recordings.php:220
 msgid "dial"
 msgstr "slå"
 
-#: page.recordings.php:177
 msgid "Start speaking at the tone. Hangup when finished."
 msgstr "Börja tala efter tonen. Läg på luren när du är klar."
 
-#: page.recordings.php:178
 msgid "and speak the message you wish to record."
 msgstr "tala in ditt meddelande"
 
-#: page.recordings.php:183
-msgid "If you wish to make and verify recordings from your phone, please enter your extension number here:"
-msgstr "Om du vill spela in och lyssna på dina inspelningar via telefon, skriv in ditt anknytningnummer här."
+msgid ""
+"If you wish to make and verify recordings from your phone, please enter your "
+"extension number here:"
+msgstr ""
+"Om du vill spela in och lyssna på dina inspelningar via telefon, skriv in "
+"ditt anknytningnummer här."
 
-#: page.recordings.php:184
-#: page.recordings.php:478
 msgid "Go"
 msgstr "Utför"
 
-#: page.recordings.php:190
-msgid "Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr "Alternativt, ladda upp en inspelning i något format som stöds av Asterisk. Om du använder en .wav-fil (inspelad via Microsoft Recorder) så <b>måste</b> filen vara PCM-kodad, 16 bitar vid 8000Hz"
+msgid ""
+"Alternatively, upload a recording in any supported asterisk format. Note "
+"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
+"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr ""
+"Alternativt, ladda upp en inspelning i något format som stöds av Asterisk. "
+"Om du använder en .wav-fil (inspelad via Microsoft Recorder) så <b>måste</b> "
+"filen vara PCM-kodad, 16 bitar vid 8000Hz"
 
-#: page.recordings.php:195
 msgid "Upload"
 msgstr "Ladda upp"
 
-#: page.recordings.php:195
 msgid "Please wait until the page reloads."
 msgstr "Vänta tills sidan laddats om."
 
-#: page.recordings.php:209
 msgid "Successfully uploaded"
 msgstr "Uppladdningen lyckades"
 
-#: page.recordings.php:219
 msgid "Step 2: Verify"
 msgstr "Steg 2: Kontrollera"
 
-#: page.recordings.php:220
 msgid "After recording or uploading,"
 msgstr "Efter inspelning eller uppladdning,"
 
-#: page.recordings.php:220
 msgid "to listen to your recording."
 msgstr "för att lyssna på din inspelning."
 
-#: page.recordings.php:221
 msgid "If you wish to re-record your message, dial"
 msgstr "Om du vill spela över din inspelning, slå"
 
-#: page.recordings.php:222
 msgid "Step 3: Name"
 msgstr "Steg 3: Namn"
 
-#: page.recordings.php:224
 msgid "Step 2: Name"
 msgstr "Steg 2: Namn"
 
-#: page.recordings.php:228
 msgid "Name this Recording"
 msgstr "Namnge denna inspelning"
 
-#: page.recordings.php:234
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Klicka på \"Spara\" när du är nöjd med din inspelning"
 
-#: page.recordings.php:236
-#: page.recordings.php:347
 msgid "Save"
 msgstr "Spara"
 
-#: page.recordings.php:252
 msgid "Edit Recording"
 msgstr "Redigera inspelning"
 
-#: page.recordings.php:263
 msgid "Usage List"
 msgstr "Används i"
 
-#: page.recordings.php:263
-msgid "This recording is being used in the following instances. You can not remove this recording while being used. To re-record, you can enable and use the feature code below if allowed."
-msgstr "Denna inspelning används. Du kan inte ta bort den medan den används. För att spela in igen, använd nedanstående funktionskod om du har tillåtelse till detta."
+msgid ""
+"This recording is being used in the following instances. You can not remove "
+"this recording while being used. To re-record, you can enable and use the "
+"feature code below if allowed."
+msgstr ""
+"Denna inspelning används. Du kan inte ta bort den medan den används. För att "
+"spela in igen, använd nedanstående funktionskod om du har tillåtelse till "
+"detta."
 
-#: page.recordings.php:272
 msgid "Remove Recording"
 msgstr "Ta bort inspelning"
 
-#: page.recordings.php:276
 msgid "Note, does not delete file from computer"
 msgstr "Detta tar inte bort filen från systemet"
 
-#: page.recordings.php:288
 msgid "Change Name"
 msgstr "Byt namn"
 
-#: page.recordings.php:288
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr "Detta ändrar det korta namnet som syns till höger"
 
-#: page.recordings.php:292
 msgid "Descriptive Name"
 msgstr "Beskrivning"
 
-#: page.recordings.php:292
-msgid "This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc"
-msgstr "Detta visas när du väljer denna inspelning i Köer, Digital receptionist etc"
+msgid ""
+"This is displayed, as a hint, when selecting this recording in Queues, "
+"Digital Receptionist, etc"
+msgstr ""
+"Detta visas när du väljer denna inspelning i Köer, Digital receptionist etc"
 
-#: page.recordings.php:312
 msgid "Link to Feature Code"
 msgstr "Länk till funktionskod"
 
-#: page.recordings.php:312
-msgid "Check this box to create an options feature code that will allow this recording to be changed directly."
-msgstr "Aktivera denna ruta för att valfritt skapa en funktionskod som tillåter dig att ändra denna inspelning direkt."
+msgid ""
+"Check this box to create an options feature code that will allow this "
+"recording to be changed directly."
+msgstr ""
+"Aktivera denna ruta för att valfritt skapa en funktionskod som tillåter dig "
+"att ändra denna inspelning direkt."
 
-#: page.recordings.php:315
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Valfri funktionskod %s"
 
-#: page.recordings.php:319
 msgid "Feature Code Password"
 msgstr "Lösenord för funktionskod"
 
-#: page.recordings.php:319
-msgid "Optional password to protect access to this feature code which allows a user to re-record it."
-msgstr "Valfritt lösenord som skyddar denna funktionskod från att oavsiktligt spelas över."
+msgid ""
+"Optional password to protect access to this feature code which allows a user "
+"to re-record it."
+msgstr ""
+"Valfritt lösenord som skyddar denna funktionskod från att oavsiktligt spelas "
+"över."
 
-#: page.recordings.php:326
 msgid "Direct Access Feature Code Not Available"
 msgstr "Funktionskoden för direktåtkomst är inte tillgänglig"
 
-#: page.recordings.php:326
-msgid "Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multiple individual ones."
-msgstr "Funktionskoder för inspelningar är inte tillgängliga för de inbyggda systeminspelningarna eller för röster som består av flera individuella filer."
+msgid ""
+"Direct Access Feature Codes for recordings are not available for built in "
+"system recordings or compound recordings made of multiple individual ones."
+msgstr ""
+"Funktionskoder för inspelningar är inte tillgängliga för de inbyggda "
+"systeminspelningarna eller för röster som består av flera individuella filer."
 
-#: page.recordings.php:335
 msgid "Files"
 msgstr "Filer"
 
-#: page.recordings.php:390
-#: page.recordings.php:465
 msgid "Built-in Recordings"
 msgstr "Inbyggda inspelningar"
 
-#: page.recordings.php:443
 msgid "Please enter a valid Name for this System Recording"
 msgstr "Skriv in ett giltigt namn för denna systeminspelning"
 
-#: page.recordings.php:466
 msgid "Select System Recording:"
 msgstr "Välj systeminspelning:"
 
-#: page.recordings.php:518
 msgid "Click here to play this recording"
 msgstr "Klicka här för att spela upp denna inspelning"
 
-#: page.recordings.php:525
 msgid "Move Up"
 msgstr "Flytta upp"
 
-#: page.recordings.php:531
 msgid "Move Down"
 msgstr "Flytta ner"
 
-#: page.recordings.php:535
 msgid "Delete"
 msgstr "Ta bort"
 
-#: popup.php:48
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
-msgstr "Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
+msgstr ""
+"Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
 
-#: module.xml
-msgid "Recordings"
-msgstr "Inspelningar"
+msgid "Internal Options & Configuration"
+msgstr "Interna val och konfigurationer"
 
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr "Skapar och undehåller systeminspelningar som kan användas av andra moduler"
+
+msgid "Recordings Crypt Key"
+msgstr "Krypteringsnyckel för inspelningar"
+
+msgid "System Setup"
+msgstr "Systeminställningar"
+
+msgid ""
+"Crypt key used by this recordings module when accessing the recording files. "
+"Change from the default of "
+msgstr ""
+"Krypteringsnyckel som används av systeminspelningsmodulen vid åtkomst "
+"av inspelade filer. Ändra från standardnyckeln " 
+
+msgid " if desired."
+msgstr "om så önskas"
