@@ -178,9 +178,9 @@ function recording_addpage($usersnum) {
 	<h5><?php echo _("Step 1: Record or upload")?></h5>
 	<?php if (!empty($usersnum)) {
     echo '<p>';
-		echo _("Using your phone,")."<a href=\"#\" class=\"info\">"._("dial")."&nbsp;".$fc_save." <span>";
-		echo _("Start speaking at the tone. Hangup when finished.")."</span></a>";
-		echo _("and speak the message you wish to record.")."\n";
+		echo _("Using your phone,")."<a href=\"#\" class=\"info\">"._(" dial")."&nbsp;".$fc_save." <span>";
+		echo _("Start speaking at the tone. Press # when finished.")."</span></a>";
+		echo _("and speak the message you wish to record. Press # when finished.")."\n";
     echo '</p>';
 	} else { ?>
 		<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">

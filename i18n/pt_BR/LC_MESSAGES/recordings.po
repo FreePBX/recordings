@@ -19,8 +19,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-09-27 15:08+0200\n"
-"PO-Revision-Date: 2009-05-11 20:08-0300\n"
+"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Marcelo Araujo <marcelo.araujo@voffice.com.br>\n"
 "Language-Team: MidiVTS Team <team@midivts.org>\n"
 "MIME-Version: 1.0\n"
@@ -30,299 +30,279 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: functions.inc.php:87
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
 
-#: functions.inc.php:97
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Gravação não existente no módulo %s"
 
-#: functions.inc.php:98
 #, php-format
-msgid "The %s referenced a recording file listed below that does not exists. An entry has been generated, named %s, with the referenced file(s) but you should confirm that it really works and the real files exist. The file(s) referenced: %s "
-msgstr "O %s referencia um arquivo de gravação listado abaixo que não existe, Uma entrada foi gerada, com o nome %s, com os arquivos referenciados mas você deveria confirmar que isto está realmente funcionado e que os arquivos reais existem. O(s) arquivo referenciado:%s"
+msgid ""
+"The %s referenced a recording file listed below that does not exists. An "
+"entry has been generated, named %s, with the referenced file(s) but you "
+"should confirm that it really works and the real files exist. The file(s) "
+"referenced: %s "
+msgstr ""
+"O %s referencia um arquivo de gravação listado abaixo que não existe, Uma "
+"entrada foi gerada, com o nome %s, com os arquivos referenciados mas você "
+"deveria confirmar que isto está realmente funcionado e que os arquivos reais "
+"existem. O(s) arquivo referenciado:%s"
 
-#: functions.inc.php:178
 msgid "No long description available"
 msgstr "Nenhuma descrição linga disponível"
 
-#: install.php:26
+msgid "Recordings"
+msgstr "Gravações"
+
 msgid "Save Recording"
 msgstr "Salvar gravação"
 
-#: install.php:33
 msgid "Check Recording"
 msgstr "Verifica gravação"
 
-#: install.php:105
 msgid "checking for fcode field.."
 msgstr "Verificando o campo fcode"
 
-#: install.php:115
-#: install.php:129
 msgid "OK"
 msgstr "OK"
 
-#: install.php:117
-#: install.php:131
 msgid "already exists"
 msgstr "Já existe"
 
-#: install.php:119
 msgid "checking for fcode_pass field.."
 msgstr "Verificando se o campo fcode_pass existe"
 
-#: page.recordings.php:59
-#: page.recordings.php:60
 msgid "** MISSING FEATURE CODE **"
 msgstr "** CÓDIGO DE RECURSO FALTANDO **"
 
-#: page.recordings.php:83
 msgid "Failed to create"
 msgstr "Falha ao criar"
 
-#: page.recordings.php:89
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "[ERRO] O arquivo gravado não existe:"
 
-#: page.recordings.php:97
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "[ERRO] SALVANDO A GRAVAçÃO"
 
-#: page.recordings.php:101
 msgid "Make sure you have entered a proper name"
 msgstr "Certifique-se que você entrou um nome apropriado"
 
-#: page.recordings.php:106
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[ERRO] REMOVENDO O ARQUIVO TEMPORÁRIO:"
 
-#: page.recordings.php:110
 msgid "Make sure Asterisk is not running as root "
 msgstr "Certifique-se que o Asterisk não esteja rodando como root"
 
-#: page.recordings.php:118
-#: page.recordings.php:150
 msgid "System Recording"
 msgstr "Gravação do sistema"
 
-#: page.recordings.php:118
 msgid "Saved"
 msgstr "Salvo"
 
-#: page.recordings.php:138
 msgid "Unable to locate"
 msgstr "Não pode localizar"
 
-#: page.recordings.php:138
 msgid "with a a valid suffix"
 msgstr "Com um sufixo válido"
 
-#: page.recordings.php:150
 msgid "Updated"
 msgstr "Atualizado"
 
-#: page.recordings.php:172
-#: page.recordings.php:251
-#: page.recordings.php:464
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
-#: page.recordings.php:173
-#: page.recordings.php:389
 msgid "Add Recording"
 msgstr "Adicionar gravação"
 
-#: page.recordings.php:174
 msgid "Step 1: Record or upload"
 msgstr "Passo 1: Gravar ou upload"
 
-#: page.recordings.php:176
 msgid "Using your phone,"
 msgstr "Usando seu fone,"
 
-#: page.recordings.php:176
-#: page.recordings.php:220
-msgid "dial"
-msgstr "discar"
+msgid " dial"
+msgstr " discar"
 
-#: page.recordings.php:177
-msgid "Start speaking at the tone. Hangup when finished."
-msgstr "Comece falando ao ouvir o tom. Desligue quando terminar."
+msgid "Start speaking at the tone. Press # when finished."
+msgstr ""
 
-#: page.recordings.php:178
-msgid "and speak the message you wish to record."
-msgstr "e fale a mensagem que você deseja gravar."
+msgid "and speak the message you wish to record. Press # when finished."
+msgstr ""
 
-#: page.recordings.php:183
-msgid "If you wish to make and verify recordings from your phone, please enter your extension number here:"
-msgstr "Se você deseja fazer e verificar gravações do seu telefone, por favor entre com o número da extensão aqui:"
+msgid ""
+"If you wish to make and verify recordings from your phone, please enter your "
+"extension number here:"
+msgstr ""
+"Se você deseja fazer e verificar gravações do seu telefone, por favor entre "
+"com o número da extensão aqui:"
 
-#: page.recordings.php:184
-#: page.recordings.php:478
 msgid "Go"
 msgstr "OK"
 
-#: page.recordings.php:190
-msgid "Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr "Alternativamente, faça o upload da gravação em qualquer formato suportado pelo Asterisk. Note que se você estiver usando .wav (ex. gravado com Microsoft Recorder) o arquivo <b>DEVE</b> se codificado em PCM, 16 bits, 8000Hz"
+msgid ""
+"Alternatively, upload a recording in any supported asterisk format. Note "
+"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
+"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr ""
+"Alternativamente, faça o upload da gravação em qualquer formato suportado "
+"pelo Asterisk. Note que se você estiver usando .wav (ex. gravado com "
+"Microsoft Recorder) o arquivo <b>DEVE</b> se codificado em PCM, 16 bits, "
+"8000Hz"
 
-#: page.recordings.php:195
 msgid "Upload"
 msgstr "Subir"
 
-#: page.recordings.php:195
 msgid "Please wait until the page reloads."
 msgstr "Por favor espera até a página recarregar"
 
-#: page.recordings.php:209
 msgid "Successfully uploaded"
 msgstr "Upload com sucesso "
 
-#: page.recordings.php:219
 msgid "Step 2: Verify"
 msgstr "Passo 2: Verificar"
 
-#: page.recordings.php:220
 msgid "After recording or uploading,"
 msgstr "Após gravar ou, executar o upload"
 
-#: page.recordings.php:220
 msgid "to listen to your recording."
 msgstr "para ouvir sua gravação."
 
-#: page.recordings.php:221
 msgid "If you wish to re-record your message, dial"
 msgstr "Se você deseja re-gravar sua mensagem, disque"
 
-#: page.recordings.php:222
 msgid "Step 3: Name"
 msgstr "Passo 3: Nome"
 
-#: page.recordings.php:224
 msgid "Step 2: Name"
 msgstr "Passo 2: Nome"
 
-#: page.recordings.php:228
 msgid "Name this Recording"
 msgstr "Dê um nome a esta gravação"
 
-#: page.recordings.php:234
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Clique \"SALVAR\" quando você estiver satisfeito com a gravação"
 
-#: page.recordings.php:236
-#: page.recordings.php:347
 msgid "Save"
 msgstr "Salvar"
 
-#: page.recordings.php:252
 msgid "Edit Recording"
 msgstr "Editar a gravação"
 
-#: page.recordings.php:263
 msgid "Usage List"
 msgstr "Listar o uso"
 
-#: page.recordings.php:263
-msgid "This recording is being used in the following instances. You can not remove this recording while being used. To re-record, you can enable and use the feature code below if allowed."
-msgstr "Esta gravação está sendo usada nas seguintes instância. Você não pode remover esta gravação enquanto ela está sendo usado. Para re-gravar, você pode habilitar e usar o código de facilidade abaixo se permitido."
+msgid ""
+"This recording is being used in the following instances. You can not remove "
+"this recording while being used. To re-record, you can enable and use the "
+"feature code below if allowed."
+msgstr ""
+"Esta gravação está sendo usada nas seguintes instância. Você não pode "
+"remover esta gravação enquanto ela está sendo usado. Para re-gravar, você "
+"pode habilitar e usar o código de facilidade abaixo se permitido."
 
-#: page.recordings.php:272
 msgid "Remove Recording"
 msgstr "Remover Gravação"
 
-#: page.recordings.php:276
 msgid "Note, does not delete file from computer"
 msgstr "Nota, não apaga o arquivo do computador"
 
-#: page.recordings.php:288
 msgid "Change Name"
 msgstr "Modificar nome"
 
-#: page.recordings.php:288
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr "isto muda o nome curto, visível na direita, desta gravação"
 
-#: page.recordings.php:292
 msgid "Descriptive Name"
 msgstr "Nome descritivo"
 
-#: page.recordings.php:292
-msgid "This is displayed, as a hint, when selecting this recording in Queues, Digital Receptionist, etc"
-msgstr "Isto é mostrado, como uma dica , quando selecionando esta gravação nas filas e recepcionista digital, etc"
+msgid ""
+"This is displayed, as a hint, when selecting this recording in Queues, "
+"Digital Receptionist, etc"
+msgstr ""
+"Isto é mostrado, como uma dica , quando selecionando esta gravação nas filas "
+"e recepcionista digital, etc"
 
-#: page.recordings.php:312
 msgid "Link to Feature Code"
 msgstr "Link para o código de facilidade"
 
-#: page.recordings.php:312
-msgid "Check this box to create an options feature code that will allow this recording to be changed directly."
-msgstr "Selecione esta caixa para criar um código de facilidade que irá permitir que esta gravação seja mudada diretamente. "
+msgid ""
+"Check this box to create an options feature code that will allow this "
+"recording to be changed directly."
+msgstr ""
+"Selecione esta caixa para criar um código de facilidade que irá permitir que "
+"esta gravação seja mudada diretamente. "
 
-#: page.recordings.php:315
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Código de facilidade opcional %s"
 
-#: page.recordings.php:319
 msgid "Feature Code Password"
 msgstr "Senha do código de facilidade"
 
-#: page.recordings.php:319
-msgid "Optional password to protect access to this feature code which allows a user to re-record it."
-msgstr "Senha opcional para proteger o acesso a esta facilidade que permite a um usuário regravá-lo. "
+msgid ""
+"Optional password to protect access to this feature code which allows a user "
+"to re-record it."
+msgstr ""
+"Senha opcional para proteger o acesso a esta facilidade que permite a um "
+"usuário regravá-lo. "
 
-#: page.recordings.php:326
 msgid "Direct Access Feature Code Not Available"
 msgstr "Acesso direto ao código de acesso à facilidade não disponível"
 
-#: page.recordings.php:326
-msgid "Direct Access Feature Codes for recordings are not available for built in system recordings or compound recordings made of multiple individual ones."
-msgstr "Códigos de acesso direto à facilidade o não estão disponíveis para gravações padrão ou gravações compostas feitas de múltiplas gravações individuais. "
+msgid ""
+"Direct Access Feature Codes for recordings are not available for built in "
+"system recordings or compound recordings made of multiple individual ones."
+msgstr ""
+"Códigos de acesso direto à facilidade o não estão disponíveis para gravações "
+"padrão ou gravações compostas feitas de múltiplas gravações individuais. "
 
-#: page.recordings.php:335
 msgid "Files"
 msgstr "Arquivos"
 
-#: page.recordings.php:390
-#: page.recordings.php:465
 msgid "Built-in Recordings"
 msgstr "Gravações do sistema"
 
-#: page.recordings.php:443
 msgid "Please enter a valid Name for this System Recording"
 msgstr "Por favor entre com um nome válido para esta gravação do sistema"
 
-#: page.recordings.php:466
 msgid "Select System Recording:"
 msgstr "Selecione a gravação do sistema:"
 
-#: page.recordings.php:518
 msgid "Click here to play this recording"
 msgstr "Clique aqui para tocar esta gravação"
 
-#: page.recordings.php:525
 msgid "Move Up"
 msgstr "Mover para cima"
 
-#: page.recordings.php:531
 msgid "Move Down"
 msgstr "Mover para baixo"
 
-#: page.recordings.php:535
 msgid "Delete"
 msgstr "Excluír"
 
-#: popup.php:48
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr "Nenhum formato wav, mp3 ou gsm encontrado para tocar:< br/><br />%s"
 
-#: module.xml
-msgid "Recordings"
-msgstr "Gravações"
+msgid "Internal Options & Configuration"
+msgstr ""
 
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+
+msgid "Recordings Crypt Key"
+msgstr ""
+
+msgid "System Setup"
+msgstr ""
+
+msgid ""
+"Crypt key used by this recordings module when accessing the recording files. "
+"Change from the default of "
+msgstr ""
+
+msgid " if desired."
+msgstr ""

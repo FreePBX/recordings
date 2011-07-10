@@ -3,340 +3,294 @@
 # This file is distributed under the same license as the freePBX package.
 # Alexander Kozyrev <ceo@postmet.com>, Sergey Nikolayev <sergey@postmet.com>, 2006-2008.
 #
-# ёбЯЮЫмЧЮТРвм iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
+# РСЃРїРѕР»СЊР·РѕРІР°С‚СЊ iconv amp.new -f UTF-8 -t ISO-8859-5 -o amp.po
 # fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2008-10-06 00:29+0200\n"
-"PO-Revision-Date: 2008-01-16 16:38+0100\n"
+"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Alexander Kozyrev <ceo@postmet.com>\n"
 "Language-Team: Russian <faq@postmet.com>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=iso-8859-5\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: functions.inc.php:87
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "ЅХ ЭРЩФХЭ ЧТгЪЮТЮЩ дРЩЫ бЮЧФРЭЭлЩ ЯаШ ЯХаХЭЮбХ ЬЮФгЫп %s"
+msgstr "РќРµ РЅР°Р№РґРµРЅ Р·РІСѓРєРѕРІРѕР№ С„Р°Р№Р» СЃРѕР·РґР°РЅРЅС‹Р№ РїСЂРё РїРµСЂРµРЅРѕСЃРµ РјРѕРґСѓР»СЏ %s"
 
-#: functions.inc.php:97
 #, php-format
 msgid "Non-Existent Recording in module %s"
-msgstr "ЅХ бгйХбвТгойРп ЧРЯШбм Т ЬЮФгЫХ %s"
+msgstr "РќРµ СЃСѓС‰РµСЃС‚РІСѓСЋС‰Р°СЏ Р·Р°РїРёСЃСЊ РІ РјРѕРґСѓР»Рµ %s"
 
-#: functions.inc.php:98
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
 "entry has been generated, named %s, with the referenced file(s) but you "
 "should confirm that it really works and the real files exist. The file(s) "
 "referenced: %s "
-msgstr "%s бблЫРХвбп ЭР дРЩЫ ЧРЯШбШ, гЪРЧРЭЭлЩ ЭШЦХ, ЪЮвЮалЩ ЭХ бгйХбвТгХв. "
-"БЮЧФРЭР ЬХвЪР, б ЭРЧТРЭШХЬ %s, ЪЮвЮаРп бблЫРХвбп ЭР дРЩЫ, ЭЮ ЪЮвЮалЩ ЭгЦЭЮ "
-"ЯЮФвТХаФШвм, звЮ ЮЭ бгйХбвТгХв, Ш нвЮ аРСЮвРХв. ДРЩЫ(л), ЭР ЪЮвЮалХ бблЫРХвбп: %s "
+msgstr ""
+"%s СЃСЃС‹Р»Р°РµС‚СЃСЏ РЅР° С„Р°Р№Р» Р·Р°РїРёСЃРё, СѓРєР°Р·Р°РЅРЅС‹Р№ РЅРёР¶Рµ, РєРѕС‚РѕСЂС‹Р№ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚. РЎРѕР·РґР°РЅР° "
+"РјРµС‚РєР°, СЃ РЅР°Р·РІР°РЅРёРµРј %s, РєРѕС‚РѕСЂР°СЏ СЃСЃС‹Р»Р°РµС‚СЃСЏ РЅР° С„Р°Р№Р», РЅРѕ РєРѕС‚РѕСЂС‹Р№ РЅСѓР¶РЅРѕ "
+"РїРѕРґС‚РІРµСЂРґРёС‚СЊ, С‡С‚Рѕ РѕРЅ СЃСѓС‰РµСЃС‚РІСѓРµС‚, Рё СЌС‚Рѕ СЂР°Р±РѕС‚Р°РµС‚. Р¤Р°Р№Р»(С‹), РЅР° РєРѕС‚РѕСЂС‹Рµ "
+"СЃСЃС‹Р»Р°РµС‚СЃСЏ: %s "
 
-#: functions.inc.php:178
 msgid "No long description available"
-msgstr "ЅХв ФЫШЭЭЮУЮ ЮЯШбРЭШп"
+msgstr "РќРµС‚ РґР»РёРЅРЅРѕРіРѕ РѕРїРёСЃР°РЅРёСЏ"
 
-#: install.php:26
+msgid "Recordings"
+msgstr "Р—Р°РїРёСЃРё"
+
 msgid "Save Recording"
-msgstr "БЮеаРЭШвм ЧРЯШбм"
+msgstr "РЎРѕС…СЂР°РЅРёС‚СЊ Р·Р°РїРёСЃСЊ"
 
-#: install.php:33
 msgid "Check Recording"
-msgstr "їаЮТХаШвм ЧРЯШбм"
+msgstr "РџСЂРѕРІРµСЂРёС‚СЊ Р·Р°РїРёСЃСЊ"
 
-#: install.php:105
 msgid "checking for fcode field.."
-msgstr "ЯаЮТХапХвбп ЯЮЫХ fcode.."
+msgstr "РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РїРѕР»Рµ fcode.."
 
-#: install.php:115 install.php:129
 msgid "OK"
-msgstr "ѕє"
+msgstr "РћРљ"
 
-#: install.php:117 install.php:131
 msgid "already exists"
-msgstr "гЦХ бгйХбвТгХв"
+msgstr "СѓР¶Рµ СЃСѓС‰РµСЃС‚РІСѓРµС‚"
 
-#: install.php:119
 msgid "checking for fcode_pass field.."
-msgstr "ЯаЮТХапХвбп ЯЮЫХ fcode_pass.."
+msgstr "РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РїРѕР»Рµ fcode_pass.."
 
-#: page.recordings.php:59 page.recordings.php:60
 msgid "** MISSING FEATURE CODE **"
-msgstr "*** ѕВБГВБВІГµВ БµАІёБЅЛ№ єѕґ ***"
+msgstr "*** РћРўРЎРЈРўРЎРўР’РЈР•Рў РЎР•Р Р’РРЎРќР«Р™ РљРћР” ***"
 
-#: page.recordings.php:83
 msgid "Failed to create"
-msgstr "ЅХТЮЧЬЮЦЭЮ бЮЧФРвм"
+msgstr "РќРµРІРѕР·РјРѕР¶РЅРѕ СЃРѕР·РґР°С‚СЊ"
 
-#: page.recordings.php:89
 msgid "[ERROR] The Recorded File Does Not exists:"
-msgstr "[ѕИё±є°] ·РЯШбРЭлЩ дРЩЫ ЭХ бгйХбвТгХв:"
+msgstr "[РћРЁРР‘РљРђ] Р—Р°РїРёСЃР°РЅС‹Р№ С„Р°Р№Р» РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚:"
 
-#: page.recordings.php:97
 msgid "[ERROR] SAVING RECORDING:"
-msgstr "[ѕИё±є°] БѕЕА°ЅёµЅёП ·°їёБё:"
+msgstr "[РћРЁРР‘РљРђ] РЎРћРҐР РђРќРР•РќРРЇ Р—РђРџРРЎР:"
 
-#: page.recordings.php:101
 msgid "Make sure you have entered a proper name"
-msgstr "ГСХФШвХбм, звЮ гЪРЧРЭЮ ЯаРТШЫмЭЮХ ШЬп"
+msgstr "РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ СѓРєР°Р·Р°РЅРѕ РїСЂР°РІРёР»СЊРЅРѕРµ РёРјСЏ"
 
-#: page.recordings.php:106
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
-msgstr "[ѕИё±є°] Гґ°»µЅёµ ІАµјµЅЅѕ№ ·°їёБё:"
+msgstr "[РћРЁРР‘РљРђ] РЈР”РђР›Р•РќРР• Р’Р Р•РњР•РќРќРћР™ Р—РђРџРРЎР:"
 
-#: page.recordings.php:110
 msgid "Make sure Asterisk is not running as root "
-msgstr "ГСХФШвХбм, звЮ °бвХаШбЪ ЭХ ЧРЯгйХЭ Юв root "
+msgstr "РЈР±РµРґРёС‚РµСЃСЊ, С‡С‚Рѕ РђСЃС‚РµСЂРёСЃРє РЅРµ Р·Р°РїСѓС‰РµРЅ РѕС‚ root "
 
-#: page.recordings.php:118 page.recordings.php:150
 msgid "System Recording"
-msgstr "·РЯШбм бЮЮСйХЭШЩ"
+msgstr "Р—Р°РїРёСЃСЊ СЃРѕРѕР±С‰РµРЅРёР№"
 
-#: page.recordings.php:118
 msgid "Saved"
-msgstr "БЮеаРЭХЭЮ"
+msgstr "РЎРѕС…СЂР°РЅРµРЅРѕ"
 
-#: page.recordings.php:138
 msgid "Unable to locate"
-msgstr "ЅХТЮЧЬЮЦЭЮ ЮвЮСаРЧШвм"
+msgstr "РќРµРІРѕР·РјРѕР¶РЅРѕ РѕС‚РѕР±СЂР°Р·РёС‚СЊ"
 
-#: page.recordings.php:138
 msgid "with a a valid suffix"
-msgstr "б аРЧаХиХЭЭлЬ бгддШЪбЮЬ"
+msgstr "СЃ СЂР°Р·СЂРµС€РµРЅРЅС‹Рј СЃСѓС„С„РёРєСЃРѕРј"
 
-#: page.recordings.php:150
 msgid "Updated"
-msgstr "ѕСЭЮТЫХЭЮ"
+msgstr "РћР±РЅРѕРІР»РµРЅРѕ"
 
-#: page.recordings.php:172 page.recordings.php:251 page.recordings.php:464
 msgid "System Recordings"
-msgstr "·РЯШбШ Т бШбвХЬХ"
+msgstr "Р—Р°РїРёСЃРё РІ СЃРёСЃС‚РµРјРµ"
 
-#: page.recordings.php:173 page.recordings.php:389
 msgid "Add Recording"
-msgstr "ґЮСРТШвм ЧРЯШбм"
+msgstr "Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ"
 
-#: page.recordings.php:174
 msgid "Step 1: Record or upload"
-msgstr "1 ИРУ: ·РЯШбм ШЫШ ЧРУагЧЪР"
+msgstr "1 РЁР°Рі: Р—Р°РїРёСЃСЊ РёР»Рё Р·Р°РіСЂСѓР·РєР°"
 
-#: page.recordings.php:176
 msgid "Using your phone,"
-msgstr "ёбЯЮЫмЧгп ТРи вХЫХдЮЭ,"
+msgstr "РСЃРїРѕР»СЊР·СѓСЏ РІР°С€ С‚РµР»РµС„РѕРЅ,"
 
-#: page.recordings.php:176 page.recordings.php:220
-msgid "dial"
-msgstr "ЭРСХаШвХ"
+msgid " dial"
+msgstr " РЅР°Р±РµСЂРёС‚Рµ"
 
-#: page.recordings.php:177
-msgid "Start speaking at the tone. Hangup when finished."
+msgid "Start speaking at the tone. Press # when finished."
 msgstr ""
-"ЅРзЭШвХ УЮТЮаШвм ЯЮбЫХ бШУЭРЫР. їЮЫЮЦШвХ вагСЪг "
-"ЯЮ ЮЪЮЭзРЭШШ."
 
-#: page.recordings.php:178
-msgid "and speak the message you wish to record."
+msgid "and speak the message you wish to record. Press # when finished."
 msgstr ""
-"Ш ЭРУЮТЮаШвХ бЮЮСйХЭШХ, ЪЮвЮаЮХ СгФХв "
-"ЧРЯШбРЭЮ."
 
-#: page.recordings.php:183
 msgid ""
 "If you wish to make and verify recordings from your phone, please enter your "
 "extension number here:"
 msgstr ""
-"µбЫШ еЮвШвХ бЮЧФРвм Ш ЯаЮТХаШвм ЧРЯШбм бЮ бТЮХУЮ "
-"вХЫХдЮЭР ТТХФШвХ бТЮЩ ТЭгваХЭЭШЩ ЭЮЬХа ЧФХбм:"
+"Р•СЃР»Рё С…РѕС‚РёС‚Рµ СЃРѕР·РґР°С‚СЊ Рё РїСЂРѕРІРµСЂРёС‚СЊ Р·Р°РїРёСЃСЊ СЃРѕ СЃРІРѕРµРіРѕ С‚РµР»РµС„РѕРЅР° РІРІРµРґРёС‚Рµ СЃРІРѕР№ "
+"РІРЅСѓС‚СЂРµРЅРЅРёР№ РЅРѕРјРµСЂ Р·РґРµСЃСЊ:"
 
-#: page.recordings.php:184 page.recordings.php:478
 msgid "Go"
-msgstr "ґРЫмиХ"
+msgstr "Р”Р°Р»СЊС€Рµ"
 
-#: page.recordings.php:190
-msgid "Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr "°ЫмвХаЭРвШТЭЮ, ЧРУагЧШвм ЧРЯШбм Т Т ЫоСЮЬ дЮаЬРвХ, ЯЮФФХаЦШТРХЬЮЬ Asterisk. ·РЬХзРЭШХ: ХбЫШ ШбЯЮЫмЧгХвбп дЮаЬРв .wav, (ЭРЯаШЬХа, ЧРЯШбм Microsoft Recorder) дРЩЫ  <b>ФЮЫЦХЭ</b> Слвм ЪЮФШаЮТРЭ ЪРЪ PCM, 16 ±Шв, Ш 8000Hz"
+msgid ""
+"Alternatively, upload a recording in any supported asterisk format. Note "
+"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
+"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr ""
+"РђР»СЊС‚РµСЂРЅР°С‚РёРІРЅРѕ, Р·Р°РіСЂСѓР·РёС‚СЊ Р·Р°РїРёСЃСЊ РІ РІ Р»СЋР±РѕРј С„РѕСЂРјР°С‚Рµ, РїРѕРґРґРµСЂР¶РёРІР°РµРјРѕРј Asterisk. "
+"Р—Р°РјРµС‡Р°РЅРёРµ: РµСЃР»Рё РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ С„РѕСЂРјР°С‚ .wav, (РЅР°РїСЂРёРјРµСЂ, Р·Р°РїРёСЃСЊ Microsoft "
+"Recorder) С„Р°Р№Р»  <b>РґРѕР»Р¶РµРЅ</b> Р±С‹С‚СЊ РєРѕРґРёСЂРѕРІР°РЅ РєР°Рє PCM, 16 Р‘РёС‚, Рё 8000Hz"
 
-#: page.recordings.php:195
 msgid "Upload"
-msgstr "·РУагЧШвм"
+msgstr "Р—Р°РіСЂСѓР·РёС‚СЊ"
 
-#: page.recordings.php:195
 msgid "Please wait until the page reloads."
-msgstr "їЮФЮЦФШвХ, бваРЭШжР бХЩзРб ЮСЭЮТШвбп."
+msgstr "РџРѕРґРѕР¶РґРёС‚Рµ, СЃС‚СЂР°РЅРёС†Р° СЃРµР№С‡Р°СЃ РѕР±РЅРѕРІРёС‚СЃСЏ."
 
-#: page.recordings.php:209
 msgid "Successfully uploaded"
-msgstr "ГбЯХиЭЮ ЧРУагЦХЭ"
+msgstr "РЈСЃРїРµС€РЅРѕ Р·Р°РіСЂСѓР¶РµРЅ"
 
-#: page.recordings.php:219
 msgid "Step 2: Verify"
-msgstr "2 ИРУ: їаЮТХаЪР"
+msgstr "2 РЁР°Рі: РџСЂРѕРІРµСЂРєР°"
 
-#: page.recordings.php:220
 msgid "After recording or uploading,"
-msgstr "їЮбЫХ ЧРЯШбШ ШЫШ ЧРУагЧЪШ,"
+msgstr "РџРѕСЃР»Рµ Р·Р°РїРёСЃРё РёР»Рё Р·Р°РіСЂСѓР·РєРё,"
 
-#: page.recordings.php:220
 msgid "to listen to your recording."
-msgstr "ФЫп ЯаЮбЫгиШТРЭШп бЮЧФРЭЮЩ ЧРЯШбШ"
+msgstr "РґР»СЏ РїСЂРѕСЃР»СѓС€РёРІР°РЅРёСЏ СЃРѕР·РґР°РЅРѕР№ Р·Р°РїРёСЃРё"
 
-#: page.recordings.php:221
 msgid "If you wish to re-record your message, dial"
-msgstr "µбЫШ ЭХЮСеЮФШЬЮ ЯХаХЧРЯШбРвм ТРиХ бЮЮСйХЭШХ ЭРСХаШвХ"
+msgstr "Р•СЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ РїРµСЂРµР·Р°РїРёСЃР°С‚СЊ РІР°С€Рµ СЃРѕРѕР±С‰РµРЅРёРµ РЅР°Р±РµСЂРёС‚Рµ"
 
-#: page.recordings.php:222
 msgid "Step 3: Name"
-msgstr "3 ИРУ: ЅРЧТРЭШХ"
+msgstr "3 РЁР°Рі: РќР°Р·РІР°РЅРёРµ"
 
-#: page.recordings.php:224
 msgid "Step 2: Name"
-msgstr "2 ИРУ: ЅРЧТРЭШХ"
+msgstr "2 РЁР°Рі: РќР°Р·РІР°РЅРёРµ"
 
-#: page.recordings.php:228
 msgid "Name this Recording"
-msgstr "ЅРЧТРЭШХ ФЫп нвЮЩ ЧРЯШбШ"
+msgstr "РќР°Р·РІР°РЅРёРµ РґР»СЏ СЌС‚РѕР№ Р·Р°РїРёСЃРё"
 
-#: page.recordings.php:234
 msgid "Click \"SAVE\" when you are satisfied with your recording"
-msgstr "єЫШЪЭгвм ЭР \"БЮеаРЭШвм\" ХбЫШ ЧРЯШбм гбваРШТРХв"
+msgstr "РљР»РёРєРЅСѓС‚СЊ РЅР° \"РЎРѕС…СЂР°РЅРёС‚СЊ\" РµСЃР»Рё Р·Р°РїРёСЃСЊ СѓСЃС‚СЂР°РёРІР°РµС‚"
 
-#: page.recordings.php:236 page.recordings.php:347
 msgid "Save"
-msgstr "БЮеаРЭШвм"
+msgstr "РЎРѕС…СЂР°РЅРёС‚СЊ"
 
-#: page.recordings.php:252
 msgid "Edit Recording"
-msgstr "АХФРЪвШаЮТРвм ЧРЯШбм"
+msgstr "Р РµРґР°РєС‚РёСЂРѕРІР°С‚СЊ Р·Р°РїРёСЃСЊ"
 
-#: page.recordings.php:263
 msgid "Usage List"
-msgstr "БЯШбЮЪ ШбЯЮЫмЧЮТРЭШЭле"
+msgstr "РЎРїРёСЃРѕРє РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРЅС‹С…"
 
-#: page.recordings.php:263
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
 "feature code below if allowed."
 msgstr ""
-"НвР ЧРЯШбм ШбЯЮЫмЧгХвбп Т бЫХФгойШе ЬЮФгЫпе. Іл ЭХ ЬЮЦХвХ гФРЫШвм нвг ЧРЯШбм "
-"ЯЮЪР ЮЭР ШбЯЮЫмЧгХвбп. їЮбЫХ ЯХаХЧРЯШбШ ЬЮЦЭЮ ЧРФХЩбвТЮТРвм бХаТШбЭлЩ ЪЮФ, гЪРЧРЭЭлЩ "
-"ЭШЦХ, Ш ШбЯЮЫмЧЮТРвм, ХбЫШ ЭХЮСеЮФШЬЮ."
+"Р­С‚Р° Р·Р°РїРёСЃСЊ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ СЃР»РµРґСѓСЋС‰РёС… РјРѕРґСѓР»СЏС…. Р’С‹ РЅРµ РјРѕР¶РµС‚Рµ СѓРґР°Р»РёС‚СЊ СЌС‚Сѓ Р·Р°РїРёСЃСЊ "
+"РїРѕРєР° РѕРЅР° РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ. РџРѕСЃР»Рµ РїРµСЂРµР·Р°РїРёСЃРё РјРѕР¶РЅРѕ Р·Р°РґРµР№СЃС‚РІРѕРІР°С‚СЊ СЃРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ, "
+"СѓРєР°Р·Р°РЅРЅС‹Р№ РЅРёР¶Рµ, Рё РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ, РµСЃР»Рё РЅРµРѕР±С…РѕРґРёРјРѕ."
 
-#: page.recordings.php:272
 msgid "Remove Recording"
-msgstr "ГФРЫШвм ЧРЯШбм"
+msgstr "РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ"
 
-#: page.recordings.php:276
 msgid "Note, does not delete file from computer"
-msgstr ""
-"·РЬХзРЭШХ: ЭХ гФРЫпХв дРЩЫ дШЧШзХбЪШ ШЧ "
-"ЪЮЬЯмовХаР"
+msgstr "Р—Р°РјРµС‡Р°РЅРёРµ: РЅРµ СѓРґР°Р»СЏРµС‚ С„Р°Р№Р» С„РёР·РёС‡РµСЃРєРё РёР· РєРѕРјРїСЊСЋС‚РµСЂР°"
 
-#: page.recordings.php:288
 msgid "Change Name"
-msgstr "ёЧЬХЭШвм ЭРЧТРЭШХ"
+msgstr "РР·РјРµРЅРёС‚СЊ РЅР°Р·РІР°РЅРёРµ"
 
-#: page.recordings.php:288
 msgid "This changes the short name, visible on the right, of this recording"
-msgstr ""
-"·ФХбм ЬЮЦЭЮ ШЧЬХЭШвм ЭРЧТРЭШХ ЧРЯШбШ Т ЮЪЭХ "
-"бЯаРТР"
+msgstr "Р—РґРµСЃСЊ РјРѕР¶РЅРѕ РёР·РјРµРЅРёС‚СЊ РЅР°Р·РІР°РЅРёРµ Р·Р°РїРёСЃРё РІ РѕРєРЅРµ СЃРїСЂР°РІР°"
 
-#: page.recordings.php:292
 msgid "Descriptive Name"
-msgstr "ѕЯШбРЭШХ"
+msgstr "РћРїРёСЃР°РЅРёРµ"
 
-#: page.recordings.php:292
 msgid ""
 "This is displayed, as a hint, when selecting this recording in Queues, "
 "Digital Receptionist, etc"
 msgstr ""
-"НвЮ ЮвЮСаРЦРХвбп ЪРЪ ЯЮФбЪРЧЪР, ЪЮУФР ТлСШаРХЬ "
-"ЧРЯШбм Т ѕзХаФпе, °ТвЮбХЪаХвРам, Ш в.Ф."
+"Р­С‚Рѕ РѕС‚РѕР±СЂР°Р¶Р°РµС‚СЃСЏ РєР°Рє РїРѕРґСЃРєР°Р·РєР°, РєРѕРіРґР° РІС‹Р±РёСЂР°РµРј Р·Р°РїРёСЃСЊ РІ РћС‡РµСЂРґСЏС…, "
+"РђРІС‚РѕСЃРµРєСЂРµС‚Р°СЂСЊ, Рё С‚.Рґ."
 
-#: page.recordings.php:312
 msgid "Link to Feature Code"
-msgstr "»ШЭЪ ЭР БХаТШбЭлЩ ЪЮФ"
+msgstr "Р›РёРЅРє РЅР° РЎРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ"
 
-#: page.recordings.php:312
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
 msgstr ""
-"ѕвЬХвШвм ЧФХбм звЮСл ШбЯЮЫмЧЮТРвм бХаТШбЭлЩ ЪЮФ, ЪЮвЮалЩ ЯЮЧТЮЫШв ЭРЯапЬго "
-"ШЧЬХЭпвм нвг ЧРЯШбм."
+"РћС‚РјРµС‚РёС‚СЊ Р·РґРµСЃСЊ С‡С‚РѕР±С‹ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ СЃРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ, РєРѕС‚РѕСЂС‹Р№ РїРѕР·РІРѕР»РёС‚ РЅР°РїСЂСЏРјСѓСЋ "
+"РёР·РјРµРЅСЏС‚СЊ СЌС‚Сѓ Р·Р°РїРёСЃСЊ."
 
-#: page.recordings.php:315
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "БХаТШбЭлЩ ЪЮФ %s(ЮЯжШЮЭРЫмЭЮ)"
+msgstr "РЎРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ %s(РѕРїС†РёРѕРЅР°Р»СЊРЅРѕ)"
 
-#: page.recordings.php:319
 msgid "Feature Code Password"
-msgstr "їРаЮЫм ЭР бХаТШбЭлЩ ЪЮФ"
+msgstr "РџР°СЂРѕР»СЊ РЅР° СЃРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ"
 
-#: page.recordings.php:319
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
-msgstr "ѕЯжШЮЭРЫмЭЮ - ЯРаЮЫм ФЫп ЧРйШвл ФЮбвгЯР Ъ бХаТШбЭЮЬг ЪЮФг, ЪЮвЮалЩ ЯЮЧТЮЫпХв "
-"ЯХаХЧРЯШбРвм ЧРЯШбм."
+msgstr ""
+"РћРїС†РёРѕРЅР°Р»СЊРЅРѕ - РїР°СЂРѕР»СЊ РґР»СЏ Р·Р°С‰РёС‚С‹ РґРѕСЃС‚СѓРїР° Рє СЃРµСЂРІРёСЃРЅРѕРјСѓ РєРѕРґСѓ, РєРѕС‚РѕСЂС‹Р№ РїРѕР·РІРѕР»СЏРµС‚ "
+"РїРµСЂРµР·Р°РїРёСЃР°С‚СЊ Р·Р°РїРёСЃСЊ."
 
-#: page.recordings.php:326
 msgid "Direct Access Feature Code Not Available"
-msgstr "БХаТШбЭлЩ ЪЮФ ЯапЬЮУЮ ФЮбвгЯР ЭХ ФЮбвгЯХЭ"
+msgstr "РЎРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ РїСЂСЏРјРѕРіРѕ РґРѕСЃС‚СѓРїР° РЅРµ РґРѕСЃС‚СѓРїРµРЅ"
 
-#: page.recordings.php:326
 msgid ""
 "Direct Access Feature Codes for recordings are not available for built in "
 "system recordings or compound recordings made of multiple individual ones."
 msgstr ""
-"БХаТШбЭлЩ ЪЮФ ЯапЬЮУЮ ФЮбвгЯР ФЫп ЧРЯШбШ ЭХ аРСЮвРХв ФЫп ЧРЯШбХЩ, ТбваЮХЭЭле Т бШбвХЬг, "
-"ШЫШ ЧРЯШбХЩ, ШбЯЮЫмЧгойШебп Т ФагУШе ШЭФШТШФгРЫмЭле бжХЭРаШпе."
+"РЎРµСЂРІРёСЃРЅС‹Р№ РєРѕРґ РїСЂСЏРјРѕРіРѕ РґРѕСЃС‚СѓРїР° РґР»СЏ Р·Р°РїРёСЃРё РЅРµ СЂР°Р±РѕС‚Р°РµС‚ РґР»СЏ Р·Р°РїРёСЃРµР№, РІСЃС‚СЂРѕРµРЅРЅС‹С… "
+"РІ СЃРёСЃС‚РµРјСѓ, РёР»Рё Р·Р°РїРёСЃРµР№, РёСЃРїРѕР»СЊР·СѓСЋС‰РёС…СЃСЏ РІ РґСЂСѓРіРёС… РёРЅРґРёРІРёРґСѓР°Р»СЊРЅС‹С… СЃС†РµРЅР°СЂРёСЏС…."
 
-#: page.recordings.php:335
 msgid "Files"
-msgstr "ДРЩЫл"
+msgstr "Р¤Р°Р№Р»С‹"
 
-#: page.recordings.php:390 page.recordings.php:465
 msgid "Built-in Recordings"
-msgstr "ІбваЮХЭЭлХ ЧРЯШбШ"
+msgstr "Р’СЃС‚СЂРѕРµРЅРЅС‹Рµ Р·Р°РїРёСЃРё"
 
-#: page.recordings.php:443
 msgid "Please enter a valid Name for this System Recording"
-msgstr "ІТХФШвХ аРЧаХисЭЭЮХ ЭРЧТРЭШХ ФЫп нвЮЩ бШбвХЬЭЮЩ ЧРЯШбШ"
+msgstr "Р’РІРµРґРёС‚Рµ СЂР°Р·СЂРµС€С‘РЅРЅРѕРµ РЅР°Р·РІР°РЅРёРµ РґР»СЏ СЌС‚РѕР№ СЃРёСЃС‚РµРјРЅРѕР№ Р·Р°РїРёСЃРё"
 
-#: page.recordings.php:466
 msgid "Select System Recording:"
-msgstr "ІлСаРвм бШбвХЬЭго ЧРЯШбм:"
+msgstr "Р’С‹Р±СЂР°С‚СЊ СЃРёСЃС‚РµРјРЅСѓСЋ Р·Р°РїРёСЃСЊ:"
 
-#: page.recordings.php:518
 msgid "Click here to play this recording"
-msgstr "єЫШЪЭгвм ЧФХбм звЮСл ТЮбЯаЮШЧТХбвШ нвг ЧРЯШбм"
+msgstr "РљР»РёРєРЅСѓС‚СЊ Р·РґРµСЃСЊ С‡С‚РѕР±С‹ РІРѕСЃРїСЂРѕРёР·РІРµСЃС‚Рё СЌС‚Сѓ Р·Р°РїРёСЃСЊ"
 
-#: page.recordings.php:525
 msgid "Move Up"
-msgstr "БЬХбвШвм ТТХае"
+msgstr "РЎРјРµСЃС‚РёС‚СЊ РІРІРµСЂС…"
 
-#: page.recordings.php:531
 msgid "Move Down"
-msgstr "БЬХбвШвм ТЭШЧ"
+msgstr "РЎРјРµСЃС‚РёС‚СЊ РІРЅРёР·"
 
-#: page.recordings.php:535
 msgid "Delete"
-msgstr "ГФРЫШвм"
+msgstr "РЈРґР°Р»РёС‚СЊ"
 
-#: popup.php:48
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
-msgstr "ЅХ ЭРЩФХЭЮ бЮТЬХбвШЬле дЮаЬРвЮТ wav, mp3 ШЫШ gsm ФЫп ТЮбЯаЮШЧТХФХЭШп:<br /><br />%s"
+msgstr ""
+"РќРµ РЅР°Р№РґРµРЅРѕ СЃРѕРІРјРµСЃС‚РёРјС‹С… С„РѕСЂРјР°С‚РѕРІ wav, mp3 РёР»Рё gsm РґР»СЏ РІРѕСЃРїСЂРѕРёР·РІРµРґРµРЅРёСЏ:<br /"
+"><br />%s"
 
-#: module.xml
-msgid "Recordings"
-msgstr "·РЯШбШ"
+msgid "Internal Options & Configuration"
+msgstr ""
+
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+
+msgid "Recordings Crypt Key"
+msgstr ""
+
+msgid "System Setup"
+msgstr ""
+
+msgid ""
+"Crypt key used by this recordings module when accessing the recording files. "
+"Change from the default of "
+msgstr ""
+
+msgid " if desired."
+msgstr ""
