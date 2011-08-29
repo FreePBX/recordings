@@ -7,8 +7,7 @@
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
-	<type>setup</type>
-	<category>Internal Options &amp; Configuration</category>
+	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
 		*3.3.11.2* #4001
@@ -16,31 +15,6 @@
 		*3.3.11.0* #4651, #4653, #4579
 		*3.3.10.3* #4604 (Security Bug)
 		*3.3.10.2* #4568 Security Patch
-		*3.3.10.1* #4553 Security Patch
-		*3.3.10.0* #4244, #4309
-		*3.3.9.4* localizations
-		*3.3.9.3* #3529
-		*3.3.9.2* #3779
-		*3.3.9.1* localizations, misc
-		*3.3.9.0* #3059, #3604
-		*3.3.8.8* localization fixes, misc
-		*3.3.8.7* #3108, #3138 Sqlite3 fix
-		*3.3.8.6* #3058 really again, use encodeURIComponent() in javascript, and remove urlencoding from crypt function
-		*3.3.8.5* #3058 again, revert crypt.php again
-		*3.3.8.4* #3058 properly display messages for unplayble formats and revert r6234 for crypt.php
-		*3.3.8.3* #2987, #3011, #3036 sqlite3 install, spelling, remove popup.css
-		*3.3.8.2* #2547, #2983 remove access violation so modules dir can be locked down, fix bug in sound file path, add back encryption
-		*3.3.8.1* fixed typo in recordings_list
-		*3.3.8* #2063, #2064, #2065, #2066, #2067, #2068, #2069
-		*3.3.7.1* dependency to 2.5
-		*3.3.7* #2889 add optional feature codes linked to recordings to be able to easily change
-		*3.3.6.2* #2604, #2843 fix mal-formed html tags, Russian Translation
-		*3.3.6.1* #2591, enhance code so bad directory copy errors are reported
-		*3.3.6* it translations, removed legacy ext-recordings left in error
-		*3.3.5.4* #2426 remove non-functioning download link
-		*3.3.5.3* #2409 syntax error in audio.php could cause playback problems
-		*3.3.5.2* #2016 allow amportal.conf AMPLAYKEY override hardcoded crypt key
-		*3.3.5.1* CHANGELOG TRUNCATED See SVN Repository
 	</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
