@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"POT-Creation-Date: 2011-09-04 18:42+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,6 +154,9 @@ msgstr ""
 msgid "After recording or uploading,"
 msgstr ""
 
+msgid "dial"
+msgstr ""
+
 msgid "to listen to your recording."
 msgstr ""
 
@@ -263,7 +266,7 @@ msgstr ""
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr ""
 
-msgid "Internal Options & Configuration"
+msgid "Admin"
 msgstr ""
 
 msgid ""
