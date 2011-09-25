@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: Chavdar Iliev <chavdar_75@yahoo.com>\n"
@@ -152,6 +152,9 @@ msgstr "Стъпка 2: Прослушване"
 msgid "After recording or uploading,"
 msgstr "След запис или добавяне,"
 
+msgid "dial"
+msgstr ""
+
 msgid "to listen to your recording."
 msgstr "за да прослушате вашия запис."
 
@@ -275,7 +278,7 @@ msgstr ""
 "Не е намерен съвместим wav, mp3 или gsm формат за възпроизвеждане:<br /><br /"
 ">%s"
 
-msgid "Internal Options & Configuration"
+msgid "Admin"
 msgstr ""
 
 msgid ""

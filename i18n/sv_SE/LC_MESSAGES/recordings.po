@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -165,6 +165,9 @@ msgstr "Steg 2: Kontrollera"
 msgid "After recording or uploading,"
 msgstr "Efter inspelning eller uppladdning,"
 
+msgid "dial"
+msgstr ""
+
 msgid "to listen to your recording."
 msgstr "för att lyssna på din inspelning."
 
@@ -285,8 +288,8 @@ msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr ""
 "Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
 
-msgid "Internal Options & Configuration"
-msgstr "Interna val och konfigurationer"
+msgid "Admin"
+msgstr ""
 
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
@@ -308,3 +311,6 @@ msgstr ""
 
 msgid " if desired."
 msgstr "om så önskas"
+
+#~ msgid "Internal Options & Configuration"
+#~ msgstr "Interna val och konfigurationer"

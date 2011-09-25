@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Marcelo Araujo <marcelo.araujo@voffice.com.br>\n"
 "Language-Team: MidiVTS Team <team@midivts.org>\n"
@@ -166,6 +166,9 @@ msgstr "Passo 2: Verificar"
 msgid "After recording or uploading,"
 msgstr "Após gravar ou, executar o upload"
 
+msgid "dial"
+msgstr ""
+
 msgid "to listen to your recording."
 msgstr "para ouvir sua gravação."
 
@@ -286,7 +289,7 @@ msgstr "Excluír"
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr "Nenhum formato wav, mp3 ou gsm encontrado para tocar:< br/><br />%s"
 
-msgid "Internal Options & Configuration"
+msgid "Admin"
 msgstr ""
 
 msgid ""

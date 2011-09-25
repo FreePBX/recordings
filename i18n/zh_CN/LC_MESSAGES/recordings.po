@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-07-10 09:30+0100\n"
+"POT-Creation-Date: 2011-09-23 09:52+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -149,6 +149,9 @@ msgstr "步骤2：验证"
 msgid "After recording or uploading,"
 msgstr "在录音上传后，"
 
+msgid "dial"
+msgstr ""
+
 msgid "to listen to your recording."
 msgstr "可以收听你的录音。"
 
@@ -262,7 +265,7 @@ msgstr "删除"
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr "没有找到兼容的wav、mp3、gsm格式来播放：<br /><br />%s"
 
-msgid "Internal Options & Configuration"
+msgid "Admin"
 msgstr ""
 
 msgid ""
