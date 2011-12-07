@@ -408,16 +408,9 @@ function recordings_list_usage($id) {
 	foreach(array_keys($active_modules) as $mod) {
 		$function = $mod."_recordings_usage";
 		if (function_exists($function)) {
-			if (isset($_COOKIE['lang']) && is_dir("./modules/$mod/i18n/".$_COOKIE['lang'])) {
-				$prev_domain = textdomain(NULL);
-				bindtextdomain($mod,"./modules/$mod/i18n");
-				bind_textdomain_codeset($mod, 'utf8');
-				textdomain($mod);
-				$recordings_usage = $function($id);
-				textdomain($prev_domain);
-			} else {
-				$recordings_usage = $function($id);
-			}
+			modgettext::push_textdomain($mod);
+			$recordings_usage = $function($id);
+			modgettext::pop_textdomain();
 			if (!empty($recordings_usage)) {
 				$full_usage_arr = array_merge($full_usage_arr, $recordings_usage);
 			}
