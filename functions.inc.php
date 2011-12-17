@@ -1,4 +1,5 @@
 <?php
+if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 
 // Source and Destination Dirctories for recording
 global $recordings_astsnd_path; // PHP5 needs extra convincing of a global
