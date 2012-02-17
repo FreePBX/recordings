@@ -187,6 +187,9 @@ function recordings_get_id($fn) {
 
 function recordings_get_file($id) {
 	$res = recordings_get($id);
+	if (empty($res)) {
+		return '';
+	}
 	return $res['filename'];
 }
 	
