@@ -26,6 +26,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.10/recordings-3.3.11.5.tgz</location>
-	<md5sum>248b998dd6360a538fe7e41ae8208868</md5sum>
+	<location>release/2.10/recordings-3.3.11.6.tgz</location>
+	<md5sum>958c5478c0a697fd5e0bd6b2bcc430b0</md5sum>
 </module>
