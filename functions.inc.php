@@ -257,14 +257,14 @@ function recordings_add($displayname, $filename, $description='') {
 	
 }
 
-function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass='') {
+function recordings_update($id, $rname, $descr, $request, $fcode=0, $fcode_pass='') {
 	global $db;
 
 	// Update the descriptive fields
 	$fcode_pass = preg_replace("/[^0-9*]/" ,"", trim($fcode_pass));
 	$results = sql("UPDATE recordings SET displayname = '".$db->escapeSimple($rname)."', description = '".$db->escapeSimple($descr)."', fcode='$fcode', fcode_pass='".$fcode_pass."' WHERE id = '$id'");
 	
-	// Build the file list from _REQUEST
+	// Build the file list from request
         $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
         $astsnd .= "/sounds/";
 	$recordings = Array();
@@ -272,7 +272,7 @@ function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass
 	// Set the file names from the submitted page, sysrec[N]
 	// We don't set if feature code was selected, we use what was already there
 	// because the fields will have been disabled and won't be accessible in the
-	// $_REQUEST array anyhow
+	// $request array anyhow
 	//
 	if ($fcode != 1) {
 		// delete the feature code if it existed
@@ -280,7 +280,7 @@ function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass
 		$fcc = new featurecode('recordings', 'edit-recording-'.$id);
 		$fcc->delete();
 		unset($fcc);	
-		foreach ($_REQUEST as $key => $val) {
+		foreach ($request as $key => $val) {
 			$res = strpos($key, 'sysrec');
 			if ($res !== false) {
 				// strip out any relative paths, since this is coming from a URL
@@ -303,12 +303,12 @@ function recordings_update($id, $rname, $descr, $_REQUEST, $fcode=0, $fcode_pass
 		unset($fcc);	
 	}
 
-	// In _REQUEST there are also various actions (possibly) 
+	// In request there are also various actions (possibly) 
 	// up[N] - Move file id N up one place
 	// down[N] - Move fid N down one place
 	// del[N] - Delete fid N
 	
-	foreach ($_REQUEST as $key => $val) {
+	foreach ($request as $key => $val) {
 		if (strpos($key,"_") == 0) {
 	      		$up = strpos($key, "up");
 
