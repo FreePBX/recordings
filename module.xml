@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>3.3.11.6</version>
+	<version>3.3.11.7</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.11.7* #5654
 		*3.3.11.6* cleanup empty return value
 		*3.3.11.5* #5478 
 		*3.3.11.4* #5463
@@ -26,6 +27,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.10/recordings-3.3.11.6.tgz</location>
-	<md5sum>958c5478c0a697fd5e0bd6b2bcc430b0</md5sum>
+	<location>release/2.10/recordings-3.3.11.7.tgz</location>
+	<md5sum>f906b838ef1c354163a5ec678efab021</md5sum>
 </module>
