@@ -210,7 +210,7 @@ function recording_addpage($usersnum) {
 		$suffix = preg_replace('/[^0-9a-zA-Z]/','',substr(strrchr($_FILES['ivrfile']['name'], "."), 1));
 		$destfilename = $recordings_save_path.$dest."ivrrecording.".$suffix;
 		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
-		system("chgrp asterisk ".$destfilename);
+		system("chgrp " . $amp_conf['AMPASTERISKGROUP'] . " " . $destfilename);
 		system("chmod g+rw ".$destfilename);
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
 		$rname = rtrim(basename($_FILES['ivrfile']['name'], $suffix), '.');
