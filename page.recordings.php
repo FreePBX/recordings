@@ -269,13 +269,13 @@ function recording_editpage($id, $num) {
 <?php
 		$count = 0;
 		foreach ($usage_list as $link) {
-			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="images/application_link.png"/>&nbsp;'.$link['description'].'</span>';
+			$label = '<span><img width="16" height="16" border="0" title="'.$link['description'].'" alt="" src="assets/recordings/images/application_link.png"/>&nbsp;'.$link['description'].'</span>';
 			echo "<br /><a href=".$link['url_query'].">".$label."</a>";
 		}
 	} else {
 		$delURL = "config.php?display=recordings&amp;action=delete&amp;usersnum=".urlencode($num)."&amp;id=$id";
 		$tlabel = _("Remove Recording");
-		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
+		$label = '<span><img width="16" height="16" border="0" title="'.$tlabel.'" alt="" src="assets/recordings/images/sound_delete.png"/>&nbsp;'.$tlabel.'</span>';
 		echo "<a href=".$delURL.">".$label."</a>";
 		echo "<i style='font-size: x-small'>&nbsp;(";
 		echo _("Note, does not delete file from computer");
@@ -320,6 +320,7 @@ function recording_editpage($id, $num) {
 		$("#sysrec'.$counter.'").parent().one("mouseover", function(){
 			$selectload = $("#selectload'.$counter.'").show(80,function(){
 				$("#sysrec'.$counter.'").empty().append($optlist.clone()).val($("#sysrecval'.$counter.'").val());
+				$("#sysrec'.$counter.'").chosen({search_contains: true, no_results_text: "No Recordings Found", allow_single_deselect: true});
 				$(this).hide();
 			});
 		});
@@ -508,7 +509,7 @@ function recording_sysfiles() {
 	<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
 	<input type="hidden" name="action" value="newsysrec">
 	<input type="hidden" name="display" value="recordings">
-	<select name="sysrec">
+	<select name="sysrec" class="autocomplete-combobox">
 <?php
 	foreach ($sysrecs as $srcount => $sr) {
 		// echo '<option value="'.$vmc.'"'.($vmc == $ivr_details['dircontext'] ? ' SELECTED' : '').'>'.$vmc."</option>\n";
@@ -536,7 +537,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 		$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
 		$astsnd .= "/sounds/";
 		$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
-		$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count' class='autofill'>\n";
+		$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count' class='autofill autocomplete-combobox'>\n";
 		$html_txt .=  '<option value=""'.($item == '' ? ' SELECTED' : '')."></option>\n";
 		$index=0;
 		foreach ($sysrecs as $sr) {
@@ -567,26 +568,26 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&recordingpath=$audio&recording=";
 
 	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
-	$html_txt .=  "<img border='0' width='20'  height='20' src='images/play.png' title='"._("Click here to play this recording")."' />";
+	$html_txt .=  "<img border='0' width='20'  height='20' src='assets/recordings/images/play.png' title='"._("Click here to play this recording")."' />";
 	$html_txt .=  "</img></td>";
 
 	if ($count==0) {
 		 $html_txt .=  "<td></td>\n"; 
 	} else {
 		$html_txt .=  "<td><img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<input $hidden_state name='up$count' id='up$count' width=10 height=20 border=5  title='"._("Move Up")."' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
+		$html_txt .=  "<input $hidden_state name='up$count' id='up$count' style='border:0px;' width=19 height=21 border=5  title='"._("Move Up")."' type='image' src='images/scrollup.gif'  value='"._("Move Up")."'>";
 		$html_txt .=  "</td>\n"; 
 	} if ($count > $max) {
 		$html_txt .=  "<td></td>\n"; 
 	} else {
 		$html_txt .=  "<td><img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-		$html_txt .=  "<input $hidden_state name='down$count' id='down$count' width=10 height=20 border=0 title='"._("Move Down")."' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
+		$html_txt .=  "<input $hidden_state name='down$count' id='down$count' style='border:0px;' width=19 height=21 border=0 title='"._("Move Down")."' type='image' src='images/scrolldown.gif'  value='"._("Move Down")."'>\n";
 		$html_txt .=  "<img border='0' width='3' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
 		$html_txt .=  "</td>\n"; 
 	}
-	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' border=0 title='"._("Delete")."' src='images/trash.png' value='"._("Delete")."'>\n";
-	$html_txt .=  "<img border='0' width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
-	$html_txt .=  "</td><td id='selectload$count' class='slclass' style='visibility:hidden' width='16'><img border='0' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/rec_hourglass.png'></td>\n"; 
+	$html_txt .=  "<td><input $hidden_state name='del$count' id='del$count' type='image' style='border:0px;' border=0 title='"._("Delete")."' src='images/trash.png' value='"._("Delete")."'>\n";
+	$html_txt .=  "<img border='0'  width='9' height='11' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='images/blank.gif' />";
+	$html_txt .=  "</td><td id='selectload$count' class='slclass' style='visibility:hidden' width='16'><img border='0' style='float: none; margin-left: 0px; margin-bottom: 0px;' src='assets/recordings/images/rec_hourglass.png'></td>\n"; 
 
 	$html_txt .=  "</tr>\n";
 	return $html_txt;

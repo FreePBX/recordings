@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>3.3.11.8</version>
+	<version>3.3.11.9</version>
 	<publisher>FreePBX</publisher>
 	<license>GPLv2+</license>
 	<candisable>no</candisable>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.3.11.9* Replace select/drop boxes with autocomplete box
 		*3.3.11.8* use AMPASTERISKGROUP, don't hardcode
 		*3.3.11.7* #5654
 		*3.3.11.6* cleanup empty return value
@@ -28,6 +29,6 @@
 	<depends>
 		<version>2.5.0alpha1</version>
 	</depends>
-	<location>release/2.11/recordings-3.3.11.8.tgz</location>
-	<md5sum>a5e8b2c4fe3d5173b873df2396cd1ca7</md5sum>
+	<location>release/2.10/recordings-3.3.11.7.tgz</location>
+	<md5sum>f906b838ef1c354163a5ec678efab021</md5sum>
 </module>
