@@ -225,7 +225,7 @@ function recordings_list($compound=true) {
 
 function recordings_get($id) {
 	global $db;
-        $sql = "SELECT * FROM recordings where id='$id'";
+        $sql = "SELECT * FROM recordings where id='".$db->escapesimple($id)."'";
         $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
         if(DB::IsError($results)) {
                 $results = null;
