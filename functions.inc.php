@@ -15,10 +15,10 @@ function recordings_get_config($engine) {
 
   $ast_ge_14 = version_compare($version, '1.4', 'ge');
   $ast_ge_16 = version_compare($version, '1.6', 'ge');
-	
+
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
-	
+
 	switch($engine) {
 		case "asterisk":
 			// FeatureCodes for save / check
@@ -32,7 +32,7 @@ function recordings_get_config($engine) {
 
 			if ($fc_save != '' || $fc_check != '') {
 				$ext->addInclude('from-internal-additional', 'app-recordings'); // Add the include from from-internal
-				
+
 				if ($fc_save != '') {
 					$ext->add($appcontext, $fc_save, '', new ext_macro('user-callerid'));
 					$ext->add($appcontext, $fc_save, '', new ext_wait('2'));
@@ -60,7 +60,7 @@ function recordings_get_config($engine) {
 				} else {
 					$fcc = new featurecode('recordings', 'edit-recording-'.$item['id']);
 					$fcc->delete();
-					unset($fcc);	
+					unset($fcc);
 					continue; // loop back to foreach
 				}
 
@@ -83,13 +83,13 @@ function recordings_get_config($engine) {
 			// which removes a hard-coded value in the macro
 
 			$context = 'macro-systemrecording';
-			
+
 			$ext->add($context, 's', '', new ext_setvar('RECFILE','${IF($["${ARG2}" = ""]?'.$recordings_save_path.'${AMPUSER}-ivrrecording:${ARG2})}'));
 			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
 			$ext->add($context, 's', '', new ext_goto(1, '${ARG1}'));
-			
+
 			$exten = 'dorecord';
-			
+
 			// Delete all versions of the current sound file (does not consider languages though
 			// otherwise you might have some versions that are not re-recorded
 			//
@@ -107,7 +107,7 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'docheck';
-			
+
 			$ext->add($context, $exten, '', new ext_playback('beep'));
 			if ($ast_ge_14) {
 				$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},macro-systemrecording'));
@@ -127,13 +127,13 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', 'docheck,2'));
 			$ext->add($context, $exten, '', new ext_goto(1));
-			
+
 			$ext->add($context, '1', '', new ext_goto('dc_start', 'docheck'));
 			$ext->add($context, '*', '', new ext_goto(1, 'dorecord'));
-			
+
 			$ext->add($context, 't', '', new ext_playback('goodbye'));
 			$ext->add($context, 't', '', new ext_hangup());
-			
+
 			$ext->add($context, 'i', '', new ext_playback('pm-invalid-option'));
 			$ext->add($context, 'i', '', new ext_goto(1, 'confmenu'));
 
@@ -175,7 +175,7 @@ function recordings_get_or_create_id($fn, $module) {
 
 function recordings_get_id($fn) {
 	global $db;
-	
+
 	$sql = "SELECT id FROM recordings WHERE filename='$fn'";
         $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
 	if (isset($results['id'])) {
@@ -192,7 +192,7 @@ function recordings_get_file($id) {
 	}
 	return $res['filename'];
 }
-	
+
 
 function recordings_list($compound=true) {
 
@@ -237,7 +237,7 @@ function recordings_add($displayname, $filename, $description='') {
 	global $db;
 	global $recordings_astsnd_path;
 
-	// Check to make sure we can actually read the file if it has an extension (if it doesn't, 
+	// Check to make sure we can actually read the file if it has an extension (if it doesn't,
 	// it was put here by system recordings, so we know it's there.
 	if (preg_match("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", $filename)) {
 		if (!is_readable($recordings_astsnd_path.$filename)) {
@@ -254,7 +254,7 @@ function recordings_add($displayname, $filename, $description='') {
 	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', '$description')");
 
 	return true;
-	
+
 }
 
 function recordings_update($id, $rname, $descr, $request, $fcode=0, $fcode_pass='') {
@@ -263,7 +263,7 @@ function recordings_update($id, $rname, $descr, $request, $fcode=0, $fcode_pass=
 	// Update the descriptive fields
 	$fcode_pass = preg_replace("/[^0-9*]/" ,"", trim($fcode_pass));
 	$results = sql("UPDATE recordings SET displayname = '".$db->escapeSimple($rname)."', description = '".$db->escapeSimple($descr)."', fcode='$fcode', fcode_pass='".$fcode_pass."' WHERE id = '$id'");
-	
+
 	// Build the file list from request
         $astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
         $astsnd .= "/sounds/";
@@ -279,7 +279,7 @@ function recordings_update($id, $rname, $descr, $request, $fcode=0, $fcode_pass=
 		//
 		$fcc = new featurecode('recordings', 'edit-recording-'.$id);
 		$fcc->delete();
-		unset($fcc);	
+		unset($fcc);
 		foreach ($request as $key => $val) {
 			$res = strpos($key, 'sysrec');
 			if ($res !== false) {
@@ -300,14 +300,14 @@ function recordings_update($id, $rname, $descr, $request, $fcode=0, $fcode_pass=
 		$fcc->setDefault('*29'.$id);
     $fcc->setProvideDest();
 		$fcc->update();
-		unset($fcc);	
+		unset($fcc);
 	}
 
-	// In request there are also various actions (possibly) 
+	// In request there are also various actions (possibly)
 	// up[N] - Move file id N up one place
 	// down[N] - Move fid N down one place
 	// del[N] - Delete fid N
-	
+
 	foreach ($request as $key => $val) {
 		if (strpos($key,"_") == 0) {
 	      		$up = strpos($key, "up");
@@ -358,7 +358,7 @@ function recordings_delete_file($id, $src) {
 	}
 	recordings_set_file($id, implode('&', $tmp));
 }
-	
+
 
 function recordings_del($id) {
 	$results = sql("DELETE FROM recordings WHERE id = \"$id\"");
@@ -366,7 +366,7 @@ function recordings_del($id) {
 	// delete the feature code if it existed
 	$fcc = new featurecode('recordings', 'edit-recording-'.$id);
 	$fcc->delete();
-	unset($fcc);	
+	unset($fcc);
 }
 
 function recordings_set_file($id, $filename) {
@@ -390,7 +390,7 @@ function recordings_readdir($snddir) {
 	sort($flist);
 	return array_unique($flist);
 }
-	
+
 function recordings_getdir($snddir) {
 	$dir = opendir($snddir);
 	$files = Array();
