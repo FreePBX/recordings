@@ -2,14 +2,16 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>3.4.0.1</version>
-	<publisher>FreePBX</publisher>
-	<license>GPLv2+</license>
+	<version>3.4.0.2</version>
+	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<candisable>no</candisable>
 	<canuninstall>no</canuninstall>
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.4.0.2* Update license file
 		*3.4.0.1* Diverge Track
 		*3.3.11.9* Replace select/drop boxes with autocomplete box
 		*3.3.11.8* use AMPASTERISKGROUP, don't hardcode

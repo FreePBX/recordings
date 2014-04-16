@@ -1,5 +1,8 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
+//	License for all code of this FreePBX module can be found in the license file inside the module directory
+//	Copyright 2013 Schmooze Com Inc.
+//
 
 // Source and Destination Dirctories for recording
 global $recordings_astsnd_path; // PHP5 needs extra convincing of a global
