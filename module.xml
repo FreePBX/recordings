@@ -10,12 +10,13 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*3.4.0.3* FREEPBX-7399 Made sorting and delete standards compliant 
 		*3.4.0.2* Diverge Track
 		*3.3.11.9* Replace select/drop boxes with autocomplete box
 		*3.3.11.8* use AMPASTERISKGROUP, don't hardcode
 		*3.3.11.7* #5654
 		*3.3.11.6* cleanup empty return value
-		*3.3.11.5* #5478 
+		*3.3.11.5* #5478
 		*3.3.11.4* #5463
 		*3.3.11.3* Categorization changes
 		*3.3.11.2* #4001
