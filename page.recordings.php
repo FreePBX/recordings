@@ -115,7 +115,7 @@ switch ($action) {
 		$arr = recordings_get($id);
 		$filename=$arr['filename'];
 		// Check all possibilities of uploaded file types.
-		$valid = Array("au","g723","g723sf","g729","gsm","h263","ilbc","mp3","ogg","pcm","alaw","ulaw","al","ul","mu","sln","raw","vox","WAV","wav","wav49");
+		$valid = recordings_get_filetypes();
 		$fileexists = false;
 		if (strpos($filename, '&') === false) {
 			foreach ($valid as $xtn) {
@@ -158,6 +158,7 @@ function recording_addpage($usersnum) {
 	global $fc_save;
 	global $fc_check;
 	global $recordings_save_path;
+	global $amp_conf;
 
 	?>
 	<div class="content">
@@ -197,8 +198,7 @@ function recording_addpage($usersnum) {
 		$suffix = preg_replace('/[^0-9a-zA-Z]/','',substr(strrchr($_FILES['ivrfile']['name'], "."), 1));
 		$destfilename = $recordings_save_path.$dest."ivrrecording.".$suffix;
 		move_uploaded_file($_FILES['ivrfile']['tmp_name'], $destfilename);
-		system("chgrp " . $amp_conf['AMPASTERISKGROUP'] . " " . $destfilename);
-		system("chmod g+rw ".$destfilename);
+		chmod($destfilename, 0666);
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
 		$rname = rtrim(basename($_FILES['ivrfile']['name'], $suffix), '.');
 	} ?>
@@ -578,4 +578,3 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	return $html_txt;
 }
 
-?>

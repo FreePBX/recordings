@@ -242,18 +242,23 @@ function recordings_add($displayname, $filename, $description='') {
 
 	// Check to make sure we can actually read the file if it has an extension (if it doesn't,
 	// it was put here by system recordings, so we know it's there.
-	if (preg_match("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", $filename)) {
+	if (recordings_has_valid_exten($filename)) {
 		if (!is_readable($recordings_astsnd_path.$filename)) {
 			print "<p>Unable to add ".$recordings_astsnd_path.$filename." - Can not read file!</p>";
 			return false;
 		}
-		$fname = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $filename);
+		$fname = recordings_remove_exten($filename);
 
 	} else {
 		$fname = $filename;
 	}
-	$description = ($description != '') ? $db->escapeSimple($description) : _("No long description available");
-	$displayname = $db->escapeSimple($displayname);
+	$description = ($description != '') ? htmlentities($description, ENT_QUOTES, "UTF-8", false) : _("No long description available");
+	$displayname = htmlentities($displayname, ENT_QUOTES, "UTF-8", false);
+	if ($fname !== htmlentities($fname, ENT_QUOTES, "UTF-8", false)) {
+		print "<p>Invalid file name supplied. Please rename.</p>";
+		return false;
+	}
+
 	sql("INSERT INTO recordings (displayname, filename, description) VALUES ( '$displayname', '$fname', '$description')");
 
 	return true;
@@ -389,7 +394,7 @@ function recordings_readdir($snddir) {
 		$ptr++;
 	}
 	// Strip off every possible file extension
-	$flist = preg_replace("/\.(au|g723|g723sf|g726-\d\d|g729|gsm|h263|ilbc|mp3|ogg|pcm|[au]law|[au]l|mu|sln|raw|vox|WAV|wav|wav49)$/", "", $files);
+	$flist = recordings_remove_extens($files);
 	sort($flist);
 	return array_unique($flist);
 }
@@ -426,4 +431,53 @@ function recordings_list_usage($id) {
 	return $full_usage_arr;
 }
 
-?>
+function recordings_get_filetypes() {
+	// Returns an array of filetypes we know about
+	// Grabbed from asterisk -rx 'core show file formats' 
+	$valid = Array( "mp3", "sln192", "sln96", "sln48", "sln44", "sln32", "sln24", "sln16", "sln12",
+	       	"sln", "raw", "WAV", "wav49", "vox", "g723sf", "g723", "siren7", "g719", "gsm", "g726-16",
+		"g726-24", "g726-32", "g726-40", "siren14", "g729", "h263", "h264", "ilbc", "wav16", "wav",
+		"g722", "au", "alaw", "alw", "al", "pcm", "ulaw", "ulw", "mu", "ul");
+
+	return $valid;
+}
+
+function recordings_remove_extens($files) {
+	if (is_array($files)) {
+		$retarr = array();
+		foreach ($files as $file) {
+			$retarr[] = recordings_remove_exten($file);
+		}
+		return $retarr;
+	} else {
+		return recordings_remove_exten($files);
+	}
+}
+
+function recordings_remove_exten($file) {
+	$extens = recordings_get_filetypes();
+	foreach ($extens as $e) {
+		// This checks if the end of the string matches.
+		if (substr_compare($file, ".$e", -strlen($e)-1) === 0) {
+			// It matches. Return the string minus the extension
+			return substr($file, 0, -strlen($e)-1);
+		}
+	}
+
+	// We didn't find it. So.. just hand it back as is.
+	return $file;
+}
+
+function recordings_has_valid_exten($file) {
+	$extens = recordings_get_filetypes();
+	foreach ($extens as $e) {
+		// This checks if the end of the string matches.
+		if (substr_compare($file, ".$e", -strlen($e)-1) === 0) {
+			// It matches. Return true
+			return true;
+		}
+	}
+	// We didn't find it.
+	return false;
+}
+

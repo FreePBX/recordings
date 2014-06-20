@@ -27,6 +27,7 @@ if (isset($_REQUEST['recording'])) {
   switch( $extension ) {
     case "mp3": $ctype="audio/mpeg"; break;
     case "wav": $ctype="audio/x-wav"; break;
+    case "wav16": $ctype="audio/x-wav-16khz"; break;
     case "Wav": $ctype="audio/x-wav"; break;
     case "WAV": $ctype="audio/x-wav"; break;
     case "gsm": $ctype="audio/x-gsm"; break;
@@ -51,4 +52,3 @@ if (isset($_REQUEST['recording'])) {
   } 
 }
 
-?>
