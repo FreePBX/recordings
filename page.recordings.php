@@ -172,7 +172,7 @@ function recording_addpage($usersnum) {
 		echo _("and speak the message you wish to record. Press # when finished.")."\n";
     echo '</p>';
 	} else { ?>
-		<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+		<form name="xtnprompt" action="" method="post">
 		<input type="hidden" name="display" value="recordings">
 		<?php
 		echo _("If you wish to make and verify recordings from your phone, please enter your extension number here:"); ?>
@@ -180,7 +180,7 @@ function recording_addpage($usersnum) {
 		</form>
 	<?php } ?>
   <p></p>
-	<form enctype="multipart/form-data" name="upload" action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST">
+	<form enctype="multipart/form-data" name="upload" action="" method="POST">
 		<?php echo _("Alternatively, upload a recording in any supported asterisk format. Note that if you're using .wav, (eg, recorded with Microsoft Recorder) the file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz")?>:<br>
 		<input type="hidden" name="display" value="recordings">
 		<input type="hidden" name="action" value="recordings_start">
@@ -202,7 +202,7 @@ function recording_addpage($usersnum) {
 		echo "<h6>"._("Successfully uploaded")." ".$_FILES['ivrfile']['name']."</h6>";
 		$rname = rtrim(basename($_FILES['ivrfile']['name'], $suffix), '.');
 	} ?>
-	<form name="prompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
+	<form name="prompt" action="" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="recorded">
 	<input type="hidden" name="display" value="recordings">
 	<input type="hidden" name="usersnum" value="<?php echo $usersnum ?>">
@@ -269,7 +269,7 @@ function recording_editpage($id, $num) {
 		echo ")</i>";
 	}
 	?>
-	<form name="prompt"  action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return rec_onsubmit();">
+	<form name="prompt"  action="" method="post" onsubmit="return rec_onsubmit();">
 	<input type="hidden" name="action" value="edited">
 	<input type="hidden" name="display" value="recordings">
 	<input type="hidden" name="usersnum" value="<?php echo $num ?>">
@@ -493,7 +493,7 @@ function recording_sysfiles() {
 	<h2><?php echo _("System Recordings")?></h2>
 	<h3><?php echo _("Built-in Recordings") ?></h3>
 	<h5><?php echo _("Select System Recording:")?></h5>
-	<form name="xtnprompt" action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
+	<form name="xtnprompt" action="" method="post">
 	<input type="hidden" name="action" value="newsysrec">
 	<input type="hidden" name="display" value="recordings">
 	<select name="sysrec" class="autocomplete-combobox">
@@ -552,7 +552,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
   $crypt = new Crypt();
 	$REC_CRYPT_PASSWORD = (isset($amp_conf['AMPPLAYKEY']) && trim($amp_conf['AMPPLAYKEY']) != "")?trim($amp_conf['AMPPLAYKEY']):'moufdsuu3nma0';
   $audio = urlencode($crypt->encrypt($audio,$REC_CRYPT_PASSWORD));
-	$recurl=$_SERVER['PHP_SELF']."?display=recordings&action=popup&recordingpath=$audio&recording=";
+	$recurl="?display=recordings&action=popup&recordingpath=$audio&recording=";
 
 	$html_txt .=  "<a href='#' ".(($count)?$hidden_state:'')." type='submit' id='play$count' onClick=\"javascript:popUp('$recurl',document.prompt.sysrec$count); return false;\" input='foo'>";
 	$html_txt .=  "<img border='0' width='20'  height='20' src='assets/recordings/images/play.png' title='"._("Click here to play this recording")."' />";
@@ -577,4 +577,3 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$html_txt .=  "</tr>\n";
 	return $html_txt;
 }
-
