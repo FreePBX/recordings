@@ -42,7 +42,7 @@ msgstr ""
 "и истинския файл съществува. Споменатия файл(ове): %s "
 
 msgid "No long description available"
-msgstr "Не е достъпно описание."
+msgstr "Не е достъпно описание"
 
 msgid "Recordings"
 msgstr "Записи"
@@ -84,7 +84,7 @@ msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[ГРЕШКА] ПРЕМАХВАНЕ НА ВРЕМЕНЕН ЗАПИС:"
 
 msgid "Make sure Asterisk is not running as root "
-msgstr "Убедете се че Атериск не работи като root"
+msgstr "Убедете се че Атериск не работи като root "
 
 msgid "System Recording"
 msgstr "Системен Запис"
@@ -207,7 +207,7 @@ msgid "Change Name"
 msgstr "Промени Името"
 
 msgid "This changes the short name, visible on the right, of this recording"
-msgstr "Променете името на записа, показвано вдясно."
+msgstr "Променете името на записа, показвано вдясно"
 
 msgid "Descriptive Name"
 msgstr "Описващо Име"
@@ -217,7 +217,7 @@ msgid ""
 "Digital Receptionist, etc"
 msgstr ""
 "Това се показва като подсказка, когато изберете този запис в Опашки, IVR и "
-"други."
+"други"
 
 msgid "Link to Feature Code"
 msgstr "Свържи Специален Код"
