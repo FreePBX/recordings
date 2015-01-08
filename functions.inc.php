@@ -189,51 +189,16 @@ function recordings_get_id($fn) {
 }
 
 function recordings_get_file($id) {
-	$res = recordings_get($id);
-	if (empty($res)) {
-		return '';
-	}
-	return $res['filename'];
+	return FreePBX::Recordings()->getFilenameById($id);
 }
 
 
 function recordings_list($compound=true) {
-
-  static $initialized=false;
-  static $full_list;
-  static $filter_list=array();
-
-  if ($initialized) {
-    return ($compound ? $full_list : $filter_list);
-  }
-  $initialized=true;
-
-	$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
-	$full_list = sql($sql,'getAll',DB_FETCHMODE_ASSOC);
-
-	// Make array backward compatible, put first 4 columns as numeric
-	$count = 0;
-	foreach($full_list as $item) {
-		$full_list[$count][0] = $item['id'];
-		$full_list[$count][1] = $item['displayname'];
-		$full_list[$count][2] = $item['filename'];
-		$full_list[$count][3] = $item['description'];
-		if (strstr($item['filename'],'&') === false) {
-      $filter_list[] = $full_list[$count];
-		}
-		$count++;
-	}
-  return ($compound ? $full_list : $filter_list);
+	return FreePBX::Recordings()->getAllRecordings($compound);
 }
 
 function recordings_get($id) {
-	global $db;
-        $sql = "SELECT * FROM recordings where id='".$db->escapesimple($id)."'";
-        $results = $db->getRow($sql, DB_FETCHMODE_ASSOC);
-        if(DB::IsError($results)) {
-                $results = null;
-        }
-	return $results;
+	return FreePBX::Recordings()->getRecordingsById($id);
 }
 
 function recordings_add($displayname, $filename, $description='') {
@@ -433,7 +398,7 @@ function recordings_list_usage($id) {
 
 function recordings_get_filetypes() {
 	// Returns an array of filetypes we know about
-	// Grabbed from asterisk -rx 'core show file formats' 
+	// Grabbed from asterisk -rx 'core show file formats'
 	$valid = Array( "mp3", "sln192", "sln96", "sln48", "sln44", "sln32", "sln24", "sln16", "sln12",
 	       	"sln", "raw", "WAV", "wav49", "vox", "g723sf", "g723", "siren7", "g719", "gsm", "g726-16",
 		"g726-24", "g726-32", "g726-40", "siren14", "g729", "h263", "h264", "ilbc", "wav16", "wav",
@@ -480,4 +445,3 @@ function recordings_has_valid_exten($file) {
 	// We didn't find it.
 	return false;
 }
-
