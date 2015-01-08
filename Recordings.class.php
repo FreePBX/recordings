@@ -42,6 +42,14 @@ class Recordings implements BMO {
 		return $sth->fetch(\PDO::FETCH_ASSOC);
 	}
 
+	public function getFilenameById($id) {
+		$res = $this->getRecordingsById($id);
+		if (empty($res)) {
+			return '';
+		}
+		return $res['filename'];
+	}
+
 	public function getAllRecordings($compound = true) {
 		if ($this->initialized) {
 			return ($compound ? $this->full_list : $this->filter_list);
