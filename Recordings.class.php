@@ -61,7 +61,13 @@ class Recordings implements BMO {
 		$sth->execute();
 		$this->full_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
 
-		foreach($this->full_list as $item) {
+		foreach($this->full_list as &$item) {
+			//TODO: Find instances of this and remove it!
+			// Make array backward compatible, put first 4 columns as numeric
+			$item[0] = $item['id'];
+			$item[1] = $item['displayname'];
+			$item[2] = $item['filename'];
+			$item[3] = $item['description'];
 			if (strstr($item['filename'],'&') === false) {
 				$this->filter_list[] = $item;
 			}
