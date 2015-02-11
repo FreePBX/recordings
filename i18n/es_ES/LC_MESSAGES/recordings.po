@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-23 09:52+0000\n"
+"POT-Creation-Date: 2015-02-11 18:08-0500\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
 "Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
@@ -13,16 +13,264 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
+#: /usr/src/freepbx/recordings/page.recordings.php:170
+msgid " dial"
+msgstr " llame al"
+
+#: /usr/src/freepbx/recordings/assets/js/chosen.jquery.min.js:10
+msgid "):this.generate_field_id(),this.container_id+="
+msgstr ""
+
+#: /usr/src/freepbx/recordings/page.recordings.php:50
+#: /usr/src/freepbx/recordings/page.recordings.php:51
+msgid "** MISSING FEATURE CODE **"
+msgstr "** NO EXISTE CÓDIGO DE CARACTERÍSTICA **"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:166
+#: /usr/src/freepbx/recordings/page.recordings.php:418
+msgid "Add Recording"
+msgstr "Añadir grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:212
+msgid "After recording or uploading,"
+msgstr "Tras grabar o enviar,"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:184
+msgid ""
+"Alternatively, upload a recording in any supported asterisk format. Note "
+"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
+"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+msgstr ""
+"O también puede enviar un archivo grabado en cualquier formato soportado por "
+"Asterisk. Tenga en cuenta de que si está usando archivos WAV (por ejemplo, "
+"grabados con la grabadora de sonidos de Windows) el archivo debe estar "
+"codificado en PCM, 16 bits y a 8000Hz"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:419
+#: /usr/src/freepbx/recordings/page.recordings.php:494
+msgid "Built-in Recordings"
+msgstr "Grabaciones del sistema"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:280
+msgid "Change Name"
+msgstr "ambiar nombre"
+
+#: /usr/src/freepbx/recordings/install.php:7
+msgid "Check Recording"
+msgstr "Comprobar grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:330
+msgid ""
+"Check this box to create an options feature code that will allow this "
+"recording to be changed directly."
+msgstr ""
+"Marque esta casilla para crear las opciones de un código de característica "
+"que permitirá cambiar esta grabación directamente."
+
+#: /usr/src/freepbx/recordings/page.recordings.php:226
+msgid "Click \"SAVE\" when you are satisfied with your recording"
+msgstr ""
+"Pulse \"Guardar\" cuando haya terminado de realizar la grabación desde su "
+"teléfono haya seleccionado un archivo a enviar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:558
+msgid "Click here to play this recording"
+msgstr "Haga clic aquí para reproducir esta grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:574
+msgid "Delete"
+msgstr "Eliminar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:284
+msgid "Descriptive Name"
+msgstr "Nombre descriptivo"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:344
+msgid "Direct Access Feature Code Not Available"
+msgstr "Código de característica para acceso directo no disponible"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:344
+msgid ""
+"Direct Access Feature Codes for recordings are not available for built in "
+"system recordings or compound recordings made of multiple individual ones."
+msgstr ""
+"Los códigos de características para acceso directo para grabaciones no están "
+"disponibles para grabaciones de sistema o grabaciones compuestas de varios "
+"archivos."
+
+#: /usr/src/freepbx/recordings/page.recordings.php:244
+msgid "Edit Recording"
+msgstr "Editar grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:75
+msgid "Failed to create"
+msgstr "No se pudo crear"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:337
+msgid "Feature Code Password"
+msgstr "Contraseña del código de característica"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:353
+msgid "Files"
+msgstr "Archivos"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:179
+#: /usr/src/freepbx/recordings/page.recordings.php:507
+msgid "Go"
+msgstr "Ir"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:178
+msgid ""
+"If you wish to make and verify recordings from your phone, please enter your "
+"extension number here:"
+msgstr ""
+"Si desea realizar y comprobar grabaciones desde su teléfono, por favor, "
+"escriba aquí su extensión:"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:213
+msgid "If you wish to re-record your message, dial"
+msgstr "Si quiere volver a grabar su mensaje, llame al"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:330
+msgid "Link to Feature Code"
+msgstr "Enlace a código de característica"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:102
+msgid "Make sure Asterisk is not running as root "
+msgstr "Asegúrese de que Asterisk no se está ejecutando como root"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:93
+msgid "Make sure you have entered a proper name"
+msgstr "Asegúrese de que ha introducido un nombre correcto"
+
+#: /usr/src/freepbx/recordings/functions.inc.php:159
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 "Se ha autocreado un archivo de sonido que no existía durante la migración "
 "del módulo %s"
 
+#: /usr/src/freepbx/recordings/page.recordings.php:571
+msgid "Move Down"
+msgstr "Mover abajo"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:565
+msgid "Move Up"
+msgstr "Mover arriba"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:220
+msgid "Name this Recording"
+msgstr "Asigne un nombre a esta grabación"
+
+#: /usr/src/freepbx/recordings/popup.php:49
+#, php-format
+msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
+msgstr ""
+"No se pudo encontrar un formato compatible con WAV, MP3, o GSM para "
+"reproducir:<br/><br/>%s"
+
+#: /usr/src/freepbx/recordings/functions.inc.php:220
+msgid "No long description available"
+msgstr "No hay una descripción disponible"
+
+#: /usr/src/freepbx/recordings/functions.inc.php:169
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Grabación no existente en el módulo %s"
 
+#: /usr/src/freepbx/recordings/page.recordings.php:268
+msgid "Note, does not delete file from computer"
+msgstr ""
+"Tenga en cuenta que el archivo no se borrará del servidor, simplemente no se "
+"mostrará en el módulo de \"Grabaciones del sistema\""
+
+#: /usr/src/freepbx/recordings/install.php:106
+#: /usr/src/freepbx/recordings/install.php:120
+msgid "OK"
+msgstr "Aceptar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:333
+#, php-format
+msgid "Optional Feature Code %s"
+msgstr "Código de característica opcional %s"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:337
+msgid ""
+"Optional password to protect access to this feature code which allows a user "
+"to re-record it."
+msgstr ""
+"Contraseña opcional para proteger el acceso a este cósigo de característica "
+"que permitirá a los usuarios volver a grabar la grabación."
+
+#: /usr/src/freepbx/recordings/page.recordings.php:472
+msgid "Please enter a valid Name for this System Recording"
+msgstr "Por favor, introduzca un nombre válido para esta grabación del sistema"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:189
+msgid "Please wait until the page reloads."
+msgstr "Por favor, espere mientras la página se recarga."
+
+#: /usr/src/freepbx/recordings/install.php:5
+msgid "Recordings"
+msgstr "Grabaciones"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:264
+msgid "Remove Recording"
+msgstr "Eliminar grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:228
+#: /usr/src/freepbx/recordings/page.recordings.php:365
+msgid "Save"
+msgstr "Guardar"
+
+#: /usr/src/freepbx/recordings/install.php:6
+msgid "Save Recording"
+msgstr "Guardar grabación"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:110
+msgid "Saved"
+msgstr "Guardado"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:495
+msgid "Select System Recording:"
+msgstr "Seleccione una grabación del sistema:"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:171
+msgid "Start speaking at the tone. Press # when finished."
+msgstr ""
+
+#: /usr/src/freepbx/recordings/page.recordings.php:167
+msgid "Step 1: Record or upload"
+msgstr "Paso 1: Grabar o enviar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:216
+msgid "Step 2: Name"
+msgstr "Paso 2: Nombre"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:211
+msgid "Step 2: Verify"
+msgstr "Paso 2: Verificar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:214
+msgid "Step 3: Name"
+msgstr "Paso 3: Nombre"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:202
+msgid "Successfully uploaded"
+msgstr "Enviado correctamente"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:110
+#: /usr/src/freepbx/recordings/page.recordings.php:142
+msgid "System Recording"
+msgstr "Grabaciones del sistema"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:165
+#: /usr/src/freepbx/recordings/page.recordings.php:243
+#: /usr/src/freepbx/recordings/page.recordings.php:493
+msgid "System Recordings"
+msgstr "Grabaciones del sistema"
+
+#: /usr/src/freepbx/recordings/functions.inc.php:170
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -34,154 +282,19 @@ msgstr ""
 "entrada, cuyo nombre es %s, con dicho(s) archivo(s), pero debería confirmar "
 "que el archivo realmente existe. El archivo es: %s."
 
-msgid "No long description available"
-msgstr "No hay una descripción disponible"
+#: /usr/src/freepbx/recordings/page.recordings.php:280
+msgid "This changes the short name, visible on the right, of this recording"
+msgstr "Esto cambia el nombre corto de esta grabación, visible en la derecha"
 
-msgid "Recordings"
-msgstr "Grabaciones"
-
-msgid "Save Recording"
-msgstr "Guardar grabación"
-
-msgid "Check Recording"
-msgstr "Comprobar grabación"
-
-msgid "checking for fcode field.."
-msgstr "comprobando campo fcode_field..."
-
-msgid "OK"
-msgstr "Aceptar"
-
-msgid "already exists"
-msgstr "ya existe"
-
-msgid "checking for fcode_pass field.."
-msgstr "comprobando campo fcode_pass..."
-
-msgid "** MISSING FEATURE CODE **"
-msgstr "** NO EXISTE CÓDIGO DE CARACTERÍSTICA **"
-
-msgid "Failed to create"
-msgstr "No se pudo crear"
-
-msgid "[ERROR] The Recorded File Does Not exists:"
-msgstr "[ERROR] El archivo grabado no existe:"
-
-msgid "[ERROR] SAVING RECORDING:"
-msgstr "[ERROR] Al guardar la grabación:"
-
-msgid "Make sure you have entered a proper name"
-msgstr "Asegúrese de que ha introducido un nombre correcto"
-
-msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
-msgstr "[ERROR] Eliminando grabación temporal:"
-
-msgid "Make sure Asterisk is not running as root "
-msgstr "Asegúrese de que Asterisk no se está ejecutando como root"
-
-msgid "System Recording"
-msgstr "Grabaciones del sistema"
-
-msgid "Saved"
-msgstr "Guardado"
-
-msgid "Unable to locate"
-msgstr "No se pudo localizar"
-
-msgid "with a a valid suffix"
-msgstr "con un sufijo válido"
-
-msgid "Updated"
-msgstr "Actualizado"
-
-msgid "System Recordings"
-msgstr "Grabaciones del sistema"
-
-msgid "Add Recording"
-msgstr "Añadir grabación"
-
-msgid "Step 1: Record or upload"
-msgstr "Paso 1: Grabar o enviar"
-
-msgid "Using your phone,"
-msgstr "Usando su teléfono,"
-
-msgid " dial"
-msgstr " llame al"
-
-msgid "Start speaking at the tone. Press # when finished."
-msgstr ""
-
-msgid "and speak the message you wish to record. Press # when finished."
-msgstr ""
-
+#: /usr/src/freepbx/recordings/page.recordings.php:284
 msgid ""
-"If you wish to make and verify recordings from your phone, please enter your "
-"extension number here:"
+"This is displayed, as a hint, when selecting this recording in Queues, "
+"Digital Receptionist, etc"
 msgstr ""
-"Si desea realizar y comprobar grabaciones desde su teléfono, por favor, "
-"escriba aquí su extensión:"
+"Esto es mostrado, como una ayuda, cuando se selecciona esta grabación en "
+"colas, recepcionista digital, etc."
 
-msgid "Go"
-msgstr "Ir"
-
-msgid ""
-"Alternatively, upload a recording in any supported asterisk format. Note "
-"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
-"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr ""
-"O también puede enviar un archivo grabado en cualquier formato soportado por "
-"Asterisk. Tenga en cuenta de que si está usando archivos WAV (por ejemplo, "
-"grabados con la grabadora de sonidos de Windows) el archivo debe estar "
-"codificado en PCM, 16 bits y a 8000Hz"
-
-msgid "Upload"
-msgstr "Enviar"
-
-msgid "Please wait until the page reloads."
-msgstr "Por favor, espere mientras la página se recarga."
-
-msgid "Successfully uploaded"
-msgstr "Enviado correctamente"
-
-msgid "Step 2: Verify"
-msgstr "Paso 2: Verificar"
-
-msgid "After recording or uploading,"
-msgstr "Tras grabar o enviar,"
-
-msgid "dial"
-msgstr ""
-
-msgid "to listen to your recording."
-msgstr "para escuchar su grabación."
-
-msgid "If you wish to re-record your message, dial"
-msgstr "Si quiere volver a grabar su mensaje, llame al"
-
-msgid "Step 3: Name"
-msgstr "Paso 3: Nombre"
-
-msgid "Step 2: Name"
-msgstr "Paso 2: Nombre"
-
-msgid "Name this Recording"
-msgstr "Asigne un nombre a esta grabación"
-
-msgid "Click \"SAVE\" when you are satisfied with your recording"
-msgstr ""
-"Pulse \"Guardar\" cuando haya terminado de realizar la grabación desde su "
-"teléfono haya seleccionado un archivo a enviar"
-
-msgid "Save"
-msgstr "Guardar"
-
-msgid "Edit Recording"
-msgstr "Editar grabación"
-
-msgid "Usage List"
-msgstr "Lista de usos"
-
+#: /usr/src/freepbx/recordings/page.recordings.php:255
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
@@ -191,112 +304,69 @@ msgstr ""
 "eliminar esta grabación mientras esté siendo usada. Para volver a grabarla, "
 "puede usar el código de característica siguiente si está autorizado."
 
-msgid "Remove Recording"
-msgstr "Eliminar grabación"
+#: /usr/src/freepbx/recordings/page.recordings.php:130
+msgid "Unable to locate"
+msgstr "No se pudo localizar"
 
-msgid "Note, does not delete file from computer"
+#: /usr/src/freepbx/recordings/page.recordings.php:142
+msgid "Updated"
+msgstr "Actualizado"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:189
+msgid "Upload"
+msgstr "Enviar"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:255
+msgid "Usage List"
+msgstr "Lista de usos"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:170
+msgid "Using your phone,"
+msgstr "Usando su teléfono,"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:98
+msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
+msgstr "[ERROR] Eliminando grabación temporal:"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:89
+msgid "[ERROR] SAVING RECORDING:"
+msgstr "[ERROR] Al guardar la grabación:"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:81
+msgid "[ERROR] The Recorded File Does Not exists:"
+msgstr "[ERROR] El archivo grabado no existe:"
+
+#: /usr/src/freepbx/recordings/install.php:108
+#: /usr/src/freepbx/recordings/install.php:122
+msgid "already exists"
+msgstr "ya existe"
+
+#: /usr/src/freepbx/recordings/page.recordings.php:172
+msgid "and speak the message you wish to record. Press # when finished."
 msgstr ""
-"Tenga en cuenta que el archivo no se borrará del servidor, simplemente no se "
-"mostrará en el módulo de \"Grabaciones del sistema\""
 
-msgid "Change Name"
-msgstr "ambiar nombre"
+#: /usr/src/freepbx/recordings/install.php:96
+msgid "checking for fcode field.."
+msgstr "comprobando campo fcode_field..."
 
-msgid "This changes the short name, visible on the right, of this recording"
-msgstr "Esto cambia el nombre corto de esta grabación, visible en la derecha"
+#: /usr/src/freepbx/recordings/install.php:110
+msgid "checking for fcode_pass field.."
+msgstr "comprobando campo fcode_pass..."
 
-msgid "Descriptive Name"
-msgstr "Nombre descriptivo"
+#: /usr/src/freepbx/recordings/page.recordings.php:212
+msgid "dial"
+msgstr ""
 
+#: /usr/src/freepbx/recordings/page.recordings.php:212
+msgid "to listen to your recording."
+msgstr "para escuchar su grabación."
+
+#: /usr/src/freepbx/recordings/page.recordings.php:130
+msgid "with a a valid suffix"
+msgstr "con un sufijo válido"
+
+#: /usr/src/freepbx/recordings/recordings.i18n.php:10
 msgid ""
-"This is displayed, as a hint, when selecting this recording in Queues, "
-"Digital Receptionist, etc"
-msgstr ""
-"Esto es mostrado, como una ayuda, cuando se selecciona esta grabación en "
-"colas, recepcionista digital, etc."
-
-msgid "Link to Feature Code"
-msgstr "Enlace a código de característica"
-
-msgid ""
-"Check this box to create an options feature code that will allow this "
-"recording to be changed directly."
-msgstr ""
-"Marque esta casilla para crear las opciones de un código de característica "
-"que permitirá cambiar esta grabación directamente."
-
-#, php-format
-msgid "Optional Feature Code %s"
-msgstr "Código de característica opcional %s"
-
-msgid "Feature Code Password"
-msgstr "Contraseña del código de característica"
-
-msgid ""
-"Optional password to protect access to this feature code which allows a user "
-"to re-record it."
-msgstr ""
-"Contraseña opcional para proteger el acceso a este cósigo de característica "
-"que permitirá a los usuarios volver a grabar la grabación."
-
-msgid "Direct Access Feature Code Not Available"
-msgstr "Código de característica para acceso directo no disponible"
-
-msgid ""
-"Direct Access Feature Codes for recordings are not available for built in "
-"system recordings or compound recordings made of multiple individual ones."
-msgstr ""
-"Los códigos de características para acceso directo para grabaciones no están "
-"disponibles para grabaciones de sistema o grabaciones compuestas de varios "
-"archivos."
-
-msgid "Files"
-msgstr "Archivos"
-
-msgid "Built-in Recordings"
-msgstr "Grabaciones del sistema"
-
-msgid "Please enter a valid Name for this System Recording"
-msgstr "Por favor, introduzca un nombre válido para esta grabación del sistema"
-
-msgid "Select System Recording:"
-msgstr "Seleccione una grabación del sistema:"
-
-msgid "Click here to play this recording"
-msgstr "Haga clic aquí para reproducir esta grabación"
-
-msgid "Move Up"
-msgstr "Mover arriba"
-
-msgid "Move Down"
-msgstr "Mover abajo"
-
-msgid "Delete"
-msgstr "Eliminar"
-
-#, php-format
-msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
-msgstr ""
-"No se pudo encontrar un formato compatible con WAV, MP3, o GSM para "
-"reproducir:<br/><br/>%s"
-
-msgid "Admin"
-msgstr ""
-
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-
-msgid "Recordings Crypt Key"
-msgstr ""
-
-msgid "System Setup"
-msgstr ""
-
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-msgid " if desired."
+"}\n"
+"?>"
 msgstr ""
