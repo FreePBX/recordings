@@ -7,251 +7,267 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:08-0500\n"
+"POT-Creation-Date: 2015-02-20 19:54-0500\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:170
+#: page.recordings.php:170
 msgid " dial"
 msgstr "חייג"
 
-#: /usr/src/freepbx/recordings/assets/js/chosen.jquery.min.js:10
+#: assets/js/chosen.jquery.min.js:10
 msgid "):this.generate_field_id(),this.container_id+="
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:50
-#: /usr/src/freepbx/recordings/page.recordings.php:51
+#: page.recordings.php:50 page.recordings.php:51
 msgid "** MISSING FEATURE CODE **"
 msgstr "** לא קיים קוד תכונה **"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:166
-#: /usr/src/freepbx/recordings/page.recordings.php:418
+#: page.recordings.php:166 page.recordings.php:418
 msgid "Add Recording"
 msgstr "הוספת הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: recordings.i18n.php:4
+msgid "Admin"
+msgstr ""
+
+#: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "אחרי הקלטה או העלאה,"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:184
+#: page.recordings.php:184
 msgid ""
 "Alternatively, upload a recording in any supported asterisk format. Note "
 "that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
 "<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:419
-#: /usr/src/freepbx/recordings/page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:494
 msgid "Built-in Recordings"
 msgstr "הקלטות מובנות"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:280
+#: page.recordings.php:280
 msgid "Change Name"
 msgstr "שנה שם"
 
-#: /usr/src/freepbx/recordings/install.php:7
+#: install.php:7
 msgid "Check Recording"
 msgstr "בדוק הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:330
+#: page.recordings.php:330
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:226
+#: page.recordings.php:226
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "לחץ על \"שמור\" כאשר אתה מרוצה מהקלטתך"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:558
+#: page.recordings.php:558
 msgid "Click here to play this recording"
 msgstr "לחץ כאן לשמיעת ההקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:574
+#: recordings.i18n.php:5
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
+
+#: recordings.i18n.php:12
+msgid ""
+"Crypt key used by this recordings module when accessing the recording files. "
+"Change from the default of "
+msgstr ""
+
+#: page.recordings.php:574
 msgid "Delete"
 msgstr "מחק"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:284
+#: page.recordings.php:284
 msgid "Descriptive Name"
 msgstr "תיאור ההקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:344
+#: page.recordings.php:344
 msgid "Direct Access Feature Code Not Available"
 msgstr "קוד תכונה בגישה ישירה אינו קיים"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:344
+#: page.recordings.php:344
 msgid ""
 "Direct Access Feature Codes for recordings are not available for built in "
 "system recordings or compound recordings made of multiple individual ones."
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:244
+#: page.recordings.php:244
 msgid "Edit Recording"
 msgstr "ערוך הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:75
+#: page.recordings.php:75
 msgid "Failed to create"
 msgstr "כשלון ביצירת"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:337
+#: page.recordings.php:337
 msgid "Feature Code Password"
 msgstr "סיסמא לקוד תכונה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:353
+#: page.recordings.php:353
 msgid "Files"
 msgstr "קבצים"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:179
-#: /usr/src/freepbx/recordings/page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:507
 msgid "Go"
 msgstr "התחל"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:178
+#: page.recordings.php:178
 msgid ""
 "If you wish to make and verify recordings from your phone, please enter your "
 "extension number here:"
 msgstr ""
 "אם ברצונך לוודא הקלטה שנעשתה מהטלפון שלך, אנא הכנס את מספר השלוחה שלך כאן:"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:213
+#: page.recordings.php:213
 msgid "If you wish to re-record your message, dial"
 msgstr "אם ברצונך להקליט מחדש את הודעתך, חייג"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:330
+#: page.recordings.php:330
 msgid "Link to Feature Code"
 msgstr "קוד תכונה משוייך להקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:102
+#: page.recordings.php:102
 msgid "Make sure Asterisk is not running as root "
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:93
+#: page.recordings.php:93
 msgid "Make sure you have entered a proper name"
 msgstr "נא וודא כי הכנסת שם מתאים להקלטה"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:159
+#: functions.inc.php:159
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:571
+#: page.recordings.php:571
 msgid "Move Down"
 msgstr "הזז למטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:565
+#: page.recordings.php:565
 msgid "Move Up"
 msgstr "הזז למעלה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:220
+#: page.recordings.php:220
 msgid "Name this Recording"
 msgstr "תן שם להקלטה זו"
 
-#: /usr/src/freepbx/recordings/popup.php:49
+#: popup.php:49
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/functions.inc.php:220
+#: functions.inc.php:220
 msgid "No long description available"
 msgstr "אין תיאור ארוך"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:169
+#: functions.inc.php:169
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:268
+#: page.recordings.php:268
 msgid "Note, does not delete file from computer"
 msgstr "שים לב, תכונה זו אינה מוחקת בפעול את הקובץ מהדיסק"
 
-#: /usr/src/freepbx/recordings/install.php:106
-#: /usr/src/freepbx/recordings/install.php:120
+#: install.php:106 install.php:120
 msgid "OK"
 msgstr "תקין"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:333
+#: page.recordings.php:333
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:337
+#: page.recordings.php:337
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:472
+#: page.recordings.php:472
 msgid "Please enter a valid Name for this System Recording"
 msgstr "נא הזן שם תקין לקובץ ההקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:189
+#: page.recordings.php:189
 msgid "Please wait until the page reloads."
 msgstr "נא המתן עד לרענון העמוד"
 
-#: /usr/src/freepbx/recordings/install.php:5
+#: install.php:5 recordings.i18n.php:3
 msgid "Recordings"
 msgstr "הקלטות"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:264
+#: recordings.i18n.php:8
+msgid "Recordings Crypt Key"
+msgstr ""
+
+#: page.recordings.php:264
 msgid "Remove Recording"
 msgstr "הסר הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:228
-#: /usr/src/freepbx/recordings/page.recordings.php:365
+#: page.recordings.php:228 page.recordings.php:365
 msgid "Save"
 msgstr "שמור"
 
-#: /usr/src/freepbx/recordings/install.php:6
+#: install.php:6
 msgid "Save Recording"
 msgstr "שמור הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:110
+#: page.recordings.php:110
 msgid "Saved"
 msgstr "נשמר"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:495
+#: page.recordings.php:495
 msgid "Select System Recording:"
 msgstr "בחר הקלטת מערכת:"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:171
+#: page.recordings.php:171
 msgid "Start speaking at the tone. Press # when finished."
 msgstr "התחל לדבר לאחר האות. בסיום הקש על מקש הסולמית"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:167
+#: page.recordings.php:167
 msgid "Step 1: Record or upload"
 msgstr "שלב 1: הקלט או העלה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:216
+#: page.recordings.php:216
 msgid "Step 2: Name"
 msgstr "שלב 2: שם"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:211
+#: page.recordings.php:211
 msgid "Step 2: Verify"
 msgstr "שלב 2: ודא"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:214
+#: page.recordings.php:214
 msgid "Step 3: Name"
 msgstr "שלב 3: שם"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:202
+#: page.recordings.php:202
 msgid "Successfully uploaded"
 msgstr "הועלה בהצלחה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:110
-#: /usr/src/freepbx/recordings/page.recordings.php:142
+#: page.recordings.php:110 page.recordings.php:142
 msgid "System Recording"
 msgstr "הקלטות מערכת"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:165
-#: /usr/src/freepbx/recordings/page.recordings.php:243
-#: /usr/src/freepbx/recordings/page.recordings.php:493
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
+#: recordings.i18n.php:6
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:170
+#: recordings.i18n.php:10
+msgid "System Setup"
+msgstr "הגדרות מערכת"
+
+#: functions.inc.php:170
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -260,100 +276,83 @@ msgid ""
 "referenced: %s "
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:280
+#: page.recordings.php:280
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:284
+#: page.recordings.php:284
 msgid ""
 "This is displayed, as a hint, when selecting this recording in Queues, "
 "Digital Receptionist, etc"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:255
+#: page.recordings.php:255
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
 "feature code below if allowed."
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:130
+#: page.recordings.php:130
 msgid "Unable to locate"
 msgstr "לא מצליח לאתר"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:142
+#: page.recordings.php:142
 msgid "Updated"
 msgstr "עודכן"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:189
+#: page.recordings.php:189
 msgid "Upload"
 msgstr "העלה הקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:255
+#: page.recordings.php:255
 msgid "Usage List"
 msgstr "רשימת שימוש"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:170
+#: page.recordings.php:170
 msgid "Using your phone,"
 msgstr "באמצעות הטלפון שלך,"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:98
+#: page.recordings.php:98
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "שגיאה - מוחק הקלטה זמנית"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:89
+#: page.recordings.php:89
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "שגיאה - שמירת ההקלטה"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:81
+#: page.recordings.php:81
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "שגיאה - קובץ ההקלטה אינו קיים"
 
-#: /usr/src/freepbx/recordings/install.php:108
-#: /usr/src/freepbx/recordings/install.php:122
+#: install.php:108 install.php:122
 msgid "already exists"
 msgstr "כבר קיים"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:172
+#: page.recordings.php:172
 msgid "and speak the message you wish to record. Press # when finished."
 msgstr "ואמור את ההודעה שעליך להקליט. ביום הקש על מקש הסולמית"
 
-#: /usr/src/freepbx/recordings/install.php:96
+#: install.php:96
 msgid "checking for fcode field.."
 msgstr "בודק שגיאות..."
 
-#: /usr/src/freepbx/recordings/install.php:110
+#: install.php:110
 msgid "checking for fcode_pass field.."
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: page.recordings.php:212
 #, fuzzy
 msgid "dial"
 msgstr "חייג"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: page.recordings.php:212
 msgid "to listen to your recording."
 msgstr "כדי להאזין להקלטתך."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:130
+#: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "עם סיומת תקנית"
-
-#: /usr/src/freepbx/recordings/recordings.i18n.php:10
-msgid ""
-"}\n"
-"?>"
-msgstr ""
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות "
-#~ "והכרזות"
-
-#~ msgid "System Setup"
-#~ msgstr "הגדרות מערכת"
 
 #~ msgid "Internal Options & Configuration"
 #~ msgstr "תכונות פנימיות והגדרות מערכת"

@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:08-0500\n"
+"POT-Creation-Date: 2015-02-20 19:54-0500\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -30,29 +30,31 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:170
+#: page.recordings.php:170
 msgid " dial"
 msgstr " slå"
 
-#: /usr/src/freepbx/recordings/assets/js/chosen.jquery.min.js:10
+#: assets/js/chosen.jquery.min.js:10
 msgid "):this.generate_field_id(),this.container_id+="
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:50
-#: /usr/src/freepbx/recordings/page.recordings.php:51
+#: page.recordings.php:50 page.recordings.php:51
 msgid "** MISSING FEATURE CODE **"
 msgstr "** FUKTIONSKOD FATTAS ***"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:166
-#: /usr/src/freepbx/recordings/page.recordings.php:418
+#: page.recordings.php:166 page.recordings.php:418
 msgid "Add Recording"
 msgstr "Lägg till inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: recordings.i18n.php:4
+msgid "Admin"
+msgstr ""
+
+#: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Efter inspelning eller uppladdning,"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:184
+#: page.recordings.php:184
 msgid ""
 "Alternatively, upload a recording in any supported asterisk format. Note "
 "that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
@@ -62,20 +64,19 @@ msgstr ""
 "Om du använder en .wav-fil (inspelad via Microsoft Recorder) så <b>måste</b> "
 "filen vara PCM-kodad, 16 bitar vid 8000Hz"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:419
-#: /usr/src/freepbx/recordings/page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:494
 msgid "Built-in Recordings"
 msgstr "Inbyggda inspelningar"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:280
+#: page.recordings.php:280
 msgid "Change Name"
 msgstr "Byt namn"
 
-#: /usr/src/freepbx/recordings/install.php:7
+#: install.php:7
 msgid "Check Recording"
 msgstr "Kontrollera inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:330
+#: page.recordings.php:330
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -83,27 +84,41 @@ msgstr ""
 "Aktivera denna ruta för att valfritt skapa en funktionskod som tillåter dig "
 "att ändra denna inspelning direkt."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:226
+#: page.recordings.php:226
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Klicka på \"Spara\" när du är nöjd med din inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:558
+#: page.recordings.php:558
 msgid "Click here to play this recording"
 msgstr "Klicka här för att spela upp denna inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:574
+#: recordings.i18n.php:5
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Skapar och undehåller systeminspelningar som kan användas av andra moduler"
+
+#: recordings.i18n.php:12
+msgid ""
+"Crypt key used by this recordings module when accessing the recording files. "
+"Change from the default of "
+msgstr ""
+"Krypteringsnyckel som används av systeminspelningsmodulen vid åtkomst av "
+"inspelade filer. Ändra från standardnyckeln "
+
+#: page.recordings.php:574
 msgid "Delete"
 msgstr "Ta bort"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:284
+#: page.recordings.php:284
 msgid "Descriptive Name"
 msgstr "Beskrivning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:344
+#: page.recordings.php:344
 msgid "Direct Access Feature Code Not Available"
 msgstr "Funktionskoden för direktåtkomst är inte tillgänglig"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:344
+#: page.recordings.php:344
 msgid ""
 "Direct Access Feature Codes for recordings are not available for built in "
 "system recordings or compound recordings made of multiple individual ones."
@@ -111,28 +126,27 @@ msgstr ""
 "Funktionskoder för inspelningar är inte tillgängliga för de inbyggda "
 "systeminspelningarna eller för röster som består av flera individuella filer."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:244
+#: page.recordings.php:244
 msgid "Edit Recording"
 msgstr "Redigera inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:75
+#: page.recordings.php:75
 msgid "Failed to create"
 msgstr "Kunde inte skapa"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:337
+#: page.recordings.php:337
 msgid "Feature Code Password"
 msgstr "Lösenord för funktionskod"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:353
+#: page.recordings.php:353
 msgid "Files"
 msgstr "Filer"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:179
-#: /usr/src/freepbx/recordings/page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:507
 msgid "Go"
 msgstr "Utför"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:178
+#: page.recordings.php:178
 msgid ""
 "If you wish to make and verify recordings from your phone, please enter your "
 "extension number here:"
@@ -140,69 +154,68 @@ msgstr ""
 "Om du vill spela in och lyssna på dina inspelningar via telefon, skriv in "
 "ditt anknytningnummer här."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:213
+#: page.recordings.php:213
 msgid "If you wish to re-record your message, dial"
 msgstr "Om du vill spela över din inspelning, slå"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:330
+#: page.recordings.php:330
 msgid "Link to Feature Code"
 msgstr "Länk till funktionskod"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:102
+#: page.recordings.php:102
 msgid "Make sure Asterisk is not running as root "
 msgstr "Kontrollera att Aserisk inte körs som root"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:93
+#: page.recordings.php:93
 msgid "Make sure you have entered a proper name"
 msgstr "Kontrollera att det är ett giltigt namn"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:159
+#: functions.inc.php:159
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:571
+#: page.recordings.php:571
 msgid "Move Down"
 msgstr "Flytta ner"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:565
+#: page.recordings.php:565
 msgid "Move Up"
 msgstr "Flytta upp"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:220
+#: page.recordings.php:220
 msgid "Name this Recording"
 msgstr "Namnge denna inspelning"
 
-#: /usr/src/freepbx/recordings/popup.php:49
+#: popup.php:49
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr ""
 "Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:220
+#: functions.inc.php:220
 msgid "No long description available"
 msgstr "Ingen beskrivning tillgänglig"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:169
+#: functions.inc.php:169
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Inspelningen finns inte i modul %s"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:268
+#: page.recordings.php:268
 msgid "Note, does not delete file from computer"
 msgstr "Detta tar inte bort filen från systemet"
 
-#: /usr/src/freepbx/recordings/install.php:106
-#: /usr/src/freepbx/recordings/install.php:120
+#: install.php:106 install.php:120
 msgid "OK"
 msgstr "OK"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:333
+#: page.recordings.php:333
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Valfri funktionskod %s"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:337
+#: page.recordings.php:337
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -210,75 +223,80 @@ msgstr ""
 "Valfritt lösenord som skyddar denna funktionskod från att oavsiktligt spelas "
 "över."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:472
+#: page.recordings.php:472
 msgid "Please enter a valid Name for this System Recording"
 msgstr "Skriv in ett giltigt namn för denna systeminspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:189
+#: page.recordings.php:189
 msgid "Please wait until the page reloads."
 msgstr "Vänta tills sidan laddats om."
 
-#: /usr/src/freepbx/recordings/install.php:5
+#: install.php:5 recordings.i18n.php:3
 msgid "Recordings"
 msgstr "Inspelningar"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:264
+#: recordings.i18n.php:8
+msgid "Recordings Crypt Key"
+msgstr "Krypteringsnyckel för inspelningar"
+
+#: page.recordings.php:264
 msgid "Remove Recording"
 msgstr "Ta bort inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:228
-#: /usr/src/freepbx/recordings/page.recordings.php:365
+#: page.recordings.php:228 page.recordings.php:365
 msgid "Save"
 msgstr "Spara"
 
-#: /usr/src/freepbx/recordings/install.php:6
+#: install.php:6
 msgid "Save Recording"
 msgstr "Spara inspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:110
+#: page.recordings.php:110
 msgid "Saved"
 msgstr "Sparad"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:495
+#: page.recordings.php:495
 msgid "Select System Recording:"
 msgstr "Välj systeminspelning:"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:171
+#: page.recordings.php:171
 msgid "Start speaking at the tone. Press # when finished."
 msgstr "Börja tala efter tonen. Tryck # när du är klar."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:167
+#: page.recordings.php:167
 msgid "Step 1: Record or upload"
 msgstr "Steg 1: Spela in eller ladda upp"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:216
+#: page.recordings.php:216
 msgid "Step 2: Name"
 msgstr "Steg 2: Namn"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:211
+#: page.recordings.php:211
 msgid "Step 2: Verify"
 msgstr "Steg 2: Kontrollera"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:214
+#: page.recordings.php:214
 msgid "Step 3: Name"
 msgstr "Steg 3: Namn"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:202
+#: page.recordings.php:202
 msgid "Successfully uploaded"
 msgstr "Uppladdningen lyckades"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:110
-#: /usr/src/freepbx/recordings/page.recordings.php:142
+#: page.recordings.php:110 page.recordings.php:142
 msgid "System Recording"
 msgstr "Systeminspelning"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:165
-#: /usr/src/freepbx/recordings/page.recordings.php:243
-#: /usr/src/freepbx/recordings/page.recordings.php:493
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
+#: recordings.i18n.php:6
 msgid "System Recordings"
 msgstr "Systeminspelningar"
 
-#: /usr/src/freepbx/recordings/functions.inc.php:170
+#: recordings.i18n.php:10
+msgid "System Setup"
+msgstr "Systeminställningar"
+
+#: functions.inc.php:170
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -291,18 +309,18 @@ msgstr ""
 "att detta verkligen fungerar och att filen/filerna finns. Filen/filerna som "
 "refereras är %s"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:280
+#: page.recordings.php:280
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr "Detta ändrar det korta namnet som syns till höger"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:284
+#: page.recordings.php:284
 msgid ""
 "This is displayed, as a hint, when selecting this recording in Queues, "
 "Digital Receptionist, etc"
 msgstr ""
 "Detta visas när du väljer denna inspelning i Köer, Digital receptionist etc"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:255
+#: page.recordings.php:255
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
@@ -312,91 +330,65 @@ msgstr ""
 "spela in igen, använd nedanstående funktionskod om du har tillåtelse till "
 "detta."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:130
+#: page.recordings.php:130
 msgid "Unable to locate"
 msgstr "Kan inte hitta"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:142
+#: page.recordings.php:142
 msgid "Updated"
 msgstr "Uppdaterad"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:189
+#: page.recordings.php:189
 msgid "Upload"
 msgstr "Ladda upp"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:255
+#: page.recordings.php:255
 msgid "Usage List"
 msgstr "Används i"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:170
+#: page.recordings.php:170
 msgid "Using your phone,"
 msgstr "Använd din telefon,"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:98
+#: page.recordings.php:98
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[FEL] vid radering av temporär inspelning:"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:89
+#: page.recordings.php:89
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "[FEL] vid sparande av inspelning:"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:81
+#: page.recordings.php:81
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "[FEL] Den inspelade filen finns inte:"
 
-#: /usr/src/freepbx/recordings/install.php:108
-#: /usr/src/freepbx/recordings/install.php:122
+#: install.php:108 install.php:122
 msgid "already exists"
 msgstr "finns redan"
 
-#: /usr/src/freepbx/recordings/page.recordings.php:172
+#: page.recordings.php:172
 msgid "and speak the message you wish to record. Press # when finished."
 msgstr "tala in ditt meddelande. Tryck # när du är klar."
 
-#: /usr/src/freepbx/recordings/install.php:96
+#: install.php:96
 msgid "checking for fcode field.."
 msgstr "kontrollerar fältet fcode.."
 
-#: /usr/src/freepbx/recordings/install.php:110
+#: install.php:110
 msgid "checking for fcode_pass field.."
 msgstr "kontrollerar fältet fcode_pass.."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: page.recordings.php:212
 msgid "dial"
 msgstr ""
 
-#: /usr/src/freepbx/recordings/page.recordings.php:212
+#: page.recordings.php:212
 msgid "to listen to your recording."
 msgstr "för att lyssna på din inspelning."
 
-#: /usr/src/freepbx/recordings/page.recordings.php:130
+#: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "med en giltig ändelse"
-
-#: /usr/src/freepbx/recordings/recordings.i18n.php:10
-msgid ""
-"}\n"
-"?>"
-msgstr ""
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Skapar och undehåller systeminspelningar som kan användas av andra moduler"
-
-#~ msgid "Recordings Crypt Key"
-#~ msgstr "Krypteringsnyckel för inspelningar"
-
-#~ msgid "System Setup"
-#~ msgstr "Systeminställningar"
-
-#~ msgid ""
-#~ "Crypt key used by this recordings module when accessing the recording "
-#~ "files. Change from the default of "
-#~ msgstr ""
-#~ "Krypteringsnyckel som används av systeminspelningsmodulen vid åtkomst av "
-#~ "inspelade filer. Ändra från standardnyckeln "
 
 #~ msgid " if desired."
 #~ msgstr "om så önskas"
