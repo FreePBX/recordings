@@ -60,7 +60,6 @@ class Recordings implements BMO {
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		$this->full_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
 		foreach($this->full_list as &$item) {
 			//TODO: Find instances of this and remove it!
 			// Make array backward compatible, put first 4 columns as numeric
@@ -70,6 +69,11 @@ class Recordings implements BMO {
 			$item[3] = $item['description'];
 			if (strstr($item['filename'],'&') === false) {
 				$this->filter_list[] = $item;
+			}
+		}
+		foreach ($this->full_list as $key => $value) {
+			if(strpos($value[filename],'.') === 0){
+				unset($this->full_list[$key]);
 			}
 		}
 		return ($compound ? $this->full_list : $this->filter_list);
