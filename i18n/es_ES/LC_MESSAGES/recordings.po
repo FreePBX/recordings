@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:54-0500\n"
-"PO-Revision-Date: 2015-03-25 10:23+0200\n"
+"PO-Revision-Date: 2015-03-25 10:27+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/es_ES/>\n"
@@ -23,7 +23,7 @@ msgstr " llame al"
 
 #: assets/js/chosen.jquery.min.js:10
 msgid "):this.generate_field_id(),this.container_id+="
-msgstr "):this.generate_field_id(),this.container_id+="
+msgstr "--> ):this.generate_field_id(),this.container_id+="
 
 #: page.recordings.php:50 page.recordings.php:51
 msgid "** MISSING FEATURE CODE **"
@@ -47,10 +47,10 @@ msgid ""
 "that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
 "<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
 msgstr ""
-"O también puede enviar un archivo grabado en cualquier formato soportado por "
-"Asterisk. Tenga en cuenta de que si está usando archivos WAV (por ejemplo, "
-"grabados con la grabadora de sonidos de Windows) el archivo debe estar "
-"codificado en PCM, 16 bits y a 8000Hz"
+"Alternativamente también puede enviar un archivo grabado en cualquier "
+"formato soportado por Asterisk. Tenga en cuenta de que si está usando "
+"archivos WAV (por ejemplo, grabados con la grabadora de sonidos de Windows) "
+"el archivo <b>debe</b> estar codificado en PCM, 16 bits y a 8000Hz"
 
 #: page.recordings.php:419 page.recordings.php:494
 msgid "Built-in Recordings"
