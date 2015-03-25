@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:54-0500\n"
-"PO-Revision-Date: 2015-03-25 10:21+0200\n"
+"PO-Revision-Date: 2015-03-25 10:23+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/es_ES/>\n"
@@ -156,7 +156,7 @@ msgstr "Enlace a código de característica"
 
 #: page.recordings.php:102
 msgid "Make sure Asterisk is not running as root "
-msgstr "Asegúrese de que Asterisk no se está ejecutando como root"
+msgstr "Asegúrese de que Asterisk no se está ejecutando como root "
 
 #: page.recordings.php:93
 msgid "Make sure you have entered a proper name"
@@ -303,7 +303,7 @@ msgid ""
 msgstr ""
 "La grabación %s listada a continuación no existe. Se ha generado una "
 "entrada, cuyo nombre es %s, con dicho(s) archivo(s), pero debería confirmar "
-"que el archivo realmente existe. El archivo es: %s."
+"que el archivo realmente existe. El archivo es: %s. "
 
 #: page.recordings.php:280
 msgid "This changes the short name, visible on the right, of this recording"
@@ -315,7 +315,7 @@ msgid ""
 "Digital Receptionist, etc"
 msgstr ""
 "Esto es mostrado, como una ayuda, cuando se selecciona esta grabación en "
-"colas, recepcionista digital, etc."
+"colas, recepcionista digital, etc"
 
 #: page.recordings.php:255
 msgid ""
