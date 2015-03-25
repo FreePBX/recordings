@@ -3,12 +3,16 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-20 19:54-0500\n"
-"PO-Revision-Date: 2011-07-10 09:30+0100\n"
-"Last-Translator: Juan Asensio Sánchez <okelet@gmail.com>\n"
-"Language-Team: Juan Asensio Sánchez <okelet@gmail.com>\n"
+"PO-Revision-Date: 2015-03-25 10:21+0200\n"
+"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -19,7 +23,7 @@ msgstr " llame al"
 
 #: assets/js/chosen.jquery.min.js:10
 msgid "):this.generate_field_id(),this.container_id+="
-msgstr ""
+msgstr "):this.generate_field_id(),this.container_id+="
 
 #: page.recordings.php:50 page.recordings.php:51
 msgid "** MISSING FEATURE CODE **"
@@ -31,7 +35,7 @@ msgstr "Añadir grabación"
 
 #: recordings.i18n.php:4
 msgid "Admin"
-msgstr ""
+msgstr "Administrador"
 
 #: page.recordings.php:212
 msgid "After recording or uploading,"
@@ -82,12 +86,16 @@ msgstr "Haga clic aquí para reproducir esta grabación"
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
+"Crea y administra las grabaciones del sistema, utilizado por muchos otros "
+"módulos (por ejemplo, IVR)."
 
 #: recordings.i18n.php:12
 msgid ""
 "Crypt key used by this recordings module when accessing the recording files. "
 "Change from the default of "
 msgstr ""
+"Cripta clave utilizada por este módulo de grabaciones al acceder a los "
+"archivos de grabación. Cambie el valor predeterminado de "
 
 #: page.recordings.php:574
 msgid "Delete"
@@ -226,7 +234,7 @@ msgstr "Grabaciones"
 
 #: recordings.i18n.php:8
 msgid "Recordings Crypt Key"
-msgstr ""
+msgstr "Clave de criptografía de Grabaciones"
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -250,7 +258,7 @@ msgstr "Seleccione una grabación del sistema:"
 
 #: page.recordings.php:171
 msgid "Start speaking at the tone. Press # when finished."
-msgstr ""
+msgstr "Comience a hablar después del tono. Oprima # cuando termine."
 
 #: page.recordings.php:167
 msgid "Step 1: Record or upload"
@@ -283,7 +291,7 @@ msgstr "Grabaciones del sistema"
 
 #: recordings.i18n.php:10
 msgid "System Setup"
-msgstr ""
+msgstr "Configuración del sistema"
 
 #: functions.inc.php:170
 #, php-format
@@ -357,7 +365,7 @@ msgstr "ya existe"
 
 #: page.recordings.php:172
 msgid "and speak the message you wish to record. Press # when finished."
-msgstr ""
+msgstr "y hable el mensaje que desea grabar. Oprima # cuando termine."
 
 #: install.php:96
 msgid "checking for fcode field.."
@@ -369,7 +377,7 @@ msgstr "comprobando campo fcode_pass..."
 
 #: page.recordings.php:212
 msgid "dial"
-msgstr ""
+msgstr "Disque"
 
 #: page.recordings.php:212
 msgid "to listen to your recording."
