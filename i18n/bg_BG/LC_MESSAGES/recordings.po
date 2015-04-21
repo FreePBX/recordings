@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:54-0500\n"
+"POT-Creation-Date: 2015-04-20 22:02-0400\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -38,7 +38,7 @@ msgstr "** ЛИПСВАЩ СПЕЦИАЛЕН КОД **"
 msgid "Add Recording"
 msgstr "Добави Запис"
 
-#: recordings.i18n.php:4
+#: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
 msgstr "Админ"
 
@@ -84,14 +84,14 @@ msgstr "Кликнете \"ЗАПИС\" кагото останете довол
 msgid "Click here to play this recording"
 msgstr "Кликнете тук за да възпроизведете този запис"
 
-#: recordings.i18n.php:5
+#: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 "Създаване и управление на системни записи, използвани от много други модули "
 "(като IVR)."
 
-#: recordings.i18n.php:12
+#: recordings.i18n.php:18
 msgid ""
 "Crypt key used by this recordings module when accessing the recording files. "
 "Change from the default of "
@@ -226,11 +226,11 @@ msgstr "Моля въведете правилно Име за този Сист
 msgid "Please wait until the page reloads."
 msgstr "Моля изчакайте докато страницата се презареди."
 
-#: install.php:5 recordings.i18n.php:3
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Записи"
 
-#: recordings.i18n.php:8
+#: recordings.i18n.php:14
 msgid "Recordings Crypt Key"
 msgstr "Криптиран Ключ на Записи"
 
@@ -283,11 +283,11 @@ msgid "System Recording"
 msgstr "Системен Запис"
 
 #: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:6
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Системни Записи"
 
-#: recordings.i18n.php:10
+#: recordings.i18n.php:16
 msgid "System Setup"
 msgstr "Общи Настройки"
 

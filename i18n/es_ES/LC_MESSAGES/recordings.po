@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:54-0500\n"
+"POT-Creation-Date: 2015-04-20 22:02-0400\n"
 "PO-Revision-Date: 2015-03-25 10:27+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish "
-"<http://weblate.freepbx.org/projects/freepbx/recordings/es_ES/>\n"
-"Language: es_ES\n"
+"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
+"recordings/es_ES/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Spanish\n"
@@ -33,7 +33,7 @@ msgstr "** NO EXISTE CÓDIGO DE CARACTERÍSTICA **"
 msgid "Add Recording"
 msgstr "Añadir grabación"
 
-#: recordings.i18n.php:4
+#: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
 msgstr "Administrador"
 
@@ -82,14 +82,14 @@ msgstr ""
 msgid "Click here to play this recording"
 msgstr "Haga clic aquí para reproducir esta grabación"
 
-#: recordings.i18n.php:5
+#: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 "Crea y administra las grabaciones del sistema, utilizado por muchos otros "
 "módulos (por ejemplo, IVR)."
 
-#: recordings.i18n.php:12
+#: recordings.i18n.php:18
 msgid ""
 "Crypt key used by this recordings module when accessing the recording files. "
 "Change from the default of "
@@ -228,11 +228,11 @@ msgstr "Por favor, introduzca un nombre válido para esta grabación del sistema
 msgid "Please wait until the page reloads."
 msgstr "Por favor, espere mientras la página se recarga."
 
-#: install.php:5 recordings.i18n.php:3
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Grabaciones"
 
-#: recordings.i18n.php:8
+#: recordings.i18n.php:14
 msgid "Recordings Crypt Key"
 msgstr "Clave de criptografía de Grabaciones"
 
@@ -285,11 +285,11 @@ msgid "System Recording"
 msgstr "Grabaciones del sistema"
 
 #: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:6
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Grabaciones del sistema"
 
-#: recordings.i18n.php:10
+#: recordings.i18n.php:16
 msgid "System Setup"
 msgstr "Configuración del sistema"
 

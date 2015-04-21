@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:54-0500\n"
+"POT-Creation-Date: 2015-04-20 22:02-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -34,7 +34,7 @@ msgstr "**缺少功能代码**"
 msgid "Add Recording"
 msgstr "添加录音"
 
-#: recordings.i18n.php:4
+#: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
 msgstr ""
 
@@ -78,12 +78,12 @@ msgstr "如果你对录音满意了，就点击“保存”"
 msgid "Click here to play this recording"
 msgstr "点击这里播放此录音"
 
-#: recordings.i18n.php:5
+#: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
-#: recordings.i18n.php:12
+#: recordings.i18n.php:18
 msgid ""
 "Crypt key used by this recordings module when accessing the recording files. "
 "Change from the default of "
@@ -207,11 +207,11 @@ msgstr "请为此系统录音输入有效的名称"
 msgid "Please wait until the page reloads."
 msgstr "请等待页面重载。"
 
-#: install.php:5 recordings.i18n.php:3
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "录音"
 
-#: recordings.i18n.php:8
+#: recordings.i18n.php:14
 msgid "Recordings Crypt Key"
 msgstr ""
 
@@ -264,11 +264,11 @@ msgid "System Recording"
 msgstr "系统录音"
 
 #: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:6
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "系统录音"
 
-#: recordings.i18n.php:10
+#: recordings.i18n.php:16
 msgid "System Setup"
 msgstr ""
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-20 19:54-0500\n"
+"POT-Creation-Date: 2015-04-20 22:02-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -30,7 +30,7 @@ msgstr "** לא קיים קוד תכונה **"
 msgid "Add Recording"
 msgstr "הוספת הקלטה"
 
-#: recordings.i18n.php:4
+#: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
 msgstr ""
 
@@ -71,13 +71,13 @@ msgstr "לחץ על \"שמור\" כאשר אתה מרוצה מהקלטתך"
 msgid "Click here to play this recording"
 msgstr "לחץ כאן לשמיעת ההקלטה"
 
-#: recordings.i18n.php:5
+#: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
 
-#: recordings.i18n.php:12
+#: recordings.i18n.php:18
 msgid ""
 "Crypt key used by this recordings module when accessing the recording files. "
 "Change from the default of "
@@ -202,11 +202,11 @@ msgstr "נא הזן שם תקין לקובץ ההקלטה"
 msgid "Please wait until the page reloads."
 msgstr "נא המתן עד לרענון העמוד"
 
-#: install.php:5 recordings.i18n.php:3
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "הקלטות"
 
-#: recordings.i18n.php:8
+#: recordings.i18n.php:14
 msgid "Recordings Crypt Key"
 msgstr ""
 
@@ -259,11 +259,11 @@ msgid "System Recording"
 msgstr "הקלטות מערכת"
 
 #: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:6
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
-#: recordings.i18n.php:10
+#: recordings.i18n.php:16
 msgid "System Setup"
 msgstr "הגדרות מערכת"
 

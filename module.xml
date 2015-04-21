@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>12.0.5</version>
+	<version>12.0.6</version>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*12.0.6* FREEPBX-8794 - Filter out .filname, hides hidden files
 		*12.0.5* Backwards compatibility for older freepbx things
 		*12.0.4* Linked all functions and added a new function
 		*12.0.3* Support all known file formats.
