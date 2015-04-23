@@ -352,11 +352,13 @@ function recordings_set_file($id, $filename) {
 
 
 function recordings_readdir($snddir) {
-	$files = recordings_getdir($snddir);
-	$ptr = 0;
-	foreach ($files as $fnam) {
-		$files[$ptr] = substr($fnam, strlen($snddir)+1);
-		$ptr++;
+	$files = array();
+	foreach (recordings_getdir($snddir) as $fnam) {
+		$file = substr($fnam, strlen($snddir)+1);
+		if(preg_match("/^\./",$file)) {
+			continue;
+		}
+		$files[] = $file;
 	}
 	// Strip off every possible file extension
 	$flist = recordings_remove_extens($files);

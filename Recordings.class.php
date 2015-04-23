@@ -71,11 +71,6 @@ class Recordings implements BMO {
 				$this->filter_list[] = $item;
 			}
 		}
-		foreach ($this->full_list as $key => $value) {
-			if(strpos($value[filename],'.') === 0){
-				unset($this->full_list[$key]);
-			}
-		}
 		return ($compound ? $this->full_list : $this->filter_list);
 	}
 }
