@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2015-03-25 10:27+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -33,10 +33,6 @@ msgstr "** NO EXISTE CÓDIGO DE CARACTERÍSTICA **"
 msgid "Add Recording"
 msgstr "Añadir grabación"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr "Administrador"
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Tras grabar o enviar,"
@@ -52,7 +48,7 @@ msgstr ""
 "archivos WAV (por ejemplo, grabados con la grabadora de sonidos de Windows) "
 "el archivo <b>debe</b> estar codificado en PCM, 16 bits y a 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Grabaciones del sistema"
 
@@ -78,26 +74,11 @@ msgstr ""
 "Pulse \"Guardar\" cuando haya terminado de realizar la grabación desde su "
 "teléfono haya seleccionado un archivo a enviar"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Haga clic aquí para reproducir esta grabación"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Crea y administra las grabaciones del sistema, utilizado por muchos otros "
-"módulos (por ejemplo, IVR)."
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-"Cripta clave utilizada por este módulo de grabaciones al acceder a los "
-"archivos de grabación. Cambie el valor predeterminado de "
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Eliminar"
 
@@ -134,7 +115,7 @@ msgstr "Contraseña del código de característica"
 msgid "Files"
 msgstr "Archivos"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "Ir"
 
@@ -169,11 +150,11 @@ msgstr ""
 "Se ha autocreado un archivo de sonido que no existía durante la migración "
 "del módulo %s"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Mover abajo"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Mover arriba"
 
@@ -228,13 +209,9 @@ msgstr "Por favor, introduzca un nombre válido para esta grabación del sistema
 msgid "Please wait until the page reloads."
 msgstr "Por favor, espere mientras la página se recarga."
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Grabaciones"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr "Clave de criptografía de Grabaciones"
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -252,7 +229,7 @@ msgstr "Guardar grabación"
 msgid "Saved"
 msgstr "Guardado"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Seleccione una grabación del sistema:"
 
@@ -284,14 +261,9 @@ msgstr "Enviado correctamente"
 msgid "System Recording"
 msgstr "Grabaciones del sistema"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Grabaciones del sistema"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr "Configuración del sistema"
 
 #: functions.inc.php:170
 #, php-format
@@ -386,3 +358,26 @@ msgstr "para escuchar su grabación."
 #: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "con un sufijo válido"
+
+#~ msgid "Admin"
+#~ msgstr "Administrador"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Crea y administra las grabaciones del sistema, utilizado por muchos otros "
+#~ "módulos (por ejemplo, IVR)."
+
+#~ msgid ""
+#~ "Crypt key used by this recordings module when accessing the recording "
+#~ "files. Change from the default of "
+#~ msgstr ""
+#~ "Cripta clave utilizada por este módulo de grabaciones al acceder a los "
+#~ "archivos de grabación. Cambie el valor predeterminado de "
+
+#~ msgid "Recordings Crypt Key"
+#~ msgstr "Clave de criptografía de Grabaciones"
+
+#~ msgid "System Setup"
+#~ msgstr "Configuración del sistema"

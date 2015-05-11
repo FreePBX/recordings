@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -34,10 +34,6 @@ msgstr "**缺少功能代码**"
 msgid "Add Recording"
 msgstr "添加录音"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "在录音上传后，"
@@ -52,7 +48,7 @@ msgstr ""
 "如果你使用的是.WAV格式（比如从微软录音机录下的格式），录音文件的格式<b>必须</"
 "b>是PCM编码，16 Bit采样宽度，8000Hz采样率"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "内置的录音"
 
@@ -74,22 +70,11 @@ msgstr "钩选此项将创建一个功能代码选项，可直接改变此录音
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "如果你对录音满意了，就点击“保存”"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "点击这里播放此录音"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "删除"
 
@@ -123,7 +108,7 @@ msgstr "功能代码的密码"
 msgid "Files"
 msgstr "文件"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "开始"
 
@@ -154,11 +139,11 @@ msgstr "请确认你输入了适当的名字"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "声音文件丢失，此声音文件应该在%s模块迁移时自动生成。"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "下移"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "上移"
 
@@ -207,13 +192,9 @@ msgstr "请为此系统录音输入有效的名称"
 msgid "Please wait until the page reloads."
 msgstr "请等待页面重载。"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "录音"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr ""
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -231,7 +212,7 @@ msgstr "保存录音"
 msgid "Saved"
 msgstr "已保存"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "选择系统录音："
 
@@ -263,14 +244,9 @@ msgstr "已成功上传"
 msgid "System Recording"
 msgstr "系统录音"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "系统录音"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr ""
 
 #: functions.inc.php:170
 #, php-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -38,10 +38,6 @@ msgstr "** ЛИПСВАЩ СПЕЦИАЛЕН КОД **"
 msgid "Add Recording"
 msgstr "Добави Запис"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr "Админ"
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "След запис или добавяне,"
@@ -56,7 +52,7 @@ msgstr ""
 "Имайте впредвид, че ако използвате .wav, (като записани с Microsoft "
 "Recorder) файла <b>трябва</b> да е PCM, 16 Бита, на 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Вградени Записи"
 
@@ -80,26 +76,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Кликнете \"ЗАПИС\" кагото останете доволен от записа"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Кликнете тук за да възпроизведете този запис"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Създаване и управление на системни записи, използвани от много други модули "
-"(като IVR)."
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-"Криптиран ключ използван от модул записи когато използва записаните файлове. "
-"Променете от по-подразбиране на "
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -136,7 +117,7 @@ msgstr "Парола на Специален Код"
 msgid "Files"
 msgstr "Файлове"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "Добави"
 
@@ -169,11 +150,11 @@ msgstr "Убедете се че сте въвели правилно име"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Missing Sound файл автоматично създаден при преместване от %s модул"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Премести Надолу"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Премести Нагоре"
 
@@ -226,13 +207,9 @@ msgstr "Моля въведете правилно Име за този Сист
 msgid "Please wait until the page reloads."
 msgstr "Моля изчакайте докато страницата се презареди."
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Записи"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr "Криптиран Ключ на Записи"
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -250,7 +227,7 @@ msgstr "Направи Запис"
 msgid "Saved"
 msgstr "Записан"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Изберете Системен Запис:"
 
@@ -282,14 +259,9 @@ msgstr "Успешно добавен"
 msgid "System Recording"
 msgstr "Системен Запис"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Системни Записи"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr "Общи Настройки"
 
 #: functions.inc.php:170
 #, php-format
@@ -386,6 +358,29 @@ msgstr "за да прослушате вашия запис."
 #: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "с правилна наставка"
+
+#~ msgid "Admin"
+#~ msgstr "Админ"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Създаване и управление на системни записи, използвани от много други "
+#~ "модули (като IVR)."
+
+#~ msgid ""
+#~ "Crypt key used by this recordings module when accessing the recording "
+#~ "files. Change from the default of "
+#~ msgstr ""
+#~ "Криптиран ключ използван от модул записи когато използва записаните "
+#~ "файлове. Променете от по-подразбиране на "
+
+#~ msgid "Recordings Crypt Key"
+#~ msgstr "Криптиран Ключ на Записи"
+
+#~ msgid "System Setup"
+#~ msgstr "Общи Настройки"
 
 #~ msgid " if desired."
 #~ msgstr " ако е необходимо."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -33,10 +33,6 @@ msgstr "** CODICE SERVIZIO MANCANTE **"
 msgid "Add Recording"
 msgstr "Aggiungi Registrazione"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Dopo la registrazione o il caricamento,"
@@ -52,7 +48,7 @@ msgstr ""
 "Registratore di Microsoft Windows) il file <b>deve</b> essere del formato "
 "PCM, 16Bit, 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Registrazioni interne"
 
@@ -76,22 +72,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Fare click su \"SALVA\" quando terminato"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Fare Click qui per riprodurre la registrazione"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Elimina"
 
@@ -127,7 +112,7 @@ msgstr "Password Codice Servizio"
 msgid "Files"
 msgstr "File"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "Vai"
 
@@ -160,11 +145,11 @@ msgstr "Assicurarsi di aver inserito un nome corretto"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "File Audio mancante auto-creato durante la migrazione del modulo %s"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Sposta Giù"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Sposta Su"
 
@@ -217,13 +202,9 @@ msgstr "Prego immettere un Nome valido per questa Registrazione di Sistema"
 msgid "Please wait until the page reloads."
 msgstr "Prego attendere che la pagina si ricarichi"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Registrazioni"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr ""
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -241,7 +222,7 @@ msgstr "Salva Registrazione"
 msgid "Saved"
 msgstr "Salvato"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Selezionare la Registrazione di Sistema:"
 
@@ -273,14 +254,9 @@ msgstr "Caricato con successo"
 msgid "System Recording"
 msgstr "Registrazione di Sistema"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr ""
 
 #: functions.inc.php:170
 #, php-format

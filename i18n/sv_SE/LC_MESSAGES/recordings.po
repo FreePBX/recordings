@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -46,10 +46,6 @@ msgstr "** FUKTIONSKOD FATTAS ***"
 msgid "Add Recording"
 msgstr "Lägg till inspelning"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Efter inspelning eller uppladdning,"
@@ -64,7 +60,7 @@ msgstr ""
 "Om du använder en .wav-fil (inspelad via Microsoft Recorder) så <b>måste</b> "
 "filen vara PCM-kodad, 16 bitar vid 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Inbyggda inspelningar"
 
@@ -88,25 +84,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Klicka på \"Spara\" när du är nöjd med din inspelning"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Klicka här för att spela upp denna inspelning"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Skapar och undehåller systeminspelningar som kan användas av andra moduler"
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-"Krypteringsnyckel som används av systeminspelningsmodulen vid åtkomst av "
-"inspelade filer. Ändra från standardnyckeln "
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Ta bort"
 
@@ -142,7 +124,7 @@ msgstr "Lösenord för funktionskod"
 msgid "Files"
 msgstr "Filer"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "Utför"
 
@@ -175,11 +157,11 @@ msgstr "Kontrollera att det är ett giltigt namn"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Flytta ner"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Flytta upp"
 
@@ -231,13 +213,9 @@ msgstr "Skriv in ett giltigt namn för denna systeminspelning"
 msgid "Please wait until the page reloads."
 msgstr "Vänta tills sidan laddats om."
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Inspelningar"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr "Krypteringsnyckel för inspelningar"
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -255,7 +233,7 @@ msgstr "Spara inspelning"
 msgid "Saved"
 msgstr "Sparad"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Välj systeminspelning:"
 
@@ -287,14 +265,9 @@ msgstr "Uppladdningen lyckades"
 msgid "System Recording"
 msgstr "Systeminspelning"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Systeminspelningar"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr "Systeminställningar"
 
 #: functions.inc.php:170
 #, php-format
@@ -389,6 +362,25 @@ msgstr "för att lyssna på din inspelning."
 #: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "med en giltig ändelse"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Skapar och undehåller systeminspelningar som kan användas av andra moduler"
+
+#~ msgid ""
+#~ "Crypt key used by this recordings module when accessing the recording "
+#~ "files. Change from the default of "
+#~ msgstr ""
+#~ "Krypteringsnyckel som används av systeminspelningsmodulen vid åtkomst av "
+#~ "inspelade filer. Ändra från standardnyckeln "
+
+#~ msgid "Recordings Crypt Key"
+#~ msgstr "Krypteringsnyckel för inspelningar"
+
+#~ msgid "System Setup"
+#~ msgstr "Systeminställningar"
 
 #~ msgid " if desired."
 #~ msgstr "om så önskas"

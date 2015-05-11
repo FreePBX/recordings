@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -35,11 +35,6 @@ msgstr ""
 msgid "Add Recording"
 msgstr ""
 
-#: recordings.i18n.php:6
-#: recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr ""
@@ -52,7 +47,7 @@ msgid ""
 msgstr ""
 
 #: page.recordings.php:419
-#: page.recordings.php:494
+#: page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr ""
 
@@ -74,22 +69,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr ""
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr ""
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr ""
 
@@ -124,7 +108,7 @@ msgid "Files"
 msgstr ""
 
 #: page.recordings.php:179
-#: page.recordings.php:507
+#: page.recordings.php:508
 msgid "Go"
 msgstr ""
 
@@ -155,11 +139,11 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr ""
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr ""
 
@@ -210,12 +194,7 @@ msgid "Please wait until the page reloads."
 msgstr ""
 
 #: install.php:5
-#: recordings.i18n.php:4
 msgid "Recordings"
-msgstr ""
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
 msgstr ""
 
 #: page.recordings.php:264
@@ -235,7 +214,7 @@ msgstr ""
 msgid "Saved"
 msgstr ""
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr ""
 
@@ -270,13 +249,8 @@ msgstr ""
 
 #: page.recordings.php:165
 #: page.recordings.php:243
-#: page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:494
 msgid "System Recordings"
-msgstr ""
-
-#: recordings.i18n.php:16
-msgid "System Setup"
 msgstr ""
 
 #: functions.inc.php:170

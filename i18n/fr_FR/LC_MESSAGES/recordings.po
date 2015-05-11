@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -43,10 +43,6 @@ msgstr "** Code de Caractéristique Manquant **"
 msgid "Add Recording"
 msgstr "Ajouter Enregistrement"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Après avoir enregistré ou uploadé,"
@@ -62,7 +58,7 @@ msgstr ""
 "avec Microsoft Recorder) le fichier <b>doit</b> être Encodé en PCM, 16 Bits, "
 "à 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Enregistrements intégrés"
 
@@ -88,22 +84,11 @@ msgstr ""
 "Cliquez sur \"Sauvegarder\" lorsque vous êtes satisfait de votre "
 "enregistrement"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Cliquez ici pour jouer cet enregistrement"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Supprimer"
 
@@ -140,7 +125,7 @@ msgstr "Mot de Passe du Code de Caractéristique"
 msgid "Files"
 msgstr "Fichiers"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "Go"
 
@@ -173,11 +158,11 @@ msgstr "Assurez-vous d'avoir entré un nom correct"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fichier Son auto-créé lors de la migration du module %s MANQUANT"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Descendre"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Monter"
 
@@ -228,13 +213,9 @@ msgstr "Veuillez entrer un Nom valide pour cet Enregistrement Système"
 msgid "Please wait until the page reloads."
 msgstr "Veuillez patienter pendant le rechargement de la page."
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Enregistrements"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr ""
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -252,7 +233,7 @@ msgstr "Sauvegarder les Enregistrements"
 msgid "Saved"
 msgstr "Sauvegardé"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Sélectionner Enregistrement Système :"
 
@@ -284,14 +265,9 @@ msgstr "Uploadé avec Succès"
 msgid "System Recording"
 msgstr "Enregistrement Système"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Enregistrements Systèmes"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr ""
 
 #: functions.inc.php:170
 #, php-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -30,10 +30,6 @@ msgstr "** לא קיים קוד תכונה **"
 msgid "Add Recording"
 msgstr "הוספת הקלטה"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr ""
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "אחרי הקלטה או העלאה,"
@@ -45,7 +41,7 @@ msgid ""
 "<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
 msgstr ""
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "הקלטות מובנות"
 
@@ -67,23 +63,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "לחץ על \"שמור\" כאשר אתה מרוצה מהקלטתך"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "לחץ כאן לשמיעת ההקלטה"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "מחק"
 
@@ -117,7 +101,7 @@ msgstr "סיסמא לקוד תכונה"
 msgid "Files"
 msgstr "קבצים"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "התחל"
 
@@ -149,11 +133,11 @@ msgstr "נא וודא כי הכנסת שם מתאים להקלטה"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "הזז למטה"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "הזז למעלה"
 
@@ -202,13 +186,9 @@ msgstr "נא הזן שם תקין לקובץ ההקלטה"
 msgid "Please wait until the page reloads."
 msgstr "נא המתן עד לרענון העמוד"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "הקלטות"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr ""
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -226,7 +206,7 @@ msgstr "שמור הקלטה"
 msgid "Saved"
 msgstr "נשמר"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "בחר הקלטת מערכת:"
 
@@ -258,14 +238,9 @@ msgstr "הועלה בהצלחה"
 msgid "System Recording"
 msgstr "הקלטות מערכת"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr "הגדרות מערכת"
 
 #: functions.inc.php:170
 #, php-format
@@ -353,6 +328,16 @@ msgstr "כדי להאזין להקלטתך."
 #: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "עם סיומת תקנית"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות "
+#~ "והכרזות"
+
+#~ msgid "System Setup"
+#~ msgstr "הגדרות מערכת"
 
 #~ msgid "Internal Options & Configuration"
 #~ msgstr "תכונות פנימיות והגדרות מערכת"

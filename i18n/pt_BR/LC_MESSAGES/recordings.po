@@ -19,15 +19,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-04-20 22:02-0400\n"
+"POT-Creation-Date: 2015-05-11 13:30-0400\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
-"Language-Team: Portuguese (Brazil) "
-"<http://weblate.freepbx.org/projects/freepbx/recordings/pt_BR/>\n"
-"Language: pt_BR\n"
+"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
+"freepbx/recordings/pt_BR/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.2-dev\n"
 "X-Poedit-Language: Portuguese\n"
@@ -50,10 +50,6 @@ msgstr "** CÓDIGO DE FACILIDADE AUSENTE **"
 msgid "Add Recording"
 msgstr "Adicionar gravação"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
-msgid "Admin"
-msgstr "Admin"
-
 #: page.recordings.php:212
 msgid "After recording or uploading,"
 msgstr "Após gravar ou carregar,"
@@ -69,7 +65,7 @@ msgstr ""
 "Microsoft Recorder) o arquivo <b>DEVE</b> se codificado em PCM, 16 bits, "
 "8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:494
+#: page.recordings.php:419 page.recordings.php:495
 msgid "Built-in Recordings"
 msgstr "Gravações do sistema"
 
@@ -93,26 +89,11 @@ msgstr ""
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "Clique \"SALVAR\" quando você estiver satisfeito com a gravação"
 
-#: page.recordings.php:558
+#: page.recordings.php:559
 msgid "Click here to play this recording"
 msgstr "Clique aqui para tocar esta gravação"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Cria e gerencia gravações para o sistema, usado por vários módulos (por "
-"exemplo, URA)."
-
-#: recordings.i18n.php:18
-msgid ""
-"Crypt key used by this recordings module when accessing the recording files. "
-"Change from the default of "
-msgstr ""
-"Chave de criptografia usada para acessar esse modulo de gravação. Altere do "
-"padrão para "
-
-#: page.recordings.php:574
+#: page.recordings.php:575
 msgid "Delete"
 msgstr "Apagar"
 
@@ -148,7 +129,7 @@ msgstr "Senha do código de facilidade"
 msgid "Files"
 msgstr "Arquivos"
 
-#: page.recordings.php:179 page.recordings.php:507
+#: page.recordings.php:179 page.recordings.php:508
 msgid "Go"
 msgstr "OK"
 
@@ -181,11 +162,11 @@ msgstr "Certifique-se que você entrou um nome apropriado"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
 
-#: page.recordings.php:571
+#: page.recordings.php:572
 msgid "Move Down"
 msgstr "Descer"
 
-#: page.recordings.php:565
+#: page.recordings.php:566
 msgid "Move Up"
 msgstr "Subir"
 
@@ -236,13 +217,9 @@ msgstr "Por favor entre com um nome válido para esta gravação do sistema"
 msgid "Please wait until the page reloads."
 msgstr "Por favor aguarde até a página recarregar."
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Gravações"
-
-#: recordings.i18n.php:14
-msgid "Recordings Crypt Key"
-msgstr "Gravar Chave de Criptografia"
 
 #: page.recordings.php:264
 msgid "Remove Recording"
@@ -260,7 +237,7 @@ msgstr "Salvar gravação"
 msgid "Saved"
 msgstr "Salvo"
 
-#: page.recordings.php:495
+#: page.recordings.php:496
 msgid "Select System Recording:"
 msgstr "Selecione a gravação do sistema:"
 
@@ -292,14 +269,9 @@ msgstr "Enviado com sucesso"
 msgid "System Recording"
 msgstr "Gravação do sistema"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:493
-#: recordings.i18n.php:10
+#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
-
-#: recordings.i18n.php:16
-msgid "System Setup"
-msgstr "Configuração do Sistema"
 
 #: functions.inc.php:170
 #, php-format
@@ -395,6 +367,29 @@ msgstr "para ouvir sua gravação."
 #: page.recordings.php:130
 msgid "with a a valid suffix"
 msgstr "Com um sufixo válido"
+
+#~ msgid "Admin"
+#~ msgstr "Admin"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Cria e gerencia gravações para o sistema, usado por vários módulos (por "
+#~ "exemplo, URA)."
+
+#~ msgid ""
+#~ "Crypt key used by this recordings module when accessing the recording "
+#~ "files. Change from the default of "
+#~ msgstr ""
+#~ "Chave de criptografia usada para acessar esse modulo de gravação. Altere "
+#~ "do padrão para "
+
+#~ msgid "Recordings Crypt Key"
+#~ msgstr "Gravar Chave de Criptografia"
+
+#~ msgid "System Setup"
+#~ msgstr "Configuração do Sistema"
 
 #~ msgid " if desired."
 #~ msgstr " se desejado."
