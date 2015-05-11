@@ -29,7 +29,7 @@ $fcode_pass = isset($_REQUEST['fcode_pass'])?$_REQUEST['fcode_pass']:'';
 $fcbase = '*29';
 $default_pos = 0;
 
-$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+$astsnd = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
 $astsnd .= "/sounds/";
 
 // check ctype_digit() to avoid very obscure vulnerability that can be made if certain proxy's are used
@@ -354,7 +354,7 @@ function recording_editpage($id, $num) {
 	<table>
 	<?php
 	// globals seem to busted in PHP5 define here for now
-	$recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+	$recordings_astsnd_path = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
 	$recordings_astsnd_path .= "/sounds/";
 
 	// recordings_display_sndfile functions need to be run above so we have $default_pos set
@@ -485,7 +485,8 @@ function recordings_form_jscript() {
 }
 
 function recording_sysfiles() {
-	$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+	global $amp_conf;
+	$astsnd = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
 	$astsnd .= "/sounds/";
 	$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
 ?>
@@ -521,7 +522,7 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	// Note that when using this, it needs a <table> definition around it.
 
 	if ($count == 0) {
-		$astsnd = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+		$astsnd = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
 		$astsnd .= "/sounds/";
 		$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
 		$html_txt .=  "<tr><td><select $disabled_state id='sysrec$count' name='sysrec$count' class='autofill autocomplete-combobox'>\n";
@@ -577,4 +578,3 @@ function recordings_display_sndfile($item, $count, $max, $astpath, $fcode) {
 	$html_txt .=  "</tr>\n";
 	return $html_txt;
 }
-
