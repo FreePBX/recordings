@@ -1,6 +1,7 @@
 <?php
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
-/* $Id$ */
+echo FreePBX::Recordings()->showPage();
+return;
 
 $action = isset($_REQUEST['action'])?$_REQUEST['action']:'';
 

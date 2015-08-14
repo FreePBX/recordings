@@ -35,6 +35,40 @@ class Recordings implements BMO {
 
 	}
 
+	public function showPage() {
+		$media = $this->FreePBX->Media();
+		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : "";
+		switch($action) {
+			case "add":
+				$supported = $media->getSupportedFormats();
+				$html = load_view(__DIR__."/views/form.php",array("supported" => implode(", ",$supported['in'])));
+			break;
+			default:
+				$html = load_view(__DIR__."/views/grid.php",array());
+			break;
+		}
+		return $html;
+	}
+
+	public function ajaxRequest($req, &$setting) {
+		$setting['authenticate'] = false;
+		$setting['allowremote'] = false;
+		switch($req) {
+			case "grid":
+				return true;
+			break;
+		}
+		return false;
+	}
+
+	public function ajaxHandler() {
+		switch($_REQUEST['command']) {
+			case "grid";
+				return $this->getAll();
+			break;
+		}
+	}
+
 	public function getRecordingsById($id) {
 		$sql = "SELECT * FROM recordings where id= ?";
 		$sth = $this->db->prepare($sql);
@@ -48,6 +82,14 @@ class Recordings implements BMO {
 			return '';
 		}
 		return $res['filename'];
+	}
+
+	public function getAll() {
+		$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
+		$sth = $this->db->prepare($sql);
+		$sth->execute();
+		$full_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		return $full_list;
 	}
 
 	public function getAllRecordings($compound = true) {
