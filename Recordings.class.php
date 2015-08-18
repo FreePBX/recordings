@@ -41,7 +41,10 @@ class Recordings implements BMO {
 		switch($action) {
 			case "add":
 				$supported = $media->getSupportedFormats();
-				$html = load_view(__DIR__."/views/form.php",array("supported" => implode(", ",$supported['in'])));
+				ksort($supported['in']);
+				ksort($supported['out']);
+				$langs = $this->FreePBX->Soundlang->getLanguages();
+				$html = load_view(__DIR__."/views/form.php",array("supported" => $supported, "langs" => $langs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -54,6 +57,8 @@ class Recordings implements BMO {
 		$setting['authenticate'] = false;
 		$setting['allowremote'] = false;
 		switch($req) {
+			case "record":
+			case "upload":
 			case "grid":
 				return true;
 			break;
@@ -65,6 +70,74 @@ class Recordings implements BMO {
 		switch($_REQUEST['command']) {
 			case "grid";
 				return $this->getAll();
+			break;
+			case "record":
+				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
+					$tmp_path = sys_get_temp_dir() . "/recordings";
+					if(!file_exists($tmp_path)) {
+						if(!mkdir($tmp_path)) {
+							return array("status" => false, "message" => sprintf(_("Cant Create Temp Directory: %s"),$tmp_path));
+						}
+					}
+
+					$tmp_name = $_FILES["file"]["tmp_name"];
+					$name = $_FILES["file"]["name"];
+
+					move_uploaded_file($tmp_name, $tmp_path."/".$name);
+				}	else {
+					$return = array("status" => false, "message" => _("Unknown Error"));
+					break;
+				}
+				$return = array("status" => true, "message" => "");
+			break;
+			case "upload":
+				$temp = sys_get_temp_dir() . "/recordings";
+				if(!file_exists($temp)) {
+					if(!mkdir($temp)) {
+						return array("status" => false, "message" => sprintf(_("Cant Create Temp Directory: %s"),$temp));
+					}
+				}
+				foreach ($_FILES["files"]["error"] as $key => $error) {
+					switch($error) {
+						case UPLOAD_ERR_OK:
+							$extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
+							$extension = strtolower($extension);
+							if($extension == 'pdf' || $extension == 'tiff' || $extension == 'tif') {
+								$tmp_name = $_FILES["files"]["tmp_name"][$key];
+								$dname = $_FILES["files"]["name"][$key];
+								$id = time();
+								$name = pathinfo($_FILES["files"]["name"][$key],PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
+								move_uploaded_file($tmp_name, $temp."/".$name);
+								return array("status" => true, "filename" => $dname, "localfilename" => $name, "id" => $id);
+							} else {
+								return array("status" => false, "message" => _("Unsupported file format"));
+								break;
+							}
+						break;
+						case UPLOAD_ERR_INI_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the upload_max_filesize directive in php.ini"));
+						break;
+						case UPLOAD_ERR_FORM_SIZE:
+							return array("status" => false, "message" => _("The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in the HTML form"));
+						break;
+						case UPLOAD_ERR_PARTIAL:
+							return array("status" => false, "message" => _("The uploaded file was only partially uploaded"));
+						break;
+						case UPLOAD_ERR_NO_FILE:
+							return array("status" => false, "message" => _("No file was uploaded"));
+						break;
+						case UPLOAD_ERR_NO_TMP_DIR:
+							return array("status" => false, "message" => _("Missing a temporary folder"));
+						break;
+						case UPLOAD_ERR_CANT_WRITE:
+							return array("status" => false, "message" => _("Failed to write file to disk"));
+						break;
+						case UPLOAD_ERR_EXTENSION:
+							return array("status" => false, "message" => _("A PHP extension stopped the file upload"));
+						break;
+					}
+				}
+				return array("status" => false, "message" => _("Can Not Find Uploaded Files"));
 			break;
 		}
 	}
