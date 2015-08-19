@@ -5,6 +5,7 @@ class Recordings implements BMO {
 	private $initialized = false;
 	private $full_list = null;
 	private $filter_list = array();
+	private $temp;
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -13,6 +14,7 @@ class Recordings implements BMO {
 
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
+		$this->temp = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 	}
 
 	public function doConfigPageInit($page) {
@@ -59,6 +61,9 @@ class Recordings implements BMO {
 		switch($req) {
 			case "dialrecording":
 			case "checkrecording":
+			case "savebrowserrecording":
+			case "saverecording":
+			case "deleterecording":
 			case "record":
 			case "upload":
 			case "grid":
@@ -70,6 +75,21 @@ class Recordings implements BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "savebrowserrecording":
+				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
+					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$_FILES["file"]["name"].".wav");
+					$return = array("status" => true, "filename" => $this->temp."/".$_FILES["file"]["name"].".wav", "localfilename" => $this->temp."/".$_FILES["file"]["name"].".wav");
+				}	else {
+					$return = array("status" => false, "message" => _("Unknown Error"));
+				}
+			break;
+			case "deleterecording":
+				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
+				if(file_exists($this->temp."/".$filename.".wav")) {
+					unlink($this->temp."/".$filename.".wav");
+				}
+				return array("status" => true);
+			break;
 			case "dialrecording":
 				$astman = $this->FreePBX->astman;
 				$status = $astman->originate(array(
@@ -88,43 +108,30 @@ class Recordings implements BMO {
 				}
 			break;
 			case "checkrecording":
-				$dir = $this->FreePBX->Config->get("ASTVARLIBDIR");
-				if(file_exists($dir."/sounds/".$_POST['filename'].".finished")) {
-					unlink($dir."/sounds/".$_POST['filename'].".finished");
-					return array("status" => true, "filename" => $_POST['filename'].".wav", "localfilename" => $dir."/sounds/".$_POST['filename'].".wav");
+				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
+				if(file_exists($this->temp."/".$filename.".finished")) {
+					unlink($this->temp."/".$filename.".finished");
+					return array("finished" => true, "filename" => $filename.".wav", "localfilename" => $filename.".wav", "recording" => false);
+				} elseif(file_exists($this->temp."/".$filename.".wav")) {
+					return array("finished" => false, "recording" => true);
 				} else {
-					return array("status" => false);
+					return array("finished" => false, "recording" => false);
+				}
+			break;
+			case "saverecording":
+				$name = !empty($_POST['name']) ? basename($_POST['name']) : '';
+				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
+				if(file_exists($this->temp."/".$filename.".wav")) {
+					rename($this->temp."/".$filename.".wav", $this->temp."/".$name.".wav");
+					return array("status" => true, "filename" => $name.".wav", "localfilename" => $name.".wav");
+				} else {
+					return array("status" => false, "message" => _("File does not exist"));
 				}
 			break;
 			case "grid";
 				return $this->getAll();
 			break;
-			case "record":
-				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
-					$tmp_path = sys_get_temp_dir() . "/recordings";
-					if(!file_exists($tmp_path)) {
-						if(!mkdir($tmp_path)) {
-							return array("status" => false, "message" => sprintf(_("Cant Create Temp Directory: %s"),$tmp_path));
-						}
-					}
-
-					$tmp_name = $_FILES["file"]["tmp_name"];
-					$name = $_FILES["file"]["name"];
-
-					move_uploaded_file($tmp_name, $tmp_path."/".$name);
-				}	else {
-					$return = array("status" => false, "message" => _("Unknown Error"));
-					break;
-				}
-				$return = array("status" => true, "message" => "");
-			break;
 			case "upload":
-				$temp = sys_get_temp_dir() . "/recordings";
-				if(!file_exists($temp)) {
-					if(!mkdir($temp)) {
-						return array("status" => false, "message" => sprintf(_("Cant Create Temp Directory: %s"),$temp));
-					}
-				}
 				foreach ($_FILES["files"]["error"] as $key => $error) {
 					switch($error) {
 						case UPLOAD_ERR_OK:
@@ -136,7 +143,7 @@ class Recordings implements BMO {
 								$dname = $_FILES["files"]["name"][$key];
 								$id = time();
 								$name = pathinfo($_FILES["files"]["name"][$key],PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
-								move_uploaded_file($tmp_name, $temp."/".$name);
+								move_uploaded_file($tmp_name, $this->temp."/".$name);
 								return array("status" => true, "filename" => $dname, "localfilename" => $name, "id" => $id);
 							} else {
 								return array("status" => false, "message" => _("Unsupported file format"));

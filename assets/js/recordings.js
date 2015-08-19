@@ -6,43 +6,151 @@ $(function() {
 		$("#record-container").remove();
 	}
 
+	$(".codec").change(function() {
+		if(!$(".codec").is(":checked")) {
+			alert(_("At least one codec must be checked"));
+			$(this).prop("checked", true);
+		}
+	})
+
 	var el = document.getElementById('files');
 	var sortable = Sortable.create(el);
 
 	$("#record-phone").keyup(function (e) {
 		if (e.keyCode == 13) {
-			$("#dial").click();
+			$("#dial-phone").click();
 		}
 	});
 
-	$("#dial").click(function() {
+	var recording = false,
+			recorder = null,
+			recordTimer = null,
+			startTime = null,
+			soundBlob = {};
+	$(".jp-play").click(function() {
+		if(recording) {
+			$(".record").click();
+		}
+	})
+	$(".record").click(function() {
+		$("#jquery_jplayer_1").jPlayer( "clearMedia" );
+		$(this).parents(".jp-controls").toggleClass("recording");
+		var counter = $("#jp_container_1 .jp-duration"),
+				title = $("#jp_container_1 .jp-title");
+		if (recording) {
+			clearInterval(recordTimer);
+			title.html('<button id="saverecording" class="btn btn-primary" type="button">'+_("Save Recording")+'</button><button id="deleterecording" class="btn btn-primary" type="button">'+_("Delete Recording")+'</button>');
+			$("#saverecording").click(function() {
+				$("#jquery_jplayer_1").jPlayer( "clearMedia" );
+				title.text(_("Uploading..."));
+				var data = new FormData();
+				data.append("file", soundBlob);
+				$.ajax({
+					type: "POST",
+					url: "ajax.php?module=recordings&command=savebrowserrecording",
+					xhr: function()
+					{
+						var xhr = new window.XMLHttpRequest();
+						//Upload progress
+						xhr.upload.addEventListener("progress", function(evt) {
+							if (evt.lengthComputable) {
+								var percentComplete = evt.loaded / evt.total,
+								progress = Math.round(percentComplete * 100);
+								//$("#" + type + " .filedrop .pbar").css("width", progress + "%");
+							}
+						}, false);
+						return xhr;
+					},
+					data: data,
+					processData: false,
+					contentType: false,
+					success: function(data) {
+						title.html(_("Hit the red record button to start recording from your browser"));
+					},
+					error: function() {
+					}
+				});
+			});
+			$("#deleterecording").click(function() {
+				$("#jquery_jplayer_1").jPlayer( "clearMedia" );
+				title.html(_("Hit the red record button to start recording from your browser"));
+			});
+			recorder.stop();
+			recorder.exportWAV(function(blob) {
+				soundBlob = blob;
+				var url = (window.URL || window.webkitURL).createObjectURL(blob);
+				$("#jquery_jplayer_1").jPlayer( "setMedia", {
+					wav: url
+				});
+			});
+			recording = false;
+		} else {
+			window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
+			var context = new AudioContext();
+
+			var gUM = Modernizr.prefixed("getUserMedia", navigator);
+			gUM({ audio: true }, function(stream) {
+				var mediaStreamSource = context.createMediaStreamSource(stream);
+				recorder = new Recorder(mediaStreamSource,{ workerPath: "assets/recordings/js/recorderWorker.js" });
+				recorder.record();
+				startTime = new Date();
+				recordTimer = setInterval(function () {
+					var mil = (new Date() - startTime);
+					var temp = (mil / 1000);
+					var min = ("0" + Math.floor((temp %= 3600) / 60)).slice(-2);
+					var sec = ("0" + Math.round(temp % 60)).slice(-2);
+					counter.text(min + ":" + sec);
+				}, 1000);
+				title.text(_("Recording..."));
+				recording = true;
+			}, function(e) {
+				alert(_("Your Browser Blocked The Recording, Please check your settings"));
+				recording = false;
+			});
+		}
+	})
+
+	$("#dial-phone").click(function() {
 		clearInterval(checker);
 		var num = $("#record-phone").val(),
 				file = num+Date.now();
 
 		$("#record-phone").prop("disabled",true);
-		$("#dial").text(_("Dialing..."));
+		$(this).text(_("Dialing..."));
 		$.post( "ajax.php", {module: "recordings", command: "dialrecording", extension: num, filename: file}, function( data ) {
 			if(data.status) {
 				$("#dialer").fadeOut("slow");
 				$("#dialer-message").text(_("Recording...")).removeClass("hidden");
-				check(num, file);
+				setTimeout(function(){
+					check(num, file);
+				}, 500);
+
 			} else {
 				alert(data.message);
 			}
 			$("#record-phone").prop("disabled",false);
-			$("#dial").text(_("Call!"));
+			$("#dial-phone").text(_("Call!"));
 		});
 	})
 
 	var check = function(num, file) {
 		checker = setInterval(function(){
 			$.post( "ajax.php", {module: "recordings", command: "checkrecording", extension: num, filename: file}, function( data ) {
-				if(data.status) {
-					$("#dialer-message").addClass("hidden");
-					$("#dialer").fadeIn("slow");
+				if(data.finished || (!data.finished && !data.recording)) {
 					clearInterval(checker);
-					addFile(data.filename, data.localfilename);
+					$("#dialer-message").addClass("hidden");
+					$("#dialer-save").fadeIn("slow");
+					$("#save-phone").one("click", function() {
+						$.post( "ajax.php", {module: "recordings", command: "saverecording", extension: num, filename: file, name: $("#save-phone-input").val()}, function( data ) {
+							if(data.status) {
+								addFile(data.filename, data.localfilename);
+							}
+							$("#dialer-save").fadeOut("slow", function() {
+								$("#dialer").fadeIn("slow");
+							});
+						});
+					});
 				}
 			});
 		}, 500);
@@ -50,12 +158,7 @@ $(function() {
 
 	$("#jquery_jplayer_1").jPlayer({
 		ready: function(event) {
-			//TODO: Do conversions on the fly here???
-			$(this).jPlayer("setMedia", {
-				title: "Bubble",
-				m4a: "http://jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-				oga: "http://jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-			});
+
 		},
 		timeupdate: function(event) {
 			$("#jp_container_1").find(".jp-ball").css("left",event.jPlayer.status.currentPercentAbsolute + "%");
@@ -64,7 +167,7 @@ $(function() {
 			$("#jp_container_1").find(".jp-ball").css("left","0%");
 		},
 		swfPath: "http://jplayer.org/latest/dist/jplayer",
-		supplied: "mp3, oga",
+		supplied: "wav",
 		wmode: "window",
 		useStateClassSkin: true,
 		autoBlur: false,
@@ -142,6 +245,9 @@ $(function() {
 					alert(_("Unsupported file type"));
 				}
 			},
+			drop: function () {
+				$("#upload-progress .progress-bar").css("width", "0%");
+			},
 			dragover: function (e, data) {
 			},
 			change: function (e, data) {
@@ -152,7 +258,6 @@ $(function() {
 				} else {
 					alert(data.result.message);
 				}
-				$("#upload-progress .progress-bar").css("width", "0%");
 			},
 			progressall: function (e, data) {
 				var progress = parseInt(data.loaded / data.total * 100, 10);
@@ -166,12 +271,22 @@ $(function() {
 })
 
 $(document).on("click", "#files .delete-file", function() {
-	$(this).parents(".file").fadeOut("slow", function() {
-		$(this).remove();
-		if(!$("#files .file").length) {
-			$("#file-alert").removeClass("hidden");
+	var $this = this,
+			file = $($this).data("filename");
+	$($this).addClass("deleting");
+	$.post( "ajax.php", {module: "recordings", command: "deleterecording", filename: file}, function( data ) {
+		if(data.status) {
+			$($this).parents(".file").fadeOut("slow", function() {
+				$(this).remove();
+				if(!$("#files .file").length) {
+					$("#file-alert").removeClass("hidden");
+				}
+			})
+		} else {
+			alert(data.message);
+			$($this).removeClass("deleting");
 		}
-	})
+	});
 });
 
 $(document).on("click", "#files .play", function() {
@@ -180,7 +295,7 @@ $(document).on("click", "#files .play", function() {
 
 function addFile(file, path) {
 	$("#file-alert").addClass("hidden");
-	$("#files").append('<li class="file" data-path="'+path+'"><i class="fa fa-play play"></i> '+file+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+	$("#files").append('<li class="file" data-filename="'+path+'"><i class="fa fa-play play"></i> '+file+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
 }
 
 function linkFormatter(value, row, index){

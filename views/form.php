@@ -120,7 +120,7 @@
 														<div class="jp-gui jp-interface">
 															<div class="jp-controls">
 																<i class="fa fa-play jp-play"></i>
-																<i class="fa fa-repeat jp-repeat"></i>
+																<i class="fa fa-circle record"></i>
 															</div>
 															<div class="jp-progress">
 																<div class="jp-seek-bar progress">
@@ -139,7 +139,7 @@
 															</div>
 														</div>
 														<div class="jp-details">
-															<div class="jp-title" aria-label="title">&nbsp;</div>
+															<div class="jp-title" aria-label="title"><?php echo _("Hit the red record button to start recording from your browser")?></div>
 														</div>
 														<div class="jp-no-solution">
 															<span>Update Required</span>
@@ -173,7 +173,15 @@
 													<div class="input-group">
 														<input type="text" class="form-control" id="record-phone" placeholder="Enter Extension...">
 														<span class="input-group-btn">
-															<button class="btn btn-default" type="button" id="dial">Call!</button>
+															<button class="btn btn-default" type="button" id="dial-phone">Call!</button>
+														</span>
+													</div>
+												</div>
+												<div id="dialer-save">
+													<div class="input-group">
+														<input type="text" class="form-control" id="save-phone-input" placeholder="Name this file">
+														<span class="input-group-btn">
+															<button class="btn btn-default" type="button" id="save-phone">Save!</button>
 														</span>
 													</div>
 												</div>

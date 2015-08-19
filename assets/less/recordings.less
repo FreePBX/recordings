@@ -46,5 +46,35 @@
 			cursor: pointer;
 			font-size: 150%;
 		}
+		.fa.deleting {
+			opacity: .5;
+			cursor: not-allowed;
+		}
 	}
+}
+
+#dialer-save {
+	display: none;
+}
+
+.fa.record {
+	color: red;
+}
+
+.jp-controls.recording {
+	.fa.record {
+		-webkit-animation-name: fade;
+		-webkit-animation-duration: 2s;
+		-webkit-animation-iteration-count: infinite;
+		width: 22px; /* weird browser issues */
+	}
+	.fa.jp-play:before {
+		content: "\f04d";
+	}
+}
+
+@-webkit-keyframes fade {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
 }
