@@ -22,3 +22,29 @@
 		opacity: .5;
 	}
 }
+
+#file-alert {
+	margin-bottom: 0px;
+}
+
+#files {
+	margin-top: 0;
+	margin-bottom: 0px;
+	padding: 0pc;
+	list-style: none;
+	.file {
+		border: 1px solid #ccc;
+		background-color: whitesmoke;
+		margin-bottom: 1px;
+		padding: 3px;
+		border-radius: 5px;
+		cursor: move;
+		.play.active:before {
+			content: "\f04c";
+		}
+		.fa {
+			cursor: pointer;
+			font-size: 150%;
+		}
+	}
+}

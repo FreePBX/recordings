@@ -57,6 +57,8 @@ class Recordings implements BMO {
 		$setting['authenticate'] = false;
 		$setting['allowremote'] = false;
 		switch($req) {
+			case "dialrecording":
+			case "checkrecording":
 			case "record":
 			case "upload":
 			case "grid":
@@ -68,6 +70,32 @@ class Recordings implements BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "dialrecording":
+				$astman = $this->FreePBX->astman;
+				$status = $astman->originate(array(
+					"Channel" => "Local/".$_POST['extension']."@from-internal",
+					"Exten" => "dorecord",
+					"Context" => "macro-systemrecording",
+					"Priority" => 1,
+					"Async" => "no",
+					"CallerID" => _("System Recordings") . " <*77>",
+					"Variable" => "RECFILE=".$_POST['filename']
+				));
+				if($status['Response'] == "Success") {
+					return array("status" => true);
+				} else {
+					return array("status" => false, "message" => $status['Message']);
+				}
+			break;
+			case "checkrecording":
+				$dir = $this->FreePBX->Config->get("ASTVARLIBDIR");
+				if(file_exists($dir."/sounds/".$_POST['filename'].".finished")) {
+					unlink($dir."/sounds/".$_POST['filename'].".finished");
+					return array("status" => true, "filename" => $_POST['filename'].".wav", "localfilename" => $dir."/sounds/".$_POST['filename'].".wav");
+				} else {
+					return array("status" => false);
+				}
+			break;
 			case "grid";
 				return $this->getAll();
 			break;
@@ -102,7 +130,8 @@ class Recordings implements BMO {
 						case UPLOAD_ERR_OK:
 							$extension = pathinfo($_FILES["files"]["name"][$key], PATHINFO_EXTENSION);
 							$extension = strtolower($extension);
-							if($extension == 'pdf' || $extension == 'tiff' || $extension == 'tif') {
+							$supported = $this->FreePBX->Media->getSupportedFormats();
+							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = $_FILES["files"]["name"][$key];
 								$id = time();

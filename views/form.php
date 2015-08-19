@@ -61,9 +61,10 @@
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="list"></i>
 											</div>
 											<div class="col-md-9">
-												<div id="list">
-													<?php echo _("No Files")?>
-												</div>
+												<div id="file-alert" class="alert alert-info" role="alert"><?php echo _("No Files")?></div>
+												<ul id="files">
+
+												</ul>
 											</div>
 										</div>
 									</div>
@@ -87,9 +88,7 @@
 											<div class="col-md-9">
 												<input id="fileupload" type="file" name="files[]" data-url="ajax.php?module=recordings&amp;command=upload" class="form-control" multiple>
 												<div id="upload-progress" class="progress">
-													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-														<span class="sr-only">60% Complete</span>
-													</div>
+													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
 												</div>
 												<div id="dropzone">
 													<div class="message"><?php echo _("Drop Files Here")?></div>
@@ -116,7 +115,7 @@
 											</div>
 											<div class="col-md-9">
 												<div id="jquery_jplayer_1" class="jp-jplayer"></div>
-												<div id="jp_container_1" class="jp-audio-freepbx" role="application" aria-label="media player">
+												<div id="jp_container_1" data-player="jquery_jplayer_1" class="jp-audio-freepbx" role="application" aria-label="media player">
 													<div class="jp-type-single">
 														<div class="jp-gui jp-interface">
 															<div class="jp-controls">
@@ -165,22 +164,25 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-3">
-												<label class="control-label" for="element1">Record Over Phone</label>
-												<i class="fa fa-question-circle fpbx-help-icon" data-for="element2"></i>
+												<label class="control-label" for="record-phone">Record Over Phone</label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="record-phone"></i>
 											</div>
 											<div class="col-md-9">
-												<div class="input-group">
-													<input type="text" class="form-control" placeholder="Enter Extension...">
-													<span class="input-group-btn">
-														<button class="btn btn-default" type="button">Call!</button>
-													</span>
-												</div><!-- /input-group -->
+												<div id="dialer-message" class="alert alert-warning hidden" role="alert"></div>
+												<div id="dialer">
+													<div class="input-group">
+														<input type="text" class="form-control" id="record-phone" placeholder="Enter Extension...">
+														<span class="input-group-btn">
+															<button class="btn btn-default" type="button" id="dial">Call!</button>
+														</span>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="element2-help" class="help-block fpbx-help-block">Help Text</span>
+											<span id="record-phone-help" class="help-block fpbx-help-block">Help Text</span>
 										</div>
 									</div>
 								</div>
@@ -192,21 +194,23 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-3">
-												<label class="control-label" for="element1">Convert</label>
-												<i class="fa fa-question-circle fpbx-help-icon" data-for="element2"></i>
+												<label class="control-label" for="convert"><?php echo _("Convert To")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
 											</div>
-											<div class="col-md-9">
-												<select class="form-control">
-													<?php foreach($supported['out'] as $k => $v) {?>
-														<option value="<?php echo $k?>"><?php echo $v?></option>
-													<?php } ?>
-												</select>
+											<div class="col-md-9 text-center">
+												<span class="radioset">
+													<?php $c=0;foreach($supported['out'] as $k => $v) { ?>
+														<?php if(($c % 5) == 0 && $c != 0) { ?></span></br><span class="radioset"><?php } ?>
+														<input type="checkbox" id="<?php echo $k?>" name="codec[]" class="codec" value="<?php echo $k?>" <?php echo ($k == 'wav') ? 'CHECKED' : ''?>>
+														<label for="<?php echo $k?>"><?php echo $v?></label>
+													<?php $c++; } ?>
+												</span>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="element2-help" class="help-block fpbx-help-block">Help Text</span>
+											<span id="convert-help" class="help-block fpbx-help-block"><?php echo _("Check all file formats you would like this system recording to be encoded into")?></span>
 										</div>
 									</div>
 								</div>

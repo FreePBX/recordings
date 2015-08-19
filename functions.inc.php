@@ -103,6 +103,7 @@ function recordings_get_config($engine) {
 				// Added in Asterisk 1.6: "If the user hangs up during a recording, all data is lost".
 				// Third option - k: Keep recorded file upon hangup.
 				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
+				$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			} else {
 				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav'));
 			}
