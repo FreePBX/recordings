@@ -46,7 +46,11 @@ class Recordings implements BMO {
 				ksort($supported['in']);
 				ksort($supported['out']);
 				$langs = $this->FreePBX->Soundlang->getLanguages();
-				$html = load_view(__DIR__."/views/form.php",array("supported" => $supported, "langs" => $langs));
+				global $amp_conf;
+				$astsnd = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
+				$astsnd .= "/sounds/";
+				$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
+				$html = load_view(__DIR__."/views/form.php",array("supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -77,10 +81,10 @@ class Recordings implements BMO {
 		switch($_REQUEST['command']) {
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
-					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$_FILES["file"]["name"].".wav");
-					$return = array("status" => true, "filename" => $this->temp."/".$_FILES["file"]["name"].".wav", "localfilename" => $this->temp."/".$_FILES["file"]["name"].".wav");
+					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$_REQUEST['filename'].".wav");
+					return array("status" => true, "filename" => $_REQUEST['filename'].".wav", "localfilename" => $_REQUEST['filename'].".wav");
 				}	else {
-					$return = array("status" => false, "message" => _("Unknown Error"));
+					return array("status" => false, "message" => _("Unknown Error"));
 				}
 			break;
 			case "deleterecording":

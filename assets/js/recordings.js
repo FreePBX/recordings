@@ -6,6 +6,12 @@ $(function() {
 		$("#record-container").remove();
 	}
 
+	$("#systemrecording").chosen({search_contains: true, no_results_text: _("No Recordings Found"), allow_single_deselect: true});
+
+	$("#systemrecording").on('change', function(evt, params) {
+		console.log($(this).val());
+	});
+
 	$(".codec").change(function() {
 		if(!$(".codec").is(":checked")) {
 			alert(_("At least one codec must be checked"));
@@ -42,33 +48,66 @@ $(function() {
 			title.html('<button id="saverecording" class="btn btn-primary" type="button">'+_("Save Recording")+'</button><button id="deleterecording" class="btn btn-primary" type="button">'+_("Delete Recording")+'</button>');
 			$("#saverecording").click(function() {
 				$("#jquery_jplayer_1").jPlayer( "clearMedia" );
-				title.text(_("Uploading..."));
-				var data = new FormData();
-				data.append("file", soundBlob);
-				$.ajax({
-					type: "POST",
-					url: "ajax.php?module=recordings&command=savebrowserrecording",
-					xhr: function()
-					{
-						var xhr = new window.XMLHttpRequest();
-						//Upload progress
-						xhr.upload.addEventListener("progress", function(evt) {
-							if (evt.lengthComputable) {
-								var percentComplete = evt.loaded / evt.total,
-								progress = Math.round(percentComplete * 100);
-								//$("#" + type + " .filedrop .pbar").css("width", progress + "%");
-							}
-						}, false);
-						return xhr;
-					},
-					data: data,
-					processData: false,
-					contentType: false,
-					success: function(data) {
-						title.html(_("Hit the red record button to start recording from your browser"));
-					},
-					error: function() {
+				$("#browser-recorder-save").removeClass("hidden").addClass("in");
+				$("#browser-recorder").removeClass("in").addClass("hidden");
+				$("#save-recorder-input").focus();
+				$("#save-recorder-input").blur(function(event) {
+					if(event.relatedTarget.id != "save-recorder") {
+						alert(_("Please enter a valid name and save"));
+						$(this).focus();
 					}
+				});
+				$("#save-recorder").on("click", function() {
+					if($("#save-recorder-input").val() === "") {
+						alert(_("Please enter a valid name and save"));
+						$("#save-recorder-input").focus();
+						return;
+					}
+					$(this).off("click");
+					$(this).text(_("Saving..."));
+					$(this).prop("disabled", true);
+					$("#save-recorder-input").prop("disabled", true);
+					title.text(_("Uploading..."));
+					var data = new FormData();
+					data.append("file", soundBlob);
+					$.ajax({
+						type: "POST",
+						url: "ajax.php?module=recordings&command=savebrowserrecording&filename=" + encodeURIComponent($("#save-recorder-input").val()),
+						xhr: function() {
+							$("#browser-recorder-progress").removeClass("hidden").addClass("in");
+							var xhr = new window.XMLHttpRequest();
+							//Upload progress
+							xhr.upload.addEventListener("progress", function(evt) {
+								if (evt.lengthComputable) {
+									var percentComplete = evt.loaded / evt.total,
+									progress = Math.round(percentComplete * 100);
+									$("#browser-recorder-progress .progress-bar").css("width", progress + "%");
+									if(progress == 100) {
+										$("#browser-recorder-progress").addClass("hidden").removeClass("in");
+										$("#browser-recorder-progress .progress-bar").css("width", "0%");
+									}
+								}
+							}, false);
+							return xhr;
+						},
+						data: data,
+						processData: false,
+						contentType: false,
+						success: function(data) {
+							if(data.status) {
+								addFile(data.filename, data.localfilename);
+							}
+							$("#browser-recorder-save").addClass("hidden").removeClass("in");
+							$("#browser-recorder").addClass("in").removeClass("hidden");
+							$("#save-recorder-input").val("");
+							$("#save-recorder-input").prop("disabled", false);
+							$("#save-recorder").text(_("Save!"));
+							$("#save-recorder").prop("disabled", false);
+							title.html(_("Hit the red record button to start recording from your browser"));
+						},
+						error: function() {
+						}
+					});
 				});
 			});
 			$("#deleterecording").click(function() {
@@ -109,7 +148,7 @@ $(function() {
 				recording = false;
 			});
 		}
-	})
+	});
 
 	$("#dial-phone").click(function() {
 		clearInterval(checker);
@@ -132,7 +171,7 @@ $(function() {
 			$("#record-phone").prop("disabled",false);
 			$("#dial-phone").text(_("Call!"));
 		});
-	})
+	});
 
 	var check = function(num, file) {
 		checker = setInterval(function(){
@@ -140,8 +179,22 @@ $(function() {
 				if(data.finished || (!data.finished && !data.recording)) {
 					clearInterval(checker);
 					$("#dialer-message").addClass("hidden");
-					$("#dialer-save").fadeIn("slow");
-					$("#save-phone").one("click", function() {
+					$("#dialer-save").fadeIn("slow", function() {
+						$("#dialer-phone-input").focus();
+						$("#dialer-phone-input").blur(function(event) {
+							if(event.relatedTarget.id != "dialer-save") {
+								alert(_("Please enter a valid name and save"));
+								$(this).focus();
+							}
+						});
+					});
+					$("#save-phone").on("click", function() {
+						if($("#save-phone-input").val() === "") {
+							alert(_("Please enter a valid name and save"));
+							$("#save-phone-input").focus();
+							return;
+						}
+						$(this).off("click");
 						$.post( "ajax.php", {module: "recordings", command: "saverecording", extension: num, filename: file, name: $("#save-phone-input").val()}, function( data ) {
 							if(data.status) {
 								addFile(data.filename, data.localfilename);
