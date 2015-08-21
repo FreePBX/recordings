@@ -44,7 +44,7 @@
 												<ul id="files">
 
 												</ul>
-												<div id="missing-file-alert" class="alert alert-warning hidden" role="alert"><?php echo _("You have a missing file for this language. Click a red file above to replace it with a file you upload")?></div>
+												<div id="missing-file-alert" class="alert alert-warning hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red file above to replace it with a file below")?></div>
 											</div>
 										</div>
 									</div>
@@ -71,7 +71,7 @@
 													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
 												</div>
 												<div id="dropzone">
-													<div class="message"><?php echo _("Drop Files Here. Yes. Multiple Files.")?></div>
+													<div class="message"><?php echo _("Drop Multiple Files or Archives Here")?></div>
 												</div>
 											</div>
 										</div>
@@ -101,7 +101,7 @@
 															<div class="jp-gui jp-interface">
 																<div class="jp-controls">
 																	<i class="fa fa-play jp-play"></i>
-																	<i class="fa fa-circle record"></i>
+																	<i id="record" class="fa fa-circle"></i>
 																</div>
 																<div class="jp-progress">
 																	<div class="jp-seek-bar progress">
@@ -283,4 +283,4 @@
 		</div>
 	</div>
 </div>
-<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var systemRecordings = <?php echo json_encode($sysrecs)?>;</script>
+<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;</script>

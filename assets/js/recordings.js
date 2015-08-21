@@ -1,251 +1,16 @@
-var checker = null,
-		soundList = {},
-		language = '';
-$(function() {
-	if (Modernizr.getusermedia) {
-		$("#record-container").removeClass("hidden");
-	} else {
-		$("#record-container").remove();
-	}
+var recording = false, //if in browser recording is happening
+		recorder = null, //recorder
+		recordTimer = null, //setInterval reference recorder timer
+		startTime = null, //recorder start time
+		soundBlob = {}, //sound Blobs from in-browser recording
+		soundList = {}, //sound file list
+		language = $("#language").val(); //selected language
 
-	language = $("#language").val();
-	$("#language").change(function() {
-		convertList(language);
-		language = $("#language").val();
-		generateList(language);
-		$(".language").text($(this).find("option:selected").text());
-	});
-
-	$("#systemrecording").chosen({search_contains: true, no_results_text: _("No Recordings Found"), placeholder_text_single: _("Select a system recording")});
-
-	$("#systemrecording").on('change', function(evt, params) {
-		var rec = $(this).val(),
-				info = systemRecordings[rec],
-				languages = [],
-				paths = {};
-
-		for (var key in info.languages) {
-			if (info.languages.hasOwnProperty(key)) {
-				var l = info.languages[key];
-				languages.push(l);
-				paths[l] = info.paths[l];
-			}
-		}
-		addFile(info.name, paths, languages, (languages.indexOf(language) >= 0), true)
-		$('#systemrecording').val("");
-		$('#systemrecording').trigger('chosen:updated');
-	});
-
-	$(".codec").change(function() {
-		if(!$(".codec").is(":checked")) {
-			alert(_("At least one codec must be checked"));
-			$(this).prop("checked", true);
-		}
-	})
-
-	var el = document.getElementById('files');
-	var sortable = Sortable.create(el);
-
-	$("#record-phone").keyup(function (e) {
-		if (e.keyCode == 13) {
-			$("#dial-phone").click();
-		}
-	});
-
-	var recording = false,
-			recorder = null,
-			recordTimer = null,
-			startTime = null,
-			soundBlob = {};
-	$(".jp-play").click(function() {
-		if(recording) {
-			$(".record").click();
-		}
-	})
-	$(".record").click(function() {
-		$("#jquery_jplayer_1").jPlayer( "clearMedia" );
-		$(this).parents(".jp-controls").toggleClass("recording");
-		var counter = $("#jp_container_1 .jp-duration"),
-				title = $("#jp_container_1 .jp-title");
-		if (recording) {
-			clearInterval(recordTimer);
-			title.html('<button id="saverecording" class="btn btn-primary" type="button">'+_("Save Recording")+'</button><button id="deleterecording" class="btn btn-primary" type="button">'+_("Delete Recording")+'</button>');
-			$("#saverecording").click(function() {
-				$("#jquery_jplayer_1").jPlayer( "clearMedia" );
-				$("#browser-recorder-save").removeClass("hidden").addClass("in");
-				$("#browser-recorder").removeClass("in").addClass("hidden");
-				$("#save-recorder-input").focus();
-				$("#save-recorder-input").blur(function(event) {
-					if(event.relatedTarget.id != "save-recorder") {
-						alert(_("Please enter a valid name and save"));
-						$(this).focus();
-					}
-				});
-				$("#save-recorder").on("click", function() {
-					if($("#save-recorder-input").val() === "") {
-						alert(_("Please enter a valid name and save"));
-						$("#save-recorder-input").focus();
-						return;
-					}
-					if(sysRecConflict($("#save-recorder-input").val())) {
-						if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
-							return;
-						}
-					}
-					$(this).off("click");
-					$(this).text(_("Saving..."));
-					$(this).prop("disabled", true);
-					$("#save-recorder-input").prop("disabled", true);
-					title.text(_("Uploading..."));
-					var data = new FormData();
-					data.append("file", soundBlob);
-					$.ajax({
-						type: "POST",
-						url: "ajax.php?module=recordings&command=savebrowserrecording&filename=" + encodeURIComponent($("#save-recorder-input").val()),
-						xhr: function() {
-							$("#browser-recorder-progress").removeClass("hidden").addClass("in");
-							var xhr = new window.XMLHttpRequest();
-							//Upload progress
-							xhr.upload.addEventListener("progress", function(evt) {
-								if (evt.lengthComputable) {
-									var percentComplete = evt.loaded / evt.total,
-									progress = Math.round(percentComplete * 100);
-									$("#browser-recorder-progress .progress-bar").css("width", progress + "%");
-									if(progress == 100) {
-										$("#browser-recorder-progress").addClass("hidden").removeClass("in");
-										$("#browser-recorder-progress .progress-bar").css("width", "0%");
-									}
-								}
-							}, false);
-							return xhr;
-						},
-						data: data,
-						processData: false,
-						contentType: false,
-						success: function(data) {
-							if(data.status) {
-								var paths = {};
-								paths[language] = data.localfilename;
-								addFile(data.filename, paths, [language], true, false);
-							}
-							$("#browser-recorder-save").addClass("hidden").removeClass("in");
-							$("#browser-recorder").addClass("in").removeClass("hidden");
-							$("#save-recorder-input").val("");
-							$("#save-recorder-input").prop("disabled", false);
-							$("#save-recorder").text(_("Save!"));
-							$("#save-recorder").prop("disabled", false);
-							title.html(_("Hit the red record button to start recording from your browser"));
-						},
-						error: function() {
-						}
-					});
-				});
-			});
-			$("#deleterecording").click(function() {
-				$("#jquery_jplayer_1").jPlayer( "clearMedia" );
-				title.html(_("Hit the red record button to start recording from your browser"));
-			});
-			recorder.stop();
-			recorder.exportWAV(function(blob) {
-				soundBlob = blob;
-				var url = (window.URL || window.webkitURL).createObjectURL(blob);
-				$("#jquery_jplayer_1").jPlayer( "setMedia", {
-					wav: url
-				});
-			});
-			recording = false;
-		} else {
-			window.AudioContext = window.AudioContext || window.webkitAudioContext;
-
-			var context = new AudioContext();
-
-			var gUM = Modernizr.prefixed("getUserMedia", navigator);
-			gUM({ audio: true }, function(stream) {
-				var mediaStreamSource = context.createMediaStreamSource(stream);
-				recorder = new Recorder(mediaStreamSource,{ workerPath: "assets/recordings/js/recorderWorker.js" });
-				recorder.record();
-				startTime = new Date();
-				recordTimer = setInterval(function () {
-					var mil = (new Date() - startTime);
-					var temp = (mil / 1000);
-					var min = ("0" + Math.floor((temp %= 3600) / 60)).slice(-2);
-					var sec = ("0" + Math.round(temp % 60)).slice(-2);
-					counter.text(min + ":" + sec);
-				}, 1000);
-				title.text(_("Recording..."));
-				recording = true;
-			}, function(e) {
-				alert(_("Your Browser Blocked The Recording, Please check your settings"));
-				recording = false;
-			});
-		}
-	});
-
-	$("#dial-phone").click(function() {
-		clearInterval(checker);
-		var num = $("#record-phone").val(),
-				file = num+Date.now();
-		$("#record-phone").prop("disabled",true);
-		$(this).text(_("Dialing..."));
-		$.post( "ajax.php", {module: "recordings", command: "dialrecording", extension: num, filename: file}, function( data ) {
-			if(data.status) {
-				$("#dialer").removeClass("in").addClass("hidden");
-				$("#record-phone").val("");
-				$("#dialer-message").text(_("Recording...")).removeClass("hidden");
-				setTimeout(function(){
-					check(num, file);
-				}, 500);
-
-			} else {
-				alert(data.message);
-			}
-			$("#record-phone").prop("disabled",false);
-			$("#dial-phone").text(_("Call!"));
-		});
-	});
-
-	var check = function(num, file) {
-		checker = setInterval(function(){
-			$.post( "ajax.php", {module: "recordings", command: "checkrecording", extension: num, filename: file}, function( data ) {
-				if(data.finished || (!data.finished && !data.recording)) {
-					clearInterval(checker);
-					$("#dialer-message").removeClass("in").addClass("hidden");
-					$("#dialer-save").addClass("in").removeClass("hidden");
-					$("#save-phone-input").focus();
-					$("#save-phone-input").blur(function(event) {
-						if(typeof event.relatedTarget === "undefined" || typeof event.relatedTarget.id === "undefined" || event.relatedTarget.id != "save-phone") {
-							alert(_("Please enter a valid name and save"));
-							$(this).focus();
-						}
-					});
-					$("#save-phone").on("click", function() {
-						if($("#save-phone-input").val() === "") {
-							alert(_("Please enter a valid name and save"));
-							$("#save-phone-input").focus();
-							return;
-						}
-						if(sysRecConflict($("#save-phone-input").val())) {
-							if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
-								return;
-							}
-						}
-						$(this).off("click");
-						$.post( "ajax.php", {module: "recordings", command: "saverecording", extension: num, filename: file, name: $("#save-phone-input").val()}, function( data ) {
-							if(data.status) {
-								var paths = {};
-								paths[language] = data.localfilename;
-								addFile(data.filename, paths, [language], true, false);
-							}
-							$("#save-phone-input").val("");
-							$("#dialer-save").addClass("hidden").removeClass("in");
-							$("#dialer").addClass("in").removeClass("hidden");
-						});
-					});
-				}
-			});
-		}, 500);
-	}
-
+//check if this browser supports WebRTC
+//TODO: This eventually needs to check to make sure we are in HTTPS mode
+if (Modernizr.getusermedia) {
+	//show in browser recording if it does
+	$("#record-container").removeClass("hidden");
 	$("#jquery_jplayer_1").jPlayer({
 		ready: function(event) {
 
@@ -265,7 +30,6 @@ $(function() {
 		remainingDuration: true,
 		toggleDuration: true
 	});
-
 	var acontainer = null;
 	$('.jp-play-bar').mousedown(function (e) {
 		acontainer = $(this).parents(".jp-audio-freepbx");
@@ -284,7 +48,7 @@ $(function() {
 	});
 
 	//update Progress Bar control
-	var updatebar = function (x) {
+	function updatebar(x) {
 		var player = $("#" + acontainer.data("player")),
 				progress = acontainer.find('.jp-progress'),
 				maxduration = player.data("jPlayer").status.duration,
@@ -306,72 +70,347 @@ $(function() {
 		acontainer.find('.jp-play-bar').css('width', percentage + '%');
 		player.jPlayer.currentTime = maxduration * percentage / 100;
 	};
+} else {
+	//hide in browser recording if it does not
+	$("#record-container").remove();
+}
 
-	$(document).bind('drop dragover', function (e) {
-		e.preventDefault();
+//Language change
+$("#language").change(function() {
+	//conver the list into an object
+	convertList();
+	//change our global language
+	language = $("#language").val();
+	//now regenerate the list
+	generateList();
+	//change the text of language to our selected language for clarification
+	$(".language").text($(this).find("option:selected").text());
+});
+
+//Make sure at least one codec is selected
+$(".codec").change(function() {
+	if(!$(".codec").is(":checked")) {
+		alert(_("At least one codec must be checked"));
+		$(this).prop("checked", true);
+	}
+});
+
+//Turn on HTML5 Sortable methods on the file list
+if($("#files").length) {
+	var el = document.getElementById('files'),
+			sortable = Sortable.create(el);
+}
+
+//enable button click from enter while inside of input-groups
+$(".input-group").each(function(k, v) {
+	var button = $(this).find(".input-group-btn button");
+	$(this).find("input").keyup(function (e) {
+		if (e.keyCode == 13) {
+			$(this).off("blur");
+			button.click();
+		}
 	});
-	$('#dropzone').on('dragleave drop', function (e) {
-		$(this).removeClass("activate");
-	});
-	$('#dropzone').on('dragover', function (e) {
-		$(this).addClass("activate");
-	});
-	$(".autocomplete-combobox").chosen({search_contains: true, no_results_text: _("No Recordings Found")});
-	$('#fileupload').fileupload({
-			dataType: 'json',
-			dropZone: $("#dropzone"),
-			add: function (e, data) {
-				var patt = new RegExp(/\.(mp3|wav)$/);
-						submit = true;
-				$.each(data.files, function(k, v) {
-					if(!patt.test(v.name)) {
-						submit = false;
-						alert(_("Unsupported file type"));
-						return false;
-					}
-					var s = v.name.replace(/\.[^/.]+$/, "")
-					if(sysRecConflict(s)) {
-						if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this language. Is that ok?"),v.name))) {
-							submit = false;
-							return false;
-						}
+});
+
+//Stop recording if we are (recording) and the play/stop button was clicked
+$(".jp-play").click(function() {
+	if(recording) {
+		$("#record").click();
+	}
+});
+
+/**
+ * Record from within WebRTC supported browser
+ */
+$("#record").click(function() {
+	var counter = $("#jp_container_1 .jp-duration"),
+			title = $("#jp_container_1 .jp-title")
+			player = $("#jquery_jplayer_1"),
+			controls = $(this).parents(".jp-controls"),
+			recorderContainer = $("#browser-recorder"),
+			saveContainer = $("#browser-recorder-save"),
+			input = $("#save-recorder-input");
+
+	controls.toggleClass("recording");
+	player.jPlayer( "clearMedia" );
+
+	//previously recording
+	if (recording) {
+		clearInterval(recordTimer);
+		title.html('<button id="saverecording" class="btn btn-primary" type="button">'+_("Save Recording")+'</button><button id="deleterecording" class="btn btn-primary" type="button">'+_("Delete Recording")+'</button>');
+		//save recording button
+		$("#saverecording").one("click", function() {
+			//clear media for upload
+			player.jPlayer( "clearMedia" );
+			//hide recorderContainer
+			recorderContainer.removeClass("in").addClass("hidden");
+			//if we are in replace mode then there's no need to show the naming box
+			if($(".replace").length) {
+				saveBrowserRecording("replacement-" + Date.now(), function() {
+					$("#browser-recorder-save").addClass("hidden").removeClass("in");
+					$("#browser-recorder").addClass("in").removeClass("hidden");
+					$("#save-recorder-input").val("");
+					$("#save-recorder-input").prop("disabled", false);
+					$("#save-recorder").text(_("Save!"));
+					$("#save-recorder").prop("disabled", false);
+					title.html(_("Hit the red record button to start recording from your browser"));
+				});
+			} else {
+				saveContainer.removeClass("hidden").addClass("in");
+				//focus on input
+				input.focus();
+				//dont allow navigating away until they have named this
+				input.blur(function(event) {
+					if(event.relatedTarget == null || event.relatedTarget.id != "save-recorder") {
+						alert(_("Please enter a valid name and save"));
+						$(this).focus();
 					}
 				});
-				if(submit) {
-					data.submit();
-				}
-			},
-			drop: function () {
-				$("#upload-progress .progress-bar").css("width", "0%");
-			},
-			dragover: function (e, data) {
-			},
-			change: function (e, data) {
-			},
-			done: function (e, data) {
-				if(data.result.status) {
-					var paths = {};
-					paths[language] = data.result.localfilename;
-					addFile(data.result.filename, paths, [language], true, false);
-				} else {
-					alert(data.result.message);
-				}
-			},
-			progressall: function (e, data) {
-				var progress = parseInt(data.loaded / data.total * 100, 10);
-				$("#upload-progress .progress-bar").css("width", progress+"%");
-			},
-			fail: function (e, data) {
-			},
-			always: function (e, data) {
+				$("#save-recorder").off("click");
+				$("#save-recorder").on("click", function() {
+					var value = input.val();
+					if(value === "") {
+						alert(_("Please enter a valid name and save"));
+						input.focus();
+						return;
+					}
+					if(sysRecConflict(value)) {
+						if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
+							return;
+						}
+					}
+					$(this).off("click");
+					$(this).text(_("Saving..."));
+					$(this).prop("disabled", true);
+					title.text(_("Uploading..."));
+					saveBrowserRecording(value, function(data) {
+						$("#browser-recorder-save").addClass("hidden").removeClass("in");
+						$("#browser-recorder").addClass("in").removeClass("hidden");
+						$("#save-recorder-input").val("");
+						$("#save-recorder-input").prop("disabled", false);
+						$("#save-recorder").text(_("Save!"));
+						$("#save-recorder").prop("disabled", false);
+						title.html(_("Hit the red record button to start recording from your browser"));
+					});
+					input.prop("disabled", true);
+				});
 			}
-	});
-})
+		});
+		$("#deleterecording").one("click", function() {
+			$("#jquery_jplayer_1").jPlayer( "clearMedia" );
+			title.html(_("Hit the red record button to start recording from your browser"));
+		});
+		recorder.stop();
+		recorder.exportWAV(function(blob) {
+			soundBlob = blob;
+			var url = (window.URL || window.webkitURL).createObjectURL(blob);
+			player.jPlayer( "setMedia", {
+				wav: url
+			});
+		});
+		recording = false;
+	} else {
+		//map webkit prefix
+		window.AudioContext = window.AudioContext || window.webkitAudioContext;
+		var context = new AudioContext(),
+		gUM = Modernizr.prefixed("getUserMedia", navigator);
 
+		//start the recording!
+		gUM({ audio: true }, function(stream) {
+			var mediaStreamSource = context.createMediaStreamSource(stream);
+			//worker is already loaded but it doesnt seem to cause any issues. eh.
+			recorder = new Recorder(mediaStreamSource,{ workerPath: "assets/recordings/js/recorderWorker.js" });
+			recorder.record();
+			startTime = new Date();
+			//create a normal minutes:seconds timer from micro/milli-seconds
+			recordTimer = setInterval(function () {
+				var mil = (new Date() - startTime),
+						temp = (mil / 1000),
+						min = ("0" + Math.floor((temp %= 3600) / 60)).slice(-2),
+						sec = ("0" + Math.round(temp % 60)).slice(-2);
+				counter.text(min + ":" + sec);
+			}, 1000);
+			title.text(_("Recording..."));
+			recording = true;
+		}, function(e) {
+			alert(_("Your Browser Blocked The Recording, Please check your settings"));
+			recording = false;
+		});
+	}
+});
+
+/**
+ * Dial an extension to record
+ */
+$("#dial-phone").click(function() {
+	var num = $("#record-phone").val(),
+			file = num + Date.now(),
+			checker = null,
+			extensionInput = $("#record-phone"),
+			nameInput = $("#save-phone-input"),
+			messageBox = $("#dialer-message");
+
+	extensionInput.prop("disabled",true);
+	$(this).text(_("Dialing..."));
+
+	//Initiate the originate commands
+	$.post( "ajax.php", {module: "recordings", command: "dialrecording", extension: num, filename: file}, function( data ) {
+		//Asterisk says we dialed a valid number
+		if(data.status) {
+			extensionInput.val("");
+			//hide dialer
+			$("#dialer").removeClass("in").addClass("hidden");
+			//Show record message
+			messageBox.text(_("Recording...")).addClass("in").removeClass("hidden");
+			//Wait 500 ms before checking for out file
+			setTimeout(function(){
+				//every 500 ms check to see if our .finished file exists
+				//cleanup is done on the backend
+				checker = setInterval(function(){
+					$.post( "ajax.php", {module: "recordings", command: "checkrecording", extension: num, filename: file}, function( data ) {
+						if(data.finished || (!data.finished && !data.recording)) {
+							clearInterval(checker);
+							messageBox.removeClass("in").addClass("hidden");
+							//if we are in replace mode then there's no need to show the naming box
+							if($(".replace").length) {
+								saveExtensionRecording(num, file, "replacement-" + Date.now(), function() {
+									$("#dialer").addClass("in").removeClass("hidden");
+								});
+							} else {
+								$("#dialer-save").addClass("in").removeClass("hidden");
+								nameInput.focus();
+								nameInput.blur(function(event) {
+									if(event.relatedTarget == null || event.relatedTarget.id != "save-phone") {
+										alert(_("Please enter a valid name and save"));
+										$(this).focus();
+									}
+								});
+								$("#save-phone").on("click", function() {
+									var value = nameInput.val();
+									if(value === "") {
+										alert(_("Please enter a valid name and save"));
+										nameInput.focus();
+										return;
+									}
+									if(sysRecConflict(value)) {
+										if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
+											return;
+										}
+									}
+									$(this).off("click");
+									saveExtensionRecording(num, file, "replacement-" + Date.now(), function() {
+										$("#dialer").addClass("in").removeClass("hidden");
+									});
+								});
+							}
+						}
+					});
+				}, 500);
+			}, 500);
+		} else {
+			alert(data.message);
+		}
+		extensionInput.prop("disabled",false);
+		$("#dial-phone").text(_("Call!"));
+	});
+});
+
+/**
+ * Drag/Drop/Upload Files
+ */
+$('#dropzone').on('drop dragover', function (e) {
+	e.preventDefault();
+});
+$('#dropzone').on('dragleave drop', function (e) {
+	$(this).removeClass("activate");
+});
+$('#dropzone').on('dragover', function (e) {
+	$(this).addClass("activate");
+});
+$('#fileupload').fileupload({
+	dataType: 'json',
+	dropZone: $("#dropzone"),
+	add: function (e, data) {
+		//TODO: Need to check all supported formats
+		var sup = "\.("+supportedRegExp+")$",
+				patt = new RegExp(sup),
+				submit = true;
+		$.each(data.files, function(k, v) {
+			if(!patt.test(v.name)) {
+				submit = false;
+				alert(_("Unsupported file type"));
+				return false;
+			}
+			var s = v.name.replace(/\.[^/.]+$/, "")
+			if(sysRecConflict(s)) {
+				if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this language. Is that ok?"),v.name))) {
+					submit = false;
+					return false;
+				}
+			}
+		});
+		if(submit) {
+			data.submit();
+		}
+	},
+	drop: function () {
+		$("#upload-progress .progress-bar").css("width", "0%");
+	},
+	dragover: function (e, data) {
+	},
+	change: function (e, data) {
+	},
+	done: function (e, data) {
+		if(data.result.status) {
+			var paths = {};
+			paths[language] = data.result.localfilename;
+			addFile(data.result.filename, paths, [language], true, false);
+		} else {
+			alert(data.result.message);
+		}
+	},
+	progressall: function (e, data) {
+		var progress = parseInt(data.loaded / data.total * 100, 10);
+		$("#upload-progress .progress-bar").css("width", progress+"%");
+	},
+	fail: function (e, data) {
+	},
+	always: function (e, data) {
+	}
+});
+
+/**
+ * System Recordings selector
+ */
+//System Recordings lookup drop down with search
+$("#systemrecording").chosen({search_contains: true, no_results_text: _("No Recordings Found"), placeholder_text_single: _("Select a system recording")});
+//On change add the recording into the list
+$("#systemrecording").on('change', function(evt, params) {
+	var rec = $(this).val(),
+			info = systemRecordings[rec],
+			languages = [],
+			paths = {};
+
+	for (var key in info.languages) {
+		if (info.languages.hasOwnProperty(key)) {
+			var l = info.languages[key];
+			languages.push(l);
+			paths[l] = info.paths[l];
+		}
+	}
+	addFile(info.name, paths, languages, (languages.indexOf(language) >= 0), true);
+	//reset the drop down to the first empty item
+	$('#systemrecording').val("");
+	$('#systemrecording').trigger('chosen:updated');
+});
+
+/**
+ * File List Management
+ */
 $(document).on("click", "#files .delete-file", function() {
 	var $this = this,
-			file = $($this).data("filename"),
-			parent = $($this).parents(".file");
+			parent = $($this).parents(".file"),
+			files = parent.data("filenames")
 	$($this).addClass("deleting");
 	//dont delete already existing files
 	if(parent.data("system") == 1) {
@@ -382,7 +421,7 @@ $(document).on("click", "#files .delete-file", function() {
 			}
 		})
 	} else {
-		$.post( "ajax.php", {module: "recordings", command: "deleterecording", filename: file}, function( data ) {
+		$.post( "ajax.php", {module: "recordings", command: "deleterecording", filenames: JSON.stringify(files)}, function( data ) {
 			if(data.status) {
 				parent.fadeOut("slow", function() {
 					$(this).remove();
@@ -417,16 +456,38 @@ $(document).on("click", "#files li", function(event) {
 	}
 });
 
+/**
+ * Functions below
+ */
 
-function addFile(name, paths, languages, exists, system) {
+/**
+ * Add File to the file list
+ * @param {string} name      The visual name of the file
+ * @param {object} paths     Paths for each language representation of this file
+ * @param {array} languages Languages that this file supports
+ * @param {bool} exists    Does the file exist or not
+ * @param {bool} system    Is this a system recording (then dont delete)
+ */
+function addFile(name, filenames, languages, exists, system) {
 	if($(".replace").length) {
+		//yes we are replacing the above on purpose I get that
 		var filenames = $(".replace").data("filenames"),
 				languages = $(".replace").data("languages")
 
-		languages.push(language);
+		//add language to array if it doesnt already exist
+		if(languages.indexOf(language) === -1) {
+			languages.push(language);
+		}
+
+		//add filename to the filename object, overwrite if we need to
+		//TODO: If file already exists then delete it
 		filenames[language] = paths[language];
+
+		//put our objects back into place
 		$(".replace").data("filenames", filenames);
 		$(".replace").data("languages", languages);
+
+		//remove the marking classes
 		$(".replace").removeClass("replace missing");
 	} else {
 		if(!exists) {
@@ -435,17 +496,27 @@ function addFile(name, paths, languages, exists, system) {
 		var exists = exists ? "" : "missing ",
 				system = system ? 1 : 0;
 		$("#file-alert").addClass("hidden");
-		$("#files").append('<li class="file '+exists+'" data-filenames=\''+JSON.stringify(paths)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#files").append('<li class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
 	}
 }
 
+/**
+ * Link Formatter for the grid
+ * @param  {string} value The value of this cel
+ * @param  {object} row   The entire row
+ * @param  {int} index Something?
+ * @return {string}       Return the resulting html for the cel
+ */
 function linkFormatter(value, row, index){
 	var html = '<a href="?display=recordings&action=edit&id='+row.id+'"><i class="fa fa-pencil"></i></a>';
 	html += '&nbsp;<a href="?display=recordings&action=delete&id='+row.id+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
 }
 
-function convertList(language) {
+/**
+ * Turn the file list into an object
+ */
+function convertList() {
 	soundList = {};
 	$("#files li").each(function() {
 		var name = $(this).data("name");
@@ -458,7 +529,10 @@ function convertList(language) {
 	})
 }
 
-function generateList(language) {
+/**
+ * Generate file list for language
+ */
+function generateList() {
 	$("#missing-file-alert").addClass("hidden");
 	$("#files").html("");
 	if(typeof soundList !== "undefined") {
@@ -476,6 +550,11 @@ function generateList(language) {
 	}
 }
 
+/**
+ * Helper function to check if an object is empty
+ * @param  {object}  obj The object to check
+ * @return {Boolean}     true if empty
+ */
 function isObjEmpty(obj) {
 	for(var key in obj) {
 		if(obj.hasOwnProperty(key)) {
@@ -485,6 +564,79 @@ function isObjEmpty(obj) {
 	return true;
 }
 
+/**
+ * Helper function to check if the provided file name clashes with
+ * another sound file on the system
+ * Checks by language, not by format
+ * @param  {string} name The file to check
+ * @return {bool}      True if it clashes, false if not
+ */
 function sysRecConflict(name) {
 	return (typeof systemRecordings[name] !== "undefined" && typeof systemRecordings[name].languages[language] !== "undefined");
+}
+
+/**
+ * Helper function to save the Browser Recording
+ * @param  {string}   name     The name of the recording
+ * @param  {Function} callback Callback when file has been saved
+ */
+function saveBrowserRecording(name, callback) {
+	var data = new FormData();
+	data.append("file", soundBlob);
+	$.ajax({
+		type: "POST",
+		url: "ajax.php?module=recordings&command=savebrowserrecording&filename=" + encodeURIComponent(name),
+		xhr: function() {
+			$("#browser-recorder-progress").removeClass("hidden").addClass("in");
+			var xhr = new window.XMLHttpRequest();
+			//Upload progress
+			xhr.upload.addEventListener("progress", function(evt) {
+				if (evt.lengthComputable) {
+					var percentComplete = evt.loaded / evt.total,
+					progress = Math.round(percentComplete * 100);
+					$("#browser-recorder-progress .progress-bar").css("width", progress + "%");
+					if(progress == 100) {
+						$("#browser-recorder-progress").addClass("hidden").removeClass("in");
+						$("#browser-recorder-progress .progress-bar").css("width", "0%");
+					}
+				}
+			}, false);
+			return xhr;
+		},
+		data: data,
+		processData: false,
+		contentType: false,
+		success: function(data) {
+			if(data.status) {
+				var paths = {};
+				paths[language] = data.localfilename;
+				addFile(data.filename, paths, [language], true, false);
+			}
+			if(typeof callback === "function") {
+				callback(data);
+			}
+		},
+		error: function() {
+		}
+	});
+}
+
+/**
+ * Helper function to save a recording made over an extension
+ * @param  {string}   extension The extension number
+ * @param  {string}   filename  The temporary filename
+ * @param  {string}   name      The user provided name
+ * @param  {Function} callback  Callback to be called when completed
+ */
+function saveExtensionRecording(extension, filename, name, callback) {
+	$.post( "ajax.php", {module: "recordings", command: "saverecording", extension: extension, filename: filename, name: name}, function( data ) {
+		if(data.status) {
+			var paths = {};
+			paths[language] = data.localfilename;
+			addFile(data.filename, paths, [language], true, false);
+		}
+		if(typeof callback === "function") {
+			callback(data);
+		}
+	});
 }

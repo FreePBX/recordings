@@ -89,9 +89,11 @@ class Recordings implements BMO {
 				}
 			break;
 			case "deleterecording":
-				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
-				if(file_exists($this->temp."/".$filename.".wav")) {
-					unlink($this->temp."/".$filename.".wav");
+				$files = json_decode($_POST['filenames'],true);
+				foreach($files as $lang => $file) {
+					if(file_exists($this->temp."/".$file)) {
+						unlink($this->temp."/".$file);
+					}
 				}
 				return array("status" => true);
 			break;
