@@ -31,40 +31,20 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-3">
-												<label class="control-label" for="language"><?php echo _("Language")?></label>
-												<i class="fa fa-question-circle fpbx-help-icon" data-for="language"></i>
+												<label class="control-label" for="list"><?php echo sprintf(_("File List for %s"),"<span class='language'>".$langs[$default]."</span>")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="list"></i>
 											</div>
 											<div class="col-md-9">
 												<select class="form-control" id="language" name="language">
 													<?php foreach($langs as $code => $lang) {?>
-														<option value="<?php echo $code?>"><?php echo $lang?></option>
+														<option value="<?php echo $code?>" <?php echo ($code == $default) ? 'SELECTED': ''?>><?php echo $lang?></option>
 													<?php } ?>
 												</select>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-12">
-											<span id="language-help" class="help-block fpbx-help-block"><?php echo _("Language the sound file is recorded in")?></span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="element-container">
-							<div class="row">
-								<div class="col-md-12">
-									<div class="row">
-										<div class="form-group">
-											<div class="col-md-3">
-												<label class="control-label" for="list"><?php echo _("File List")?></label>
-												<i class="fa fa-question-circle fpbx-help-icon" data-for="list"></i>
-											</div>
-											<div class="col-md-9">
-												<div id="file-alert" class="alert alert-info" role="alert"><?php echo _("No Files")?></div>
+												<div id="file-alert" class="alert alert-info" role="alert"><?php echo sprintf(_("No files for %s"),"<span class='language'>".$langs[$default]."</span>")?></div>
 												<ul id="files">
 
 												</ul>
+												<div id="missing-file-alert" class="alert alert-warning hidden" role="alert"><?php echo _("You have a missing file for this language. Click a red file above to replace it with a file you upload")?></div>
 											</div>
 										</div>
 									</div>
@@ -91,14 +71,14 @@
 													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
 												</div>
 												<div id="dropzone">
-													<div class="message"><?php echo _("Drop Files Here")?></div>
+													<div class="message"><?php echo _("Drop Files Here. Yes. Multiple Files.")?></div>
 												</div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="fileupload-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Upload files from our local system. Supported upload formats are: %s"),"<i><strong>".implode(", ",$supported['in'])."</strong></i>")?></span>
+											<span id="fileupload-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Upload files from our local system. Supported upload formats are: %s. This includes archives (that include multiple files) and multiple files"),"<i><strong>".implode(", ",$supported['in'])."</strong></i>")?></span>
 										</div>
 									</div>
 								</div>
@@ -183,7 +163,7 @@
 											</div>
 											<div class="col-md-9">
 												<div id="dialer-message" class="alert alert-warning hidden" role="alert"></div>
-												<div id="dialer">
+												<div id="dialer" class="fade in">
 													<div class="input-group">
 														<input type="text" class="form-control" id="record-phone" placeholder="<?php echo _("Enter Extension")?>...">
 														<span class="input-group-btn">
@@ -221,8 +201,9 @@
 											</div>
 											<div class="col-md-9">
 												<select name="systemrecording" id="systemrecording" class="autocomplete-combobox form-control">
-													<?php foreach($sysrecs as $srcount => $sr) {?>
-														<option value="<?php echo $srcount?>"><?php echo $sr?></option>
+													<option></option>
+													<?php foreach($sysrecs as $key => $sr) {?>
+														<option value="<?php echo $key?>"><?php echo $sr['name']?></option>
 													<?php } ?>
 												</select>
 											</div>
@@ -302,4 +283,4 @@
 		</div>
 	</div>
 </div>
-<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;</script>
+<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var systemRecordings = <?php echo json_encode($sysrecs)?>;</script>

@@ -41,16 +41,15 @@ class Recordings implements BMO {
 		$media = $this->FreePBX->Media();
 		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : "";
 		switch($action) {
+			case "edit":
 			case "add":
 				$supported = $media->getSupportedFormats();
 				ksort($supported['in']);
 				ksort($supported['out']);
 				$langs = $this->FreePBX->Soundlang->getLanguages();
-				global $amp_conf;
-				$astsnd = isset($amp_conf['ASTVARLIBDIR'])?$amp_conf['ASTVARLIBDIR']:'/var/lib/asterisk';
-				$astsnd .= "/sounds/";
-				$sysrecs = recordings_readdir($astsnd, strlen($astsnd)+1);
-				$html = load_view(__DIR__."/views/form.php",array("supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$default = $this->FreePBX->Soundlang->getLanguage();
+				$sysrecs = $this->getSystemRecordings();
+				$html = load_view(__DIR__."/views/form.php",array("default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -81,8 +80,10 @@ class Recordings implements BMO {
 		switch($_REQUEST['command']) {
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
-					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$_REQUEST['filename'].".wav");
-					return array("status" => true, "filename" => $_REQUEST['filename'].".wav", "localfilename" => $_REQUEST['filename'].".wav");
+					$time = time().rand(1,1000);
+					$filename = $_REQUEST['filename']."-".$time.".wav";
+					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$filename);
+					return array("status" => true, "filename" => $_REQUEST['filename'], "localfilename" => $filename);
 				}	else {
 					return array("status" => false, "message" => _("Unknown Error"));
 				}
@@ -115,7 +116,7 @@ class Recordings implements BMO {
 				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
 				if(file_exists($this->temp."/".$filename.".finished")) {
 					unlink($this->temp."/".$filename.".finished");
-					return array("finished" => true, "filename" => $filename.".wav", "localfilename" => $filename.".wav", "recording" => false);
+					return array("finished" => true, "filename" => $filename, "localfilename" => $filename.".wav", "recording" => false);
 				} elseif(file_exists($this->temp."/".$filename.".wav")) {
 					return array("finished" => false, "recording" => true);
 				} else {
@@ -125,15 +126,25 @@ class Recordings implements BMO {
 			case "saverecording":
 				$name = !empty($_POST['name']) ? basename($_POST['name']) : '';
 				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
+				$time = time().rand(1,1000);
+				$fname = $name."-".$time.".wav";
 				if(file_exists($this->temp."/".$filename.".wav")) {
-					rename($this->temp."/".$filename.".wav", $this->temp."/".$name.".wav");
-					return array("status" => true, "filename" => $name.".wav", "localfilename" => $name.".wav");
+					rename($this->temp."/".$filename.".wav", $this->temp."/".$fname);
+					return array("status" => true, "filename" => $name, "localfilename" => $fname);
 				} else {
 					return array("status" => false, "message" => _("File does not exist"));
 				}
 			break;
 			case "grid";
-				return $this->getAll();
+				$all = $this->getAll();
+				$languageNames = $this->FreePBX->Soundlang->getLanguages();
+				foreach($all as &$recs) {
+					foreach($recs['languages'] as &$lang) {
+						$lang = isset($languageNames[$lang]) ? $languageNames[$lang] : $lang;
+					}
+					$recs['languages'] = implode(", ", $recs['languages']);
+				}
+				return $all;
 			break;
 			case "upload":
 				foreach ($_FILES["files"]["error"] as $key => $error) {
@@ -145,10 +156,10 @@ class Recordings implements BMO {
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = $_FILES["files"]["name"][$key];
-								$id = time();
+								$id = time().rand(1,1000);
 								$name = pathinfo($_FILES["files"]["name"][$key],PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->temp."/".$name);
-								return array("status" => true, "filename" => $dname, "localfilename" => $name, "id" => $id);
+								return array("status" => true, "filename" => pathinfo($dname,PATHINFO_FILENAME), "localfilename" => $name, "id" => $id);
 							} else {
 								return array("status" => false, "message" => _("Unsupported file format"));
 								break;
@@ -182,7 +193,23 @@ class Recordings implements BMO {
 		}
 	}
 
+	public function addRecording($name,$description,$files,$fcode=0,$fcode_pass='') {
+		$sql = "INSERT INTO displayname, description, filename, fcode, fcode_pass VALUES(?,?,?,?,?)";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+	}
+
+	public function delRecording($id) {
+		$sql = "DELETE FROM recordings WHERE id = ?";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array($id));
+	}
+
 	public function getRecordingsById($id) {
+		return $this->getRecordingById($id);
+	}
+
+	public function getRecordingById($id) {
 		$sql = "SELECT * FROM recordings where id= ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
@@ -197,12 +224,94 @@ class Recordings implements BMO {
 		return $res['filename'];
 	}
 
+	public function getSystemRecordings() {
+		$files = $this->getdir($this->temp);
+		$final = array();
+		foreach($files as &$file) {
+			$file = str_replace($this->temp."/","",$file);
+			if(preg_match("/^(\w{2}_\w{2}|\w{2})\/(.*)\.([a-z0-9]{2,})/i",$file,$matches)) {
+				$lang = $matches[1];
+				$name = $matches[2];
+				if(substr($name, 0, 1) == ".") {
+					continue;
+				}
+				$format = $matches[3];
+				if(!isset($final[$name])) {
+					$final[$name] = array(
+						"name" => $name,
+						"languages" => array(
+							$lang => $lang
+						),
+						"formats" => array(
+							$format => $format
+						),
+						"paths" => array(
+							$lang => $lang."/".$name
+						)
+					);
+				} else {
+					$final[$name]['languages'][$lang] = $lang;
+					$final[$name]['formats'][$format] = $format;
+					$final[$name]['paths'][$lang] = $lang."/".$name;
+				}
+			}
+		}
+		ksort($final);
+		return $final;
+	}
+
+	private function getdir($snddir) {
+		$dir = opendir($snddir);
+		$files = Array();
+		while ($fn = readdir($dir)) {
+			if ($fn == '.' || $fn == '..') { continue; }
+			if (is_dir($snddir.'/'.$fn)) {
+				$files = array_merge($this->getdir($snddir.'/'.$fn), $files);
+				continue;
+			}
+			$files[] = $snddir.'/'.$fn;
+		}
+		return $files;
+	}
+
 	public function getAll() {
-		$sql = "SELECT * FROM recordings where displayname <> '__invalid' ORDER BY displayname";
+		$sql = "SELECT * FROM recordings ORDER BY displayname";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		$full_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
+
+		foreach($full_list as &$item) {
+			$files = explode("&",$item['filename']);
+			$item['files'] = array();
+			$langs = array();
+			foreach($files as $file) {
+				$item['files'][$file] = $this->fileStatus($file);
+				$langs = array_merge(array_keys($item['files'][$file]),$langs);
+			}
+			$item['languages'] = $langs;
+			$item['missing']['languages'] = array();
+			$item['missing']['formats'] = array();
+			foreach($files as $file) {
+				$diff = array_diff($langs,array_keys($item['files'][$file]));
+				if(!empty($diff)) {
+					$item['missing']['languages'][$file] = $diff;
+				}
+			}
+
+		}
 		return $full_list;
+	}
+
+	public function fileStatus($file) {
+		$data = array();
+		foreach(glob($this->temp."/*",GLOB_ONLYDIR) as $langdir) {
+			$lang = basename($langdir);
+			foreach(glob($langdir."/".$file."*") as $f) {
+				$parts = pathinfo($f);
+				$data[$lang][$parts['extension']] = basename($f);
+			}
+		}
+		return $data;
 	}
 
 	public function getAllRecordings($compound = true) {

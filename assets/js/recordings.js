@@ -1,4 +1,6 @@
-var checker = null;
+var checker = null,
+		soundList = {},
+		language = '';
 $(function() {
 	if (Modernizr.getusermedia) {
 		$("#record-container").removeClass("hidden");
@@ -6,10 +8,32 @@ $(function() {
 		$("#record-container").remove();
 	}
 
-	$("#systemrecording").chosen({search_contains: true, no_results_text: _("No Recordings Found"), allow_single_deselect: true});
+	language = $("#language").val();
+	$("#language").change(function() {
+		convertList(language);
+		language = $("#language").val();
+		generateList(language);
+		$(".language").text($(this).find("option:selected").text());
+	});
+
+	$("#systemrecording").chosen({search_contains: true, no_results_text: _("No Recordings Found"), placeholder_text_single: _("Select a system recording")});
 
 	$("#systemrecording").on('change', function(evt, params) {
-		console.log($(this).val());
+		var rec = $(this).val(),
+				info = systemRecordings[rec],
+				languages = [],
+				paths = {};
+
+		for (var key in info.languages) {
+			if (info.languages.hasOwnProperty(key)) {
+				var l = info.languages[key];
+				languages.push(l);
+				paths[l] = info.paths[l];
+			}
+		}
+		addFile(info.name, paths, languages, (languages.indexOf(language) >= 0), true)
+		$('#systemrecording').val("");
+		$('#systemrecording').trigger('chosen:updated');
 	});
 
 	$(".codec").change(function() {
@@ -63,6 +87,11 @@ $(function() {
 						$("#save-recorder-input").focus();
 						return;
 					}
+					if(sysRecConflict($("#save-recorder-input").val())) {
+						if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
+							return;
+						}
+					}
 					$(this).off("click");
 					$(this).text(_("Saving..."));
 					$(this).prop("disabled", true);
@@ -95,7 +124,9 @@ $(function() {
 						contentType: false,
 						success: function(data) {
 							if(data.status) {
-								addFile(data.filename, data.localfilename);
+								var paths = {};
+								paths[language] = data.localfilename;
+								addFile(data.filename, paths, [language], true, false);
 							}
 							$("#browser-recorder-save").addClass("hidden").removeClass("in");
 							$("#browser-recorder").addClass("in").removeClass("hidden");
@@ -154,12 +185,12 @@ $(function() {
 		clearInterval(checker);
 		var num = $("#record-phone").val(),
 				file = num+Date.now();
-
 		$("#record-phone").prop("disabled",true);
 		$(this).text(_("Dialing..."));
 		$.post( "ajax.php", {module: "recordings", command: "dialrecording", extension: num, filename: file}, function( data ) {
 			if(data.status) {
-				$("#dialer").fadeOut("slow");
+				$("#dialer").removeClass("in").addClass("hidden");
+				$("#record-phone").val("");
 				$("#dialer-message").text(_("Recording...")).removeClass("hidden");
 				setTimeout(function(){
 					check(num, file);
@@ -178,15 +209,14 @@ $(function() {
 			$.post( "ajax.php", {module: "recordings", command: "checkrecording", extension: num, filename: file}, function( data ) {
 				if(data.finished || (!data.finished && !data.recording)) {
 					clearInterval(checker);
-					$("#dialer-message").addClass("hidden");
-					$("#dialer-save").fadeIn("slow", function() {
-						$("#dialer-phone-input").focus();
-						$("#dialer-phone-input").blur(function(event) {
-							if(event.relatedTarget.id != "dialer-save") {
-								alert(_("Please enter a valid name and save"));
-								$(this).focus();
-							}
-						});
+					$("#dialer-message").removeClass("in").addClass("hidden");
+					$("#dialer-save").addClass("in").removeClass("hidden");
+					$("#save-phone-input").focus();
+					$("#save-phone-input").blur(function(event) {
+						if(typeof event.relatedTarget === "undefined" || typeof event.relatedTarget.id === "undefined" || event.relatedTarget.id != "save-phone") {
+							alert(_("Please enter a valid name and save"));
+							$(this).focus();
+						}
 					});
 					$("#save-phone").on("click", function() {
 						if($("#save-phone-input").val() === "") {
@@ -194,14 +224,21 @@ $(function() {
 							$("#save-phone-input").focus();
 							return;
 						}
+						if(sysRecConflict($("#save-phone-input").val())) {
+							if(!confirm(_("A system recording with this name already exists for this language. Do you want to overwrite it?"))) {
+								return;
+							}
+						}
 						$(this).off("click");
 						$.post( "ajax.php", {module: "recordings", command: "saverecording", extension: num, filename: file, name: $("#save-phone-input").val()}, function( data ) {
 							if(data.status) {
-								addFile(data.filename, data.localfilename);
+								var paths = {};
+								paths[language] = data.localfilename;
+								addFile(data.filename, paths, [language], true, false);
 							}
-							$("#dialer-save").fadeOut("slow", function() {
-								$("#dialer").fadeIn("slow");
-							});
+							$("#save-phone-input").val("");
+							$("#dialer-save").addClass("hidden").removeClass("in");
+							$("#dialer").addClass("in").removeClass("hidden");
 						});
 					});
 				}
@@ -289,13 +326,19 @@ $(function() {
 				$.each(data.files, function(k, v) {
 					if(!patt.test(v.name)) {
 						submit = false;
+						alert(_("Unsupported file type"));
 						return false;
+					}
+					var s = v.name.replace(/\.[^/.]+$/, "")
+					if(sysRecConflict(s)) {
+						if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this language. Is that ok?"),v.name))) {
+							submit = false;
+							return false;
+						}
 					}
 				});
 				if(submit) {
 					data.submit();
-				} else {
-					alert(_("Unsupported file type"));
 				}
 			},
 			drop: function () {
@@ -307,7 +350,9 @@ $(function() {
 			},
 			done: function (e, data) {
 				if(data.result.status) {
-					addFile(data.result.filename, data.result.localfilename);
+					var paths = {};
+					paths[language] = data.result.localfilename;
+					addFile(data.result.filename, paths, [language], true, false);
 				} else {
 					alert(data.result.message);
 				}
@@ -325,34 +370,121 @@ $(function() {
 
 $(document).on("click", "#files .delete-file", function() {
 	var $this = this,
-			file = $($this).data("filename");
+			file = $($this).data("filename"),
+			parent = $($this).parents(".file");
 	$($this).addClass("deleting");
-	$.post( "ajax.php", {module: "recordings", command: "deleterecording", filename: file}, function( data ) {
-		if(data.status) {
-			$($this).parents(".file").fadeOut("slow", function() {
-				$(this).remove();
-				if(!$("#files .file").length) {
-					$("#file-alert").removeClass("hidden");
-				}
-			})
-		} else {
-			alert(data.message);
-			$($this).removeClass("deleting");
-		}
-	});
+	//dont delete already existing files
+	if(parent.data("system") == 1) {
+		parent.fadeOut("slow", function() {
+			$(this).remove();
+			if(!$("#files .file").length) {
+				$("#file-alert").removeClass("hidden");
+			}
+		})
+	} else {
+		$.post( "ajax.php", {module: "recordings", command: "deleterecording", filename: file}, function( data ) {
+			if(data.status) {
+				parent.fadeOut("slow", function() {
+					$(this).remove();
+					if(!$("#files .file").length) {
+						$("#file-alert").removeClass("hidden");
+					}
+				})
+			} else {
+				alert(data.message);
+				$($this).removeClass("deleting");
+			}
+		});
+	}
 });
 
 $(document).on("click", "#files .play", function() {
 	$(this).toggleClass("active");
 });
 
-function addFile(file, path) {
-	$("#file-alert").addClass("hidden");
-	$("#files").append('<li class="file" data-filename="'+path+'"><i class="fa fa-play play"></i> '+file+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+$(document).on("click", "#files li", function(event) {
+	if(!$(event.target).hasClass("file")) {
+		return;
+	}
+	if(!$(this).hasClass("replace")) {
+		if(!$(this).hasClass("missing") && !confirm(_("You are entering replace mode. The next file you add will replace this one. Are you sure you want to do that?"))) {
+			return;
+		}
+		$(".replace").removeClass("replace")
+		$(this).toggleClass("replace");
+	} else if($(this).hasClass("replace")) {
+		$(this).removeClass("replace");
+	}
+});
+
+
+function addFile(name, paths, languages, exists, system) {
+	if($(".replace").length) {
+		var filenames = $(".replace").data("filenames"),
+				languages = $(".replace").data("languages")
+
+		languages.push(language);
+		filenames[language] = paths[language];
+		$(".replace").data("filenames", filenames);
+		$(".replace").data("languages", languages);
+		$(".replace").removeClass("replace missing");
+	} else {
+		if(!exists) {
+			$("#missing-file-alert").removeClass("hidden");
+		}
+		var exists = exists ? "" : "missing ",
+				system = system ? 1 : 0;
+		$("#file-alert").addClass("hidden");
+		$("#files").append('<li class="file '+exists+'" data-filenames=\''+JSON.stringify(paths)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+	}
 }
 
 function linkFormatter(value, row, index){
 	var html = '<a href="?display=recordings&action=edit&id='+row.id+'"><i class="fa fa-pencil"></i></a>';
 	html += '&nbsp;<a href="?display=recordings&action=delete&id='+row.id+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	return html;
+}
+
+function convertList(language) {
+	soundList = {};
+	$("#files li").each(function() {
+		var name = $(this).data("name");
+		soundList[name] = {
+			"name": $(this).data("name"),
+			"filenames": $(this).data("filenames"),
+			"system": $(this).data("system") ? true : false,
+			"languages": $(this).data("languages")
+		};
+	})
+}
+
+function generateList(language) {
+	$("#missing-file-alert").addClass("hidden");
+	$("#files").html("");
+	if(typeof soundList !== "undefined") {
+		if(!isObjEmpty(soundList)) {
+			$.each(soundList, function(k,v) {
+				var exists = (v.languages.indexOf(language) >= 0);
+				addFile(v.name, v.filenames, v.languages, exists, v.system);
+			});
+			$("#file-alert").addClass("hidden");
+		} else {
+			$("#file-alert").removeClass("hidden");
+		}
+	} else {
+		$("#file-alert").removeClass("hidden");
+	}
+}
+
+function isObjEmpty(obj) {
+	for(var key in obj) {
+		if(obj.hasOwnProperty(key)) {
+			return false;
+		}
+	}
+	return true;
+}
+
+function sysRecConflict(name) {
+	return (typeof systemRecordings[name] !== "undefined" && typeof systemRecordings[name].languages[language] !== "undefined");
 }
