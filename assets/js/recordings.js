@@ -53,6 +53,7 @@ $("#recordings-frm").submit(function() {
 				window.location = "?display=recordings";
 			} else {
 				alert(data.message);
+				console.log(data.errors);
 				$("#action-buttons input").prop("disabled", false);
 			}
 		},
@@ -527,22 +528,24 @@ $(document).on("click", "#files li", function(event) {
  */
 function addFile(name, filenames, languages, exists, system) {
 	if($(".replace").length) {
-		//yes we are replacing the above on purpose I get that
-		var filenames = $(".replace").data("filenames"),
-				languages = $(".replace").data("languages")
+		var rfilenames = $(".replace").data("filenames"),
+				rlanguages = $(".replace").data("languages")
 
 		//add language to array if it doesnt already exist
-		if(languages.indexOf(language) === -1) {
-			languages.push(language);
+		if(rlanguages.indexOf(language) === -1) {
+			rlanguages.push(language);
 		}
 
 		//add filename to the filename object, overwrite if we need to
 		//TODO: If file already exists then delete it
-		filenames[language] = paths[language];
+		if(isObjEmpty(rfilenames)) {
+			rfilenames = {};
+		}
+		rfilenames[language] = filenames[language];
 
 		//put our objects back into place
-		$(".replace").data("filenames", filenames);
-		$(".replace").data("languages", languages);
+		$(".replace").data("filenames", rfilenames);
+		$(".replace").data("languages", rlanguages);
 
 		//remove the marking classes
 		$(".replace").removeClass("replace missing");

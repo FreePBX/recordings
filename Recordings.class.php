@@ -114,26 +114,36 @@ class Recordings implements BMO {
 				$data = $_POST;
 				$data['soundlist'] = json_decode($data['soundlist'],true);
 				$playback = array();
+				$media = FreePBX::create()->Media();
+				$errors = array();
 				//convert files
 				foreach($data['soundlist'] as $list) {
 					$playback[] = $list['name'];
-					if($list['system']) {
-						//TODO: Some system files might need to be replaced
-						//suggest looking in through filenames to see if they exist
-						continue;
-					}
 					foreach($list['filenames'] as $lang => $file) {
 						foreach($data['codecs'] as $codec) {
-							dbug($this->temp."/".$file.", ".$this->temp."/".$lang."/".$list['name'].".".$codec);
+							if(file_exists($this->temp."/".$lang."/".$list['name'].".".$codec)) {
+								//TODO: need a way to know it's ok to overwrite a sysrecording
+								continue;
+							}
+							try {
+								$media->load($this->temp."/".$file);
+								$media->convert($this->temp."/".$lang."/".$list['name'].".".$codec);
+							} catch(\Exception $e) {
+								$errors[] = $e->getMessage();
+							}
 						}
 					}
 				}
-				if($data['id'] == 0 || !empty($data['id'])) {
+				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback));
 				} else {
 					$this->addRecording($data['name'],$data['description'],implode("&",$playback));
 				}
-				return array("status" => true);
+				if(empty($errors)) {
+					return array("status" => true);
+				} else {
+					return array("status" => false, "message" => "error", "errors" => $errors);
+				}
 			break;
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
@@ -284,8 +294,12 @@ class Recordings implements BMO {
 		$files = explode("&",$data['filename']);
 		foreach($files as $file) {
 			$status = $this->fileStatus($file);
-			$data['soundlist'][$file]['name'] = $file;
-			$data['soundlist'][$file]['system'] = true;
+			$data['soundlist'][$file] = array(
+				"name" => $file,
+				"system" => true,
+				"languages" => array(),
+				"filenames" => array()
+			);
 			foreach($status as $lang => $formats) {
 				foreach($formats as $format => $filename) {
 					$data['soundlist'][$file]['filenames'][$lang] = $lang."/".$file;
