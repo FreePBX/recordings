@@ -3,9 +3,66 @@ var recording = false, //if in browser recording is happening
 		recordTimer = null, //setInterval reference recorder timer
 		startTime = null, //recorder start time
 		soundBlob = {}, //sound Blobs from in-browser recording
-		soundList = {}, //sound file list
+		soundList = (typeof soundList === "undefined") ? {} : soundList, //sound file list, we attempt to get this from the page
 		language = $("#language").val(); //selected language
 
+var temp;
+generateList();
+$("#recordings-frm").submit(function() {
+	var data = {
+		module: "recordings",
+		command: "save"
+	};
+
+	if($("#name").val().trim() === "") {
+		return warnInvalid($("#name"),_("You must set a valid name for this recording"));
+	}
+	data.name = $("#name").val().trim();
+
+	data.id = $("#id").val();
+
+	//convert the list before a submit
+	convertList();
+
+	if(isObjEmpty(soundList)) {
+		alert(_("No files have been added to this recording"));
+		return false;
+	}
+	data.soundlist = JSON.stringify(soundList);
+
+	data.combine = $("input[name=combine]:checked").val();
+
+	data.description = $("#description").val();
+
+	data.codecs = [];
+	$(".codec:checked").each(function() {
+		data.codecs.push($(this).val());
+	});
+
+	$("#action-buttons input").prop("disabled",true);
+	temp = data;
+
+	$.ajax({
+		type: 'POST',
+		url: "ajax.php",
+		data: data,
+		dataType: 'json',
+		timeout: 30000,
+		success: function(data) {
+			if(data.status) {
+				window.location = "?display=recordings";
+			} else {
+				alert(data.message);
+				$("#action-buttons input").prop("disabled", false);
+			}
+		},
+		error: function(data) {
+			alert(_("An Error occurred trying to submit this document"));
+			$("#action-buttons input").prop("disabled", false);
+		},
+	});
+	return false;
+});
 //check if this browser supports WebRTC
 //TODO: This eventually needs to check to make sure we are in HTTPS mode
 if (Modernizr.getusermedia) {

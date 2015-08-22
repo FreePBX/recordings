@@ -4,7 +4,8 @@
 			<h1><?php echo _("Add New System Recording")?></h1>
 			<div class="fpbx-container">
 				<div class="display full-border">
-					<form class="fpbx-submit" name="frm_extensions" action="config.php?display=extensions" method="post" data-fpbx-delete="config.php?display=extensions&amp;extdisplay=1000&amp;action=del" role="form">
+					<form id="recordings-frm" class="fpbx-submit" name="recordings-frm" action="config.php?display=recordings" method="post" <?php if(isset($data['id'])) {?>data-fpbx-delete="config.php?display=recordings&amp;action=del"<?php } ?> role="form">
+						<input type="hidden" name="id" id="id" value="<?php echo isset($data['id']) ? $data['id'] : ''?>">
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
@@ -14,12 +15,32 @@
 												<label class="control-label" for="name"><?php echo _("Name")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="name"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?php echo isset($data['displayname']) ? $data['displayname'] : ''?>"></div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
 											<span id="name-help" class="help-block fpbx-help-block"><?php echo _("The name of the system recording on the file system. If it conflicts with another file then this will overwrite it.")?></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="description"><?php echo _("Description")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
+											</div>
+											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?php echo isset($data['description']) ? $data['description'] : ''?>"></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<span id="description-help" class="help-block fpbx-help-block"><?php echo _("Describe this recording")?></span>
 										</div>
 									</div>
 								</div>
@@ -283,4 +304,4 @@
 		</div>
 	</div>
 </div>
-<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;</script>
+<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>

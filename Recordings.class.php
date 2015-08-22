@@ -37,19 +37,48 @@ class Recordings implements BMO {
 
 	}
 
+	public function getActionBar($request){
+		$buttons = array();
+		if(isset($request['action']) && ($request['action'] == "add" || $request['action'] == "edit")) {
+			$buttons = array(
+				'submit' => array(
+					'name' => 'submit',
+					'id' => 'submit',
+					'value' => _("Submit"),
+				),
+				'delete' => array(
+					'name' => 'delete',
+					'id' => 'delete',
+					'value' => _("Delete"),
+				),
+				'reset' => array(
+					'name' => 'reset',
+					'id' => 'reset',
+					'value' => _("Reset"),
+				)
+			);
+			if($request['action'] == "add") {
+				unset($buttons['delete']);
+			}
+		}
+		return $buttons;
+	}
+
 	public function showPage() {
 		$media = $this->FreePBX->Media();
 		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : "";
 		switch($action) {
 			case "edit":
+				$data = $this->getRecordingById($_REQUEST['id']);
 			case "add":
+				$data = isset($data) ? $data : array();
 				$supported = $media->getSupportedFormats();
 				ksort($supported['in']);
 				ksort($supported['out']);
 				$langs = $this->FreePBX->Soundlang->getLanguages();
 				$default = $this->FreePBX->Soundlang->getLanguage();
 				$sysrecs = $this->getSystemRecordings();
-				$html = load_view(__DIR__."/views/form.php",array("default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$html = load_view(__DIR__."/views/form.php",array("data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -67,6 +96,7 @@ class Recordings implements BMO {
 			case "savebrowserrecording":
 			case "saverecording":
 			case "deleterecording":
+			case "save":
 			case "record":
 			case "upload":
 			case "grid":
@@ -78,6 +108,33 @@ class Recordings implements BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "save":
+				set_time_limit(0);
+				//Save the FINAL recording. Do all post processing work here as well
+				$data = $_POST;
+				$data['soundlist'] = json_decode($data['soundlist'],true);
+				$playback = array();
+				//convert files
+				foreach($data['soundlist'] as $list) {
+					$playback[] = $list['name'];
+					if($list['system']) {
+						//TODO: Some system files might need to be replaced
+						//suggest looking in through filenames to see if they exist
+						continue;
+					}
+					foreach($list['filenames'] as $lang => $file) {
+						foreach($data['codecs'] as $codec) {
+							dbug($this->temp."/".$file.", ".$this->temp."/".$lang."/".$list['name'].".".$codec);
+						}
+					}
+				}
+				if($data['id'] == 0 || !empty($data['id'])) {
+					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback));
+				} else {
+					$this->addRecording($data['name'],$data['description'],implode("&",$playback));
+				}
+				return array("status" => true);
+			break;
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
 					$time = time().rand(1,1000);
@@ -196,9 +253,15 @@ class Recordings implements BMO {
 	}
 
 	public function addRecording($name,$description,$files,$fcode=0,$fcode_pass='') {
-		$sql = "INSERT INTO displayname, description, filename, fcode, fcode_pass VALUES(?,?,?,?,?)";
+		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+	}
+
+	public function updateRecording($id,$name,$description,$files) {
+		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ? WHERE id = ?";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array($id, $name, $description, $files));
 	}
 
 	public function delRecording($id) {
@@ -215,7 +278,22 @@ class Recordings implements BMO {
 		$sql = "SELECT * FROM recordings where id= ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
-		return $sth->fetch(\PDO::FETCH_ASSOC);
+		$data = $sth->fetch(\PDO::FETCH_ASSOC);
+		$data['soundlist'] = array();
+		$langs = array();
+		$files = explode("&",$data['filename']);
+		foreach($files as $file) {
+			$status = $this->fileStatus($file);
+			$data['soundlist'][$file]['name'] = $file;
+			$data['soundlist'][$file]['system'] = true;
+			foreach($status as $lang => $formats) {
+				foreach($formats as $format => $filename) {
+					$data['soundlist'][$file]['filenames'][$lang] = $lang."/".$file;
+				}
+				$data['soundlist'][$file]['languages'][] = $lang;
+			}
+		}
+		return $data;
 	}
 
 	public function getFilenameById($id) {
@@ -288,7 +366,11 @@ class Recordings implements BMO {
 			$langs = array();
 			foreach($files as $file) {
 				$item['files'][$file] = $this->fileStatus($file);
-				$langs = array_merge(array_keys($item['files'][$file]),$langs);
+				foreach(array_keys($item['files'][$file]) as $l) {
+					if(!in_array($l,$langs)) {
+						$langs[] = $l;
+					}
+				}
 			}
 			$item['languages'] = $langs;
 			$item['missing']['languages'] = array();
