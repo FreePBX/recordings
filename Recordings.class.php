@@ -259,9 +259,9 @@ class Recordings implements BMO {
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = $_FILES["files"]["name"][$key];
+								$dname = preg_replace("/\s+/","-",strtolower($_FILES["files"]["name"][$key]));
 								$id = time().rand(1,1000);
-								$name = pathinfo($_FILES["files"]["name"][$key],PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
+								$name = pathinfo($dname,PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->temp."/".$name);
 								return array("status" => true, "filename" => pathinfo($dname,PATHINFO_FILENAME), "localfilename" => $name, "id" => $id);
 							} else {

@@ -158,7 +158,7 @@
 												</div>
 												<div id="browser-recorder-save" class="fade hidden">
 													<div class="input-group">
-														<input type="text" class="form-control" id="save-recorder-input" placeholder="Name this file">
+														<input type="text" class="form-control name-check" id="save-recorder-input" placeholder="Name this file">
 														<span class="input-group-btn">
 															<button class="btn btn-default" type="button" id="save-recorder">Save!</button>
 														</span>
@@ -196,7 +196,7 @@
 												</div>
 												<div id="dialer-save" class="fade hidden">
 													<div class="input-group">
-														<input type="text" class="form-control" id="save-phone-input" placeholder="<?php echo _("Name this file")?>">
+														<input type="text" class="form-control name-check" id="save-phone-input" placeholder="<?php echo _("Name this file")?>">
 														<span class="input-group-btn">
 															<button class="btn btn-default" type="button" id="save-phone"><?php echo _("Save")?></button>
 														</span>
