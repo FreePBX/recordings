@@ -291,6 +291,7 @@ $("#record").click(function() {
 			title.text(_("Recording..."));
 			recording = true;
 		}, function(e) {
+			controls.toggleClass("recording");
 			alert(_("Your Browser Blocked The Recording, Please check your settings"));
 			recording = false;
 		});
