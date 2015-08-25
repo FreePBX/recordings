@@ -37,39 +37,63 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-11 13:30-0400\n"
+"POT-Creation-Date: 2015-08-25 10:50-0700\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
-"Language-Team: Japanese "
-"<http://weblate.freepbx.org/projects/freepbx/recordings/ja_JP/>\n"
-"Language: ja_JP\n"
+"Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
+"recordings/ja_JP/>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: page.recordings.php:170
+#: page.recordings.php:171
 msgid " dial"
 msgstr " 次の番号にダイヤルしてください"
 
-#: assets/js/chosen.jquery.min.js:10
-msgid "):this.generate_field_id(),this.container_id+="
-msgstr ""
-
-#: page.recordings.php:50 page.recordings.php:51
+#: page.recordings.php:51 page.recordings.php:52
 msgid "** MISSING FEATURE CODE **"
 msgstr "** MISSING FEATURE CODE **"
 
-#: page.recordings.php:166 page.recordings.php:418
+#: Recordings.class.php:291
+msgid "A PHP extension stopped the file upload"
+msgstr ""
+
+#: assets/js/recordings.js:355
+msgid ""
+"A system recording with this name already exists for this language. Do you "
+"want to overwrite it?"
+msgstr ""
+
+#: views/grid.php:25
+msgid "Actions"
+msgstr ""
+
+#: views/form.php:4
+msgid "Add New System Recording"
+msgstr ""
+
+#: page.recordings.php:167 page.recordings.php:419
 msgid "Add Recording"
 msgstr "録音追加"
 
-#: page.recordings.php:212
+#: views/form.php:222
+msgid "Add System Recording"
+msgstr ""
+
+#: views/form.php:237
+msgid ""
+"Add any previously created system recording or a recording that was added "
+"previously"
+msgstr ""
+
+#: page.recordings.php:213
 msgid "After recording or uploading,"
 msgstr "録音が終了 or アップロード後、"
 
-#: page.recordings.php:184
+#: page.recordings.php:185
 msgid ""
 "Alternatively, upload a recording in any supported asterisk format. Note "
 "that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
@@ -80,11 +104,31 @@ msgstr ""
 "れたもの)、PCMエンコードで16ビット、8000Hzのファイルで<b>ある必要があります</"
 "b>"
 
-#: page.recordings.php:419 page.recordings.php:495
+#: assets/js/recordings.js:61
+msgid "An Error occurred trying to submit this document"
+msgstr ""
+
+#: assets/js/recordings.js:151
+msgid "At least one codec must be checked"
+msgstr ""
+
+#: page.recordings.php:420 page.recordings.php:496
 msgid "Built-in Recordings"
 msgstr "ビルトイン録音"
 
-#: page.recordings.php:280
+#: views/form.php:193
+msgid "Call"
+msgstr ""
+
+#: assets/js/recordings.js:374
+msgid "Call!"
+msgstr ""
+
+#: Recordings.class.php:295
+msgid "Can Not Find Uploaded Files"
+msgstr ""
+
+#: page.recordings.php:281
 msgid "Change Name"
 msgstr "名前を変更"
 
@@ -92,7 +136,13 @@ msgstr "名前を変更"
 msgid "Check Recording"
 msgstr "録音をチェック"
 
-#: page.recordings.php:330
+#: views/form.php:294
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
+msgstr ""
+
+#: page.recordings.php:331
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -100,27 +150,47 @@ msgstr ""
 "この録音を直接変更できるオプションキーコードを作成する場合はチェックボックス"
 "にチェックをいれます。"
 
-#: page.recordings.php:226
+#: page.recordings.php:227
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr "この録音でよろしい場合は、 \"保存\"を押してください"
 
-#: page.recordings.php:559
+#: page.recordings.php:560
 msgid "Click here to play this recording"
 msgstr "この録音を再生するにはここをクリック"
 
-#: page.recordings.php:575
+#: views/form.php:250
+msgid "Combine Files"
+msgstr ""
+
+#: views/form.php:278
+msgid "Convert To"
+msgstr ""
+
+#: Recordings.class.php:52 page.recordings.php:576
 msgid "Delete"
 msgstr "削除"
 
-#: page.recordings.php:284
+#: assets/js/recordings.js:198
+msgid "Delete Recording"
+msgstr ""
+
+#: views/form.php:43
+msgid "Describe this recording"
+msgstr ""
+
+#: views/form.php:35
+msgid "Description"
+msgstr ""
+
+#: page.recordings.php:285
 msgid "Descriptive Name"
 msgstr "わかりやすい名前"
 
-#: page.recordings.php:344
+#: page.recordings.php:345
 msgid "Direct Access Feature Code Not Available"
 msgstr "ダイレクトアクセスキーコードが利用できません"
 
-#: page.recordings.php:344
+#: page.recordings.php:345
 msgid ""
 "Direct Access Feature Codes for recordings are not available for built in "
 "system recordings or compound recordings made of multiple individual ones."
@@ -128,64 +198,128 @@ msgstr ""
 "録音のためのダイレクトアクセスキーコードは、ビルトイン録音や多重の独立した録"
 "音から作成された合成録音には利用できません。"
 
-#: page.recordings.php:244
+#: views/grid.php:23
+msgid "Displayname"
+msgstr ""
+
+#: views/form.php:97
+msgid "Drop Multiple Files or Archives Here"
+msgstr ""
+
+#: page.recordings.php:245
 msgid "Edit Recording"
 msgstr "録音を編集"
 
-#: page.recordings.php:75
+#: views/form.php:191
+msgid "Enter Extension"
+msgstr ""
+
+#: page.recordings.php:76
 msgid "Failed to create"
 msgstr "作成失敗"
 
-#: page.recordings.php:337
+#: Recordings.class.php:288
+msgid "Failed to write file to disk"
+msgstr ""
+
+#: page.recordings.php:338
 msgid "Feature Code Password"
 msgstr "キーコードパスワード"
 
-#: page.recordings.php:353
+#: views/form.php:55
+#, php-format
+msgid "File List for %s"
+msgstr ""
+
+#: Recordings.class.php:239
+msgid "File does not exist"
+msgstr ""
+
+#: page.recordings.php:354
 msgid "Files"
 msgstr "ファイル"
 
-#: page.recordings.php:179 page.recordings.php:508
+#: page.recordings.php:180 page.recordings.php:509
 msgid "Go"
 msgstr "次へ"
 
-#: page.recordings.php:178
+#: views/form.php:146
+msgid "Hit the red record button to start recording from your browser"
+msgstr ""
+
+#: views/grid.php:22
+msgid "ID"
+msgstr ""
+
+#: page.recordings.php:179
 msgid ""
 "If you wish to make and verify recordings from your phone, please enter your "
 "extension number here:"
-msgstr "自分の電話機から録音して内容を確認したい場合は、自分の内線番号をこちらに入力してください:"
+msgstr ""
+"自分の電話機から録音して内容を確認したい場合は、自分の内線番号をこちらに入力"
+"してください:"
 
-#: page.recordings.php:213
+#: page.recordings.php:214
 msgid "If you wish to re-record your message, dial"
 msgstr "もし再度メッセージを録音したい場合は、次の番号にダイヤルしてください"
 
-#: page.recordings.php:330
+#: views/form.php:265
+msgid ""
+"Instead of chaining files together (of which some applications do not "
+"support playback) combine the files above into a single file. After this is "
+"done you will not be able to resort or remove the files from the list above "
+"but you will be able to add files to the end of or the beginning of this "
+"file. This will not destroy any previously existing files listed above."
+msgstr ""
+
+#: page.recordings.php:331
 msgid "Link to Feature Code"
 msgstr "キーコードとのリンク"
 
-#: page.recordings.php:102
+#: views/form.php:306
+msgid "List Recordings"
+msgstr ""
+
+#: page.recordings.php:103
 msgid "Make sure Asterisk is not running as root "
 msgstr "Asteriskがrootとして起動していないことを確認してください "
 
-#: page.recordings.php:93
+#: page.recordings.php:94
 msgid "Make sure you have entered a proper name"
 msgstr "正しい名前を入力されたか確認してください"
 
-#: functions.inc.php:159
+#: functions.inc.php:160
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "%sモジュールから自動作成された音声ファイルが見つかりません"
 
-#: page.recordings.php:572
+#: Recordings.class.php:285
+msgid "Missing a temporary folder"
+msgstr ""
+
+#: page.recordings.php:573
 msgid "Move Down"
 msgstr "下に移動"
 
-#: page.recordings.php:566
+#: page.recordings.php:567
 msgid "Move Up"
 msgstr "上に移動"
 
-#: page.recordings.php:220
+#: views/form.php:15
+msgid "Name"
+msgstr ""
+
+#: page.recordings.php:221
 msgid "Name this Recording"
 msgstr "録音の名前"
+
+#: views/form.php:199
+msgid "Name this file"
+msgstr ""
+
+#: views/form.php:258
+msgid "No"
+msgstr ""
 
 #: popup.php:49
 #, php-format
@@ -194,29 +328,38 @@ msgstr ""
 "wav,mp3,gsmフォーマットと互換性のないフォーマットを再生しようとしました："
 "<br /><br />%s"
 
-#: functions.inc.php:220
+#: Recordings.class.php:282
+msgid "No file was uploaded"
+msgstr ""
+
+#: views/form.php:64
+#, php-format
+msgid "No files for %s"
+msgstr ""
+
+#: assets/js/recordings.js:28
+msgid "No files have been added to this recording"
+msgstr ""
+
+#: functions.inc.php:221
 msgid "No long description available"
 msgstr "詳細説明がありません"
 
-#: functions.inc.php:169
+#: functions.inc.php:170
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "モジュール %s 内に録音が発見できません"
 
-#: page.recordings.php:268
+#: page.recordings.php:269
 msgid "Note, does not delete file from computer"
 msgstr "注意：コンピュータ側のファイルは削除しません"
 
-#: install.php:106 install.php:120
-msgid "OK"
-msgstr "OK"
-
-#: page.recordings.php:333
+#: page.recordings.php:334
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "オプションキーコード %s"
 
-#: page.recordings.php:337
+#: page.recordings.php:338
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -224,71 +367,103 @@ msgstr ""
 "ユーザーに再録音を許可するキーコードへのアクセスを保護する為のオプションパス"
 "ワード。"
 
-#: page.recordings.php:472
+#: page.recordings.php:473
 msgid "Please enter a valid Name for this System Recording"
 msgstr "このシステム録音に適した名前を入力してください"
 
-#: page.recordings.php:189
+#: assets/js/recordings.js:343 assets/js/recordings.js:350
+msgid "Please enter a valid name and save"
+msgstr ""
+
+#: page.recordings.php:190
 msgid "Please wait until the page reloads."
 msgstr "ページが更新されるまでお待ち下さい。"
+
+#: views/form.php:116
+msgid "Record In Browser"
+msgstr ""
+
+#: views/form.php:184
+msgid "Record Over Extension"
+msgstr ""
 
 #: install.php:5
 msgid "Recordings"
 msgstr "録音"
 
-#: page.recordings.php:264
+#: page.recordings.php:265
 msgid "Remove Recording"
 msgstr "録音を削除"
 
-#: page.recordings.php:228 page.recordings.php:365
+#: Recordings.class.php:57
+msgid "Reset"
+msgstr ""
+
+#: page.recordings.php:229 page.recordings.php:366 views/form.php:201
 msgid "Save"
 msgstr "保存"
 
-#: install.php:6
+#: install.php:6 assets/js/recordings.js:198
 msgid "Save Recording"
 msgstr "録音を保存"
 
-#: page.recordings.php:110
+#: page.recordings.php:111
 msgid "Saved"
 msgstr "保存されました"
 
-#: page.recordings.php:496
+#: page.recordings.php:497
 msgid "Select System Recording:"
 msgstr "システム録音を選択："
 
-#: page.recordings.php:171
+#: views/form.php:76
+msgid ""
+"Sortable File List/Play order. The playback will be done starting from the "
+"top to the bottom. If combine is set to yes then these files will be "
+"combined into one single file with playback from top to bottom"
+msgstr ""
+
+#: page.recordings.php:172
 msgid "Start speaking at the tone. Press # when finished."
 msgstr "トーン音が聞こえたら話し始め、終了したら＃を押します。"
 
-#: page.recordings.php:167
+#: page.recordings.php:168
 msgid "Step 1: Record or upload"
 msgstr "ステップ 1： 録音 or アップロード"
 
-#: page.recordings.php:216
+#: page.recordings.php:217
 msgid "Step 2: Name"
 msgstr "ステップ 2： 名前"
 
-#: page.recordings.php:211
+#: page.recordings.php:212
 msgid "Step 2: Verify"
 msgstr "ステップ 2： 確認"
 
-#: page.recordings.php:214
+#: page.recordings.php:215
 msgid "Step 3: Name"
 msgstr "ステップ 3： 名前"
 
-#: page.recordings.php:202
+#: Recordings.class.php:47
+msgid "Submit"
+msgstr ""
+
+#: page.recordings.php:203
 msgid "Successfully uploaded"
 msgstr "アップロードに成功しました"
 
-#: page.recordings.php:110 page.recordings.php:142
+#: views/grid.php:24
+msgid "Supported Languages"
+msgstr ""
+
+#: page.recordings.php:111 page.recordings.php:143
 msgid "System Recording"
 msgstr "システム録音"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
+#: Recordings.class.php:210 page.recordings.php:166 page.recordings.php:244
+#: page.recordings.php:495
 msgid "System Recordings"
 msgstr "システム録音"
 
-#: functions.inc.php:170
+#: functions.inc.php:171
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -301,17 +476,43 @@ msgstr ""
 "が、それが本当に機能していてファイルが存在しているかどうかを確認してくださ"
 "い。参照ファイル： %s "
 
-#: page.recordings.php:280
+#: views/form.php:23
+msgid ""
+"The name of the system recording on the file system. If it conflicts with "
+"another file then this will overwrite it."
+msgstr ""
+
+#: views/form.php:210
+msgid ""
+"The system will call the extension you specify to the left. Upon hangup you "
+"will be able to name the file and it will be placed in the list above"
+msgstr ""
+
+#: Recordings.class.php:276
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
+msgstr ""
+
+#: Recordings.class.php:273
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+msgstr ""
+
+#: Recordings.class.php:279
+msgid "The uploaded file was only partially uploaded"
+msgstr ""
+
+#: page.recordings.php:281
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr "この録音の右側に表示される短い名前を変更します"
 
-#: page.recordings.php:284
+#: page.recordings.php:285
 msgid ""
 "This is displayed, as a hint, when selecting this recording in Queues, "
 "Digital Receptionist, etc"
 msgstr "キューや自動応答等でこの録音が選択された際、ヒントとして表示されます"
 
-#: page.recordings.php:255
+#: page.recordings.php:256
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
@@ -321,65 +522,125 @@ msgstr ""
 "再度録音するには、許可されている場合は以下のキーコードを有効にして使用しま"
 "す。"
 
-#: page.recordings.php:130
+#: views/form.php:172
+msgid ""
+"This will initate a WebRTC request so that you will be able to record from "
+"you computer in your browser"
+msgstr ""
+
+#: views/form.php:150
+#, php-format
+msgid ""
+"To play the media you will need to either update your browser to a recent "
+"version or update your %s"
+msgstr ""
+
+#: page.recordings.php:131
 msgid "Unable to locate"
 msgstr "見つけることができません"
 
-#: page.recordings.php:142
+#: Recordings.class.php:190
+msgid "Unknown Error"
+msgstr ""
+
+#: Recordings.class.php:268
+msgid "Unsupported file format"
+msgstr ""
+
+#: assets/js/recordings.js:401
+msgid "Unsupported file type"
+msgstr ""
+
+#: views/form.php:149
+msgid "Update Required"
+msgstr ""
+
+#: page.recordings.php:143
 msgid "Updated"
 msgstr "更新されました"
 
-#: page.recordings.php:189
+#: page.recordings.php:190
 msgid "Upload"
 msgstr "アップロード"
 
-#: page.recordings.php:255
+#: views/form.php:88
+msgid "Upload Recording"
+msgstr ""
+
+#: views/form.php:104
+#, php-format
+msgid ""
+"Upload files from our local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files) and multiple files"
+msgstr ""
+
+#: page.recordings.php:256
 msgid "Usage List"
 msgstr "使い方一覧"
 
-#: page.recordings.php:170
+#: page.recordings.php:171
 msgid "Using your phone,"
 msgstr "電話を使用し、"
 
-#: page.recordings.php:98
+#: views/form.php:256
+msgid "Yes"
+msgstr ""
+
+#: assets/js/recordings.js:508
+msgid ""
+"You are entering replace mode. The next file you add will replace this one. "
+"Are you sure you want to do that?"
+msgstr ""
+
+#: views/form.php:70
+msgid ""
+"You have a missing file for this language. Click any red file above to "
+"replace it with a file below"
+msgstr ""
+
+#: assets/js/recordings.js:18
+msgid "You must set a valid name for this recording"
+msgstr ""
+
+#: page.recordings.php:99
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[エラー] テンポラリーの録音ファイルの削除："
 
-#: page.recordings.php:89
+#: page.recordings.php:90
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "[エラー] 録音の保存："
 
-#: page.recordings.php:81
+#: page.recordings.php:82
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "[エラー] 録音ファイルが存在しません："
 
-#: install.php:108 install.php:122
-msgid "already exists"
-msgstr "既存します"
-
-#: page.recordings.php:172
+#: page.recordings.php:173
 msgid "and speak the message you wish to record. Press # when finished."
 msgstr "次に録音したいメッセージを話し、終了したら＃を押します。"
 
-#: install.php:96
-msgid "checking for fcode field.."
-msgstr "fcodeフィールドをチェック中.."
-
-#: install.php:110
-msgid "checking for fcode_pass field.."
-msgstr "fcode_passフィールドのチェック中.."
-
-#: page.recordings.php:212
+#: page.recordings.php:213
 msgid "dial"
 msgstr "ダイヤル"
 
-#: page.recordings.php:212
+#: page.recordings.php:213
 msgid "to listen to your recording."
 msgstr "録音ファイルを聴くことができます。"
 
-#: page.recordings.php:130
+#: page.recordings.php:131
 msgid "with a a valid suffix"
 msgstr "有効なサフィックス"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "already exists"
+#~ msgstr "既存します"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "fcodeフィールドをチェック中.."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "fcode_passフィールドのチェック中.."
 
 #~ msgid "Admin"
 #~ msgstr "アドミン"

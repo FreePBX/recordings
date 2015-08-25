@@ -3,7 +3,7 @@
 	<repo>standard</repo>
 	<name>Recordings</name>
 	<version>13.0.1beta1</version>
-	<publisher>Schmooze Com Inc</publisher>
+	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<canuninstall>no</canuninstall>

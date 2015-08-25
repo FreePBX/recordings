@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-05-11 13:30-0400\n"
+"POT-Creation-Date: 2015-08-25 10:50-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -27,27 +27,51 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: page.recordings.php:170
+#: page.recordings.php:171
 msgid " dial"
 msgstr " numérotez"
 
-#: assets/js/chosen.jquery.min.js:10
-msgid "):this.generate_field_id(),this.container_id+="
-msgstr ""
-
-#: page.recordings.php:50 page.recordings.php:51
+#: page.recordings.php:51 page.recordings.php:52
 msgid "** MISSING FEATURE CODE **"
 msgstr "** Code de Caractéristique Manquant **"
 
-#: page.recordings.php:166 page.recordings.php:418
+#: Recordings.class.php:291
+msgid "A PHP extension stopped the file upload"
+msgstr ""
+
+#: assets/js/recordings.js:355
+msgid ""
+"A system recording with this name already exists for this language. Do you "
+"want to overwrite it?"
+msgstr ""
+
+#: views/grid.php:25
+msgid "Actions"
+msgstr ""
+
+#: views/form.php:4
+msgid "Add New System Recording"
+msgstr ""
+
+#: page.recordings.php:167 page.recordings.php:419
 msgid "Add Recording"
 msgstr "Ajouter Enregistrement"
 
-#: page.recordings.php:212
+#: views/form.php:222
+msgid "Add System Recording"
+msgstr ""
+
+#: views/form.php:237
+msgid ""
+"Add any previously created system recording or a recording that was added "
+"previously"
+msgstr ""
+
+#: page.recordings.php:213
 msgid "After recording or uploading,"
 msgstr "Après avoir enregistré ou uploadé,"
 
-#: page.recordings.php:184
+#: page.recordings.php:185
 msgid ""
 "Alternatively, upload a recording in any supported asterisk format. Note "
 "that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
@@ -58,11 +82,31 @@ msgstr ""
 "avec Microsoft Recorder) le fichier <b>doit</b> être Encodé en PCM, 16 Bits, "
 "à 8000Hz"
 
-#: page.recordings.php:419 page.recordings.php:495
+#: assets/js/recordings.js:61
+msgid "An Error occurred trying to submit this document"
+msgstr ""
+
+#: assets/js/recordings.js:151
+msgid "At least one codec must be checked"
+msgstr ""
+
+#: page.recordings.php:420 page.recordings.php:496
 msgid "Built-in Recordings"
 msgstr "Enregistrements intégrés"
 
-#: page.recordings.php:280
+#: views/form.php:193
+msgid "Call"
+msgstr ""
+
+#: assets/js/recordings.js:374
+msgid "Call!"
+msgstr ""
+
+#: Recordings.class.php:295
+msgid "Can Not Find Uploaded Files"
+msgstr ""
+
+#: page.recordings.php:281
 msgid "Change Name"
 msgstr "Changer le Nom"
 
@@ -70,7 +114,13 @@ msgstr "Changer le Nom"
 msgid "Check Recording"
 msgstr "Contrôler les Enregistrements"
 
-#: page.recordings.php:330
+#: views/form.php:294
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
+msgstr ""
+
+#: page.recordings.php:331
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -78,29 +128,49 @@ msgstr ""
 "Cochez cette case pour créer un code de caractéristique optionnel qui "
 "permettra de changer cet enregistrement directement."
 
-#: page.recordings.php:226
+#: page.recordings.php:227
 msgid "Click \"SAVE\" when you are satisfied with your recording"
 msgstr ""
 "Cliquez sur \"Sauvegarder\" lorsque vous êtes satisfait de votre "
 "enregistrement"
 
-#: page.recordings.php:559
+#: page.recordings.php:560
 msgid "Click here to play this recording"
 msgstr "Cliquez ici pour jouer cet enregistrement"
 
-#: page.recordings.php:575
+#: views/form.php:250
+msgid "Combine Files"
+msgstr ""
+
+#: views/form.php:278
+msgid "Convert To"
+msgstr ""
+
+#: Recordings.class.php:52 page.recordings.php:576
 msgid "Delete"
 msgstr "Supprimer"
 
-#: page.recordings.php:284
+#: assets/js/recordings.js:198
+msgid "Delete Recording"
+msgstr ""
+
+#: views/form.php:43
+msgid "Describe this recording"
+msgstr ""
+
+#: views/form.php:35
+msgid "Description"
+msgstr ""
+
+#: page.recordings.php:285
 msgid "Descriptive Name"
 msgstr "Nom Descriptif"
 
-#: page.recordings.php:344
+#: page.recordings.php:345
 msgid "Direct Access Feature Code Not Available"
 msgstr "Accès Direct au Code de Caractéristique Indispondible"
 
-#: page.recordings.php:344
+#: page.recordings.php:345
 msgid ""
 "Direct Access Feature Codes for recordings are not available for built in "
 "system recordings or compound recordings made of multiple individual ones."
@@ -109,27 +179,60 @@ msgstr ""
 "pas disponibles pour les systèmes d'enregistrement intégrés ou pour les "
 "enregistrements composés de plusieurs enregistrements individuels."
 
-#: page.recordings.php:244
+#: views/grid.php:23
+msgid "Displayname"
+msgstr ""
+
+#: views/form.php:97
+msgid "Drop Multiple Files or Archives Here"
+msgstr ""
+
+#: page.recordings.php:245
 msgid "Edit Recording"
 msgstr "Editer Enregistrement"
 
-#: page.recordings.php:75
+#: views/form.php:191
+msgid "Enter Extension"
+msgstr ""
+
+#: page.recordings.php:76
 msgid "Failed to create"
 msgstr "Echec lors de la Création"
 
-#: page.recordings.php:337
+#: Recordings.class.php:288
+msgid "Failed to write file to disk"
+msgstr ""
+
+#: page.recordings.php:338
 msgid "Feature Code Password"
 msgstr "Mot de Passe du Code de Caractéristique"
 
-#: page.recordings.php:353
+#: views/form.php:55
+#, php-format
+msgid "File List for %s"
+msgstr ""
+
+#: Recordings.class.php:239
+msgid "File does not exist"
+msgstr ""
+
+#: page.recordings.php:354
 msgid "Files"
 msgstr "Fichiers"
 
-#: page.recordings.php:179 page.recordings.php:508
+#: page.recordings.php:180 page.recordings.php:509
 msgid "Go"
 msgstr "Go"
 
-#: page.recordings.php:178
+#: views/form.php:146
+msgid "Hit the red record button to start recording from your browser"
+msgstr ""
+
+#: views/grid.php:22
+msgid "ID"
+msgstr ""
+
+#: page.recordings.php:179
 msgid ""
 "If you wish to make and verify recordings from your phone, please enter your "
 "extension number here:"
@@ -137,67 +240,105 @@ msgstr ""
 "Si vous voulez faire et vérifier des enregistrements à partir de votre "
 "téléphone, veuillez entrer votre numéro d'extension ici :"
 
-#: page.recordings.php:213
+#: page.recordings.php:214
 msgid "If you wish to re-record your message, dial"
 msgstr "Si vous voulez réenregistrer votre message, tapez"
 
-#: page.recordings.php:330
+#: views/form.php:265
+msgid ""
+"Instead of chaining files together (of which some applications do not "
+"support playback) combine the files above into a single file. After this is "
+"done you will not be able to resort or remove the files from the list above "
+"but you will be able to add files to the end of or the beginning of this "
+"file. This will not destroy any previously existing files listed above."
+msgstr ""
+
+#: page.recordings.php:331
 msgid "Link to Feature Code"
 msgstr "Lien vers Code de Caractéristique"
 
-#: page.recordings.php:102
+#: views/form.php:306
+msgid "List Recordings"
+msgstr ""
+
+#: page.recordings.php:103
 msgid "Make sure Asterisk is not running as root "
 msgstr "Assurez-vous qu'Asterisk ne tourne pas en root"
 
-#: page.recordings.php:93
+#: page.recordings.php:94
 msgid "Make sure you have entered a proper name"
 msgstr "Assurez-vous d'avoir entré un nom correct"
 
-#: functions.inc.php:159
+#: functions.inc.php:160
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fichier Son auto-créé lors de la migration du module %s MANQUANT"
 
-#: page.recordings.php:572
+#: Recordings.class.php:285
+msgid "Missing a temporary folder"
+msgstr ""
+
+#: page.recordings.php:573
 msgid "Move Down"
 msgstr "Descendre"
 
-#: page.recordings.php:566
+#: page.recordings.php:567
 msgid "Move Up"
 msgstr "Monter"
 
-#: page.recordings.php:220
+#: views/form.php:15
+msgid "Name"
+msgstr ""
+
+#: page.recordings.php:221
 msgid "Name this Recording"
 msgstr "Nommer cet Enregistrement"
+
+#: views/form.php:199
+msgid "Name this file"
+msgstr ""
+
+#: views/form.php:258
+msgid "No"
+msgstr ""
 
 #: popup.php:49
 #, php-format
 msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
 msgstr "Pas de format wav, mp3 ou gsm trouvé pour jouer :<br /><br />%s"
 
-#: functions.inc.php:220
+#: Recordings.class.php:282
+msgid "No file was uploaded"
+msgstr ""
+
+#: views/form.php:64
+#, php-format
+msgid "No files for %s"
+msgstr ""
+
+#: assets/js/recordings.js:28
+msgid "No files have been added to this recording"
+msgstr ""
+
+#: functions.inc.php:221
 msgid "No long description available"
 msgstr "Pas de description longue disponible"
 
-#: functions.inc.php:169
+#: functions.inc.php:170
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Enregistrement Non-Existant dans le module %s"
 
-#: page.recordings.php:268
+#: page.recordings.php:269
 msgid "Note, does not delete file from computer"
 msgstr "Note : ne supprime pas le fichier de l'ordinateur"
 
-#: install.php:106 install.php:120
-msgid "OK"
-msgstr "OK"
-
-#: page.recordings.php:333
+#: page.recordings.php:334
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Code de Caractéristique optionnel %s"
 
-#: page.recordings.php:337
+#: page.recordings.php:338
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -205,71 +346,103 @@ msgstr ""
 "Mot de passe optionnel pour protéger l'accès à ce code de caractéristique "
 "qui permet à l'utilisateur de le réenregistrer."
 
-#: page.recordings.php:472
+#: page.recordings.php:473
 msgid "Please enter a valid Name for this System Recording"
 msgstr "Veuillez entrer un Nom valide pour cet Enregistrement Système"
 
-#: page.recordings.php:189
+#: assets/js/recordings.js:343 assets/js/recordings.js:350
+msgid "Please enter a valid name and save"
+msgstr ""
+
+#: page.recordings.php:190
 msgid "Please wait until the page reloads."
 msgstr "Veuillez patienter pendant le rechargement de la page."
+
+#: views/form.php:116
+msgid "Record In Browser"
+msgstr ""
+
+#: views/form.php:184
+msgid "Record Over Extension"
+msgstr ""
 
 #: install.php:5
 msgid "Recordings"
 msgstr "Enregistrements"
 
-#: page.recordings.php:264
+#: page.recordings.php:265
 msgid "Remove Recording"
 msgstr "Supprimer Enregistrement"
 
-#: page.recordings.php:228 page.recordings.php:365
+#: Recordings.class.php:57
+msgid "Reset"
+msgstr ""
+
+#: page.recordings.php:229 page.recordings.php:366 views/form.php:201
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: install.php:6
+#: install.php:6 assets/js/recordings.js:198
 msgid "Save Recording"
 msgstr "Sauvegarder les Enregistrements"
 
-#: page.recordings.php:110
+#: page.recordings.php:111
 msgid "Saved"
 msgstr "Sauvegardé"
 
-#: page.recordings.php:496
+#: page.recordings.php:497
 msgid "Select System Recording:"
 msgstr "Sélectionner Enregistrement Système :"
 
-#: page.recordings.php:171
+#: views/form.php:76
+msgid ""
+"Sortable File List/Play order. The playback will be done starting from the "
+"top to the bottom. If combine is set to yes then these files will be "
+"combined into one single file with playback from top to bottom"
+msgstr ""
+
+#: page.recordings.php:172
 msgid "Start speaking at the tone. Press # when finished."
 msgstr ""
 
-#: page.recordings.php:167
+#: page.recordings.php:168
 msgid "Step 1: Record or upload"
 msgstr "Etape 1 : Enregistrer ou uploader"
 
-#: page.recordings.php:216
+#: page.recordings.php:217
 msgid "Step 2: Name"
 msgstr "Etape 2 : Nom"
 
-#: page.recordings.php:211
+#: page.recordings.php:212
 msgid "Step 2: Verify"
 msgstr "Etape 2 : Vérifier"
 
-#: page.recordings.php:214
+#: page.recordings.php:215
 msgid "Step 3: Name"
 msgstr "Etape 3 : Nom"
 
-#: page.recordings.php:202
+#: Recordings.class.php:47
+msgid "Submit"
+msgstr ""
+
+#: page.recordings.php:203
 msgid "Successfully uploaded"
 msgstr "Uploadé avec Succès"
 
-#: page.recordings.php:110 page.recordings.php:142
+#: views/grid.php:24
+msgid "Supported Languages"
+msgstr ""
+
+#: page.recordings.php:111 page.recordings.php:143
 msgid "System Recording"
 msgstr "Enregistrement Système"
 
-#: page.recordings.php:165 page.recordings.php:243 page.recordings.php:494
+#: Recordings.class.php:210 page.recordings.php:166 page.recordings.php:244
+#: page.recordings.php:495
 msgid "System Recordings"
 msgstr "Enregistrements Systèmes"
 
-#: functions.inc.php:170
+#: functions.inc.php:171
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -282,11 +455,37 @@ msgstr ""
 "mais vous devriez confirmer le bon fonctionnement et confirmer que les "
 "fichiers existent. Le(s) fichier(s) référencé(s) : %s "
 
-#: page.recordings.php:280
+#: views/form.php:23
+msgid ""
+"The name of the system recording on the file system. If it conflicts with "
+"another file then this will overwrite it."
+msgstr ""
+
+#: views/form.php:210
+msgid ""
+"The system will call the extension you specify to the left. Upon hangup you "
+"will be able to name the file and it will be placed in the list above"
+msgstr ""
+
+#: Recordings.class.php:276
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
+msgstr ""
+
+#: Recordings.class.php:273
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+msgstr ""
+
+#: Recordings.class.php:279
+msgid "The uploaded file was only partially uploaded"
+msgstr ""
+
+#: page.recordings.php:281
 msgid "This changes the short name, visible on the right, of this recording"
 msgstr "Change le nom court, visible sur la droite, de cet enregistrement"
 
-#: page.recordings.php:284
+#: page.recordings.php:285
 msgid ""
 "This is displayed, as a hint, when selecting this recording in Queues, "
 "Digital Receptionist, etc"
@@ -294,7 +493,7 @@ msgstr ""
 "Affiché comme une suggestion lors de la sélection de cet enregistrement dans "
 "les Files d'Attente, Réceptionniste Numérique, etc..."
 
-#: page.recordings.php:255
+#: page.recordings.php:256
 msgid ""
 "This recording is being used in the following instances. You can not remove "
 "this recording while being used. To re-record, you can enable and use the "
@@ -305,62 +504,122 @@ msgstr ""
 "réenregistrer, vous pouvez activer et utiliser le code de caractéristique ci-"
 "dessous si autorisé."
 
-#: page.recordings.php:130
+#: views/form.php:172
+msgid ""
+"This will initate a WebRTC request so that you will be able to record from "
+"you computer in your browser"
+msgstr ""
+
+#: views/form.php:150
+#, php-format
+msgid ""
+"To play the media you will need to either update your browser to a recent "
+"version or update your %s"
+msgstr ""
+
+#: page.recordings.php:131
 msgid "Unable to locate"
 msgstr "Localisation impossible"
 
-#: page.recordings.php:142
+#: Recordings.class.php:190
+msgid "Unknown Error"
+msgstr ""
+
+#: Recordings.class.php:268
+msgid "Unsupported file format"
+msgstr ""
+
+#: assets/js/recordings.js:401
+msgid "Unsupported file type"
+msgstr ""
+
+#: views/form.php:149
+msgid "Update Required"
+msgstr ""
+
+#: page.recordings.php:143
 msgid "Updated"
 msgstr "Mis à Jour"
 
-#: page.recordings.php:189
+#: page.recordings.php:190
 msgid "Upload"
 msgstr "Uploader"
 
-#: page.recordings.php:255
+#: views/form.php:88
+msgid "Upload Recording"
+msgstr ""
+
+#: views/form.php:104
+#, php-format
+msgid ""
+"Upload files from our local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files) and multiple files"
+msgstr ""
+
+#: page.recordings.php:256
 msgid "Usage List"
 msgstr "Liste d'Utilisation"
 
-#: page.recordings.php:170
+#: page.recordings.php:171
 msgid "Using your phone,"
 msgstr "En utilisant votre téléphone,"
 
-#: page.recordings.php:98
+#: views/form.php:256
+msgid "Yes"
+msgstr ""
+
+#: assets/js/recordings.js:508
+msgid ""
+"You are entering replace mode. The next file you add will replace this one. "
+"Are you sure you want to do that?"
+msgstr ""
+
+#: views/form.php:70
+msgid ""
+"You have a missing file for this language. Click any red file above to "
+"replace it with a file below"
+msgstr ""
+
+#: assets/js/recordings.js:18
+msgid "You must set a valid name for this recording"
+msgstr ""
+
+#: page.recordings.php:99
 msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
 msgstr "[ERREUR] LORS DE LA SUPPRESSION DE L'ENREGISTREMENT TEMPORAIRE :"
 
-#: page.recordings.php:89
+#: page.recordings.php:90
 msgid "[ERROR] SAVING RECORDING:"
 msgstr "[ERREUR] LORS DE LA SAUVEGARDE DE L'ENREGISTREMENT :"
 
-#: page.recordings.php:81
+#: page.recordings.php:82
 msgid "[ERROR] The Recorded File Does Not exists:"
 msgstr "[ERREUR] Le fichier Enregistré n'existe Pas :"
 
-#: install.php:108 install.php:122
-msgid "already exists"
-msgstr "existe déjà"
-
-#: page.recordings.php:172
+#: page.recordings.php:173
 msgid "and speak the message you wish to record. Press # when finished."
 msgstr ""
 
-#: install.php:96
-msgid "checking for fcode field.."
-msgstr "contrôle du champ fcode..."
-
-#: install.php:110
-msgid "checking for fcode_pass field.."
-msgstr "contrôle du champ fcode_field..."
-
-#: page.recordings.php:212
+#: page.recordings.php:213
 msgid "dial"
 msgstr ""
 
-#: page.recordings.php:212
+#: page.recordings.php:213
 msgid "to listen to your recording."
 msgstr "pour écouter votre enregistrement."
 
-#: page.recordings.php:130
+#: page.recordings.php:131
 msgid "with a a valid suffix"
 msgstr "avec un suffixe valide"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "already exists"
+#~ msgstr "existe déjà"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "contrôle du champ fcode..."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "contrôle du champ fcode_field..."
