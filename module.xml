@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.1beta1</version>
+	<version>13.0.1beta2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.1beta2* FREEPBX-7713 turn all whitespace into dashes and lowercase all filenames
 		*13.0.1beta1* FREEPBX-6140, FREEPBX-5753, FREEPBX-5725, FREEPBX-3306, FREEPBX-3187, FREEPBX-7282, FREEPBX-8146, FREEPBX-8282, FREEPBX-9727
 		*12.0.8* FREEPBX-9148 Recordings doesnt get the directory name from the config
 		*12.0.7* FREEPBX-9133 resolve missing recordings, hide dot files in a different location
