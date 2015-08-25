@@ -61,9 +61,11 @@
 														<option value="<?php echo $code?>" <?php echo ($code == $default) ? 'SELECTED': ''?>><?php echo $lang?></option>
 													<?php } ?>
 												</select>
-												<div id="file-alert" class="alert alert-info" role="alert"><?php echo sprintf(_("No files for %s"),"<span class='language'>".$langs[$default]."</span>")?></div>
+												<div id="file-alert" class="alert alert-info <?php echo !empty($data['soundlist']) ? "hidden" : ""?>" role="alert"><?php echo sprintf(_("No files for %s"),"<span class='language'>".$langs[$default]."</span>")?></div>
 												<ul id="files">
-
+													<?php if(isset($data['soundlist'])) { foreach($data['soundlist'] as $item) {?>
+														<li id="file-<?php echo $item['name']?>" class="file" data-filenames='<?php echo json_encode($item['filenames'])?>' data-name="<?php echo $item['name']?>" data-system="<?php echo $item['system'] ? 1 : 0?>" data-languages="<?php echo json_encode($item['languages'])?>"><?php echo $item['name']?><i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>
+													<?php } } ?>
 												</ul>
 												<div id="missing-file-alert" class="alert alert-warning hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red file above to replace it with a file below")?></div>
 											</div>
@@ -304,4 +306,6 @@
 		</div>
 	</div>
 </div>
-<script>var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>
+<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>
+<div id="playbacks">
+</div>

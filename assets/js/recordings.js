@@ -356,7 +356,8 @@ $("#dial-phone").click(function() {
 										}
 									}
 									$(this).off("click");
-									saveExtensionRecording(num, file, "replacement-" + Date.now(), function() {
+									saveExtensionRecording(num, file, value, function() {
+										$("#dialer-save").removeClass("in").addClass("hidden");
 										$("#dialer").addClass("in").removeClass("hidden");
 									});
 								});
@@ -400,7 +401,7 @@ $('#fileupload').fileupload({
 				return false;
 			}
 			var s = v.name.replace(/\.[^/.]+$/, "")
-			if(sysRecConflict(s)) {
+			if(!$(".replace").length && sysRecConflict(s)) {
 				if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this language. Is that ok?"),v.name))) {
 					submit = false;
 					return false;
@@ -468,12 +469,14 @@ $("#systemrecording").on('change', function(evt, params) {
 $(document).on("click", "#files .delete-file", function() {
 	var $this = this,
 			parent = $($this).parents(".file"),
-			files = parent.data("filenames")
+			name = parent.data("name"),
+			files = parent.data("filenames");
 	$($this).addClass("deleting");
 	//dont delete already existing files
 	if(parent.data("system") == 1) {
 		parent.fadeOut("slow", function() {
 			$(this).remove();
+			$("#jplayer-file-"+name).remove();
 			if(!$("#files .file").length) {
 				$("#file-alert").removeClass("hidden");
 			}
@@ -483,6 +486,7 @@ $(document).on("click", "#files .delete-file", function() {
 			if(data.status) {
 				parent.fadeOut("slow", function() {
 					$(this).remove();
+					$("#jplayer-file-"+name).remove();
 					if(!$("#files .file").length) {
 						$("#file-alert").removeClass("hidden");
 					}
@@ -493,10 +497,6 @@ $(document).on("click", "#files .delete-file", function() {
 			}
 		});
 	}
-});
-
-$(document).on("click", "#files .play", function() {
-	$(this).toggleClass("active");
 });
 
 $(document).on("click", "#files li", function(event) {
@@ -530,6 +530,8 @@ function addFile(name, filenames, languages, exists, system) {
 	if($(".replace").length) {
 		var rfilenames = $(".replace").data("filenames"),
 				rlanguages = $(".replace").data("languages")
+				name = $(".replace").data("name"),
+				player = $("#jplayer-file-"+name);
 
 		//add language to array if it doesnt already exist
 		if(rlanguages.indexOf(language) === -1) {
@@ -549,6 +551,7 @@ function addFile(name, filenames, languages, exists, system) {
 
 		//remove the marking classes
 		$(".replace").removeClass("replace missing");
+		player.jPlayer( "clearMedia");
 	} else {
 		if(!exists) {
 			$("#missing-file-alert").removeClass("hidden");
@@ -556,8 +559,66 @@ function addFile(name, filenames, languages, exists, system) {
 		var exists = exists ? "" : "missing ",
 				system = system ? 1 : 0;
 		$("#file-alert").addClass("hidden");
-		$("#files").append('<li class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#files").append('<li id="file-'+name+'" class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play hidden"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#playbacks").append('<div id="jplayer-file-'+name+'" class="jp-jplayer"></div>');
+		$("#jplayer-file-"+name).jPlayer({
+			ready: function(event) {
+				$("#file-"+name+" .play").removeClass("hidden");
+			},
+			cssSelectorAncestor: "#jp_container_122222",
+			swfPath: "http://jplayer.org/latest/dist/jplayer",
+			supplied: supportedHTML5
+		});
 	}
+	$("#file-"+name+" .play").off("click");
+	$("#file-"+name+" .play").click(function() {
+		var player = $("#jplayer-file-"+name),
+				self = $(this);
+		if(!player.data("jPlayer").status.srcSet) {
+			$(this).toggleClass("load fa-spin");
+			$.ajax({
+				type: 'POST',
+				url: "ajax.php",
+				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+name).data("filenames"), system: $("#file-"+name).data("system"), language: language},
+				dataType: 'json',
+				timeout: 30000,
+				success: function(data) {
+					if(data.status) {
+						player.on($.jPlayer.event.error, function(event) {
+							console.log(event);
+						});
+						player.jPlayer( "setMedia", data.files)
+						player.one($.jPlayer.event.canplay, function(event) {
+							player.jPlayer("play");
+							self.removeClass("load fa-spin");
+						});
+						player.on($.jPlayer.event.play, function(event) {
+							player.jPlayer("pauseOthers", 0);
+							self.data("playing", true);
+							self.addClass("active");
+						});
+						player.on($.jPlayer.event.pause, function(event) {
+							self.data("playing", false);
+							self.removeClass("active");
+						});
+						player.on($.jPlayer.event.ended, function(event) {
+							self.data("playing", false);
+							self.removeClass("active");
+						});
+					}
+				},
+				error: function(data) {
+
+				},
+			});
+		} else {
+			if(self.data("playing")) {
+				player.jPlayer("pause");
+			} else {
+				player.jPlayer("play",0);
+			}
+		}
+	});
 }
 
 /**
@@ -593,6 +654,8 @@ function convertList() {
  * Generate file list for language
  */
 function generateList() {
+	$.jPlayer.pause();
+	$("#playbacks").html("");
 	$("#missing-file-alert").addClass("hidden");
 	$("#files").html("");
 	if(typeof soundList !== "undefined") {

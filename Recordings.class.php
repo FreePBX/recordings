@@ -78,7 +78,8 @@ class Recordings implements BMO {
 				$langs = $this->FreePBX->Soundlang->getLanguages();
 				$default = $this->FreePBX->Soundlang->getLanguage();
 				$sysrecs = $this->getSystemRecordings();
-				$html = load_view(__DIR__."/views/form.php",array("data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$supportedHTML5 = $media->getSupportedHTML5Formats();
+				$html = load_view(__DIR__."/views/form.php",array("supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -100,14 +101,48 @@ class Recordings implements BMO {
 			case "record":
 			case "upload":
 			case "grid":
+			case "gethtml5":
+			case "playback":
+			case "download":
 				return true;
 			break;
 		}
 		return false;
 	}
 
+	public function ajaxCustomHandler() {
+		switch($_REQUEST['command']) {
+			case "playback":
+			case "download":
+				$media = $this->FreePBX->Media();
+				$media->getHTML5File($_REQUEST['file']);
+			break;
+		}
+	}
+
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "gethtml5":
+				$media = $this->FreePBX->Media();
+				$lang = basename($_POST['language']);
+				$info = pathinfo($_POST['filenames'][$lang]);
+				if(empty($info['extension'])) {
+					$file = basename($_POST['filenames'][$lang]);
+					$status = $this->fileStatus($file);
+					if(!empty($status[$lang])) {
+						$filename = $this->temp . "/" . $lang . "/" . reset($status[$lang]);
+					}
+				} else {
+					$filename = $this->temp . "/" . $_POST['filenames'][$lang];
+				}
+				$media->load($filename);
+				$files = $media->generateHTML5();
+				$final = array();
+				foreach($files as $format => $name) {
+					$final[$format] = "ajax.php?module=recordings&command=playback&file=".$name;
+				}
+				return array("status" => true, "files" => $final);
+			break;
 			case "save":
 				set_time_limit(0);
 				//Save the FINAL recording. Do all post processing work here as well
