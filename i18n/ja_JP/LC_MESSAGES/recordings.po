@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-25 18:41-0700\n"
+"POT-Creation-Date: 2015-08-26 12:10-0700\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -193,7 +193,7 @@ msgstr "キーコードとのリンク"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:144
+#: functions.inc.php:150
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "%sモジュールから自動作成された音声ファイルが見つかりません"
@@ -227,11 +227,11 @@ msgstr ""
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:205
+#: functions.inc.php:211
 msgid "No long description available"
 msgstr "詳細説明がありません"
 
-#: functions.inc.php:154
+#: functions.inc.php:160
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "モジュール %s 内に録音が発見できません"
@@ -300,7 +300,7 @@ msgstr ""
 msgid "System Recordings"
 msgstr "システム録音"
 
-#: functions.inc.php:155
+#: functions.inc.php:161
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
