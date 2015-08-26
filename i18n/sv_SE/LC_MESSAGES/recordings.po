@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-25 10:50-0700\n"
+"POT-Creation-Date: 2015-08-25 18:41-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -30,19 +30,11 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: page.recordings.php:171
-msgid " dial"
-msgstr " slå"
-
-#: page.recordings.php:51 page.recordings.php:52
-msgid "** MISSING FEATURE CODE **"
-msgstr "** FUKTIONSKOD FATTAS ***"
-
-#: Recordings.class.php:291
+#: Recordings.class.php:301
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:355
+#: assets/js/recordings.js:358
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -56,10 +48,6 @@ msgstr ""
 msgid "Add New System Recording"
 msgstr ""
 
-#: page.recordings.php:167 page.recordings.php:419
-msgid "Add Recording"
-msgstr "Lägg till inspelning"
-
 #: views/form.php:222
 msgid "Add System Recording"
 msgstr ""
@@ -70,59 +58,37 @@ msgid ""
 "previously"
 msgstr ""
 
-#: page.recordings.php:213
-msgid "After recording or uploading,"
-msgstr "Efter inspelning eller uppladdning,"
-
-#: page.recordings.php:185
-msgid ""
-"Alternatively, upload a recording in any supported asterisk format. Note "
-"that if you're using .wav, (eg, recorded with Microsoft Recorder) the file "
-"<b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
-msgstr ""
-"Alternativt, ladda upp en inspelning i något format som stöds av Asterisk. "
-"Om du använder en .wav-fil (inspelad via Microsoft Recorder) så <b>måste</b> "
-"filen vara PCM-kodad, 16 bitar vid 8000Hz"
-
-#: assets/js/recordings.js:61
+#: assets/js/recordings.js:65
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:151
+#: assets/js/recordings.js:154
 msgid "At least one codec must be checked"
 msgstr ""
-
-#: page.recordings.php:420 page.recordings.php:496
-msgid "Built-in Recordings"
-msgstr "Inbyggda inspelningar"
 
 #: views/form.php:193
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:374
+#: assets/js/recordings.js:377
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:295
+#: Recordings.class.php:305
 msgid "Can Not Find Uploaded Files"
 msgstr ""
-
-#: page.recordings.php:281
-msgid "Change Name"
-msgstr "Byt namn"
 
 #: install.php:7
 msgid "Check Recording"
 msgstr "Kontrollera inspelning"
 
-#: views/form.php:294
+#: views/form.php:342
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
 
-#: page.recordings.php:331
+#: views/form.php:294
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -130,27 +96,19 @@ msgstr ""
 "Aktivera denna ruta för att valfritt skapa en funktionskod som tillåter dig "
 "att ändra denna inspelning direkt."
 
-#: page.recordings.php:227
-msgid "Click \"SAVE\" when you are satisfied with your recording"
-msgstr "Klicka på \"Spara\" när du är nöjd med din inspelning"
-
-#: page.recordings.php:560
-msgid "Click here to play this recording"
-msgstr "Klicka här för att spela upp denna inspelning"
-
 #: views/form.php:250
 msgid "Combine Files"
 msgstr ""
 
-#: views/form.php:278
+#: views/form.php:326
 msgid "Convert To"
 msgstr ""
 
-#: Recordings.class.php:52 page.recordings.php:576
+#: Recordings.class.php:53
 msgid "Delete"
 msgstr "Ta bort"
 
-#: assets/js/recordings.js:198
+#: assets/js/recordings.js:201
 msgid "Delete Recording"
 msgstr ""
 
@@ -162,22 +120,6 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: page.recordings.php:285
-msgid "Descriptive Name"
-msgstr "Beskrivning"
-
-#: page.recordings.php:345
-msgid "Direct Access Feature Code Not Available"
-msgstr "Funktionskoden för direktåtkomst är inte tillgänglig"
-
-#: page.recordings.php:345
-msgid ""
-"Direct Access Feature Codes for recordings are not available for built in "
-"system recordings or compound recordings made of multiple individual ones."
-msgstr ""
-"Funktionskoder för inspelningar är inte tillgängliga för de inbyggda "
-"systeminspelningarna eller för röster som består av flera individuella filer."
-
 #: views/grid.php:23
 msgid "Displayname"
 msgstr ""
@@ -186,23 +128,15 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
-#: page.recordings.php:245
-msgid "Edit Recording"
-msgstr "Redigera inspelning"
-
 #: views/form.php:191
 msgid "Enter Extension"
 msgstr ""
 
-#: page.recordings.php:76
-msgid "Failed to create"
-msgstr "Kunde inte skapa"
-
-#: Recordings.class.php:288
+#: Recordings.class.php:298
 msgid "Failed to write file to disk"
 msgstr ""
 
-#: page.recordings.php:338
+#: views/form.php:306
 msgid "Feature Code Password"
 msgstr "Lösenord för funktionskod"
 
@@ -211,17 +145,9 @@ msgstr "Lösenord för funktionskod"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:239
+#: Recordings.class.php:249
 msgid "File does not exist"
 msgstr ""
-
-#: page.recordings.php:354
-msgid "Files"
-msgstr "Filer"
-
-#: page.recordings.php:180 page.recordings.php:509
-msgid "Go"
-msgstr "Utför"
 
 #: views/form.php:146
 msgid "Hit the red record button to start recording from your browser"
@@ -230,18 +156,6 @@ msgstr ""
 #: views/grid.php:22
 msgid "ID"
 msgstr ""
-
-#: page.recordings.php:179
-msgid ""
-"If you wish to make and verify recordings from your phone, please enter your "
-"extension number here:"
-msgstr ""
-"Om du vill spela in och lyssna på dina inspelningar via telefon, skriv in "
-"ditt anknytningnummer här."
-
-#: page.recordings.php:214
-msgid "If you wish to re-record your message, dial"
-msgstr "Om du vill spela över din inspelning, slå"
 
 #: views/form.php:265
 msgid ""
@@ -252,62 +166,36 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: page.recordings.php:331
+#: views/form.php:278
 msgid "Link to Feature Code"
 msgstr "Länk till funktionskod"
 
-#: views/form.php:306
+#: views/form.php:354
 msgid "List Recordings"
 msgstr ""
 
-#: page.recordings.php:103
-msgid "Make sure Asterisk is not running as root "
-msgstr "Kontrollera att Aserisk inte körs som root"
-
-#: page.recordings.php:94
-msgid "Make sure you have entered a proper name"
-msgstr "Kontrollera att det är ett giltigt namn"
-
-#: functions.inc.php:160
+#: functions.inc.php:144
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
 
-#: Recordings.class.php:285
+#: Recordings.class.php:295
 msgid "Missing a temporary folder"
 msgstr ""
-
-#: page.recordings.php:573
-msgid "Move Down"
-msgstr "Flytta ner"
-
-#: page.recordings.php:567
-msgid "Move Up"
-msgstr "Flytta upp"
 
 #: views/form.php:15
 msgid "Name"
 msgstr ""
 
-#: page.recordings.php:221
-msgid "Name this Recording"
-msgstr "Namnge denna inspelning"
-
 #: views/form.php:199
 msgid "Name this file"
 msgstr ""
 
-#: views/form.php:258
+#: views/form.php:258 views/form.php:286
 msgid "No"
 msgstr ""
 
-#: popup.php:49
-#, php-format
-msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
-msgstr ""
-"Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%s"
-
-#: Recordings.class.php:282
+#: Recordings.class.php:292
 msgid "No file was uploaded"
 msgstr ""
 
@@ -316,29 +204,29 @@ msgstr ""
 msgid "No files for %s"
 msgstr ""
 
-#: assets/js/recordings.js:28
+#: assets/js/recordings.js:29
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:221
+#: functions.inc.php:205
 msgid "No long description available"
 msgstr "Ingen beskrivning tillgänglig"
 
-#: functions.inc.php:170
+#: functions.inc.php:154
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Inspelningen finns inte i modul %s"
 
-#: page.recordings.php:269
-msgid "Note, does not delete file from computer"
-msgstr "Detta tar inte bort filen från systemet"
+#: views/form.php:288 assets/js/recordings.js:693
+msgid "Not supported on compounded recordings"
+msgstr ""
 
-#: page.recordings.php:334
+#: views/form.php:288
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Valfri funktionskod %s"
 
-#: page.recordings.php:338
+#: views/form.php:314
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -346,17 +234,9 @@ msgstr ""
 "Valfritt lösenord som skyddar denna funktionskod från att oavsiktligt spelas "
 "över."
 
-#: page.recordings.php:473
-msgid "Please enter a valid Name for this System Recording"
-msgstr "Skriv in ett giltigt namn för denna systeminspelning"
-
-#: assets/js/recordings.js:343 assets/js/recordings.js:350
+#: assets/js/recordings.js:346 assets/js/recordings.js:353
 msgid "Please enter a valid name and save"
 msgstr ""
-
-#: page.recordings.php:190
-msgid "Please wait until the page reloads."
-msgstr "Vänta tills sidan laddats om."
 
 #: views/form.php:116
 msgid "Record In Browser"
@@ -370,29 +250,17 @@ msgstr ""
 msgid "Recordings"
 msgstr "Inspelningar"
 
-#: page.recordings.php:265
-msgid "Remove Recording"
-msgstr "Ta bort inspelning"
-
-#: Recordings.class.php:57
+#: Recordings.class.php:58
 msgid "Reset"
 msgstr ""
 
-#: page.recordings.php:229 page.recordings.php:366 views/form.php:201
+#: views/form.php:201
 msgid "Save"
 msgstr "Spara"
 
-#: install.php:6 assets/js/recordings.js:198
+#: install.php:6 assets/js/recordings.js:201
 msgid "Save Recording"
 msgstr "Spara inspelning"
-
-#: page.recordings.php:111
-msgid "Saved"
-msgstr "Sparad"
-
-#: page.recordings.php:497
-msgid "Select System Recording:"
-msgstr "Välj systeminspelning:"
 
 #: views/form.php:76
 msgid ""
@@ -401,48 +269,19 @@ msgid ""
 "combined into one single file with playback from top to bottom"
 msgstr ""
 
-#: page.recordings.php:172
-msgid "Start speaking at the tone. Press # when finished."
-msgstr "Börja tala efter tonen. Tryck # när du är klar."
-
-#: page.recordings.php:168
-msgid "Step 1: Record or upload"
-msgstr "Steg 1: Spela in eller ladda upp"
-
-#: page.recordings.php:217
-msgid "Step 2: Name"
-msgstr "Steg 2: Namn"
-
-#: page.recordings.php:212
-msgid "Step 2: Verify"
-msgstr "Steg 2: Kontrollera"
-
-#: page.recordings.php:215
-msgid "Step 3: Name"
-msgstr "Steg 3: Namn"
-
-#: Recordings.class.php:47
+#: Recordings.class.php:48
 msgid "Submit"
 msgstr ""
-
-#: page.recordings.php:203
-msgid "Successfully uploaded"
-msgstr "Uppladdningen lyckades"
 
 #: views/grid.php:24
 msgid "Supported Languages"
 msgstr ""
 
-#: page.recordings.php:111 page.recordings.php:143
-msgid "System Recording"
-msgstr "Systeminspelning"
-
-#: Recordings.class.php:210 page.recordings.php:166 page.recordings.php:244
-#: page.recordings.php:495
+#: Recordings.class.php:220
 msgid "System Recordings"
 msgstr "Systeminspelningar"
 
-#: functions.inc.php:171
+#: functions.inc.php:155
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -467,40 +306,19 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:276
+#: Recordings.class.php:286
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:273
+#: Recordings.class.php:283
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:279
+#: Recordings.class.php:289
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
-
-#: page.recordings.php:281
-msgid "This changes the short name, visible on the right, of this recording"
-msgstr "Detta ändrar det korta namnet som syns till höger"
-
-#: page.recordings.php:285
-msgid ""
-"This is displayed, as a hint, when selecting this recording in Queues, "
-"Digital Receptionist, etc"
-msgstr ""
-"Detta visas när du väljer denna inspelning i Köer, Digital receptionist etc"
-
-#: page.recordings.php:256
-msgid ""
-"This recording is being used in the following instances. You can not remove "
-"this recording while being used. To re-record, you can enable and use the "
-"feature code below if allowed."
-msgstr ""
-"Denna inspelning används. Du kan inte ta bort den medan den används. För att "
-"spela in igen, använd nedanstående funktionskod om du har tillåtelse till "
-"detta."
 
 #: views/form.php:172
 msgid ""
@@ -515,33 +333,21 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: page.recordings.php:131
-msgid "Unable to locate"
-msgstr "Kan inte hitta"
-
-#: Recordings.class.php:190
+#: Recordings.class.php:200
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:268
+#: Recordings.class.php:278
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:401
+#: assets/js/recordings.js:404
 msgid "Unsupported file type"
 msgstr ""
 
 #: views/form.php:149
 msgid "Update Required"
 msgstr ""
-
-#: page.recordings.php:143
-msgid "Updated"
-msgstr "Uppdaterad"
-
-#: page.recordings.php:190
-msgid "Upload"
-msgstr "Ladda upp"
 
 #: views/form.php:88
 msgid "Upload Recording"
@@ -554,19 +360,11 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: page.recordings.php:256
-msgid "Usage List"
-msgstr "Används i"
-
-#: page.recordings.php:171
-msgid "Using your phone,"
-msgstr "Använd din telefon,"
-
-#: views/form.php:256
+#: views/form.php:256 views/form.php:284
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:508
+#: assets/js/recordings.js:513
 msgid ""
 "You are entering replace mode. The next file you add will replace this one. "
 "Are you sure you want to do that?"
@@ -578,37 +376,189 @@ msgid ""
 "replace it with a file below"
 msgstr ""
 
-#: assets/js/recordings.js:18
+#: assets/js/recordings.js:19
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: page.recordings.php:99
-msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
-msgstr "[FEL] vid radering av temporär inspelning:"
+#~ msgid " dial"
+#~ msgstr " slå"
 
-#: page.recordings.php:90
-msgid "[ERROR] SAVING RECORDING:"
-msgstr "[FEL] vid sparande av inspelning:"
+#~ msgid "** MISSING FEATURE CODE **"
+#~ msgstr "** FUKTIONSKOD FATTAS ***"
 
-#: page.recordings.php:82
-msgid "[ERROR] The Recorded File Does Not exists:"
-msgstr "[FEL] Den inspelade filen finns inte:"
+#~ msgid "Add Recording"
+#~ msgstr "Lägg till inspelning"
 
-#: page.recordings.php:173
-msgid "and speak the message you wish to record. Press # when finished."
-msgstr "tala in ditt meddelande. Tryck # när du är klar."
+#~ msgid "After recording or uploading,"
+#~ msgstr "Efter inspelning eller uppladdning,"
 
-#: page.recordings.php:213
-msgid "dial"
-msgstr ""
+#~ msgid ""
+#~ "Alternatively, upload a recording in any supported asterisk format. Note "
+#~ "that if you're using .wav, (eg, recorded with Microsoft Recorder) the "
+#~ "file <b>must</b> be PCM Encoded, 16 Bits, at 8000Hz"
+#~ msgstr ""
+#~ "Alternativt, ladda upp en inspelning i något format som stöds av "
+#~ "Asterisk. Om du använder en .wav-fil (inspelad via Microsoft Recorder) så "
+#~ "<b>måste</b> filen vara PCM-kodad, 16 bitar vid 8000Hz"
 
-#: page.recordings.php:213
-msgid "to listen to your recording."
-msgstr "för att lyssna på din inspelning."
+#~ msgid "Built-in Recordings"
+#~ msgstr "Inbyggda inspelningar"
 
-#: page.recordings.php:131
-msgid "with a a valid suffix"
-msgstr "med en giltig ändelse"
+#~ msgid "Change Name"
+#~ msgstr "Byt namn"
+
+#~ msgid "Click \"SAVE\" when you are satisfied with your recording"
+#~ msgstr "Klicka på \"Spara\" när du är nöjd med din inspelning"
+
+#~ msgid "Click here to play this recording"
+#~ msgstr "Klicka här för att spela upp denna inspelning"
+
+#~ msgid "Descriptive Name"
+#~ msgstr "Beskrivning"
+
+#~ msgid "Direct Access Feature Code Not Available"
+#~ msgstr "Funktionskoden för direktåtkomst är inte tillgänglig"
+
+#~ msgid ""
+#~ "Direct Access Feature Codes for recordings are not available for built in "
+#~ "system recordings or compound recordings made of multiple individual ones."
+#~ msgstr ""
+#~ "Funktionskoder för inspelningar är inte tillgängliga för de inbyggda "
+#~ "systeminspelningarna eller för röster som består av flera individuella "
+#~ "filer."
+
+#~ msgid "Edit Recording"
+#~ msgstr "Redigera inspelning"
+
+#~ msgid "Failed to create"
+#~ msgstr "Kunde inte skapa"
+
+#~ msgid "Files"
+#~ msgstr "Filer"
+
+#~ msgid "Go"
+#~ msgstr "Utför"
+
+#~ msgid ""
+#~ "If you wish to make and verify recordings from your phone, please enter "
+#~ "your extension number here:"
+#~ msgstr ""
+#~ "Om du vill spela in och lyssna på dina inspelningar via telefon, skriv in "
+#~ "ditt anknytningnummer här."
+
+#~ msgid "If you wish to re-record your message, dial"
+#~ msgstr "Om du vill spela över din inspelning, slå"
+
+#~ msgid "Make sure Asterisk is not running as root "
+#~ msgstr "Kontrollera att Aserisk inte körs som root"
+
+#~ msgid "Make sure you have entered a proper name"
+#~ msgstr "Kontrollera att det är ett giltigt namn"
+
+#~ msgid "Move Down"
+#~ msgstr "Flytta ner"
+
+#~ msgid "Move Up"
+#~ msgstr "Flytta upp"
+
+#~ msgid "Name this Recording"
+#~ msgstr "Namnge denna inspelning"
+
+#~ msgid "No compatible wav, mp3 or gsm format found to play:<br /><br />%s"
+#~ msgstr ""
+#~ "Ingen kompatibel wav, mp3 eller gsm fil hittades för uppspelning:<br><br>%"
+#~ "s"
+
+#~ msgid "Note, does not delete file from computer"
+#~ msgstr "Detta tar inte bort filen från systemet"
+
+#~ msgid "Please enter a valid Name for this System Recording"
+#~ msgstr "Skriv in ett giltigt namn för denna systeminspelning"
+
+#~ msgid "Please wait until the page reloads."
+#~ msgstr "Vänta tills sidan laddats om."
+
+#~ msgid "Remove Recording"
+#~ msgstr "Ta bort inspelning"
+
+#~ msgid "Saved"
+#~ msgstr "Sparad"
+
+#~ msgid "Select System Recording:"
+#~ msgstr "Välj systeminspelning:"
+
+#~ msgid "Start speaking at the tone. Press # when finished."
+#~ msgstr "Börja tala efter tonen. Tryck # när du är klar."
+
+#~ msgid "Step 1: Record or upload"
+#~ msgstr "Steg 1: Spela in eller ladda upp"
+
+#~ msgid "Step 2: Name"
+#~ msgstr "Steg 2: Namn"
+
+#~ msgid "Step 2: Verify"
+#~ msgstr "Steg 2: Kontrollera"
+
+#~ msgid "Step 3: Name"
+#~ msgstr "Steg 3: Namn"
+
+#~ msgid "Successfully uploaded"
+#~ msgstr "Uppladdningen lyckades"
+
+#~ msgid "System Recording"
+#~ msgstr "Systeminspelning"
+
+#~ msgid "This changes the short name, visible on the right, of this recording"
+#~ msgstr "Detta ändrar det korta namnet som syns till höger"
+
+#~ msgid ""
+#~ "This is displayed, as a hint, when selecting this recording in Queues, "
+#~ "Digital Receptionist, etc"
+#~ msgstr ""
+#~ "Detta visas när du väljer denna inspelning i Köer, Digital receptionist "
+#~ "etc"
+
+#~ msgid ""
+#~ "This recording is being used in the following instances. You can not "
+#~ "remove this recording while being used. To re-record, you can enable and "
+#~ "use the feature code below if allowed."
+#~ msgstr ""
+#~ "Denna inspelning används. Du kan inte ta bort den medan den används. För "
+#~ "att spela in igen, använd nedanstående funktionskod om du har tillåtelse "
+#~ "till detta."
+
+#~ msgid "Unable to locate"
+#~ msgstr "Kan inte hitta"
+
+#~ msgid "Updated"
+#~ msgstr "Uppdaterad"
+
+#~ msgid "Upload"
+#~ msgstr "Ladda upp"
+
+#~ msgid "Usage List"
+#~ msgstr "Används i"
+
+#~ msgid "Using your phone,"
+#~ msgstr "Använd din telefon,"
+
+#~ msgid "[ERROR] REMOVING TEMPORARY RECORDING:"
+#~ msgstr "[FEL] vid radering av temporär inspelning:"
+
+#~ msgid "[ERROR] SAVING RECORDING:"
+#~ msgstr "[FEL] vid sparande av inspelning:"
+
+#~ msgid "[ERROR] The Recorded File Does Not exists:"
+#~ msgstr "[FEL] Den inspelade filen finns inte:"
+
+#~ msgid "and speak the message you wish to record. Press # when finished."
+#~ msgstr "tala in ditt meddelande. Tryck # när du är klar."
+
+#~ msgid "to listen to your recording."
+#~ msgstr "för att lyssna på din inspelning."
+
+#~ msgid "with a a valid suffix"
+#~ msgstr "med en giltig ändelse"
 
 #~ msgid "OK"
 #~ msgstr "OK"
