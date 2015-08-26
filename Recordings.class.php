@@ -214,7 +214,7 @@ class Recordings implements BMO {
 				$status = $astman->originate(array(
 					"Channel" => "Local/".$_POST['extension']."@from-internal",
 					"Exten" => "dorecord",
-					"Context" => "macro-systemrecording",
+					"Context" => "systemrecording-gui",
 					"Priority" => 1,
 					"Async" => "no",
 					"CallerID" => _("System Recordings"),

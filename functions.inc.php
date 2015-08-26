@@ -60,6 +60,12 @@ function recordings_get_config($engine) {
 			// since it really belongs here and not there
 			// also provides direct access to $recordings_save_path
 			// which removes a hard-coded value in the macro
+			$context = 'systemrecording-gui';
+			$exten = 'dorecord';
+
+			$ext->add($context, $exten, '', new ext_record('${RECFILE}.wav,,,k'));
+			$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
+			$ext->add($context, 'h', 'exit', new ext_hangup());
 
 			$context = 'macro-systemrecording';
 
