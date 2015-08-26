@@ -65,6 +65,7 @@ function recordings_get_config($engine) {
 
 			$ext->add($context, 's', '', new ext_gotoif('$["${ARG2}" = ""]','invalid'));
 			$ext->add($context, 's', '', new ext_setvar('RECFILE','${ARG2}'));
+			$ext->add($context, 's', '', new ext_setvar('LISTEN','docheck'));
 			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
 			$ext->add($context, 's', '', new ext_goto(1, '${ARG1}'));
 
@@ -73,17 +74,16 @@ function recordings_get_config($engine) {
 			// Delete all versions of the current sound file (does not consider languages though
 			// otherwise you might have some versions that are not re-recorded
 			//
+			$ext->add($context, $exten, '', new ext_setvar('TMPRECFILE','${RECFILE}-TMP'));
 			$ext->add($context, $exten, '', new ext_background('say-temp-msg-prs-pound,,${CHANNEL(language)}'));
-			$ext->add($context, $exten, '', new ext_gotoif('$["${ARG2}" = ""]','skipremove'));
-			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
-			$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
-			$ext->add($context, $exten, '', new ext_wait(1));
+			$ext->add($context, $exten, '', new ext_record('${TMPRECFILE}.wav,,,k'));
+			$ext->add($context, $exten, '', new ext_setvar('LISTEN','dochecknolanguage'));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
-			$exten = 'dorecordoverwrite';
-			$ext->add($context, $exten, '', new ext_gotoif('$["${ARG2}" = ""]','skipremove'));
-			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
-			$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
+			$exten = 'dochecknolanguage';
+
+			$ext->add($context, $exten, '', new ext_playback('beep'));
+			$ext->add($context, $exten, 'dc_start', new ext_background('${TMPRECFILE},m,,macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
@@ -98,20 +98,22 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&astcc-followed-by-pound,m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
-			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', 'docheck,2'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', '${LISTEN},2'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x2"]', 'doaccept,2'));
 			$ext->add($context, $exten, '', new ext_goto(1));
 
 			$exten = 'doaccept';
 			$ext->add($context, $exten, '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
-			$ext->add($context, $exten, '', new ext_playback('auth-thankyou'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
+			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${CHANNEL(language)}/${RECFILE}.wav'));
+			$ext->add($context, $exten, 'exit', new ext_playback('auth-thankyou'));
 			$ext->add($context, $exten, '', new ext_hangup());
 
 			$exten = 'invalid';
 			$ext->add($context, $exten, '', new ext_playback('pm-invalid-option'));
 			$ext->add($context, $exten, '', new ext_hangup());
 
-			$ext->add($context, '1', '', new ext_goto('dc_start', 'docheck'));
+			$ext->add($context, '1', '', new ext_goto('dc_start', '${LISTEN}'));
 			$ext->add($context, '*', '', new ext_goto(1, 'dorecord'));
 
 			$ext->add($context, 't', '', new ext_playback('goodbye'));
@@ -121,7 +123,9 @@ function recordings_get_config($engine) {
 			$ext->add($context, 'i', '', new ext_goto(1, 'confmenu'));
 
 			$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
-			$ext->add($context, 'h', '', new ext_hangup());
+			$ext->add($context, 'h', '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
+			$ext->add($context, 'h', '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${CHANNEL(language)}/${RECFILE}.wav'));
+			$ext->add($context, 'h', 'exit', new ext_hangup());
 
 		break;
 	}
