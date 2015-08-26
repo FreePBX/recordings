@@ -8,7 +8,8 @@ var recording = false, //if in browser recording is happening
 
 var temp;
 generateList();
-$("#recordings-frm").submit(function() {
+$("#recordings-frm").submit(function(e) {
+	e.preventDefault();
 	var data = {
 		module: "recordings",
 		command: "save"
@@ -39,6 +40,9 @@ $("#recordings-frm").submit(function() {
 		data.codecs.push($(this).val());
 	});
 
+	data.fcode = $("#fcode-link-yes1").length && $("#fcode-link-yes1").is(":checked") ? 1 : 0;
+	data.fcode_pass = $("#fcode_pass").length ? $("#fcode_pass").val() : "";
+
 	$("#action-buttons input").prop("disabled",true);
 	temp = data;
 
@@ -62,7 +66,6 @@ $("#recordings-frm").submit(function() {
 			$("#action-buttons input").prop("disabled", false);
 		},
 	});
-	return false;
 });
 //check if this browser supports WebRTC
 //TODO: This eventually needs to check to make sure we are in HTTPS mode
@@ -481,6 +484,7 @@ $(document).on("click", "#files .delete-file", function() {
 			if(!$("#files .file").length) {
 				$("#file-alert").removeClass("hidden");
 			}
+			checkList();
 		})
 	} else {
 		$.post( "ajax.php", {module: "recordings", command: "deleterecording", filenames: JSON.stringify(files)}, function( data ) {
@@ -491,6 +495,7 @@ $(document).on("click", "#files .delete-file", function() {
 					if(!$("#files .file").length) {
 						$("#file-alert").removeClass("hidden");
 					}
+					checkList();
 				})
 			} else {
 				alert(data.message);
@@ -620,6 +625,7 @@ function addFile(name, filenames, languages, exists, system) {
 			}
 		}
 	});
+	checkList();
 }
 
 /**
@@ -671,6 +677,20 @@ function generateList() {
 		}
 	} else {
 		$("#file-alert").removeClass("hidden");
+	}
+}
+
+function checkList() {
+	var count = 0;
+	$("#files li").each(function() {
+		count++;
+	});
+	if(count === 1) {
+		$(".fcode-item").prop("disabled", false);
+		$("#fcode-message").text($("#fcode-message").data("message"));
+	} else {
+		$(".fcode-item").prop("disabled", true);
+		$("#fcode-message").text(_("Not supported on compounded recordings"));
 	}
 }
 

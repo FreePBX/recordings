@@ -275,6 +275,54 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-3">
+												<label class="control-label" for="fcode-link"><?php echo _("Link to Feature Code")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-link"></i>
+											</div>
+											<div class="col-md-9">
+												<span class="radioset">
+													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo ($data['fcode']) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<label for="fcode-link-yes1"><?php echo _("Yes")?></label>
+													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo !($data['fcode']) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<label for="fcode-link-no1"><?php echo _("No")?></label>
+												</span>
+												<strong><span id="fcode-message" data-message="<?php echo sprintf(_("Optional Feature Code %s"),$data['rec_code'])?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),$data['rec_code']) : _("Not supported on compounded recordings")?></span></strong>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<span id="fcode-link-help" class="help-block fpbx-help-block"><?php echo _("Check this box to create an options feature code that will allow this recording to be changed directly.")?></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
+												<label class="control-label" for="fcode-password"><?php echo _("Feature Code Password")?></label>
+												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-password"></i>
+											</div>
+											<div class="col-md-9"><input name="fcode_pass" id="fcode_pass" class="form-control fcode-item" value="<?php echo isset($data['fcode_pass']) ? $data['fcode_pass'] : ""?>" <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>></div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-12">
+											<span id="fcode-password-help" class="help-block fpbx-help-block"><?php echo _("Optional password to protect access to this feature code which allows a user to re-record it.")?></span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="element-container">
+							<div class="row">
+								<div class="col-md-12">
+									<div class="row">
+										<div class="form-group">
+											<div class="col-md-3">
 												<label class="control-label" for="convert"><?php echo _("Convert To")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
 											</div>

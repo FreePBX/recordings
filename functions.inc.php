@@ -24,34 +24,10 @@ function recordings_get_config($engine) {
 
 	switch($engine) {
 		case "asterisk":
-			// FeatureCodes for save / check
-			$fcc = new featurecode($modulename, 'record_save');
-			$fc_save = $fcc->getCodeActive();
-			unset($fcc);
-
-			$fcc = new featurecode($modulename, 'record_check');
-			$fc_check = $fcc->getCodeActive();
-			unset($fcc);
-
-			if ($fc_save != '' || $fc_check != '') {
-				$ext->addInclude('from-internal-additional', 'app-recordings'); // Add the include from from-internal
-
-				if ($fc_save != '') {
-					$ext->add($appcontext, $fc_save, '', new ext_macro('user-callerid'));
-					$ext->add($appcontext, $fc_save, '', new ext_wait('2'));
-					$ext->add($appcontext, $fc_save, '', new ext_macro('systemrecording', 'dorecord'));
-				}
-
-				if ($fc_check != '') {
-					$ext->add($appcontext, $fc_check, '', new ext_macro('user-callerid'));
-					$ext->add($appcontext, $fc_check, '', new ext_wait('2'));
-					$ext->add($appcontext, $fc_check, '', new ext_macro('systemrecording', 'docheck'));
-				}
-			}
-
 			// Now generate the Feature Codes to edit recordings
 			//
 			$recordings = recordings_list();
+			$ext->addInclude('from-internal-additional', 'app-recordings'); // Add the include from from-internal
 			foreach ($recordings as $item) {
 
 				// Get the feature code, and do a sanity check if it is not suppose to be active and delete it
@@ -87,7 +63,8 @@ function recordings_get_config($engine) {
 
 			$context = 'macro-systemrecording';
 
-			$ext->add($context, 's', '', new ext_setvar('RECFILE','${IF($["${ARG2}" = ""]?'.$recordings_save_path.'${AMPUSER}-ivrrecording:${ARG2})}'));
+			$ext->add($context, 's', '', new ext_gotoif('$["${ARG2}" = ""]','invalid'));
+			$ext->add($context, 's', '', new ext_setvar('RECFILE','${ARG2}'));
 			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
 			$ext->add($context, 's', '', new ext_goto(1, '${ARG1}'));
 
@@ -96,41 +73,43 @@ function recordings_get_config($engine) {
 			// Delete all versions of the current sound file (does not consider languages though
 			// otherwise you might have some versions that are not re-recorded
 			//
-			// If we get here from *77 then we don't have ARG2, so just skip the remove, otherwise we have two paths
+			$ext->add($context, $exten, '', new ext_background('say-temp-msg-prs-pound,,${CHANNEL(language)}'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["${ARG2}" = ""]','skipremove'));
 			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
-			if ($ast_ge_16) {
-				// Added in Asterisk 1.6: "If the user hangs up during a recording, all data is lost".
-				// Third option - k: Keep recorded file upon hangup.
-				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
-				$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
-			} else {
-				$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav'));
-			}
+			$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
+			$ext->add($context, $exten, '', new ext_wait(1));
+			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
+
+			$exten = 'dorecordoverwrite';
+			$ext->add($context, $exten, '', new ext_gotoif('$["${ARG2}" = ""]','skipremove'));
+			$ext->add($context, $exten, '', new ext_system('rm ${ASTVARLIBDIR}/sounds/${RECFILE}.*'));
+			$ext->add($context, $exten, 'skipremove', new ext_record('${RECFILE}.wav,,,k'));
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'docheck';
 
 			$ext->add($context, $exten, '', new ext_playback('beep'));
-			if ($ast_ge_14) {
-				$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},macro-systemrecording'));
-			} else {
-				$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${LANGUAGE},macro-systemrecording'));
-			}
+			$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'confmenu';
-			if ($ast_ge_14) {
-				$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-rerecord-it&press-star&astcc-followed-by-pound,m,${CHANNEL(language)},macro-systemrecording'));
-			} else {
-				$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-rerecord-it&press-star&astcc-followed-by-pound,m,${LANGUAGE},macro-systemrecording'));
-			}
+			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&astcc-followed-by-pound,m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', 'docheck,2'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x2"]', 'doaccept,2'));
 			$ext->add($context, $exten, '', new ext_goto(1));
+
+			$exten = 'doaccept';
+			$ext->add($context, $exten, '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
+			$ext->add($context, $exten, '', new ext_playback('auth-thankyou'));
+			$ext->add($context, $exten, '', new ext_hangup());
+
+			$exten = 'invalid';
+			$ext->add($context, $exten, '', new ext_playback('pm-invalid-option'));
+			$ext->add($context, $exten, '', new ext_hangup());
 
 			$ext->add($context, '1', '', new ext_goto('dc_start', 'docheck'));
 			$ext->add($context, '*', '', new ext_goto(1, 'dorecord'));
@@ -141,6 +120,7 @@ function recordings_get_config($engine) {
 			$ext->add($context, 'i', '', new ext_playback('pm-invalid-option'));
 			$ext->add($context, 'i', '', new ext_goto(1, 'confmenu'));
 
+			$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			$ext->add($context, 'h', '', new ext_hangup());
 
 		break;

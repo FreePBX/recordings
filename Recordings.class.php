@@ -6,6 +6,7 @@ class Recordings implements BMO {
 	private $full_list = null;
 	private $filter_list = array();
 	private $temp;
+	private $fcbase = "*29";
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -70,6 +71,9 @@ class Recordings implements BMO {
 		switch($action) {
 			case "edit":
 				$data = $this->getRecordingById($_REQUEST['id']);
+				$fcc = new \featurecode("recordings", 'edit-recording-'.$_REQUEST['id']);
+				$rec_code = $fcc->getCode();
+				$data['rec_code'] = ($rec_code != '') ? $rec_code : $this->fcbase.$_REQUEST['id'];
 			case "add":
 				$data = isset($data) ? $data : array();
 				$supported = $media->getSupportedFormats();
@@ -161,16 +165,22 @@ class Recordings implements BMO {
 								continue;
 							}
 							try {
-								$media->load($this->temp."/".$file);
+								if($list['system']) {
+									$status = $this->fileStatus($list['name']);
+									$file = $lang."/".reset($status[$lang]);
+									$media->load($this->temp."/".$file);
+								} else {
+									$media->load($this->temp."/".$file);
+								}
 								$media->convert($this->temp."/".$lang."/".$list['name'].".".$codec);
 							} catch(\Exception $e) {
-								$errors[] = $e->getMessage();
+								$errors[] = $e->getMessage()." [".$this->temp."/".$file.".".$codec."]";
 							}
 						}
 					}
 				}
 				if($data['id'] == "0" || !empty($data['id'])) {
-					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback));
+					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
 				} else {
 					$this->addRecording($data['name'],$data['description'],implode("&",$playback));
 				}
@@ -207,8 +217,8 @@ class Recordings implements BMO {
 					"Context" => "macro-systemrecording",
 					"Priority" => 1,
 					"Async" => "no",
-					"CallerID" => _("System Recordings") . " <*77>",
-					"Variable" => "RECFILE=".$_POST['filename']
+					"CallerID" => _("System Recordings"),
+					"Variable" => "RECFILE=".$_POST['filename'].",AUTOMATED=TRUE"
 				));
 				if($status['Response'] == "Success") {
 					return array("status" => true);
@@ -301,18 +311,37 @@ class Recordings implements BMO {
 		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+		needreload();
 	}
 
-	public function updateRecording($id,$name,$description,$files) {
-		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ? WHERE id = ?";
+	public function updateRecording($id,$name,$description,$files,$fcode=0,$fcode_pass='') {
+		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ?, fcode = ?, fcode_pass = ? WHERE id = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($id, $name, $description, $files));
+		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $id));
+		if ($fcode != 1) {
+			// delete the feature code if it existed
+			//
+			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
+			$fcc->delete();
+			unset($fcc);
+		} else {
+			// Add the feature code if it is needed
+			//
+			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
+			$fcc->setDescription("Edit Recording: $name");
+			$fcc->setDefault('*29'.$id);
+			$fcc->setProvideDest();
+			$fcc->update();
+			unset($fcc);
+		}
+		needreload();
 	}
 
 	public function delRecording($id) {
 		$sql = "DELETE FROM recordings WHERE id = ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
+		needreload();
 	}
 
 	public function getRecordingsById($id) {
