@@ -55,9 +55,8 @@ foreach($recordings as $recording) {
 	foreach($files as $file) {
 		//move all custom files first
 		if(preg_match("/^custom\/(.*)/",$file,$matches)) {
-			foreach(glob($dir."/".$file."*") as $f) {
-				$basename = basename($f);
-				rename($f,$dir."/en/".$basename);
+			foreach(glob($dir."/".$matches[1]."*") as $f) {
+				rename($f,$dir."/en/".$matches[1]);
 			}
 			$filenames[] = $matches[1];
 		} elseif(preg_match("/^\w{2}\_\w{2}|\w{2}\//",$file)) {

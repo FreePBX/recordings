@@ -185,7 +185,7 @@ $(".jp-play").click(function() {
  */
 $("#record").click(function() {
 	var counter = $("#jp_container_1 .jp-duration"),
-			title = $("#jp_container_1 .jp-title")
+			title = $("#jp_container_1 .jp-title"),
 			player = $("#jquery_jplayer_1"),
 			controls = $(this).parents(".jp-controls"),
 			recorderContainer = $("#browser-recorder"),
@@ -222,10 +222,24 @@ $("#record").click(function() {
 				input.focus();
 				//dont allow navigating away until they have named this
 				input.blur(function(event) {
-					if(event.relatedTarget == null || event.relatedTarget.id != "save-recorder") {
+					if(event.relatedTarget === null || (event.relatedTarget.id != "save-recorder" && event.relatedTarget.id != "cancel-recorder")) {
 						alert(_("Please enter a valid name and save"));
 						$(this).focus();
 					}
+				});
+				$("#cancel-recorder").off("click");
+				$("#cancel-recorder").on("click", function() {
+					if(!confirm(_("Are you sure you wish to discard this recording?"))) {
+						return;
+					}
+					$("#jquery_jplayer_1").jPlayer( "clearMedia" );
+					$("#browser-recorder-save").addClass("hidden").removeClass("in");
+					$("#browser-recorder").addClass("in").removeClass("hidden");
+					$("#save-recorder-input").val("");
+					$("#save-recorder-input").prop("disabled", false);
+					$("#save-recorder").text(_("Save!"));
+					$("#save-recorder").prop("disabled", false);
+					title.html(_("Hit the red record button to start recording from your browser"));
 				});
 				$("#save-recorder").off("click");
 				$("#save-recorder").on("click", function() {
@@ -245,6 +259,7 @@ $("#record").click(function() {
 					$(this).prop("disabled", true);
 					title.text(_("Uploading..."));
 					saveBrowserRecording(value, function(data) {
+						$("#jquery_jplayer_1").jPlayer( "clearMedia" );
 						$("#browser-recorder-save").addClass("hidden").removeClass("in");
 						$("#browser-recorder").addClass("in").removeClass("hidden");
 						$("#save-recorder-input").val("");
@@ -342,10 +357,22 @@ $("#dial-phone").click(function() {
 								$("#dialer-save").addClass("in").removeClass("hidden");
 								nameInput.focus();
 								nameInput.blur(function(event) {
-									if(event.relatedTarget == null || event.relatedTarget.id != "save-phone") {
+									if(event.relatedTarget === null || (event.relatedTarget.id != "save-phone" && event.relatedTarget.id != "cancel-phone")) {
 										alert(_("Please enter a valid name and save"));
 										$(this).focus();
 									}
+								});
+								$("#cancel-phone").off("click");
+								$("#cancel-phone").on("click", function() {
+									if(!confirm(_("Are you sure you wish to discard this recordings?"))) {
+										return;
+									}
+									$.post( "ajax.php", {module: "recordings", command: "deleterecording", filenames: JSON.stringify({"temp": file+".wav"})}, function( data ) {
+										if(data.status) {
+											$("#dialer-save").removeClass("in").addClass("hidden");
+											$("#dialer").addClass("in").removeClass("hidden");
+										}
+									});
 								});
 								$("#save-phone").on("click", function() {
 									var value = nameInput.val();
@@ -785,7 +812,10 @@ function saveExtensionRecording(extension, filename, name, callback) {
 	});
 }
 
-$(document).on("keyup paste", ".name-check", function() {
+$(document).on("keyup paste", ".name-check", function(e) {
+	if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40) {
+		return;
+	}
 	var i = $(this).val().replace(/\s+/g, '-').toLowerCase();
 	$(this).val(i);
 });

@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.1beta6</version>
+	<version>13.0.1beta7</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.1beta7* FREEPBX-10087 issues and fixes
 		*13.0.1beta6* FREEPBX-10085 fixes migrator
 		*13.0.1beta5* Shorten convert to, to only show Asterisk formats
 		*13.0.1beta4* FREEPBX-3620 Use temporary files before placing them into lang dirs, FREEPBX-8580 remove save recoring and check recording feature codes

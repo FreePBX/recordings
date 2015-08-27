@@ -73,7 +73,7 @@
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="list-help" class="help-block fpbx-help-block"><?php echo _("Sortable File List/Play order. The playback will be done starting from the top to the bottom. If combine is set to yes then these files will be combined into one single file with playback from top to bottom")?></span>
+											<span id="list-help" class="help-block fpbx-help-block"><?php echo _("Sortable File List/Play order. The playback will be done starting from the top to the bottom. You can click the play icon to preview the files. If a file is red it is missing for said selected language. Files can be replaced by clicking them once (which will turn them green) placing them into replace mode. Anything you upload will them replace this file on save")?></span>
 										</div>
 									</div>
 								</div>
@@ -101,7 +101,7 @@
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="fileupload-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Upload files from our local system. Supported upload formats are: %s. This includes archives (that include multiple files) and multiple files"),"<i><strong>".implode(", ",$supported['in'])."</strong></i>")?></span>
+											<span id="fileupload-help" class="help-block fpbx-help-block"><?php echo sprintf(_("Upload files from your local system. Supported upload formats are: %s. This includes archives (that include multiple files) and multiple files"),"<i><strong>".implode(", ",$supported['in'])."</strong></i>")?></span>
 										</div>
 									</div>
 								</div>
@@ -160,7 +160,8 @@
 													<div class="input-group">
 														<input type="text" class="form-control name-check" id="save-recorder-input" placeholder="Name this file">
 														<span class="input-group-btn">
-															<button class="btn btn-default" type="button" id="save-recorder">Save!</button>
+															<button class="btn btn-default" type="button" id="cancel-recorder"><?php echo _('Cancel')?></button>
+															<button class="btn btn-default" type="button" id="save-recorder"><?php echo _('Save')?></button>
 														</span>
 													</div>
 												</div>
@@ -198,6 +199,7 @@
 													<div class="input-group">
 														<input type="text" class="form-control name-check" id="save-phone-input" placeholder="<?php echo _("Name this file")?>">
 														<span class="input-group-btn">
+															<button class="btn btn-default" type="button" id="cancel-phone"><?php echo _('Cancel')?></button>
 															<button class="btn btn-default" type="button" id="save-phone"><?php echo _("Save")?></button>
 														</span>
 													</div>
