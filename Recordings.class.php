@@ -7,6 +7,21 @@ class Recordings implements BMO {
 	private $filter_list = array();
 	private $temp;
 	private $fcbase = "*29";
+	/** Extensions to show in the convert to section
+	 * Limited on purpose because there are far too many,
+	 * Most of which are not supported by asterisk
+	 */
+	private $convert = array(
+		"wav",
+		"sln",
+		"g722",
+		"ulaw",
+		"alaw",
+		"g729",
+		"gsm",
+		"wav49",
+		"g719"
+	);
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
@@ -83,7 +98,8 @@ class Recordings implements BMO {
 				$default = $this->FreePBX->Soundlang->getLanguage();
 				$sysrecs = $this->getSystemRecordings();
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
-				$html = load_view(__DIR__."/views/form.php",array("supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$convertto = array_intersect($supported['out'], $this->convert);
+				$html = load_view(__DIR__."/views/form.php",array("convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
@@ -167,11 +183,11 @@ class Recordings implements BMO {
 							try {
 								if($list['system']) {
 									$status = $this->fileStatus($list['name']);
-									$file = $lang."/".reset($status[$lang]);
-									$media->load($this->temp."/".$file);
-								} else {
-									$media->load($this->temp."/".$file);
+									if(!empty($status[$lang])) {
+										$file = $lang."/".reset($status[$lang]);
+									}
 								}
+								$media->load($this->temp."/".$file);
 								$media->convert($this->temp."/".$lang."/".$list['name'].".".$codec);
 							} catch(\Exception $e) {
 								$errors[] = $e->getMessage()." [".$this->temp."/".$file.".".$codec."]";

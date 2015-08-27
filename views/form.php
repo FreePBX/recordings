@@ -280,12 +280,12 @@
 											</div>
 											<div class="col-md-9">
 												<span class="radioset">
-													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo ($data['fcode']) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo (isset($data['fcode']) && ($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-yes1"><?php echo _("Yes")?></label>
-													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo !($data['fcode']) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo (isset($data['fcode']) && !($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-no1"><?php echo _("No")?></label>
 												</span>
-												<strong><span id="fcode-message" data-message="<?php echo sprintf(_("Optional Feature Code %s"),$data['rec_code'])?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),$data['rec_code']) : _("Not supported on compounded recordings")?></span></strong>
+												<strong><span id="fcode-message" data-message="<?php echo sprintf(_("Optional Feature Code %s"),$data['rec_code'])?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),isset($data['rec_code']) ? $data['rec_code'] : "") : _("Not supported on compounded recordings")?></span></strong>
 											</div>
 										</div>
 									</div>
@@ -328,7 +328,7 @@
 											</div>
 											<div class="col-md-9 text-center">
 												<span class="radioset">
-													<?php $c=0;foreach($supported['out'] as $k => $v) { ?>
+													<?php $c=0;foreach($convertto as $k => $v) { ?>
 														<?php if(($c % 5) == 0 && $c != 0) { ?></span></br><span class="radioset"><?php } ?>
 														<input type="checkbox" id="<?php echo $k?>" name="codec[]" class="codec" value="<?php echo $k?>" <?php echo ($k == 'wav') ? 'CHECKED' : ''?>>
 														<label for="<?php echo $k?>"><?php echo $v?></label>
