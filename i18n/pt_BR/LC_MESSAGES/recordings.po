@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-26 17:10-0700\n"
+"POT-Creation-Date: 2015-08-27 12:18-0700\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:358
+#: assets/js/recordings.js:385
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -52,11 +52,11 @@ msgstr ""
 msgid "Add New System Recording"
 msgstr ""
 
-#: views/form.php:222
+#: views/form.php:224
 msgid "Add System Recording"
 msgstr ""
 
-#: views/form.php:237
+#: views/form.php:239
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
@@ -66,15 +66,19 @@ msgstr ""
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
+#: assets/js/recordings.js:367
+msgid "Are you sure you wish to discard this recordings?"
+msgstr ""
+
 #: assets/js/recordings.js:154
 msgid "At least one codec must be checked"
 msgstr ""
 
-#: views/form.php:193
+#: views/form.php:194
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:377
+#: assets/js/recordings.js:404
 msgid "Call!"
 msgstr ""
 
@@ -82,17 +86,21 @@ msgstr ""
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
+#: views/form.php:163 views/form.php:202
+msgid "Cancel"
+msgstr ""
+
 #: install.php:7
 msgid "Check Recording"
 msgstr "Verifica gravação"
 
-#: views/form.php:342
+#: views/form.php:344
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
 
-#: views/form.php:294
+#: views/form.php:296
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -100,11 +108,11 @@ msgstr ""
 "Selecione esta caixa para criar um código de facilidade que irá permitir que "
 "esta gravação seja mudada diretamente."
 
-#: views/form.php:250
+#: views/form.php:252
 msgid "Combine Files"
 msgstr ""
 
-#: views/form.php:326
+#: views/form.php:328
 msgid "Convert To"
 msgstr ""
 
@@ -132,7 +140,7 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
-#: views/form.php:191
+#: views/form.php:192
 msgid "Enter Extension"
 msgstr ""
 
@@ -140,7 +148,7 @@ msgstr ""
 msgid "Failed to write file to disk"
 msgstr ""
 
-#: views/form.php:306
+#: views/form.php:308
 msgid "Feature Code Password"
 msgstr "Senha do código de facilidade"
 
@@ -161,7 +169,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: views/form.php:265
+#: views/form.php:267
 msgid ""
 "Instead of chaining files together (of which some applications do not "
 "support playback) combine the files above into a single file. After this is "
@@ -170,11 +178,11 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: views/form.php:278
+#: views/form.php:280
 msgid "Link to Feature Code"
 msgstr "Link para o código de facilidade"
 
-#: views/form.php:354
+#: views/form.php:356
 msgid "List Recordings"
 msgstr ""
 
@@ -191,11 +199,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: views/form.php:199
+#: views/form.php:200
 msgid "Name this file"
 msgstr ""
 
-#: views/form.php:258 views/form.php:286
+#: views/form.php:260 views/form.php:288
 msgid "No"
 msgstr ""
 
@@ -221,16 +229,16 @@ msgstr "Nenhuma descrição linga disponível"
 msgid "Non-Existent Recording in module %s"
 msgstr "Gravação não existente no módulo %s"
 
-#: views/form.php:288 assets/js/recordings.js:693
+#: views/form.php:290 assets/js/recordings.js:720
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: views/form.php:288
+#: views/form.php:290
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Código de facilidade opcional %s"
 
-#: views/form.php:314
+#: views/form.php:316
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -238,7 +246,7 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: assets/js/recordings.js:346 assets/js/recordings.js:353
+#: assets/js/recordings.js:361 assets/js/recordings.js:380
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -246,7 +254,7 @@ msgstr ""
 msgid "Record In Browser"
 msgstr ""
 
-#: views/form.php:184
+#: views/form.php:185
 msgid "Record Over Extension"
 msgstr ""
 
@@ -258,7 +266,7 @@ msgstr "Gravações"
 msgid "Reset"
 msgstr ""
 
-#: views/form.php:201
+#: views/form.php:164 views/form.php:203
 msgid "Save"
 msgstr "Salvar"
 
@@ -269,8 +277,10 @@ msgstr "Salvar gravação"
 #: views/form.php:76
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
-"top to the bottom. If combine is set to yes then these files will be "
-"combined into one single file with playback from top to bottom"
+"top to the bottom. You can click the play icon to preview the files. If a "
+"file is red it is missing for said selected language. Files can be replaced "
+"by clicking them once (which will turn them green) placing them into replace "
+"mode. Anything you upload will them replace this file on save"
 msgstr ""
 
 #: Recordings.class.php:63
@@ -304,7 +314,7 @@ msgid ""
 "another file then this will overwrite it."
 msgstr ""
 
-#: views/form.php:210
+#: views/form.php:212
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
@@ -324,7 +334,7 @@ msgstr ""
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: views/form.php:172
+#: views/form.php:173
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
@@ -345,7 +355,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:404
+#: assets/js/recordings.js:431
 msgid "Unsupported file type"
 msgstr ""
 
@@ -360,15 +370,15 @@ msgstr ""
 #: views/form.php:104
 #, php-format
 msgid ""
-"Upload files from our local system. Supported upload formats are: %s. This "
+"Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: views/form.php:256 views/form.php:284
+#: views/form.php:258 views/form.php:286
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:513
+#: assets/js/recordings.js:540
 msgid ""
 "You are entering replace mode. The next file you add will replace this one. "
 "Are you sure you want to do that?"
