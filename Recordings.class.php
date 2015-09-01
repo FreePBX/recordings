@@ -101,6 +101,8 @@ class Recordings implements BMO {
 				$convertto = array_intersect($supported['out'], $this->convert);
 				$html = load_view(__DIR__."/views/form.php",array("convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
+			case "delete":
+				$this->delRecording($_REQUEST['id']);
 			default:
 				$html = load_view(__DIR__."/views/grid.php",array());
 			break;
@@ -285,7 +287,7 @@ class Recordings implements BMO {
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = preg_replace("/\s+/","-",strtolower($_FILES["files"]["name"][$key]));
+								$dname = preg_replace("/\s+|'+|\"+|\?+|\*+/","-",strtolower($_FILES["files"]["name"][$key]));
 								$id = time().rand(1,1000);
 								$name = pathinfo($dname,PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->temp."/".$name);

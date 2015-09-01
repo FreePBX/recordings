@@ -67,13 +67,13 @@
 														<li id="file-<?php echo $item['name']?>" class="file" data-filenames='<?php echo json_encode($item['filenames'])?>' data-name="<?php echo $item['name']?>" data-system="<?php echo $item['system'] ? 1 : 0?>" data-languages="<?php echo json_encode($item['languages'])?>"><?php echo $item['name']?><i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>
 													<?php } } ?>
 												</ul>
-												<div id="missing-file-alert" class="alert alert-warning hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red file above to replace it with a file below")?></div>
+												<div id="missing-file-alert" class="alert alert-warning text-center hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red recording above to replace it with a recording/upload below. It will then turn green. Once you have finished uploading/recording the recording will turn grey")?></div>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="list-help" class="help-block fpbx-help-block"><?php echo _("Sortable File List/Play order. The playback will be done starting from the top to the bottom. You can click the play icon to preview the files. If a file is red it is missing for said selected language. Files can be replaced by clicking them once (which will turn them green) placing them into replace mode. Anything you upload will them replace this file on save")?></span>
+											<span id="list-help" class="help-block fpbx-help-block"><?php echo _("Sortable File List/Play order. The playback will be done starting from the top to the bottom. You can click the play icon to preview the files. If a file is red it is missing for said selected language. Files can be replaced by clicking them once (which will turn them green) placing them into replace mode. Anything you upload will then replace this file on save")?></span>
 										</div>
 									</div>
 								</div>
@@ -89,7 +89,10 @@
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fileupload"></i>
 											</div>
 											<div class="col-md-9">
-												<input id="fileupload" type="file" name="files[]" data-url="ajax.php?module=recordings&amp;command=upload" class="form-control" multiple>
+												<span class="btn btn-default btn-file">
+													<?php echo _("Browse")?>
+													<input id="fileupload" type="file" class="form-control" name="files[]" data-url="ajax.php?module=recordings&amp;command=upload" class="form-control" multiple>
+												</span>
 												<div id="upload-progress" class="progress">
 													<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>
 												</div>

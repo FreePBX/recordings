@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.1beta7</version>
+	<version>13.0.1beta8</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.1beta8* Wording, deletion and tweaks
 		*13.0.1beta7* FREEPBX-10087 issues and fixes
 		*13.0.1beta6* FREEPBX-10085 fixes migrator
 		*13.0.1beta5* Shorten convert to, to only show Asterisk formats
@@ -44,7 +45,7 @@
 		<recordings>System Recordings</recordings>
 	</menuitems>
 	<depends>
-		<module>framework ge 13.0.1beta3.56</module>
+		<module>framework ge 13.0.1beta3.61</module>
 		<module>soundlang ge 13.0.0beta6</module>
 	</depends>
 	<supported>

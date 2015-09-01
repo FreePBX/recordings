@@ -586,9 +586,6 @@ function addFile(name, filenames, languages, exists, system) {
 		$(".replace").removeClass("replace missing");
 		player.jPlayer( "clearMedia");
 	} else {
-		if(!exists) {
-			$("#missing-file-alert").removeClass("hidden");
-		}
 		var exists = exists ? "" : "missing ",
 				system = system ? 1 : 0;
 		$("#file-alert").addClass("hidden");
@@ -718,6 +715,12 @@ function checkList() {
 	} else {
 		$(".fcode-item").prop("disabled", true);
 		$("#fcode-message").text(_("Not supported on compounded recordings"));
+	}
+
+	if($(".missing").length > 0) {
+		$("#missing-file-alert").removeClass("hidden");
+	} else {
+		$("#missing-file-alert").addClass("hidden");
 	}
 }
 
