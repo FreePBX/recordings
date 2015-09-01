@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-27 12:18-0700\n"
+"POT-Creation-Date: 2015-08-31 17:02-0700\n"
 "PO-Revision-Date: 2015-04-25 00:20+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,7 +20,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Recordings.class.php:317
+#: Recordings.class.php:319
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -38,11 +38,11 @@ msgstr ""
 msgid "Add New System Recording"
 msgstr ""
 
-#: views/form.php:224
+#: views/form.php:227
 msgid "Add System Recording"
 msgstr ""
 
-#: views/form.php:239
+#: views/form.php:242
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
@@ -60,7 +60,11 @@ msgstr ""
 msgid "At least one codec must be checked"
 msgstr ""
 
-#: views/form.php:194
+#: views/form.php:93
+msgid "Browse"
+msgstr ""
+
+#: views/form.php:197
 msgid "Call"
 msgstr ""
 
@@ -68,11 +72,11 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:321
+#: Recordings.class.php:323
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: views/form.php:163 views/form.php:202
+#: views/form.php:166 views/form.php:205
 msgid "Cancel"
 msgstr ""
 
@@ -80,13 +84,13 @@ msgstr ""
 msgid "Check Recording"
 msgstr "Проверить запись"
 
-#: views/form.php:344
+#: views/form.php:347
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
 
-#: views/form.php:296
+#: views/form.php:299
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -94,11 +98,11 @@ msgstr ""
 "Отметить здесь чтобы использовать сервисный код, который позволит напрямую "
 "изменять эту запись."
 
-#: views/form.php:252
+#: views/form.php:255
 msgid "Combine Files"
 msgstr ""
 
-#: views/form.php:328
+#: views/form.php:331
 msgid "Convert To"
 msgstr ""
 
@@ -122,19 +126,19 @@ msgstr ""
 msgid "Displayname"
 msgstr ""
 
-#: views/form.php:97
+#: views/form.php:100
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
-#: views/form.php:192
+#: views/form.php:195
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:314
+#: Recordings.class.php:316
 msgid "Failed to write file to disk"
 msgstr ""
 
-#: views/form.php:308
+#: views/form.php:311
 msgid "Feature Code Password"
 msgstr "Пароль на сервисный код"
 
@@ -143,11 +147,11 @@ msgstr "Пароль на сервисный код"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:265
+#: Recordings.class.php:267
 msgid "File does not exist"
 msgstr ""
 
-#: views/form.php:146
+#: views/form.php:149
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 
@@ -155,7 +159,7 @@ msgstr ""
 msgid "ID"
 msgstr ""
 
-#: views/form.php:267
+#: views/form.php:270
 msgid ""
 "Instead of chaining files together (of which some applications do not "
 "support playback) combine the files above into a single file. After this is "
@@ -164,11 +168,11 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: views/form.php:280
+#: views/form.php:283
 msgid "Link to Feature Code"
 msgstr "Линк на Сервисный код"
 
-#: views/form.php:356
+#: views/form.php:359
 msgid "List Recordings"
 msgstr ""
 
@@ -177,7 +181,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Не найден звуковой файл созданный при переносе модуля %s"
 
-#: Recordings.class.php:311
+#: Recordings.class.php:313
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -185,15 +189,15 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: views/form.php:200
+#: views/form.php:203
 msgid "Name this file"
 msgstr ""
 
-#: views/form.php:260 views/form.php:288
+#: views/form.php:263 views/form.php:291
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:308
+#: Recordings.class.php:310
 msgid "No file was uploaded"
 msgstr ""
 
@@ -215,16 +219,16 @@ msgstr "Нет длинного описания"
 msgid "Non-Existent Recording in module %s"
 msgstr "Не существующая запись в модуле %s"
 
-#: views/form.php:290 assets/js/recordings.js:720
+#: views/form.php:293 assets/js/recordings.js:717
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: views/form.php:290
+#: views/form.php:293
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Сервисный код %s(опционально)"
 
-#: views/form.php:316
+#: views/form.php:319
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -236,11 +240,11 @@ msgstr ""
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: views/form.php:116
+#: views/form.php:119
 msgid "Record In Browser"
 msgstr ""
 
-#: views/form.php:185
+#: views/form.php:188
 msgid "Record Over Extension"
 msgstr ""
 
@@ -252,7 +256,7 @@ msgstr "Записи"
 msgid "Reset"
 msgstr ""
 
-#: views/form.php:164 views/form.php:203
+#: views/form.php:167 views/form.php:206
 msgid "Save"
 msgstr "Сохранить"
 
@@ -266,7 +270,7 @@ msgid ""
 "top to the bottom. You can click the play icon to preview the files. If a "
 "file is red it is missing for said selected language. Files can be replaced "
 "by clicking them once (which will turn them green) placing them into replace "
-"mode. Anything you upload will them replace this file on save"
+"mode. Anything you upload will then replace this file on save"
 msgstr ""
 
 #: Recordings.class.php:63
@@ -277,7 +281,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:236
+#: Recordings.class.php:238
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -300,44 +304,44 @@ msgid ""
 "another file then this will overwrite it."
 msgstr ""
 
-#: views/form.php:212
+#: views/form.php:215
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:302
+#: Recordings.class.php:304
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:299
+#: Recordings.class.php:301
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:305
+#: Recordings.class.php:307
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: views/form.php:173
+#: views/form.php:176
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
 
-#: views/form.php:150
+#: views/form.php:153
 #, php-format
 msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:216
+#: Recordings.class.php:218
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:294
+#: Recordings.class.php:296
 msgid "Unsupported file format"
 msgstr ""
 
@@ -345,7 +349,7 @@ msgstr ""
 msgid "Unsupported file type"
 msgstr ""
 
-#: views/form.php:149
+#: views/form.php:152
 msgid "Update Required"
 msgstr ""
 
@@ -353,14 +357,14 @@ msgstr ""
 msgid "Upload Recording"
 msgstr ""
 
-#: views/form.php:104
+#: views/form.php:107
 #, php-format
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: views/form.php:258 views/form.php:286
+#: views/form.php:261 views/form.php:289
 msgid "Yes"
 msgstr ""
 
@@ -372,8 +376,9 @@ msgstr ""
 
 #: views/form.php:70
 msgid ""
-"You have a missing file for this language. Click any red file above to "
-"replace it with a file below"
+"You have a missing file for this language. Click any red recording above to "
+"replace it with a recording/upload below. It will then turn green. Once you "
+"have finished uploading/recording the recording will turn grey"
 msgstr ""
 
 #: assets/js/recordings.js:19
