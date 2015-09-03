@@ -564,6 +564,7 @@ function addFile(name, filenames, languages, exists, system) {
 		var rfilenames = $(".replace").data("filenames"),
 				rlanguages = $(".replace").data("languages")
 				name = $(".replace").data("name"),
+				id = name.replace(/\//gi, "-"),
 				player = $("#jplayer-file-"+name);
 
 		//add language to array if it doesnt already exist
@@ -587,29 +588,30 @@ function addFile(name, filenames, languages, exists, system) {
 		player.jPlayer( "clearMedia");
 	} else {
 		var exists = exists ? "" : "missing ",
-				system = system ? 1 : 0;
+				system = system ? 1 : 0,
+				id = name.replace(/\//gi, "-");
 		$("#file-alert").addClass("hidden");
-		$("#files").append('<li id="file-'+name+'" class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play hidden"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
-		$("#playbacks").append('<div id="jplayer-file-'+name+'" class="jp-jplayer"></div>');
-		$("#jplayer-file-"+name).jPlayer({
+		$("#files").append('<li id="file-'+id+'" class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play hidden"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#playbacks").append('<div id="jplayer-file-'+id+'" class="jp-jplayer"></div>');
+		$("#jplayer-file-"+id).jPlayer({
 			ready: function(event) {
-				$("#file-"+name+" .play").removeClass("hidden");
+				$("#file-"+id+" .play").removeClass("hidden");
 			},
 			cssSelectorAncestor: "#jp_container_122222",
 			swfPath: "http://jplayer.org/latest/dist/jplayer",
 			supplied: supportedHTML5
 		});
 	}
-	$("#file-"+name+" .play").off("click");
-	$("#file-"+name+" .play").click(function() {
-		var player = $("#jplayer-file-"+name),
+	$("#file-"+id+" .play").off("click");
+	$("#file-"+id+" .play").click(function() {
+		var player = $("#jplayer-file-"+id),
 				self = $(this);
 		if(!player.data("jPlayer").status.srcSet) {
 			$(this).toggleClass("load fa-spin");
 			$.ajax({
 				type: 'POST',
 				url: "ajax.php",
-				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+name).data("filenames"), system: $("#file-"+name).data("system"), language: language},
+				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+id).data("filenames"), system: $("#file-"+id).data("system"), language: language},
 				dataType: 'json',
 				timeout: 30000,
 				success: function(data) {

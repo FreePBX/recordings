@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.1beta9</version>
+	<version>13.0.1beta10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.1beta10* Pathing issues and movement into custom folder
 		*13.0.1beta9* Migration antics 
 		*13.0.1beta8* Wording, deletion and tweaks
 		*13.0.1beta7* FREEPBX-10087 issues and fixes

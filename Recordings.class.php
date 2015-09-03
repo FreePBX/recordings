@@ -149,7 +149,7 @@ class Recordings implements BMO {
 				$lang = basename($_POST['language']);
 				$info = pathinfo($_POST['filenames'][$lang]);
 				if(empty($info['extension'])) {
-					$file = basename($_POST['filenames'][$lang]);
+					$file = preg_replace("/^".$lang."\//i", "", $_POST['filenames'][$lang]);
 					$status = $this->fileStatus($file);
 					if(!empty($status[$lang])) {
 						$filename = $this->temp . "/" . $lang . "/" . reset($status[$lang]);
@@ -488,7 +488,7 @@ class Recordings implements BMO {
 			$lang = basename($langdir);
 			foreach(glob($langdir."/".$file."*") as $f) {
 				$parts = pathinfo($f);
-				$data[$lang][$parts['extension']] = basename($f);
+				$data[$lang][$parts['extension']] = str_replace($langdir."/","",$f);
 			}
 		}
 		return $data;
