@@ -175,6 +175,7 @@ class Recordings implements BMO {
 				$errors = array();
 				//convert files
 				foreach($data['soundlist'] as $list) {
+					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",strtolower($list['name']));
 					$playback[] = $list['name'];
 					foreach($list['filenames'] as $lang => $file) {
 						if(!file_exists($this->temp."/".$lang."/custom")) {
@@ -217,7 +218,7 @@ class Recordings implements BMO {
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {
 					$time = time().rand(1,1000);
-					$filename = $_REQUEST['filename']."-".$time.".wav";
+					$filename = basename($_REQUEST['filename'])."-".$time.".wav";
 					move_uploaded_file($_FILES["file"]["tmp_name"], $this->temp."/".$filename);
 					return array("status" => true, "filename" => $_REQUEST['filename'], "localfilename" => $filename);
 				}	else {
@@ -227,6 +228,7 @@ class Recordings implements BMO {
 			case "deleterecording":
 				$files = json_decode($_POST['filenames'],true);
 				foreach($files as $lang => $file) {
+					$file = basename($file);
 					if(file_exists($this->temp."/".$file)) {
 						unlink($this->temp."/".$file);
 					}
@@ -242,7 +244,7 @@ class Recordings implements BMO {
 					"Priority" => 1,
 					"Async" => "no",
 					"CallerID" => _("System Recordings"),
-					"Variable" => "RECFILE=".$_POST['filename'].",AUTOMATED=TRUE"
+					"Variable" => "RECFILE=".basename($_POST['filename']).",AUTOMATED=TRUE"
 				));
 				if($status['Response'] == "Success") {
 					return array("status" => true);
@@ -293,9 +295,11 @@ class Recordings implements BMO {
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = preg_replace("/\s+|'+|\"+|\?+|\*+/","-",strtolower($_FILES["files"]["name"][$key]));
+								$dname = strtolower($_FILES["files"]["name"][$key]);
+								$dname = pathinfo($dname,PATHINFO_FILENAME);
+								$dname = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$dname);
 								$id = time().rand(1,1000);
-								$name = pathinfo($dname,PATHINFO_FILENAME) . '-' . $id . '.' . $extension;
+								$name = $dname . '-' . $id . '.' . $extension;
 								move_uploaded_file($tmp_name, $this->temp."/".$name);
 								return array("status" => true, "filename" => pathinfo($dname,PATHINFO_FILENAME), "localfilename" => $name, "id" => $id);
 							} else {

@@ -431,7 +431,7 @@ $('#fileupload').fileupload({
 				alert(_("Unsupported file type"));
 				return false;
 			}
-			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s+/g, '-').toLowerCase();
+			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s|&|<|>|\.|`|'|\*|\?|\"/g, '-').toLowerCase();
 			if(!$(".replace").length && sysRecConflict(s)) {
 				if(!confirm(sprintf(_("File %s will overwrite a file that already exists in this language. Is that ok?"),v.name))) {
 					submit = false;
@@ -822,6 +822,6 @@ $(document).on("keyup paste", ".name-check", function(e) {
 	if (e.keyCode == 37 || e.keyCode == 38 || e.keyCode == 39 || e.keyCode == 40) {
 		return;
 	}
-	var i = $(this).val().replace(/\s+/g, '-').toLowerCase();
+	var i = $(this).val().replace(/\s|&|<|>|\.|`|'|\*|\?|"/g, '-').toLowerCase();
 	$(this).val(i);
 });
