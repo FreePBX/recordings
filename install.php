@@ -49,6 +49,10 @@ $sql = "SELECT * FROM recordings";
 $sth = FreePBX::Database()->prepare($sql);
 $sth->execute();
 $recordings = $sth->fetchAll(\PDO::FETCH_ASSOC);
+$default = FreePBX::Soundlang()->getLanguage();
+if(!file_exists($dir."/".$default)) {
+	mkdir($dir."/".$default);
+}
 foreach($recordings as $recording) {
 	$files = explode("&",$recording['filename']);
 	$filenames = array();
@@ -56,7 +60,8 @@ foreach($recordings as $recording) {
 		//move all custom files first
 		if(preg_match("/^custom\/(.*)/",$file,$matches)) {
 			foreach(glob($dir."/".$matches[1]."*") as $f) {
-				rename($f,$dir."/en/".$matches[1]);
+				$ff = basename($f);
+				rename($f,$dir."/".$default."/".$ff);
 			}
 			$filenames[] = $matches[1];
 		} elseif(preg_match("/^\w{2}\_\w{2}|\w{2}\//",$file)) {
