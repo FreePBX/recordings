@@ -454,7 +454,7 @@ $('#fileupload').fileupload({
 		if(data.result.status) {
 			var paths = {};
 			paths[language] = data.result.localfilename;
-			addFile(data.result.filename, paths, [language], true, false);
+			addFile("custom/"+data.result.filename, paths, [language], true, false);
 		} else {
 			alert(data.result.message);
 		}
@@ -501,13 +501,14 @@ $(document).on("click", "#files .delete-file", function() {
 	var $this = this,
 			parent = $($this).parents(".file"),
 			name = parent.data("name"),
+			id = name.replace(/\//gi, "-"),
 			files = parent.data("filenames");
 	$($this).addClass("deleting");
 	//dont delete already existing files
 	if(parent.data("system") == 1) {
 		parent.fadeOut("slow", function() {
 			$(this).remove();
-			$("#jplayer-file-"+name).remove();
+			$("#jplayer-file-"+id).remove();
 			if(!$("#files .file").length) {
 				$("#file-alert").removeClass("hidden");
 			}
@@ -518,7 +519,7 @@ $(document).on("click", "#files .delete-file", function() {
 			if(data.status) {
 				parent.fadeOut("slow", function() {
 					$(this).remove();
-					$("#jplayer-file-"+name).remove();
+					$("#jplayer-file-"+id).remove();
 					if(!$("#files .file").length) {
 						$("#file-alert").removeClass("hidden");
 					}
@@ -565,7 +566,7 @@ function addFile(name, filenames, languages, exists, system) {
 				rlanguages = $(".replace").data("languages")
 				name = $(".replace").data("name"),
 				id = name.replace(/\//gi, "-"),
-				player = $("#jplayer-file-"+name);
+				player = $("#jplayer-file-"+id);
 
 		//add language to array if it doesnt already exist
 		if(rlanguages.indexOf(language) === -1) {
@@ -786,7 +787,7 @@ function saveBrowserRecording(name, callback) {
 			if(data.status) {
 				var paths = {};
 				paths[language] = data.localfilename;
-				addFile(data.filename, paths, [language], true, false);
+				addFile("custom/"+data.filename, paths, [language], true, false);
 			}
 			if(typeof callback === "function") {
 				callback(data);
@@ -809,7 +810,7 @@ function saveExtensionRecording(extension, filename, name, callback) {
 		if(data.status) {
 			var paths = {};
 			paths[language] = data.localfilename;
-			addFile(data.filename, paths, [language], true, false);
+			addFile("custom/"+data.filename, paths, [language], true, false);
 		}
 		if(typeof callback === "function") {
 			callback(data);

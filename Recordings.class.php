@@ -177,6 +177,9 @@ class Recordings implements BMO {
 				foreach($data['soundlist'] as $list) {
 					$playback[] = $list['name'];
 					foreach($list['filenames'] as $lang => $file) {
+						if(!file_exists($this->temp."/".$lang."/custom")) {
+							mkdir($this->temp."/".$lang."/custom",0777,true);
+						}
 						foreach($data['codecs'] as $codec) {
 							if(file_exists($this->temp."/".$lang."/".$list['name'].".".$codec)) {
 								//TODO: need a way to know it's ok to overwrite a sysrecording
@@ -194,6 +197,9 @@ class Recordings implements BMO {
 							} catch(\Exception $e) {
 								$errors[] = $e->getMessage()." [".$this->temp."/".$file.".".$codec."]";
 							}
+						}
+						if(!$list['system']) {
+							unlink($this->temp."/".$file);
 						}
 					}
 				}
