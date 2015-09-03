@@ -51,7 +51,7 @@ $sth->execute();
 $recordings = $sth->fetchAll(\PDO::FETCH_ASSOC);
 $default = FreePBX::Soundlang()->getLanguage();
 if(!file_exists($dir."/".$default)) {
-	mkdir($dir."/".$default);
+	mkdir($dir."/".$default."/custom", 0777, true);
 }
 foreach($recordings as $recording) {
 	$files = explode("&",$recording['filename']);
@@ -61,7 +61,7 @@ foreach($recordings as $recording) {
 		if(preg_match("/^custom\/(.*)/",$file,$matches)) {
 			foreach(glob($dir."/".$matches[1]."*") as $f) {
 				$ff = basename($f);
-				rename($f,$dir."/".$default."/".$ff);
+				rename($f,$dir."/".$default."/custom/".$ff);
 			}
 			$filenames[] = $matches[1];
 		} elseif(preg_match("/^\w{2}\_\w{2}|\w{2}\//",$file)) {
@@ -70,11 +70,9 @@ foreach($recordings as $recording) {
 			$filenames[] = $file;
 		}
 	}
-	$sql = "UPDATE recordings SET filename = ? WHERE id = ?";
-	$sth = FreePBX::Database()->prepare($sql);
-	$sth->execute(array(implode('&',$filenames), $recording['id']));
 }
 
+/*
 if(file_exists($dir."/custom")) {
 	$files = glob($dir."/custom/*");
 	foreach($files as $file) {
@@ -85,3 +83,4 @@ if(file_exists($dir."/custom")) {
 		rmdir($dir."/custom");
 	}
 }
+*/
