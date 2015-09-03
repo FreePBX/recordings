@@ -163,7 +163,7 @@
 													<div class="input-group">
 														<input type="text" class="form-control name-check" id="save-recorder-input" placeholder="Name this file">
 														<span class="input-group-btn">
-															<button class="btn btn-default" type="button" id="cancel-recorder"><?php echo _('Cancel')?></button>
+															<button class="btn btn-default cancel" type="button" id="cancel-recorder"><?php echo _('Cancel')?></button>
 															<button class="btn btn-default" type="button" id="save-recorder"><?php echo _('Save')?></button>
 														</span>
 													</div>
@@ -202,7 +202,7 @@
 													<div class="input-group">
 														<input type="text" class="form-control name-check" id="save-phone-input" placeholder="<?php echo _("Name this file")?>">
 														<span class="input-group-btn">
-															<button class="btn btn-default" type="button" id="cancel-phone"><?php echo _('Cancel')?></button>
+															<button class="btn btn-default cancel" type="button" id="cancel-phone"><?php echo _('Cancel')?></button>
 															<button class="btn btn-default" type="button" id="save-phone"><?php echo _("Save")?></button>
 														</span>
 													</div>

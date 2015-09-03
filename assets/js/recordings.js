@@ -164,7 +164,7 @@ if($("#files").length) {
 
 //enable button click from enter while inside of input-groups
 $(".input-group").each(function(k, v) {
-	var button = $(this).find(".input-group-btn button");
+	var button = $(this).find(".input-group-btn button:not(.cancel)");
 	$(this).find("input").keyup(function (e) {
 		if (e.keyCode == 13) {
 			$(this).off("blur");
