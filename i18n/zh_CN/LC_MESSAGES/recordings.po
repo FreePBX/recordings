@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-31 17:02-0700\n"
+"POT-Creation-Date: 2015-09-03 13:50-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: 周征晟 <zhougongjizhe@163.com>\n"
 "Language-Team: EdwardBadBoy <zhougongjizhe@163.com>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Poedit-Country: CHINA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:319
+#: Recordings.class.php:325
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:323
+#: Recordings.class.php:329
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -130,7 +130,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:316
+#: Recordings.class.php:322
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -143,7 +143,7 @@ msgstr "功能代码的密码"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:267
+#: Recordings.class.php:273
 msgid "File does not exist"
 msgstr ""
 
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "声音文件丢失，此声音文件应该在%s模块迁移时自动生成。"
 
-#: Recordings.class.php:313
+#: Recordings.class.php:319
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -193,7 +193,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:310
+#: Recordings.class.php:316
 msgid "No file was uploaded"
 msgstr ""
 
@@ -215,7 +215,7 @@ msgstr "无可用的详细描述"
 msgid "Non-Existent Recording in module %s"
 msgstr "在模块%s中的录音不存在"
 
-#: views/form.php:293 assets/js/recordings.js:717
+#: views/form.php:293 assets/js/recordings.js:720
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -275,7 +275,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:238
+#: Recordings.class.php:244
 msgid "System Recordings"
 msgstr "系统录音"
 
@@ -302,17 +302,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:304
+#: Recordings.class.php:310
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:301
+#: Recordings.class.php:307
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:307
+#: Recordings.class.php:313
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -329,11 +329,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:218
+#: Recordings.class.php:224
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:296
+#: Recordings.class.php:302
 msgid "Unsupported file format"
 msgstr ""
 
@@ -360,7 +360,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:541
 msgid ""
 "You are entering replace mode. The next file you add will replace this one. "
 "Are you sure you want to do that?"
