@@ -50,7 +50,7 @@ $sth = FreePBX::Database()->prepare($sql);
 $sth->execute();
 $recordings = $sth->fetchAll(\PDO::FETCH_ASSOC);
 $default = FreePBX::Soundlang()->getLanguage();
-if(!file_exists($dir."/".$default)) {
+if(!file_exists($dir."/".$default."/custom")) {
 	mkdir($dir."/".$default."/custom", 0777, true);
 }
 foreach($recordings as $recording) {
@@ -59,28 +59,30 @@ foreach($recordings as $recording) {
 	foreach($files as $file) {
 		//move all custom files first
 		if(preg_match("/^custom\/(.*)/",$file,$matches)) {
-			foreach(glob($dir."/".$matches[1]."*") as $f) {
+			foreach(glob($dir."/custom/".$matches[1].".*") as $f) {
 				$ff = basename($f);
 				rename($f,$dir."/".$default."/custom/".$ff);
 			}
-			$filenames[] = $matches[1];
+			$filenames[] = $file;
 		} elseif(preg_match("/^\w{2}\_\w{2}|\w{2}\//",$file)) {
 			$filenames[] = preg_replace("/^\w{2}\_\w{2}|\w{2}\//", "", $file);
 		} else {
 			$filenames[] = $file;
 		}
 	}
+	$sql = "UPDATE recordings SET filename = ? WHERE id = ?";
+	$sth = FreePBX::Database()->prepare($sql);
+	$sth->execute(array(implode('&',$filenames), $recording['id']));
 }
 
-/*
 if(file_exists($dir."/custom")) {
 	$files = glob($dir."/custom/*");
 	foreach($files as $file) {
 		$parts = pathinfo($file);
 		FreePBX::Recordings()->addRecording($parts['filename'],"Migrated file",$file);
 	}
+	$files = glob($dir."/custom/*");
 	if(empty($files)) {
 		rmdir($dir."/custom");
 	}
 }
-*/
