@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-03 14:37-0700\n"
+"POT-Creation-Date: 2015-09-04 12:31-0700\n"
 "PO-Revision-Date: 2015-04-25 00:20+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,7 +20,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Recordings.class.php:329
+#: Recordings.class.php:335
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -72,7 +72,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:333
+#: Recordings.class.php:339
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -106,7 +106,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Recordings.class.php:68
+#: Recordings.class.php:71
 msgid "Delete"
 msgstr "Удалить"
 
@@ -134,7 +134,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:326
+#: Recordings.class.php:332
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -147,7 +147,7 @@ msgstr "Пароль на сервисный код"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:275
+#: Recordings.class.php:281
 msgid "File does not exist"
 msgstr ""
 
@@ -181,7 +181,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Не найден звуковой файл созданный при переносе модуля %s"
 
-#: Recordings.class.php:323
+#: Recordings.class.php:329
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:320
+#: Recordings.class.php:326
 msgid "No file was uploaded"
 msgstr ""
 
@@ -219,7 +219,11 @@ msgstr "Нет длинного описания"
 msgid "Non-Existent Recording in module %s"
 msgstr "Не существующая запись в модуле %s"
 
-#: views/form.php:293 assets/js/recordings.js:720
+#: views/form.php:293
+msgid "Not supported on compounded or Non-Existent recordings"
+msgstr ""
+
+#: assets/js/recordings.js:738
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -252,7 +256,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Записи"
 
-#: Recordings.class.php:73
+#: Recordings.class.php:76
 msgid "Reset"
 msgstr ""
 
@@ -273,7 +277,7 @@ msgid ""
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
 
-#: Recordings.class.php:63
+#: Recordings.class.php:66
 msgid "Submit"
 msgstr ""
 
@@ -281,7 +285,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:246
+#: Recordings.class.php:252
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -310,17 +314,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:314
+#: Recordings.class.php:320
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:311
+#: Recordings.class.php:317
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:317
+#: Recordings.class.php:323
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -337,11 +341,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:225
+#: Recordings.class.php:231
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:306
+#: Recordings.class.php:312
 msgid "Unsupported file format"
 msgstr ""
 
