@@ -338,7 +338,7 @@ $("#dial-phone").click(function() {
 			//hide dialer
 			$("#dialer").removeClass("in").addClass("hidden");
 			//Show record message
-			messageBox.text(_("Recording...")).addClass("in").removeClass("hidden");
+			messageBox.text(_("Recording, Hangup when finished...")).addClass("in").removeClass("hidden");
 			//Wait 500 ms before checking for out file
 			setTimeout(function(){
 				//every 500 ms check to see if our .finished file exists
@@ -454,7 +454,7 @@ $('#fileupload').fileupload({
 		if(data.result.status) {
 			var paths = {};
 			paths[language] = data.result.localfilename;
-			addFile("custom/"+data.result.filename, paths, [language], true, false);
+			addFile("custom/"+data.result.filename, paths, [language], true, true);
 		} else {
 			alert(data.result.message);
 		}
@@ -488,7 +488,7 @@ $("#systemrecording").on('change', function(evt, params) {
 			paths[l] = info.paths[l];
 		}
 	}
-	addFile(info.name, paths, languages, (languages.indexOf(language) >= 0), true);
+	addFile(info.name, paths, languages, false, (languages.indexOf(language) >= 0));
 	//reset the drop down to the first empty item
 	$('#systemrecording').val("");
 	$('#systemrecording').trigger('chosen:updated');
@@ -557,13 +557,14 @@ $(document).on("click", "#files li", function(event) {
  * @param {string} name      The visual name of the file
  * @param {object} paths     Paths for each language representation of this file
  * @param {array} languages Languages that this file supports
+ * @param {bool} temp    Is this a temporary recording
  * @param {bool} exists    Does the file exist or not
- * @param {bool} system    Is this a system recording (then dont delete)
  */
-function addFile(name, filenames, languages, exists, system) {
+function addFile(name, filenames, languages, temp, exists) {
 	if($(".replace").length) {
 		var rfilenames = $(".replace").data("filenames"),
-				rlanguages = $(".replace").data("languages")
+				rlanguages = $(".replace").data("languages"),
+				rtemporary = $(".replace").data("temporary"),
 				name = $(".replace").data("name"),
 				id = name.replace(/\//gi, "-"),
 				player = $("#jplayer-file-"+id);
@@ -580,19 +581,36 @@ function addFile(name, filenames, languages, exists, system) {
 		}
 		rfilenames[language] = filenames[language];
 
+		if(isObjEmpty(rtemporary)) {
+			rtemporary = {};
+		}
+		rtemporary[language] = temp ? 1 : 0;
+
 		//put our objects back into place
 		$(".replace").data("filenames", rfilenames);
 		$(".replace").data("languages", rlanguages);
+		$(".replace").data("temporary", rtemporary);
 
 		//remove the marking classes
 		$(".replace").removeClass("replace missing");
 		player.jPlayer( "clearMedia");
 	} else {
 		var exists = exists ? "" : "missing ",
-				system = system ? 1 : 0,
-				id = name.replace(/\//gi, "-");
+				id = name.replace(/\//gi, "-"),
+				temporary = {};
+		if(typeof temp === "object") {
+			temporary = temp;
+		} else {
+			$.each(filenames, function(i, k) {
+				temporary[i] = temp ? 1 : 0;
+			});
+		}
 		$("#file-alert").addClass("hidden");
-		$("#files").append('<li id="file-'+id+'" class="file '+exists+'" data-filenames=\''+JSON.stringify(filenames)+'\' data-name="'+name+'" data-system="'+system+'" data-languages=\''+JSON.stringify(languages)+'\'><i class="fa fa-play play hidden"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#files").append('<li id="file-'+id+'" class="file '+exists+'"><i class="fa fa-play play hidden"></i> '+name+'<i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>');
+		$("#file-"+id).data("temporary", temporary);
+		$("#file-"+id).data("name", name);
+		$("#file-"+id).data("filenames", filenames);
+		$("#file-"+id).data("languages", languages);
 		$("#playbacks").append('<div id="jplayer-file-'+id+'" class="jp-jplayer"></div>');
 		$("#jplayer-file-"+id).jPlayer({
 			ready: function(event) {
@@ -612,7 +630,7 @@ function addFile(name, filenames, languages, exists, system) {
 			$.ajax({
 				type: 'POST',
 				url: "ajax.php",
-				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+id).data("filenames"), system: $("#file-"+id).data("system"), language: language},
+				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+id).data("filenames"), temporary: $("#file-"+id).data("temporary"), language: language},
 				dataType: 'json',
 				timeout: 30000,
 				success: function(data) {
@@ -678,7 +696,7 @@ function convertList() {
 		soundList[name] = {
 			"name": $(this).data("name"),
 			"filenames": $(this).data("filenames"),
-			"system": $(this).data("system") ? true : false,
+			"temporary": $(this).data("temporary"),
 			"languages": $(this).data("languages")
 		};
 	})
@@ -696,7 +714,7 @@ function generateList() {
 		if(!isObjEmpty(soundList)) {
 			$.each(soundList, function(k,v) {
 				var exists = (v.languages.indexOf(language) >= 0);
-				addFile(v.name, v.filenames, v.languages, exists, v.system);
+				addFile(v.name, v.filenames, v.languages, v.temporary, exists);
 			});
 			$("#file-alert").addClass("hidden");
 		} else {
@@ -787,7 +805,7 @@ function saveBrowserRecording(name, callback) {
 			if(data.status) {
 				var paths = {};
 				paths[language] = data.localfilename;
-				addFile("custom/"+data.filename, paths, [language], true, false);
+				addFile("custom/"+data.filename, paths, [language], true, true);
 			}
 			if(typeof callback === "function") {
 				callback(data);
@@ -810,7 +828,7 @@ function saveExtensionRecording(extension, filename, name, callback) {
 		if(data.status) {
 			var paths = {};
 			paths[language] = data.localfilename;
-			addFile("custom/"+data.filename, paths, [language], true, false);
+			addFile("custom/"+data.filename, paths, [language], true, true);
 		}
 		if(typeof callback === "function") {
 			callback(data);

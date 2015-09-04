@@ -64,7 +64,7 @@ function recordings_get_config($engine) {
 			$exten = 'dorecord';
 
 			$ext->add($context, $exten, '', new ext_record('${RECFILE}.wav,,,k'));
-			$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
+			$ext->add($context, 'h', '', new ext_system('touch ${RECFILE}.finished'));
 			$ext->add($context, 'h', 'exit', new ext_hangup());
 
 			$context = 'macro-systemrecording';

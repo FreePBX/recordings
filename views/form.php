@@ -4,7 +4,7 @@
 			<h1><?php echo _("Add New System Recording")?></h1>
 			<div class="fpbx-container">
 				<div class="display full-border">
-					<form id="recordings-frm" class="fpbx-submit" name="recordings-frm" action="config.php?display=recordings" method="post" <?php if(isset($data['id'])) {?>data-fpbx-delete="config.php?display=recordings&amp;action=del"<?php } ?> role="form">
+					<form id="recordings-frm" class="fpbx-submit" name="recordings-frm" action="config.php?display=recordings" method="post" <?php if(isset($data['id'])) {?>data-fpbx-delete="config.php?display=recordings&amp;action=delete&amp;id=<?php echo $data['id']?>"<?php } ?> role="form">
 						<input type="hidden" name="id" id="id" value="<?php echo isset($data['id']) ? $data['id'] : ''?>">
 						<div class="element-container">
 							<div class="row">
@@ -64,7 +64,7 @@
 												<div id="file-alert" class="alert alert-info <?php echo !empty($data['soundlist']) ? "hidden" : ""?>" role="alert"><?php echo sprintf(_("No files for %s"),"<span class='language'>".$langs[$default]."</span>")?></div>
 												<ul id="files">
 													<?php if(isset($data['soundlist'])) { foreach($data['soundlist'] as $item) {?>
-														<li id="file-<?php echo $item['name']?>" class="file" data-filenames='<?php echo json_encode($item['filenames'])?>' data-name="<?php echo $item['name']?>" data-system="<?php echo $item['system'] ? 1 : 0?>" data-languages="<?php echo json_encode($item['languages'])?>"><?php echo $item['name']?><i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>
+														<li id="file-<?php echo $item['name']?>" class="file"><?php echo $item['name']?><i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>
 													<?php } } ?>
 												</ul>
 												<div id="missing-file-alert" class="alert alert-warning text-center hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red recording above to replace it with a recording/upload below. It will then turn green. Once you have finished uploading/recording the recording will turn grey")?></div>
@@ -287,10 +287,10 @@
 												<span class="radioset">
 													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo (isset($data['fcode']) && ($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-yes1"><?php echo _("Yes")?></label>
-													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo (isset($data['fcode']) && !($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo (!isset($data['fcode']) || !($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-no1"><?php echo _("No")?></label>
 												</span>
-												<strong><span id="fcode-message" data-message="<?php echo sprintf(_("Optional Feature Code %s"),$data['rec_code'])?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),isset($data['rec_code']) ? $data['rec_code'] : "") : _("Not supported on compounded recordings")?></span></strong>
+												<strong><span id="fcode-message" data-message="<?php echo isset($data['rec_code']) ? sprintf(_("Optional Feature Code %s"),$data['rec_code']) : ""?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),isset($data['rec_code']) ? $data['rec_code'] : "") : _("Not supported on compounded or Non-Existent recordings")?></span></strong>
 											</div>
 										</div>
 									</div>

@@ -6,6 +6,7 @@ class Recordings implements BMO {
 	private $full_list = null;
 	private $filter_list = array();
 	private $temp;
+	private $path;
 	private $fcbase = "*29";
 	/** Extensions to show in the convert to section
 	 * Limited on purpose because there are far too many,
@@ -30,7 +31,9 @@ class Recordings implements BMO {
 
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
-		$this->temp = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
+		$tmp = sys_get_temp_dir();
+		$this->temp = !empty($tmp) && file_exists($tmp) ? $tmp : "/tmp";
+		$this->path = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 	}
 
 	public function doConfigPageInit($page) {
@@ -148,14 +151,15 @@ class Recordings implements BMO {
 				$media = $this->FreePBX->Media();
 				$lang = basename($_POST['language']);
 				$info = pathinfo($_POST['filenames'][$lang]);
+				$path = ($_POST['temporary'][$lang]) ? $this->temp : $this->path;
 				if(empty($info['extension'])) {
 					$file = preg_replace("/^".$lang."\//i", "", $_POST['filenames'][$lang]);
-					$status = $this->fileStatus($file);
+					$status = $this->fileStatus($file, !($_POST['temporary'][$lang]));
 					if(!empty($status[$lang])) {
-						$filename = $this->temp . "/" . $lang . "/" . reset($status[$lang]);
+						$filename = $path . "/" . $lang . "/" . reset($status[$lang]);
 					}
 				} else {
-					$filename = $this->temp . "/" . $_POST['filenames'][$lang];
+					$filename = $path . "/" . $_POST['filenames'][$lang];
 				}
 				$media->load($filename);
 				$files = $media->generateHTML5();
@@ -178,28 +182,30 @@ class Recordings implements BMO {
 					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",strtolower($list['name']));
 					$playback[] = $list['name'];
 					foreach($list['filenames'] as $lang => $file) {
-						if(!file_exists($this->temp."/".$lang."/custom")) {
-							mkdir($this->temp."/".$lang."/custom",0777,true);
+						if(!file_exists($this->path."/".$lang."/custom")) {
+							mkdir($this->path."/".$lang."/custom",0777,true);
+						}
+						if($list['temporary'][$lang]) {
+							$media->load($this->temp."/".$file);
+						} else {
+							$status = $this->fileStatus($list['name']);
+							if(!empty($status[$lang])) {
+								$file = $lang."/".reset($status[$lang]);
+							}
+							$media->load($this->path."/".$file);
 						}
 						foreach($data['codecs'] as $codec) {
-							if(file_exists($this->temp."/".$lang."/".$list['name'].".".$codec)) {
+							if(file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
 								//TODO: need a way to know it's ok to overwrite a sysrecording
 								continue;
 							}
 							try {
-								if($list['system']) {
-									$status = $this->fileStatus($list['name']);
-									if(!empty($status[$lang])) {
-										$file = $lang."/".reset($status[$lang]);
-									}
-								}
-								$media->load($this->temp."/".$file);
-								$media->convert($this->temp."/".$lang."/".$list['name'].".".$codec);
+								$media->convert($this->path."/".$lang."/".$list['name'].".".$codec);
 							} catch(\Exception $e) {
-								$errors[] = $e->getMessage()." [".$this->temp."/".$file.".".$codec."]";
+								$errors[] = $e->getMessage()." [".$this->path."/".$file.".".$codec."]";
 							}
 						}
-						if(!$list['system']) {
+						if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
 							unlink($this->temp."/".$file);
 						}
 					}
@@ -244,7 +250,7 @@ class Recordings implements BMO {
 					"Priority" => 1,
 					"Async" => "no",
 					"CallerID" => _("System Recordings"),
-					"Variable" => "RECFILE=".basename($_POST['filename']).",AUTOMATED=TRUE"
+					"Variable" => "RECFILE=/tmp/".basename($_POST['filename'])
 				));
 				if($status['Response'] == "Success") {
 					return array("status" => true);
@@ -388,7 +394,7 @@ class Recordings implements BMO {
 			$status = $this->fileStatus($file);
 			$data['soundlist'][$file] = array(
 				"name" => $file,
-				"system" => true,
+				"temporary" => array(),
 				"languages" => array(),
 				"filenames" => array()
 			);
@@ -397,6 +403,7 @@ class Recordings implements BMO {
 					$data['soundlist'][$file]['filenames'][$lang] = $lang."/".$file;
 				}
 				$data['soundlist'][$file]['languages'][] = $lang;
+				$data['soundlist'][$file]['temporary'][$lang] = 0;
 			}
 		}
 		return $data;
@@ -411,10 +418,10 @@ class Recordings implements BMO {
 	}
 
 	public function getSystemRecordings() {
-		$files = $this->getdir($this->temp);
+		$files = $this->getdir($this->path);
 		$final = array();
 		foreach($files as &$file) {
-			$file = str_replace($this->temp."/","",$file);
+			$file = str_replace($this->path."/","",$file);
 			if(preg_match("/^(\w{2}_\w{2}|\w{2})\/(.*)\.([a-z0-9]{2,})/i",$file,$matches)) {
 				$lang = $matches[1];
 				$name = $matches[2];
@@ -492,9 +499,10 @@ class Recordings implements BMO {
 		return $full_list;
 	}
 
-	public function fileStatus($file) {
+	public function fileStatus($file, $system = true) {
 		$data = array();
-		foreach(glob($this->temp."/*",GLOB_ONLYDIR) as $langdir) {
+		$path = ($system) ? $this->path : $this->temp;
+		foreach(glob($path."/*",GLOB_ONLYDIR) as $langdir) {
 			$lang = basename($langdir);
 			foreach(glob($langdir."/".$file."*") as $f) {
 				$parts = pathinfo($f);
