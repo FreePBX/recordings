@@ -171,7 +171,7 @@ class Recordings implements BMO {
 				$data = $_POST;
 				$data['soundlist'] = json_decode($data['soundlist'],true);
 				$playback = array();
-				$media = FreePBX::create()->Media();
+				$media = $this->FreePBX->Media;
 				$errors = array();
 				//convert files
 				foreach($data['soundlist'] as $list) {
