@@ -341,6 +341,14 @@ class Recordings implements BMO {
 		}
 	}
 
+	/**
+	 * Add New Recording
+	 * @param string  $name        The recording short name
+	 * @param string  $description The recording long name
+	 * @param string  $files       & separated list of files to playback
+	 * @param integer $fcode       Feature Code number_format
+	 * @param string  $fcode_pass  Feature code password
+	 */
 	public function addRecording($name,$description,$files,$fcode=0,$fcode_pass='') {
 		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
@@ -348,6 +356,15 @@ class Recordings implements BMO {
 		needreload();
 	}
 
+	/**
+	 * Update Recording by ID
+	 * @param integer $id          The recording ID
+	 * @param string  $name        The recording short name
+	 * @param string  $description The recording long name
+	 * @param string  $files       & separated list of files to playback
+	 * @param integer $fcode       Feature Code number_format
+	 * @param string  $fcode_pass  Feature code password
+	 */
 	public function updateRecording($id,$name,$description,$files,$fcode=0,$fcode_pass='') {
 		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ?, fcode = ?, fcode_pass = ? WHERE id = ?";
 		$sth = $this->db->prepare($sql);
@@ -371,6 +388,10 @@ class Recordings implements BMO {
 		needreload();
 	}
 
+	/**
+	 * Delete a recording by ID
+	 * @param  integer $id The recording ID
+	 */
 	public function delRecording($id) {
 		$sql = "DELETE FROM recordings WHERE id = ?";
 		$sth = $this->db->prepare($sql);
@@ -378,10 +399,20 @@ class Recordings implements BMO {
 		needreload();
 	}
 
+	/**
+	 * Alias of getRecordingById
+	 * @param  integer $id The recording ID
+	 * @return array     Array of information about the recording
+	 */
 	public function getRecordingsById($id) {
 		return $this->getRecordingById($id);
 	}
 
+	/**
+	 * Get a recording by it's ID
+	 * @param  integer $id The recording ID
+	 * @return array     Array of information about the recording
+	 */
 	public function getRecordingById($id) {
 		$sql = "SELECT * FROM recordings where id= ?";
 		$sth = $this->db->prepare($sql);
@@ -409,6 +440,11 @@ class Recordings implements BMO {
 		return $data;
 	}
 
+	/**
+	 * Get filename(s) by recording ID
+	 * @param  integer $id The recording ID
+	 * @return array     Array of filenames
+	 */
 	public function getFilenameById($id) {
 		$res = $this->getRecordingsById($id);
 		if (empty($res)) {
@@ -417,6 +453,10 @@ class Recordings implements BMO {
 		return $res['filename'];
 	}
 
+	/**
+	 * Get all system recordings
+	 * @return array Array of system recordings
+	 */
 	public function getSystemRecordings() {
 		$files = $this->getdir($this->path);
 		$final = array();
@@ -453,6 +493,11 @@ class Recordings implements BMO {
 		return $final;
 	}
 
+	/**
+	 * Get all recordings in said Directory
+	 * @param  string $snddir The directory to scan
+	 * @return array         Array of files
+	 */
 	private function getdir($snddir) {
 		$dir = opendir($snddir);
 		$files = Array();
@@ -467,6 +512,10 @@ class Recordings implements BMO {
 		return $files;
 	}
 
+	/**
+	 * Get all recordings
+	 * @return array Array of recordings
+	 */
 	public function getAll() {
 		$sql = "SELECT * FROM recordings ORDER BY displayname";
 		$sth = $this->db->prepare($sql);
@@ -499,6 +548,13 @@ class Recordings implements BMO {
 		return $full_list;
 	}
 
+	/**
+	 * Status of filename
+	 * EG are there multiple formats or languages
+	 * @param  string $file   The filename
+	 * @param  boolean $system Is this a system file or a temp file
+	 * @return array         Array of file information
+	 */
 	public function fileStatus($file, $system = true) {
 		$data = array();
 		$path = ($system) ? $this->path : $this->temp;
@@ -506,12 +562,20 @@ class Recordings implements BMO {
 			$lang = basename($langdir);
 			foreach(glob($langdir."/".$file."*") as $f) {
 				$parts = pathinfo($f);
+				if(empty($parts['extension'])) {
+					continue; //wtf is this file?
+				}
 				$data[$lang][$parts['extension']] = str_replace($langdir."/","",$f);
 			}
 		}
 		return $data;
 	}
 
+	/**
+	 * Get all of the recordings (the old way)
+	 * @param  boolean $compound Whether to show compounded recordings or not
+	 * @return array           Array of recordings
+	 */
 	public function getAllRecordings($compound = true) {
 		if ($this->initialized) {
 			return ($compound ? $this->full_list : $this->filter_list);
