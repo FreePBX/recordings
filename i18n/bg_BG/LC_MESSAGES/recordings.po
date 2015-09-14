@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-04 12:31-0700\n"
+"POT-Creation-Date: 2015-09-14 00:15-0700\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:385
+#: assets/js/recordings.js:387
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -50,15 +50,15 @@ msgid ""
 "previously"
 msgstr ""
 
-#: assets/js/recordings.js:65
+#: assets/js/recordings.js:66
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:367
+#: assets/js/recordings.js:369
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
-#: assets/js/recordings.js:154
+#: assets/js/recordings.js:156
 msgid "At least one codec must be checked"
 msgstr ""
 
@@ -70,7 +70,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:404
+#: assets/js/recordings.js:406
 msgid "Call!"
 msgstr ""
 
@@ -112,7 +112,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Изтрий"
 
-#: assets/js/recordings.js:201
+#: assets/js/recordings.js:203
 msgid "Delete Recording"
 msgstr ""
 
@@ -159,6 +159,12 @@ msgstr ""
 
 #: views/grid.php:22
 msgid "ID"
+msgstr ""
+
+#: assets/js/recordings.js:49
+msgid ""
+"If you are doing media conversions this can take a very long time, is that "
+"ok?"
 msgstr ""
 
 #: views/form.php:270
@@ -225,9 +231,13 @@ msgstr "Не Съществуващ Запис в модул %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:738
+#: assets/js/recordings.js:740
 msgid "Not supported on compounded recordings"
 msgstr ""
+
+#: install.php:54 install.php:68
+msgid "OK"
+msgstr "OK"
 
 #: views/form.php:293
 #, php-format
@@ -242,7 +252,7 @@ msgstr ""
 "Незадължителна парола за ограничаване достъпа до специалния код, който "
 "позволява на потребителя да презапише записа."
 
-#: assets/js/recordings.js:361 assets/js/recordings.js:380
+#: assets/js/recordings.js:363 assets/js/recordings.js:382
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -266,7 +276,7 @@ msgstr ""
 msgid "Save"
 msgstr "Запис"
 
-#: install.php:6 assets/js/recordings.js:201
+#: install.php:6 assets/js/recordings.js:203
 msgid "Save Recording"
 msgstr "Направи Запис"
 
@@ -350,7 +360,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:431
+#: assets/js/recordings.js:433
 msgid "Unsupported file type"
 msgstr ""
 
@@ -373,7 +383,7 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:541
+#: assets/js/recordings.js:543
 msgid ""
 "You are entering replace mode. The next file you add will replace this one. "
 "Are you sure you want to do that?"
@@ -389,6 +399,18 @@ msgstr ""
 #: assets/js/recordings.js:19
 msgid "You must set a valid name for this recording"
 msgstr ""
+
+#: install.php:56 install.php:70
+msgid "already exists"
+msgstr "вече съществуват"
+
+#: install.php:44
+msgid "checking for fcode field.."
+msgstr "проверка за fcode поле .."
+
+#: install.php:58
+msgid "checking for fcode_pass field.."
+msgstr "проверка за fcode_pass поле .."
 
 #~ msgid " dial"
 #~ msgstr " наберете"
@@ -574,18 +596,6 @@ msgstr ""
 
 #~ msgid "with a a valid suffix"
 #~ msgstr "с правилна наставка"
-
-#~ msgid "OK"
-#~ msgstr "OK"
-
-#~ msgid "already exists"
-#~ msgstr "вече съществуват"
-
-#~ msgid "checking for fcode field.."
-#~ msgstr "проверка за fcode поле .."
-
-#~ msgid "checking for fcode_pass field.."
-#~ msgstr "проверка за fcode_pass поле .."
 
 #~ msgid "Admin"
 #~ msgstr "Админ"
