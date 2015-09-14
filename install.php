@@ -28,14 +28,46 @@ unset($fcc);
 
 // Make sure table exists
 $sql = "CREATE TABLE IF NOT EXISTS recordings (
-	id INTEGER NOT NULL  PRIMARY KEY AUTO_INCREMENT,
-	displayname VARCHAR(50) ,
-	filename BLOB,
-	description VARCHAR(254))
-;";
+	`id` INTEGER NOT NULL  PRIMARY KEY AUTO_INCREMENT,
+	`displayname` VARCHAR(50) ,
+	`filename` BLOB,
+	`description` VARCHAR(254),
+	`fcode` tinyint(1) DEFAULT '0',
+	`fcode_pass` varchar(20)
+);";
 $result = $db->query($sql);
 if(DB::IsError($result)) {
 	die_freepbx($result->getDebugInfo());
+}
+
+// Version 2.5 upgrade
+outn(_("checking for fcode field.."));
+$sql = "SELECT `fcode` FROM recordings";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(DB::IsError($check)) {
+	// add new field
+	$sql = "ALTER TABLE recordings ADD `fcode` TINYINT( 1 ) DEFAULT 0 ;";
+	$result = $db->query($sql);
+	if(DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	out(_("OK"));
+} else {
+	out(_("already exists"));
+}
+outn(_("checking for fcode_pass field.."));
+$sql = "SELECT `fcode_pass` FROM recordings";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(DB::IsError($check)) {
+	// add new field
+	$sql = "ALTER TABLE recordings ADD `fcode_pass` VARCHAR( 20 ) NULL ;";
+	$result = $db->query($sql);
+	if(DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	out(_("OK"));
+} else {
+	out(_("already exists"));
 }
 
 sql('DELETE FROM recordings WHERE displayname = "__invalid"');
