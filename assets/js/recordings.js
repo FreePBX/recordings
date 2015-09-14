@@ -46,26 +46,28 @@ $("#recordings-frm").submit(function(e) {
 	$("#action-buttons input").prop("disabled",true);
 	temp = data;
 
-	$.ajax({
-		type: 'POST',
-		url: "ajax.php",
-		data: data,
-		dataType: 'json',
-		timeout: 30000,
-		success: function(data) {
-			if(data.status) {
-				window.location = "?display=recordings";
-			} else {
-				alert(data.message);
-				console.log(data.errors);
+	if(confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
+		$.ajax({
+			type: 'POST',
+			url: "ajax.php",
+			data: data,
+			dataType: 'json',
+			timeout: 240000,
+			success: function(data) {
+				if(data.status) {
+					window.location = "?display=recordings";
+				} else {
+					alert(data.message);
+					console.log(data.errors);
+					$("#action-buttons input").prop("disabled", false);
+				}
+			},
+			error: function(data) {
+				alert(_("An Error occurred trying to submit this document"));
 				$("#action-buttons input").prop("disabled", false);
-			}
-		},
-		error: function(data) {
-			alert(_("An Error occurred trying to submit this document"));
-			$("#action-buttons input").prop("disabled", false);
-		},
-	});
+			},
+		});
+	}
 });
 //check if this browser supports WebRTC
 //TODO: This eventually needs to check to make sure we are in HTTPS mode
