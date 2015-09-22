@@ -179,7 +179,7 @@ class Recordings implements BMO {
 				$errors = array();
 				//convert files
 				foreach($data['soundlist'] as $list) {
-					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",strtolower($list['name']));
+					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$list['name']);
 					$playback[] = $list['name'];
 					foreach($list['filenames'] as $lang => $file) {
 						if(!file_exists($this->path."/".$lang."/custom")) {
@@ -191,6 +191,8 @@ class Recordings implements BMO {
 							$status = $this->fileStatus($list['name']);
 							if(!empty($status[$lang])) {
 								$file = $lang."/".reset($status[$lang]);
+							} else {
+								//continue;
 							}
 							$media->load($this->path."/".$file);
 						}
@@ -213,7 +215,7 @@ class Recordings implements BMO {
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
 				} else {
-					$this->addRecording($data['name'],$data['description'],implode("&",$playback));
+					$this->addRecording($data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
 				}
 				if(empty($errors)) {
 					return array("status" => true);
