@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-09-14 00:15-0700\n"
+"POT-Creation-Date: 2015-09-22 15:04-0700\n"
 "PO-Revision-Date: 2015-03-25 10:27+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:335
+#: Recordings.class.php:337
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -69,7 +69,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:339
+#: Recordings.class.php:341
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -131,7 +131,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:332
+#: Recordings.class.php:334
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -144,7 +144,7 @@ msgstr "Contraseña del código de característica"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:281
+#: Recordings.class.php:283
 msgid "File does not exist"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 "Se ha autocreado un archivo de sonido que no existía durante la migración "
 "del módulo %s"
 
-#: Recordings.class.php:329
+#: Recordings.class.php:331
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -202,7 +202,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:326
+#: Recordings.class.php:328
 msgid "No file was uploaded"
 msgstr ""
 
@@ -294,7 +294,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:252
+#: Recordings.class.php:254
 msgid "System Recordings"
 msgstr "Grabaciones del sistema"
 
@@ -322,17 +322,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:320
+#: Recordings.class.php:322
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:317
+#: Recordings.class.php:319
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:323
+#: Recordings.class.php:325
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -349,11 +349,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:231
+#: Recordings.class.php:233
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:312
+#: Recordings.class.php:314
 msgid "Unsupported file format"
 msgstr ""
 
