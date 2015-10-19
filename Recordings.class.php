@@ -418,8 +418,12 @@ class Recordings implements BMO {
 	public function getRecordingById($id) {
 		$sql = "SELECT * FROM recordings where id= ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($id));
-		$data = $sth->fetch(\PDO::FETCH_ASSOC);
+		if ($sth->execute(array($id))) {
+			$data = $sth->fetch(\PDO::FETCH_ASSOC);
+		}
+		if (empty($data)) {
+			return array();
+		}
 		$data['soundlist'] = array();
 		$langs = array();
 		$files = explode("&",$data['filename']);
