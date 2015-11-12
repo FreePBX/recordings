@@ -543,10 +543,17 @@ $(document).on("click", "#files li", function(event) {
 		return;
 	}
 	if(!$(this).hasClass("replace")) {
-		if(!$(this).hasClass("missing") && !confirm(_("You are entering replace mode. The next file you add will replace this one. Are you sure you want to do that?"))) {
-			return;
+		var name = $(this).data("name");
+		if(!$(this).hasClass("missing")) {
+			var patt = new RegExp("^"+language+"\/custom","i");
+			if(typeof soundList[name].filenames[language] !== "undefined" && !patt.test(soundList[name].filenames[language]) && !confirm(_("You are entering replace mode on a system file. The next file you add will replace this system file when you save this recording. Are you sure you want to do that?"))) {
+				return;
+			} else if(!confirm(_("You are entering replace mode. The next file you add will replace this one when you save this recording. Are you sure you want to do that?"))) {
+				return;
+			}
 		}
-		$(".replace").removeClass("replace")
+
+		$(".replace").removeClass("replace");
 		$(this).toggleClass("replace");
 	} else if($(this).hasClass("replace")) {
 		$(this).removeClass("replace");

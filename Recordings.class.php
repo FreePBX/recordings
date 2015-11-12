@@ -181,6 +181,7 @@ class Recordings implements BMO {
 				foreach($data['soundlist'] as $list) {
 					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$list['name']);
 					$playback[] = $list['name'];
+					dbug($list);
 					foreach($list['filenames'] as $lang => $file) {
 						if(!file_exists($this->path."/".$lang."/custom")) {
 							mkdir($this->path."/".$lang."/custom",0777,true);
@@ -198,8 +199,7 @@ class Recordings implements BMO {
 								$media->load($this->path."/".$file);
 							}
 							foreach($data['codecs'] as $codec) {
-								if(file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
-									//TODO: need a way to know it's ok to overwrite a sysrecording
+								if(!$list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
 									continue;
 								}
 								try {
@@ -213,16 +213,16 @@ class Recordings implements BMO {
 							}
 						} else {
 							$ext = pathinfo($file,PATHINFO_EXTENSION);
-							if($list['temporary'][$lang] && file_exists($this->temp."/".$file) && !file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
+							if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
 								rename($this->temp."/".$file, $this->path."/".$lang."/".$list['name'].".".$ext);
-							} elseif($list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
-								//TODO: need a way to know it's ok to overwrite a sysrecording
+							} elseif(!$list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
 								continue;
 							}
 
 						}
 					}
 				}
+				throw new \Exception("file");
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
 				} else {
