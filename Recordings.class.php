@@ -185,30 +185,41 @@ class Recordings implements BMO {
 						if(!file_exists($this->path."/".$lang."/custom")) {
 							mkdir($this->path."/".$lang."/custom",0777,true);
 						}
-						if($list['temporary'][$lang]) {
-							$media->load($this->temp."/".$file);
-						} else {
-							$status = $this->fileStatus($list['name']);
-							if(!empty($status[$lang])) {
-								$file = $lang."/".reset($status[$lang]);
+						if(!empty($data['codecs'])) {
+							if($list['temporary'][$lang]) {
+								$media->load($this->temp."/".$file);
 							} else {
-								//continue;
+								$status = $this->fileStatus($list['name']);
+								if(!empty($status[$lang])) {
+									$file = $lang."/".reset($status[$lang]);
+								} else {
+									//continue;
+								}
+								$media->load($this->path."/".$file);
 							}
-							$media->load($this->path."/".$file);
-						}
-						foreach($data['codecs'] as $codec) {
-							if(file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
+							foreach($data['codecs'] as $codec) {
+								if(file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
+									//TODO: need a way to know it's ok to overwrite a sysrecording
+									continue;
+								}
+								try {
+									$media->convert($this->path."/".$lang."/".$list['name'].".".$codec);
+								} catch(\Exception $e) {
+									$errors[] = $e->getMessage()." [".$this->path."/".$file.".".$codec."]";
+								}
+							}
+							if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
+								unlink($this->temp."/".$file);
+							}
+						} else {
+							$ext = pathinfo($file,PATHINFO_EXTENSION);
+							if($list['temporary'][$lang] && file_exists($this->temp."/".$file) && !file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
+								rename($this->temp."/".$file, $this->path."/".$lang."/".$list['name'].".".$ext);
+							} elseif($list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
 								//TODO: need a way to know it's ok to overwrite a sysrecording
 								continue;
 							}
-							try {
-								$media->convert($this->path."/".$lang."/".$list['name'].".".$codec);
-							} catch(\Exception $e) {
-								$errors[] = $e->getMessage()." [".$this->path."/".$file.".".$codec."]";
-							}
-						}
-						if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
-							unlink($this->temp."/".$file);
+
 						}
 					}
 				}
