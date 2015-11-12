@@ -47,6 +47,7 @@ $("#recordings-frm").submit(function(e) {
 	temp = data;
 
 	if(data.codecs.length > 0 && !confirm(_("If you are doing media conversions this can take a very long time, is that ok?"))) {
+		$("#action-buttons input").prop("disabled",false);
 		return;
 	}
 	$.ajax({
