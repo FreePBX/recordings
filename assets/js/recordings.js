@@ -228,8 +228,8 @@ $("#record").click(function() {
 				//dont allow navigating away until they have named this
 				input.blur(function(event) {
 					if(event.relatedTarget === null || (event.relatedTarget.id != "save-recorder" && event.relatedTarget.id != "cancel-recorder")) {
-						alert(_("Please enter a valid name and save"));
-						$(this).focus();
+						input.focus();
+						alert(_("Please enter a valid name for this recording and save or cancel"));
 					}
 				});
 				$("#cancel-recorder").off("click");
