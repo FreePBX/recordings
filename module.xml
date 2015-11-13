@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.5</version>
+	<version>13.0.6</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.6* FREEPBX-10715
 		*13.0.5* FREEPBX-10486 FREEPBX-10515
 		*13.0.4* Return if file or recording not found instead of looking up recordings
 		*13.0.3* Casing issue with certain files
@@ -29,34 +30,12 @@
 		*13.0.1beta3* Re-record over the phone with language additions
 		*13.0.1beta2* FREEPBX-7713 turn all whitespace into dashes and lowercase all filenames
 		*13.0.1beta1* FREEPBX-6140, FREEPBX-5753, FREEPBX-5725, FREEPBX-3306, FREEPBX-3187, FREEPBX-7282, FREEPBX-8146, FREEPBX-8282, FREEPBX-9727
-		*12.0.8* FREEPBX-9148 Recordings doesnt get the directory name from the config
-		*12.0.7* FREEPBX-9133 resolve missing recordings, hide dot files in a different location
-		*12.0.6* FREEPBX-8794 - Filter out .filname, hides hidden files
-		*12.0.5* Backwards compatibility for older freepbx things
-		*12.0.4* Linked all functions and added a new function
-		*12.0.3* Support all known file formats.
-		*12.0.2* FREEPBX-7399 Made sorting and delete standards compliant
-		*12.0.1* Bumping for version using BMO
-		*3.4.0.2* Update license file
-		*3.4.0.1* Diverge Track
-		*3.3.11.9* Replace select/drop boxes with autocomplete box
-		*3.3.11.8* use AMPASTERISKGROUP, don't hardcode
-		*3.3.11.7* #5654
-		*3.3.11.6* cleanup empty return value
-		*3.3.11.5* #5478
-		*3.3.11.4* #5463
-		*3.3.11.3* Categorization changes
-		*3.3.11.2* #4001
-		*3.3.11.1* #4740
-		*3.3.11.0* #4651, #4653, #4579
-		*3.3.10.3* #4604 (Security Bug)
-		*3.3.10.2* #4568 Security Patch
 	</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
 	</menuitems>
 	<depends>
-		<module>framework ge 13.0.1beta3.61</module>
+		<module>framework ge 13.0.14</module>
 		<module>soundlang ge 13.0.0beta6</module>
 	</depends>
 	<supported>

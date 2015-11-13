@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-12 14:10-0800\n"
+"POT-Creation-Date: 2015-11-13 11:00-0800\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:348
+#: Recordings.class.php:350
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -62,6 +62,10 @@ msgid ""
 "previously"
 msgstr ""
 
+#: recordings.i18n.php:6 recordings.i18n.php:12
+msgid "Admin"
+msgstr "Admin"
+
 #: assets/js/recordings.js:69
 msgid "An Error occurred trying to submit this document"
 msgstr ""
@@ -88,7 +92,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:352
+#: Recordings.class.php:354
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -122,7 +126,14 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: Recordings.class.php:71
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Cria e gerencia gravações para o sistema, usado por vários módulos (por "
+"exemplo, URA)."
+
+#: Recordings.class.php:73
 msgid "Delete"
 msgstr "Apagar"
 
@@ -150,7 +161,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:345
+#: Recordings.class.php:347
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -163,7 +174,7 @@ msgstr "Senha do código de facilidade"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:294
+#: Recordings.class.php:296
 msgid "File does not exist"
 msgstr ""
 
@@ -203,7 +214,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
 
-#: Recordings.class.php:342
+#: Recordings.class.php:344
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -219,7 +230,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:339
+#: Recordings.class.php:341
 msgid "No file was uploaded"
 msgstr ""
 
@@ -245,7 +256,7 @@ msgstr "Gravação não existente no módulo %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:743
+#: assets/js/recordings.js:750
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -278,11 +289,11 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Gravações"
 
-#: Recordings.class.php:76
+#: Recordings.class.php:78
 msgid "Reset"
 msgstr ""
 
@@ -303,7 +314,7 @@ msgid ""
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
 
-#: Recordings.class.php:66
+#: Recordings.class.php:68
 msgid "Submit"
 msgstr ""
 
@@ -311,7 +322,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:265
+#: Recordings.class.php:267 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
@@ -340,17 +351,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:333
+#: Recordings.class.php:335
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:330
+#: Recordings.class.php:332
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:336
+#: Recordings.class.php:338
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -367,11 +378,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:244
+#: Recordings.class.php:246
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:325
+#: Recordings.class.php:327
 msgid "Unsupported file format"
 msgstr ""
 
@@ -398,10 +409,17 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:546
+#: assets/js/recordings.js:549
 msgid ""
-"You are entering replace mode. The next file you add will replace this one. "
-"Are you sure you want to do that?"
+"You are entering replace mode on a system file. The next file you add will "
+"replace this system file when you save this recording. Are you sure you want "
+"to do that?"
+msgstr ""
+
+#: assets/js/recordings.js:551
+msgid ""
+"You are entering replace mode. The next file you add will replace this one "
+"when you save this recording. Are you sure you want to do that?"
 msgstr ""
 
 #: views/form.php:70
@@ -611,16 +629,6 @@ msgstr "Verificando se o campo fcode_pass existe..."
 
 #~ msgid "):this.generate_field_id(),this.container_id+="
 #~ msgstr "):this.generate_field_id(),this.container_id+="
-
-#~ msgid "Admin"
-#~ msgstr "Admin"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Cria e gerencia gravações para o sistema, usado por vários módulos (por "
-#~ "exemplo, URA)."
 
 #~ msgid ""
 #~ "Crypt key used by this recordings module when accessing the recording "
