@@ -31,8 +31,10 @@ class Recordings implements BMO {
 
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
-		$tmp = sys_get_temp_dir();
-		$this->temp = !empty($tmp) && file_exists($tmp) ? $tmp : "/tmp";
+		$this->temp = \FreePBX::Config()->get("ASTSPOOLDIR") . "/tmp";
+		if(!file_exists($this->temp)) {
+			mkdir($this->temp,0777,true);
+		}
 		$this->path = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 	}
 
@@ -222,7 +224,7 @@ class Recordings implements BMO {
 						}
 					}
 				}
-				throw new \Exception("file");
+
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
 				} else {
@@ -263,7 +265,7 @@ class Recordings implements BMO {
 					"Priority" => 1,
 					"Async" => "no",
 					"CallerID" => _("System Recordings"),
-					"Variable" => "RECFILE=/tmp/".basename($_POST['filename'])
+					"Variable" => "RECFILE=".$this->temp."/".basename($_POST['filename'])
 				));
 				if($status['Response'] == "Success") {
 					return array("status" => true);
