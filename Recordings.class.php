@@ -491,7 +491,7 @@ class Recordings implements BMO {
 			$file = str_replace($this->path."/","",$file);
 			if(preg_match("/^(\w{2}_\w{2}|\w{2})\/(.*)\.([a-z0-9]{2,})/i",$file,$matches)) {
 				$lang = $matches[1];
-				$name = $matches[2];
+				$name = \ForceUTF8\Encoding::fixUTF8($matches[2]);
 				if(substr($name, 0, 1) == "." || preg_match("/^(?:CHANGES|CREDITS|LICENSE)-asterisk-(?:core|extra)-(?:\w\w\_\w\w|\w\w)-(?:\d|\.)*$/i", $name)) {
 					continue;
 				}
