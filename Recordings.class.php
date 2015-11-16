@@ -102,9 +102,16 @@ class Recordings implements BMO {
 				$langs = $this->FreePBX->Soundlang->getLanguages();
 				$default = $this->FreePBX->Soundlang->getLanguage();
 				$sysrecs = $this->getSystemRecordings();
+				$jsonsysrecs = json_encode($sysrecs);
+				$message = '';
+				if(json_last_error() !== JSON_ERROR_NONE) {
+					$message = sprintf(_("There was an error reading system recordings (%s)"),json_last_error_msg());
+					freepbx_log(FPBX_LOG_WARNING,"JSON decode error: ".json_last_error_msg());
+					$jsonsysrecs = array();
+				}
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
 				$convertto = array_intersect($supported['out'], $this->convert);
-				$html = load_view(__DIR__."/views/form.php",array("convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$html = load_view(__DIR__."/views/form.php",array("message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			case "delete":
 				$this->delRecording($_REQUEST['id']);

@@ -2,6 +2,7 @@
 	<div class="row">
 		<div class="col-sm-9">
 			<h1><?php echo _("Add New System Recording")?></h1>
+			<?php if(!empty($message)) {?><div class="alert alert-warning" role="alert"><?php echo $message?></div><?php } ?>
 			<div class="fpbx-container">
 				<div class="display full-border">
 					<form id="recordings-frm" class="fpbx-submit" name="recordings-frm" action="config.php?display=recordings" method="post" <?php if(isset($data['id'])) {?>data-fpbx-delete="config.php?display=recordings&amp;action=delete&amp;id=<?php echo $data['id']?>"<?php } ?> role="form">
@@ -361,6 +362,6 @@
 		</div>
 	</div>
 </div>
-<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo json_encode($sysrecs)?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>
+<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>
 <div id="playbacks">
 </div>
