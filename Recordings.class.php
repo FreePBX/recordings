@@ -108,6 +108,7 @@ class Recordings implements BMO {
 					$message = sprintf(_("There was an error reading system recordings (%s)"),json_last_error_msg());
 					freepbx_log(FPBX_LOG_WARNING,"JSON decode error: ".json_last_error_msg());
 					$jsonsysrecs = array();
+					$sysrecs = array();
 				}
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
 				$convertto = array_intersect($supported['out'], $this->convert);
