@@ -376,6 +376,16 @@ class Recordings implements BMO {
 		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+		if ($fcode == 1) {
+			// Add the feature code if it is needed
+			//
+			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
+			$fcc->setDescription("Edit Recording: $name");
+			$fcc->setDefault('*29'.$id);
+			$fcc->setProvideDest();
+			$fcc->update();
+			unset($fcc);
+		}
 		needreload();
 	}
 
