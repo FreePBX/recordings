@@ -431,7 +431,7 @@ $('#fileupload').fileupload({
 				patt = new RegExp(sup),
 				submit = true;
 		$.each(data.files, function(k, v) {
-			if(!patt.test(v.name)) {
+			if(!patt.test(v.name.toLowerCase())) {
 				submit = false;
 				alert(_("Unsupported file type"));
 				return false;
