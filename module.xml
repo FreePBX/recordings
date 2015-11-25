@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.8</version>
+	<version>13.0.9</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.9* FREEPBX-10731
 		*13.0.8* Use UTF8 fix to fix some bad encodings
 		*13.0.7* Better error checking on system recordings
 		*13.0.6* FREEPBX-10715

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-16 10:13-0800\n"
+"POT-Creation-Date: 2015-11-25 13:28-0800\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -251,7 +251,7 @@ msgstr ""
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: install.php:54 install.php:68
+#: install.php:50 install.php:64
 msgid "OK"
 msgstr "OK"
 
@@ -429,15 +429,15 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:56 install.php:70
+#: install.php:52 install.php:66
 msgid "already exists"
 msgstr "existe déjà"
 
-#: install.php:44
+#: install.php:40
 msgid "checking for fcode field.."
 msgstr "contrôle du champ fcode..."
 
-#: install.php:58
+#: install.php:54
 msgid "checking for fcode_pass field.."
 msgstr "contrôle du champ fcode_field..."
 

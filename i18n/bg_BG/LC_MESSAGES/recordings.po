@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-16 10:13-0800\n"
+"POT-Creation-Date: 2015-11-25 13:28-0800\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: install.php:54 install.php:68
+#: install.php:50 install.php:64
 msgid "OK"
 msgstr "OK"
 
@@ -425,15 +425,15 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:56 install.php:70
+#: install.php:52 install.php:66
 msgid "already exists"
 msgstr "вече съществуват"
 
-#: install.php:44
+#: install.php:40
 msgid "checking for fcode field.."
 msgstr "проверка за fcode поле .."
 
-#: install.php:58
+#: install.php:54
 msgid "checking for fcode_pass field.."
 msgstr "проверка за fcode_pass поле .."
 
