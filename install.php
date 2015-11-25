@@ -15,15 +15,11 @@ $recordings_astsnd_path .= "/sounds/";
 $autoincrement = (($amp_conf["AMPDBENGINE"] == "sqlite") || ($amp_conf["AMPDBENGINE"] == "sqlite3")) ? "AUTOINCREMENT":"AUTO_INCREMENT";
 
 $fcc = new featurecode('recordings', 'record_save');
-$fcc->setDescription('Save Recording');
-$fcc->setDefault('*77');
-$fcc->update();
+$fcc->delete();
 unset($fcc);
 
 $fcc = new featurecode('recordings', 'record_check');
-$fcc->setDescription('Check Recording');
-$fcc->setDefault('*99');
-$fcc->update();
+$fcc->delete();
 unset($fcc);
 
 // Make sure table exists
