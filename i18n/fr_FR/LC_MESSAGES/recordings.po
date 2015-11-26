@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 13:28-0800\n"
+"POT-Creation-Date: 2015-11-25 16:29-0800\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -200,7 +200,7 @@ msgstr "Lien vers Code de Caractéristique"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:150
+#: functions.inc.php:176
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fichier Son auto-créé lors de la migration du module %s MANQUANT"
@@ -234,11 +234,11 @@ msgstr ""
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:211
+#: functions.inc.php:237
 msgid "No long description available"
 msgstr "Pas de description longue disponible"
 
-#: functions.inc.php:160
+#: functions.inc.php:186
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Enregistrement Non-Existant dans le module %s"
@@ -317,7 +317,7 @@ msgstr ""
 msgid "System Recordings"
 msgstr "Enregistrements Systèmes"
 
-#: functions.inc.php:161
+#: functions.inc.php:187
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
