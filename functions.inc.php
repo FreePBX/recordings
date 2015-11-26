@@ -70,7 +70,8 @@ function recordings_get_config($engine) {
 			$context = 'macro-systemrecording';
 
 			$ext->add($context, 's', '', new ext_gotoif('$["${ARG2}" = ""]','invalid'));
-			$ext->add($context, 's', '', new ext_setvar('RECFILE','${ARG2}'));
+			$ext->add($context, 's', '', new ext_setvar('TMPLANG','${CHANNEL(language)}'));
+			$ext->add($context, 's', '', new ext_setvar('RECFILE','${TMPLANG}/${ARG2}'));
 			$ext->add($context, 's', '', new ext_setvar('LISTEN','docheck'));
 			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
 			$ext->add($context, 's', '', new ext_goto(1, '${ARG1}'));
@@ -101,19 +102,44 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'confmenu';
-			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&astcc-followed-by-pound,m,${CHANNEL(language)},macro-systemrecording'));
+			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&press-3&set&language&after-the-tone,m,${CHANNEL(language)},macro-systemrecording'));
+			$ext->add($context, $exten, '', new ext_playback('beep'));
 			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', '${LISTEN},2'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x2"]', 'doaccept,2'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x3"]', 'switchlang,1'));
 			$ext->add($context, $exten, '', new ext_goto(1));
 
 			$exten = 'doaccept';
 			$ext->add($context, $exten, '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
-			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${CHANNEL(language)}/${RECFILE}.wav'));
+			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${RECFILE}.wav'));
 			$ext->add($context, $exten, 'exit', new ext_playback('auth-thankyou'));
-			$ext->add($context, $exten, '', new ext_hangup());
+			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
+
+			$exten = 'switchlang';
+			$ext->add($context, $exten, '', new ext_playback('language&is-set-to'));
+			$ext->add($context, $exten, '', new ext_sayalpha('${TMPLANG}'));
+			$ext->add($context, $exten, '', new ext_playback('after-the-tone'));
+			$langs = \FreePBX::Soundlang()->getLanguages();
+			$c = 1;
+			foreach($langs as $l => $d) {
+				$ext->add($context, $exten, '', new ext_background('press-'.$c));
+				$ext->add($context, $exten, '', new ext_sayalpha($l));
+				$c++;
+			}
+			$ext->add($context, $exten, '', new ext_playback('beep'));
+			$ext->add($context, $exten, '', new ext_read('LANGRESULT', '', 1, '', '', 4));
+			$c = 1;
+			foreach($langs as $l => $d) {
+				$ext->add($context, $exten, '', new ext_execif('$["x${LANGRESULT}"="x'.$c.'"]', 'Set', 'TMPLANG='.$l));
+				$c++;
+			}
+			$ext->add($context, $exten, '', new ext_setvar('RECFILE','${TMPLANG}/${ARG2}'));
+			$ext->add($context, $exten, '', new ext_playback('language&is-set-to'));
+			$ext->add($context, $exten, '', new ext_sayalpha('${TMPLANG}'));
+			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'invalid';
 			$ext->add($context, $exten, '', new ext_playback('pm-invalid-option'));

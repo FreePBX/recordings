@@ -376,6 +376,7 @@ class Recordings implements BMO {
 		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+		$id = $this->db->lastInsertId();
 		if ($fcode == 1) {
 			// Add the feature code if it is needed
 			//
