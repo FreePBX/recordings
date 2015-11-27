@@ -227,7 +227,8 @@ $("#record").click(function() {
 				input.focus();
 				//dont allow navigating away until they have named this
 				input.blur(function(event) {
-					if(event.relatedTarget === null || (event.relatedTarget.id != "save-recorder" && event.relatedTarget.id != "cancel-recorder")) {
+					var relatedTarget = event.relatedTarget /** WebKIT **/ || event.originalEvent.explicitOriginalTarget /** FF**/ || document.activeElement /** IE 11 **/;
+					if(relatedTarget === null || (relatedTarget.id != "save-recorder" && relatedTarget.id != "cancel-recorder")) {
 						input.focus();
 						alert(_("Please enter a valid name for this recording and save or cancel"));
 					}
@@ -362,7 +363,8 @@ $("#dial-phone").click(function() {
 								$("#dialer-save").addClass("in").removeClass("hidden");
 								nameInput.focus();
 								nameInput.blur(function(event) {
-									if(event.relatedTarget === null || (event.relatedTarget.id != "save-phone" && event.relatedTarget.id != "cancel-phone")) {
+									var relatedTarget = event.relatedTarget /** WebKIT **/ || event.originalEvent.explicitOriginalTarget /** FF**/ || document.activeElement /** IE 11 **/;
+									if(relatedTarget === null || (relatedTarget.id != "save-phone" && relatedTarget.id != "cancel-phone")) {
 										alert(_("Please enter a valid name and save"));
 										$(this).focus();
 									}

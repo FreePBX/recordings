@@ -85,15 +85,17 @@ foreach($recordings as $recording) {
 	$files = explode("&",$recording['filename']);
 	$filenames = array();
 	foreach($files as $file) {
-		//move all custom files first
+		//move all custom files to the default language first
 		if(preg_match("/^custom\/(.*)/",$file,$matches)) {
 			foreach(glob($dir."/custom/".$matches[1].".*") as $f) {
 				$ff = basename($f);
 				rename($f,$dir."/".$default."/custom/".$ff);
 			}
 			$filenames[] = $file;
-		} elseif(preg_match("/^\w{2}\_\w{2}|\w{2}\//",$file)) {
-			$filenames[] = preg_replace("/^\w{2}\_\w{2}|\w{2}\//", "", $file);
+		//if any files are using languages then remove the language since Asterisk does this for us
+		} elseif(preg_match("/^(?:\w{2}\_\w{2}|\w{2}\/)/",$file)) {
+			$filenames[] = preg_replace("/^(?:\w{2}\_\w{2}|\w{2}\/)/", "", $file);
+		//Else just use the file as is
 		} else {
 			$filenames[] = $file;
 		}
