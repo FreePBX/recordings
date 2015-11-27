@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-25 16:29-0800\n"
+"POT-Creation-Date: 2015-11-27 12:05-0800\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -38,7 +38,7 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:390
+#: assets/js/recordings.js:392
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -76,7 +76,7 @@ msgid ""
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:372
+#: assets/js/recordings.js:374
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -88,7 +88,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:409
+#: assets/js/recordings.js:411
 msgid "Call!"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgstr "Gravação não existente no módulo %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:750
+#: assets/js/recordings.js:752
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -277,7 +277,7 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: assets/js/recordings.js:366 assets/js/recordings.js:385
+#: assets/js/recordings.js:368 assets/js/recordings.js:387
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -391,7 +391,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:436
+#: assets/js/recordings.js:438
 msgid "Unsupported file type"
 msgstr ""
 
@@ -414,14 +414,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:549
+#: assets/js/recordings.js:551
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:551
+#: assets/js/recordings.js:553
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
