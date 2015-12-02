@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-11-27 12:05-0800\n"
+"POT-Creation-Date: 2015-12-02 13:16-0800\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -193,7 +193,7 @@ msgstr "链接到功能代码"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:176
+#: functions.inc.php:179
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "声音文件丢失，此声音文件应该在%s模块迁移时自动生成。"
@@ -227,11 +227,11 @@ msgstr ""
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:237
+#: functions.inc.php:240
 msgid "No long description available"
 msgstr "无可用的详细描述"
 
-#: functions.inc.php:186
+#: functions.inc.php:189
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "在模块%s中的录音不存在"
@@ -308,7 +308,7 @@ msgstr ""
 msgid "System Recordings"
 msgstr "系统录音"
 
-#: functions.inc.php:187
+#: functions.inc.php:190
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
