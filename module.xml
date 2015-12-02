@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.11</version>
+	<version>13.0.12</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.12* The word set doesnt exist in en, dont move a file that doesnt exist
 		*13.0.11* FREEPBX-10867 FREEPBX-10856
 		*13.0.10* FREEPBX-10835 Use languages and allow lang switching when calling in from feature code
 		*13.0.9* FREEPBX-10731

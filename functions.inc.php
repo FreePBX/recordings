@@ -102,16 +102,19 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'confmenu';
-			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&press-3&set&language&after-the-tone,m,${CHANNEL(language)},macro-systemrecording'));
+			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&language&press-3&after-the-tone,m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_playback('beep'));
 			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', '${LISTEN},2'));
-			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x2"]', 'doaccept,2'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x2"]', 'doaccept,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x3"]', 'switchlang,1'));
 			$ext->add($context, $exten, '', new ext_goto(1));
 
 			$exten = 'doaccept';
+			$ext->add($context, $exten, '', new ext_setvar('EXISTS','${STAT(e,${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav)}'));
+			$ext->add($context, $exten, '', new ext_noop('${EXISTS}'));
+			$ext->add($context, $exten, '', new ext_gotoif('$["${EXISTS}" != "1"]', 'exit'));
 			$ext->add($context, $exten, '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
 			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${RECFILE}.wav'));
