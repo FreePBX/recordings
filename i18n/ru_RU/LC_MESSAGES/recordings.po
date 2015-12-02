@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-02 13:16-0800\n"
+"POT-Creation-Date: 2015-12-02 14:36-0800\n"
 "PO-Revision-Date: 2015-04-25 00:20+0200\n"
 "Last-Translator: Yuriy <alliancesko@gmail.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -38,11 +38,11 @@ msgstr ""
 msgid "Add New System Recording"
 msgstr ""
 
-#: views/form.php:228
+#: views/form.php:229
 msgid "Add System Recording"
 msgstr ""
 
-#: views/form.php:243
+#: views/form.php:244
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
@@ -66,11 +66,11 @@ msgstr ""
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
-#: views/form.php:94
+#: views/form.php:95
 msgid "Browse"
 msgstr ""
 
-#: views/form.php:198
+#: views/form.php:199
 msgid "Call"
 msgstr ""
 
@@ -82,7 +82,7 @@ msgstr ""
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: views/form.php:167 views/form.php:206
+#: views/form.php:168 views/form.php:207
 msgid "Cancel"
 msgstr ""
 
@@ -90,13 +90,13 @@ msgstr ""
 msgid "Check Recording"
 msgstr "Проверить запись"
 
-#: views/form.php:348
+#: views/form.php:349
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
 
-#: views/form.php:300
+#: views/form.php:301
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -104,11 +104,11 @@ msgstr ""
 "Отметить здесь чтобы использовать сервисный код, который позволит напрямую "
 "изменять эту запись."
 
-#: views/form.php:256
+#: views/form.php:257
 msgid "Combine Files"
 msgstr ""
 
-#: views/form.php:332
+#: views/form.php:333
 msgid "Convert To"
 msgstr ""
 
@@ -139,11 +139,11 @@ msgstr ""
 msgid "Displayname"
 msgstr ""
 
-#: views/form.php:101
+#: views/form.php:102
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
-#: views/form.php:196
+#: views/form.php:197
 msgid "Enter Extension"
 msgstr ""
 
@@ -151,7 +151,7 @@ msgstr ""
 msgid "Failed to write file to disk"
 msgstr ""
 
-#: views/form.php:312
+#: views/form.php:313
 msgid "Feature Code Password"
 msgstr "Пароль на сервисный код"
 
@@ -164,7 +164,7 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: views/form.php:150
+#: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 
@@ -178,7 +178,7 @@ msgid ""
 "ok?"
 msgstr ""
 
-#: views/form.php:271
+#: views/form.php:272
 msgid ""
 "Instead of chaining files together (of which some applications do not "
 "support playback) combine the files above into a single file. After this is "
@@ -187,11 +187,11 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: views/form.php:284
+#: views/form.php:285
 msgid "Link to Feature Code"
 msgstr "Линк на Сервисный код"
 
-#: views/form.php:360
+#: views/form.php:361
 msgid "List Recordings"
 msgstr ""
 
@@ -208,11 +208,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: views/form.php:204
+#: views/form.php:205
 msgid "Name this file"
 msgstr ""
 
-#: views/form.php:264 views/form.php:292
+#: views/form.php:265 views/form.php:293
 msgid "No"
 msgstr ""
 
@@ -238,11 +238,11 @@ msgstr "Нет длинного описания"
 msgid "Non-Existent Recording in module %s"
 msgstr "Не существующая запись в модуле %s"
 
-#: views/form.php:294
+#: views/form.php:295
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:752
+#: assets/js/recordings.js:753
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -250,12 +250,12 @@ msgstr ""
 msgid "OK"
 msgstr "ОК"
 
-#: views/form.php:294
+#: views/form.php:295
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Сервисный код %s(опционально)"
 
-#: views/form.php:320
+#: views/form.php:321
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -267,11 +267,11 @@ msgstr ""
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: views/form.php:120
+#: views/form.php:121
 msgid "Record In Browser"
 msgstr ""
 
-#: views/form.php:189
+#: views/form.php:190
 msgid "Record Over Extension"
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr "Записи"
 msgid "Reset"
 msgstr ""
 
-#: views/form.php:168 views/form.php:207
+#: views/form.php:169 views/form.php:208
 msgid "Save"
 msgstr "Сохранить"
 
@@ -291,7 +291,7 @@ msgstr "Сохранить"
 msgid "Save Recording"
 msgstr "Сохранить запись"
 
-#: views/form.php:77
+#: views/form.php:78
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
 "top to the bottom. You can click the play icon to preview the files. If a "
@@ -331,7 +331,7 @@ msgid ""
 "another file then this will overwrite it."
 msgstr ""
 
-#: views/form.php:216
+#: views/form.php:217
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
@@ -356,13 +356,13 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: views/form.php:177
+#: views/form.php:178
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
 
-#: views/form.php:154
+#: views/form.php:155
 #, php-format
 msgid ""
 "To play the media you will need to either update your browser to a recent "
@@ -381,22 +381,22 @@ msgstr ""
 msgid "Unsupported file type"
 msgstr ""
 
-#: views/form.php:153
+#: views/form.php:154
 msgid "Update Required"
 msgstr ""
 
-#: views/form.php:89
+#: views/form.php:90
 msgid "Upload Recording"
 msgstr ""
 
-#: views/form.php:108
+#: views/form.php:109
 #, php-format
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: views/form.php:262 views/form.php:290
+#: views/form.php:263 views/form.php:291
 msgid "Yes"
 msgstr ""
 
@@ -411,6 +411,12 @@ msgstr ""
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
+msgstr ""
+
+#: views/form.php:72
+msgid ""
+"You can click any file above to replace it with a recording option below. "
+"Clicking a file will turn it green putting it into replace mode"
 msgstr ""
 
 #: views/form.php:71
