@@ -723,6 +723,7 @@ function generateList() {
 	$.jPlayer.pause();
 	$("#playbacks").html("");
 	$("#missing-file-alert").addClass("hidden");
+	$("#replace-file-alert").addClass("hidden");
 	$("#files").html("");
 	if(typeof soundList !== "undefined") {
 		if(!isObjEmpty(soundList)) {
@@ -752,6 +753,11 @@ function checkList() {
 		$("#fcode-message").text(_("Not supported on compounded recordings"));
 	}
 
+	if(count > 0) {
+		$("#replace-file-alert").removeClass("hidden");
+	} else {
+		$("#replace-file-alert").addClass("hidden");
+	}
 	if($(".missing").length > 0) {
 		$("#missing-file-alert").removeClass("hidden");
 	} else {

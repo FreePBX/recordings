@@ -69,6 +69,7 @@
 													<?php } } ?>
 												</ul>
 												<div id="missing-file-alert" class="alert alert-warning text-center hidden" role="alert"><?php echo _("You have a missing file for this language. Click any red recording above to replace it with a recording/upload below. It will then turn green. Once you have finished uploading/recording the recording will turn grey")?></div>
+												<div id="replace-file-alert" class="alert alert-success text-center hidden" role="alert"><?php echo _("You can click any file above to replace it with a recording option below. Clicking a file will turn it green putting it into replace mode")?></div>
 											</div>
 										</div>
 									</div>
