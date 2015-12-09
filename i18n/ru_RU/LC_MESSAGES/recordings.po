@@ -22,31 +22,33 @@ msgstr ""
 
 #: Recordings.class.php:358
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "PHP-расширение остановило загрузку файла"
 
 #: assets/js/recordings.js:392
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
 msgstr ""
+"Системная запись с таким именем уже существует для данного языка. Хотите "
+"перезаписать?"
 
 #: views/grid.php:25
 msgid "Actions"
-msgstr ""
+msgstr "Действия"
 
 #: views/form.php:4
 msgid "Add New System Recording"
-msgstr ""
+msgstr "Добавить новую системную запись"
 
 #: views/form.php:229
 msgid "Add System Recording"
-msgstr ""
+msgstr "Добавить системную запись"
 
 #: views/form.php:244
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
+msgstr "Добавить любую , ранее созданную системную запись ."
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
@@ -54,37 +56,39 @@ msgstr "Администратор"
 
 #: assets/js/recordings.js:69
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "Возникла ошибка при попытке подтвердить сохранение документа."
 
 #: assets/js/recordings.js:158
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
+"Вы уверены ,что хоти сконвертировать эти файлы? Без конвертации файлы могут "
+"работать некорректно в Asterisk-е  ."
 
 #: assets/js/recordings.js:374
 msgid "Are you sure you wish to discard this recordings?"
-msgstr ""
+msgstr "Вы уверены ,что хотите отменить эти записи?"
 
 #: views/form.php:95
 msgid "Browse"
-msgstr ""
+msgstr "Просмотр"
 
 #: views/form.php:199
 msgid "Call"
-msgstr ""
+msgstr "Вызов"
 
 #: assets/js/recordings.js:411
 msgid "Call!"
-msgstr ""
+msgstr "Вызов!"
 
 #: Recordings.class.php:362
 msgid "Can Not Find Uploaded Files"
-msgstr ""
+msgstr "Невозможно найти загруженные файлы"
 
 #: views/form.php:168 views/form.php:207
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: install.php:7
 msgid "Check Recording"
@@ -95,6 +99,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"Проверьте все форматы кодирования , в которых вы желаете  сохранить "
+"системные записи"
 
 #: views/form.php:301
 msgid ""
@@ -106,11 +112,11 @@ msgstr ""
 
 #: views/form.php:257
 msgid "Combine Files"
-msgstr ""
+msgstr "Совместить файлы"
 
 #: views/form.php:333
 msgid "Convert To"
-msgstr ""
+msgstr "Конвертировать в "
 
 #: recordings.i18n.php:8
 msgid ""
@@ -125,31 +131,31 @@ msgstr "Удалить"
 
 #: assets/js/recordings.js:206
 msgid "Delete Recording"
-msgstr ""
+msgstr "Удалить запись"
 
 #: views/form.php:44
 msgid "Describe this recording"
-msgstr ""
+msgstr "Описать данную запись"
 
 #: views/form.php:36
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 #: views/grid.php:23
 msgid "Displayname"
-msgstr ""
+msgstr "Отображаемое имя"
 
 #: views/form.php:102
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Разбить на несколько файлов или архивировать"
 
 #: views/form.php:197
 msgid "Enter Extension"
-msgstr ""
+msgstr "Введите внутренний номер"
 
 #: Recordings.class.php:355
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Ошибка записи файла на диск"
 
 #: views/form.php:313
 msgid "Feature Code Password"
@@ -158,25 +164,25 @@ msgstr "Пароль на сервисный код"
 #: views/form.php:56
 #, php-format
 msgid "File List for %s"
-msgstr ""
+msgstr "Список файлов для %s"
 
 #: Recordings.class.php:304
 msgid "File does not exist"
-msgstr ""
+msgstr "Файл не существует"
 
 #: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
+msgstr "Нажмите на красную кнопку  для начала  записи из вашего браузера"
 
 #: views/grid.php:22
 msgid "ID"
-msgstr ""
+msgstr "Идентификационный номер"
 
 #: assets/js/recordings.js:49
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
-msgstr ""
+msgstr "Медиа-конвертация может занять длительное время . Продолжить?"
 
 #: views/form.php:272
 msgid ""
@@ -186,6 +192,10 @@ msgid ""
 "but you will be able to add files to the end of or the beginning of this "
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
+"Вместо создания цепочки файлов ( некоторые приложения могут не поддерживать "
+"их  проигрывание)  объедините файлы в один . После этого вы не сможете "
+"пересортировать или убрать файлы из списка , но вы сможете добавить файлы в "
+"конец или начало этого файла. Это не удалит существующие файлы ."
 
 #: views/form.php:285
 msgid "Link to Feature Code"
@@ -193,7 +203,7 @@ msgstr "Линк на Сервисный код"
 
 #: views/form.php:361
 msgid "List Recordings"
-msgstr ""
+msgstr "Список записей"
 
 #: functions.inc.php:179
 #, php-format
@@ -202,32 +212,32 @@ msgstr "Не найден звуковой файл созданный при п
 
 #: Recordings.class.php:352
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Неверная временная папка"
 
 #: views/form.php:16
 msgid "Name"
-msgstr ""
+msgstr "Имя"
 
 #: views/form.php:205
 msgid "Name this file"
-msgstr ""
+msgstr "Имя этого файла"
 
 #: views/form.php:265 views/form.php:293
 msgid "No"
-msgstr ""
+msgstr "Нет"
 
 #: Recordings.class.php:349
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Файлы не загружены"
 
 #: views/form.php:65
 #, php-format
 msgid "No files for %s"
-msgstr ""
+msgstr "Нет файлов для %s"
 
 #: assets/js/recordings.js:29
 msgid "No files have been added to this recording"
-msgstr ""
+msgstr "Ни одного файла не было добавлено для этой записи"
 
 #: functions.inc.php:240
 msgid "No long description available"
@@ -240,11 +250,11 @@ msgstr "Не существующая запись в модуле %s"
 
 #: views/form.php:295
 msgid "Not supported on compounded or Non-Existent recordings"
-msgstr ""
+msgstr "Не поддерживается на скомбинированных или несуществующих записях"
 
 #: assets/js/recordings.js:753
 msgid "Not supported on compounded recordings"
-msgstr ""
+msgstr "Не поддерживается на комбинированных записях"
 
 #: install.php:50 install.php:64
 msgid "OK"
@@ -265,15 +275,15 @@ msgstr ""
 
 #: assets/js/recordings.js:368 assets/js/recordings.js:387
 msgid "Please enter a valid name and save"
-msgstr ""
+msgstr "Пожалуйста введите корректное имя и сохраните"
 
 #: views/form.php:121
 msgid "Record In Browser"
-msgstr ""
+msgstr "Запись в браузере"
 
 #: views/form.php:190
 msgid "Record Over Extension"
-msgstr ""
+msgstr "Запись с телефона на внутреннем номере"
 
 #: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
@@ -281,7 +291,7 @@ msgstr "Записи"
 
 #: Recordings.class.php:78
 msgid "Reset"
-msgstr ""
+msgstr "Сброс"
 
 #: views/form.php:169 views/form.php:208
 msgid "Save"
@@ -299,14 +309,20 @@ msgid ""
 "by clicking them once (which will turn them green) placing them into replace "
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
+"Сортируемый список проигрывания . Проигрывание может быть выполнено начиная "
+"с начала списка и до конца. Вы можете нажать по иконке Play для "
+"предварительного просмотра списка файлов. Если файл помечен красным если он "
+"является некорректным для выбранного языка. Файлы могут быть замещены  "
+"переводом их в режим замещения . Всё , что вы загрузите , заместит данный "
+"файл  при сохранении."
 
 #: Recordings.class.php:68
 msgid "Submit"
-msgstr ""
+msgstr "Подтвердить"
 
 #: views/grid.php:24
 msgid "Supported Languages"
-msgstr ""
+msgstr "Поддерживаемые языки"
 
 #: Recordings.class.php:275 recordings.i18n.php:10
 msgid "System Recordings"
@@ -330,26 +346,34 @@ msgid ""
 "The name of the system recording on the file system. If it conflicts with "
 "another file then this will overwrite it."
 msgstr ""
+"Имя системной записи в файловой системе. Если оно конфликтует с другим "
+"файлом , то новый файл перезапишет старый"
 
 #: views/form.php:217
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
+"Система  совершит вызов на внутренний номер ,  указанный  справа . После "
+"завершения вызова вы сможете присвоить имя файлу и он появится в списке."
 
 #: Recordings.class.php:343
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
+"HTML-форме"
 
 #: Recordings.class.php:340
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
+"Размер загруженного  файл превышает  значение upload_max_filesize "
+"directive   , указанное в php.ini"
 
 #: Recordings.class.php:346
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "Файл загружен неполностью"
 
 #: Recordings.class.php:108
 #, php-format
@@ -361,6 +385,8 @@ msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
+"Будет создан  WebRT-запрос , так что вы сможете сделать запись в вашем "
+"браузере на локальной машине."
 
 #: views/form.php:155
 #, php-format
@@ -368,26 +394,28 @@ msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr ""
+"Для проигрывания медиаданных вам необходимо обновить ваш браузер  или "
+"обновить ваш %s"
 
 #: Recordings.class.php:254
 msgid "Unknown Error"
-msgstr ""
+msgstr "Неизвестная ошибка"
 
 #: Recordings.class.php:335
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Не поддерживаемый  формат файла"
 
 #: assets/js/recordings.js:438
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Не поддерживаемый  тип файла"
 
 #: views/form.php:154
 msgid "Update Required"
-msgstr ""
+msgstr "Требуется обновление"
 
 #: views/form.php:90
 msgid "Upload Recording"
-msgstr ""
+msgstr "Загрузить запись"
 
 #: views/form.php:109
 #, php-format
@@ -395,10 +423,13 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Загрузка файла с вашей локальной рабочей станции . Поддерживаемые форматы "
+"загрузи: %s  . Включает архивные файлы(в том числе многотомные) и составные "
+"файлы."
 
 #: views/form.php:263 views/form.php:291
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #: assets/js/recordings.js:551
 msgid ""
@@ -425,10 +456,13 @@ msgid ""
 "replace it with a recording/upload below. It will then turn green. Once you "
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
+"Некорректный файл для данного языка.  Нажмите на любой \"красной\" записи "
+"для замещения её   записанной/загруженной записью . Она станет \"зелёной\" "
+".  После того ,как запись/загрузка завершится , запись станет \"серой\"."
 
 #: assets/js/recordings.js:19
 msgid "You must set a valid name for this recording"
-msgstr ""
+msgstr "Вы должны указать корректное имя для данной записи."
 
 #: install.php:52 install.php:66
 msgid "already exists"
