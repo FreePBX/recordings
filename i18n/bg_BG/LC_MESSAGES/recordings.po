@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-02 14:36-0800\n"
+"POT-Creation-Date: 2015-12-10 15:54-0800\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -197,7 +197,7 @@ msgstr "Свържи Специален Код"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:179
+#: functions.inc.php:181
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Missing Sound файл автоматично създаден при преместване от %s модул"
@@ -231,11 +231,11 @@ msgstr ""
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:240
+#: functions.inc.php:242
 msgid "No long description available"
 msgstr "Не е достъпно описание"
 
-#: functions.inc.php:189
+#: functions.inc.php:191
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Не Съществуващ Запис в модул %s"
@@ -314,7 +314,7 @@ msgstr ""
 msgid "System Recordings"
 msgstr "Системни Записи"
 
-#: functions.inc.php:190
+#: functions.inc.php:192
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
