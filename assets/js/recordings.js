@@ -50,10 +50,100 @@ $("#recordings-frm").submit(function(e) {
 		$("#action-buttons input").prop("disabled",false);
 		return;
 	}
+	var process = [], playback = [];
+	if(data.codecs.length > 0) {
+		$.each(soundList, function(file, d) {
+			$.each(d.languages, function(k,lang) {
+				$.each(data.codecs, function(k, codec) {
+					process.push({
+						"file": d.filenames[lang],
+						"name": d.name,
+						"codec": codec,
+						"lang": lang,
+						"temporary": d.temporary[lang]
+					});
+				});
+			});
+		});
+	} else {
+		$.each(soundList, function(file, d) {
+			$.each(d.languages, function(k,lang) {
+				if(d.temporary[lang]) {
+					process.push({
+						"file": d.filenames[lang],
+						"name": d.name,
+						"codec": "",
+						"lang": lang,
+						"temporary": d.temporary[lang]
+					});
+				} else {
+					playback.push(d.name);
+				}
+			});
+		});
+	}
+	if(process.length > 0) {
+		var total = process.length, count = 0;
+		$("#recscreen .progress-bar").prop("aria-valuenow",0);
+		$("#recscreen .progress-bar").css("width",0+"px");
+		$("#recscreen").removeClass("hidden");
+		async.forEachOfSeries(process, function (value, key, callback) {
+			value.command = "convert";
+			value.module = "recordings";
+			$("#recscreen label").html(sprintf(_("Processing %s for %s in format %s"),value.name, value.lang, value.codec));
+			$.ajax({
+				type: 'POST',
+				url: "ajax.php",
+				data: value,
+				dataType: 'json',
+				timeout: 240000
+			}).done(function(data) {
+				if(data.status) {
+					playback.push(data.name);
+					callback();
+				} else {
+					console.error(data);
+					callback(data.message);
+				}
+			}).fail(function(data) {
+				console.error(data);
+				callback(data);
+			}).always(function(data) {
+				count++;
+				var progress = (count/total) * 100;
+				$("#recscreen .progress-bar").prop("aria-valuenow",progress);
+				$("#recscreen .progress-bar").css("width",progress+"%");
+			});
+		}, function(err){
+			if(err) {
+				alert(err);
+				$("#action-buttons input").prop("disabled", false);
+				$("#recscreen").addClass("hidden");
+			} else {
+				$("#recscreen label").text(_("Finished!"));
+				recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass);
+			}
+		});
+	} else {
+		$("#recscreen label").text(_("Finished!"));
+		recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass);
+	}
+});
+
+function recsave(id,playback,name,description,fcode,fcode_pass) {
 	$.ajax({
 		type: 'POST',
 		url: "ajax.php",
-		data: data,
+		data: {
+			"module": "recordings",
+			"command": "save",
+			"id": id,
+			"playback": playback,
+			"name": name,
+			"description": description,
+			"fcode": fcode,
+			"fcode_pass": fcode_pass
+		},
 		dataType: 'json',
 		timeout: 240000,
 		success: function(data) {
@@ -70,7 +160,7 @@ $("#recordings-frm").submit(function(e) {
 			$("#action-buttons input").prop("disabled", false);
 		},
 	});
-});
+}
 //check if this browser supports WebRTC
 //TODO: This eventually needs to check to make sure we are in HTTPS mode
 if (Modernizr.getusermedia) {

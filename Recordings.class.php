@@ -139,6 +139,7 @@ class Recordings implements BMO {
 			case "gethtml5":
 			case "playback":
 			case "download":
+			case "convert":
 				return true;
 			break;
 		}
@@ -179,64 +180,60 @@ class Recordings implements BMO {
 				}
 				return array("status" => true, "files" => $final);
 			break;
-			case "save":
+			case "convert":
 				set_time_limit(0);
-				//Save the FINAL recording. Do all post processing work here as well
-				$data = $_POST;
-				$data['soundlist'] = json_decode($data['soundlist'],true);
-				$playback = array();
 				$media = $this->FreePBX->Media;
-				$errors = array();
-				//convert files
-				foreach($data['soundlist'] as $list) {
-					$list['name'] = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$list['name']);
-					$playback[] = $list['name'];
-					dbug($list);
-					foreach($list['filenames'] as $lang => $file) {
-						if(!file_exists($this->path."/".$lang."/custom")) {
-							mkdir($this->path."/".$lang."/custom",0777,true);
-						}
-						if(!empty($data['codecs'])) {
-							if($list['temporary'][$lang]) {
-								$media->load($this->temp."/".$file);
-							} else {
-								$status = $this->fileStatus($list['name']);
-								if(!empty($status[$lang])) {
-									$file = $lang."/".reset($status[$lang]);
-								} else {
-									//continue;
-								}
-								$media->load($this->path."/".$file);
-							}
-							foreach($data['codecs'] as $codec) {
-								if(!$list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$codec)) {
-									continue;
-								}
-								try {
-									$media->convert($this->path."/".$lang."/".$list['name'].".".$codec);
-								} catch(\Exception $e) {
-									$errors[] = $e->getMessage()." [".$this->path."/".$file.".".$codec."]";
-								}
-							}
-							if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
-								unlink($this->temp."/".$file);
-							}
-						} else {
-							$ext = pathinfo($file,PATHINFO_EXTENSION);
-							if($list['temporary'][$lang] && file_exists($this->temp."/".$file)) {
-								rename($this->temp."/".$file, $this->path."/".$lang."/".$list['name'].".".$ext);
-							} elseif(!$list['temporary'][$lang] && file_exists($this->path."/".$lang."/".$list['name'].".".$ext)) {
-								continue;
-							}
+				$file = $_POST['file'];
+				$name = $_POST['name'];
+				$codec = $_POST['codec'];
+				$lang = $_POST['lang'];
+				$temporary = $_POST['temporary'];
 
-						}
-					}
+				if(!file_exists($this->path."/".$lang."/custom")) {
+					mkdir($this->path."/".$lang."/custom",0777,true);
 				}
 
-				if($data['id'] == "0" || !empty($data['id'])) {
-					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
+				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
+
+				if(!empty($codec)) {
+					if($temporary) {
+						$media->load($this->temp."/".$file);
+					} else {
+						$status = $this->fileStatus($name);
+						if(!empty($status[$lang])) {
+							$file = $lang."/".reset($status[$lang]);
+						}
+						$media->load($this->path."/".$file);
+					}
+					if(!$temporary && file_exists($this->path."/".$lang."/".$name.".".$codec)) {
+						return array("status" => true, "name" => $name);
+					}
+					try {
+						$media->convert($this->path."/".$lang."/".$name.".".$codec);
+					} catch(\Exception $e) {
+						return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
+					}
+					if($temporary && file_exists($this->temp."/".$file)) {
+						unlink($this->temp."/".$file);
+					}
+					return array("status" => true, "name" => $name);
 				} else {
-					$this->addRecording($data['name'],$data['description'],implode("&",$playback),$data['fcode'],$data['fcode_pass']);
+					$ext = pathinfo($file,PATHINFO_EXTENSION);
+					if($temporary && file_exists($this->temp."/".$file)) {
+						rename($this->temp."/".$file, $this->path."/".$lang."/".$name.".".$ext);
+						return array("status" => true, "name" => $name);
+					} else {
+						return array("status" => true, "name" => $name);
+					}
+				}
+			break;
+			case "save":
+				//Save the FINAL recording. Do all post processing work here as well
+				$data = $_POST;
+				if($data['id'] == "0" || !empty($data['id'])) {
+					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
+				} else {
+					$this->addRecording($data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
 				}
 				if(empty($errors)) {
 					return array("status" => true);
@@ -602,6 +599,9 @@ class Recordings implements BMO {
 				$parts = pathinfo($f);
 				if(empty($parts['extension'])) {
 					continue; //wtf is this file?
+				} elseif($parts['extension'] == "finished") {
+					unlink($f);
+					continue;
 				}
 				$data[$lang][$parts['extension']] = str_replace($langdir."/","",$f);
 			}

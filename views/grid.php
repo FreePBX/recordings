@@ -20,7 +20,8 @@
 				<thead>
 					<tr>
 						<th data-field="id"><?php echo _("ID")?></th>
-						<th data-field="displayname"><?php echo _("Displayname")?></th>
+						<th data-field="displayname"><?php echo _("Display Name")?></th>
+						<th data-field="description"><?php echo _("Description")?></th>
 						<th data-field="languages"><?php echo _("Supported Languages")?></th>
 						<th data-formatter="linkFormatter"><?php echo _("Actions")?></th>
 					</tr>
