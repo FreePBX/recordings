@@ -43,7 +43,7 @@
 		<recordings>System Recordings</recordings>
 	</menuitems>
 	<depends>
-		<module>framework ge 13.0.16</module>
+		<module>framework ge 13.0.36</module>
 		<module>soundlang ge 13.0.0beta6</module>
 	</depends>
 	<supported>
