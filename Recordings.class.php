@@ -213,9 +213,6 @@ class Recordings implements BMO {
 					} catch(\Exception $e) {
 						return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
 					}
-					if($temporary && file_exists($this->temp."/".$file)) {
-						unlink($this->temp."/".$file);
-					}
 					return array("status" => true, "name" => $name);
 				} else {
 					$ext = pathinfo($file,PATHINFO_EXTENSION);
@@ -235,11 +232,15 @@ class Recordings implements BMO {
 				} else {
 					$this->addRecording($data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
 				}
-				if(empty($errors)) {
-					return array("status" => true);
-				} else {
-					return array("status" => false, "message" => "error", "errors" => $errors);
+				if(!empty($data['remove'])) {
+					foreach($data['remove'] as $file) {
+						$file = basename($file);
+						if(file_exists($this->temp."/".$file)) {
+							unlink($this->temp."/".$file);
+						}
+					}
 				}
+				return array("status" => true);
 			break;
 			case "savebrowserrecording":
 				if ($_FILES["file"]["error"] == UPLOAD_ERR_OK) {

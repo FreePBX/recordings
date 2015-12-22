@@ -50,7 +50,7 @@ $("#recordings-frm").submit(function(e) {
 		$("#action-buttons input").prop("disabled",false);
 		return;
 	}
-	var process = [], playback = [];
+	var process = [], playback = [], remove = [];
 	if(data.codecs.length > 0) {
 		$.each(soundList, function(file, d) {
 			$.each(d.languages, function(k,lang) {
@@ -99,6 +99,9 @@ $("#recordings-frm").submit(function(e) {
 				timeout: 240000
 			}).done(function(data) {
 				if(data.status) {
+					if(value.temporary) {
+						remove.push(value.file);
+					}
 					playback.push(data.name);
 					callback();
 				} else {
@@ -116,21 +119,23 @@ $("#recordings-frm").submit(function(e) {
 			});
 		}, function(err){
 			if(err) {
-				alert(err);
+				alert(_("There was an error, See the console for more details"));
+				remove = [];
+				console.error(err);
 				$("#action-buttons input").prop("disabled", false);
 				$("#recscreen").addClass("hidden");
 			} else {
 				$("#recscreen label").text(_("Finished!"));
-				recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass);
+				recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
 			}
 		});
 	} else {
 		$("#recscreen label").text(_("Finished!"));
-		recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass);
+		recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
 	}
 });
 
-function recsave(id,playback,name,description,fcode,fcode_pass) {
+function recsave(id,playback,name,description,fcode,fcode_pass,remove) {
 	$.ajax({
 		type: 'POST',
 		url: "ajax.php",
@@ -142,7 +147,8 @@ function recsave(id,playback,name,description,fcode,fcode_pass) {
 			"name": name,
 			"description": description,
 			"fcode": fcode,
-			"fcode_pass": fcode_pass
+			"fcode_pass": fcode_pass,
+			"remove": remove
 		},
 		dataType: 'json',
 		timeout: 240000,
