@@ -15,13 +15,12 @@ class Recordings implements BMO {
 	private $convert = array(
 		"wav",
 		"sln",
+		"sln48",
 		"g722",
 		"ulaw",
 		"alaw",
 		"g729",
-		"gsm",
-		"wav49",
-		"g719"
+		"gsm"
 	);
 
 	public function __construct($freepbx = null) {
@@ -57,6 +56,13 @@ class Recordings implements BMO {
 	public function genConfig() {
 
 	}
+
+	public function getRightNav($request) {
+		if(isset($request['action']) && ($request['action'] == 'edit' || $request['action'] == 'add')) {
+			return load_view(__DIR__."/views/bnav.php",array());
+		}
+		return '';
+}
 
 	public function getActionBar($request){
 		$buttons = array();

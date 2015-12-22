@@ -959,3 +959,9 @@ $(document).on("keyup paste", ".name-check", function(e) {
 	var i = $(this).val().replace(/\s|&|<|>|\.|`|'|\*|\?|"/g, '-').toLowerCase();
 	$(this).val(i);
 });
+
+$(function() {
+	$("#bnav-grid").on("click-row.bs.table", function(event, row, $element) {
+		window.location = "?display=recordings&action=edit&id="+row.id;
+	});
+});

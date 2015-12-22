@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-9">
+		<div class="col-sm-12">
 			<h1><?php echo _("Add New System Recording")?></h1>
 			<?php if(!empty($message)) {?><div class="alert alert-warning" role="alert"><?php echo $message?></div><?php } ?>
 			<div class="fpbx-container">
@@ -354,11 +354,6 @@
 						</div>
 					</form>
 				</div>
-			</div>
-		</div>
-		<div class="col-sm-3 hidden-xs bootnav">
-			<div class="list-group">
-				<a href="?display=recordings" class="list-group-item"><?php echo _("List Recordings")?></a>
 			</div>
 		</div>
 	</div>
