@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.15</version>
+	<version>13.0.16</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.16* Floating bootnav formats fix
 		*13.0.15* FREEPBX-10333
 		*13.0.14* Allow 2 and 3 to be pressed during background playback. Also update tmp message when changing is accepted
 		*13.0.13* Better explaination of what to do

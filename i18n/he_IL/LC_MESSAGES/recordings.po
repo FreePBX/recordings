@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-22 10:31-0800\n"
+"POT-Creation-Date: 2015-12-22 12:52-0800\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Recordings.class.php:356
+#: Recordings.class.php:362
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -24,13 +24,17 @@ msgid ""
 "want to overwrite it?"
 msgstr ""
 
-#: views/grid.php:26
+#: views/grid.php:25
 msgid "Actions"
 msgstr ""
 
 #: views/form.php:4
 msgid "Add New System Recording"
 msgstr ""
+
+#: views/bnav.php:5
+msgid "Add Recording"
+msgstr "הוספת הקלטה"
 
 #: views/form.php:229
 msgid "Add System Recording"
@@ -72,7 +76,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:360
+#: Recordings.class.php:366
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -110,7 +114,7 @@ msgid ""
 msgstr ""
 "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
 
-#: Recordings.class.php:73
+#: Recordings.class.php:79
 msgid "Delete"
 msgstr "מחק"
 
@@ -122,11 +126,11 @@ msgstr ""
 msgid "Describe this recording"
 msgstr ""
 
-#: views/form.php:36 views/grid.php:24
+#: views/bnav.php:20 views/form.php:36 views/grid.php:23
 msgid "Description"
 msgstr ""
 
-#: views/grid.php:23
+#: views/bnav.php:19 views/grid.php:22
 msgid "Display Name"
 msgstr ""
 
@@ -138,7 +142,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:353
+#: Recordings.class.php:359
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -151,7 +155,7 @@ msgstr "סיסמא לקוד תכונה"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:302
+#: Recordings.class.php:308
 msgid "File does not exist"
 msgstr ""
 
@@ -161,10 +165,6 @@ msgstr ""
 
 #: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
-
-#: views/grid.php:22
-msgid "ID"
 msgstr ""
 
 #: assets/js/recordings.js:49
@@ -186,7 +186,7 @@ msgstr ""
 msgid "Link to Feature Code"
 msgstr "קוד תכונה משוייך להקלטה"
 
-#: views/form.php:361
+#: views/bnav.php:6
 msgid "List Recordings"
 msgstr ""
 
@@ -195,7 +195,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 
-#: Recordings.class.php:350
+#: Recordings.class.php:356
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:347
+#: Recordings.class.php:353
 msgid "No file was uploaded"
 msgstr ""
 
@@ -277,7 +277,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "הקלטות"
 
-#: Recordings.class.php:78
+#: Recordings.class.php:84
 msgid "Reset"
 msgstr ""
 
@@ -298,15 +298,15 @@ msgid ""
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
 
-#: Recordings.class.php:68
+#: Recordings.class.php:74
 msgid "Submit"
 msgstr ""
 
-#: views/grid.php:25
+#: views/bnav.php:21 views/grid.php:24
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:273 recordings.i18n.php:10
+#: Recordings.class.php:279 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
@@ -331,21 +331,21 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:341
+#: Recordings.class.php:347
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:338
+#: Recordings.class.php:344
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:344
+#: Recordings.class.php:350
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: Recordings.class.php:108
+#: Recordings.class.php:114
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -367,11 +367,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:252
+#: Recordings.class.php:258
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:333
+#: Recordings.class.php:339
 msgid "Unsupported file format"
 msgstr ""
 
@@ -445,9 +445,6 @@ msgstr ""
 
 #~ msgid "** MISSING FEATURE CODE **"
 #~ msgstr "** לא קיים קוד תכונה **"
-
-#~ msgid "Add Recording"
-#~ msgstr "הוספת הקלטה"
 
 #~ msgid "After recording or uploading,"
 #~ msgstr "אחרי הקלטה או העלאה,"
