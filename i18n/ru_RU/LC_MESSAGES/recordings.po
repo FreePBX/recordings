@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-28 12:15-0800\n"
+"POT-Creation-Date: 2016-01-06 14:41-0800\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
-#: assets/js/recordings.js:488
+#: assets/js/recordings.js:490
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -58,11 +58,11 @@ msgstr "Добавить любую , ранее созданную систем
 msgid "Admin"
 msgstr "Администратор"
 
-#: assets/js/recordings.js:165
+#: assets/js/recordings.js:167
 msgid "An Error occurred trying to submit this document"
 msgstr "Возникла ошибка при попытке подтвердить сохранение документа"
 
-#: assets/js/recordings.js:254
+#: assets/js/recordings.js:256
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -70,7 +70,7 @@ msgstr ""
 "Вы уверены ,что хоти сконвертировать эти файлы? Без конвертации файлы могут "
 "работать некорректно в Asterisk-е"
 
-#: assets/js/recordings.js:470
+#: assets/js/recordings.js:472
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Вы уверены ,что хотите отменить эти записи?"
 
@@ -82,7 +82,7 @@ msgstr "Просмотр"
 msgid "Call"
 msgstr "Вызов"
 
-#: assets/js/recordings.js:507
+#: assets/js/recordings.js:509
 msgid "Call!"
 msgstr "Вызов!"
 
@@ -133,7 +133,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Удалить"
 
-#: assets/js/recordings.js:302
+#: assets/js/recordings.js:304
 msgid "Delete Recording"
 msgstr "Удалить запись"
 
@@ -174,7 +174,7 @@ msgstr "Список файлов для %s"
 msgid "File does not exist"
 msgstr "Файл не существует"
 
-#: assets/js/recordings.js:128 assets/js/recordings.js:133
+#: assets/js/recordings.js:127 assets/js/recordings.js:133
 msgid "Finished!"
 msgstr ""
 
@@ -256,7 +256,7 @@ msgstr "Не существующая запись в модуле %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Не поддерживается на скомбинированных или несуществующих записях"
 
-#: assets/js/recordings.js:849
+#: assets/js/recordings.js:851
 msgid "Not supported on compounded recordings"
 msgstr "Не поддерживается на комбинированных записях"
 
@@ -277,7 +277,7 @@ msgstr ""
 "Опционально - пароль для защиты доступа к сервисному коду, который позволяет "
 "перезаписать запись."
 
-#: assets/js/recordings.js:464 assets/js/recordings.js:483
+#: assets/js/recordings.js:466 assets/js/recordings.js:485
 msgid "Please enter a valid name and save"
 msgstr "Пожалуйста введите корректное имя и сохраните"
 
@@ -306,7 +306,7 @@ msgstr "Сброс"
 msgid "Save"
 msgstr "Сохранить"
 
-#: install.php:6 assets/js/recordings.js:302
+#: install.php:6 assets/js/recordings.js:304
 msgid "Save Recording"
 msgstr "Сохранить запись"
 
@@ -389,7 +389,7 @@ msgstr "Файл загружен неполностью"
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:122
+#: assets/js/recordings.js:121
 msgid "There was an error, See the console for more details"
 msgstr ""
 
@@ -418,7 +418,7 @@ msgstr "Неизвестная ошибка"
 msgid "Unsupported file format"
 msgstr "Не поддерживаемый  формат файла"
 
-#: assets/js/recordings.js:534
+#: assets/js/recordings.js:536
 msgid "Unsupported file type"
 msgstr "Не поддерживаемый  тип файла"
 
@@ -444,14 +444,14 @@ msgstr ""
 msgid "Yes"
 msgstr "Да"
 
-#: assets/js/recordings.js:647
+#: assets/js/recordings.js:649
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:649
+#: assets/js/recordings.js:651
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

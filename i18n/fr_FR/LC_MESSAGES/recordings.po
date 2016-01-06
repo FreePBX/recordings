@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-12-28 12:15-0800\n"
+"POT-Creation-Date: 2016-01-06 14:41-0800\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Séverine GUTIERREZ <severine@medialsace.fr>\n"
 "Language-Team: Français <LL@li.org>\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:488
+#: assets/js/recordings.js:490
 msgid ""
 "A system recording with this name already exists for this language. Do you "
 "want to overwrite it?"
@@ -63,17 +63,17 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: assets/js/recordings.js:165
+#: assets/js/recordings.js:167
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:254
+#: assets/js/recordings.js:256
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:470
+#: assets/js/recordings.js:472
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -85,7 +85,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:507
+#: assets/js/recordings.js:509
 msgid "Call!"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Supprimer"
 
-#: assets/js/recordings.js:302
+#: assets/js/recordings.js:304
 msgid "Delete Recording"
 msgstr ""
 
@@ -173,7 +173,7 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:128 assets/js/recordings.js:133
+#: assets/js/recordings.js:127 assets/js/recordings.js:133
 msgid "Finished!"
 msgstr ""
 
@@ -251,7 +251,7 @@ msgstr "Enregistrement Non-Existant dans le module %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:849
+#: assets/js/recordings.js:851
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -272,7 +272,7 @@ msgstr ""
 "Mot de passe optionnel pour protéger l'accès à ce code de caractéristique "
 "qui permet à l'utilisateur de le réenregistrer."
 
-#: assets/js/recordings.js:464 assets/js/recordings.js:483
+#: assets/js/recordings.js:466 assets/js/recordings.js:485
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 msgid "Save"
 msgstr "Sauvegarder"
 
-#: install.php:6 assets/js/recordings.js:302
+#: install.php:6 assets/js/recordings.js:304
 msgid "Save Recording"
 msgstr "Sauvegarder les Enregistrements"
 
@@ -370,7 +370,7 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:122
+#: assets/js/recordings.js:121
 msgid "There was an error, See the console for more details"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:534
+#: assets/js/recordings.js:536
 msgid "Unsupported file type"
 msgstr ""
 
@@ -418,14 +418,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:647
+#: assets/js/recordings.js:649
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:649
+#: assets/js/recordings.js:651
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
