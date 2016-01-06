@@ -64,6 +64,7 @@ $("#recordings-frm").submit(function(e) {
 					});
 				});
 			});
+			playback.push(d.name);
 		});
 	} else {
 		$.each(soundList, function(file, d) {
@@ -76,10 +77,9 @@ $("#recordings-frm").submit(function(e) {
 						"lang": lang,
 						"temporary": d.temporary[lang]
 					});
-				} else {
-					playback.push(d.name);
 				}
 			});
+			playback.push(d.name);
 		});
 	}
 	if(process.length > 0) {
@@ -102,7 +102,6 @@ $("#recordings-frm").submit(function(e) {
 					if(value.temporary) {
 						remove.push(value.file);
 					}
-					playback.push(data.name);
 					callback();
 				} else {
 					console.error(data);
@@ -126,13 +125,16 @@ $("#recordings-frm").submit(function(e) {
 				$("#recscreen").addClass("hidden");
 			} else {
 				$("#recscreen label").text(_("Finished!"));
+				console.log(playback);
 				recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
 			}
 		});
 	} else {
 		$("#recscreen label").text(_("Finished!"));
+		console.log(playback);
 		recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
 	}
+
 });
 
 function recsave(id,playback,name,description,fcode,fcode_pass,remove) {
