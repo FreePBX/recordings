@@ -1,0 +1,443 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for recordings
+# Copyright (C) 2008-2016 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-01-06 14:41-0800\n"
+"PO-Revision-Date: 2016-01-06 14:41-0800\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: Recordings.class.php:361
+msgid "A PHP extension stopped the file upload"
+msgstr ""
+
+#: assets/js/recordings.js:490
+msgid ""
+"A system recording with this name already exists for this language. Do you "
+"want to overwrite it?"
+msgstr ""
+
+#: views/grid.php:25
+msgid "Actions"
+msgstr ""
+
+#: views/form.php:4
+msgid "Add New System Recording"
+msgstr ""
+
+#: views/bnav.php:5
+msgid "Add Recording"
+msgstr ""
+
+#: views/form.php:229
+msgid "Add System Recording"
+msgstr ""
+
+#: views/form.php:244
+msgid ""
+"Add any previously created system recording or a recording that was added "
+"previously"
+msgstr ""
+
+#: recordings.i18n.php:6 recordings.i18n.php:12
+msgid "Admin"
+msgstr ""
+
+#: assets/js/recordings.js:167
+msgid "An Error occurred trying to submit this document"
+msgstr ""
+
+#: assets/js/recordings.js:256
+msgid ""
+"Are you sure you do not want to convert these files? They may not work "
+"correctly in Asterisk without being converted"
+msgstr ""
+
+#: assets/js/recordings.js:472
+msgid "Are you sure you wish to discard this recordings?"
+msgstr ""
+
+#: views/form.php:95
+msgid "Browse"
+msgstr ""
+
+#: views/form.php:199
+msgid "Call"
+msgstr ""
+
+#: assets/js/recordings.js:509
+msgid "Call!"
+msgstr ""
+
+#: Recordings.class.php:365
+msgid "Can Not Find Uploaded Files"
+msgstr ""
+
+#: views/form.php:168 views/form.php:207
+msgid "Cancel"
+msgstr ""
+
+#: install.php:7
+msgid "Check Recording"
+msgstr ""
+
+#: views/form.php:349
+msgid ""
+"Check all file formats you would like this system recording to be encoded "
+"into"
+msgstr ""
+
+#: views/form.php:301
+msgid ""
+"Check this box to create an options feature code that will allow this "
+"recording to be changed directly."
+msgstr ""
+
+#: views/form.php:257
+msgid "Combine Files"
+msgstr ""
+
+#: views/form.php:333
+msgid "Convert To"
+msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+
+#: Recordings.class.php:79
+msgid "Delete"
+msgstr ""
+
+#: assets/js/recordings.js:304
+msgid "Delete Recording"
+msgstr ""
+
+#: views/form.php:44
+msgid "Describe this recording"
+msgstr ""
+
+#: views/bnav.php:20 views/form.php:36 views/grid.php:23
+msgid "Description"
+msgstr ""
+
+#: views/bnav.php:19 views/grid.php:22
+msgid "Display Name"
+msgstr ""
+
+#: views/form.php:102
+msgid "Drop Multiple Files or Archives Here"
+msgstr ""
+
+#: views/form.php:197
+msgid "Enter Extension"
+msgstr ""
+
+#: Recordings.class.php:358
+msgid "Failed to write file to disk"
+msgstr ""
+
+#: views/form.php:313
+msgid "Feature Code Password"
+msgstr ""
+
+#: views/form.php:56
+#, php-format
+msgid "File List for %s"
+msgstr ""
+
+#: Recordings.class.php:308
+msgid "File does not exist"
+msgstr ""
+
+#: assets/js/recordings.js:127 assets/js/recordings.js:133
+msgid "Finished!"
+msgstr ""
+
+#: views/form.php:151
+msgid "Hit the red record button to start recording from your browser"
+msgstr ""
+
+#: assets/js/recordings.js:49
+msgid ""
+"If you are doing media conversions this can take a very long time, is that "
+"ok?"
+msgstr ""
+
+#: views/form.php:272
+msgid ""
+"Instead of chaining files together (of which some applications do not "
+"support playback) combine the files above into a single file. After this is "
+"done you will not be able to resort or remove the files from the list above "
+"but you will be able to add files to the end of or the beginning of this "
+"file. This will not destroy any previously existing files listed above."
+msgstr ""
+
+#: views/form.php:285
+msgid "Link to Feature Code"
+msgstr ""
+
+#: views/bnav.php:6
+msgid "List Recordings"
+msgstr ""
+
+#: functions.inc.php:181
+#, php-format
+msgid "Missing Sound file auto-created from migration of %s module"
+msgstr ""
+
+#: Recordings.class.php:355
+msgid "Missing a temporary folder"
+msgstr ""
+
+#: views/form.php:16
+msgid "Name"
+msgstr ""
+
+#: views/form.php:205
+msgid "Name this file"
+msgstr ""
+
+#: views/form.php:265 views/form.php:293
+msgid "No"
+msgstr ""
+
+#: Recordings.class.php:352
+msgid "No file was uploaded"
+msgstr ""
+
+#: views/form.php:65
+#, php-format
+msgid "No files for %s"
+msgstr ""
+
+#: assets/js/recordings.js:29
+msgid "No files have been added to this recording"
+msgstr ""
+
+#: functions.inc.php:242
+msgid "No long description available"
+msgstr ""
+
+#: functions.inc.php:191
+#, php-format
+msgid "Non-Existent Recording in module %s"
+msgstr ""
+
+#: views/form.php:295
+msgid "Not supported on compounded or Non-Existent recordings"
+msgstr ""
+
+#: assets/js/recordings.js:851
+msgid "Not supported on compounded recordings"
+msgstr ""
+
+#: install.php:50 install.php:64
+msgid "OK"
+msgstr ""
+
+#: views/form.php:295
+#, php-format
+msgid "Optional Feature Code %s"
+msgstr ""
+
+#: views/form.php:321
+msgid ""
+"Optional password to protect access to this feature code which allows a user "
+"to re-record it."
+msgstr ""
+
+#: assets/js/recordings.js:466 assets/js/recordings.js:485
+msgid "Please enter a valid name and save"
+msgstr ""
+
+#: assets/js/recordings.js:93
+#, perl-format
+msgid "Processing %s for %s in format %s"
+msgstr ""
+
+#: views/form.php:121
+msgid "Record In Browser"
+msgstr ""
+
+#: views/form.php:190
+msgid "Record Over Extension"
+msgstr ""
+
+#: install.php:5 recordings.i18n.php:4
+msgid "Recordings"
+msgstr ""
+
+#: Recordings.class.php:84
+msgid "Reset"
+msgstr ""
+
+#: views/form.php:169 views/form.php:208
+msgid "Save"
+msgstr ""
+
+#: install.php:6 assets/js/recordings.js:304
+msgid "Save Recording"
+msgstr ""
+
+#: views/form.php:78
+msgid ""
+"Sortable File List/Play order. The playback will be done starting from the "
+"top to the bottom. You can click the play icon to preview the files. If a "
+"file is red it is missing for said selected language. Files can be replaced "
+"by clicking them once (which will turn them green) placing them into replace "
+"mode. Anything you upload will then replace this file on save"
+msgstr ""
+
+#: Recordings.class.php:74
+msgid "Submit"
+msgstr ""
+
+#: views/bnav.php:21 views/grid.php:24
+msgid "Supported Languages"
+msgstr ""
+
+#: Recordings.class.php:279 recordings.i18n.php:10
+msgid "System Recordings"
+msgstr ""
+
+#: functions.inc.php:192
+#, php-format
+msgid ""
+"The %s referenced a recording file listed below that does not exists. An "
+"entry has been generated, named %s, with the referenced file(s) but you "
+"should confirm that it really works and the real files exist. The file(s) "
+"referenced: %s "
+msgstr ""
+
+#: views/form.php:24
+msgid ""
+"The name of the system recording on the file system. If it conflicts with "
+"another file then this will overwrite it."
+msgstr ""
+
+#: views/form.php:217
+msgid ""
+"The system will call the extension you specify to the left. Upon hangup you "
+"will be able to name the file and it will be placed in the list above"
+msgstr ""
+
+#: Recordings.class.php:346
+msgid ""
+"The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
+"the HTML form"
+msgstr ""
+
+#: Recordings.class.php:343
+msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
+msgstr ""
+
+#: Recordings.class.php:349
+msgid "The uploaded file was only partially uploaded"
+msgstr ""
+
+#: Recordings.class.php:114
+#, php-format
+msgid "There was an error reading system recordings (%s)"
+msgstr ""
+
+#: assets/js/recordings.js:121
+msgid "There was an error, See the console for more details"
+msgstr ""
+
+#: views/form.php:178
+msgid ""
+"This will initate a WebRTC request so that you will be able to record from "
+"you computer in your browser"
+msgstr ""
+
+#: views/form.php:155
+#, php-format
+msgid ""
+"To play the media you will need to either update your browser to a recent "
+"version or update your %s"
+msgstr ""
+
+#: Recordings.class.php:258
+msgid "Unknown Error"
+msgstr ""
+
+#: Recordings.class.php:338
+msgid "Unsupported file format"
+msgstr ""
+
+#: assets/js/recordings.js:536
+msgid "Unsupported file type"
+msgstr ""
+
+#: views/form.php:154
+msgid "Update Required"
+msgstr ""
+
+#: views/form.php:90
+msgid "Upload Recording"
+msgstr ""
+
+#: views/form.php:109
+#, php-format
+msgid ""
+"Upload files from your local system. Supported upload formats are: %s. This "
+"includes archives (that include multiple files) and multiple files"
+msgstr ""
+
+#: views/form.php:263 views/form.php:291
+msgid "Yes"
+msgstr ""
+
+#: assets/js/recordings.js:649
+msgid ""
+"You are entering replace mode on a system file. The next file you add will "
+"replace this system file when you save this recording. Are you sure you want "
+"to do that?"
+msgstr ""
+
+#: assets/js/recordings.js:651
+msgid ""
+"You are entering replace mode. The next file you add will replace this one "
+"when you save this recording. Are you sure you want to do that?"
+msgstr ""
+
+#: views/form.php:72
+msgid ""
+"You can click any file above to replace it with a recording option below. "
+"Clicking a file will turn it green putting it into replace mode"
+msgstr ""
+
+#: views/form.php:71
+msgid ""
+"You have a missing file for this language. Click any red recording above to "
+"replace it with a recording/upload below. It will then turn green. Once you "
+"have finished uploading/recording the recording will turn grey"
+msgstr ""
+
+#: assets/js/recordings.js:19
+msgid "You must set a valid name for this recording"
+msgstr ""
+
+#: install.php:52 install.php:66
+msgid "already exists"
+msgstr ""
+
+#: install.php:40
+msgid "checking for fcode field.."
+msgstr ""
+
+#: install.php:54
+msgid "checking for fcode_pass field.."
+msgstr ""
