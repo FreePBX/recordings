@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-06 14:41-0800\n"
-"PO-Revision-Date: 2016-01-16 08:37+0200\n"
-"Last-Translator: Nicolas <forums@riendeau.org>\n"
+"PO-Revision-Date: 2016-02-02 18:54+0200\n"
+"Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/fr_FR/>\n"
 "Language: fr_FR\n"
@@ -55,7 +55,7 @@ msgstr "Ajouter Enregistrement"
 
 #: views/form.php:229
 msgid "Add System Recording"
-msgstr ""
+msgstr "Ajouter un enregistrement système"
 
 #: views/form.php:244
 msgid ""
@@ -65,17 +65,19 @@ msgstr ""
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
-msgstr ""
+msgstr "Admin"
 
 #: assets/js/recordings.js:167
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "Une erreur s'est produite en tentant de soumettre ce document"
 
 #: assets/js/recordings.js:256
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
+"Êtes-vous sûr de ne pas vouloir convertir ces fichiers ? Il se peut qu'ils "
+"ne fonctionnent pas correctement avec Asterisk s'ils ne sont pas convertis"
 
 #: assets/js/recordings.js:472
 msgid "Are you sure you wish to discard this recordings?"
@@ -83,15 +85,15 @@ msgstr ""
 
 #: views/form.php:95
 msgid "Browse"
-msgstr ""
+msgstr "Parcourir"
 
 #: views/form.php:199
 msgid "Call"
-msgstr ""
+msgstr "Appel"
 
 #: assets/js/recordings.js:509
 msgid "Call!"
-msgstr ""
+msgstr "Appel !"
 
 #: Recordings.class.php:365
 msgid "Can Not Find Uploaded Files"
@@ -99,7 +101,7 @@ msgstr ""
 
 #: views/form.php:168 views/form.php:207
 msgid "Cancel"
-msgstr ""
+msgstr "Annuler"
 
 #: install.php:7
 msgid "Check Recording"
@@ -121,11 +123,11 @@ msgstr ""
 
 #: views/form.php:257
 msgid "Combine Files"
-msgstr ""
+msgstr "Combiner les fichiers"
 
 #: views/form.php:333
 msgid "Convert To"
-msgstr ""
+msgstr "Convertir à"
 
 #: recordings.i18n.php:8
 msgid ""
@@ -142,15 +144,15 @@ msgstr ""
 
 #: views/form.php:44
 msgid "Describe this recording"
-msgstr ""
+msgstr "Décrivez cet enregistrement"
 
 #: views/bnav.php:20 views/form.php:36 views/grid.php:23
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 #: views/bnav.php:19 views/grid.php:22
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #: views/form.php:102
 msgid "Drop Multiple Files or Archives Here"
@@ -175,11 +177,11 @@ msgstr ""
 
 #: Recordings.class.php:308
 msgid "File does not exist"
-msgstr ""
+msgstr "Le fichier n'existe pas"
 
 #: assets/js/recordings.js:127 assets/js/recordings.js:133
 msgid "Finished!"
-msgstr ""
+msgstr "Complété !"
 
 #: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
@@ -206,7 +208,7 @@ msgstr "Lien vers Code de Caractéristique"
 
 #: views/bnav.php:6
 msgid "List Recordings"
-msgstr ""
+msgstr "Liste des enregistrements"
 
 #: functions.inc.php:181
 #, php-format
@@ -219,15 +221,15 @@ msgstr ""
 
 #: views/form.php:16
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #: views/form.php:205
 msgid "Name this file"
-msgstr ""
+msgstr "Nommez ce fichier"
 
 #: views/form.php:265 views/form.php:293
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #: Recordings.class.php:352
 msgid "No file was uploaded"
@@ -287,7 +289,7 @@ msgstr ""
 
 #: views/form.php:121
 msgid "Record In Browser"
-msgstr ""
+msgstr "Enregistrer dans le navigateur"
 
 #: views/form.php:190
 msgid "Record Over Extension"
@@ -320,7 +322,7 @@ msgstr ""
 
 #: Recordings.class.php:74
 msgid "Submit"
-msgstr ""
+msgstr "Soumettre"
 
 #: views/bnav.php:21 views/grid.php:24
 msgid "Supported Languages"
@@ -328,7 +330,7 @@ msgstr ""
 
 #: Recordings.class.php:279 recordings.i18n.php:10
 msgid "System Recordings"
-msgstr "Enregistrements Systèmes"
+msgstr "Enregistrements systèmes"
 
 #: functions.inc.php:192
 #, php-format
@@ -397,11 +399,11 @@ msgstr ""
 
 #: Recordings.class.php:338
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Format de fichier non supporté"
 
 #: assets/js/recordings.js:536
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Type de fichier non supporté"
 
 #: views/form.php:154
 msgid "Update Required"
@@ -420,7 +422,7 @@ msgstr ""
 
 #: views/form.php:263 views/form.php:291
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 #: assets/js/recordings.js:649
 msgid ""
