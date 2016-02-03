@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-01-06 14:41-0800\n"
-"PO-Revision-Date: 2016-02-02 18:54+0200\n"
+"PO-Revision-Date: 2016-02-03 05:34+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/fr_FR/>\n"
@@ -395,7 +395,7 @@ msgstr ""
 
 #: Recordings.class.php:258
 msgid "Unknown Error"
-msgstr ""
+msgstr "Erreur inconnue"
 
 #: Recordings.class.php:338
 msgid "Unsupported file format"
@@ -407,7 +407,7 @@ msgstr "Type de fichier non supporté"
 
 #: views/form.php:154
 msgid "Update Required"
-msgstr ""
+msgstr "Mise à jour requise"
 
 #: views/form.php:90
 msgid "Upload Recording"
