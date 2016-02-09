@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-01-06 14:41-0800\n"
+"POT-Creation-Date: 2016-02-08 17:40-0800\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -26,11 +26,11 @@ msgstr ""
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
-#: assets/js/recordings.js:490
+#: assets/js/recordings.js:6
 msgid ""
-"A system recording with this name already exists for this language. Do you "
-"want to overwrite it?"
-msgstr "系统录音文件名称已存在。你打算覆盖此文件吗？"
+"A recording with this name already exists for this language. Do you want to "
+"overwrite it?"
+msgstr ""
 
 #: views/grid.php:25
 msgid "Actions"
@@ -58,17 +58,17 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: assets/js/recordings.js:167
+#: assets/js/recordings.js:166
 msgid "An Error occurred trying to submit this document"
 msgstr "提交文件时错误"
 
-#: assets/js/recordings.js:256
+#: assets/js/recordings.js:255
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:472
+#: assets/js/recordings.js:484
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "确认要废除此录音？"
 
@@ -80,7 +80,7 @@ msgstr "浏览"
 msgid "Call"
 msgstr "呼叫"
 
-#: assets/js/recordings.js:509
+#: assets/js/recordings.js:529
 msgid "Call!"
 msgstr "呼叫！"
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Delete"
 msgstr "删除"
 
-#: assets/js/recordings.js:304
+#: assets/js/recordings.js:303
 msgid "Delete Recording"
 msgstr "删除录音"
 
@@ -166,7 +166,7 @@ msgstr "%s文件列表"
 msgid "File does not exist"
 msgstr "文件不存在"
 
-#: assets/js/recordings.js:127 assets/js/recordings.js:133
+#: assets/js/recordings.js:128 assets/js/recordings.js:133
 msgid "Finished!"
 msgstr ""
 
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 
-#: assets/js/recordings.js:49
+#: assets/js/recordings.js:50
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -227,7 +227,7 @@ msgstr ""
 msgid "No files for %s"
 msgstr ""
 
-#: assets/js/recordings.js:29
+#: assets/js/recordings.js:30
 msgid "No files have been added to this recording"
 msgstr ""
 
@@ -244,7 +244,7 @@ msgstr "在模块%s中的录音不存在"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:871
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -263,11 +263,11 @@ msgid ""
 "to re-record it."
 msgstr "可选的密码用来保护对这个功能代码的访问，此功能代码允许用户重新录音。"
 
-#: assets/js/recordings.js:466 assets/js/recordings.js:485
+#: assets/js/recordings.js:478 assets/js/recordings.js:497
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: assets/js/recordings.js:93
+#: assets/js/recordings.js:94
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -292,7 +292,7 @@ msgstr ""
 msgid "Save"
 msgstr "保存"
 
-#: install.php:6 assets/js/recordings.js:304
+#: install.php:6 assets/js/recordings.js:303
 msgid "Save Recording"
 msgstr "保存录音"
 
@@ -359,7 +359,7 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:121
+#: assets/js/recordings.js:122
 msgid "There was an error, See the console for more details"
 msgstr ""
 
@@ -384,7 +384,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:536
+#: assets/js/recordings.js:556
 msgid "Unsupported file type"
 msgstr ""
 
@@ -407,14 +407,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:649
+#: assets/js/recordings.js:669
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:651
+#: assets/js/recordings.js:671
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -433,7 +433,7 @@ msgid ""
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
 
-#: assets/js/recordings.js:19
+#: assets/js/recordings.js:20
 msgid "You must set a valid name for this recording"
 msgstr ""
 
@@ -448,6 +448,11 @@ msgstr "正在检查fcode域。。"
 #: install.php:54
 msgid "checking for fcode_pass field.."
 msgstr "正在检查fcode_pass域。。"
+
+#~ msgid ""
+#~ "A system recording with this name already exists for this language. Do "
+#~ "you want to overwrite it?"
+#~ msgstr "系统录音文件名称已存在。你打算覆盖此文件吗？"
 
 #~ msgid "Displayname"
 #~ msgstr "显示名称"
