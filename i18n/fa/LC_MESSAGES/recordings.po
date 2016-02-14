@@ -10,170 +10,178 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-02-08 17:40-0800\n"
-"PO-Revision-Date: 2016-01-06 14:41-0800\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2016-02-14 08:31+0200\n"
+"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"Language-Team: Persian "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/fa/>\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
 
 #: Recordings.class.php:361
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "بارگذاری فایل به دلیل تنظیمات PHP متوقف شد"
 
 #: assets/js/recordings.js:6
 msgid ""
 "A recording with this name already exists for this language. Do you want to "
 "overwrite it?"
-msgstr ""
+msgstr "پیام ظبط شده با این نام وجود دارد. آیا تمایل به بازنویسی دارید؟"
 
 #: views/grid.php:25
 msgid "Actions"
-msgstr ""
+msgstr "اعمال"
 
 #: views/form.php:4
 msgid "Add New System Recording"
-msgstr ""
+msgstr "افزودن پیام ظبط شده سیستمی جدید"
 
 #: views/bnav.php:5
 msgid "Add Recording"
-msgstr ""
+msgstr "افزودن پیام ظبط شده"
 
 #: views/form.php:229
 msgid "Add System Recording"
-msgstr ""
+msgstr "افزودن پیام ظبط شده سیستمی"
 
 #: views/form.php:244
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
+msgstr "افزودن پیام ظبط شده سیستمی قبلی یا پیام ظبط شده قبلی"
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
-msgstr ""
+msgstr "مدیر"
 
 #: assets/js/recordings.js:166
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "خطا در ارسال این سند"
 
 #: assets/js/recordings.js:255
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
+"آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ این فایل ها بدون تبدیل در "
+"استریسک به درستی کار نمیکنند"
 
 #: assets/js/recordings.js:484
 msgid "Are you sure you wish to discard this recordings?"
-msgstr ""
+msgstr "آیا از قطع این پیام ظبط شده مطمئن هستید؟"
 
 #: views/form.php:95
 msgid "Browse"
-msgstr ""
+msgstr "مسیر"
 
 #: views/form.php:199
 msgid "Call"
-msgstr ""
+msgstr "تماس"
 
 #: assets/js/recordings.js:529
 msgid "Call!"
-msgstr ""
+msgstr "تماس!"
 
 #: Recordings.class.php:365
 msgid "Can Not Find Uploaded Files"
-msgstr ""
+msgstr "یافت نشدن فایل های بارگذاری شده"
 
 #: views/form.php:168 views/form.php:207
 msgid "Cancel"
-msgstr ""
+msgstr "لغو"
 
 #: install.php:7
 msgid "Check Recording"
-msgstr ""
+msgstr "بررسی پیام ظبط شده"
 
 #: views/form.php:349
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
-msgstr ""
+msgstr "بررسی تمام فرمت های فایل برای تبدیل پیام ظبط شده به آن ها"
 
 #: views/form.php:301
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
-msgstr ""
+msgstr "برای تغییر پیام ظبط شده توسط کدهای ویژه علامت بزنید."
 
 #: views/form.php:257
 msgid "Combine Files"
-msgstr ""
+msgstr "تجمیع فایل ها"
 
 #: views/form.php:333
 msgid "Convert To"
-msgstr ""
+msgstr "تبدیل به"
 
 #: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
+"ایجاد و مدیریت پیام ظبط شده سیستمی که توسط دیگر ماژول ها استفاده میشود("
+"مانند, منو صوتی)."
 
 #: Recordings.class.php:79
 msgid "Delete"
-msgstr ""
+msgstr "حذف"
 
 #: assets/js/recordings.js:303
 msgid "Delete Recording"
-msgstr ""
+msgstr "حذف پیام ظبط شده"
 
 #: views/form.php:44
 msgid "Describe this recording"
-msgstr ""
+msgstr "توضیح این پیام ظبط شده"
 
 #: views/bnav.php:20 views/form.php:36 views/grid.php:23
 msgid "Description"
-msgstr ""
+msgstr "شرح"
 
 #: views/bnav.php:19 views/grid.php:22
 msgid "Display Name"
-msgstr ""
+msgstr "نام"
 
 #: views/form.php:102
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "چند فایل یا فایل فشرده را به اینجا بکشید"
 
 #: views/form.php:197
 msgid "Enter Extension"
-msgstr ""
+msgstr "ورود مقصد"
 
 #: Recordings.class.php:358
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "خطا در نوشتن فایل به روی دیسک"
 
 #: views/form.php:313
 msgid "Feature Code Password"
-msgstr ""
+msgstr "پسورد کد ویژه"
 
 #: views/form.php:56
 #, php-format
 msgid "File List for %s"
-msgstr ""
+msgstr "فهرست فایل برای %s"
 
 #: Recordings.class.php:308
 msgid "File does not exist"
-msgstr ""
+msgstr "فایل موجود نیست"
 
 #: assets/js/recordings.js:128 assets/js/recordings.js:133
 msgid "Finished!"
-msgstr ""
+msgstr "پایان!"
 
 #: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
+msgstr "برای ظبط پیام از طریق مرورگر دکمه ضبط قرمز را فشار دهید"
 
 #: assets/js/recordings.js:50
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
-msgstr ""
+msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
 
 #: views/form.php:272
 msgid ""
@@ -186,11 +194,11 @@ msgstr ""
 
 #: views/form.php:285
 msgid "Link to Feature Code"
-msgstr ""
+msgstr "پیوند به کد ویژه"
 
 #: views/bnav.php:6
 msgid "List Recordings"
-msgstr ""
+msgstr "فهرست پیام های ظبط شده"
 
 #: functions.inc.php:181
 #, php-format
@@ -199,36 +207,36 @@ msgstr ""
 
 #: Recordings.class.php:355
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "از دست دادن پوشه موقت"
 
 #: views/form.php:16
 msgid "Name"
-msgstr ""
+msgstr "نام"
 
 #: views/form.php:205
 msgid "Name this file"
-msgstr ""
+msgstr "نام این فایل"
 
 #: views/form.php:265 views/form.php:293
 msgid "No"
-msgstr ""
+msgstr "خیر"
 
 #: Recordings.class.php:352
 msgid "No file was uploaded"
-msgstr ""
+msgstr "فایلی بارگذاری نشده"
 
 #: views/form.php:65
 #, php-format
 msgid "No files for %s"
-msgstr ""
+msgstr "بدون فایل %s"
 
 #: assets/js/recordings.js:30
 msgid "No files have been added to this recording"
-msgstr ""
+msgstr "فایلی به این پیام ظبط شده اضافه نشده"
 
 #: functions.inc.php:242
 msgid "No long description available"
-msgstr ""
+msgstr "توضیح بیشتری نیست"
 
 #: functions.inc.php:191
 #, php-format
@@ -245,12 +253,12 @@ msgstr ""
 
 #: install.php:50 install.php:64
 msgid "OK"
-msgstr ""
+msgstr "تایید"
 
 #: views/form.php:295
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr ""
+msgstr "کد ویژه انتخابی %s"
 
 #: views/form.php:321
 msgid ""
@@ -260,7 +268,7 @@ msgstr ""
 
 #: assets/js/recordings.js:478 assets/js/recordings.js:497
 msgid "Please enter a valid name and save"
-msgstr ""
+msgstr "لطفا نام درست وارد کرده و ذخیره کنید"
 
 #: assets/js/recordings.js:94
 #, perl-format
@@ -269,27 +277,27 @@ msgstr ""
 
 #: views/form.php:121
 msgid "Record In Browser"
-msgstr ""
+msgstr "پیام ظبط شده در مسیر"
 
 #: views/form.php:190
 msgid "Record Over Extension"
-msgstr ""
+msgstr "ضبط پیام از طریق داخلی"
 
 #: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
-msgstr ""
+msgstr "پیام های ظبط شده"
 
 #: Recordings.class.php:84
 msgid "Reset"
-msgstr ""
+msgstr "بازنشانی"
 
 #: views/form.php:169 views/form.php:208
 msgid "Save"
-msgstr ""
+msgstr "ذخیره"
 
 #: install.php:6 assets/js/recordings.js:303
 msgid "Save Recording"
-msgstr ""
+msgstr "ذخیره پیام ظبط شده"
 
 #: views/form.php:78
 msgid ""
@@ -302,15 +310,15 @@ msgstr ""
 
 #: Recordings.class.php:74
 msgid "Submit"
-msgstr ""
+msgstr "ارسال"
 
 #: views/bnav.php:21 views/grid.php:24
 msgid "Supported Languages"
-msgstr ""
+msgstr "زبانهای پشتیبانی شده"
 
 #: Recordings.class.php:279 recordings.i18n.php:10
 msgid "System Recordings"
-msgstr ""
+msgstr "پیام های ظبط شده سیستمی"
 
 #: functions.inc.php:192
 #, php-format
@@ -326,12 +334,16 @@ msgid ""
 "The name of the system recording on the file system. If it conflicts with "
 "another file then this will overwrite it."
 msgstr ""
+"نام پیام ظبط شده سیستمی در سیستم فایل. در صورت تطابق با دیگر فایل ها فایل "
+"بازنویسی میشود."
 
 #: views/form.php:217
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
+"سیستم با شماره ای که در این بخش وارد کردید تماس میگیرد. پس از قطع شما "
+"میتوانید برای فایل نام بگذارید و فایل در فهرست بالا قرار میگیرد"
 
 #: Recordings.class.php:346
 msgid ""
@@ -345,16 +357,16 @@ msgstr ""
 
 #: Recordings.class.php:349
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "بخشی از فایل بارگذاری شده"
 
 #: Recordings.class.php:114
 #, php-format
 msgid "There was an error reading system recordings (%s)"
-msgstr ""
+msgstr "خطا در خواندن پیام ظبط شده سیستمی (%s)"
 
 #: assets/js/recordings.js:122
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "بروز خطا, برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
 #: views/form.php:178
 msgid ""
@@ -371,23 +383,23 @@ msgstr ""
 
 #: Recordings.class.php:258
 msgid "Unknown Error"
-msgstr ""
+msgstr "خطای نامشخص"
 
 #: Recordings.class.php:338
 msgid "Unsupported file format"
-msgstr ""
+msgstr "فرمت فایل پشتیبانی نشده"
 
 #: assets/js/recordings.js:556
 msgid "Unsupported file type"
-msgstr ""
+msgstr "نوع فایل پشتیبانی نشده"
 
 #: views/form.php:154
 msgid "Update Required"
-msgstr ""
+msgstr "نیاز به به روزرسانی"
 
 #: views/form.php:90
 msgid "Upload Recording"
-msgstr ""
+msgstr "بارگذاری پیام ظبط شده"
 
 #: views/form.php:109
 #, php-format
@@ -398,7 +410,7 @@ msgstr ""
 
 #: views/form.php:263 views/form.php:291
 msgid "Yes"
-msgstr ""
+msgstr "بله"
 
 #: assets/js/recordings.js:669
 msgid ""
@@ -428,16 +440,16 @@ msgstr ""
 
 #: assets/js/recordings.js:20
 msgid "You must set a valid name for this recording"
-msgstr ""
+msgstr "شما باید نام معتبر برای پیام ظبط شده اختصاص دهید"
 
 #: install.php:52 install.php:66
 msgid "already exists"
-msgstr ""
+msgstr "موجود است"
 
 #: install.php:40
 msgid "checking for fcode field.."
-msgstr ""
+msgstr "بررسی فیلد کد ویژه.."
 
 #: install.php:54
 msgid "checking for fcode_pass field.."
-msgstr ""
+msgstr "بررسی فیلد پسورد کد ویژه.."
