@@ -15,6 +15,7 @@ class Recordings implements BMO {
 	private $convert = array(
 		"wav",
 		"sln",
+		"sln16",
 		"sln48",
 		"g722",
 		"ulaw",
