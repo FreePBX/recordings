@@ -31,7 +31,7 @@ class Recordings implements BMO {
 
 		$this->FreePBX = $freepbx;
 		$this->db = $freepbx->Database;
-		$this->temp = \FreePBX::Config()->get("ASTSPOOLDIR") . "/tmp";
+		$this->temp = $this->FreePBX->Config->get("ASTSPOOLDIR") . "/tmp";
 		if(!file_exists($this->temp)) {
 			mkdir($this->temp,0777,true);
 		}
@@ -392,6 +392,7 @@ class Recordings implements BMO {
 			unset($fcc);
 		}
 		needreload();
+		return $id;
 	}
 
 	/**
