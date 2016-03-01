@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 10:26-0800\n"
+"POT-Creation-Date: 2016-03-01 15:55-0800\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -74,13 +74,13 @@ msgstr "Admin"
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:255
+#: assets/js/recordings.js:254
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:484
+#: assets/js/recordings.js:482
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:529
+#: assets/js/recordings.js:527
 msgid "Call!"
 msgstr ""
 
@@ -141,7 +141,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Apagar"
 
-#: assets/js/recordings.js:303
+#: assets/js/recordings.js:302
 msgid "Delete Recording"
 msgstr ""
 
@@ -260,7 +260,7 @@ msgstr "Gravação não existente no módulo %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:871
+#: assets/js/recordings.js:869
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: assets/js/recordings.js:478 assets/js/recordings.js:497
+#: assets/js/recordings.js:476 assets/js/recordings.js:495
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Save"
 msgstr "Salvar"
 
-#: install.php:6 assets/js/recordings.js:303
+#: install.php:6 assets/js/recordings.js:302
 msgid "Save Recording"
 msgstr "Salvar gravação"
 
@@ -404,7 +404,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:556
+#: assets/js/recordings.js:554
 msgid "Unsupported file type"
 msgstr ""
 
@@ -427,14 +427,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:669
+#: assets/js/recordings.js:667
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:671
+#: assets/js/recordings.js:669
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

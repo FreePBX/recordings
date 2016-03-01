@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-02-17 10:26-0800\n"
+"POT-Creation-Date: 2016-03-01 15:55-0800\n"
 "PO-Revision-Date: 2016-02-14 08:31+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://weblate.freepbx.org/projects/freepbx/"
@@ -61,7 +61,7 @@ msgstr "مدیر"
 msgid "An Error occurred trying to submit this document"
 msgstr "خطا در ارسال این سند"
 
-#: assets/js/recordings.js:255
+#: assets/js/recordings.js:254
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -69,7 +69,7 @@ msgstr ""
 "آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ این فایل ها بدون تبدیل در "
 "استریسک به درستی کار نمیکنند"
 
-#: assets/js/recordings.js:484
+#: assets/js/recordings.js:482
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "آیا از قطع این پیام ظبط شده مطمئن هستید؟"
 
@@ -81,7 +81,7 @@ msgstr "مسیر"
 msgid "Call"
 msgstr "تماس"
 
-#: assets/js/recordings.js:529
+#: assets/js/recordings.js:527
 msgid "Call!"
 msgstr "تماس!"
 
@@ -128,7 +128,7 @@ msgstr ""
 msgid "Delete"
 msgstr "حذف"
 
-#: assets/js/recordings.js:303
+#: assets/js/recordings.js:302
 msgid "Delete Recording"
 msgstr "حذف پیام ظبط شده"
 
@@ -247,7 +247,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:871
+#: assets/js/recordings.js:869
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -266,7 +266,7 @@ msgid ""
 "to re-record it."
 msgstr ""
 
-#: assets/js/recordings.js:478 assets/js/recordings.js:497
+#: assets/js/recordings.js:476 assets/js/recordings.js:495
 msgid "Please enter a valid name and save"
 msgstr "لطفا نام درست وارد کرده و ذخیره کنید"
 
@@ -295,7 +295,7 @@ msgstr "بازنشانی"
 msgid "Save"
 msgstr "ذخیره"
 
-#: install.php:6 assets/js/recordings.js:303
+#: install.php:6 assets/js/recordings.js:302
 msgid "Save Recording"
 msgstr "ذخیره پیام ظبط شده"
 
@@ -389,7 +389,7 @@ msgstr "خطای نامشخص"
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نشده"
 
-#: assets/js/recordings.js:556
+#: assets/js/recordings.js:554
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نشده"
 
@@ -412,14 +412,14 @@ msgstr ""
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/recordings.js:669
+#: assets/js/recordings.js:667
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:671
+#: assets/js/recordings.js:669
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
