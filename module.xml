@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.21</version>
+	<version>13.0.22</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.22* Rely on framework for recordWorker
 		*13.0.21* Add recording function needs to return the recording ID
 		*13.0.20* FREEPBX-11600 Support sln16
 		*13.0.19* FREEPBX-11508 Though not prefered allow replacing of files when they are named the same
@@ -50,7 +51,7 @@
 		<recordings>System Recordings</recordings>
 	</menuitems>
 	<depends>
-		<module>framework ge 13.0.41</module>
+		<module>framework ge 13.0.72</module>
 		<module>soundlang ge 13.0.0beta6</module>
 	</depends>
 	<supported>
