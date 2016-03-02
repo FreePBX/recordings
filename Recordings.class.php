@@ -143,6 +143,7 @@ class Recordings implements BMO {
 			case "record":
 			case "upload":
 			case "grid":
+			case "gethtml5byid":
 			case "gethtml5":
 			case "playback":
 			case "download":
@@ -165,6 +166,48 @@ class Recordings implements BMO {
 
 	public function ajaxHandler() {
 		switch($_REQUEST['command']) {
+			case "gethtml5byid":
+				$media = $this->FreePBX->Media();
+				$file = "";
+				switch($_POST['type']) {
+					case "system":
+						$path = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
+						$rec = $this->getRecordingById($_REQUEST['id']);
+						if(!empty($rec) && !empty($rec['soundlist'])) {
+							//if there are multiple files (compound) then just play the first
+							//This probably needs to be changed to combine them but
+							//the code for a combine doesnt exist yet *sigh*
+							$fileInfo = reset($rec['soundlist']);
+							$files = $this->fileStatus($fileInfo['name']);
+							if(!empty($files['en'])) {
+								$file = $path."/en/".reset($files['en']);
+							} else {
+								$lang = key($files);
+								$data = reset($files);
+								$file = $path."/".$lang."/".reset($data);
+							}
+						}
+					break;
+					case "temp":
+						$file = basename($_REQUEST['id']);
+						$file = $this->temp . "/" . $file;
+					break;
+					default:
+					break;
+				}
+				if(!empty($file)) {
+					if(file_exists($file)) {
+						$media->load($file);
+						$files = $media->generateHTML5();
+						$final = array();
+						foreach($files as $format => $name) {
+							$final[$format] = "ajax.php?module=recordings&command=playback&file=".urlencode($name);
+						}
+						return array("status" => true, "files" => $final);
+					}
+				}
+				return array("status" => false, "message" => _("File does not exist"));
+			break;
 			case "gethtml5":
 				$media = $this->FreePBX->Media();
 				$lang = basename($_POST['language']);
