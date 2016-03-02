@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-01 15:55-0800\n"
+"POT-Creation-Date: 2016-03-02 15:34-0800\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,7 +20,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Recordings.class.php:362
+#: Recordings.class.php:405
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
@@ -84,7 +84,7 @@ msgstr "Вызов"
 msgid "Call!"
 msgstr "Вызов!"
 
-#: Recordings.class.php:366
+#: Recordings.class.php:409
 msgid "Can Not Find Uploaded Files"
 msgstr "Невозможно найти загруженные файлы"
 
@@ -155,7 +155,7 @@ msgstr "Разбить на несколько файлов или архиви�
 msgid "Enter Extension"
 msgstr "Введите внутренний номер"
 
-#: Recordings.class.php:359
+#: Recordings.class.php:402
 msgid "Failed to write file to disk"
 msgstr "Ошибка записи файла на диск"
 
@@ -168,7 +168,7 @@ msgstr "Пароль на сервисный код"
 msgid "File List for %s"
 msgstr "Список файлов для %s"
 
-#: Recordings.class.php:309
+#: Recordings.class.php:209 Recordings.class.php:352
 msgid "File does not exist"
 msgstr "Файл не существует"
 
@@ -212,7 +212,7 @@ msgstr "Список записей"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Не найден звуковой файл созданный при переносе модуля %s"
 
-#: Recordings.class.php:356
+#: Recordings.class.php:399
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
 
@@ -228,7 +228,7 @@ msgstr "Имя этого файла"
 msgid "No"
 msgstr "Нет"
 
-#: Recordings.class.php:353
+#: Recordings.class.php:396
 msgid "No file was uploaded"
 msgstr "Файлы не загружены"
 
@@ -331,7 +331,7 @@ msgstr "Подтвердить"
 msgid "Supported Languages"
 msgstr "Поддерживаемые языки"
 
-#: Recordings.class.php:280 recordings.i18n.php:10
+#: Recordings.class.php:323 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -364,7 +364,7 @@ msgstr ""
 "Система  совершит вызов на внутренний номер ,  указанный  справа . После "
 "завершения вызова вы сможете присвоить имя файлу и он появится в списке"
 
-#: Recordings.class.php:347
+#: Recordings.class.php:390
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -372,13 +372,13 @@ msgstr ""
 "Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
 "HTML-форме"
 
-#: Recordings.class.php:344
+#: Recordings.class.php:387
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Размер загруженного  файл превышает  значение upload_max_filesize "
 "directive   , указанное в php.ini"
 
-#: Recordings.class.php:350
+#: Recordings.class.php:393
 msgid "The uploaded file was only partially uploaded"
 msgstr "Файл загружен неполностью"
 
@@ -408,11 +408,11 @@ msgstr ""
 "Для проигрывания медиаданных вам необходимо обновить ваш браузер  или "
 "обновить ваш %s"
 
-#: Recordings.class.php:259
+#: Recordings.class.php:302
 msgid "Unknown Error"
 msgstr "Неизвестная ошибка"
 
-#: Recordings.class.php:339
+#: Recordings.class.php:382
 msgid "Unsupported file format"
 msgstr "Не поддерживаемый  формат файла"
 
