@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-02 15:34-0800\n"
-"PO-Revision-Date: 2016-03-15 01:05+0300\n"
+"PO-Revision-Date: 2016-04-02 17:48+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/fa/>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 
 #: Recordings.class.php:405
 msgid "A PHP extension stopped the file upload"
@@ -191,6 +191,10 @@ msgid ""
 "but you will be able to add files to the end of or the beginning of this "
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
+"بجای قرار دادن چندین فایل در کنار هم (که برخی نرم افزارها قابلیت پخش آنها را "
+"ندارند) این فایل ها را با هم ادغام کنید.پس از این کار نمیتوانید فایلها را از "
+"فهرست بالا حذف کنید اما میتوانید فایلهای دلخواه را به ابتدا و انتهای فایل "
+"اضافه کنید.این کار هیچ یک از فایلهای لیست بالا را خراب نمیکند."
 
 #: views/form.php:285
 msgid "Link to Feature Code"
@@ -245,7 +249,7 @@ msgstr "ففایل ضبط شده درماژول %s وجود ندارد"
 
 #: views/form.php:295
 msgid "Not supported on compounded or Non-Existent recordings"
-msgstr ""
+msgstr "به صورت ترکیبی پشتیبانی نمیشود ویا فایلهای ضبط شده وجود ندارد"
 
 #: assets/js/recordings.js:869
 msgid "Not supported on compounded recordings"
@@ -309,6 +313,11 @@ msgid ""
 "by clicking them once (which will turn them green) placing them into replace "
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
+"مرتب کردن فهرست/پخش فایل به ترتیب. پخش فایلها به ترتیب از ابتدا به انتها "
+"صورت میگیرد. شما میتوانید با کلیک بروی آیکون پخش فایلها را مرور کنید.اگر "
+"فایل قرمز باشد نشانه گم شدن آن برای زبان انتخابی است.این فایلها قابلیت "
+"جایگزینی داشته (وپس از جایگزینی به رنگ سبز) در می آیند. هر چیزی بارگذاری شود "
+"بجای فایل قبلی ذخیره میشود"
 
 #: Recordings.class.php:75
 msgid "Submit"
@@ -330,6 +339,8 @@ msgid ""
 "should confirm that it really works and the real files exist. The file(s) "
 "referenced: %s "
 msgstr ""
+"فایل %s در فهرست زیر وجود ندارد.ورودی تولید شده به نام %s است و باید از "
+"کارکردن و وجودشان اطمینان حاصل کنید. فایل (ها) اشاره شده: %s "
 
 #: views/form.php:24
 msgid ""
@@ -376,6 +387,8 @@ msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
+"این یک درخواست WebRTC است که شما میتوانید از کامپیوترتان و از طریق مرورگر آن "
+"را ضبط کنید"
 
 #: views/form.php:155
 #, php-format
@@ -410,6 +423,8 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"بارگذاری فایلها از سیستم محلی. فرمت های پشتیبانی شده: %s. این شامل بایگانیها "
+"(شامل چند فایل) و چند فایل میشود"
 
 #: views/form.php:263 views/form.php:291
 msgid "Yes"
@@ -421,18 +436,24 @@ msgid ""
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
+"شما به حالت جایگزینی فایل سیستمی وارد شدید.فایل اضافه شده بعدی توسط شما "
+"هنگام ضبط بجای فایل سیستمی قرار میگیرد.آیا از انجام این کار مطمئنید؟"
 
 #: assets/js/recordings.js:669
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
 msgstr ""
+"شما به حالت جایگزینی فایل سیستمی وارد شدید.فایل اضافه شده بعدی توسط شما "
+"هنگام ضبط بجای فایل سیستمی قرار میگیرد.آیا از انجام این کار مطمئنید؟"
 
 #: views/form.php:72
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
 msgstr ""
+"شما میتوانید هرفایل بالا را با گزینه ضبط پایین جاگذاری کنید.با کلیک روی فایل "
+"سبز شده و به حالت جایگزینی بروید"
 
 #: views/form.php:71
 msgid ""
@@ -440,6 +461,8 @@ msgid ""
 "replace it with a recording/upload below. It will then turn green. Once you "
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
+"شما فایل این زبان را گم کردید.با کلیک روی دکمه قرمز میتوانید اقدام به ضبط/"
+"بارگذاری کنید.در این صورت به رنگ سبز در می آید"
 
 #: assets/js/recordings.js:20
 msgid "You must set a valid name for this recording"
