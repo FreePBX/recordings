@@ -10,11 +10,11 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-02 15:34-0800\n"
-"PO-Revision-Date: 2016-04-02 19:03+0200\n"
+"PO-Revision-Date: 2016-04-26 06:49+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian "
-"<http://weblate.freepbx.org/projects/freepbx/recordings/fa/>\n"
-"Language: fa\n"
+"Language-Team: Persian (Iran) "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,17 +41,17 @@ msgstr "افزودن پیام ظبط شده سیستمی جدید"
 
 #: views/bnav.php:5
 msgid "Add Recording"
-msgstr "افزودن پیام ظبط شده"
+msgstr "افزودن پیام ضبط شده"
 
 #: views/form.php:229
 msgid "Add System Recording"
-msgstr "افزودن پیام ظبط شده سیستمی"
+msgstr "افزودن پیام ضبط شده سیستمی"
 
 #: views/form.php:244
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr "افزودن پیام ظبط شده سیستمی قبلی یا پیام ظبط شده قبلی"
+msgstr "افزودن پیام ضبط شده سیستمی قبلی یا پیام ضبط شده قبلی"
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
@@ -95,7 +95,7 @@ msgstr "لغو"
 
 #: install.php:7
 msgid "Check Recording"
-msgstr "بررسی پیام ظبط شده"
+msgstr "بررسی پیام ضبط شده"
 
 #: views/form.php:349
 msgid ""
@@ -134,7 +134,7 @@ msgstr "حذف پیام ظبط شده"
 
 #: views/form.php:44
 msgid "Describe this recording"
-msgstr "توضیح این پیام ظبط شده"
+msgstr "توضیح این پیام ضبط شده"
 
 #: views/bnav.php:20 views/form.php:36 views/grid.php:23
 msgid "Description"
@@ -291,7 +291,7 @@ msgstr "ضبط پیام از طریق داخلی"
 
 #: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
-msgstr "پیام های ظبط شده"
+msgstr "پیام های ضبط شده"
 
 #: Recordings.class.php:85
 msgid "Reset"
@@ -329,7 +329,7 @@ msgstr "زبانهای پشتیبانی شده"
 
 #: Recordings.class.php:323 recordings.i18n.php:10
 msgid "System Recordings"
-msgstr "پیام های ظبط شده سیستمی"
+msgstr "پیام های ضبط شده سیستمی"
 
 #: functions.inc.php:192
 #, php-format
@@ -415,7 +415,7 @@ msgstr "نیاز به به روزرسانی"
 
 #: views/form.php:90
 msgid "Upload Recording"
-msgstr "بارگذاری پیام ظبط شده"
+msgstr "بارگذاری پیام ضبط شده"
 
 #: views/form.php:109
 #, php-format
