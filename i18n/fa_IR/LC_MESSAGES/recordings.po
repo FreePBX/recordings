@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-03-02 15:34-0800\n"
-"PO-Revision-Date: 2016-04-26 06:49+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
+"PO-Revision-Date: 2016-04-28 15:34+0200\n"
+"Last-Translator: psdk <hyavari26@gmail.com>\n"
 "Language-Team: Persian (Iran) "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/fa_IR/>\n"
 "Language: fa_IR\n"
@@ -23,21 +23,21 @@ msgstr ""
 
 #: Recordings.class.php:405
 msgid "A PHP extension stopped the file upload"
-msgstr "بارگذاری فایل به دلیل تنظیمات PHP متوقف شد"
+msgstr "توقف بارگذاری به دلیل خطای PHP"
 
 #: assets/js/recordings.js:6
 msgid ""
 "A recording with this name already exists for this language. Do you want to "
 "overwrite it?"
-msgstr "پیام ظبط شده با این نام وجود دارد. آیا تمایل به بازنویسی دارید؟"
+msgstr "پیام ضبط شده با این نام وجود دارد. آیا تمایل به بازنویسی آن دارید؟"
 
 #: views/grid.php:25
 msgid "Actions"
-msgstr "اعمال"
+msgstr "عملیات"
 
 #: views/form.php:4
 msgid "Add New System Recording"
-msgstr "افزودن پیام ظبط شده سیستمی جدید"
+msgstr "افزودن پیام ضبط شده سیستمی جدید"
 
 #: views/bnav.php:5
 msgid "Add Recording"
@@ -51,7 +51,7 @@ msgstr "افزودن پیام ضبط شده سیستمی"
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr "افزودن پیام ضبط شده سیستمی قبلی یا پیام ضبط شده قبلی"
+msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط شده از قبل"
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
@@ -59,27 +59,27 @@ msgstr "مدیر"
 
 #: assets/js/recordings.js:166
 msgid "An Error occurred trying to submit this document"
-msgstr "خطا در ارسال این سند"
+msgstr "بروز خطا در ثبت این سند"
 
 #: assets/js/recordings.js:254
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
-"آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ این فایل ها بدون تبدیل در "
-"استریسک به درستی کار نمیکنند"
+"آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ ممکن است این فایل ها بدون تبدیل "
+"در استریسک به درستی کار نکنند"
 
 #: assets/js/recordings.js:482
 msgid "Are you sure you wish to discard this recordings?"
-msgstr "آیا از قطع این پیام ظبط شده مطمئن هستید؟"
+msgstr "آیا از حذف این پیام ضبط شده مطمئن هستید؟"
 
 #: views/form.php:95
 msgid "Browse"
-msgstr "مسیر"
+msgstr "بارگذاری"
 
 #: views/form.php:199
 msgid "Call"
-msgstr "تماس"
+msgstr "برقراری تماس"
 
 #: assets/js/recordings.js:527
 msgid "Call!"
@@ -87,7 +87,7 @@ msgstr "تماس!"
 
 #: Recordings.class.php:409
 msgid "Can Not Find Uploaded Files"
-msgstr "یافت نشدن فایل های بارگذاری شده"
+msgstr "عدم یافتن فایل های بارگذاری شده"
 
 #: views/form.php:168 views/form.php:207
 msgid "Cancel"
@@ -101,17 +101,19 @@ msgstr "بررسی پیام ضبط شده"
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
-msgstr "بررسی تمام فرمت های فایل برای تبدیل پیام ظبط شده به آن ها"
+msgstr "بررسی تمام فرمت ها برای تبدیل پیام ضبط شده به آن ها"
 
 #: views/form.php:301
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
-msgstr "برای تغییر پیام ظبط شده توسط کدهای ویژه علامت بزنید."
+msgstr ""
+"به منظور تغییر این پیام ضبط شده از طریق شماره گیری کد ویژه، این گزینه را "
+"علامت بزنید."
 
 #: views/form.php:257
 msgid "Combine Files"
-msgstr "تجمیع فایل ها"
+msgstr "ترکیب فایل ها"
 
 #: views/form.php:333
 msgid "Convert To"
@@ -121,8 +123,8 @@ msgstr "تبدیل به"
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
-"ایجاد و مدیریت پیام ظبط شده سیستمی که توسط دیگر ماژول ها استفاده میشود"
-"(مانند, منو صوتی)."
+"ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
+"شوند (مانند منوی صوتی)."
 
 #: Recordings.class.php:80
 msgid "Delete"
@@ -130,27 +132,27 @@ msgstr "حذف"
 
 #: assets/js/recordings.js:302
 msgid "Delete Recording"
-msgstr "حذف پیام ظبط شده"
+msgstr "حذف پیام ضبط شده"
 
 #: views/form.php:44
 msgid "Describe this recording"
-msgstr "توضیح این پیام ضبط شده"
+msgstr "توضیحات برای این پیام ضبط شده"
 
 #: views/bnav.php:20 views/form.php:36 views/grid.php:23
 msgid "Description"
-msgstr "شرح"
+msgstr "توضیحات"
 
 #: views/bnav.php:19 views/grid.php:22
 msgid "Display Name"
-msgstr "نام"
+msgstr "نام قابل نمایش"
 
 #: views/form.php:102
 msgid "Drop Multiple Files or Archives Here"
-msgstr "چند فایل یا فایل فشرده را به اینجا بکشید"
+msgstr "چندین فایل یا فایل های فشرده را به اینجا بکشید"
 
 #: views/form.php:197
 msgid "Enter Extension"
-msgstr "ورود مقصد"
+msgstr "شماره داخلی مورد نظر"
 
 #: Recordings.class.php:402
 msgid "Failed to write file to disk"
@@ -158,7 +160,7 @@ msgstr "خطا در نوشتن فایل به روی دیسک"
 
 #: views/form.php:313
 msgid "Feature Code Password"
-msgstr "پسورد کد ویژه"
+msgstr "رمز عبور کد ویژه"
 
 #: views/form.php:56
 #, php-format
@@ -171,17 +173,17 @@ msgstr "فایل موجود نیست"
 
 #: assets/js/recordings.js:128 assets/js/recordings.js:133
 msgid "Finished!"
-msgstr "پایان!"
+msgstr "پایان یافت!"
 
 #: views/form.php:151
 msgid "Hit the red record button to start recording from your browser"
-msgstr "برای ظبط پیام از طریق مرورگر دکمه ضبط قرمز را فشار دهید"
+msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
 
 #: assets/js/recordings.js:50
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
-msgstr "اگر مکالمه تصویری است, زمان بیشتری میگیرد, ایرادی ندارد؟"
+msgstr "اگر قصد تبدیل مدیا را دارید، زمان بیشتری صرف می شود، ایرادی ندارد؟"
 
 #: views/form.php:272
 msgid ""
@@ -191,23 +193,24 @@ msgid ""
 "but you will be able to add files to the end of or the beginning of this "
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
-"بجای قرار دادن چندین فایل در کنار هم (که برخی نرم افزارها قابلیت پخش آنها را "
-"ندارند) این فایل ها را با هم ادغام کنید.پس از این کار نمیتوانید فایلها را از "
-"فهرست بالا حذف کنید اما میتوانید فایلهای دلخواه را به ابتدا و انتهای فایل "
-"اضافه کنید.این کار هیچ یک از فایلهای لیست بالا را خراب نمیکند."
+"بجای قرار دادن چندین فایل در کنار هم (که برخی نرم افزارها قابلیت پخش آن ها "
+"را ندارند) این فایل ها را با هم ادغام کنید. پس از این کار قادر به حذف یا "
+"مرتب سازی فایل ها در این لیست نخواهید بود، اما می توانید فایل های دلخواه را "
+"به ابتدا و انتهای این فایل اضافه کنید. این عمل هیچ یک از فایل های لیست بالا "
+"را خراب نمی کند."
 
 #: views/form.php:285
 msgid "Link to Feature Code"
-msgstr "پیوند به کد ویژه"
+msgstr "پیوند دادن به کد ویژه"
 
 #: views/bnav.php:6
 msgid "List Recordings"
-msgstr "فهرست پیام های ظبط شده"
+msgstr "فهرست پیام های ضبط شده"
 
 #: functions.inc.php:181
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "فایل صدایی که از مهاجرت ماژول %s به صورت خودکار ایجاد شده پیدا نشد"
+msgstr "فایل های صوتی که از مهاجرت ماژول %s به صورت خودکار ایجاد شده، یافت نشد"
 
 #: Recordings.class.php:399
 msgid "Missing a temporary folder"
@@ -227,54 +230,52 @@ msgstr "خیر"
 
 #: Recordings.class.php:396
 msgid "No file was uploaded"
-msgstr "فایلی بارگذاری نشده"
+msgstr "فایلی بارگذاری نشده است"
 
 #: views/form.php:65
 #, php-format
 msgid "No files for %s"
-msgstr "بدون فایل %s"
+msgstr "عدم وجود فایل برای %s"
 
 #: assets/js/recordings.js:30
 msgid "No files have been added to this recording"
-msgstr "فایلی به این پیام ظبط شده اضافه نشده"
+msgstr "هیچ فایلی به این پیام ضبط شده اضافه نشده است"
 
 #: functions.inc.php:242
 msgid "No long description available"
-msgstr "توضیح بیشتری نیست"
+msgstr "توضیح بیشتری وجود ندارد"
 
 #: functions.inc.php:191
 #, php-format
 msgid "Non-Existent Recording in module %s"
-msgstr "ففایل ضبط شده درماژول %s وجود ندارد"
+msgstr "فایل ضبط شده درماژول %s وجود ندارد"
 
 #: views/form.php:295
 msgid "Not supported on compounded or Non-Existent recordings"
-msgstr "به صورت ترکیبی پشتیبانی نمیشود ویا فایلهای ضبط شده وجود ندارد"
+msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
 #: assets/js/recordings.js:869
 msgid "Not supported on compounded recordings"
-msgstr "ضبط ترکیبی پشتیبانی نمیشود"
+msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
 #: install.php:50 install.php:64
 msgid "OK"
-msgstr "تایید"
+msgstr "بله"
 
 #: views/form.php:295
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "کد ویژه انتخابی %s"
+msgstr "کد ویژه دلخواه %s"
 
 #: views/form.php:321
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
-msgstr ""
-"کلمه عبور دلخواه برای دسترسی به کد ویژه برای اعطای دسترسی به کاربر جهت ضبط "
-"مجدد."
+msgstr "کلمه عبور دلخواه برای محافظت از امکان ضبط مجدد به وسیله کد ویژه."
 
 #: assets/js/recordings.js:476 assets/js/recordings.js:495
 msgid "Please enter a valid name and save"
-msgstr "لطفا نام درست وارد کرده و ذخیره کنید"
+msgstr "لطفا یک نام معتبر وارد کرده و ذخیره نمایید"
 
 #: assets/js/recordings.js:94
 #, perl-format
@@ -283,7 +284,7 @@ msgstr "پردازش %s برای %s در فرمت %s"
 
 #: views/form.php:121
 msgid "Record In Browser"
-msgstr "پیام ظبط شده در مسیر"
+msgstr "ضبط پیام از طریق مرورگر"
 
 #: views/form.php:190
 msgid "Record Over Extension"
@@ -303,7 +304,7 @@ msgstr "ذخیره"
 
 #: install.php:6 assets/js/recordings.js:302
 msgid "Save Recording"
-msgstr "ذخیره پیام ظبط شده"
+msgstr "ذخیره پیام ضبط شده"
 
 #: views/form.php:78
 msgid ""
@@ -313,19 +314,19 @@ msgid ""
 "by clicking them once (which will turn them green) placing them into replace "
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
-"مرتب کردن فهرست/پخش فایل به ترتیب. پخش فایلها به ترتیب از ابتدا به انتها "
-"صورت میگیرد. شما میتوانید با کلیک بروی آیکون پخش فایلها را مرور کنید.اگر "
-"فایل قرمز باشد نشانه گم شدن آن برای زبان انتخابی است.این فایلها قابلیت "
-"جایگزینی داشته (وپس از جایگزینی به رنگ سبز) در می آیند. هر چیزی بارگذاری شود "
-"بجای فایل قبلی ذخیره میشود"
+"مرتب کردن لیست فایل/ترتیب پخش. پخش فایل ها به ترتیب از ابتدا به انتها صورت "
+"می گیرد. شما می توانید با کلیک بروی آیکون پخش، فایل ها را مرور کنید. اگر "
+"فایل قرمز باشد نشانگر عدم وجود برای زبان انتخابی است. با کلیک بر روی این "
+"فایل ها ،امکان جایگزینی نیز بوجود می آید (که سبز رنگ می شوند) و هر فایلی را "
+"که بارگذاری نمایید بجای فایل قبلی ذخیره می شود"
 
 #: Recordings.class.php:75
 msgid "Submit"
-msgstr "ارسال"
+msgstr "ثبت"
 
 #: views/bnav.php:21 views/grid.php:24
 msgid "Supported Languages"
-msgstr "زبانهای پشتیبانی شده"
+msgstr "زبان های تحت پوشش"
 
 #: Recordings.class.php:323 recordings.i18n.php:10
 msgid "System Recordings"
@@ -339,63 +340,66 @@ msgid ""
 "should confirm that it really works and the real files exist. The file(s) "
 "referenced: %s "
 msgstr ""
-"فایل %s در فهرست زیر وجود ندارد.ورودی تولید شده به نام %s است و باید از "
-"کارکردن و وجودشان اطمینان حاصل کنید. فایل (ها) اشاره شده: %s "
+"فایل %s در فهرست فایل های ضبط شده زیر وجود ندارد. موردی به نام %s تولید شده "
+"که به فایل (هایی) وابستگی دارد، اما شما باید از صحت کارکرد آن و وجود فایل ها "
+"اصلی اطمینان حاصل نمایید. فایل (های) وابسته: %s "
 
 #: views/form.php:24
 msgid ""
 "The name of the system recording on the file system. If it conflicts with "
 "another file then this will overwrite it."
 msgstr ""
-"نام پیام ظبط شده سیستمی در سیستم فایل. در صورت تطابق با دیگر فایل ها فایل "
-"بازنویسی میشود."
+"نام پیام ضبط شده سیستمی در سیستم فایل. در صورت مشابهت با فایل دیگر، آن فایل "
+"بازنویسی می شود."
 
 #: views/form.php:217
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
-"سیستم با شماره ای که در این بخش وارد کردید تماس میگیرد. پس از قطع شما "
-"میتوانید برای فایل نام بگذارید و فایل در فهرست بالا قرار میگیرد"
+"سیستم با شماره ای که در این بخش وارد کرده اید، تماس می گیرد. پس از قطع شما "
+"می توانید نام فایل را مشخص کنید. این فایل در فهرست بالا قرار می گیرد"
 
 #: Recordings.class.php:390
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
-msgstr "فایل بارگذاری شده از حجم مجاز مشخص شده در فرم برای بارگذاری بیشتر است"
+msgstr ""
+"حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
 #: Recordings.class.php:387
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
-"فایل بارگذاری شده از حجم مجاز مشخص شده در php.iniبرای بارگذاری بیشتر است"
+"حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
+"بیشتر است"
 
 #: Recordings.class.php:393
 msgid "The uploaded file was only partially uploaded"
-msgstr "بخشی از فایل بارگذاری شده"
+msgstr "تنها بخشی از فایل بارگذاری شده است"
 
 #: Recordings.class.php:115
 #, php-format
 msgid "There was an error reading system recordings (%s)"
-msgstr "خطا در خواندن پیام ظبط شده سیستمی (%s)"
+msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
 
 #: assets/js/recordings.js:122
 msgid "There was an error, See the console for more details"
-msgstr "بروز خطا, برای اطلاعات بیشتر به کنسول مراجعه کنید"
+msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
 #: views/form.php:178
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
-"این یک درخواست WebRTC است که شما میتوانید از کامپیوترتان و از طریق مرورگر آن "
-"را ضبط کنید"
+"از طریق ایجاد یک درخواست WebRTC شما می توانید از طریق مرورگر کامپیوتر، پیام "
+"صوتی را ضبط کنید"
 
 #: views/form.php:155
 #, php-format
 msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
-msgstr "برای پخش شما باید مرورگر خود را به روز کرده و یا %s خود را به روز کنید"
+msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
 #: Recordings.class.php:302
 msgid "Unknown Error"
@@ -403,15 +407,15 @@ msgstr "خطای نامشخص"
 
 #: Recordings.class.php:382
 msgid "Unsupported file format"
-msgstr "فرمت فایل پشتیبانی نشده"
+msgstr "فرمت فایل پشتیبانی نمی شود"
 
 #: assets/js/recordings.js:554
 msgid "Unsupported file type"
-msgstr "نوع فایل پشتیبانی نشده"
+msgstr "نوع فایل پشتیبانی نمی شود"
 
 #: views/form.php:154
 msgid "Update Required"
-msgstr "نیاز به به روزرسانی"
+msgstr "نیاز به بروز رسانی"
 
 #: views/form.php:90
 msgid "Upload Recording"
@@ -423,8 +427,8 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"بارگذاری فایلها از سیستم محلی. فرمت های پشتیبانی شده: %s. این شامل بایگانیها "
-"(شامل چند فایل) و چند فایل میشود"
+"بارگذاری فایل ها از روی سیستم محلی. فرمت های پشتیبانی شده: %s. که شامل آرشیو "
+"(چندین فایل) و چند فایل می باشد"
 
 #: views/form.php:263 views/form.php:291
 msgid "Yes"
@@ -436,24 +440,26 @@ msgid ""
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
-"شما به حالت جایگزینی فایل سیستمی وارد شدید.فایل اضافه شده بعدی توسط شما "
-"هنگام ضبط بجای فایل سیستمی قرار میگیرد.آیا از انجام این کار مطمئنید؟"
+"شما در حالت جایگزینی یک فایل سیستمی، قرار دارید. فایل اضافه شده توسط شما "
+"هنگام ذخیره بجای فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن "
+"هستید؟"
 
 #: assets/js/recordings.js:669
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
 msgstr ""
-"شما به حالت جایگزینی فایل سیستمی وارد شدید.فایل اضافه شده بعدی توسط شما "
-"هنگام ضبط بجای فایل سیستمی قرار میگیرد.آیا از انجام این کار مطمئنید؟"
+"شما در حالت جایگزینی قرار دارید. فایل اضافه شده توسط شما هنگام ذخیره بجای "
+"فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن هستید؟"
 
 #: views/form.php:72
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
 msgstr ""
-"شما میتوانید هرفایل بالا را با گزینه ضبط پایین جاگذاری کنید.با کلیک روی فایل "
-"سبز شده و به حالت جایگزینی بروید"
+"شما می توانید با انتخاب هر یک از فایل های بالا، آن را با یکی از گزینه های "
+"ضبط پایین جایگزین کنید. با کلیک روی هر فایل، سبز رنگ شده و آن را در حالت "
+"جایگزینی قرار می دهد"
 
 #: views/form.php:71
 msgid ""
@@ -461,16 +467,17 @@ msgid ""
 "replace it with a recording/upload below. It will then turn green. Once you "
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
-"شما فایل این زبان را گم کردید.با کلیک روی دکمه قرمز میتوانید اقدام به ضبط/"
-"بارگذاری کنید.در این صورت به رنگ سبز در می آید"
+"شما یکی از فایل های این زبان را از دست داده اید. با کلیک بر روی موارد قرمز "
+"رنگ، می توانید اقدام به ضبط/ بارگذاری مجدد نمایید. پس از اتمام، فایل به رنگ "
+"خاکستری در می آید"
 
 #: assets/js/recordings.js:20
 msgid "You must set a valid name for this recording"
-msgstr "شما باید نام معتبر برای پیام ظبط شده اختصاص دهید"
+msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
 
 #: install.php:52 install.php:66
 msgid "already exists"
-msgstr "موجود است"
+msgstr "در حال حاضر وجود دارد"
 
 #: install.php:40
 msgid "checking for fcode field.."
@@ -478,4 +485,4 @@ msgstr "بررسی فیلد کد ویژه.."
 
 #: install.php:54
 msgid "checking for fcode_pass field.."
-msgstr "بررسی فیلد پسورد کد ویژه.."
+msgstr "بررسی فیلد رمز عبور کد ویژه.."
