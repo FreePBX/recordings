@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-02 15:34-0800\n"
+"POT-Creation-Date: 2016-05-23 14:55-0700\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,7 +20,7 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:423
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
@@ -56,11 +56,11 @@ msgstr "Добавить любую , ранее созданную систем
 msgid "Admin"
 msgstr "Администратор"
 
-#: assets/js/recordings.js:166
+#: assets/js/recordings.js:170
 msgid "An Error occurred trying to submit this document"
 msgstr "Возникла ошибка при попытке подтвердить сохранение документа"
 
-#: assets/js/recordings.js:254
+#: assets/js/recordings.js:258
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -68,7 +68,7 @@ msgstr ""
 "Вы уверены ,что хоти сконвертировать эти файлы? Без конвертации файлы могут "
 "работать некорректно в Asterisk-е"
 
-#: assets/js/recordings.js:482
+#: assets/js/recordings.js:486
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Вы уверены ,что хотите отменить эти записи?"
 
@@ -80,13 +80,17 @@ msgstr "Просмотр"
 msgid "Call"
 msgstr "Вызов"
 
-#: assets/js/recordings.js:527
+#: assets/js/recordings.js:531
 msgid "Call!"
 msgstr "Вызов!"
 
-#: Recordings.class.php:409
+#: Recordings.class.php:427
 msgid "Can Not Find Uploaded Files"
 msgstr "Невозможно найти загруженные файлы"
+
+#: Recordings.class.php:270
+msgid "Can not find suitable file in this language"
+msgstr ""
 
 #: views/form.php:168 views/form.php:207
 msgid "Cancel"
@@ -120,6 +124,11 @@ msgstr "Совместить файлы"
 msgid "Convert To"
 msgstr "Конвертировать в"
 
+#: assets/js/recordings.js:97
+#, perl-format
+msgid "Copying %s to %s"
+msgstr ""
+
 #: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
@@ -131,7 +140,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Удалить"
 
-#: assets/js/recordings.js:302
+#: assets/js/recordings.js:306
 msgid "Delete Recording"
 msgstr "Удалить запись"
 
@@ -155,7 +164,7 @@ msgstr "Разбить на несколько файлов или архиви�
 msgid "Enter Extension"
 msgstr "Введите внутренний номер"
 
-#: Recordings.class.php:402
+#: Recordings.class.php:420
 msgid "Failed to write file to disk"
 msgstr "Ошибка записи файла на диск"
 
@@ -168,11 +177,11 @@ msgstr "Пароль на сервисный код"
 msgid "File List for %s"
 msgstr "Список файлов для %s"
 
-#: Recordings.class.php:209 Recordings.class.php:352
+#: Recordings.class.php:209 Recordings.class.php:370
 msgid "File does not exist"
 msgstr "Файл не существует"
 
-#: assets/js/recordings.js:128 assets/js/recordings.js:133
+#: assets/js/recordings.js:132 assets/js/recordings.js:137
 msgid "Finished!"
 msgstr ""
 
@@ -212,7 +221,7 @@ msgstr "Список записей"
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Не найден звуковой файл созданный при переносе модуля %s"
 
-#: Recordings.class.php:399
+#: Recordings.class.php:417
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
 
@@ -228,7 +237,7 @@ msgstr "Имя этого файла"
 msgid "No"
 msgstr "Нет"
 
-#: Recordings.class.php:396
+#: Recordings.class.php:414
 msgid "No file was uploaded"
 msgstr "Файлы не загружены"
 
@@ -254,7 +263,7 @@ msgstr "Не существующая запись в модуле %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Не поддерживается на скомбинированных или несуществующих записях"
 
-#: assets/js/recordings.js:869
+#: assets/js/recordings.js:886
 msgid "Not supported on compounded recordings"
 msgstr "Не поддерживается на комбинированных записях"
 
@@ -275,11 +284,11 @@ msgstr ""
 "Опционально - пароль для защиты доступа к сервисному коду, который позволяет "
 "перезаписать запись."
 
-#: assets/js/recordings.js:476 assets/js/recordings.js:495
+#: assets/js/recordings.js:480 assets/js/recordings.js:499
 msgid "Please enter a valid name and save"
 msgstr "Пожалуйста введите корректное имя и сохраните"
 
-#: assets/js/recordings.js:94
+#: assets/js/recordings.js:95
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -304,7 +313,7 @@ msgstr "Сброс"
 msgid "Save"
 msgstr "Сохранить"
 
-#: install.php:6 assets/js/recordings.js:302
+#: install.php:6 assets/js/recordings.js:306
 msgid "Save Recording"
 msgstr "Сохранить запись"
 
@@ -331,7 +340,7 @@ msgstr "Подтвердить"
 msgid "Supported Languages"
 msgstr "Поддерживаемые языки"
 
-#: Recordings.class.php:323 recordings.i18n.php:10
+#: Recordings.class.php:341 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -364,7 +373,7 @@ msgstr ""
 "Система  совершит вызов на внутренний номер ,  указанный  справа . После "
 "завершения вызова вы сможете присвоить имя файлу и он появится в списке"
 
-#: Recordings.class.php:390
+#: Recordings.class.php:408
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -372,13 +381,13 @@ msgstr ""
 "Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
 "HTML-форме"
 
-#: Recordings.class.php:387
+#: Recordings.class.php:405
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Размер загруженного  файл превышает  значение upload_max_filesize "
 "directive   , указанное в php.ini"
 
-#: Recordings.class.php:393
+#: Recordings.class.php:411
 msgid "The uploaded file was only partially uploaded"
 msgstr "Файл загружен неполностью"
 
@@ -387,8 +396,12 @@ msgstr "Файл загружен неполностью"
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:122
+#: assets/js/recordings.js:126
 msgid "There was an error, See the console for more details"
+msgstr ""
+
+#: assets/js/recordings.js:619
+msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
 #: views/form.php:178
@@ -408,15 +421,15 @@ msgstr ""
 "Для проигрывания медиаданных вам необходимо обновить ваш браузер  или "
 "обновить ваш %s"
 
-#: Recordings.class.php:302
+#: Recordings.class.php:320
 msgid "Unknown Error"
 msgstr "Неизвестная ошибка"
 
-#: Recordings.class.php:382
+#: Recordings.class.php:400
 msgid "Unsupported file format"
 msgstr "Не поддерживаемый  формат файла"
 
-#: assets/js/recordings.js:554
+#: assets/js/recordings.js:558
 msgid "Unsupported file type"
 msgstr "Не поддерживаемый  тип файла"
 
@@ -442,14 +455,14 @@ msgstr ""
 msgid "Yes"
 msgstr "Да"
 
-#: assets/js/recordings.js:667
+#: assets/js/recordings.js:679
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:669
+#: assets/js/recordings.js:681
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

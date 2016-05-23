@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-03-02 15:34-0800\n"
+"POT-Creation-Date: 2016-05-23 14:55-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:423
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -54,17 +54,17 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: assets/js/recordings.js:166
+#: assets/js/recordings.js:170
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:254
+#: assets/js/recordings.js:258
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:482
+#: assets/js/recordings.js:486
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -76,12 +76,16 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:527
+#: assets/js/recordings.js:531
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:409
+#: Recordings.class.php:427
 msgid "Can Not Find Uploaded Files"
+msgstr ""
+
+#: Recordings.class.php:270
+msgid "Can not find suitable file in this language"
 msgstr ""
 
 #: views/form.php:168
@@ -113,6 +117,11 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
+#: assets/js/recordings.js:97
+#, perl-format
+msgid "Copying %s to %s"
+msgstr ""
+
 #: recordings.i18n.php:8
 msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
@@ -122,7 +131,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: assets/js/recordings.js:302
+#: assets/js/recordings.js:306
 msgid "Delete Recording"
 msgstr ""
 
@@ -149,7 +158,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:402
+#: Recordings.class.php:420
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -163,12 +172,12 @@ msgid "File List for %s"
 msgstr ""
 
 #: Recordings.class.php:209
-#: Recordings.class.php:352
+#: Recordings.class.php:370
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:128
-#: assets/js/recordings.js:133
+#: assets/js/recordings.js:132
+#: assets/js/recordings.js:137
 msgid "Finished!"
 msgstr ""
 
@@ -204,7 +213,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr ""
 
-#: Recordings.class.php:399
+#: Recordings.class.php:417
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -221,7 +230,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:396
+#: Recordings.class.php:414
 msgid "No file was uploaded"
 msgstr ""
 
@@ -247,7 +256,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:869
+#: assets/js/recordings.js:886
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -267,12 +276,12 @@ msgid ""
 "to re-record it."
 msgstr ""
 
-#: assets/js/recordings.js:476
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:480
+#: assets/js/recordings.js:499
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: assets/js/recordings.js:94
+#: assets/js/recordings.js:95
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -300,7 +309,7 @@ msgid "Save"
 msgstr ""
 
 #: install.php:6
-#: assets/js/recordings.js:302
+#: assets/js/recordings.js:306
 msgid "Save Recording"
 msgstr ""
 
@@ -322,7 +331,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:323
+#: Recordings.class.php:341
 #: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr ""
@@ -348,17 +357,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:390
+#: Recordings.class.php:408
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:387
+#: Recordings.class.php:405
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:393
+#: Recordings.class.php:411
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -367,8 +376,12 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:122
+#: assets/js/recordings.js:126
 msgid "There was an error, See the console for more details"
+msgstr ""
+
+#: assets/js/recordings.js:619
+msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
 #: views/form.php:178
@@ -384,15 +397,15 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:302
+#: Recordings.class.php:320
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:382
+#: Recordings.class.php:400
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:554
+#: assets/js/recordings.js:558
 msgid "Unsupported file type"
 msgstr ""
 
@@ -416,14 +429,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:667
+#: assets/js/recordings.js:679
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:669
+#: assets/js/recordings.js:681
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
