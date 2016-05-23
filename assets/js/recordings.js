@@ -91,7 +91,11 @@ $("#recordings-frm").submit(function(e) {
 		async.forEachOfSeries(process, function (value, key, callback) {
 			value.command = "convert";
 			value.module = "recordings";
-			$("#recscreen label").html(sprintf(_("Processing %s for %s in format %s"),value.name, value.lang, value.codec));
+			if(value.codec !== "") {
+				$("#recscreen label").html(sprintf(_("Processing %s for %s in format %s"),value.name, value.lang, value.codec));
+			} else {
+				$("#recscreen label").html(sprintf(_("Copying %s to %s"),value.name, value.lang));
+			}
 			$.ajax({
 				type: 'POST',
 				url: "ajax.php",
@@ -611,6 +615,14 @@ $("#systemrecording").on('change', function(evt, params) {
 			paths[l] = info.paths[l];
 		}
 	}
+	if(languages.indexOf(language) === -1) {
+		if(!confirm(_("This system recording doesnt exist in this language. Continue?"))) {
+			//reset the drop down to the first empty item
+			$('#systemrecording').val("");
+			$('#systemrecording').trigger('chosen:updated');
+			return false;
+		}
+	}
 	addFile(info.name, paths, languages, false, (languages.indexOf(language) >= 0));
 	//reset the drop down to the first empty item
 	$('#systemrecording').val("");
@@ -722,7 +734,12 @@ function addFile(name, filenames, languages, temp, exists) {
 		$(".replace").data("temporary", rtemporary);
 
 		//remove the marking classes
-		$(".replace").removeClass("replace missing");
+		if(!exists) {
+			$(".replace").addClass("missing");
+			$(".replace").removeClass("replace");
+		} else {
+			$(".replace").removeClass("replace missing");
+		}
 		player.jPlayer( "clearMedia");
 	} else {
 		var exists = exists ? "" : "missing ",

@@ -231,6 +231,15 @@ class Recordings implements BMO {
 				return array("status" => true, "files" => $final);
 			break;
 			case "convert":
+				/*
+				[file] => en/1-for-am-2-for-pm
+		    [name] => custom/ivr-okkkk-recording-1456170709
+		    [codec] => wav
+		    [lang] => en
+		    [temporary] => 0
+		    [command] => convert
+		    [module] => recordings
+				 */
 				set_time_limit(0);
 				$media = $this->FreePBX->Media;
 				$file = $_POST['file'];
@@ -249,17 +258,27 @@ class Recordings implements BMO {
 					if($temporary) {
 						$media->load($this->temp."/".$file);
 					} else {
-						$status = $this->fileStatus($name);
+						$f = ($file == $name) ? $name : str_replace($lang."/","",$file);
+						$status = $this->fileStatus($f);
 						if(!empty($status[$lang])) {
-							$file = $lang."/".reset($status[$lang]);
+							if(!empty($status[$lang][$codec])) {
+								$file = $lang."/".$status[$lang][$codec];
+							} else {
+								$file = $lang."/".reset($status[$lang]);
+							}
+						} else {
+							return array("status" => false, "message" => _("Can not find suitable file in this language"));
 						}
 						$media->load($this->path."/".$file);
 					}
-					if(!$temporary && file_exists($this->path."/".$lang."/".$name.".".$codec)) {
+					if(!$temporary && file_exists($this->path."/".$lang."/".$name.".".$codec) && $file == $name) {
 						return array("status" => true, "name" => $name);
 					}
 					try {
 						$media->convert($this->path."/".$lang."/".$name.".".$codec);
+						if($temporary) {
+							unlink($this->temp."/".$file);
+						}
 					} catch(\Exception $e) {
 						return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
 					}
@@ -275,7 +294,6 @@ class Recordings implements BMO {
 				}
 			break;
 			case "save":
-				//Save the FINAL recording. Do all post processing work here as well
 				$data = $_POST;
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
