@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-23 14:55-0700\n"
+"POT-Creation-Date: 2016-06-27 15:43-0700\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -56,11 +56,11 @@ msgstr "Добавить любую , ранее созданную систем
 msgid "Admin"
 msgstr "Администратор"
 
-#: assets/js/recordings.js:170
+#: assets/js/recordings.js:171
 msgid "An Error occurred trying to submit this document"
 msgstr "Возникла ошибка при попытке подтвердить сохранение документа"
 
-#: assets/js/recordings.js:258
+#: assets/js/recordings.js:259
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -68,7 +68,7 @@ msgstr ""
 "Вы уверены ,что хоти сконвертировать эти файлы? Без конвертации файлы могут "
 "работать некорректно в Asterisk-е"
 
-#: assets/js/recordings.js:486
+#: assets/js/recordings.js:487
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Вы уверены ,что хотите отменить эти записи?"
 
@@ -80,7 +80,7 @@ msgstr "Просмотр"
 msgid "Call"
 msgstr "Вызов"
 
-#: assets/js/recordings.js:531
+#: assets/js/recordings.js:532
 msgid "Call!"
 msgstr "Вызов!"
 
@@ -124,7 +124,7 @@ msgstr "Совместить файлы"
 msgid "Convert To"
 msgstr "Конвертировать в"
 
-#: assets/js/recordings.js:97
+#: assets/js/recordings.js:98
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -140,7 +140,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Удалить"
 
-#: assets/js/recordings.js:306
+#: assets/js/recordings.js:307
 msgid "Delete Recording"
 msgstr "Удалить запись"
 
@@ -181,7 +181,7 @@ msgstr "Список файлов для %s"
 msgid "File does not exist"
 msgstr "Файл не существует"
 
-#: assets/js/recordings.js:132 assets/js/recordings.js:137
+#: assets/js/recordings.js:133 assets/js/recordings.js:138
 msgid "Finished!"
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Hit the red record button to start recording from your browser"
 msgstr "Нажмите на красную кнопку  для начала  записи из вашего браузера"
 
-#: assets/js/recordings.js:50
+#: assets/js/recordings.js:51
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -246,7 +246,7 @@ msgstr "Файлы не загружены"
 msgid "No files for %s"
 msgstr "Нет файлов для %s"
 
-#: assets/js/recordings.js:30
+#: assets/js/recordings.js:31
 msgid "No files have been added to this recording"
 msgstr "Ни одного файла не было добавлено для этой записи"
 
@@ -263,7 +263,7 @@ msgstr "Не существующая запись в модуле %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Не поддерживается на скомбинированных или несуществующих записях"
 
-#: assets/js/recordings.js:886
+#: assets/js/recordings.js:893
 msgid "Not supported on compounded recordings"
 msgstr "Не поддерживается на комбинированных записях"
 
@@ -284,11 +284,11 @@ msgstr ""
 "Опционально - пароль для защиты доступа к сервисному коду, который позволяет "
 "перезаписать запись."
 
-#: assets/js/recordings.js:480 assets/js/recordings.js:499
+#: assets/js/recordings.js:481 assets/js/recordings.js:500
 msgid "Please enter a valid name and save"
 msgstr "Пожалуйста введите корректное имя и сохраните"
 
-#: assets/js/recordings.js:95
+#: assets/js/recordings.js:96
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -313,7 +313,7 @@ msgstr "Сброс"
 msgid "Save"
 msgstr "Сохранить"
 
-#: install.php:6 assets/js/recordings.js:306
+#: install.php:6 assets/js/recordings.js:307
 msgid "Save Recording"
 msgstr "Сохранить запись"
 
@@ -396,11 +396,11 @@ msgstr "Файл загружен неполностью"
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:126
+#: assets/js/recordings.js:127
 msgid "There was an error, See the console for more details"
 msgstr ""
 
-#: assets/js/recordings.js:619
+#: assets/js/recordings.js:620
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
@@ -429,7 +429,7 @@ msgstr "Неизвестная ошибка"
 msgid "Unsupported file format"
 msgstr "Не поддерживаемый  формат файла"
 
-#: assets/js/recordings.js:558
+#: assets/js/recordings.js:559
 msgid "Unsupported file type"
 msgstr "Не поддерживаемый  тип файла"
 
@@ -455,14 +455,14 @@ msgstr ""
 msgid "Yes"
 msgstr "Да"
 
-#: assets/js/recordings.js:679
+#: assets/js/recordings.js:680
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:681
+#: assets/js/recordings.js:682
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -484,7 +484,7 @@ msgstr ""
 "для замещения её   записанной/загруженной записью . Она станет \"зелёной"
 "\" .  После того ,как запись/загрузка завершится , запись станет \"серой\""
 
-#: assets/js/recordings.js:20
+#: assets/js/recordings.js:21
 msgid "You must set a valid name for this recording"
 msgstr "Вы должны указать корректное имя для данной записи"
 
