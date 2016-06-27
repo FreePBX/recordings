@@ -523,6 +523,7 @@ class Recordings implements BMO {
 			return array();
 		}
 		$data['soundlist'] = array();
+		$data['playbacklist'] = array();
 		$langs = array();
 		$files = explode("&",$data['filename']);
 		foreach($files as $file) {
@@ -540,6 +541,7 @@ class Recordings implements BMO {
 				$data['soundlist'][$file]['languages'][] = $lang;
 				$data['soundlist'][$file]['temporary'][$lang] = 0;
 			}
+			$data['playbacklist'][] = $file;
 		}
 		return $data;
 	}

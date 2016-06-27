@@ -358,7 +358,7 @@
 		</div>
 	</div>
 </div>
-<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;</script>
+<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;var playbackList = <?php echo isset($data['playbacklist']) ? json_encode($data['playbacklist']) : "[]"?>;</script>
 <div id="playbacks">
 </div>
 <div id="recscreen" class="hidden">

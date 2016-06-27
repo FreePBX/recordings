@@ -5,6 +5,7 @@ var recording = false, //if in browser recording is happening
 		soundBlob = {}, //sound Blobs from in-browser recording
 		conflictMessage = _("A recording with this name already exists for this language. Do you want to overwrite it?"),
 		soundList = (typeof soundList === "undefined") ? {} : soundList, //sound file list, we attempt to get this from the page
+		playbackList = (typeof playbackList === "undefined") ? [] : playbackList,
 		language = $("#language").val(); //selected language
 
 var temp;
@@ -130,12 +131,12 @@ $("#recordings-frm").submit(function(e) {
 				$("#recscreen").addClass("hidden");
 			} else {
 				$("#recscreen label").text(_("Finished!"));
-				recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
+				recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove);
 			}
 		});
 	} else {
 		$("#recscreen label").text(_("Finished!"));
-		recsave(data.id,playback,data.name,data.description,data.fcode,data.fcode_pass,remove);
+		recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove);
 	}
 
 });
@@ -743,7 +744,8 @@ function addFile(name, filenames, languages, temp, exists) {
 		player.jPlayer( "clearMedia");
 	} else {
 		var exists = exists ? "" : "missing ",
-				id = name.replace(/\//gi, "-"),
+				rand = Math.floor((Math.random() * 100) + 1),
+				id = name.replace(/\//gi, "-") + rand,
 				temporary = {};
 		if(typeof temp === "object") {
 			temporary = temp;
@@ -838,6 +840,7 @@ function linkFormatter(value, row, index){
  */
 function convertList() {
 	soundList = {};
+	playbackList = [];
 	$("#files li").each(function() {
 		var name = $(this).data("name");
 		soundList[name] = {
@@ -846,7 +849,8 @@ function convertList() {
 			"temporary": $(this).data("temporary"),
 			"languages": $(this).data("languages")
 		};
-	})
+		playbackList.push(name);
+	});
 }
 
 /**
@@ -859,10 +863,13 @@ function generateList() {
 	$("#replace-file-alert").addClass("hidden");
 	$("#files").html("");
 	if(typeof soundList !== "undefined") {
-		if(!isObjEmpty(soundList)) {
-			$.each(soundList, function(k,v) {
-				var exists = (v.languages.indexOf(language) >= 0);
-				addFile(v.name, v.filenames, v.languages, v.temporary, exists);
+		if(playbackList.length) {
+			$.each(playbackList, function(k,name) {
+				if(typeof soundList[name] !== "undefined") {
+					var v = soundList[name],
+							exists = (v.languages.indexOf(language) >= 0);
+					addFile(v.name, v.filenames, v.languages, v.temporary, exists);
+				}
 			});
 			$("#file-alert").addClass("hidden");
 		} else {
