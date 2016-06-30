@@ -276,9 +276,6 @@ class Recordings implements BMO {
 					}
 					try {
 						$media->convert($this->path."/".$lang."/".$name.".".$codec);
-						if($temporary) {
-							unlink($this->temp."/".$file);
-						}
 					} catch(\Exception $e) {
 						return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
 					}
