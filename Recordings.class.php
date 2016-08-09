@@ -346,6 +346,7 @@ class Recordings implements BMO {
 				}
 			break;
 			case "checkrecording":
+				$this->FreePBX->Media;
 				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
 				$filename = \Media\Media::cleanFileName($filename);
 				if(file_exists($this->temp."/".$filename.".finished")) {
@@ -358,7 +359,7 @@ class Recordings implements BMO {
 				}
 			break;
 			case "saverecording":
-				$this->FreePBX->Media->getSupportedFormats();
+				$this->FreePBX->Media;
 				$name = !empty($_POST['name']) ? basename($_POST['name']) : '';
 				$filename = !empty($_POST['filename']) ? basename($_POST['filename']) : '';
 				$filename = \Media\Media::cleanFileName($filename);
