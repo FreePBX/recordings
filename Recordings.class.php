@@ -13,14 +13,14 @@ class Recordings implements BMO {
 	 * Most of which are not supported by asterisk
 	 */
 	private $convert = array(
-		"wav",
-		"sln",
 		"sln16",
 		"sln48",
-		"g722",
-		"ulaw",
 		"alaw",
 		"g729",
+		"wav",
+		"sln",
+		"g722",
+		"ulaw",
 		"gsm"
 	);
 
@@ -131,23 +131,21 @@ class Recordings implements BMO {
 	}
 
 	public function ajaxRequest($req, &$setting) {
-		$setting['authenticate'] = false;
-		$setting['allowremote'] = false;
 		switch($req) {
-			case "dialrecording":
-			case "checkrecording":
 			case "savebrowserrecording":
-			case "saverecording":
 			case "deleterecording":
-			case "save":
-			case "record":
-			case "upload":
-			case "grid":
+			case "checkrecording":
+			case "dialrecording":
+			case "saverecording":
 			case "gethtml5byid":
 			case "gethtml5":
 			case "playback":
 			case "download":
 			case "convert":
+			case "record":
+			case "upload":
+			case "save":
+			case "grid":
 				return true;
 			break;
 		}
@@ -247,6 +245,9 @@ class Recordings implements BMO {
 				$codec = $_POST['codec'];
 				$lang = $_POST['lang'];
 				$temporary = $_POST['temporary'];
+
+				$codec = basename($codec);
+				$lang = basename($lang);
 
 				if(!file_exists($this->path."/".$lang."/custom")) {
 					mkdir($this->path."/".$lang."/custom",0777,true);

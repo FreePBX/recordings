@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.26</version>
+	<version>13.0.27</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.27* Thing
 		*13.0.26* FREEPBX-12657 Error when trying to creating new system recording
 		*13.0.25* FREEPBX-12465 System Recording with the same two system sounds can't be saved
 		*13.0.24* FREEPBX-12104 Cant use previous system recording to replace
