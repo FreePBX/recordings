@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 11:16-0700\n"
+"POT-Creation-Date: 2016-08-09 16:08-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -30,7 +30,7 @@ msgstr ""
 "X-Poedit-Language: Swedish\n"
 "X-Poedit-Country: SWEDEN\n"
 
-#: Recordings.class.php:424
+#: Recordings.class.php:425
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -92,7 +92,7 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:428
+#: Recordings.class.php:429
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:421
+#: Recordings.class.php:422
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -182,7 +182,7 @@ msgstr "Lösenord för funktionskod"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:207 Recordings.class.php:371
+#: Recordings.class.php:207 Recordings.class.php:372
 msgid "File does not exist"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
 
-#: Recordings.class.php:418
+#: Recordings.class.php:419
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -238,7 +238,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:415
+#: Recordings.class.php:416
 msgid "No file was uploaded"
 msgstr ""
 
@@ -364,17 +364,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:409
+#: Recordings.class.php:410
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:406
+#: Recordings.class.php:407
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:412
+#: Recordings.class.php:413
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -408,7 +408,7 @@ msgstr ""
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:401
+#: Recordings.class.php:402
 msgid "Unsupported file format"
 msgstr ""
 
