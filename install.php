@@ -109,7 +109,8 @@ if(file_exists($dir."/custom")) {
 	$files = glob($dir."/custom/*");
 	foreach($files as $file) {
 		$parts = pathinfo($file);
-		FreePBX::Recordings()->addRecording($parts['filename'],"Migrated file",$file);
+		rename($file,$dir."/".$default."/custom/".$parts['filename']);
+		FreePBX::Recordings()->addRecording($parts['filename'],"Migrated file","custom/".$parts['filename']);
 	}
 	$files = glob($dir."/custom/*");
 	if(empty($files)) {

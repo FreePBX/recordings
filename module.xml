@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.28</version>
+	<version>13.0.29</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.29* Fix bug in migration
 		*13.0.28* Load Media class before cleaning
 		*13.0.27* File Updates and exclusions
 		*13.0.26* FREEPBX-12657 Error when trying to creating new system recording
