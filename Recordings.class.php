@@ -38,6 +38,10 @@ class Recordings implements BMO {
 		$this->path = $this->FreePBX->Config->get("ASTVARLIBDIR")."/sounds";
 	}
 
+	public function getPath() {
+		return $this->path;
+	}
+
 	public function doConfigPageInit($page) {
 
 	}
@@ -119,7 +123,9 @@ class Recordings implements BMO {
 				}
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
 				$convertto = array_intersect($supported['out'], $this->convert);
-				$html = load_view(__DIR__."/views/form.php",array("message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$recformat = $this->FreePBX->Config->get("MIXMON_FORMAT");
+				$recformat = empty($recformat) || !in_array($recformat,$this->convert) ? "wav" : $recformat;
+				$html = load_view(__DIR__."/views/form.php",array("recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			case "delete":
 				$this->delRecording($_REQUEST['id']);
@@ -528,20 +534,27 @@ class Recordings implements BMO {
 		$data['playbacklist'] = array();
 		$langs = array();
 		$files = explode("&",$data['filename']);
+		$codecs = array();
 		foreach($files as $file) {
 			$status = $this->fileStatus($file);
 			$data['soundlist'][$file] = array(
 				"name" => $file,
 				"temporary" => array(),
 				"languages" => array(),
-				"filenames" => array()
+				"filenames" => array(),
+				"codecs" => array()
 			);
 			foreach($status as $lang => $formats) {
 				foreach($formats as $format => $filename) {
 					$data['soundlist'][$file]['filenames'][$lang] = $lang."/".$file;
+					$data['soundlist'][$file]['codecs'][$lang][] = $format;
+					if(!in_array($format,$codecs)) {
+						$codecs[] = $format;
+					}
 				}
 				$data['soundlist'][$file]['languages'][] = $lang;
 				$data['soundlist'][$file]['temporary'][$lang] = 0;
+				$data['codecs'] = $codecs;
 			}
 			$data['playbacklist'][] = $file;
 		}

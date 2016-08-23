@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-08-09 16:08-0700\n"
+"POT-Creation-Date: 2016-08-23 11:38-0700\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:425
+#: Recordings.class.php:431
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -96,11 +96,11 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:429
+#: Recordings.class.php:435
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:271
+#: Recordings.class.php:277
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -146,7 +146,7 @@ msgstr ""
 "Cria e gerencia gravações para o sistema, usado por vários módulos (por "
 "exemplo, URA)."
 
-#: Recordings.class.php:80
+#: Recordings.class.php:84
 msgid "Delete"
 msgstr "Apagar"
 
@@ -174,7 +174,7 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:422
+#: Recordings.class.php:428
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -187,7 +187,7 @@ msgstr "Senha do código de facilidade"
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:207 Recordings.class.php:372
+#: Recordings.class.php:213 Recordings.class.php:378
 msgid "File does not exist"
 msgstr ""
 
@@ -222,12 +222,12 @@ msgstr "Link para o código de facilidade"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:181
+#: functions.inc.php:183
 #, php-format
 msgid "Missing Sound file auto-created from migration of %s module"
 msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
 
-#: Recordings.class.php:419
+#: Recordings.class.php:425
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -243,7 +243,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: Recordings.class.php:416
+#: Recordings.class.php:422
 msgid "No file was uploaded"
 msgstr ""
 
@@ -256,11 +256,11 @@ msgstr ""
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: functions.inc.php:242
+#: functions.inc.php:244
 msgid "No long description available"
 msgstr "Nenhuma descrição linga disponível"
 
-#: functions.inc.php:191
+#: functions.inc.php:193
 #, php-format
 msgid "Non-Existent Recording in module %s"
 msgstr "Gravação não existente no módulo %s"
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Gravações"
 
-#: Recordings.class.php:85
+#: Recordings.class.php:89
 msgid "Reset"
 msgstr ""
 
@@ -332,7 +332,7 @@ msgid ""
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
 
-#: Recordings.class.php:75
+#: Recordings.class.php:79
 msgid "Submit"
 msgstr ""
 
@@ -340,11 +340,11 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:339 recordings.i18n.php:10
+#: Recordings.class.php:345 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
-#: functions.inc.php:192
+#: functions.inc.php:194
 #, php-format
 msgid ""
 "The %s referenced a recording file listed below that does not exists. An "
@@ -369,21 +369,21 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:410
+#: Recordings.class.php:416
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:407
+#: Recordings.class.php:413
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:413
+#: Recordings.class.php:419
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: Recordings.class.php:115
+#: Recordings.class.php:119
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -409,11 +409,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:318
+#: Recordings.class.php:324
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:402
+#: Recordings.class.php:408
 msgid "Unsupported file format"
 msgstr ""
 

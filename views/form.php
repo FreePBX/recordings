@@ -337,7 +337,7 @@
 												<span class="radioset">
 													<?php $c=0;foreach($convertto as $k => $v) { ?>
 														<?php if(($c % 5) == 0 && $c != 0) { ?></span></br><span class="radioset"><?php } ?>
-														<input type="checkbox" id="<?php echo $k?>" name="codec[]" class="codec" value="<?php echo $k?>" <?php echo ($k == 'wav') ? 'CHECKED' : ''?>>
+														<input type="checkbox" id="<?php echo $k?>" name="codec[]" class="codec" value="<?php echo $k?>" <?php echo ((!empty($data['codecs']) && in_array($k,$data['codecs'])) || $k == $recformat) ? 'CHECKED' : ''?>>
 														<label for="<?php echo $k?>"><?php echo $v?></label>
 													<?php $c++; } ?>
 												</span>

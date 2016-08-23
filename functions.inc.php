@@ -83,7 +83,7 @@ function recordings_get_config($engine) {
 			//
 			$ext->add($context, $exten, '', new ext_setvar('TMPRECFILE','${RECFILE}-TMP'));
 			$ext->add($context, $exten, '', new ext_background('say-temp-msg-prs-pound,,${CHANNEL(language)}'));
-			$ext->add($context, $exten, '', new ext_record('${TMPRECFILE}.wav,,,k'));
+			$ext->add($context, $exten, '', new ext_record('${TMPRECFILE}.${CHANNEL(audioreadformat)},,,k'));
 			$ext->add($context, $exten, '', new ext_setvar('LISTEN','dochecknolanguage'));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
@@ -111,12 +111,14 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_goto(1));
 
 			$exten = 'doaccept';
-			$ext->add($context, $exten, '', new ext_setvar('EXISTS','${STAT(e,${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav)}'));
+			$ext->add($context, $exten, '', new ext_setvar('EXISTS','${STAT(e,${ASTVARLIBDIR}/sounds/${TMPRECFILE}.${CHANNEL(audioreadformat)})}'));
 			$ext->add($context, $exten, '', new ext_noop('${EXISTS}'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["${EXISTS}" != "1"]', 'exit'));
 			$ext->add($context, $exten, '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
-			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${RECFILE}.wav'));
+			$ext->add($context, $exten, '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.${CHANNEL(audioreadformat)} ${ASTVARLIBDIR}/sounds/${RECFILE}.${CHANNEL(audioreadformat)}'));
+			$ext->add($context, $exten, '', new ext_playback('wait-moment'));
+			$ext->add($context, $exten, '', new ext_agi('recordings.agi'));
 			$ext->add($context, $exten, '', new ext_setvar('TMPRECFILE','${RECFILE}'));
 			$ext->add($context, $exten, 'exit', new ext_playback('auth-thankyou'));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
@@ -161,7 +163,7 @@ function recordings_get_config($engine) {
 
 			$ext->add($context, 'h', '', new ext_system('touch ${ASTVARLIBDIR}/sounds/${RECFILE}.finished'));
 			$ext->add($context, 'h', '', new ext_gotoif('$["x${TMPRECFILE}"="x"]', 'exit'));
-			$ext->add($context, 'h', '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.wav ${ASTVARLIBDIR}/sounds/${CHANNEL(language)}/${RECFILE}.wav'));
+			$ext->add($context, 'h', '', new ext_system('mv ${ASTVARLIBDIR}/sounds/${TMPRECFILE}.${CHANNEL(audioreadformat)} ${ASTVARLIBDIR}/sounds/${CHANNEL(language)}/${RECFILE}.${CHANNEL(audioreadformat)}'));
 			$ext->add($context, 'h', 'exit', new ext_hangup());
 
 		break;
