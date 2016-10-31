@@ -2,6 +2,7 @@
 	<div class="row">
 		<div class="col-sm-12">
 			<h1><?php echo _("Add New System Recording")?></h1>
+			<?php if(!empty($missingLangs)) {?><div class="alert alert-danger" role="alert"><?php echo sprintf(_("Some languages are not installed on this system [%s], saving this recording without them installed could have unknown results. Please install them through the %s module"),implode(",",$missingLangs),"<a href='?display=soundlang'>"._("Sound Languages")."</a>")?></div><?php } ?>
 			<?php if(!empty($message)) {?><div class="alert alert-warning" role="alert"><?php echo $message?></div><?php } ?>
 			<div class="fpbx-container">
 				<div class="display full-border">
@@ -358,7 +359,7 @@
 		</div>
 	</div>
 </div>
-<script>var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;var playbackList = <?php echo isset($data['playbacklist']) ? json_encode($data['playbacklist']) : "[]"?>;</script>
+<script>var langs = <?php echo json_encode($langs)?>;var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;var playbackList = <?php echo isset($data['playbacklist']) ? json_encode($data['playbacklist']) : "[]"?>;</script>
 <div id="playbacks">
 </div>
 <div id="recscreen" class="hidden">

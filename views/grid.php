@@ -1,8 +1,12 @@
+<?php if(empty($langs)) { ?>
+	<div class="alert alert-danger"><?php echo sprintf(_("You have no sound packages installed in the %s module. Please install at least one language to use System Recordings"),"<a href='?display=soundlang'>"._("Sound Languages")."</a>")?></div>
+<?php } ?>
+<script>var langs = <?php echo json_encode($langs)?></script>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">
 			<div id="toolbar-all">
-				<a class="btn btn-primary" href="?display=recordings&amp;action=add"><i class="fa fa-plus"></i> Add Recording</a>
+				<a class="btn btn-primary" href="?display=recordings&amp;action=add"><i class="fa fa-plus"></i> <?php echo _("Add Recording")?></a>
 			</div>
 			<table id="mygrid"
 				data-url="ajax.php?module=recordings&amp;command=grid"

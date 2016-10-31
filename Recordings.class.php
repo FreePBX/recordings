@@ -99,18 +99,32 @@ class Recordings implements BMO {
 	public function showPage() {
 		$media = $this->FreePBX->Media();
 		$action = !empty($_REQUEST['action']) ? $_REQUEST['action'] : "";
+		$langs = $this->FreePBX->Soundlang->getLanguages();
+		$missingLangs = array();
 		switch($action) {
 			case "edit":
 				$data = $this->getRecordingById($_REQUEST['id']);
 				$fcc = new \featurecode("recordings", 'edit-recording-'.$_REQUEST['id']);
 				$rec_code = $fcc->getCode();
 				$data['rec_code'] = ($rec_code != '') ? $rec_code : $this->fcbase.$_REQUEST['id'];
+				$usedLangs = array();
+				foreach($data['soundlist'] as $l) {
+					foreach($l['languages'] as $lan) {
+						if(!in_array($lan,$usedLangs)) {
+							$usedLangs[] = $lan;
+						}
+					}
+				}
+				foreach($usedLangs as $l) {
+					if(!isset($langs[$l])) {
+						$missingLangs[] = $l;
+					}
+				}
 			case "add":
 				$data = isset($data) ? $data : array();
 				$supported = $media->getSupportedFormats();
 				ksort($supported['in']);
 				ksort($supported['out']);
-				$langs = $this->FreePBX->Soundlang->getLanguages();
 				$default = $this->FreePBX->Soundlang->getLanguage();
 				$sysrecs = $this->getSystemRecordings();
 				$jsonsysrecs = json_encode($sysrecs);
@@ -125,12 +139,12 @@ class Recordings implements BMO {
 				$convertto = array_intersect($supported['out'], $this->convert);
 				$recformat = $this->FreePBX->Config->get("MIXMON_FORMAT");
 				$recformat = empty($recformat) || !in_array($recformat,$this->convert) ? "wav" : $recformat;
-				$html = load_view(__DIR__."/views/form.php",array("recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$html = load_view(__DIR__."/views/form.php",array("missingLangs" => $missingLangs, "langs" => $langs, "recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
 			break;
 			case "delete":
 				$this->delRecording($_REQUEST['id']);
 			default:
-				$html = load_view(__DIR__."/views/grid.php",array());
+				$html = load_view(__DIR__."/views/grid.php",array("langs" => $langs));
 			break;
 		}
 		return $html;
@@ -256,7 +270,7 @@ class Recordings implements BMO {
 				$lang = basename($lang);
 
 				if(!file_exists($this->path."/".$lang."/custom")) {
-					mkdir($this->path."/".$lang."/custom",0777,true);
+					mkdir($this->path."/".basename($lang)."/custom",0777,true);
 				}
 
 				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
@@ -290,7 +304,7 @@ class Recordings implements BMO {
 				} else {
 					$ext = pathinfo($file,PATHINFO_EXTENSION);
 					if($temporary && file_exists($this->temp."/".$file)) {
-						rename($this->temp."/".$file, $this->path."/".$lang."/".$name.".".$ext);
+						rename($this->temp."/".$file, $this->path."/".basename($lang)."/".$name.".".$ext);
 						return array("status" => true, "name" => $name);
 					} else {
 						return array("status" => true, "name" => $name);
@@ -399,6 +413,7 @@ class Recordings implements BMO {
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
 								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
+								$dname = basename($dname);
 								$dname = pathinfo($dname,PATHINFO_FILENAME);
 								$id = time().rand(1,1000);
 								$name = $dname . '-' . $id . '.' . $extension;

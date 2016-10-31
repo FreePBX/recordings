@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.30</version>
+	<version>13.0.30.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.30.1* FREEPBX-13469 errors when no sound packages are installed or they are missing
 		*13.0.30* Select codecs for file that have been previously generated, fix feature code to record in all formats
 		*13.0.29* Fix bug in migration
 		*13.0.28* Load Media class before cleaning
@@ -60,7 +61,7 @@
 	</menuitems>
 	<depends>
 		<module>framework ge 13.0.72</module>
-		<module>soundlang ge 13.0.0beta6</module>
+		<module>soundlang ge 13.0.23.4</module>
 	</depends>
 	<supported>
 		<version>13.0</version>
