@@ -833,7 +833,6 @@ function addFile(name, filenames, languages, temp, exists) {
  * @return {string}       Return the resulting html for the cel
  */
 function linkFormatter(value, row, index){
-	console.log(langs);
 	var html = '';
 	if(!isObjEmpty(langs)) {
 		html += '<a href="?display=recordings&action=edit&id='+row.id+'"><i class="fa fa-pencil"></i></a>';
