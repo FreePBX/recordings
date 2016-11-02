@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-31 12:42-0700\n"
+"POT-Creation-Date: 2016-11-02 16:42-0700\n"
 "PO-Revision-Date: 2016-02-03 05:34+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -272,7 +272,7 @@ msgstr "Enregistrement Non-Existant dans le module %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:901
+#: assets/js/recordings.js:902
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgstr ""
 "Mot de passe optionnel pour protéger l'accès à ce code de caractéristique "
 "qui permet à l'utilisateur de le réenregistrer."
 
-#: assets/js/recordings.js:841
+#: assets/js/recordings.js:842
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 

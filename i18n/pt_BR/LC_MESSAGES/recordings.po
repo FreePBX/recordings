@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-10-31 12:42-0700\n"
+"POT-Creation-Date: 2016-11-02 16:42-0700\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -275,7 +275,7 @@ msgstr "Gravação não existente no módulo %s"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:901
+#: assets/js/recordings.js:902
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: assets/js/recordings.js:841
+#: assets/js/recordings.js:842
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
