@@ -20,7 +20,7 @@ $("#recordings-frm").submit(function(e) {
 	if($("#name").val().trim() === "") {
 		return warnInvalid($("#name"),_("You must set a valid name for this recording"));
 	}
-	if(!langs.length) {
+	if(isObjEmpty(langs)) {
 		return warnInvalid($("#language"),_("No languages are defined! You must define at least one in the Sound Languages module!"));
 	}
 	data.name = $("#name").val().trim();
@@ -833,8 +833,9 @@ function addFile(name, filenames, languages, temp, exists) {
  * @return {string}       Return the resulting html for the cel
  */
 function linkFormatter(value, row, index){
+	console.log(langs);
 	var html = '';
-	if(langs.length > 0) {
+	if(!isObjEmpty(langs)) {
 		html += '<a href="?display=recordings&action=edit&id='+row.id+'"><i class="fa fa-pencil"></i></a>';
 		html += '&nbsp;<a href="?display=recordings&action=delete&id='+row.id+'" class="delAction"><i class="fa fa-trash"></i></a>';
 	} else {
