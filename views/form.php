@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">
-			<h1><?php echo _("Add New System Recording")?></h1>
+			<h1><?php echo (isset($data['id'])?_("Edit Recording"):_("Add New System Recording"))?></h1>
 			<?php if(!empty($missingLangs)) {?><div class="alert alert-danger" role="alert"><?php echo sprintf(_("Some languages are not installed on this system [%s], saving this recording without them installed could have unknown results. Please install them through the %s module"),implode(",",$missingLangs),"<a href='?display=soundlang'>"._("Sound Languages")."</a>")?></div><?php } ?>
 			<?php if(!empty($message)) {?><div class="alert alert-warning" role="alert"><?php echo $message?></div><?php } ?>
 			<div class="fpbx-container">
