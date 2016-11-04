@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -185,6 +185,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "録音を編集"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -237,11 +241,6 @@ msgstr "キーコードとのリンク"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "%sモジュールから自動作成された音声ファイルが見つかりません"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -277,20 +276,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "詳細説明がありません"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "モジュール %s 内に録音が発見できません"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -311,7 +301,12 @@ msgstr ""
 "ユーザーに再録音を許可するキーコードへのアクセスを保護する為のオプションパス"
 "ワード。"
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -380,19 +375,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "システム録音"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%sは以下にリストアップされている存在しない録音ファイルを参照しています。参照"
-"されているファイルによってエントリーが生成され、%sという名前が付与されました"
-"が、それが本当に機能していてファイルが存在しているかどうかを確認してくださ"
-"い。参照ファイル： %s "
 
 #: views/form.php:25
 msgid ""
@@ -526,6 +508,26 @@ msgstr "fcodeフィールドをチェック中.."
 msgid "checking for fcode_pass field.."
 msgstr "fcode_passフィールドのチェック中.."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "%sモジュールから自動作成された音声ファイルが見つかりません"
+
+#~ msgid "No long description available"
+#~ msgstr "詳細説明がありません"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "モジュール %s 内に録音が発見できません"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%sは以下にリストアップされている存在しない録音ファイルを参照しています。参"
+#~ "照されているファイルによってエントリーが生成され、%sという名前が付与されま"
+#~ "したが、それが本当に機能していてファイルが存在しているかどうかを確認してく"
+#~ "ださい。参照ファイル： %s "
+
 #~ msgid " dial"
 #~ msgstr " 次の番号にダイヤルしてください"
 
@@ -569,9 +571,6 @@ msgstr "fcode_passフィールドのチェック中.."
 #~ msgstr ""
 #~ "録音のためのダイレクトアクセスキーコードは、ビルトイン録音や多重の独立した"
 #~ "録音から作成された合成録音には利用できません。"
-
-#~ msgid "Edit Recording"
-#~ msgstr "録音を編集"
 
 #~ msgid "Failed to create"
 #~ msgstr "作成失敗"

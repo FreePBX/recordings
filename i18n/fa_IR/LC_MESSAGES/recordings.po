@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -159,6 +159,10 @@ msgstr "نام قابل نمایش"
 msgid "Drop Multiple Files or Archives Here"
 msgstr "چندین فایل یا فایل های فشرده را به اینجا بکشید"
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr ""
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr "شماره داخلی مورد نظر"
@@ -216,11 +220,6 @@ msgstr "پیوند دادن به کد ویژه"
 msgid "List Recordings"
 msgstr "فهرست پیام های ضبط شده"
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "فایل های صوتی که از مهاجرت ماژول %s به صورت خودکار ایجاد شده، یافت نشد"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
@@ -256,20 +255,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "توضیح بیشتری وجود ندارد"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "فایل ضبط شده درماژول %s وجود ندارد"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
@@ -288,7 +278,12 @@ msgid ""
 "to re-record it."
 msgstr "کلمه عبور دلخواه برای محافظت از امکان ضبط مجدد به وسیله کد ویژه."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -362,18 +357,6 @@ msgstr "زبان های تحت پوشش"
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"فایل %s در فهرست فایل های ضبط شده زیر وجود ندارد. موردی به نام %s تولید شده "
-"که به فایل (هایی) وابستگی دارد، اما شما باید از صحت کارکرد آن و وجود فایل ها "
-"اصلی اطمینان حاصل نمایید. فایل (های) وابسته: %s "
 
 #: views/form.php:25
 msgid ""
@@ -528,3 +511,23 @@ msgstr "بررسی فیلد کد ویژه.."
 #: install.php:54
 msgid "checking for fcode_pass field.."
 msgstr "بررسی فیلد رمز عبور کد ویژه.."
+
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr ""
+#~ "فایل های صوتی که از مهاجرت ماژول %s به صورت خودکار ایجاد شده، یافت نشد"
+
+#~ msgid "No long description available"
+#~ msgstr "توضیح بیشتری وجود ندارد"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "فایل ضبط شده درماژول %s وجود ندارد"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "فایل %s در فهرست فایل های ضبط شده زیر وجود ندارد. موردی به نام %s تولید "
+#~ "شده که به فایل (هایی) وابستگی دارد، اما شما باید از صحت کارکرد آن و وجود "
+#~ "فایل ها اصلی اطمینان حاصل نمایید. فایل (های) وابسته: %s "

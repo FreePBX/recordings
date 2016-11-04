@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -155,6 +155,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr ""
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -209,11 +213,6 @@ msgstr ""
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr ""
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -250,20 +249,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr ""
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr ""
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -283,7 +273,12 @@ msgid ""
 "to re-record it."
 msgstr ""
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -358,15 +353,6 @@ msgstr ""
 #: Recordings.class.php:359
 #: recordings.i18n.php:10
 msgid "System Recordings"
-msgstr ""
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
 msgstr ""
 
 #: views/form.php:25

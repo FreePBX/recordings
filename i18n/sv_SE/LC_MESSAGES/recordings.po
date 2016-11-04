@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -165,6 +165,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Redigera inspelning"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -217,11 +221,6 @@ msgstr "Länk till funktionskod"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -257,20 +256,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Ingen beskrivning tillgänglig"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Inspelningen finns inte i modul %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -291,7 +281,12 @@ msgstr ""
 "Valfritt lösenord som skyddar denna funktionskod från att oavsiktligt spelas "
 "över."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -360,19 +355,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Systeminspelningar"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%s refererade till en inspelningsfil som inte finns. En post har genererats "
-"med namnet %s, med den refererande filen/filerna men du måste kontrollera "
-"att detta verkligen fungerar och att filen/filerna finns. Filen/filerna som "
-"refereras är %s"
 
 #: views/form.php:25
 msgid ""
@@ -506,6 +488,26 @@ msgstr "kontrollerar fältet fcode.."
 msgid "checking for fcode_pass field.."
 msgstr "kontrollerar fältet fcode_pass.."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "Fattas ljudfil som autoskapades när migrering gjordes av modul %s"
+
+#~ msgid "No long description available"
+#~ msgstr "Ingen beskrivning tillgänglig"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Inspelningen finns inte i modul %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%s refererade till en inspelningsfil som inte finns. En post har "
+#~ "genererats med namnet %s, med den refererande filen/filerna men du måste "
+#~ "kontrollera att detta verkligen fungerar och att filen/filerna finns. "
+#~ "Filen/filerna som refereras är %s"
+
 #~ msgid " dial"
 #~ msgstr " slå"
 
@@ -549,9 +551,6 @@ msgstr "kontrollerar fältet fcode_pass.."
 #~ "Funktionskoder för inspelningar är inte tillgängliga för de inbyggda "
 #~ "systeminspelningarna eller för röster som består av flera individuella "
 #~ "filer."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Redigera inspelning"
 
 #~ msgid "Failed to create"
 #~ msgstr "Kunde inte skapa"

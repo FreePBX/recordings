@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -158,6 +158,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Редактирай Записа"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -210,11 +214,6 @@ msgstr "Свържи Специален Код"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "Missing Sound файл автоматично създаден при преместване от %s модул"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -250,20 +249,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Не е достъпно описание"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Не Съществуващ Запис в модул %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -284,7 +274,12 @@ msgstr ""
 "Незадължителна парола за ограничаване достъпа до специалния код, който "
 "позволява на потребителя да презапише записа."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -353,18 +348,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Системни Записи"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%s спомянава че файла на записа показан по-долу не съществува. Въвеждането "
-"беше генерирано, именувано %s, но ще трябва да потвърдите че наистина работи "
-"и истинския файл съществува. Споменатия файл(ове): %s "
 
 #: views/form.php:25
 msgid ""
@@ -498,6 +481,25 @@ msgstr "проверка за fcode поле .."
 msgid "checking for fcode_pass field.."
 msgstr "проверка за fcode_pass поле .."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "Missing Sound файл автоматично създаден при преместване от %s модул"
+
+#~ msgid "No long description available"
+#~ msgstr "Не е достъпно описание"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Не Съществуващ Запис в модул %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%s спомянава че файла на записа показан по-долу не съществува. "
+#~ "Въвеждането беше генерирано, именувано %s, но ще трябва да потвърдите че "
+#~ "наистина работи и истинския файл съществува. Споменатия файл(ове): %s "
+
 #~ msgid " dial"
 #~ msgstr " наберете"
 
@@ -541,9 +543,6 @@ msgstr "проверка за fcode_pass поле .."
 #~ "Специалните Кодове за Директен Достъп за записите не са достъпни за "
 #~ "вградените системни записи или обединени записи направени от различни "
 #~ "индивидуални такива."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Редактирай Записа"
 
 #~ msgid "Failed to create"
 #~ msgstr "Грешка при създаване"

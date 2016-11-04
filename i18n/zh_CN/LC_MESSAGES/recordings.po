@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -154,6 +154,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr "删除多个文件"
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "编辑录音"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr "输入分机"
@@ -206,11 +210,6 @@ msgstr "链接到功能代码"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "声音文件丢失，此声音文件应该在%s模块迁移时自动生成。"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -246,20 +245,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "无可用的详细描述"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "在模块%s中的录音不存在"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -278,7 +268,12 @@ msgid ""
 "to re-record it."
 msgstr "可选的密码用来保护对这个功能代码的访问，此功能代码允许用户重新录音。"
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -347,17 +342,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "系统录音"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%s引用的下面的录音文件不存在。一个之相关的项目已经生成，名字是%s，但是你应该"
-"检查它能正常工作，并且那些文件确实存在。引用的文件是：%s"
 
 #: views/form.php:25
 msgid ""
@@ -491,6 +475,24 @@ msgstr "正在检查fcode域。。"
 msgid "checking for fcode_pass field.."
 msgstr "正在检查fcode_pass域。。"
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "声音文件丢失，此声音文件应该在%s模块迁移时自动生成。"
+
+#~ msgid "No long description available"
+#~ msgstr "无可用的详细描述"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "在模块%s中的录音不存在"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%s引用的下面的录音文件不存在。一个之相关的项目已经生成，名字是%s，但是你应"
+#~ "该检查它能正常工作，并且那些文件确实存在。引用的文件是：%s"
+
 #~ msgid ""
 #~ "A system recording with this name already exists for this language. Do "
 #~ "you want to overwrite it?"
@@ -543,9 +545,6 @@ msgstr "正在检查fcode_pass域。。"
 #~ "system recordings or compound recordings made of multiple individual ones."
 #~ msgstr ""
 #~ "对功能代码的直接访问不可用于内置的系统录音或由多个录音组成的复合录音。"
-
-#~ msgid "Edit Recording"
-#~ msgstr "编辑录音"
 
 #~ msgid "Failed to create"
 #~ msgstr "创建失败"

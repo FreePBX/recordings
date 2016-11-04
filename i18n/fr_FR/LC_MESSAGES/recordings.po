@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2016-02-03 05:34+0200\n"
 "Last-Translator: Nicolas Riendeau <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -167,6 +167,10 @@ msgstr "Nom affiché"
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Editer Enregistrement"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -219,11 +223,6 @@ msgstr "Lien vers Code de Caractéristique"
 msgid "List Recordings"
 msgstr "Liste des enregistrements"
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "Fichier Son auto-créé lors de la migration du module %s MANQUANT"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -259,20 +258,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Pas de description longue disponible"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Enregistrement Non-Existant dans le module %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -293,7 +283,12 @@ msgstr ""
 "Mot de passe optionnel pour protéger l'accès à ce code de caractéristique "
 "qui permet à l'utilisateur de le réenregistrer."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -362,19 +357,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Enregistrements systèmes"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"Le %s a référencé un fichier d'enregistrement listé ci-dessous qui n'existe "
-"pas. Une entrée a été générée, nommée %s, avec le(s) fichier(s) référencé(s) "
-"mais vous devriez confirmer le bon fonctionnement et confirmer que les "
-"fichiers existent. Le(s) fichier(s) référencé(s) : %s "
 
 #: views/form.php:25
 msgid ""
@@ -508,6 +490,26 @@ msgstr "contrôle du champ fcode..."
 msgid "checking for fcode_pass field.."
 msgstr "contrôle du champ fcode_field..."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "Fichier Son auto-créé lors de la migration du module %s MANQUANT"
+
+#~ msgid "No long description available"
+#~ msgstr "Pas de description longue disponible"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Enregistrement Non-Existant dans le module %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "Le %s a référencé un fichier d'enregistrement listé ci-dessous qui "
+#~ "n'existe pas. Une entrée a été générée, nommée %s, avec le(s) fichier(s) "
+#~ "référencé(s) mais vous devriez confirmer le bon fonctionnement et "
+#~ "confirmer que les fichiers existent. Le(s) fichier(s) référencé(s) : %s "
+
 #~ msgid " dial"
 #~ msgstr " numérotez"
 
@@ -554,9 +556,6 @@ msgstr "contrôle du champ fcode_field..."
 #~ "L'Accès Direct aux Codes de Caractéristique pour les enregistrements ne "
 #~ "sont pas disponibles pour les systèmes d'enregistrement intégrés ou pour "
 #~ "les enregistrements composés de plusieurs enregistrements individuels."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Editer Enregistrement"
 
 #~ msgid "Failed to create"
 #~ msgstr "Echec lors de la Création"

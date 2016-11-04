@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -160,6 +160,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr "Разбить на несколько файлов или архивировать"
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Редактировать запись"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr "Введите внутренний номер"
@@ -216,11 +220,6 @@ msgstr "Линк на Сервисный код"
 msgid "List Recordings"
 msgstr "Список записей"
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "Не найден звуковой файл созданный при переносе модуля %s"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
@@ -256,20 +255,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Нет длинного описания"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Не существующая запись в модуле %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Не поддерживается на скомбинированных или несуществующих записях"
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr "Не поддерживается на комбинированных записях"
 
@@ -290,7 +280,12 @@ msgstr ""
 "Опционально - пароль для защиты доступа к сервисному коду, который позволяет "
 "перезаписать запись."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -365,19 +360,6 @@ msgstr "Поддерживаемые языки"
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Записи в системе"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%s ссылается на файл записи, указанный ниже, который не существует. Создана "
-"метка, с названием %s, которая ссылается на файл, но который нужно "
-"подтвердить, что он существует, и это работает. Файл(ы), на которые "
-"ссылается: %s "
 
 #: views/form.php:25
 msgid ""
@@ -529,6 +511,26 @@ msgstr "проверяется поле fcode.."
 msgid "checking for fcode_pass field.."
 msgstr "проверяется поле fcode_pass.."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "Не найден звуковой файл созданный при переносе модуля %s"
+
+#~ msgid "No long description available"
+#~ msgstr "Нет длинного описания"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Не существующая запись в модуле %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%s ссылается на файл записи, указанный ниже, который не существует. "
+#~ "Создана метка, с названием %s, которая ссылается на файл, но который "
+#~ "нужно подтвердить, что он существует, и это работает. Файл(ы), на которые "
+#~ "ссылается: %s "
+
 #~ msgid ""
 #~ "A system recording with this name already exists for this language. Do "
 #~ "you want to overwrite it?"
@@ -586,9 +588,6 @@ msgstr "проверяется поле fcode_pass.."
 #~ "Сервисный код прямого доступа для записи не работает для записей, "
 #~ "встроенных в систему, или записей, использующихся в других индивидуальных "
 #~ "сценариях."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Редактировать запись"
 
 #~ msgid "Failed to create"
 #~ msgstr "Невозможно создать"

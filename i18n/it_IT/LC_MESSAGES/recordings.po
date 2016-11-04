@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Francesco Romano <francesco.romano@alteclab.it>\n"
 "Language-Team: Italian\n"
@@ -151,6 +151,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Modifica Registrazione"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -203,11 +207,6 @@ msgstr "Collega ad un Codice Servizio"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "File Audio mancante auto-creato durante la migrazione del modulo %s"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -243,20 +242,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Nessuna descrizione completa disponibile"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Registrazione inesistente nel modulo %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -277,7 +267,12 @@ msgstr ""
 "Password opzionale per proteggere l'accesso a questo codice servizio che "
 "permette ad un utente di riregistrarlo."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -346,18 +341,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"%s fa riferimento ad un file di registrazione che non esiste. Una voce è "
-"stata generata, nominata %s, insieme ai file di riferimento ma dovresti "
-"confermare che questi realmente esistono. I file sono : %s"
 
 #: views/form.php:25
 msgid ""
@@ -491,6 +474,25 @@ msgstr "controllo il campo fcode.."
 msgid "checking for fcode_pass field.."
 msgstr "controllo il campo fcode_pass.."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "File Audio mancante auto-creato durante la migrazione del modulo %s"
+
+#~ msgid "No long description available"
+#~ msgstr "Nessuna descrizione completa disponibile"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Registrazione inesistente nel modulo %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "%s fa riferimento ad un file di registrazione che non esiste. Una voce è "
+#~ "stata generata, nominata %s, insieme ai file di riferimento ma dovresti "
+#~ "confermare che questi realmente esistono. I file sono : %s"
+
 #~ msgid " dial"
 #~ msgstr " chiamare"
 
@@ -534,9 +536,6 @@ msgstr "controllo il campo fcode_pass.."
 #~ msgstr ""
 #~ "I Codici Servizi diretti non sono disponibili per le registrazioni "
 #~ "interne di sistema o per le registrazioni composte da più file."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Modifica Registrazione"
 
 #~ msgid "Failed to create"
 #~ msgstr "Impossibile creare"

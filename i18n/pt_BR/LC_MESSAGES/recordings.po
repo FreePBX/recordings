@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-02 16:42-0700\n"
+"POT-Creation-Date: 2016-11-03 18:54-0700\n"
 "PO-Revision-Date: 2015-05-02 12:36+0200\n"
 "Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -170,6 +170,10 @@ msgstr ""
 msgid "Drop Multiple Files or Archives Here"
 msgstr ""
 
+#: views/form.php:4
+msgid "Edit Recording"
+msgstr "Editar a gravação"
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr ""
@@ -222,11 +226,6 @@ msgstr "Link para o código de facilidade"
 msgid "List Recordings"
 msgstr ""
 
-#: functions.inc.php:183
-#, php-format
-msgid "Missing Sound file auto-created from migration of %s module"
-msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
-
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
 msgstr ""
@@ -262,20 +261,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: functions.inc.php:244
-msgid "No long description available"
-msgstr "Nenhuma descrição linga disponível"
-
-#: functions.inc.php:193
-#, php-format
-msgid "Non-Existent Recording in module %s"
-msgstr "Gravação não existente no módulo %s"
-
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:902
+#: assets/js/recordings.js:901
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -296,7 +286,12 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: assets/js/recordings.js:842
+#: functions.inc.php:246
+#, php-format
+msgid "Play Recording: %s"
+msgstr ""
+
+#: assets/js/recordings.js:841
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -365,19 +360,6 @@ msgstr ""
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
-
-#: functions.inc.php:194
-#, php-format
-msgid ""
-"The %s referenced a recording file listed below that does not exists. An "
-"entry has been generated, named %s, with the referenced file(s) but you "
-"should confirm that it really works and the real files exist. The file(s) "
-"referenced: %s "
-msgstr ""
-"O %s referencia um arquivo de gravação listado abaixo que não existe, Uma "
-"entrada foi gerada, com o nome %s, com os arquivos referenciados mas você "
-"deveria confirmar que isto está realmente funcionando e que os arquivos "
-"reais existem. O(s) arquivo(s) referenciado:%s "
 
 #: views/form.php:25
 msgid ""
@@ -511,6 +493,26 @@ msgstr "Verificando o campo fcode..."
 msgid "checking for fcode_pass field.."
 msgstr "Verificando se o campo fcode_pass existe..."
 
+#~ msgid "Missing Sound file auto-created from migration of %s module"
+#~ msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"
+
+#~ msgid "No long description available"
+#~ msgstr "Nenhuma descrição linga disponível"
+
+#~ msgid "Non-Existent Recording in module %s"
+#~ msgstr "Gravação não existente no módulo %s"
+
+#~ msgid ""
+#~ "The %s referenced a recording file listed below that does not exists. An "
+#~ "entry has been generated, named %s, with the referenced file(s) but you "
+#~ "should confirm that it really works and the real files exist. The file(s) "
+#~ "referenced: %s "
+#~ msgstr ""
+#~ "O %s referencia um arquivo de gravação listado abaixo que não existe, Uma "
+#~ "entrada foi gerada, com o nome %s, com os arquivos referenciados mas você "
+#~ "deveria confirmar que isto está realmente funcionando e que os arquivos "
+#~ "reais existem. O(s) arquivo(s) referenciado:%s "
+
 #~ msgid " dial"
 #~ msgstr " discar"
 
@@ -555,9 +557,6 @@ msgstr "Verificando se o campo fcode_pass existe..."
 #~ "Códigos de acesso direto à facilidade, não estão disponíveis para "
 #~ "gravações padrões ou gravações compostas feitas de múltiplas gravações "
 #~ "individuais."
-
-#~ msgid "Edit Recording"
-#~ msgstr "Editar a gravação"
 
 #~ msgid "Failed to create"
 #~ msgstr "Falha ao criar"
