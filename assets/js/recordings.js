@@ -18,6 +18,7 @@ $("#recordings-frm").submit(function(e) {
 	};
 
 	if($("#name").val().trim() === "") {
+		$("#name").focus();
 		return warnInvalid($("#name"),_("You must set a valid name for this recording"));
 	}
 	if(isObjEmpty(langs)) {
@@ -481,8 +482,12 @@ $("#dial-phone").click(function() {
 								nameInput.blur(function(event) {
 									var relatedTarget = event.relatedTarget /** WebKIT **/ || event.originalEvent.explicitOriginalTarget /** FF**/ || document.activeElement /** IE 11 **/;
 									if(relatedTarget === null || (relatedTarget.id != "save-phone" && relatedTarget.id != "cancel-phone")) {
-										alert(_("Please enter a valid name and save"));
-										$(this).focus();
+										if($('#save-phone-input').val() === "") {
+											setTimeout(function(){
+												warnInvalid($('#save-phone-input'),_("Please enter a valid name and save"));
+												$('#save-phone-input').focus();
+											}, 1);
+										}
 									}
 								});
 								$("#cancel-phone").off("click");
@@ -500,8 +505,8 @@ $("#dial-phone").click(function() {
 								$("#save-phone").on("click", function() {
 									var value = nameInput.val();
 									if(value === "") {
-										alert(_("Please enter a valid name and save"));
 										nameInput.focus();
+										alert(_("Please enter a valid name and save"));
 										return;
 									}
 									if(sysRecConflict("custom/"+value)) {
