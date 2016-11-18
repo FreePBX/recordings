@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-03 18:54-0700\n"
+"POT-Creation-Date: 2016-11-18 10:08+1000\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -58,17 +58,17 @@ msgstr ""
 msgid "Admin"
 msgstr "Админ"
 
-#: assets/js/recordings.js:174
+#: assets/js/recordings.js:175
 msgid "An Error occurred trying to submit this document"
 msgstr ""
 
-#: assets/js/recordings.js:262
+#: assets/js/recordings.js:263
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:490
+#: assets/js/recordings.js:487
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -80,7 +80,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:535
+#: assets/js/recordings.js:532
 msgid "Call!"
 msgstr ""
 
@@ -122,7 +122,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/recordings.js:101
+#: assets/js/recordings.js:102
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -138,7 +138,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Изтрий"
 
-#: assets/js/recordings.js:310
+#: assets/js/recordings.js:311
 msgid "Delete Recording"
 msgstr ""
 
@@ -183,7 +183,7 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:136 assets/js/recordings.js:141
+#: assets/js/recordings.js:137 assets/js/recordings.js:142
 msgid "Finished!"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 
-#: assets/js/recordings.js:54
+#: assets/js/recordings.js:55
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -239,11 +239,11 @@ msgstr ""
 msgid "No files for %s"
 msgstr ""
 
-#: assets/js/recordings.js:34
+#: assets/js/recordings.js:35
 msgid "No files have been added to this recording"
 msgstr ""
 
-#: assets/js/recordings.js:24
+#: assets/js/recordings.js:25
 msgid ""
 "No languages are defined! You must define at least one in the Sound "
 "Languages module!"
@@ -253,7 +253,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:901
+#: assets/js/recordings.js:898
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -279,15 +279,15 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:841
+#: assets/js/recordings.js:838
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:484 assets/js/recordings.js:503
+#: assets/js/recordings.js:479 assets/js/recordings.js:501
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: assets/js/recordings.js:99
+#: assets/js/recordings.js:100
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr ""
 msgid "Save"
 msgstr "Запис"
 
-#: install.php:6 assets/js/recordings.js:310
+#: install.php:6 assets/js/recordings.js:311
 msgid "Save Recording"
 msgstr "Направи Запис"
 
@@ -380,11 +380,11 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:130
+#: assets/js/recordings.js:131
 msgid "There was an error, See the console for more details"
 msgstr ""
 
-#: assets/js/recordings.js:623
+#: assets/js/recordings.js:620
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
@@ -409,7 +409,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:562
+#: assets/js/recordings.js:559
 msgid "Unsupported file type"
 msgstr ""
 
@@ -432,14 +432,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:683
+#: assets/js/recordings.js:680
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:685
+#: assets/js/recordings.js:682
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -465,7 +465,7 @@ msgid ""
 "least one language to use System Recordings"
 msgstr ""
 
-#: assets/js/recordings.js:21
+#: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
 msgstr ""
 

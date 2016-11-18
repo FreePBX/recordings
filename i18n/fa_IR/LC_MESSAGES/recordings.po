@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-03 18:54-0700\n"
+"POT-Creation-Date: 2016-11-18 10:08+1000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -57,11 +57,11 @@ msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط ش
 msgid "Admin"
 msgstr "مدیر"
 
-#: assets/js/recordings.js:174
+#: assets/js/recordings.js:175
 msgid "An Error occurred trying to submit this document"
 msgstr "بروز خطا در ثبت این سند"
 
-#: assets/js/recordings.js:262
+#: assets/js/recordings.js:263
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -69,7 +69,7 @@ msgstr ""
 "آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ ممکن است این فایل ها بدون تبدیل "
 "در استریسک به درستی کار نکنند"
 
-#: assets/js/recordings.js:490
+#: assets/js/recordings.js:487
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "آیا از حذف این پیام ضبط شده مطمئن هستید؟"
 
@@ -81,7 +81,7 @@ msgstr "بارگذاری"
 msgid "Call"
 msgstr "برقراری تماس"
 
-#: assets/js/recordings.js:535
+#: assets/js/recordings.js:532
 msgid "Call!"
 msgstr "تماس!"
 
@@ -123,7 +123,7 @@ msgstr "ترکیب فایل ها"
 msgid "Convert To"
 msgstr "تبدیل به"
 
-#: assets/js/recordings.js:101
+#: assets/js/recordings.js:102
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "در حال کپی کردن %s به %s"
@@ -139,7 +139,7 @@ msgstr ""
 msgid "Delete"
 msgstr "حذف"
 
-#: assets/js/recordings.js:310
+#: assets/js/recordings.js:311
 msgid "Delete Recording"
 msgstr "حذف پیام ضبط شده"
 
@@ -184,7 +184,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
-#: assets/js/recordings.js:136 assets/js/recordings.js:141
+#: assets/js/recordings.js:137 assets/js/recordings.js:142
 msgid "Finished!"
 msgstr "پایان یافت!"
 
@@ -192,7 +192,7 @@ msgstr "پایان یافت!"
 msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
 
-#: assets/js/recordings.js:54
+#: assets/js/recordings.js:55
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
@@ -245,11 +245,11 @@ msgstr "فایلی بارگذاری نشده است"
 msgid "No files for %s"
 msgstr "عدم وجود فایل برای %s"
 
-#: assets/js/recordings.js:34
+#: assets/js/recordings.js:35
 msgid "No files have been added to this recording"
 msgstr "هیچ فایلی به این پیام ضبط شده اضافه نشده است"
 
-#: assets/js/recordings.js:24
+#: assets/js/recordings.js:25
 msgid ""
 "No languages are defined! You must define at least one in the Sound "
 "Languages module!"
@@ -259,7 +259,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
-#: assets/js/recordings.js:901
+#: assets/js/recordings.js:898
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
@@ -283,15 +283,15 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:841
+#: assets/js/recordings.js:838
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:484 assets/js/recordings.js:503
+#: assets/js/recordings.js:479 assets/js/recordings.js:501
 msgid "Please enter a valid name and save"
 msgstr "لطفا یک نام معتبر وارد کرده و ذخیره نمایید"
 
-#: assets/js/recordings.js:99
+#: assets/js/recordings.js:100
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "پردازش %s برای %s در فرمت %s"
@@ -316,7 +316,7 @@ msgstr "بازنشانی"
 msgid "Save"
 msgstr "ذخیره"
 
-#: install.php:6 assets/js/recordings.js:310
+#: install.php:6 assets/js/recordings.js:311
 msgid "Save Recording"
 msgstr "ذخیره پیام ضبط شده"
 
@@ -396,11 +396,11 @@ msgstr "تنها بخشی از فایل بارگذاری شده است"
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
 
-#: assets/js/recordings.js:130
+#: assets/js/recordings.js:131
 msgid "There was an error, See the console for more details"
 msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
-#: assets/js/recordings.js:623
+#: assets/js/recordings.js:620
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "سیستم ضبط تماسی برای این زبان وجود ندارد. ادامه میدهید؟"
 
@@ -427,7 +427,7 @@ msgstr "خطای نامشخص"
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
-#: assets/js/recordings.js:562
+#: assets/js/recordings.js:559
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نمی شود"
 
@@ -452,7 +452,7 @@ msgstr ""
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/recordings.js:683
+#: assets/js/recordings.js:680
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -462,7 +462,7 @@ msgstr ""
 "هنگام ذخیره بجای فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن "
 "هستید؟"
 
-#: assets/js/recordings.js:685
+#: assets/js/recordings.js:682
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -496,7 +496,7 @@ msgid ""
 "least one language to use System Recordings"
 msgstr ""
 
-#: assets/js/recordings.js:21
+#: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
 msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
 
