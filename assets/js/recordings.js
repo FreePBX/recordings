@@ -330,14 +330,6 @@ $("#record").click(function() {
 				saveContainer.removeClass("hidden").addClass("in");
 				//focus on input
 				input.focus();
-				//dont allow navigating away until they have named this
-				input.blur(function(event) {
-					var relatedTarget = event.relatedTarget /** WebKIT **/ || event.originalEvent.explicitOriginalTarget /** FF**/ || document.activeElement /** IE 11 **/;
-					if(relatedTarget === null || (relatedTarget.id != "save-recorder" && relatedTarget.id != "cancel-recorder")) {
-						input.focus();
-						alert(_("Please enter a valid name for this recording and save or cancel"));
-					}
-				});
 				$("#cancel-recorder").off("click");
 				$("#cancel-recorder").on("click", function() {
 					if(!confirm(_("Are you sure you wish to discard this recording?"))) {
