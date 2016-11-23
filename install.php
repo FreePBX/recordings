@@ -108,6 +108,11 @@ foreach($recordings as $recording) {
 if(file_exists($dir."/custom")) {
 	$files = glob($dir."/custom/*");
 	foreach($files as $file) {
+		if (is_dir($file)) {
+			// We don't handle directories. Ignore them, they were put
+			// there by the user, and if we move them we'll break things.
+			continue;
+		}
 		$parts = pathinfo($file);
 		rename($file,$dir."/".$default."/custom/".$parts['filename']);
 		FreePBX::Recordings()->addRecording($parts['filename'],"Migrated file","custom/".$parts['filename']);
