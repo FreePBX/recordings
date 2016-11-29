@@ -3,9 +3,7 @@
 $bootstrap_settings['skip_astman'] = true;
 $bootstrap_settings['include_compress'] = false;
 $restrict_mods = array('recordings' => true);
-if (!@include_once(getenv('FREEPBX_CONF') ? getenv('FREEPBX_CONF') : '/etc/freepbx.conf')) {
-	include_once('/etc/asterisk/freepbx.conf');
-}
+include '/etc/freepbx.conf';
 
 $media = FreePBX::create()->Media;
 $recordings = FreePBX::create()->Recordings;
