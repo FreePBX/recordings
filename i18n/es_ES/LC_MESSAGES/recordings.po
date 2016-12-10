@@ -3,37 +3,39 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 10:08+1000\n"
-"PO-Revision-Date: 2015-03-25 10:27+0200\n"
+"PO-Revision-Date: 2016-12-09 23:19+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
-"Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"recordings/es_ES/>\n"
+"Language-Team: Spanish "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/es_ES/>\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: Recordings.class.php:446
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "Una extensión de PHP detuvo la subida del archivo"
 
 #: assets/js/recordings.js:6
 msgid ""
 "A recording with this name already exists for this language. Do you want to "
 "overwrite it?"
 msgstr ""
+"Ya existe una grabación con este nombre para este idioma. ¿Quieres "
+"sobreescribirlo?"
 
 #: views/grid.php:29
 msgid "Actions"
-msgstr ""
+msgstr "Acciones"
 
 #: views/form.php:4
 msgid "Add New System Recording"
-msgstr ""
+msgstr "Agregar una nueva Grabación del Sistema"
 
 #: views/bnav.php:5 views/grid.php:9
 msgid "Add Recording"
@@ -41,13 +43,15 @@ msgstr "Añadir grabación"
 
 #: views/form.php:230
 msgid "Add System Recording"
-msgstr ""
+msgstr "Agregar Grabación del Sistema"
 
 #: views/form.php:245
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr ""
+"Agregue cualquier grabación de sistema previamente creada o una grabación "
+"que se agregó anteriormente"
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
@@ -55,41 +59,43 @@ msgstr "Administrador"
 
 #: assets/js/recordings.js:175
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "Un error ha ocurrido intentando enviar este documento"
 
 #: assets/js/recordings.js:263
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
+"¿Está seguro de que no desea convertir estos archivos? Es posible que no "
+"funcionen correctamente en Asterisk sin convertirse"
 
 #: assets/js/recordings.js:487
 msgid "Are you sure you wish to discard this recordings?"
-msgstr ""
+msgstr "¿Está seguro de que desea descartar estas grabaciones?"
 
 #: views/form.php:96
 msgid "Browse"
-msgstr ""
+msgstr "Vistazo"
 
 #: views/form.php:200
 msgid "Call"
-msgstr ""
+msgstr "Llamar"
 
 #: assets/js/recordings.js:532
 msgid "Call!"
-msgstr ""
+msgstr "Llamar!"
 
 #: Recordings.class.php:450
 msgid "Can Not Find Uploaded Files"
-msgstr ""
+msgstr "No se pueden encontrar los archivos subidos"
 
 #: Recordings.class.php:291
 msgid "Can not find suitable file in this language"
-msgstr ""
+msgstr "No se puede encontrar el archivo adecuado en este idioma"
 
 #: views/form.php:169 views/form.php:208
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: install.php:7
 msgid "Check Recording"
@@ -100,6 +106,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"Compruebe todos los formatos de archivo que desee que esta grabación del "
+"sistema sea codificado"
 
 #: views/form.php:302
 msgid ""
@@ -111,16 +119,16 @@ msgstr ""
 
 #: views/form.php:258
 msgid "Combine Files"
-msgstr ""
+msgstr "Combinar Archivos"
 
 #: views/form.php:334
 msgid "Convert To"
-msgstr ""
+msgstr "Convertir a"
 
 #: assets/js/recordings.js:102
 #, perl-format
 msgid "Copying %s to %s"
-msgstr ""
+msgstr "Copiando %s a %s"
 
 #: recordings.i18n.php:8
 msgid ""
@@ -135,23 +143,23 @@ msgstr "Eliminar"
 
 #: assets/js/recordings.js:311
 msgid "Delete Recording"
-msgstr ""
+msgstr "Borrar Grabación"
 
 #: views/form.php:45
 msgid "Describe this recording"
-msgstr ""
+msgstr "Describir esta grabación"
 
 #: views/bnav.php:20 views/form.php:37 views/grid.php:27
 msgid "Description"
-msgstr ""
+msgstr "Descripción"
 
 #: views/bnav.php:19 views/grid.php:26
 msgid "Display Name"
-msgstr ""
+msgstr "Nombre a Desplegar"
 
 #: views/form.php:103
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Suelte múltiples archivos aquí"
 
 #: views/form.php:4
 msgid "Edit Recording"
