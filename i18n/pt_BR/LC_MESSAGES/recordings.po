@@ -20,8 +20,8 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 10:08+1000\n"
-"PO-Revision-Date: 2016-12-12 04:51+0200\n"
-"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"PO-Revision-Date: 2016-12-14 02:52+0200\n"
+"Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/pt_BR/>\n"
 "Language: pt_BR\n"
@@ -180,7 +180,7 @@ msgstr ""
 
 #: Recordings.class.php:443
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Falha ao gravar o arquivo no disco"
 
 #: views/form.php:314
 msgid "Feature Code Password"
