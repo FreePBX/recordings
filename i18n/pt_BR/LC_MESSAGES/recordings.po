@@ -20,7 +20,7 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 10:08+1000\n"
-"PO-Revision-Date: 2016-12-16 21:59+0200\n"
+"PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/pt_BR/>\n"
@@ -438,6 +438,8 @@ msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
+"Isso iniciará uma solicitação WebRTC para que você será capaz de gravar a "
+"partir de seu computador em seu navegador"
 
 #: views/form.php:156
 #, php-format
@@ -445,26 +447,28 @@ msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr ""
+"Para reproduzir a mídia, você precisará atualizar seu navegador para uma "
+"versão recente ou atualizar seu %s"
 
 #: Recordings.class.php:338
 msgid "Unknown Error"
-msgstr ""
+msgstr "Erro Desconhecido"
 
 #: Recordings.class.php:423
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Formato de arquivo não suportado"
 
 #: assets/js/recordings.js:559
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Tipo de arquivo não suportado"
 
 #: views/form.php:155
 msgid "Update Required"
-msgstr ""
+msgstr "Atualização Necessária"
 
 #: views/form.php:91
 msgid "Upload Recording"
-msgstr ""
+msgstr "Carregar Gravação"
 
 #: views/form.php:110
 #, php-format
@@ -472,10 +476,13 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Envie arquivos do seu sistema local. Os formatos de upload suportados são: %"
+"s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
+"arquivos"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: assets/js/recordings.js:680
 msgid ""
@@ -483,18 +490,27 @@ msgid ""
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
+"Você está inserindo o modo de substituição em um arquivo de sistema. O "
+"próximo arquivo adicionado substituirá esse arquivo do sistema quando você "
+"salvar essa gravação. Tem certeza que quer fazer isso?"
 
 #: assets/js/recordings.js:682
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
 msgstr ""
+"Você está entrando no modo de substituição. O próximo arquivo adicionado "
+"substituirá este quando você salva esta gravação. Tem certeza que quer fazer "
+"isso?"
 
 #: views/form.php:73
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
 msgstr ""
+"Você pode clicar em qualquer arquivo acima para substituí-lo por uma opção "
+"de gravação abaixo. Ao clicar em um arquivo, ele ficará verde, colocando-o "
+"em modo de substituição"
 
 #: views/form.php:72
 msgid ""
@@ -502,6 +518,10 @@ msgid ""
 "replace it with a recording/upload below. It will then turn green. Once you "
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
+"Você tem um arquivo ausente para esse idioma. Clique em qualquer gravação "
+"vermelha acima para substituí-la por uma gravação/carregamento abaixo. Em "
+"seguida, ficará verde. Depois de terminar de carregar/gravar, a gravação "
+"ficará cinza"
 
 #: views/grid.php:2
 #, php-format
@@ -509,10 +529,12 @@ msgid ""
 "You have no sound packages installed in the %s module. Please install at "
 "least one language to use System Recordings"
 msgstr ""
+"Você não tem pacotes de som instalados no módulo %s. Instale pelo menos um "
+"idioma para usar as gravações do sistema"
 
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
-msgstr ""
+msgstr "Você deve definir um nome válido para esta gravação"
 
 #: install.php:52 install.php:66
 msgid "already exists"
