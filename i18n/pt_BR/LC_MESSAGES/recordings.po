@@ -20,37 +20,38 @@ msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-11-18 10:08+1000\n"
-"PO-Revision-Date: 2015-05-02 12:36+0200\n"
-"Last-Translator: Renato <fiuza@tecnologia.inf.br>\n"
-"Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
-"freepbx/recordings/pt_BR/>\n"
+"PO-Revision-Date: 2016-12-16 22:07+0200\n"
+"Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
+"Language-Team: Portuguese (Brazil) "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"X-Generator: Weblate 2.4\n"
 "X-Poedit-Language: Portuguese\n"
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
 #: Recordings.class.php:446
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "Uma extensão PHP parou o carregamento do arquivo"
 
 #: assets/js/recordings.js:6
 msgid ""
 "A recording with this name already exists for this language. Do you want to "
 "overwrite it?"
 msgstr ""
+"Já existe uma gravação com este nome para este idioma. Deseja substituí-lo?"
 
 #: views/grid.php:29
 msgid "Actions"
-msgstr ""
+msgstr "Ações"
 
 #: views/form.php:4
 msgid "Add New System Recording"
-msgstr ""
+msgstr "Adicionar nova Gravação do Sistema"
 
 #: views/bnav.php:5 views/grid.php:9
 msgid "Add Recording"
@@ -58,13 +59,15 @@ msgstr "Adicionar gravação"
 
 #: views/form.php:230
 msgid "Add System Recording"
-msgstr ""
+msgstr "Adicionar Gravação do Sistema"
 
 #: views/form.php:245
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr ""
+"Adicione qualquer gravação de sistema previamente criada ou uma gravação "
+"adicionada anteriormente"
 
 #: recordings.i18n.php:6 recordings.i18n.php:12
 msgid "Admin"
@@ -72,41 +75,43 @@ msgstr "Admin"
 
 #: assets/js/recordings.js:175
 msgid "An Error occurred trying to submit this document"
-msgstr ""
+msgstr "Ocorreu um erro ao tentar envar este documento"
 
 #: assets/js/recordings.js:263
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
+"Tem certeza de que não deseja converter esses arquivos? Eles podem não "
+"funcionar corretamente no Asterisk sem serem convertidos"
 
 #: assets/js/recordings.js:487
 msgid "Are you sure you wish to discard this recordings?"
-msgstr ""
+msgstr "Tem certeza de que deseja descartar essas gravações?"
 
 #: views/form.php:96
 msgid "Browse"
-msgstr ""
+msgstr "Visualizar"
 
 #: views/form.php:200
 msgid "Call"
-msgstr ""
+msgstr "Chamar"
 
 #: assets/js/recordings.js:532
 msgid "Call!"
-msgstr ""
+msgstr "Chamar!"
 
 #: Recordings.class.php:450
 msgid "Can Not Find Uploaded Files"
-msgstr ""
+msgstr "Não é Possível Localizar Arquivos Carregados"
 
 #: Recordings.class.php:291
 msgid "Can not find suitable file in this language"
-msgstr ""
+msgstr "Não é possível encontrar o arquivo adequado neste idioma"
 
 #: views/form.php:169 views/form.php:208
 msgid "Cancel"
-msgstr ""
+msgstr "Cancelar"
 
 #: install.php:7
 msgid "Check Recording"
@@ -117,6 +122,8 @@ msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
+"Verifique todos os formatos de arquivo em que você gostaria que esta "
+"gravação do sistema fossem codificados"
 
 #: views/form.php:302
 msgid ""
@@ -128,16 +135,16 @@ msgstr ""
 
 #: views/form.php:258
 msgid "Combine Files"
-msgstr ""
+msgstr "Combinar Arquivos"
 
 #: views/form.php:334
 msgid "Convert To"
-msgstr ""
+msgstr "Converter Para"
 
 #: assets/js/recordings.js:102
 #, perl-format
 msgid "Copying %s to %s"
-msgstr ""
+msgstr "Copiando  %s para %s"
 
 #: recordings.i18n.php:8
 msgid ""
@@ -152,23 +159,23 @@ msgstr "Apagar"
 
 #: assets/js/recordings.js:311
 msgid "Delete Recording"
-msgstr ""
+msgstr "Apagar Gravação"
 
 #: views/form.php:45
 msgid "Describe this recording"
-msgstr ""
+msgstr "Descrever esta gravação"
 
 #: views/bnav.php:20 views/form.php:37 views/grid.php:27
 msgid "Description"
-msgstr ""
+msgstr "Descrição"
 
 #: views/bnav.php:19 views/grid.php:26
 msgid "Display Name"
-msgstr ""
+msgstr "Exibir Nome"
 
 #: views/form.php:103
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Solte Vários Arquivos ou Arquivos Compactados Aqui"
 
 #: views/form.php:4
 msgid "Edit Recording"
@@ -176,11 +183,11 @@ msgstr "Editar a gravação"
 
 #: views/form.php:198
 msgid "Enter Extension"
-msgstr ""
+msgstr "Inserir Ramal"
 
 #: Recordings.class.php:443
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Falha ao gravar o arquivo no disco"
 
 #: views/form.php:314
 msgid "Feature Code Password"
@@ -189,25 +196,28 @@ msgstr "Senha do código de facilidade"
 #: views/form.php:57
 #, php-format
 msgid "File List for %s"
-msgstr ""
+msgstr "Lista de Arquivos para %s"
 
 #: Recordings.class.php:227 Recordings.class.php:392
 msgid "File does not exist"
-msgstr ""
+msgstr "Arquivo não existe"
 
 #: assets/js/recordings.js:137 assets/js/recordings.js:142
 msgid "Finished!"
-msgstr ""
+msgstr "Concluído!"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
+"Pressione o botão vermelho para iniciar a gravação a partir do seu navegador"
 
 #: assets/js/recordings.js:55
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Se você estiver fazendo conversões de mídia isso poderá levar muito tempo, "
+"ok?"
 
 #: views/form.php:273
 msgid ""
@@ -217,6 +227,12 @@ msgid ""
 "but you will be able to add files to the end of or the beginning of this "
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
+"Em vez de encadear de arquivos juntos (os quais alguns aplicativos não "
+"suportam reprodução), combinar os arquivos acima em um único arquivo. Depois "
+"que isso for feito, você não será capaz de reordenar ou remover os arquivos "
+"da lista acima, mas você será capaz de adicionar arquivos para o final ou o "
+"início deste arquivo. Isso não irá destruir quaisquer arquivos anteriormente "
+"existentes listados acima."
 
 #: views/form.php:286
 msgid "Link to Feature Code"
@@ -224,50 +240,52 @@ msgstr "Link para o código de facilidade"
 
 #: views/bnav.php:6
 msgid "List Recordings"
-msgstr ""
+msgstr "Listar Gravações"
 
 #: Recordings.class.php:440
 msgid "Missing a temporary folder"
-msgstr ""
+msgstr "Faltando uma pasta temporária"
 
 #: views/form.php:17
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: views/form.php:206
 msgid "Name this file"
-msgstr ""
+msgstr "Nomeie este arquivo"
 
 #: views/form.php:266 views/form.php:294
 msgid "No"
-msgstr ""
+msgstr "Não"
 
 #: Recordings.class.php:437
 msgid "No file was uploaded"
-msgstr ""
+msgstr "Nenhum arquivo foi carregado"
 
 #: views/form.php:66
 #, php-format
 msgid "No files for %s"
-msgstr ""
+msgstr "Nenhum arquivo para %s"
 
 #: assets/js/recordings.js:35
 msgid "No files have been added to this recording"
-msgstr ""
+msgstr "Nenhum arquivo foi adicionado a esta gravação"
 
 #: assets/js/recordings.js:25
 msgid ""
 "No languages are defined! You must define at least one in the Sound "
 "Languages module!"
 msgstr ""
+"Nenhum idioma está definido! Você deve definir pelo menos um no módulo "
+"Idiomas de Som!"
 
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
-msgstr ""
+msgstr "Não suportado em gravações compostas ou não existentes"
 
 #: assets/js/recordings.js:898
 msgid "Not supported on compounded recordings"
-msgstr ""
+msgstr "Não suportado em gravações compostas"
 
 #: install.php:50 install.php:64
 msgid "OK"
@@ -289,28 +307,28 @@ msgstr ""
 #: functions.inc.php:246
 #, php-format
 msgid "Play Recording: %s"
-msgstr ""
+msgstr "Reproduzir Gravação: %s"
 
 #: assets/js/recordings.js:838
 msgid "Please add at least one Sound Package in the Sound Languages Module"
-msgstr ""
+msgstr "Adicione pelo menos um Pacote de Som no Módulo de Idiomas de Som"
 
 #: assets/js/recordings.js:479 assets/js/recordings.js:501
 msgid "Please enter a valid name and save"
-msgstr ""
+msgstr "Insira um nome válido e salve"
 
 #: assets/js/recordings.js:100
 #, perl-format
 msgid "Processing %s for %s in format %s"
-msgstr ""
+msgstr "Processando %s para %s no formato %s"
 
 #: views/form.php:122
 msgid "Record In Browser"
-msgstr ""
+msgstr "Gravar no Navegador"
 
 #: views/form.php:191
 msgid "Record Over Extension"
-msgstr ""
+msgstr "Gravar no Ramal"
 
 #: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
@@ -318,7 +336,7 @@ msgstr "Gravações"
 
 #: Recordings.class.php:89
 msgid "Reset"
-msgstr ""
+msgstr "Reiniciar"
 
 #: views/form.php:170 views/form.php:209
 msgid "Save"
@@ -335,6 +353,9 @@ msgid ""
 "without them installed could have unknown results. Please install them "
 "through the %s module"
 msgstr ""
+"Alguns idiomas não estão instalados neste sistema [%s], salvar esta gravação "
+"sem eles instalados pode ter resultados inesperados. Instale-os através do "
+"módulo %s"
 
 #: views/form.php:79
 msgid ""
@@ -344,18 +365,24 @@ msgid ""
 "by clicking them once (which will turn them green) placing them into replace "
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
+"Lista de arquivos classificados/ordem de reprodução. A reprodução será feita "
+"de cima para baixo. Você pode clicar no ícone de reprodução para visualizar "
+"os arquivos. Se um arquivo estiver vermelho, ele estará faltando para o "
+"referido idioma selecionado. Os arquivos podem ser substituídos clicando-os "
+"uma vez (o que os tornará verdes) colocando-os no modo de substituição. "
+"Qualquer coisa que você carregar irá então substituir este arquivo em salvar"
 
 #: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
-msgstr ""
+msgstr "Idiomas de Som"
 
 #: Recordings.class.php:79
 msgid "Submit"
-msgstr ""
+msgstr "Enviar"
 
 #: views/bnav.php:21 views/grid.php:28
 msgid "Supported Languages"
-msgstr ""
+msgstr "Idiomas Suportados"
 
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
@@ -366,45 +393,53 @@ msgid ""
 "The name of the system recording on the file system. If it conflicts with "
 "another file then this will overwrite it."
 msgstr ""
+"Nome da gravação do sistema no sistema de arquivos. Se ele entrar em "
+"conflito com outro arquivo, ele será substituído."
 
 #: views/form.php:218
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
+"O sistema chamará o ramal que você especificar à esquerda. Ao desligar você "
+"será capaz de nomear o arquivo e ele será colocado na lista acima"
 
 #: Recordings.class.php:431
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"O arquivo enviado excede a diretiva MAX_FILE_SIZE que foi especificada no "
+"formulário HTML"
 
 #: Recordings.class.php:428
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
-msgstr ""
+msgstr "O arquivo carregado excede a diretiva upload_max_filesize no php.ini"
 
 #: Recordings.class.php:434
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "O arquivo enviado foi carregado parcialmente"
 
 #: Recordings.class.php:133
 #, php-format
 msgid "There was an error reading system recordings (%s)"
-msgstr ""
+msgstr "Ocorreu um erro ao ler as gravações do sistema (%s)"
 
 #: assets/js/recordings.js:131
 msgid "There was an error, See the console for more details"
-msgstr ""
+msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
 
 #: assets/js/recordings.js:620
 msgid "This system recording doesnt exist in this language. Continue?"
-msgstr ""
+msgstr "Esta gravação do sistema não existe neste idioma. Continuar?"
 
 #: views/form.php:179
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
 msgstr ""
+"Isso iniciará uma solicitação WebRTC para que você será capaz de gravar a "
+"partir de seu computador em seu navegador"
 
 #: views/form.php:156
 #, php-format
@@ -412,26 +447,28 @@ msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr ""
+"Para reproduzir a mídia, você precisará atualizar seu navegador para uma "
+"versão recente ou atualizar seu %s"
 
 #: Recordings.class.php:338
 msgid "Unknown Error"
-msgstr ""
+msgstr "Erro Desconhecido"
 
 #: Recordings.class.php:423
 msgid "Unsupported file format"
-msgstr ""
+msgstr "Formato de arquivo não suportado"
 
 #: assets/js/recordings.js:559
 msgid "Unsupported file type"
-msgstr ""
+msgstr "Tipo de arquivo não suportado"
 
 #: views/form.php:155
 msgid "Update Required"
-msgstr ""
+msgstr "Atualização Necessária"
 
 #: views/form.php:91
 msgid "Upload Recording"
-msgstr ""
+msgstr "Carregar Gravação"
 
 #: views/form.php:110
 #, php-format
@@ -439,10 +476,13 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
+"Envie arquivos do seu sistema local. Os formatos de upload suportados são: %"
+"s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
+"arquivos"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
-msgstr ""
+msgstr "Sim"
 
 #: assets/js/recordings.js:680
 msgid ""
@@ -450,18 +490,27 @@ msgid ""
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
+"Você está inserindo o modo de substituição em um arquivo de sistema. O "
+"próximo arquivo adicionado substituirá esse arquivo do sistema quando você "
+"salvar essa gravação. Tem certeza que quer fazer isso?"
 
 #: assets/js/recordings.js:682
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
 msgstr ""
+"Você está entrando no modo de substituição. O próximo arquivo adicionado "
+"substituirá este quando você salva esta gravação. Tem certeza que quer fazer "
+"isso?"
 
 #: views/form.php:73
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
 msgstr ""
+"Você pode clicar em qualquer arquivo acima para substituí-lo por uma opção "
+"de gravação abaixo. Ao clicar em um arquivo, ele ficará verde, colocando-o "
+"em modo de substituição"
 
 #: views/form.php:72
 msgid ""
@@ -469,6 +518,10 @@ msgid ""
 "replace it with a recording/upload below. It will then turn green. Once you "
 "have finished uploading/recording the recording will turn grey"
 msgstr ""
+"Você tem um arquivo ausente para esse idioma. Clique em qualquer gravação "
+"vermelha acima para substituí-la por uma gravação/carregamento abaixo. Em "
+"seguida, ficará verde. Depois de terminar de carregar/gravar, a gravação "
+"ficará cinza"
 
 #: views/grid.php:2
 #, php-format
@@ -476,10 +529,12 @@ msgid ""
 "You have no sound packages installed in the %s module. Please install at "
 "least one language to use System Recordings"
 msgstr ""
+"Você não tem pacotes de som instalados no módulo %s. Instale pelo menos um "
+"idioma para usar as gravações do sistema"
 
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
-msgstr ""
+msgstr "Você deve definir um nome válido para esta gravação"
 
 #: install.php:52 install.php:66
 msgid "already exists"
