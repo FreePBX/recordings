@@ -30,6 +30,10 @@ function recordings_get_config($engine) {
 			$ext->addInclude('from-internal-additional', 'app-recordings'); // Add the include from from-internal
 			foreach ($recordings as $item) {
 
+				$ext->add('play-system-recording',$item['id'],'',new ext_answer());
+				$ext->add('play-system-recording',$item['id'],'',new ext_playback($item['filename']));
+				$ext->add('play-system-recording',$item['id'],'',new ext_hangup());
+
 				// Get the feature code, and do a sanity check if it is not suppose to be active and delete it
 				//
 				if ($item['fcode'] != 0) {
