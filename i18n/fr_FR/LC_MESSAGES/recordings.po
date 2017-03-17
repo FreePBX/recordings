@@ -20,14 +20,14 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2016-12-19 09:06-0800\n"
-"PO-Revision-Date: 2016-11-22 22:30+0200\n"
-"Last-Translator: Pascal <pascal.noyel@ipexia.com>\n"
-"Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
-"recordings/fr_FR/>\n"
+"PO-Revision-Date: 2017-03-17 00:22+0200\n"
+"Last-Translator: Nicolas <freepbx@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/fr_FR/>\n"
+"Language: fr_FR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -51,7 +51,7 @@ msgstr ""
 
 #: views/bnav.php:5 views/grid.php:9
 msgid "Add Recording"
-msgstr "Ajouter Enregistrement"
+msgstr "Ajouter un enregistrement"
 
 #: views/form.php:230
 msgid "Add System Recording"
@@ -169,7 +169,7 @@ msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
-msgstr "Editer Enregistrement"
+msgstr "Éditer l'enregistrement"
 
 #: views/form.php:198
 msgid "Enter Extension"
@@ -181,7 +181,7 @@ msgstr ""
 
 #: views/form.php:314
 msgid "Feature Code Password"
-msgstr "Mot de Passe du Code de Caractéristique"
+msgstr "Mot de passe du code de caractéristique"
 
 #: views/form.php:57
 #, php-format
@@ -217,7 +217,7 @@ msgstr ""
 
 #: views/form.php:286
 msgid "Link to Feature Code"
-msgstr "Lien vers Code de Caractéristique"
+msgstr "Lien vers le code de caractéristique"
 
 #: views/bnav.php:6
 msgid "List Recordings"
@@ -273,7 +273,7 @@ msgstr "OK"
 #: views/form.php:296
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "Code de Caractéristique optionnel %s"
+msgstr "Code de caractéristique optionnel %s"
 
 #: views/form.php:322
 msgid ""
@@ -323,7 +323,7 @@ msgstr "Sauvegarder"
 
 #: install.php:6 assets/js/recordings.js:311
 msgid "Save Recording"
-msgstr "Sauvegarder les Enregistrements"
+msgstr "Sauvegarder l'enregistrement"
 
 #: views/form.php:5
 #, php-format
@@ -356,7 +356,7 @@ msgstr ""
 
 #: Recordings.class.php:359 recordings.i18n.php:10
 msgid "System Recordings"
-msgstr "Enregistrements systèmes"
+msgstr "Enregistrements système"
 
 #: views/form.php:25
 msgid ""
