@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 09:06-0800\n"
+"POT-Creation-Date: 2017-03-30 10:49-0700\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -53,7 +53,7 @@ msgid ""
 "previously"
 msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط شده از قبل"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
+#: recordings.i18n.php:6
 msgid "Admin"
 msgstr "مدیر"
 
@@ -163,6 +163,42 @@ msgstr "چندین فایل یا فایل های فشرده را به اینجا
 msgid "Edit Recording"
 msgstr ""
 
+#: recordings.i18n.php:28
+msgid "Edit Recording: U2"
+msgstr ""
+
+#: recordings.i18n.php:20
+msgid "Edit Recording: funnnn"
+msgstr ""
+
+#: recordings.i18n.php:26
+msgid "Edit Recording: hello"
+msgstr ""
+
+#: recordings.i18n.php:12
+msgid "Edit Recording: ivr intro"
+msgstr ""
+
+#: recordings.i18n.php:16
+msgid "Edit Recording: kool"
+msgstr ""
+
+#: recordings.i18n.php:24
+msgid "Edit Recording: moar"
+msgstr ""
+
+#: recordings.i18n.php:14
+msgid "Edit Recording: test"
+msgstr ""
+
+#: recordings.i18n.php:18
+msgid "Edit Recording: testing"
+msgstr ""
+
+#: recordings.i18n.php:22
+msgid "Edit Recording: testing111"
+msgstr ""
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr "شماره داخلی مورد نظر"
@@ -183,6 +219,11 @@ msgstr "فهرست فایل برای %s"
 #: Recordings.class.php:227 Recordings.class.php:392
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
+
+#: assets/js/recordings.js:564
+#, perl-format
+msgid "File size is too large. Max size is %s bytes"
+msgstr ""
 
 #: assets/js/recordings.js:137 assets/js/recordings.js:142
 msgid "Finished!"
@@ -259,7 +300,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
-#: assets/js/recordings.js:898
+#: assets/js/recordings.js:903
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
@@ -283,7 +324,7 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:838
+#: assets/js/recordings.js:843
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
@@ -400,7 +441,7 @@ msgstr "بروز خطا در خواندن پیام های ضبط شده سیست
 msgid "There was an error, See the console for more details"
 msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
-#: assets/js/recordings.js:620
+#: assets/js/recordings.js:625
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "سیستم ضبط تماسی برای این زبان وجود ندارد. ادامه میدهید؟"
 
@@ -452,7 +493,7 @@ msgstr ""
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/recordings.js:680
+#: assets/js/recordings.js:685
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -462,7 +503,7 @@ msgstr ""
 "هنگام ذخیره بجای فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن "
 "هستید؟"
 
-#: assets/js/recordings.js:682
+#: assets/js/recordings.js:687
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

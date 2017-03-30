@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-12-19 09:06-0800\n"
+"POT-Creation-Date: 2017-03-30 10:49-0700\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -69,7 +69,7 @@ msgstr ""
 "Adicione qualquer gravação de sistema previamente criada ou uma gravação "
 "adicionada anteriormente"
 
-#: recordings.i18n.php:6 recordings.i18n.php:12
+#: recordings.i18n.php:6
 msgid "Admin"
 msgstr "Admin"
 
@@ -181,6 +181,42 @@ msgstr "Solte Vários Arquivos ou Arquivos Compactados Aqui"
 msgid "Edit Recording"
 msgstr "Editar a gravação"
 
+#: recordings.i18n.php:28
+msgid "Edit Recording: U2"
+msgstr ""
+
+#: recordings.i18n.php:20
+msgid "Edit Recording: funnnn"
+msgstr ""
+
+#: recordings.i18n.php:26
+msgid "Edit Recording: hello"
+msgstr ""
+
+#: recordings.i18n.php:12
+msgid "Edit Recording: ivr intro"
+msgstr ""
+
+#: recordings.i18n.php:16
+msgid "Edit Recording: kool"
+msgstr ""
+
+#: recordings.i18n.php:24
+msgid "Edit Recording: moar"
+msgstr ""
+
+#: recordings.i18n.php:14
+msgid "Edit Recording: test"
+msgstr ""
+
+#: recordings.i18n.php:18
+msgid "Edit Recording: testing"
+msgstr ""
+
+#: recordings.i18n.php:22
+msgid "Edit Recording: testing111"
+msgstr ""
+
 #: views/form.php:198
 msgid "Enter Extension"
 msgstr "Inserir Ramal"
@@ -201,6 +237,11 @@ msgstr "Lista de Arquivos para %s"
 #: Recordings.class.php:227 Recordings.class.php:392
 msgid "File does not exist"
 msgstr "Arquivo não existe"
+
+#: assets/js/recordings.js:564
+#, perl-format
+msgid "File size is too large. Max size is %s bytes"
+msgstr ""
 
 #: assets/js/recordings.js:137 assets/js/recordings.js:142
 msgid "Finished!"
@@ -283,7 +324,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Não suportado em gravações compostas ou não existentes"
 
-#: assets/js/recordings.js:898
+#: assets/js/recordings.js:903
 msgid "Not supported on compounded recordings"
 msgstr "Não suportado em gravações compostas"
 
@@ -309,7 +350,7 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr "Reproduzir Gravação: %s"
 
-#: assets/js/recordings.js:838
+#: assets/js/recordings.js:843
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr "Adicione pelo menos um Pacote de Som no Módulo de Idiomas de Som"
 
@@ -429,7 +470,7 @@ msgstr "Ocorreu um erro ao ler as gravações do sistema (%s)"
 msgid "There was an error, See the console for more details"
 msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
 
-#: assets/js/recordings.js:620
+#: assets/js/recordings.js:625
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Esta gravação do sistema não existe neste idioma. Continuar?"
 
@@ -484,7 +525,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Sim"
 
-#: assets/js/recordings.js:680
+#: assets/js/recordings.js:685
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -494,7 +535,7 @@ msgstr ""
 "próximo arquivo adicionado substituirá esse arquivo do sistema quando você "
 "salvar essa gravação. Tem certeza que quer fazer isso?"
 
-#: assets/js/recordings.js:682
+#: assets/js/recordings.js:687
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
