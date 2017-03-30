@@ -559,6 +559,11 @@ $('#fileupload').fileupload({
 				alert(_("Unsupported file type"));
 				return false;
 			}
+			if(v.size > max_size) {
+				submit = false;
+				alert(sprintf(_("File size is too large. Max size is %s bytes"),max_size));
+				return false;
+			}
 			var s = v.name.replace(/\.[^/.]+$/, "").replace(/\s|&|<|>|\.|`|'|\*|\?|\"/g, '-').toLowerCase();
 			if(!$(".replace").length && sysRecConflict("custom/"+s)) {
 				if(!confirm(conflictMessage)) {
