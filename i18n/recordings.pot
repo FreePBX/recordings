@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-30 10:49-0700\n"
+"POT-Creation-Date: 2017-04-06 18:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,42 +156,6 @@ msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
-msgstr ""
-
-#: recordings.i18n.php:28
-msgid "Edit Recording: U2"
-msgstr ""
-
-#: recordings.i18n.php:20
-msgid "Edit Recording: funnnn"
-msgstr ""
-
-#: recordings.i18n.php:26
-msgid "Edit Recording: hello"
-msgstr ""
-
-#: recordings.i18n.php:12
-msgid "Edit Recording: ivr intro"
-msgstr ""
-
-#: recordings.i18n.php:16
-msgid "Edit Recording: kool"
-msgstr ""
-
-#: recordings.i18n.php:24
-msgid "Edit Recording: moar"
-msgstr ""
-
-#: recordings.i18n.php:14
-msgid "Edit Recording: test"
-msgstr ""
-
-#: recordings.i18n.php:18
-msgid "Edit Recording: testing"
-msgstr ""
-
-#: recordings.i18n.php:22
-msgid "Edit Recording: testing111"
 msgstr ""
 
 #: views/form.php:198
