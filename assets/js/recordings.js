@@ -474,12 +474,14 @@ $("#dial-phone").click(function() {
 								nameInput.blur(function(event) {
 									var relatedTarget = event.relatedTarget /** WebKIT **/ || event.originalEvent.explicitOriginalTarget /** FF**/ || document.activeElement /** IE 11 **/;
 									if(relatedTarget === null || (relatedTarget.id != "save-phone" && relatedTarget.id != "cancel-phone")) {
-										var boxval=$(trim('#save-phone-input').val());
+										var boxval=$('#save-phone-input').val().trim();
 										if(boxval.length == 0) {
 											setTimeout(function(){
-												warnInvalid($('#save-phone-input'),_("Please enter a valid name and save"));
-												$('#save-phone-input').focus();
-											}, 5000);
+												if ($("#save-phone-input").is(':focus')==false) {
+													warnInvalid($('#save-phone-input'),_("Please enter a valid name and save"));
+													$('#save-phone-input').focus();
+												}
+											}, 1);
 										}
 									}
 								});
