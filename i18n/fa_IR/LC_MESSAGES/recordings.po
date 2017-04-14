@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 18:12-0400\n"
+"POT-Creation-Date: 2017-04-14 18:18-0400\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -69,7 +69,7 @@ msgstr ""
 "آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ ممکن است این فایل ها بدون تبدیل "
 "در استریسک به درستی کار نکنند"
 
-#: assets/js/recordings.js:487
+#: assets/js/recordings.js:490
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "آیا از حذف این پیام ضبط شده مطمئن هستید؟"
 
@@ -81,7 +81,7 @@ msgstr "بارگذاری"
 msgid "Call"
 msgstr "برقراری تماس"
 
-#: assets/js/recordings.js:532
+#: assets/js/recordings.js:535
 msgid "Call!"
 msgstr "تماس!"
 
@@ -184,7 +184,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
-#: assets/js/recordings.js:564
+#: assets/js/recordings.js:567
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
@@ -264,7 +264,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
-#: assets/js/recordings.js:903
+#: assets/js/recordings.js:906
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
@@ -288,11 +288,11 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:843
+#: assets/js/recordings.js:846
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:479 assets/js/recordings.js:501
+#: assets/js/recordings.js:481 assets/js/recordings.js:504
 msgid "Please enter a valid name and save"
 msgstr "لطفا یک نام معتبر وارد کرده و ذخیره نمایید"
 
@@ -405,7 +405,7 @@ msgstr "بروز خطا در خواندن پیام های ضبط شده سیست
 msgid "There was an error, See the console for more details"
 msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
-#: assets/js/recordings.js:625
+#: assets/js/recordings.js:628
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "سیستم ضبط تماسی برای این زبان وجود ندارد. ادامه میدهید؟"
 
@@ -432,7 +432,7 @@ msgstr "خطای نامشخص"
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
-#: assets/js/recordings.js:559
+#: assets/js/recordings.js:562
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نمی شود"
 
@@ -457,7 +457,7 @@ msgstr ""
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/recordings.js:685
+#: assets/js/recordings.js:688
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -467,7 +467,7 @@ msgstr ""
 "هنگام ذخیره بجای فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن "
 "هستید؟"
 
-#: assets/js/recordings.js:687
+#: assets/js/recordings.js:690
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 18:12-0400\n"
+"POT-Creation-Date: 2017-04-14 18:18-0400\n"
 "PO-Revision-Date: 2016-12-10 10:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -69,7 +69,7 @@ msgstr ""
 "¿Está seguro de que no desea convertir estos archivos? Es posible que no "
 "funcionen correctamente en Asterisk sin convertirse"
 
-#: assets/js/recordings.js:487
+#: assets/js/recordings.js:490
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "¿Está seguro de que desea descartar estas grabaciones?"
 
@@ -81,7 +81,7 @@ msgstr "Vistazo"
 msgid "Call"
 msgstr "Llamar"
 
-#: assets/js/recordings.js:532
+#: assets/js/recordings.js:535
 msgid "Call!"
 msgstr "Llamar!"
 
@@ -186,7 +186,7 @@ msgstr "Lista de Archivos para %s"
 msgid "File does not exist"
 msgstr "Archivo no existe"
 
-#: assets/js/recordings.js:564
+#: assets/js/recordings.js:567
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
@@ -271,7 +271,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "No soportado en grabaciones compuestas o no existentes"
 
-#: assets/js/recordings.js:903
+#: assets/js/recordings.js:906
 msgid "Not supported on compounded recordings"
 msgstr "No soportado en grabaciones compuestas"
 
@@ -297,12 +297,12 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr "Reproducir Grabación: %s"
 
-#: assets/js/recordings.js:843
+#: assets/js/recordings.js:846
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 "Agregue al menos un paquete de sonido en el módulo de sonidos de idiomas"
 
-#: assets/js/recordings.js:479 assets/js/recordings.js:501
+#: assets/js/recordings.js:481 assets/js/recordings.js:504
 msgid "Please enter a valid name and save"
 msgstr "Ingrese un nombre válido y guarde"
 
@@ -421,7 +421,7 @@ msgid "There was an error, See the console for more details"
 msgstr ""
 "Se ha producido un error. Consulte la consola para obtener más detalles"
 
-#: assets/js/recordings.js:625
+#: assets/js/recordings.js:628
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Esta grabación del sistema no existe en este idioma. ¿Continuar?"
 
@@ -450,7 +450,7 @@ msgstr "Error desconocido"
 msgid "Unsupported file format"
 msgstr "Formato no soportado"
 
-#: assets/js/recordings.js:559
+#: assets/js/recordings.js:562
 msgid "Unsupported file type"
 msgstr "Tipo no soportado"
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Si"
 
-#: assets/js/recordings.js:685
+#: assets/js/recordings.js:688
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -485,7 +485,7 @@ msgstr ""
 "archivo que agregue reemplazará este archivo del sistema cuando guarde esta "
 "grabación. ¿Seguro que quieres hacer eso?"
 
-#: assets/js/recordings.js:687
+#: assets/js/recordings.js:690
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"

@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 18:12-0400\n"
+"POT-Creation-Date: 2017-04-14 18:18-0400\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -95,7 +95,7 @@ msgid ""
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:487
+#: assets/js/recordings.js:490
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -107,7 +107,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:532
+#: assets/js/recordings.js:535
 msgid "Call!"
 msgstr ""
 
@@ -210,7 +210,7 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:564
+#: assets/js/recordings.js:567
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
@@ -285,7 +285,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:903
+#: assets/js/recordings.js:906
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -311,11 +311,11 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:843
+#: assets/js/recordings.js:846
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:479 assets/js/recordings.js:501
+#: assets/js/recordings.js:481 assets/js/recordings.js:504
 msgid "Please enter a valid name and save"
 msgstr ""
 
@@ -416,7 +416,7 @@ msgstr ""
 msgid "There was an error, See the console for more details"
 msgstr ""
 
-#: assets/js/recordings.js:625
+#: assets/js/recordings.js:628
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
@@ -441,7 +441,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:559
+#: assets/js/recordings.js:562
 msgid "Unsupported file type"
 msgstr ""
 
@@ -464,14 +464,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:685
+#: assets/js/recordings.js:688
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:687
+#: assets/js/recordings.js:690
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
