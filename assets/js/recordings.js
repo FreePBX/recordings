@@ -16,10 +16,15 @@ $("#recordings-frm").submit(function(e) {
 		module: "recordings",
 		command: "save"
 	};
-
-	if($("#name").val().trim() === "") {
+	var rec_name = $("#name").val().trim();
+	if(rec_name === "") {
 		$("#name").focus();
 		return warnInvalid($("#name"),_("You must set a valid name for this recording"));
+	}else{
+		if($.inArray(rec_name, record_names) != -1){
+		        alert(_("The Name '" + rec_name  + "' already used, please use a different name."));
+		        return false;
+		}
 	}
 	if(isObjEmpty(langs)) {
 		return warnInvalid($("#language"),_("No languages are defined! You must define at least one in the Sound Languages module!"));

@@ -371,3 +371,15 @@
 		</div>
 	</div>
 </div>
+<script>
+var record_names = new Array();
+<?php
+if(!empty($record_names)){
+        echo "record_names = [";
+        foreach($record_names as $tmp_name){
+		echo '"'.$tmp_name.'",';
+	}
+        echo "];";
+}
+?>
+</script>

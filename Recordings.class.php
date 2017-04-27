@@ -121,6 +121,17 @@ class Recordings implements BMO {
 					}
 				}
 			case "add":
+				$all_records = $this->getAll();
+				$tmp_id = '';
+				if(isset($_REQUEST['id'])){
+					$tmp_id = $_REQUEST['id'];
+				}
+				$record_names = array();
+				foreach($all_records as $tmp_record) {
+					if($tmp_record['id'] != $tmp_id){
+						$record_names[] = $tmp_record['displayname'];
+					}
+				}
 				$data = isset($data) ? $data : array();
 				$supported = $media->getSupportedFormats();
 				ksort($supported['in']);
@@ -139,7 +150,7 @@ class Recordings implements BMO {
 				$convertto = array_intersect($supported['out'], $this->convert);
 				$recformat = $this->FreePBX->Config->get("MIXMON_FORMAT");
 				$recformat = empty($recformat) || !in_array($recformat,$this->convert) ? "wav" : $recformat;
-				$html = load_view(__DIR__."/views/form.php",array("missingLangs" => $missingLangs, "langs" => $langs, "recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs));
+				$html = load_view(__DIR__."/views/form.php",array("missingLangs" => $missingLangs, "langs" => $langs, "recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs, "record_names" => $record_names));
 			break;
 			case "delete":
 				$this->delRecording($_REQUEST['id']);
