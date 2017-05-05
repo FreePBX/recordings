@@ -16,8 +16,8 @@ function recordings_get_config($engine) {
 	global $recordings_save_path;
 	global $version;
 
-  $ast_ge_14 = version_compare($version, '1.4', 'ge');
-  $ast_ge_16 = version_compare($version, '1.6', 'ge');
+	$ast_ge_14 = version_compare($version, '1.4', 'ge');
+	$ast_ge_16 = version_compare($version, '1.6', 'ge');
 
 	$modulename = "recordings";
 	$appcontext = "app-recordings";
@@ -247,9 +247,10 @@ function recordings_getdestinfo($dest) {
 		if (empty($thisexten)) {
 			return array();
 		} else {
-			return array('description' => sprintf(_("Play Recording: %s"), $thisexten['displayname']),
-			             'edit_url' => 'config.php?display=ivr&action=edit&id='.urlencode($exten[1]),
-								  );
+			return array(
+				'description' => sprintf(_("Play Recording: %s"), $thisexten['displayname']),
+				'edit_url' => 'config.php?display=recordings&action=edit&id='.urlencode($exten[1]),
+			);
 		}
 	} else {
 		return false;
