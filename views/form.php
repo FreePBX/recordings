@@ -375,11 +375,7 @@
 var record_names = new Array();
 <?php
 if(!empty($record_names)){
-        echo "record_names = [";
-        foreach($record_names as $tmp_name){
-		echo '"'.$tmp_name.'",';
-	}
-        echo "];";
+        echo "record_names = " . json_encode($record_names) . ";";
 }
 ?>
 </script>
