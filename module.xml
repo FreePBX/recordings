@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.30.9</version>
+	<version>13.0.30.10</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.30.10* FREEPBX-14564 Multiple System recordings can be added with same Display Name
 		*13.0.30.9* FREEPBX-13607 Add New System Recording Bug In Chrome
 		*13.0.30.8* FREEPBX-14461 use the lowest value
 		*13.0.30.7* FREEPBX-14461 alert PHP file size limits
