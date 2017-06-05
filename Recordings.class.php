@@ -527,6 +527,13 @@ class Recordings implements BMO {
 	 * @param  integer $id The recording ID
 	 */
 	public function delRecording($id) {
+		//Need to delete the featurecode belong to this recording
+		//FREEPBX-14870 Removed System Recording does not remove Feature Code
+		$sqlfc = "DELETE FROM featurecodes WHERE modulename = 'recordings' and defaultcode = ?";
+		$sthi = $this->db->prepare($sqlfc);
+		$fcid = '*29'.$id;
+		$sthi->execute(array($fcid));
+		// Fc delettion over ...
 		$sql = "DELETE FROM recordings WHERE id = ?";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id));
