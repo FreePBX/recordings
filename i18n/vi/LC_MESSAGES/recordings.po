@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:45-0400\n"
-"PO-Revision-Date: 2017-07-11 21:53+0200\n"
+"PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/recordings/vi/>\n"
@@ -101,23 +101,23 @@ msgstr "Hủy"
 
 #: install.php:7
 msgid "Check Recording"
-msgstr "Kiểm tra Ghi âm"
+msgstr "Đánh dầu check vào Recording"
 
 #: views/form.php:350
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr ""
-"Kiểm tra tất cả các định dạng tệp mà bạn muốn trình ghi âm hệ thống được mã "
-"hóa vào"
+"Đánh dấu check vào tất cả các định dạng tệp mà bạn muốn trình ghi âm hệ "
+"thống được mã hóa vào"
 
 #: views/form.php:302
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
 msgstr ""
-"Kiểm tra hộp thoại này để tạo một mã tính năng các tùy chọn mà nó sẽ cho "
-"phép ghi âm thay đổi trực tiếp."
+"Đánh dấu check hộp thoại này để tạo một mã tính năng các tùy chọn mà nó sẽ "
+"cho phép ghi âm thay đổi trực tiếp."
 
 #: views/form.php:258
 msgid "Combine Files"
