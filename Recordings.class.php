@@ -423,8 +423,15 @@ class Recordings implements BMO {
 							$supported = $this->FreePBX->Media->getSupportedFormats();
 							if(in_array($extension,$supported['in'])) {
 								$tmp_name = $_FILES["files"]["tmp_name"][$key];
-								$dname = \Media\Media::cleanFileName($_FILES["files"]["name"][$key]);
+
+								$dustyname = $_FILES["files"]["name"][$key];
+								$find = Array(" ","(",")","/","ö","ü","ä","Ä","Ü","Ö");
+								$replace = Array("_","_","_","_","oe","oe","oe","Ae","Ue","Oe");
+								$cleanedhalf = str_replace($find,$replace,$dustyname);
+
+								$dname = \Media\Media::cleanFileName($cleanedhalf);
 								$dname = basename($dname);
+
 								$dname = pathinfo($dname,PATHINFO_FILENAME);
 								$id = time().rand(1,1000);
 								$name = $dname . '-' . $id . '.' . $extension;
