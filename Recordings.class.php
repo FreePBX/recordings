@@ -714,7 +714,7 @@ class Recordings implements BMO {
 		$path = ($system) ? $this->path : $this->temp;
 		foreach(glob($path."/*",GLOB_ONLYDIR) as $langdir) {
 			$lang = basename($langdir);
-			foreach(glob($langdir."/".$file."*") as $f) {
+			foreach(glob($langdir."/".$file.".*") as $f) {
 				$parts = pathinfo($f);
 				if(empty($parts['extension'])) {
 					continue; //wtf is this file?
