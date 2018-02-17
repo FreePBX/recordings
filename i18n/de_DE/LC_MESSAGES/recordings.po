@@ -10,17 +10,20 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:45-0400\n"
-"PO-Revision-Date: 2017-05-23 16:45-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2018-02-16 18:10+0200\n"
+"Last-Translator: Nils <Nils@heckenkamp.info>\n"
+"Language-Team: German "
+"<http://weblate.freepbx.org/projects/freepbx/recordings/de_DE/>\n"
+"Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: Recordings.class.php:457
 msgid "A PHP extension stopped the file upload"
-msgstr ""
+msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
 #: assets/js/recordings.js:6
 msgid ""
@@ -128,7 +131,7 @@ msgstr ""
 
 #: Recordings.class.php:84
 msgid "Delete"
-msgstr ""
+msgstr "Löschen"
 
 #: assets/js/recordings.js:316
 msgid "Delete Recording"
@@ -140,7 +143,7 @@ msgstr ""
 
 #: views/bnav.php:20 views/form.php:37 views/grid.php:27
 msgid "Description"
-msgstr ""
+msgstr "Beschreibung"
 
 #: views/bnav.php:19 views/grid.php:26
 msgid "Display Name"
@@ -301,15 +304,15 @@ msgstr ""
 
 #: Recordings.class.php:89
 msgid "Reset"
-msgstr ""
+msgstr "Zurücksetzen"
 
 #: views/form.php:170 views/form.php:209
 msgid "Save"
-msgstr ""
+msgstr "Speichern"
 
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
-msgstr ""
+msgstr "Aufnahme speichern"
 
 #: views/form.php:5
 #, php-format
@@ -318,6 +321,10 @@ msgid ""
 "without them installed could have unknown results. Please install them "
 "through the %s module"
 msgstr ""
+"Einige Sprachen sind auf diesem System nicht installiert [%s]. Wenn Sie "
+"diese Aufzeichnung speichern, ohne dass sie installiert sind, können "
+"unbekannte Ergebnisse auftreten. Bitte installieren Sie sie über das %s "
+"-Modul"
 
 #: views/form.php:79
 msgid ""
@@ -327,26 +334,32 @@ msgid ""
 "by clicking them once (which will turn them green) placing them into replace "
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
+"Sortierbare Dateiliste / Spielreihenfolge Die Wiedergabe erfolgt von oben "
+"nach unten. Sie können auf das Wiedergabesymbol klicken, um eine Vorschau "
+"der Dateien anzuzeigen. Wenn eine Datei rot ist, fehlt diese für die "
+"ausgewählte Sprache. Dateien können durch einmaliges Klicken ersetzt werden ("
+"wodurch sie grün werden), wodurch sie in den Ersetzungsmodus versetzt "
+"werden. Alles, was Sie hochladen, wird diese Datei beim Speichern ersetzen"
 
 #: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
-msgstr ""
+msgstr "Klangsprachen"
 
 #: Recordings.class.php:79
 msgid "Submit"
-msgstr ""
+msgstr "Bestätigen"
 
 #: views/bnav.php:21 views/grid.php:28
 msgid "Supported Languages"
-msgstr ""
+msgstr "Unterstützte Sprachen"
 
 #: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
-msgstr ""
+msgstr "Systemaufzeichnungen"
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
-msgstr ""
+msgstr "Der Name '"
 
 #: views/form.php:25
 msgid ""
@@ -429,7 +442,7 @@ msgstr ""
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 #: assets/js/recordings.js:693
 msgid ""
