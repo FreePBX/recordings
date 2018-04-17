@@ -405,7 +405,7 @@ class Recordings implements BMO {
 			break;
 			case "grid";
 				$all = $this->getAll();
-				$languageNames = $this->FreePBX->Soundlang->getLanguages();
+				$languageNames = $this->getLanguages();
 				foreach($all as &$recs) {
 					foreach($recs['languages'] as &$lang) {
 						$lang = isset($languageNames[$lang]) ? $languageNames[$lang] : $lang;
@@ -463,6 +463,11 @@ class Recordings implements BMO {
 		}
 	}
 
+	public function getLanguages(){
+		$languageNames = $this->FreePBX->Soundlang->getLanguages();
+		return is_array($languageNames)?$languageNames:array();
+	}
+
 	/**
 	 * Add New Recording
 	 * @param string  $name        The recording short name
@@ -475,6 +480,33 @@ class Recordings implements BMO {
 		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+		$id = $this->db->lastInsertId();
+		if ($fcode == 1) {
+			// Add the feature code if it is needed
+			//
+			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
+			$fcc->setDescription("Edit Recording: $name");
+			$fcc->setDefault('*29'.$id);
+			$fcc->setProvideDest();
+			$fcc->update();
+			unset($fcc);
+		}
+		needreload();
+		return $id;
+	}
+
+	/**
+	 * Add New Recording
+	 * @param string  $name        The recording short name
+	 * @param string  $description The recording long name
+	 * @param string  $files       & separated list of files to playback
+	 * @param integer $fcode       Feature Code number_format
+	 * @param string  $fcode_pass  Feature code password
+	 */
+	public function addRecordingWithId($id,$name,$description,$files,$fcode=0,$fcode_pass=''){
+		$sql = "INSERT INTO recordings (id,displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?,?)";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array($id,$name, $description, $files, $fcode, $fcode_pass));
 		$id = $this->db->lastInsertId();
 		if ($fcode == 1) {
 			// Add the feature code if it is needed
