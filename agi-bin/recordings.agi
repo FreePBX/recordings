@@ -1,4 +1,4 @@
-#!/usr/bin/php -q
+#!/usr/bin/env php
 <?php
 $bootstrap_settings['skip_astman'] = true;
 $bootstrap_settings['include_compress'] = false;
