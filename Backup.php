@@ -11,7 +11,7 @@ class Backup Extends Base\BackupBase{
         foreach($config['files'] as $file){
             foreach($file as $key => $value){
                 $path = $base.'/sounds/'.$key.'/custom';
-                $dirs[$path] = ['pathto' => $path]; 
+                $dirs[$path] = $path; 
                 foreach($value as $recordingfile){
                     $this->addFile(basename($recordingfile),$path,'ASTVARLIBDIR',"recording");
                 }
