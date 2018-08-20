@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2018-08-20 12:52-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -44,14 +44,6 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr ""
-
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
 msgstr ""
 
 #: assets/js/recordings.js:268
@@ -117,12 +109,6 @@ msgstr ""
 msgid "Copying %s to %s"
 msgstr ""
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
-
 #: Recordings.class.php:84
 msgid "Delete"
 msgstr "מחק"
@@ -177,18 +163,8 @@ msgstr ""
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr ""
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
 msgstr ""
 
 #: views/form.php:273
@@ -224,6 +200,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: assets/js/recordings.js:617
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr ""
@@ -250,10 +230,6 @@ msgstr ""
 #: assets/js/recordings.js:911
 msgid "Not supported on compounded recordings"
 msgstr ""
-
-#: install.php:50 install.php:64
-msgid "OK"
-msgstr "תקין"
 
 #: views/form.php:296
 #, php-format
@@ -292,7 +268,7 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "הקלטות"
 
@@ -307,6 +283,10 @@ msgstr "שמור"
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
 msgstr "שמור הקלטה"
+
+#: assets/js/recordings.js:617
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -337,7 +317,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:370
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
@@ -374,10 +354,6 @@ msgstr ""
 #: Recordings.class.php:144
 #, php-format
 msgid "There was an error reading system recordings (%s)"
-msgstr ""
-
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
 msgstr ""
 
 #: assets/js/recordings.js:633
@@ -465,17 +441,21 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:52 install.php:66
-msgid "already exists"
-msgstr "כבר קיים"
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות "
+#~ "והכרזות"
 
-#: install.php:40
-msgid "checking for fcode field.."
-msgstr "בודק שגיאות..."
+#~ msgid "OK"
+#~ msgstr "תקין"
 
-#: install.php:54
-msgid "checking for fcode_pass field.."
-msgstr ""
+#~ msgid "already exists"
+#~ msgstr "כבר קיים"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "בודק שגיאות..."
 
 #~ msgid "No long description available"
 #~ msgstr "אין תיאור ארוך"

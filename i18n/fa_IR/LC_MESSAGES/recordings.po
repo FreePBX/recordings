@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2018-08-20 12:52-0400\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -52,14 +52,6 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط شده از قبل"
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "مدیر"
-
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "بروز خطا در ثبت این سند"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -128,13 +120,6 @@ msgstr "تبدیل به"
 msgid "Copying %s to %s"
 msgstr "در حال کپی کردن %s به %s"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
-"شوند (مانند منوی صوتی)."
-
 #: Recordings.class.php:84
 msgid "Delete"
 msgstr "حذف"
@@ -189,19 +174,9 @@ msgstr "فایل موجود نیست"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "پایان یافت!"
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr "اگر قصد تبدیل مدیا را دارید، زمان بیشتری صرف می شود، ایرادی ندارد؟"
 
 #: views/form.php:273
 msgid ""
@@ -241,6 +216,10 @@ msgstr "نام این فایل"
 msgid "No"
 msgstr "خیر"
 
+#: assets/js/recordings.js:617
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
@@ -267,10 +246,6 @@ msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فای�
 #: assets/js/recordings.js:911
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
-
-#: install.php:50 install.php:64
-msgid "OK"
-msgstr "بله"
 
 #: views/form.php:296
 #, php-format
@@ -309,7 +284,7 @@ msgstr "ضبط پیام از طریق مرورگر"
 msgid "Record Over Extension"
 msgstr "ضبط پیام از طریق داخلی"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
@@ -324,6 +299,10 @@ msgstr "ذخیره"
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
 msgstr "ذخیره پیام ضبط شده"
+
+#: assets/js/recordings.js:617
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -359,7 +338,7 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:370
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
@@ -404,10 +383,6 @@ msgstr "تنها بخشی از فایل بارگذاری شده است"
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
-
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
 #: assets/js/recordings.js:633
 msgid "This system recording doesnt exist in this language. Continue?"
@@ -509,17 +484,41 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
 
-#: install.php:52 install.php:66
-msgid "already exists"
-msgstr "در حال حاضر وجود دارد"
+#~ msgid "Admin"
+#~ msgstr "مدیر"
 
-#: install.php:40
-msgid "checking for fcode field.."
-msgstr "بررسی فیلد کد ویژه.."
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "بروز خطا در ثبت این سند"
 
-#: install.php:54
-msgid "checking for fcode_pass field.."
-msgstr "بررسی فیلد رمز عبور کد ویژه.."
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
+#~ "شوند (مانند منوی صوتی)."
+
+#~ msgid "Finished!"
+#~ msgstr "پایان یافت!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr "اگر قصد تبدیل مدیا را دارید، زمان بیشتری صرف می شود، ایرادی ندارد؟"
+
+#~ msgid "OK"
+#~ msgstr "بله"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
+
+#~ msgid "already exists"
+#~ msgstr "در حال حاضر وجود دارد"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "بررسی فیلد کد ویژه.."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "بررسی فیلد رمز عبور کد ویژه.."
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr ""

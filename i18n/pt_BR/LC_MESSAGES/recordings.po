@@ -19,15 +19,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2018-08-20 12:52-0400\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/recordings/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 "X-Poedit-Language: Portuguese\n"
@@ -68,14 +68,6 @@ msgid ""
 msgstr ""
 "Adicione qualquer gravação de sistema previamente criada ou uma gravação "
 "adicionada anteriormente"
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Admin"
-
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "Ocorreu um erro ao tentar envar este documento"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -146,13 +138,6 @@ msgstr "Converter Para"
 msgid "Copying %s to %s"
 msgstr "Copiando  %s para %s"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Cria e gerencia gravações para o sistema, usado por vários módulos (por "
-"exemplo, URA)."
-
 #: Recordings.class.php:84
 msgid "Delete"
 msgstr "Apagar"
@@ -207,22 +192,10 @@ msgstr "Arquivo não existe"
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "Concluído!"
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 "Pressione o botão vermelho para iniciar a gravação a partir do seu navegador"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Se você estiver fazendo conversões de mídia isso poderá levar muito tempo, "
-"ok?"
 
 #: views/form.php:273
 msgid ""
@@ -263,6 +236,10 @@ msgstr "Nomeie este arquivo"
 msgid "No"
 msgstr "Não"
 
+#: assets/js/recordings.js:617
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "Nenhum arquivo foi carregado"
@@ -291,10 +268,6 @@ msgstr "Não suportado em gravações compostas ou não existentes"
 #: assets/js/recordings.js:911
 msgid "Not supported on compounded recordings"
 msgstr "Não suportado em gravações compostas"
-
-#: install.php:50 install.php:64
-msgid "OK"
-msgstr "OK"
 
 #: views/form.php:296
 #, php-format
@@ -335,7 +308,7 @@ msgstr "Gravar no Navegador"
 msgid "Record Over Extension"
 msgstr "Gravar no Ramal"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Gravações"
 
@@ -350,6 +323,10 @@ msgstr "Salvar"
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
 msgstr "Salvar gravação"
+
+#: assets/js/recordings.js:617
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -389,7 +366,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:370
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
@@ -433,10 +410,6 @@ msgstr "O arquivo enviado foi carregado parcialmente"
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "Ocorreu um erro ao ler as gravações do sistema (%s)"
-
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
 
 #: assets/js/recordings.js:633
 msgid "This system recording doesnt exist in this language. Continue?"
@@ -485,8 +458,8 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"Envie arquivos do seu sistema local. Os formatos de upload suportados são: %"
-"s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
+"Envie arquivos do seu sistema local. Os formatos de upload suportados são: "
+"%s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
 "arquivos"
 
 #: views/form.php:264 views/form.php:292
@@ -545,17 +518,43 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Você deve definir um nome válido para esta gravação"
 
-#: install.php:52 install.php:66
-msgid "already exists"
-msgstr "Já existe"
+#~ msgid "Admin"
+#~ msgstr "Admin"
 
-#: install.php:40
-msgid "checking for fcode field.."
-msgstr "Verificando o campo fcode..."
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "Ocorreu um erro ao tentar envar este documento"
 
-#: install.php:54
-msgid "checking for fcode_pass field.."
-msgstr "Verificando se o campo fcode_pass existe..."
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Cria e gerencia gravações para o sistema, usado por vários módulos (por "
+#~ "exemplo, URA)."
+
+#~ msgid "Finished!"
+#~ msgstr "Concluído!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Se você estiver fazendo conversões de mídia isso poderá levar muito "
+#~ "tempo, ok?"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
+
+#~ msgid "already exists"
+#~ msgstr "Já existe"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "Verificando o campo fcode..."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "Verificando se o campo fcode_pass existe..."
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"

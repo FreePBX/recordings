@@ -37,15 +37,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2018-08-20 12:52-0400\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/ja_JP/>\n"
+"Language: ja_JP\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
@@ -79,14 +79,6 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "アドミン"
-
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
 msgstr ""
 
 #: assets/js/recordings.js:268
@@ -154,13 +146,6 @@ msgstr ""
 msgid "Copying %s to %s"
 msgstr ""
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"他の多くのモジュールで使用されている(例：IVR)システム録音の作成や管理を行いま"
-"す。"
-
 #: Recordings.class.php:84
 msgid "Delete"
 msgstr "削除"
@@ -215,18 +200,8 @@ msgstr ""
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr ""
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
 msgstr ""
 
 #: views/form.php:273
@@ -262,6 +237,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: assets/js/recordings.js:617
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr ""
@@ -288,10 +267,6 @@ msgstr ""
 #: assets/js/recordings.js:911
 msgid "Not supported on compounded recordings"
 msgstr ""
-
-#: install.php:50 install.php:64
-msgid "OK"
-msgstr "OK"
 
 #: views/form.php:296
 #, php-format
@@ -332,7 +307,7 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "録音"
 
@@ -347,6 +322,10 @@ msgstr "保存"
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
 msgstr "録音を保存"
+
+#: assets/js/recordings.js:617
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -377,7 +356,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:370
 msgid "System Recordings"
 msgstr "システム録音"
 
@@ -414,10 +393,6 @@ msgstr ""
 #: Recordings.class.php:144
 #, php-format
 msgid "There was an error reading system recordings (%s)"
-msgstr ""
-
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
 msgstr ""
 
 #: assets/js/recordings.js:633
@@ -505,17 +480,27 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:52 install.php:66
-msgid "already exists"
-msgstr "既存します"
+#~ msgid "Admin"
+#~ msgstr "アドミン"
 
-#: install.php:40
-msgid "checking for fcode field.."
-msgstr "fcodeフィールドをチェック中.."
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "他の多くのモジュールで使用されている(例：IVR)システム録音の作成や管理を行"
+#~ "います。"
 
-#: install.php:54
-msgid "checking for fcode_pass field.."
-msgstr "fcode_passフィールドのチェック中.."
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "already exists"
+#~ msgstr "既存します"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "fcodeフィールドをチェック中.."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "fcode_passフィールドのチェック中.."
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr "%sモジュールから自動作成された音声ファイルが見つかりません"

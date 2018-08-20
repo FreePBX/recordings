@@ -9,15 +9,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2018-08-20 12:52-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
@@ -54,14 +54,6 @@ msgid ""
 msgstr ""
 "Thêm bất kỳ ghi âm hệ thống được tạo ra trước đó hay một ghi âm đã được thêm "
 "vào trước đó"
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Quản trị viên"
-
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -132,13 +124,6 @@ msgstr "Chuyển đổi thành"
 msgid "Copying %s to %s"
 msgstr "Đang sao chép %s đến %s"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
-"( ví dụ IVR)."
-
 #: Recordings.class.php:84
 msgid "Delete"
 msgstr "Xóa"
@@ -193,21 +178,9 @@ msgstr "Tệp không tồn tại"
 msgid "File size is too large. Max size is %s bytes"
 msgstr "Kich cỡ tệp quá lớn. Kích cỡ tối đa cho phép là %s byte"
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "Đã hoàn thành!"
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr "Nhấn nút ghi âm màu đó để bắt đầu ghi âm từ trình duyệt của bạn"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Nếu bạn đang tạo các chuyển đổi thì nó có thể tốn nhiều thời gian, bạn có "
-"đồng ý?"
 
 #: views/form.php:273
 msgid ""
@@ -248,6 +221,10 @@ msgstr "Tên của tệp này"
 msgid "No"
 msgstr "Không"
 
+#: assets/js/recordings.js:617
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
@@ -278,10 +255,6 @@ msgstr ""
 #: assets/js/recordings.js:911
 msgid "Not supported on compounded recordings"
 msgstr "Không hỗ trợ trên các bản ghi âm phức hợp"
-
-#: install.php:50 install.php:64
-msgid "OK"
-msgstr "OK"
 
 #: views/form.php:296
 #, php-format
@@ -324,7 +297,7 @@ msgstr "Bản ghi trong trong trình duyệt"
 msgid "Record Over Extension"
 msgstr "Ghi trên máy nhánh"
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
@@ -339,6 +312,10 @@ msgstr "Lưu"
 #: install.php:6 assets/js/recordings.js:316
 msgid "Save Recording"
 msgstr "Lưu bản ghi âm"
+
+#: assets/js/recordings.js:617
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -378,7 +355,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:370
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -420,10 +397,6 @@ msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "Cõ một lỗi xyar ra khi đọc các bản ghi âm hệ thống (%s)"
-
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "Đã xảy ra một lỗi, xem bảng điều khiển để biết thêm chi tiết"
 
 #: assets/js/recordings.js:633
 msgid "This system recording doesnt exist in this language. Continue?"
@@ -529,14 +502,40 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Bạn phải cài đặt một tên hợp lệ cho bản ghi âm này"
 
-#: install.php:52 install.php:66
-msgid "already exists"
-msgstr "Đã tồn tại"
+#~ msgid "Admin"
+#~ msgstr "Quản trị viên"
 
-#: install.php:40
-msgid "checking for fcode field.."
-msgstr "Đang kiểm tra trường mã tính năng fcode.."
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"
 
-#: install.php:54
-msgid "checking for fcode_pass field.."
-msgstr "Đang kiểm tra trường Mật khẩu mã tính năng fcode_pass.."
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác "
+#~ "nhau ( ví dụ IVR)."
+
+#~ msgid "Finished!"
+#~ msgstr "Đã hoàn thành!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Nếu bạn đang tạo các chuyển đổi thì nó có thể tốn nhiều thời gian, bạn có "
+#~ "đồng ý?"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "Đã xảy ra một lỗi, xem bảng điều khiển để biết thêm chi tiết"
+
+#~ msgid "already exists"
+#~ msgstr "Đã tồn tại"
+
+#~ msgid "checking for fcode field.."
+#~ msgstr "Đang kiểm tra trường mã tính năng fcode.."
+
+#~ msgid "checking for fcode_pass field.."
+#~ msgstr "Đang kiểm tra trường Mật khẩu mã tính năng fcode_pass.."
