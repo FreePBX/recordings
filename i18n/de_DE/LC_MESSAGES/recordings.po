@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:45-0400\n"
-"PO-Revision-Date: 2018-07-27 10:00+0000\n"
+"PO-Revision-Date: 2018-08-25 14:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
 "Language: de_DE\n"
@@ -153,55 +153,59 @@ msgstr "Beschreibung"
 
 #: views/bnav.php:19 views/grid.php:26
 msgid "Display Name"
-msgstr ""
+msgstr "Anzeigename"
 
 #: views/form.php:103
 msgid "Drop Multiple Files or Archives Here"
-msgstr ""
+msgstr "Ziehen Sie mehrere Dateien oder Archive hier her"
 
 #: views/form.php:4
 msgid "Edit Recording"
-msgstr ""
+msgstr "Aufnahme bearbeiten"
 
 #: views/form.php:198
 msgid "Enter Extension"
-msgstr ""
+msgstr "Tragen Sie eine Nebenstelle ein"
 
 #: Recordings.class.php:454
 msgid "Failed to write file to disk"
-msgstr ""
+msgstr "Fehler beim Speichern der Datei"
 
 #: views/form.php:314
 msgid "Feature Code Password"
-msgstr ""
+msgstr "Funktionscode-Kennwort"
 
 #: views/form.php:57
 #, php-format
 msgid "File List for %s"
-msgstr ""
+msgstr "Dateiliste für %s"
 
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
-msgstr ""
+msgstr "Datei existiert nicht"
 
 #: assets/js/recordings.js:572
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr ""
+msgstr "Die Datei ist zu groß. Die maximale Größe beträgt %s Bytes"
 
 #: assets/js/recordings.js:142 assets/js/recordings.js:147
 msgid "Finished!"
-msgstr ""
+msgstr "Beendet!"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
+"Drücken Sie den roten Aufnahmeknopf, um die Aufnahme von Ihrem Browser aus "
+"zu starten"
 
 #: assets/js/recordings.js:60
 msgid ""
 "If you are doing media conversions this can take a very long time, is that "
 "ok?"
 msgstr ""
+"Wenn Sie Mediendateien konvertieren, kann dies sehr lange dauern, sind Sie "
+"damit einverstanden?"
 
 #: views/form.php:273
 msgid ""
@@ -356,7 +360,7 @@ msgstr "Klangsprachen"
 
 #: Recordings.class.php:79
 msgid "Submit"
-msgstr "Bestätigen"
+msgstr "Absenden"
 
 #: views/bnav.php:21 views/grid.php:28
 msgid "Supported Languages"
@@ -387,14 +391,18 @@ msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"als Wert \"MAX_FILE_SIZE\" im HTML-Formular festgelegt wurde"
 
 #: Recordings.class.php:439
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
+"Die hochgeladene Datei überschreitet die maximal zulässige Dateigröße, die "
+"in der 'upload_max_filesize'-Direktive in der php.ini festgelegt wurde"
 
 #: Recordings.class.php:445
 msgid "The uploaded file was only partially uploaded"
-msgstr ""
+msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 
 #: Recordings.class.php:144
 #, php-format
@@ -494,7 +502,7 @@ msgstr ""
 
 #: install.php:52 install.php:66
 msgid "already exists"
-msgstr ""
+msgstr "bereits vorhanden"
 
 #: install.php:40
 msgid "checking for fcode field.."
