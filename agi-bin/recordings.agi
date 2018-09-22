@@ -1,4 +1,4 @@
-#!/usr/bin/php -q
+#!/usr/bin/env php
 <?php
 $bootstrap_settings['skip_astman'] = true;
 $bootstrap_settings['include_compress'] = false;
@@ -20,13 +20,18 @@ $file = preg_replace('/^'.$lang.'\//','',$recfile);
 $status = $recordings->fileStatus($file);
 $path = $recordings->getPath();
 if(!empty($status[$lang])) {
+	$agi->verbose("Incoming recording format is ".$format);
 	$filename = $path."/".$recfile;
 	$media->load($filename.".".$format);
 
+	//no need to convert the file as it comes from Asterisk so it's probably 'good'
 	unset($status[$lang][$format]);
 
 	$formats = array_keys($status[$lang]);
 	foreach($formats as $fmat) {
+		if($format === $fmat) {
+			continue; //no need to convert the file as it comes from Asterisk so it's probably 'good'
+		}
 		$media->convert($filename.".".$fmat);
 		$agi->verbose("Converting ".$filename.".".$format." To: ".$filename.".".$fmat);
 	}
