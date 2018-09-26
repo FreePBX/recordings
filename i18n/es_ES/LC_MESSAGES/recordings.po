@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2016-12-10 10:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -52,6 +52,10 @@ msgid ""
 msgstr ""
 "Agregue cualquier grabación de sistema previamente creada o una grabación "
 "que se agregó anteriormente"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Administrador"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -121,6 +125,13 @@ msgstr "Convertir a"
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copiando %s a %s"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Crea y administra las grabaciones del sistema, utilizado por muchos otros "
+"módulos (por ejemplo, IVR)."
 
 #: Recordings.class.php:84
 msgid "Delete"
@@ -292,7 +303,7 @@ msgstr "Grabar en Navegador"
 msgid "Record Over Extension"
 msgstr "Grabar en la Extensión"
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Grabaciones"
 
@@ -351,7 +362,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas soportados"
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Grabaciones del sistema"
 
@@ -502,18 +513,8 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Debe establecer un nombre válido para esta grabación"
 
-#~ msgid "Admin"
-#~ msgstr "Administrador"
-
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Un error ha ocurrido intentando enviar este documento"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Crea y administra las grabaciones del sistema, utilizado por muchos otros "
-#~ "módulos (por ejemplo, IVR)."
 
 #~ msgid "Finished!"
 #~ msgstr "Terminado!"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -52,6 +52,10 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط شده از قبل"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "مدیر"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -119,6 +123,13 @@ msgstr "تبدیل به"
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "در حال کپی کردن %s به %s"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
+"شوند (مانند منوی صوتی)."
 
 #: Recordings.class.php:84
 msgid "Delete"
@@ -284,7 +295,7 @@ msgstr "ضبط پیام از طریق مرورگر"
 msgid "Record Over Extension"
 msgstr "ضبط پیام از طریق داخلی"
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
@@ -338,7 +349,7 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
@@ -484,18 +495,8 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
 
-#~ msgid "Admin"
-#~ msgstr "مدیر"
-
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "بروز خطا در ثبت این سند"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
-#~ "شوند (مانند منوی صوتی)."
 
 #~ msgid "Finished!"
 #~ msgstr "پایان یافت!"

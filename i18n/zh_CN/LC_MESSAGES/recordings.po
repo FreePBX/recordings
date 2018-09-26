@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -52,6 +52,10 @@ msgstr "添加系统录音"
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
+msgstr ""
+
+#: recordings.i18n.php:6
+msgid "Admin"
 msgstr ""
 
 #: assets/js/recordings.js:268
@@ -115,6 +119,11 @@ msgstr "转换到"
 #: assets/js/recordings.js:107
 #, perl-format
 msgid "Copying %s to %s"
+msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
 #: Recordings.class.php:84
@@ -276,7 +285,7 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "录音"
 
@@ -325,7 +334,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "系统录音"
 

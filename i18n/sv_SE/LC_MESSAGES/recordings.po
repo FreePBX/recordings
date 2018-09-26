@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -61,6 +61,10 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
+msgstr ""
+
+#: recordings.i18n.php:6
+msgid "Admin"
 msgstr ""
 
 #: assets/js/recordings.js:268
@@ -127,6 +131,12 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Skapar och undehåller systeminspelningar som kan användas av andra moduler"
 
 #: Recordings.class.php:84
 msgid "Delete"
@@ -289,7 +299,7 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Inspelningar"
 
@@ -338,7 +348,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Systeminspelningar"
 
@@ -461,12 +471,6 @@ msgstr ""
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
 msgstr ""
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Skapar och undehåller systeminspelningar som kan användas av andra moduler"
 
 #~ msgid "OK"
 #~ msgstr "OK"

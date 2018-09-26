@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -51,6 +51,10 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr "Добавить любую , ранее созданную системную запись"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Администратор"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -120,6 +124,13 @@ msgstr "Конвертировать в"
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Создаёт и управляет системными записями, используемыми в других модулях, "
+"(например Интерактивные меню, и др.)."
 
 #: Recordings.class.php:84
 msgid "Delete"
@@ -286,7 +297,7 @@ msgstr "Запись в браузере"
 msgid "Record Over Extension"
 msgstr "Запись с телефона на внутреннем номере"
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Записи"
 
@@ -341,7 +352,7 @@ msgstr "Подтвердить"
 msgid "Supported Languages"
 msgstr "Поддерживаемые языки"
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -483,18 +494,8 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Вы должны указать корректное имя для данной записи"
 
-#~ msgid "Admin"
-#~ msgstr "Администратор"
-
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Возникла ошибка при попытке подтвердить сохранение документа"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Создаёт и управляет системными записями, используемыми в других модулях, "
-#~ "(например Интерактивные меню, и др.)."
 
 #~ msgid ""
 #~ "If you are doing media conversions this can take a very long time, is "

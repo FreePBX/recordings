@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:52-0400\n"
+"POT-Creation-Date: 2018-09-26 00:16-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -54,6 +54,10 @@ msgid ""
 msgstr ""
 "Thêm bất kỳ ghi âm hệ thống được tạo ra trước đó hay một ghi âm đã được thêm "
 "vào trước đó"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Quản trị viên"
 
 #: assets/js/recordings.js:268
 msgid ""
@@ -123,6 +127,13 @@ msgstr "Chuyển đổi thành"
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Đang sao chép %s đến %s"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
+"( ví dụ IVR)."
 
 #: Recordings.class.php:84
 msgid "Delete"
@@ -297,7 +308,7 @@ msgstr "Bản ghi trong trong trình duyệt"
 msgid "Record Over Extension"
 msgstr "Ghi trên máy nhánh"
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
@@ -355,7 +366,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:370
+#: Recordings.class.php:370 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -502,18 +513,8 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Bạn phải cài đặt một tên hợp lệ cho bản ghi âm này"
 
-#~ msgid "Admin"
-#~ msgstr "Quản trị viên"
-
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác "
-#~ "nhau ( ví dụ IVR)."
 
 #~ msgid "Finished!"
 #~ msgstr "Đã hoàn thành!"
