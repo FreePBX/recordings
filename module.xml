@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>15.0.3.1</version>
+	<version>15.0.3.2</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,7 +11,7 @@
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
 		*15.0.3.1* Backup and Restore
-		*15.0.3* FREEPBX-18213 Validate files prior to adding them. 
+		*15.0.3* FREEPBX-18213 Validate files prior to adding them.
 		*15.0.2* Packaging of ver 15.0.2
 		*13.0.31.12* Fork for 15, implement backup.
 	</changelog>
