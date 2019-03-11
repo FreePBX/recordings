@@ -5,8 +5,9 @@ class Backup Extends Base\BackupBase{
 	public function runBackup($id,$transaction){
 		$dirs = [];
 		$base = $this->FreePBX->Config->get('ASTVARLIBDIR');
-		foreach($configs as $config){
-			foreach($config['files'] as $file){
+		$recs = $this->FreePBX->Recordings->getAll();
+		foreach($recs as $rec){
+			foreach($rec['files'] as $file){
 				foreach($file as $key => $value){
 					$path = $base.'/sounds/'.$key.'/custom';
 					$dirs[$path] = $path;
