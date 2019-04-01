@@ -51,10 +51,11 @@ function recordings_get_config($engine) {
 					// Do a sanity check, there should be no compound files
 					//
 					if (strpos($item['filename'], '&') === false && trim($item['filename']) != '') {
-						$fcode_pass = (trim($item['fcode_pass']) != '') ? ','.$item['fcode_pass'] : '';
+						$fcode_pass = (trim($item['fcode_pass']) != '') ? $item['fcode_pass'] : '';
+						$fcode_lang = (trim($item['fcode_lang']) != '') ? ','.$item['fcode_lang'] : '';
 						$ext->add($appcontext, $fcode, '', new ext_macro('user-callerid'));
 						$ext->add($appcontext, $fcode, '', new ext_wait('2'));
-						$ext->add($appcontext, $fcode, '', new ext_macro('systemrecording', 'docheck,'.$item['filename'].$fcode_pass));
+						$ext->add($appcontext, $fcode, '', new ext_macro('systemrecording', 'docheck,'.$item['filename'].','.$fcode_pass.$fcode_lang));
 						//$ext->add($appcontext, $fcode, '', new ext_macro('hangup'));
 					}
 				}
@@ -75,6 +76,7 @@ function recordings_get_config($engine) {
 
 			$ext->add($context, 's', '', new ext_gotoif('$["${ARG2}" = ""]','invalid'));
 			$ext->add($context, 's', '', new ext_setvar('TMPLANG','${CHANNEL(language)}'));
+			$ext->add($context, 's', '', new ext_execif('$["${ARG4}" != ""]','Set','TMPLANG='.'${ARG4}'));
 			$ext->add($context, 's', '', new ext_setvar('RECFILE','${TMPLANG}/${ARG2}'));
 			$ext->add($context, 's', '', new ext_setvar('LISTEN','docheck'));
 			$ext->add($context, 's', '', new ext_execif('$["${ARG3}" != ""]','Authenticate','${ARG3}'));
