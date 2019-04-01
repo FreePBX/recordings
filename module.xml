@@ -26,6 +26,7 @@
 			<field name="description" type="string" length="254" notnull="false"/>
 			<field name="fcode" type="boolean" default="0" notnull="false"/>
 			<field name="fcode_pass" type="string" length="20" notnull="false"/>
+			<field name="fcode_lang" type="string" length="20" notnull="false"/>
 		</table>
 	</database>
 	<depends>

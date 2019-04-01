@@ -33,6 +33,7 @@ $("#recordings-frm").submit(function(e) {
 
 	data.id = $("#id").val();
 
+	data.language = $("#language").val();
 	//convert the list before a submit
 	convertList();
 
@@ -140,17 +141,17 @@ $("#recordings-frm").submit(function(e) {
 				$("#recscreen").addClass("hidden");
 			} else {
 				$("#recscreen label").text(_("Finished!"));
-				recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove);
+				recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove,data.language);
 			}
 		});
 	} else {
 		$("#recscreen label").text(_("Finished!"));
-		recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove);
+		recsave(data.id,playbackList,data.name,data.description,data.fcode,data.fcode_pass,remove,data.language);
 	}
 
 });
 
-function recsave(id,playback,name,description,fcode,fcode_pass,remove) {
+function recsave(id,playback,name,description,fcode,fcode_pass,remove,language) {
 	$.ajax({
 		type: 'POST',
 		url: "ajax.php",
@@ -163,7 +164,8 @@ function recsave(id,playback,name,description,fcode,fcode_pass,remove) {
 			"description": description,
 			"fcode": fcode,
 			"fcode_pass": fcode_pass,
-			"remove": remove
+			"remove": remove,
+			"language": language
 		},
 		dataType: 'json',
 		timeout: 240000,

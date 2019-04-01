@@ -325,9 +325,9 @@ class Recordings implements BMO {
 			case "save":
 				$data = $_POST;
 				if($data['id'] == "0" || !empty($data['id'])) {
-					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
+					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				} else {
-					$this->addRecording($data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass']);
+					$this->addRecording($data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				}
 				if(!empty($data['remove'])) {
 					foreach($data['remove'] as $file) {
@@ -476,10 +476,10 @@ class Recordings implements BMO {
 	 * @param integer $fcode       Feature Code number_format
 	 * @param string  $fcode_pass  Feature code password
 	 */
-	public function addRecording($name,$description,$files,$fcode=0,$fcode_pass='') {
-		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?)";
+	public function addRecording($name,$description,$files,$fcode=0,$fcode_pass='',$fcode_lang='') {
+		$sql = "INSERT INTO recordings (displayname, description, filename, fcode, fcode_pass, fcode_lang) VALUES(?,?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass));
+		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $fcode_lang));
 		$id = $this->db->lastInsertId();
 		if ($fcode == 1) {
 			// Add the feature code if it is needed
@@ -531,10 +531,10 @@ class Recordings implements BMO {
 	 * @param integer $fcode       Feature Code number_format
 	 * @param string  $fcode_pass  Feature code password
 	 */
-	public function updateRecording($id,$name,$description,$files,$fcode=0,$fcode_pass='') {
-		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ?, fcode = ?, fcode_pass = ? WHERE id = ?";
+	public function updateRecording($id,$name,$description,$files,$fcode=0,$fcode_pass='',$fcode_lang='') {
+		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ?, fcode = ?, fcode_pass = ?, fcode_lang = ? WHERE id = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $id));
+		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $fcode_lang, $id));
 		if ($fcode != 1) {
 			// delete the feature code if it existed
 			//
