@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-26 00:16-0400\n"
+"POT-Creation-Date: 2019-04-02 16:55+0530\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -58,13 +58,13 @@ msgstr ""
 msgid "Admin"
 msgstr "Админ"
 
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr ""
 
@@ -118,7 +118,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -134,7 +134,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Изтрий"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr ""
 
@@ -179,7 +179,7 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
@@ -221,7 +221,7 @@ msgstr ""
 msgid "No"
 msgstr ""
 
-#: assets/js/recordings.js:617
+#: assets/js/recordings.js:619
 msgid "No Recordings Found"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "No files for %s"
 msgstr ""
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr ""
 
@@ -248,7 +248,7 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr ""
 
@@ -265,20 +265,20 @@ msgstr ""
 "Незадължителна парола за ограничаване достъпа до специалния код, който "
 "позволява на потребителя да презапише записа."
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -303,11 +303,11 @@ msgstr ""
 msgid "Save"
 msgstr "Запис"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "Направи Запис"
 
-#: assets/js/recordings.js:617
+#: assets/js/recordings.js:619
 msgid "Select a system recording"
 msgstr ""
 
@@ -379,7 +379,7 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
@@ -404,7 +404,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr ""
 
@@ -427,14 +427,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
