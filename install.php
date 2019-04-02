@@ -29,7 +29,8 @@ $sql = "CREATE TABLE IF NOT EXISTS recordings (
 	`filename` BLOB,
 	`description` VARCHAR(254),
 	`fcode` tinyint(1) DEFAULT '0',
-	`fcode_pass` varchar(20)
+	`fcode_pass` varchar(20),
+	`fcode_lang` varchar(20)
 );";
 $result = $db->query($sql);
 if(DB::IsError($result)) {
@@ -66,6 +67,20 @@ if(DB::IsError($check)) {
 	out(_("already exists"));
 }
 
+outn(_("checking for fcode_lang field.."));
+$sql = "SELECT `fcode_lang` FROM recordings";
+$check = $db->getRow($sql, DB_FETCHMODE_ASSOC);
+if(DB::IsError($check)) {
+	// add new field
+	$sql = "ALTER TABLE recordings ADD `fcode_lang` VARCHAR( 20 ) NULL ;";
+	$result = $db->query($sql);
+	if(DB::IsError($result)) {
+		die_freepbx($result->getDebugInfo());
+	}
+	out(_("OK"));
+} else {
+	out(_("already exists"));
+}
 sql('DELETE FROM recordings WHERE displayname = "__invalid"');
 $freepbx_conf =& freepbx_conf::create();
 if($freepbx_conf->conf_setting_exists('AMPPLAYKEY')) {
