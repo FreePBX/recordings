@@ -503,8 +503,8 @@ class Recordings implements BMO {
 	 * @param integer $fcode       Feature Code number_format
 	 * @param string  $fcode_pass  Feature code password
 	 */
-	public function addRecordingWithId($id,$name,$description,$files,$fcode=0,$fcode_pass=''){
-		$sql = "INSERT INTO recordings (id,displayname, description, filename, fcode, fcode_pass) VALUES(?,?,?,?,?,?)";
+	public function addRecordingWithId($id,$name,$description,$files,$fcode=0,$fcode_pass='', $fcode_lang=''){
+		$sql = "INSERT INTO recordings (id,displayname, description, filename, fcode, fcode_pass, fcode_lang) VALUES(?,?,?,?,?,?,?)";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array($id,$name, $description, $files, $fcode, $fcode_pass));
 		$id = $this->db->lastInsertId();
