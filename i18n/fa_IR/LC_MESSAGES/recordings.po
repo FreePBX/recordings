@@ -10,16 +10,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-05-23 16:45-0400\n"
-"PO-Revision-Date: 2016-05-26 18:54+0200\n"
-"Last-Translator: Media <mousavi.media@gmail.com>\n"
-"Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
-"recordings/fa_IR/>\n"
+"PO-Revision-Date: 2019-01-25 13:55+0000\n"
+"Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
+"Language-Team: Persian <http://*/projects/freepbx/recordings/fa/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: Recordings.class.php:457
 msgid "A PHP extension stopped the file upload"
@@ -161,7 +160,7 @@ msgstr "چندین فایل یا فایل های فشرده را به اینجا
 
 #: views/form.php:4
 msgid "Edit Recording"
-msgstr ""
+msgstr "ویرایش ضبط"
 
 #: views/form.php:198
 msgid "Enter Extension"
@@ -187,7 +186,7 @@ msgstr "فایل موجود نیست"
 #: assets/js/recordings.js:572
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
-msgstr ""
+msgstr "اندازه فایل بزرگ است. بیشترین s1% است"
 
 #: assets/js/recordings.js:142 assets/js/recordings.js:147
 msgid "Finished!"
@@ -258,7 +257,7 @@ msgstr "هیچ فایلی به این پیام ضبط شده اضافه نشده
 msgid ""
 "No languages are defined! You must define at least one in the Sound "
 "Languages module!"
-msgstr ""
+msgstr "زبانی مشخص نشده!"
 
 #: views/form.php:296
 msgid "Not supported on compounded or Non-Existent recordings"
@@ -286,11 +285,11 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 #: functions.inc.php:251
 #, php-format
 msgid "Play Recording: %s"
-msgstr ""
+msgstr "اجرای ضبط: %s1"
 
 #: assets/js/recordings.js:851
 msgid "Please add at least one Sound Package in the Sound Languages Module"
-msgstr ""
+msgstr "لطفا حداقل یک بسته صدا را در ماژول زبان های صوتی اضافه کنید"
 
 #: assets/js/recordings.js:486 assets/js/recordings.js:509
 msgid "Please enter a valid name and save"
@@ -332,6 +331,9 @@ msgid ""
 "without them installed could have unknown results. Please install them "
 "through the %s module"
 msgstr ""
+"بعضی از زبان ها در این سیستم نصب نمی شوند [٪s1]، صرفه جویی در این ضبط بدون "
+"نصب آنها می تواند نتایج ناشناخته داشته باشد. لطفا آنها را از طریق ماژول ٪s2 "
+"نصب کنید"
 
 #: views/form.php:79
 msgid ""
@@ -349,7 +351,7 @@ msgstr ""
 
 #: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
-msgstr ""
+msgstr "زبان های صوتی"
 
 #: Recordings.class.php:79
 msgid "Submit"
@@ -365,7 +367,7 @@ msgstr "پیام های ضبط شده سیستمی"
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
-msgstr ""
+msgstr "نام '"
 
 #: views/form.php:25
 msgid ""
@@ -504,6 +506,8 @@ msgid ""
 "You have no sound packages installed in the %s module. Please install at "
 "least one language to use System Recordings"
 msgstr ""
+"شما هیچ بسته صدا موجود در ماژول ٪s1 ندارید لطفا برای استفاده از ضبط سیستم، "
+"حداقل یک زبان را نصب کنید"
 
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
