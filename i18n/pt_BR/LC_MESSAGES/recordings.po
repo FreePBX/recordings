@@ -19,15 +19,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2019-04-02 16:26+0530\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/recordings/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 "X-Poedit-Language: Portuguese\n"
@@ -73,11 +73,7 @@ msgstr ""
 msgid "Admin"
 msgstr "Admin"
 
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "Ocorreu um erro ao tentar envar este documento"
-
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -85,7 +81,7 @@ msgstr ""
 "Tem certeza de que não deseja converter esses arquivos? Eles podem não "
 "funcionar corretamente no Asterisk sem serem convertidos"
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Tem certeza de que deseja descartar essas gravações?"
 
@@ -97,7 +93,7 @@ msgstr "Visualizar"
 msgid "Call"
 msgstr "Chamar"
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr "Chamar!"
 
@@ -141,7 +137,7 @@ msgstr "Combinar Arquivos"
 msgid "Convert To"
 msgstr "Converter Para"
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copiando  %s para %s"
@@ -157,7 +153,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Apagar"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "Apagar Gravação"
 
@@ -202,27 +198,15 @@ msgstr "Lista de Arquivos para %s"
 msgid "File does not exist"
 msgstr "Arquivo não existe"
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
-
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "Concluído!"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 "Pressione o botão vermelho para iniciar a gravação a partir do seu navegador"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Se você estiver fazendo conversões de mídia isso poderá levar muito tempo, "
-"ok?"
 
 #: views/form.php:273
 msgid ""
@@ -263,6 +247,10 @@ msgstr "Nomeie este arquivo"
 msgid "No"
 msgstr "Não"
 
+#: assets/js/recordings.js:619
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "Nenhum arquivo foi carregado"
@@ -272,7 +260,7 @@ msgstr "Nenhum arquivo foi carregado"
 msgid "No files for %s"
 msgstr "Nenhum arquivo para %s"
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr "Nenhum arquivo foi adicionado a esta gravação"
 
@@ -288,11 +276,11 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Não suportado em gravações compostas ou não existentes"
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "Não suportado em gravações compostas"
 
-#: install.php:50 install.php:64
+#: install.php:51 install.php:65 install.php:80
 msgid "OK"
 msgstr "OK"
 
@@ -309,20 +297,20 @@ msgstr ""
 "Senha opcional para proteger o acesso a esta facilidade que permite a um "
 "usuário regravá-lo."
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr "Reproduzir Gravação: %s"
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr "Adicione pelo menos um Pacote de Som no Módulo de Idiomas de Som"
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "Insira um nome válido e salve"
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "Processando %s para %s no formato %s"
@@ -347,9 +335,13 @@ msgstr "Reiniciar"
 msgid "Save"
 msgstr "Salvar"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "Salvar gravação"
+
+#: assets/js/recordings.js:619
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -434,11 +426,7 @@ msgstr "O arquivo enviado foi carregado parcialmente"
 msgid "There was an error reading system recordings (%s)"
 msgstr "Ocorreu um erro ao ler as gravações do sistema (%s)"
 
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
-
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Esta gravação do sistema não existe neste idioma. Continuar?"
 
@@ -467,7 +455,7 @@ msgstr "Erro Desconhecido"
 msgid "Unsupported file format"
 msgstr "Formato de arquivo não suportado"
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr "Tipo de arquivo não suportado"
 
@@ -485,15 +473,15 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"Envie arquivos do seu sistema local. Os formatos de upload suportados são: %"
-"s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
+"Envie arquivos do seu sistema local. Os formatos de upload suportados são: "
+"%s. Isso inclui arquivos compactados (que incluem vários arquivos) e vários "
 "arquivos"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
 msgstr "Sim"
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -503,7 +491,7 @@ msgstr ""
 "próximo arquivo adicionado substituirá esse arquivo do sistema quando você "
 "salvar essa gravação. Tem certeza que quer fazer isso?"
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -545,17 +533,37 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Você deve definir um nome válido para esta gravação"
 
-#: install.php:52 install.php:66
+#: install.php:53 install.php:67 install.php:82
 msgid "already exists"
 msgstr "Já existe"
 
-#: install.php:40
+#: install.php:41
 msgid "checking for fcode field.."
 msgstr "Verificando o campo fcode..."
 
-#: install.php:54
+#: install.php:70
+msgid "checking for fcode_lang field.."
+msgstr ""
+
+#: install.php:55
 msgid "checking for fcode_pass field.."
 msgstr "Verificando se o campo fcode_pass existe..."
+
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "Ocorreu um erro ao tentar envar este documento"
+
+#~ msgid "Finished!"
+#~ msgstr "Concluído!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Se você estiver fazendo conversões de mídia isso poderá levar muito "
+#~ "tempo, ok?"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "Ocorreu um erro, consulte o console para obter mais detalhes"
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr "Faltandoo arquivo de som auto-criado da migração do módulo %s"

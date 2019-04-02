@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2019-04-02 16:26+0530\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -50,17 +50,13 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr ""
-
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
 msgstr ""
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr ""
 
@@ -72,7 +68,7 @@ msgstr ""
 msgid "Call"
 msgstr ""
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr ""
 
@@ -112,7 +108,7 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
@@ -127,7 +123,7 @@ msgstr ""
 msgid "Delete"
 msgstr "מחק"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr ""
 
@@ -172,23 +168,13 @@ msgstr ""
 msgid "File does not exist"
 msgstr ""
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr ""
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
-msgstr ""
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
 msgstr ""
 
 #: views/form.php:273
@@ -224,6 +210,10 @@ msgstr ""
 msgid "No"
 msgstr ""
 
+#: assets/js/recordings.js:619
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr ""
@@ -233,7 +223,7 @@ msgstr ""
 msgid "No files for %s"
 msgstr ""
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr ""
 
@@ -247,11 +237,11 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: install.php:50 install.php:64
+#: install.php:51 install.php:65 install.php:80
 msgid "OK"
 msgstr "תקין"
 
@@ -266,20 +256,20 @@ msgid ""
 "to re-record it."
 msgstr ""
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr ""
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr ""
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr ""
@@ -304,9 +294,13 @@ msgstr ""
 msgid "Save"
 msgstr "שמור"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "שמור הקלטה"
+
+#: assets/js/recordings.js:619
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -376,11 +370,7 @@ msgstr ""
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr ""
-
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr ""
 
@@ -405,7 +395,7 @@ msgstr ""
 msgid "Unsupported file format"
 msgstr ""
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr ""
 
@@ -428,14 +418,14 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
 "to do that?"
 msgstr ""
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -465,15 +455,19 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:52 install.php:66
+#: install.php:53 install.php:67 install.php:82
 msgid "already exists"
 msgstr "כבר קיים"
 
-#: install.php:40
+#: install.php:41
 msgid "checking for fcode field.."
 msgstr "בודק שגיאות..."
 
-#: install.php:54
+#: install.php:70
+msgid "checking for fcode_lang field.."
+msgstr ""
+
+#: install.php:55
 msgid "checking for fcode_pass field.."
 msgstr ""
 

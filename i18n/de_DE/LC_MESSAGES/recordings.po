@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2019-04-02 16:26+0530\n"
 "PO-Revision-Date: 2018-10-22 22:48+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -60,11 +60,7 @@ msgstr ""
 msgid "Admin"
 msgstr "Administrator"
 
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
-
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -73,7 +69,7 @@ msgstr ""
 "funktionieren möglicherweise nicht korrekt in Asterisk, ohne konvertiert zu "
 "werden"
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Möchtest du diese Aufnahmen wirklich verwerfen?"
 
@@ -85,7 +81,7 @@ msgstr "Durchsuchen"
 msgid "Call"
 msgstr "Anruf"
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr "Anruf!"
 
@@ -129,7 +125,7 @@ msgstr "Dateien zusammensetzen"
 msgid "Convert To"
 msgstr "Konvertieren in"
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Kopiere %s nach %s"
@@ -145,7 +141,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Löschen"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "Aufnahme löschen"
 
@@ -190,28 +186,16 @@ msgstr "Dateiliste für %s"
 msgid "File does not exist"
 msgstr "Datei existiert nicht"
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr "Die Datei ist zu groß. Die maximale Größe beträgt %s Bytes"
-
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "Beendet!"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 "Drücken Sie den roten Aufnahmeknopf, um die Aufnahme von Ihrem Browser aus "
 "zu starten"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Wenn Sie Mediendateien konvertieren, kann dies sehr lange dauern, sind Sie "
-"damit einverstanden?"
 
 #: views/form.php:273
 msgid ""
@@ -252,6 +236,10 @@ msgstr "Benennen Sie diese Datei"
 msgid "No"
 msgstr "Nein"
 
+#: assets/js/recordings.js:619
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "Es wurde keine Datei hochgeladen"
@@ -261,7 +249,7 @@ msgstr "Es wurde keine Datei hochgeladen"
 msgid "No files for %s"
 msgstr "Keine Dateien für %s"
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr "Dieser Aufnahme wurden keine Dateien hinzugefügt"
 
@@ -278,11 +266,11 @@ msgid "Not supported on compounded or Non-Existent recordings"
 msgstr ""
 "Bei kombinierten oder nicht vorhandenen Aufzeichnungen nicht unterstützt"
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "Wird bei zusammengesetzten Aufnahmen nicht unterstützt"
 
-#: install.php:50 install.php:64
+#: install.php:51 install.php:65 install.php:80
 msgid "OK"
 msgstr "OK"
 
@@ -299,21 +287,21 @@ msgstr ""
 "Optionales Passwort, um den Zugriff auf den Funktionscode abzusichern, der "
 "es einem Benutzer erlaubt, die Aufnahme neu aufzunehmen."
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr "Aufnahme abspielen: %s"
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 "Bitte fügen Sie im Modul „Audiosprachen“ mindestens ein Audiopaket hinzu"
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "Bitte geben Sie einen gültigen Namen an und speichern Sie dann"
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "Verarbeite %s für %s im Format %s"
@@ -338,9 +326,13 @@ msgstr "Zurücksetzen"
 msgid "Save"
 msgstr "Speichern"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "Aufnahme speichern"
+
+#: assets/js/recordings.js:619
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -351,8 +343,8 @@ msgid ""
 msgstr ""
 "Einige Sprachen sind auf diesem System nicht installiert [%s]. Wenn Sie "
 "diese Aufzeichnung speichern, ohne dass sie installiert sind, können "
-"unbekannte Ergebnisse auftreten. Bitte installieren Sie sie über das %s "
-"-Modul"
+"unbekannte Ergebnisse auftreten. Bitte installieren Sie sie über das %s -"
+"Modul"
 
 #: views/form.php:79
 msgid ""
@@ -365,8 +357,8 @@ msgstr ""
 "Sortierbare Dateiliste / Spielreihenfolge Die Wiedergabe erfolgt von oben "
 "nach unten. Sie können auf das Wiedergabesymbol klicken, um eine Vorschau "
 "der Dateien anzuzeigen. Wenn eine Datei rot ist, fehlt diese für die "
-"ausgewählte Sprache. Dateien können durch einmaliges Klicken ersetzt werden ("
-"wodurch sie grün werden), wodurch sie in den Ersetzungsmodus versetzt "
+"ausgewählte Sprache. Dateien können durch einmaliges Klicken ersetzt werden "
+"(wodurch sie grün werden), wodurch sie in den Ersetzungsmodus versetzt "
 "werden. Alles, was Sie hochladen, wird diese Datei beim Speichern ersetzen"
 
 #: views/form.php:5 views/grid.php:2
@@ -429,13 +421,7 @@ msgstr "Die hochgeladene Datei wurde nur teilweise hochgeladen"
 msgid "There was an error reading system recordings (%s)"
 msgstr "Beim Lesen von Systemaufnahmen trat ein Fehler auf (%s)"
 
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr ""
-"Es ist ein Fehler aufgetreten; schauen Sie auf der Konsole nach, um Näheres "
-"zu erfahren"
-
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Diese Systemaufnahmen existiert in dieser Sprache nicht. Fortfahren?"
 
@@ -464,7 +450,7 @@ msgstr "Unbekannter Fehler"
 msgid "Unsupported file format"
 msgstr "Nicht unterstütztes Dateiformat"
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr "Nicht unterstützter Dateityp"
 
@@ -490,7 +476,7 @@ msgstr ""
 msgid "Yes"
 msgstr "Ja"
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -500,7 +486,7 @@ msgstr ""
 "Datei, die Sie hinzufügen, wird diese Systemdatei ersetzen, sobald Sie die "
 "Aufnahme speichern. Sind Sie sicher, dass Sie das tun wollen?"
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -542,14 +528,36 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Sie müssen einen gültigen Namen für diese Aufnahme angeben"
 
-#: install.php:52 install.php:66
+#: install.php:53 install.php:67 install.php:82
 msgid "already exists"
 msgstr "bereits vorhanden"
 
-#: install.php:40
+#: install.php:41
 msgid "checking for fcode field.."
 msgstr "Prüfe auf <i>fcode</i>-Feld.."
 
-#: install.php:54
+#: install.php:70
+msgid "checking for fcode_lang field.."
+msgstr ""
+
+#: install.php:55
 msgid "checking for fcode_pass field.."
 msgstr "Prüfe auf <i>fcode_pass</i>-Feld.."
+
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
+
+#~ msgid "Finished!"
+#~ msgstr "Beendet!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Wenn Sie Mediendateien konvertieren, kann dies sehr lange dauern, sind "
+#~ "Sie damit einverstanden?"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr ""
+#~ "Es ist ein Fehler aufgetreten; schauen Sie auf der Konsole nach, um "
+#~ "Näheres zu erfahren"

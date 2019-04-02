@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2019-04-02 16:26+0530\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -60,12 +60,7 @@ msgstr ""
 msgid "Admin"
 msgstr "Amministratore"
 
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr ""
-"Si è verificato un errore durante il tentativo di inviare questo documento"
-
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -73,7 +68,7 @@ msgstr ""
 "Sei sicuro di non voler convertire questi file? Potrebbero non funzionare "
 "correttamente in Asterisk senza essere convertiti"
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Sei sicuro di voler eliminare queste registrazioni?"
 
@@ -85,7 +80,7 @@ msgstr "Navigare"
 msgid "Call"
 msgstr "Chiamata"
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr "Chiamata!"
 
@@ -129,7 +124,7 @@ msgstr "Combina i file"
 msgid "Convert To"
 msgstr "Convertire in"
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copia %s1 su %s2"
@@ -145,7 +140,7 @@ msgstr ""
 msgid "Delete"
 msgstr "Elimina"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "Elimina registrazione"
 
@@ -190,28 +185,17 @@ msgstr "Elenco file per %s1"
 msgid "File does not exist"
 msgstr "Il file non esiste"
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 "La dimensione del file è troppo grande. La dimensione massima è %s1 byte"
-
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "Finito!"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 "Premi il pulsante rosso di registrazione per avviare la registrazione dal "
 "tuo browser"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr ""
-"Se stai facendo conversioni di media questo può richiedere molto tempo, ok?"
 
 #: views/form.php:273
 msgid ""
@@ -251,6 +235,10 @@ msgstr "Dai un nome a questo file"
 msgid "No"
 msgstr "No"
 
+#: assets/js/recordings.js:619
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "Nessun file è stato caricato"
@@ -260,7 +248,7 @@ msgstr "Nessun file è stato caricato"
 msgid "No files for %s"
 msgstr "Nessun file per %s1"
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr "Nessun file è stato aggiunto a questa registrazione"
 
@@ -276,11 +264,11 @@ msgstr ""
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Non supportato su registrazioni composte o inesistenti"
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "Non supportato su registrazioni composte"
 
-#: install.php:50 install.php:64
+#: install.php:51 install.php:65 install.php:80
 msgid "OK"
 msgstr "OK"
 
@@ -297,20 +285,20 @@ msgstr ""
 "Password opzionale per proteggere l'accesso a questo codice servizio che "
 "permette ad un utente di riregistrarlo."
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr "Riproduci registrazione: %s1"
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr "Aggiungi almeno un pacchetto audio nel modulo Lingue del suono"
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "Si prega di inserire un nome valido e salvare"
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "Elaborazione %s1 per %s2 in formato %s3"
@@ -335,9 +323,13 @@ msgstr "Azzerare"
 msgid "Save"
 msgstr "Salva"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "Salva Registrazione"
+
+#: assets/js/recordings.js:619
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -425,11 +417,7 @@ msgstr ""
 "Si è verificato un errore durante la lettura delle registrazioni di sistema "
 "(%s1)"
 
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "Si è verificato un errore. Vedi la console per ulteriori dettagli"
-
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Questa registrazione di sistema non esiste in questa lingua. Continua?"
 
@@ -458,7 +446,7 @@ msgstr "Errore sconosciuto"
 msgid "Unsupported file format"
 msgstr "Formato file non supportato"
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr "Tipo di file non supportato"
 
@@ -476,14 +464,14 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"Carica file dal tuo sistema locale. I formati di caricamento supportati sono:"
-" %s1. Ciò include archivi (che includono più file) e più file"
+"Carica file dal tuo sistema locale. I formati di caricamento supportati "
+"sono: %s1. Ciò include archivi (che includono più file) e più file"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
 msgstr "Si"
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -493,7 +481,7 @@ msgstr ""
 "file che aggiungi sostituirà questo file di sistema quando salvi questa "
 "registrazione. Sei sicuro di volerlo fare?"
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -535,17 +523,38 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "È necessario impostare un nome valido per questa registrazione"
 
-#: install.php:52 install.php:66
+#: install.php:53 install.php:67 install.php:82
 msgid "already exists"
 msgstr "già esiste"
 
-#: install.php:40
+#: install.php:41
 msgid "checking for fcode field.."
 msgstr "controllo il campo fcode.."
 
-#: install.php:54
+#: install.php:70
+msgid "checking for fcode_lang field.."
+msgstr ""
+
+#: install.php:55
 msgid "checking for fcode_pass field.."
 msgstr "controllo il campo fcode_pass.."
+
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr ""
+#~ "Si è verificato un errore durante il tentativo di inviare questo documento"
+
+#~ msgid "Finished!"
+#~ msgstr "Finito!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr ""
+#~ "Se stai facendo conversioni di media questo può richiedere molto tempo, "
+#~ "ok?"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "Si è verificato un errore. Vedi la console per ulteriori dettagli"
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr "File Audio mancante auto-creato durante la migrazione del modulo %s"

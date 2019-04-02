@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-23 16:45-0400\n"
+"POT-Creation-Date: 2019-04-02 16:26+0530\n"
 "PO-Revision-Date: 2019-01-25 13:55+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/recordings/fa/>\n"
@@ -56,11 +56,7 @@ msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط ش
 msgid "Admin"
 msgstr "مدیر"
 
-#: assets/js/recordings.js:180
-msgid "An Error occurred trying to submit this document"
-msgstr "بروز خطا در ثبت این سند"
-
-#: assets/js/recordings.js:268
+#: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
 "correctly in Asterisk without being converted"
@@ -68,7 +64,7 @@ msgstr ""
 "آیا از تبدیل نکردن این فایل ها مطمئن هستید؟ ممکن است این فایل ها بدون تبدیل "
 "در استریسک به درستی کار نکنند"
 
-#: assets/js/recordings.js:495
+#: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "آیا از حذف این پیام ضبط شده مطمئن هستید؟"
 
@@ -80,7 +76,7 @@ msgstr "بارگذاری"
 msgid "Call"
 msgstr "برقراری تماس"
 
-#: assets/js/recordings.js:540
+#: assets/js/recordings.js:542
 msgid "Call!"
 msgstr "تماس!"
 
@@ -122,7 +118,7 @@ msgstr "ترکیب فایل ها"
 msgid "Convert To"
 msgstr "تبدیل به"
 
-#: assets/js/recordings.js:107
+#: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "در حال کپی کردن %s به %s"
@@ -138,7 +134,7 @@ msgstr ""
 msgid "Delete"
 msgstr "حذف"
 
-#: assets/js/recordings.js:316
+#: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "حذف پیام ضبط شده"
 
@@ -183,24 +179,14 @@ msgstr "فهرست فایل برای %s"
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
-#: assets/js/recordings.js:572
+#: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr "اندازه فایل بزرگ است. بیشترین s1% است"
 
-#: assets/js/recordings.js:142 assets/js/recordings.js:147
-msgid "Finished!"
-msgstr "پایان یافت!"
-
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
-
-#: assets/js/recordings.js:60
-msgid ""
-"If you are doing media conversions this can take a very long time, is that "
-"ok?"
-msgstr "اگر قصد تبدیل مدیا را دارید، زمان بیشتری صرف می شود، ایرادی ندارد؟"
 
 #: views/form.php:273
 msgid ""
@@ -240,6 +226,10 @@ msgstr "نام این فایل"
 msgid "No"
 msgstr "خیر"
 
+#: assets/js/recordings.js:619
+msgid "No Recordings Found"
+msgstr ""
+
 #: Recordings.class.php:448
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
@@ -249,7 +239,7 @@ msgstr "فایلی بارگذاری نشده است"
 msgid "No files for %s"
 msgstr "عدم وجود فایل برای %s"
 
-#: assets/js/recordings.js:40
+#: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
 msgstr "هیچ فایلی به این پیام ضبط شده اضافه نشده است"
 
@@ -263,11 +253,11 @@ msgstr "زبانی مشخص نشده!"
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
-#: assets/js/recordings.js:911
+#: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
-#: install.php:50 install.php:64
+#: install.php:51 install.php:65 install.php:80
 msgid "OK"
 msgstr "بله"
 
@@ -282,20 +272,20 @@ msgid ""
 "to re-record it."
 msgstr "کلمه عبور دلخواه برای محافظت از امکان ضبط مجدد به وسیله کد ویژه."
 
-#: functions.inc.php:251
+#: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
 msgstr "اجرای ضبط: %s1"
 
-#: assets/js/recordings.js:851
+#: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr "لطفا حداقل یک بسته صدا را در ماژول زبان های صوتی اضافه کنید"
 
-#: assets/js/recordings.js:486 assets/js/recordings.js:509
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "لطفا یک نام معتبر وارد کرده و ذخیره نمایید"
 
-#: assets/js/recordings.js:105
+#: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
 msgstr "پردازش %s برای %s در فرمت %s"
@@ -320,9 +310,13 @@ msgstr "بازنشانی"
 msgid "Save"
 msgstr "ذخیره"
 
-#: install.php:6 assets/js/recordings.js:316
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr "ذخیره پیام ضبط شده"
+
+#: assets/js/recordings.js:619
+msgid "Select a system recording"
+msgstr ""
 
 #: views/form.php:5
 #, php-format
@@ -407,11 +401,7 @@ msgstr "تنها بخشی از فایل بارگذاری شده است"
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
 
-#: assets/js/recordings.js:136
-msgid "There was an error, See the console for more details"
-msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
-
-#: assets/js/recordings.js:633
+#: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "سیستم ضبط تماسی برای این زبان وجود ندارد. ادامه میدهید؟"
 
@@ -438,7 +428,7 @@ msgstr "خطای نامشخص"
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
-#: assets/js/recordings.js:567
+#: assets/js/recordings.js:569
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نمی شود"
 
@@ -463,7 +453,7 @@ msgstr ""
 msgid "Yes"
 msgstr "بله"
 
-#: assets/js/recordings.js:693
+#: assets/js/recordings.js:695
 msgid ""
 "You are entering replace mode on a system file. The next file you add will "
 "replace this system file when you save this recording. Are you sure you want "
@@ -473,7 +463,7 @@ msgstr ""
 "هنگام ذخیره بجای فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن "
 "هستید؟"
 
-#: assets/js/recordings.js:695
+#: assets/js/recordings.js:697
 msgid ""
 "You are entering replace mode. The next file you add will replace this one "
 "when you save this recording. Are you sure you want to do that?"
@@ -513,17 +503,35 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
 
-#: install.php:52 install.php:66
+#: install.php:53 install.php:67 install.php:82
 msgid "already exists"
 msgstr "در حال حاضر وجود دارد"
 
-#: install.php:40
+#: install.php:41
 msgid "checking for fcode field.."
 msgstr "بررسی فیلد کد ویژه.."
 
-#: install.php:54
+#: install.php:70
+msgid "checking for fcode_lang field.."
+msgstr ""
+
+#: install.php:55
 msgid "checking for fcode_pass field.."
 msgstr "بررسی فیلد رمز عبور کد ویژه.."
+
+#~ msgid "An Error occurred trying to submit this document"
+#~ msgstr "بروز خطا در ثبت این سند"
+
+#~ msgid "Finished!"
+#~ msgstr "پایان یافت!"
+
+#~ msgid ""
+#~ "If you are doing media conversions this can take a very long time, is "
+#~ "that ok?"
+#~ msgstr "اگر قصد تبدیل مدیا را دارید، زمان بیشتری صرف می شود، ایرادی ندارد؟"
+
+#~ msgid "There was an error, See the console for more details"
+#~ msgstr "بروز خطا، برای اطلاعات بیشتر به کنسول مراجعه کنید"
 
 #~ msgid "Missing Sound file auto-created from migration of %s module"
 #~ msgstr ""
