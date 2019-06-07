@@ -9,13 +9,14 @@ class Backup Extends Base\BackupBase{
 		foreach($recs as $rec){
 			foreach($rec['files'] as $file){
 				foreach($file as $key => $value){
-					$path = $base.'/sounds/'.$key.'/custom';
-					$filepath = $base.'/sounds/'.$key.'/';
-					$dirs[$path] = $path;
+					$basefilepath = $base.'/sounds/'.$key.'/';
 					foreach($value as $recordingfile){
-						if(!file_exists($filepath.$recordingfile)){
+						if(!file_exists($basefilepath.$recordingfile)){
 							continue;
 						}
+						$dirpaths = pathinfo($basefilepath.$recordingfile);
+						$path = $dirpaths['dirname'];
+						$dirs[$path] = $path;
 						$this->addFile(basename($recordingfile),$path,'ASTVARLIBDIR',"recording");
 					}
 				}
