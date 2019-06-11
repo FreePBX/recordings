@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 16:55+0530\n"
+"POT-Creation-Date: 2019-06-11 18:02+0530\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -181,6 +181,11 @@ msgstr "Password Codice Servizio"
 msgid "File List for %s"
 msgstr "Elenco file per %s1"
 
+#: Restore.php:14
+#, php-format
+msgid "File Restored %s"
+msgstr ""
+
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
 msgstr "Il file non esiste"
@@ -314,6 +319,11 @@ msgstr "Registrazioni"
 #: Recordings.class.php:89
 msgid "Reset"
 msgstr "Azzerare"
+
+#: Restore.php:16
+#, php-format
+msgid "Same file exists  %s"
+msgstr ""
 
 #: views/form.php:170 views/form.php:209
 msgid "Save"

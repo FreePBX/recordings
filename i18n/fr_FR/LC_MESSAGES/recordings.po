@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 16:55+0530\n"
+"POT-Creation-Date: 2019-06-11 18:02+0530\n"
 "PO-Revision-Date: 2017-03-17 00:22+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -184,6 +184,11 @@ msgstr "Mot de passe du code de caractéristique"
 msgid "File List for %s"
 msgstr ""
 
+#: Restore.php:14
+#, php-format
+msgid "File Restored %s"
+msgstr ""
+
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
 msgstr "Le fichier n'existe pas"
@@ -306,6 +311,11 @@ msgstr "Enregistrements"
 
 #: Recordings.class.php:89
 msgid "Reset"
+msgstr ""
+
+#: Restore.php:16
+#, php-format
+msgid "Same file exists  %s"
 msgstr ""
 
 #: views/form.php:170 views/form.php:209

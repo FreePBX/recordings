@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 16:55+0530\n"
+"POT-Creation-Date: 2019-06-11 18:02+0530\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -176,6 +176,11 @@ msgstr "رمز عبور کد ویژه"
 msgid "File List for %s"
 msgstr "فهرست فایل برای %s"
 
+#: Restore.php:14
+#, php-format
+msgid "File Restored %s"
+msgstr ""
+
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
@@ -302,6 +307,11 @@ msgstr "پیام های ضبط شده"
 #: Recordings.class.php:89
 msgid "Reset"
 msgstr "بازنشانی"
+
+#: Restore.php:16
+#, php-format
+msgid "Same file exists  %s"
+msgstr ""
 
 #: views/form.php:170 views/form.php:209
 msgid "Save"

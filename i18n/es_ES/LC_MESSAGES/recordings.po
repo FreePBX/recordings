@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 16:55+0530\n"
+"POT-Creation-Date: 2019-06-11 18:02+0530\n"
 "PO-Revision-Date: 2016-12-10 10:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -178,6 +178,11 @@ msgstr "Contraseña del código de característica"
 msgid "File List for %s"
 msgstr "Lista de Archivos para %s"
 
+#: Restore.php:14
+#, php-format
+msgid "File Restored %s"
+msgstr ""
+
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
 msgstr "Archivo no existe"
@@ -310,6 +315,11 @@ msgstr "Grabaciones"
 #: Recordings.class.php:89
 msgid "Reset"
 msgstr "Reiniciar"
+
+#: Restore.php:16
+#, php-format
+msgid "Same file exists  %s"
+msgstr ""
 
 #: views/form.php:170 views/form.php:209
 msgid "Save"
