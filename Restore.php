@@ -11,9 +11,9 @@ class Restore Extends Base\RestoreBase{
 				$filename = $this->nameTest($filename,$file->getBase());
 				if(!file_exists($filename)){
 					copy($this->tmpdir.'/files/'.$file->getPathTo().'/'.$file->getFilename(),$filename);
-					 $this->log(sprintf(_("File Restore %s"), $filename),'WARNING');
+					 $this->log(sprintf(_("File Restored %s"), $filename),'INFO');
 				} else {
-					$this->log(sprintf(_("Same file exists  %s"), $filename),'WARNING');
+					$this->log(sprintf(_("Same file exists  %s"), $filename),'INFO');
 				}
 			}
 		}
