@@ -6,11 +6,14 @@ class Restore Extends Base\RestoreBase{
 		$configs = $this->getConfigs();
 		$files = $this->getFiles();
 		foreach($files as $file){
-			if($file['type'] == 'recording'){
-				$filename = $file['pathto'].'/'.$file['filename'];
-				$filename = $this->nameTest($filename,$file['base']);
-				if(file_exists($filename)){
-					copy($this->tmpdir.'/files/'.$file['pathto'].'/'.$file['filename'],$filename);
+			if($file->getType() == 'recording'){
+				$filename = $file->getPathTo().'/'.$file->getFilename();
+				$filename = $this->nameTest($filename,$file->getBase());
+				if(!file_exists($filename)){
+					copy($this->tmpdir.'/files/'.$file->getPathTo().'/'.$file->getFilename(),$filename);
+					 $this->log(sprintf(_("File Restore %s"), $filename),'WARNING');
+				} else {
+					$this->log(sprintf(_("Same file exists  %s"), $filename),'WARNING');
 				}
 			}
 		}
@@ -33,10 +36,10 @@ class Restore Extends Base\RestoreBase{
 			return $path;
 		}
 		$file = basename($path);
-		$pathArr = explode($path,'/');
-		$i = array_search('sounds',$pathArr);
+		$pathArr = explode('/',$path);
+		$i = array_search('sounds',$pathArr,true);
 		$pathArr = array_slice($pathArr,$i);
-		return $sysPath.'/'.implode('/',$pathArr).'/'.$file;
+		return $sysPath.'/'.implode('/',$pathArr);
 	}
 
 	public function processLegacy($pdo, $data, $tables, $unknownTables) {
