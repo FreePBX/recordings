@@ -2,7 +2,7 @@
 namespace FreePBX\modules\Recordings;
 use FreePBX\modules\Backup as Base;
 class Restore Extends Base\RestoreBase{
-	public function runRestore($restoreid){
+	public function runRestore(){
 		$configs = $this->getConfigs();
 		$files = $this->getFiles();
 		foreach($files as $file){
