@@ -13,6 +13,7 @@
 				data-toggle="table"
 				data-pagination="false"
 				data-search="true"
+				data-escape="true" 
 				class="table table-striped">
 				<thead>
 					<tr>
