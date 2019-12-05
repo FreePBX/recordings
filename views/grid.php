@@ -19,6 +19,7 @@
 				data-show-toggle="true"
 				data-toggle="table"
 				data-pagination="true"
+				data-escape="true" 
 				data-search="true"
 				class="table table-striped">
 				<thead>
