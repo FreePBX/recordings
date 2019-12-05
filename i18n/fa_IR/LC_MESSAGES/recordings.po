@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-04-02 16:26+0530\n"
-"PO-Revision-Date: 2019-01-25 13:55+0000\n"
+"PO-Revision-Date: 2019-08-13 11:52+0000\n"
 "Last-Translator: Media Mousavi <mousavi.media@gmail.com>\n"
 "Language-Team: Persian <http://*/projects/freepbx/recordings/fa/>\n"
 "Language: fa_IR\n"
@@ -228,7 +228,7 @@ msgstr "خیر"
 
 #: assets/js/recordings.js:619
 msgid "No Recordings Found"
-msgstr ""
+msgstr "پیام ضبط شده ای یافت نشد"
 
 #: Recordings.class.php:448
 msgid "No file was uploaded"
@@ -316,7 +316,7 @@ msgstr "ذخیره پیام ضبط شده"
 
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
-msgstr ""
+msgstr "انتخاب سیستم ضبط پیام"
 
 #: views/form.php:5
 #, php-format
@@ -513,7 +513,7 @@ msgstr "بررسی فیلد کد ویژه.."
 
 #: install.php:70
 msgid "checking for fcode_lang field.."
-msgstr ""
+msgstr "بررسی فیلد fcode_lang.."
 
 #: install.php:55
 msgid "checking for fcode_pass field.."
