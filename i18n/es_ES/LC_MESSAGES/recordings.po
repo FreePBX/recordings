@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 18:02+0530\n"
+"POT-Creation-Date: 2019-12-05 16:21+0530\n"
 "PO-Revision-Date: 2016-12-10 10:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -29,7 +29,7 @@ msgstr ""
 "Ya existe una grabación con este nombre para este idioma. ¿Quieres "
 "sobreescribirlo?"
 
-#: views/grid.php:29
+#: views/grid.php:30
 msgid "Actions"
 msgstr "Acciones"
 
@@ -145,11 +145,11 @@ msgstr "Borrar Grabación"
 msgid "Describe this recording"
 msgstr "Describir esta grabación"
 
-#: views/bnav.php:20 views/form.php:37 views/grid.php:27
+#: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "Descripción"
 
-#: views/bnav.php:19 views/grid.php:26
+#: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
 msgstr "Nombre a Desplegar"
 
@@ -368,7 +368,7 @@ msgstr "Sonidos de Idioma"
 msgid "Submit"
 msgstr "Enviar"
 
-#: views/bnav.php:21 views/grid.php:28
+#: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
 msgstr "Idiomas soportados"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 18:02+0530\n"
+"POT-Creation-Date: 2019-12-05 16:21+0530\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -31,7 +31,7 @@ msgid ""
 "overwrite it?"
 msgstr "پیام ضبط شده با این نام وجود دارد. آیا تمایل به بازنویسی آن دارید؟"
 
-#: views/grid.php:29
+#: views/grid.php:30
 msgid "Actions"
 msgstr "عملیات"
 
@@ -143,11 +143,11 @@ msgstr "حذف پیام ضبط شده"
 msgid "Describe this recording"
 msgstr "توضیحات برای این پیام ضبط شده"
 
-#: views/bnav.php:20 views/form.php:37 views/grid.php:27
+#: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "توضیحات"
 
-#: views/bnav.php:19 views/grid.php:26
+#: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
 msgstr "نام قابل نمایش"
 
@@ -355,7 +355,7 @@ msgstr ""
 msgid "Submit"
 msgstr "ثبت"
 
-#: views/bnav.php:21 views/grid.php:28
+#: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 

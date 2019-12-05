@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 18:02+0530\n"
+"POT-Creation-Date: 2019-12-05 16:21+0530\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -45,7 +45,7 @@ msgid ""
 msgstr ""
 "Já existe uma gravação com este nome para este idioma. Deseja substituí-lo?"
 
-#: views/grid.php:29
+#: views/grid.php:30
 msgid "Actions"
 msgstr "Ações"
 
@@ -161,11 +161,11 @@ msgstr "Apagar Gravação"
 msgid "Describe this recording"
 msgstr "Descrever esta gravação"
 
-#: views/bnav.php:20 views/form.php:37 views/grid.php:27
+#: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "Descrição"
 
-#: views/bnav.php:19 views/grid.php:26
+#: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
 msgstr "Exibir Nome"
 
@@ -383,7 +383,7 @@ msgstr "Idiomas de Som"
 msgid "Submit"
 msgstr "Enviar"
 
-#: views/bnav.php:21 views/grid.php:28
+#: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 

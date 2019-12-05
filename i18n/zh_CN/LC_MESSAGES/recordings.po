@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-11 18:02+0530\n"
+"POT-Creation-Date: 2019-12-05 16:21+0530\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -32,7 +32,7 @@ msgid ""
 "overwrite it?"
 msgstr ""
 
-#: views/grid.php:29
+#: views/grid.php:30
 msgid "Actions"
 msgstr "命令"
 
@@ -138,11 +138,11 @@ msgstr "删除录音"
 msgid "Describe this recording"
 msgstr "此录音文件描述"
 
-#: views/bnav.php:20 views/form.php:37 views/grid.php:27
+#: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "描述"
 
-#: views/bnav.php:19 views/grid.php:26
+#: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
 msgstr ""
 
@@ -340,7 +340,7 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: views/bnav.php:21 views/grid.php:28
+#: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
 msgstr ""
 
