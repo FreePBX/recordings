@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-02 16:26+0530\n"
+"POT-Creation-Date: 2019-12-05 16:20+0530\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -28,7 +28,7 @@ msgid ""
 "overwrite it?"
 msgstr ""
 
-#: views/grid.php:29
+#: views/grid.php:30
 msgid "Actions"
 msgstr ""
 
@@ -136,14 +136,14 @@ msgstr ""
 msgid "Describe this recording"
 msgstr ""
 
-#: views/bnav.php:20
+#: views/bnav.php:21
 #: views/form.php:37
-#: views/grid.php:27
+#: views/grid.php:28
 msgid "Description"
 msgstr ""
 
-#: views/bnav.php:19
-#: views/grid.php:26
+#: views/bnav.php:20
+#: views/grid.php:27
 msgid "Display Name"
 msgstr ""
 
@@ -344,8 +344,8 @@ msgstr ""
 msgid "Submit"
 msgstr ""
 
-#: views/bnav.php:21
-#: views/grid.php:28
+#: views/bnav.php:22
+#: views/grid.php:29
 msgid "Supported Languages"
 msgstr ""
 

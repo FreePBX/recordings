@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>13.0.30.13</version>
+	<version>13.0.30.14</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,6 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
+		*13.0.30.14* FREEI-924 Fix XSS Bootstrap Datatable Issues 
 		*13.0.30.13* FREEPBX-19040  System recording feature code works only with english language 
 		*13.0.31.12* FREEPBX-15711 Wrong sound file is played back in browser
 		*13.0.30.11* FREEPBX-14870 Removed System Recording does not remove Feature Code
