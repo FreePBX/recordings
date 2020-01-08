@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-12-05 16:21+0530\n"
+"POT-Creation-Date: 2020-01-08 17:32+0530\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -183,7 +183,7 @@ msgstr "Lösenord för funktionskod"
 msgid "File List for %s"
 msgstr ""
 
-#: Restore.php:14
+#: Restore.php:18
 #, php-format
 msgid "File Restored %s"
 msgstr ""
@@ -312,7 +312,7 @@ msgstr "Inspelningar"
 msgid "Reset"
 msgstr ""
 
-#: Restore.php:16
+#: Restore.php:20
 #, php-format
 msgid "Same file exists  %s"
 msgstr ""
