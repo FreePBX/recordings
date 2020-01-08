@@ -9,7 +9,11 @@ class Restore Extends Base\RestoreBase{
 			if($file->getType() == 'recording'){
 				$filename = $file->getPathTo().'/'.$file->getFilename();
 				$filename = $this->nameTest($filename,$file->getBase());
+				$targetdir = dirname($filename);
 				if(!file_exists($filename)){
+					if(!is_dir($targetdir)) {
+						mkdir($targetdir);
+					}
 					copy($this->tmpdir.'/files/'.$file->getPathTo().'/'.$file->getFilename(),$filename);
 					 $this->log(sprintf(_("File Restored %s"), $filename),'INFO');
 				} else {
