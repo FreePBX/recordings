@@ -1,6 +1,9 @@
 <?php
 namespace FreePBX\modules\Recordings;
 use FreePBX\modules\Backup as Base;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
+use Symfony\Component\Finder\Finder;
 class Restore Extends Base\RestoreBase{
 	public function runRestore(){
 		$configs = $this->getConfigs();
@@ -49,5 +52,30 @@ class Restore Extends Base\RestoreBase{
 	public function processLegacy($pdo, $data, $tables, $unknownTables) {
 		$this->restoreLegacyDatabase($pdo);
 		$this->restoreLegacyFeatureCodes($pdo);
+		$soundsDir = $this->FreePBX->Config->get('ASTVARLIBDIR').'/sounds';
+		$this->log(_("Restoring sound files from Legacy Backup path : /var/lib/asterisk/sounds"));
+		if(!file_exists($this->tmpdir.'/var/lib/asterisk/sounds')) {
+			$this->log(_("Asterisk Sounds folder NOT found on Legacy backup !"));
+			return;
+		}
+		$finder = new Finder();
+		$fileSystem = new Filesystem();
+		foreach ($finder->in($this->tmpdir.'/var/lib/asterisk/sounds') as $item) {
+			$this->log("process ".$item->getPathname());
+			/* Special case**
+			   when files which were created as symbolic link, in the backup it comes as directory
+			   And while copying  we are getting  errors .
+			   to fix that issue using this logic to skip the files 
+			  File which are considered as directory and name ending with .gsm Or .wav Or .sln Or .sln16
+			   */
+			if($item->isDir() && (substr($item->getPathname(),-6)=='.sln16' || substr($item->getPathname(),-4)=='.sln' || substr($item->getPathname(),-4)=='.gsm' || substr($item->getPathname(),-4)== '.wav')) {
+				continue;
+			}
+			if($item->isDir()) {
+				$fileSystem->mkdir($soundsDir.'/'.$item->getRelativePathname());
+				continue;
+			}
+			$fileSystem->copy($item->getPathname(), $soundsDir.'/'.$item->getRelativePathname(), true);
+		}
 	}
 }
