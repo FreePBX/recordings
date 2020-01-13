@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:32+0530\n"
+"POT-Creation-Date: 2020-01-13 09:13+0530\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -84,6 +84,10 @@ msgstr ""
 #: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "Tem certeza de que deseja descartar essas gravações?"
+
+#: Restore.php:58
+msgid "Asterisk Sounds folder NOT found on Legacy backup !"
+msgstr ""
 
 #: views/form.php:96
 msgid "Browse"
@@ -194,7 +198,7 @@ msgstr "Senha do código de facilidade"
 msgid "File List for %s"
 msgstr "Lista de Arquivos para %s"
 
-#: Restore.php:18
+#: Restore.php:21
 #, php-format
 msgid "File Restored %s"
 msgstr ""
@@ -332,7 +336,12 @@ msgstr "Gravações"
 msgid "Reset"
 msgstr "Reiniciar"
 
-#: Restore.php:20
+#: Restore.php:56
+msgid ""
+"Restoring sound files from Legacy Backup path : /var/lib/asterisk/sounds"
+msgstr ""
+
+#: Restore.php:23
 #, php-format
 msgid "Same file exists  %s"
 msgstr ""

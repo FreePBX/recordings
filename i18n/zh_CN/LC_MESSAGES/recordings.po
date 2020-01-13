@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-08 17:32+0530\n"
+"POT-Creation-Date: 2020-01-13 09:13+0530\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -67,6 +67,10 @@ msgstr ""
 #: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
 msgstr "确认要废除此录音？"
+
+#: Restore.php:58
+msgid "Asterisk Sounds folder NOT found on Legacy backup !"
+msgstr ""
 
 #: views/form.php:96
 msgid "Browse"
@@ -171,7 +175,7 @@ msgstr "功能代码的密码"
 msgid "File List for %s"
 msgstr "%s文件列表"
 
-#: Restore.php:18
+#: Restore.php:21
 #, php-format
 msgid "File Restored %s"
 msgstr ""
@@ -298,7 +302,12 @@ msgstr "录音"
 msgid "Reset"
 msgstr ""
 
-#: Restore.php:20
+#: Restore.php:56
+msgid ""
+"Restoring sound files from Legacy Backup path : /var/lib/asterisk/sounds"
+msgstr ""
+
+#: Restore.php:23
 #, php-format
 msgid "Same file exists  %s"
 msgstr ""
