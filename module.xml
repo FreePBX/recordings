@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>15.0.3.13</version>
+	<version>16.0.1</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -10,20 +10,7 @@
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
 	<changelog>
-		*15.0.3.13* FREEI-1009  Legacy restore and warm spare restores ignore custom sounds 
-		*15.0.3.12* bump 
-		*15.0.3.11* FREEPBX-20990 Custom Recording can't be restored 
-		*15.0.3.10* FREEI-924 Fix XSS Bootstrap Datatable Issues 
-		*15.0.3.9* Related to FREEPBX-20414: removed $restoreid from runRestore() 
-		*15.0.3.8* FREEPBX-20100 Restoring the Recordings module gives exception error 
-		*15.0.3.7* FREEPBX-20084 Backup fails when trying to include the contents 
-		*15.0.3.6* FREEPBX-20053 Backup fails to include the contents of Cutom files 
-		*15.0.3.5* Fixing FREEPBX-20053 Backup issue
-		*15.0.3.4* FREEPBX-19040  System recording feature code works only with english language 
-		*15.0.3.1* Backup and Restore
-		*15.0.3* FREEPBX-18213 Validate files prior to adding them.
-		*15.0.2* Packaging of ver 15.0.2
-		*13.0.31.12* Fork for 15, implement backup.
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<menuitems>
 		<recordings>System Recordings</recordings>
@@ -44,7 +31,7 @@
 		<module>soundlang ge 13.0.23.4</module>
 	</depends>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 	<location>release/2.11/recordings-3.3.11.9.tgz</location>
 	<md5sum>9e52d36bf0e8e680c7c112bd3ba4edde</md5sum>
