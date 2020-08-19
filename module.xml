@@ -9,6 +9,7 @@
 	<canuninstall>no</canuninstall>
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
+  	<more-info>https://wiki.freepbx.org/display/F2/System+Recordings+Module</more-info>
 	<changelog>
 		*13.0.30.14* FREEI-924 Fix XSS Bootstrap Datatable Issues 
 		*13.0.30.13* FREEPBX-19040  System recording feature code works only with english language 
