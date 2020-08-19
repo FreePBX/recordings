@@ -2,14 +2,16 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>15.0.3.13</version>
+	<version>15.0.3.14</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<canuninstall>no</canuninstall>
 	<category>Admin</category>
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
+  	<more-info>https://wiki.freepbx.org/display/F2/System+Recordings+Module</more-info>
 	<changelog>
+		*15.0.3.14* Packaging of ver 15.0.3.14
 		*15.0.3.13* FREEI-1009  Legacy restore and warm spare restores ignore custom sounds 
 		*15.0.3.12* bump 
 		*15.0.3.11* FREEPBX-20990 Custom Recording can't be restored 
