@@ -27,7 +27,7 @@ class Restore Extends Base\RestoreBase{
 		foreach($configs['data'] as $config) {
 			$recording = $this->FreePBX->Recordings->getRecordingById($config['id']);
 			$files = array_keys($config['files']);
-			$files = implode($files,'&');
+			$files = implode('&', $files);
 			if(empty($recording)){
 				$this->FreePBX->Recordings->addRecordingWithId($config['id'],$config['displayname'],$config['description'],$files,$config['fcode'],$config['fcode_pass']);
 			}
