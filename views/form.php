@@ -17,7 +17,7 @@
 												<label class="control-label" for="name"><?php echo _("Name")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="name"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?php echo isset($data['displayname']) ? $data['displayname'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?php echo isset($data['displayname']) ? htmlentities($data['displayname']) : ''?>"></div>
 										</div>
 									</div>
 									<div class="row">
@@ -37,7 +37,7 @@
 												<label class="control-label" for="description"><?php echo _("Description")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?php echo isset($data['description']) ? $data['description'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?php echo isset($data['description']) ? htmlentities($data['description']) : ''?>"></div>
 										</div>
 									</div>
 									<div class="row">
