@@ -127,7 +127,7 @@ msgstr "Convertire in"
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
-msgstr "Copia %s1 su %s2"
+msgstr "Copia %s su %s"
 
 #: recordings.i18n.php:8
 msgid ""
@@ -179,7 +179,7 @@ msgstr "Password Codice Servizio"
 #: views/form.php:57
 #, php-format
 msgid "File List for %s"
-msgstr "Elenco file per %s1"
+msgstr "Elenco file per %s"
 
 #: Recordings.class.php:238 Recordings.class.php:403
 msgid "File does not exist"
@@ -189,7 +189,7 @@ msgstr "Il file non esiste"
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
-"La dimensione del file è troppo grande. La dimensione massima è %s1 byte"
+"La dimensione del file è troppo grande. La dimensione massima è %s byte"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
@@ -246,7 +246,7 @@ msgstr "Nessun file è stato caricato"
 #: views/form.php:66
 #, php-format
 msgid "No files for %s"
-msgstr "Nessun file per %s1"
+msgstr "Nessun file per %s"
 
 #: assets/js/recordings.js:41
 msgid "No files have been added to this recording"
@@ -275,7 +275,7 @@ msgstr "OK"
 #: views/form.php:296
 #, php-format
 msgid "Optional Feature Code %s"
-msgstr "Codice Servizio Opzionale %s1"
+msgstr "Codice Servizio Opzionale %s"
 
 #: views/form.php:322
 msgid ""
@@ -288,7 +288,7 @@ msgstr ""
 #: functions.inc.php:253
 #, php-format
 msgid "Play Recording: %s"
-msgstr "Riproduci registrazione: %s1"
+msgstr "Riproduci registrazione: %s"
 
 #: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
@@ -301,7 +301,7 @@ msgstr "Si prega di inserire un nome valido e salvare"
 #: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
-msgstr "Elaborazione %s1 per %s2 in formato %s3"
+msgstr "Elaborazione %s per %s in formato %s"
 
 #: views/form.php:122
 msgid "Record In Browser"
@@ -338,9 +338,9 @@ msgid ""
 "without them installed could have unknown results. Please install them "
 "through the %s module"
 msgstr ""
-"Alcune lingue non sono installate su questo sistema [%s1], salvando questa "
+"Alcune lingue non sono installate su questo sistema [%s], salvando questa "
 "registrazione senza che siano installate potrebbero avere risultati "
-"sconosciuti. Si prega di installarli tramite il modulo %s2"
+"sconosciuti. Si prega di installarli tramite il modulo %s"
 
 #: views/form.php:79
 msgid ""
@@ -415,7 +415,7 @@ msgstr "Il file caricato è stato caricato solo parzialmente"
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
 "Si è verificato un errore durante la lettura delle registrazioni di sistema "
-"(%s1)"
+"(%s)"
 
 #: assets/js/recordings.js:635
 msgid "This system recording doesnt exist in this language. Continue?"
@@ -436,7 +436,7 @@ msgid ""
 "version or update your %s"
 msgstr ""
 "Per riprodurre i contenuti multimediali dovrai aggiornare il browser a una "
-"versione recente o aggiornare %s1"
+"versione recente o aggiornare %s"
 
 #: Recordings.class.php:349
 msgid "Unknown Error"
@@ -465,7 +465,7 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 "Carica file dal tuo sistema locale. I formati di caricamento supportati "
-"sono: %s1. Ciò include archivi (che includono più file) e più file"
+"sono: %s. Ciò include archivi (che includono più file) e più file"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
@@ -516,7 +516,7 @@ msgid ""
 "You have no sound packages installed in the %s module. Please install at "
 "least one language to use System Recordings"
 msgstr ""
-"Non hai pacchetti audio installati nel modulo %s1. Installa almeno una "
+"Non hai pacchetti audio installati nel modulo %s. Installa almeno una "
 "lingua per utilizzare le registrazioni di sistema"
 
 #: assets/js/recordings.js:22
