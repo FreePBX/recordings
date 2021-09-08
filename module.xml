@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>16.0.4</version>
+	<version>16.0.5</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
   	<more-info>https://wiki.freepbx.org/display/F2/System+Recordings+Module</more-info>
 	<changelog>
+		*16.0.5* Packaging of ver 16.0.5
 		*16.0.4* FREEI-3280 
 		*16.0.3* Packaging of ver 16.0.3
 		*16.0.2* Packaging of ver 16.0.2
@@ -31,8 +32,8 @@
 		</table>
 	</database>
 	<depends>
-		<module>framework ge 13.0.72</module>
-		<module>soundlang ge 13.0.23.4</module>
+		<module>framework ge 16.0.10.27</module>
+		<module>soundlang ge 16.0.5</module>
 	</depends>
 	<supported>
 		<version>16.0</version>
