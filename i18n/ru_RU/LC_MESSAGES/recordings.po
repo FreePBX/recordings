@@ -8,17 +8,17 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 16:20+0530\n"
-"PO-Revision-Date: 2015-12-08 23:09+0200\n"
-"Last-Translator: Andrew <andrew.nagy@the159.com>\n"
+"PO-Revision-Date: 2021-11-23 08:01+0000\n"
+"Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
-"recordings/ru_RU/>\n"
+"recordings/ru/>\n"
 "Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 2.2-dev\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<="
+"4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: Recordings.class.php:457
 msgid "A PHP extension stopped the file upload"
@@ -350,7 +350,7 @@ msgstr ""
 
 #: Recordings.class.php:79
 msgid "Submit"
-msgstr "Подтвердить"
+msgstr "Применить"
 
 #: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
