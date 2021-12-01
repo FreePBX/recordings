@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 16:20+0530\n"
-"PO-Revision-Date: 2021-11-30 15:00+0000\n"
+"PO-Revision-Date: 2021-12-02 13:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/ru/>\n"
@@ -396,7 +396,7 @@ msgstr ""
 
 #: Recordings.class.php:445
 msgid "The uploaded file was only partially uploaded"
-msgstr "Файл загружен неполностью"
+msgstr "Файл был загружен частично"
 
 #: Recordings.class.php:144
 #, php-format
@@ -421,8 +421,8 @@ msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr ""
-"Для проигрывания медиаданных вам необходимо обновить ваш браузер  или "
-"обновить ваш %s"
+"Для воспроизведения медиаданных вам потребуется либо обновить браузер до "
+"последней версии, либо обновить %s"
 
 #: Recordings.class.php:349
 msgid "Unknown Error"
@@ -430,11 +430,11 @@ msgstr "Неизвестная ошибка"
 
 #: Recordings.class.php:434
 msgid "Unsupported file format"
-msgstr "Не поддерживаемый  формат файла"
+msgstr "Неподдерживаемый формат файла"
 
 #: assets/js/recordings.js:569
 msgid "Unsupported file type"
-msgstr "Не поддерживаемый  тип файла"
+msgstr "Неподдерживаемый тип файла"
 
 #: views/form.php:155
 msgid "Update Required"
@@ -450,9 +450,8 @@ msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
-"Загрузка файла с вашей локальной рабочей станции . Поддерживаемые форматы "
-"загрузи: %s  . Включает архивные файлы(в том числе многотомные) и составные "
-"файлы"
+"Загрузка файлов из вашей локальной системы. Поддерживаемые форматы загрузки: "
+"%s, включая архивы (состоящие из нескольких файлов) и списки файлов"
 
 #: views/form.php:264 views/form.php:292
 msgid "Yes"
