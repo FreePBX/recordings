@@ -3,16 +3,16 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 16:20+0530\n"
-"PO-Revision-Date: 2016-12-10 10:35+0200\n"
-"Last-Translator: Ernesto <ecasas@sangoma.com>\n"
+"PO-Revision-Date: 2021-12-14 21:00+0000\n"
+"Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
-"recordings/es_ES/>\n"
+"recordings/es/>\n"
 "Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -186,6 +186,7 @@ msgstr "Archivo no existe"
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
+"El tamaño del archivo es demasiado grande. El tamaño máximo es de %s bytes"
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
@@ -232,7 +233,7 @@ msgstr "No"
 
 #: assets/js/recordings.js:619
 msgid "No Recordings Found"
-msgstr ""
+msgstr "No se encontraron grabaciones"
 
 #: Recordings.class.php:448
 msgid "No file was uploaded"
@@ -372,7 +373,7 @@ msgstr "Grabaciones del sistema"
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
-msgstr ""
+msgstr "El nombre '"
 
 #: views/form.php:25
 msgid ""
@@ -527,7 +528,7 @@ msgstr "comprobando campo fcode_field..."
 
 #: install.php:70
 msgid "checking for fcode_lang field.."
-msgstr ""
+msgstr "Comprobando el campo fcode_lang..."
 
 #: install.php:55
 msgid "checking for fcode_pass field.."
