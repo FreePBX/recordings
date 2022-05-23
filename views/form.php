@@ -11,8 +11,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="name"><?php echo _("Name")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="name"></i>
@@ -31,8 +31,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="description"><?php echo _("Description")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
@@ -51,8 +51,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="list"><?php echo sprintf(_("File List for %s"),"<span class='language'>".$langs[$default]."</span>")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="list"></i>
@@ -85,8 +85,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="fileupload"><?php echo _("Upload Recording")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fileupload"></i>
@@ -116,8 +116,8 @@
 						<div id="record-container" class="element-container hidden">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="record"><?php echo _("Record In Browser")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="record"></i>
@@ -185,8 +185,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="record-phone"><?php echo _("Record Over Extension")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="record-phone"></i>
@@ -224,8 +224,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="systemrecording"><?php echo _("Add System Recording")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="systemrecording"></i>
@@ -252,8 +252,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="combine"><?php echo _("Combine Files")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="combine"></i>
@@ -280,8 +280,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="fcode-link"><?php echo _("Link to Feature Code")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-link"></i>
@@ -308,8 +308,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="fcode-password"><?php echo _("Feature Code Password")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-password"></i>
@@ -328,8 +328,8 @@
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
-									<div class="">
-										<div class="row form-group">
+									<div class="row">
+										<div class="form-group">
 											<div class="col-md-3">
 												<label class="control-label" for="convert"><?php echo _("Convert To")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="convert"></i>
