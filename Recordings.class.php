@@ -1,5 +1,9 @@
 <?php
 // vim: set ai ts=4 sw=4 ft=php:
+namespace FreePBX\modules;
+use BMO;
+use PDO;
+use Exception;
 
 class Recordings implements BMO {
 	private $initialized = false;
@@ -26,7 +30,7 @@ class Recordings implements BMO {
 
 	public function __construct($freepbx = null) {
 		if ($freepbx == null) {
-			throw new Exception("Not given a FreePBX Object");
+			throw new Exception('Not given a FreePBX Object');
 		}
 
 		$this->FreePBX = $freepbx;
@@ -260,67 +264,7 @@ class Recordings implements BMO {
 				return array("status" => true, "files" => $final);
 			break;
 			case "convert":
-				/*
-				[file] => en/1-for-am-2-for-pm
-		    [name] => custom/ivr-okkkk-recording-1456170709
-		    [codec] => wav
-		    [lang] => en
-		    [temporary] => 0
-		    [command] => convert
-		    [module] => recordings
-				 */
-				set_time_limit(0);
-				$media = $this->FreePBX->Media;
-				$file = $_POST['file'];
-				$name = $_POST['name'];
-				$codec = $_POST['codec'];
-				$lang = $_POST['lang'];
-				$temporary = $_POST['temporary'];
-
-				$codec = basename($codec);
-				$lang = basename($lang);
-
-				if(!file_exists($this->path."/".$lang."/custom")) {
-					mkdir($this->path."/".basename($lang)."/custom",0777,true);
-				}
-
-				$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
-
-				if(!empty($codec)) {
-					if($temporary) {
-						$media->load($this->temp."/".$file);
-					} else {
-						$f = ($file == $name) ? $name : str_replace($lang."/","",$file);
-						$status = $this->fileStatus($f);
-						if(!empty($status[$lang])) {
-							if(!empty($status[$lang][$codec])) {
-								$file = $lang."/".$status[$lang][$codec];
-							} else {
-								$file = $lang."/".reset($status[$lang]);
-							}
-						} else {
-							return array("status" => false, "message" => _("Can not find suitable file in this language"));
-						}
-						$media->load($this->path."/".$file);
-					}
-					if(!$temporary && file_exists($this->path."/".$lang."/".$name.".".$codec) && $file == $name) {
-						return array("status" => true, "name" => $name);
-					}
-					try {
-						$media->convert($this->path."/".$lang."/".$name.".".$codec);
-					} catch(\Exception $e) {
-						return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
-					}
-					return array("status" => true, "name" => $name);
-				} else {
-					$ext = pathinfo($file,PATHINFO_EXTENSION);
-					if($temporary && file_exists($this->temp."/".$file)) {
-						rename($this->temp."/".$file, $this->path."/".basename($lang)."/".$name.".".$ext);
-						return array("status" => true, "name" => $name);
-					} else {
-						return array("status" => true, "name" => $name);
-					}
-				}
+				return $this->convertFiles($_POST);
 			break;
 			case "save":
 				$data = $_POST;
@@ -534,16 +478,14 @@ class Recordings implements BMO {
 	public function updateRecording($id,$name,$description,$files,$fcode=0,$fcode_pass='',$fcode_lang='') {
 		$sql = "UPDATE recordings SET displayname = ?, description = ?, filename = ?, fcode = ?, fcode_pass = ?, fcode_lang = ? WHERE id = ?";
 		$sth = $this->db->prepare($sql);
-		$sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $fcode_lang, $id));
+		$res = $sth->execute(array($name, $description, $files, $fcode, $fcode_pass, $fcode_lang, $id));
 		if ($fcode != 1) {
 			// delete the feature code if it existed
-			//
 			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
 			$fcc->delete();
 			unset($fcc);
 		} else {
 			// Add the feature code if it is needed
-			//
 			$fcc = new \featurecode('recordings', 'edit-recording-'.$id);
 			$fcc->setDescription("Edit Recording: $name");
 			$fcc->setDefault('*29'.$id);
@@ -552,6 +494,7 @@ class Recordings implements BMO {
 			unset($fcc);
 		}
 		needreload();
+		return $res;
 	}
 
 	/**
@@ -707,7 +650,6 @@ class Recordings implements BMO {
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
 		$full_list = $sth->fetchAll(\PDO::FETCH_ASSOC);
-
 		foreach($full_list as &$item) {
 			$files = explode("&",$item['filename']);
 			$item['files'] = array();
@@ -787,5 +729,69 @@ class Recordings implements BMO {
 			}
 		}
 		return ($compound ? $this->full_list : $this->filter_list);
+	}
+
+	public function convertFiles($input)
+	{
+		/*
+			[file] => en/1-for-am-2-for-pm
+		    [name] => custom/ivr-okkkk-recording-1456170709
+		    [codec] => wav
+		    [lang] => en
+		    [temporary] => 0
+		    [command] => convert
+		    [module] => recordings
+		*/
+		set_time_limit(0);
+		$media = $this->FreePBX->Media;
+		$file = $input['file'];
+		$name = $input['name'];
+		$codec = $input['codec'];
+		$lang = $input['lang'];
+		$temporary = $input['temporary'];
+
+		$codec = basename($codec);
+		$lang = basename($lang);
+		if(!file_exists($this->path."/".$lang."/custom")) {
+			mkdir($this->path."/".basename($lang)."/custom",0777,true);
+		}
+
+		$name = preg_replace("/\s+|'+|`+|\"+|<+|>+|\?+|\*|\.+|&+/","-",$name);
+
+		if(!empty($codec)) {
+			if($temporary) {
+				$media->load($this->temp."/".$file);
+			} else {
+				$f = ($file == $name) ? $name : str_replace($lang."/","",$file);
+				$status = $this->fileStatus($f);
+				if(!empty($status[$lang])) {
+					if(!empty($status[$lang][$codec])) {
+						$file = $lang."/".$status[$lang][$codec];
+					} else {
+						$file = $lang."/".reset($status[$lang]);
+					}
+				} else {
+					return array("status" => false, "message" => _("Can not find suitable file in this language"));
+				}
+				$media->load($this->path."/".$file);
+			}
+			if(!$temporary && file_exists($this->path."/".$lang."/".$name.".".$codec) && $file == $name) {
+				return array("status" => true, "name" => $name);
+			}
+			try {
+				$media->convert($this->path."/".$lang."/".$name.".".$codec);
+			} catch(\Exception $e) {
+				return array("status" => false, "message" => $e->getMessage()." [".$this->path."/".$file.".".$codec."]");
+			}
+			return array("status" => true, "name" => $name);
+		} else {
+			$ext = pathinfo($file,PATHINFO_EXTENSION);
+			if($temporary && file_exists($this->temp."/".$file)) {
+				rename($this->temp."/".$file, $this->path."/".basename($lang)."/".$name.".".$ext);
+				return array("status" => true, "name" => $name);
+			} else {
+				return array("status" => true, "name" => $name);
+			}
+		}
 	}
 }
