@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-13 09:13+0530\n"
+"POT-Creation-Date: 2022-08-08 04:44+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:457
+#: Recordings.class.php:401
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -47,6 +47,10 @@ msgstr "افزودن پیام ضبط شده"
 msgid "Add System Recording"
 msgstr "افزودن پیام ضبط شده سیستمی"
 
+#: Api/Gql/Recordings.php:20
+msgid "Add a new recording to the Sytem Recordings"
+msgstr ""
+
 #: views/form.php:245
 msgid ""
 "Add any previously created system recording or a recording that was added "
@@ -56,6 +60,10 @@ msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط ش
 #: recordings.i18n.php:6
 msgid "Admin"
 msgstr "مدیر"
+
+#: Api/Gql/Recordings.php:42
+msgid "An id used to identify your recording"
+msgstr ""
 
 #: assets/js/recordings.js:270
 msgid ""
@@ -85,11 +93,11 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:461
+#: Recordings.class.php:405
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:302
+#: Recordings.class.php:774
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
@@ -123,6 +131,10 @@ msgstr "ترکیب فایل ها"
 msgid "Convert To"
 msgstr "تبدیل به"
 
+#: Api/Gql/Recordings.php:57
+msgid "Convert existing file into different formats"
+msgstr ""
+
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
@@ -135,13 +147,17 @@ msgstr ""
 "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
 "شوند (مانند منوی صوتی)."
 
-#: Recordings.class.php:84
+#: Recordings.class.php:88
 msgid "Delete"
 msgstr "حذف"
 
 #: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "حذف پیام ضبط شده"
+
+#: Api/Gql/Recordings.php:38
+msgid "Delete a recording from the Sytem Recordings"
+msgstr ""
 
 #: views/form.php:45
 msgid "Describe this recording"
@@ -150,6 +166,11 @@ msgstr "توضیحات برای این پیام ضبط شده"
 #: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "توضیحات"
+
+#: Api/Gql/Recordings.php:152 Api/Gql/Recordings.php:247
+#: Api/Gql/Recordings.php:263
+msgid "Description of the Recording"
+msgstr ""
 
 #: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
@@ -167,13 +188,29 @@ msgstr ""
 msgid "Enter Extension"
 msgstr "شماره داخلی مورد نظر"
 
-#: Recordings.class.php:454
+#: Api/Gql/Recordings.php:74
+msgid "Failed to convert the file"
+msgstr ""
+
+#: Recordings.class.php:398
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
 #: views/form.php:314
 msgid "Feature Code Password"
 msgstr "رمز عبور کد ویژه"
+
+#: Api/Gql/Recordings.php:156 Api/Gql/Recordings.php:251
+msgid "Feature code"
+msgstr ""
+
+#: Api/Gql/Recordings.php:160 Api/Gql/Recordings.php:255
+msgid "Feature code password"
+msgstr ""
+
+#: Api/Gql/Recordings.php:72
+msgid "File Converted succefully"
+msgstr ""
 
 #: views/form.php:57
 #, php-format
@@ -185,18 +222,35 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:238 Recordings.class.php:403
+#: Recordings.class.php:242 Recordings.class.php:347
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
+
+#: Api/Gql/Recordings.php:271
+msgid "File format to convert"
+msgstr ""
+
+#: Api/Gql/Recordings.php:108 Api/Gql/Recordings.php:267
+msgid "File name"
+msgstr ""
 
 #: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
+#: Api/Gql/Recordings.php:67
+#, php-format
+msgid "File with the name '%s' not found in the system"
+msgstr ""
+
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
+
+#: Api/Gql/Recordings.php:144 Api/Gql/Recordings.php:239
+msgid "Id of the Recording"
+msgstr ""
 
 #: views/form.php:273
 msgid ""
@@ -212,6 +266,14 @@ msgstr ""
 "به ابتدا و انتهای این فایل اضافه کنید. این عمل هیچ یک از فایل های لیست بالا "
 "را خراب نمی کند."
 
+#: Api/Gql/Recordings.php:164
+msgid "Language of recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:259 Api/Gql/Recordings.php:279
+msgid "Language of recording file"
+msgstr ""
+
 #: views/form.php:286
 msgid "Link to Feature Code"
 msgstr "پیوند دادن به کد ویژه"
@@ -220,13 +282,37 @@ msgstr "پیوند دادن به کد ویژه"
 msgid "List Recordings"
 msgstr "فهرست پیام های ضبط شده"
 
-#: Recordings.class.php:451
+#: Api/Gql/Recordings.php:275
+msgid "List of allowed formats to which playback files to be converted"
+msgstr ""
+
+#: Api/Gql/Recordings.php:168
+msgid "List of existing playback files in the system"
+msgstr ""
+
+#: Api/Gql/Recordings.php:121 Api/Gql/Recordings.php:219
+msgid "List of system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:97 Api/Gql/Recordings.php:207
+msgid "List of system recordings"
+msgstr ""
+
+#: Api/Gql/Recordings.php:199
+msgid "Message for the request"
+msgstr ""
+
+#: Recordings.class.php:395
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
 #: views/form.php:17
 msgid "Name"
 msgstr "نام"
+
+#: Api/Gql/Recordings.php:148 Api/Gql/Recordings.php:243
+msgid "Name of the Recording"
+msgstr ""
 
 #: views/form.php:206
 msgid "Name this file"
@@ -240,7 +326,7 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:448
+#: Recordings.class.php:392
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
@@ -283,6 +369,10 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 msgid "Play Recording: %s"
 msgstr ""
 
+#: Api/Gql/Recordings.php:362
+msgid "Playback file name/s provided doesn't exists"
+msgstr ""
+
 #: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
@@ -290,6 +380,18 @@ msgstr ""
 #: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "لطفا یک نام معتبر وارد کرده و ذخیره نمایید"
+
+#: Api/Gql/Recordings.php:319
+msgid "Please provide a name for system recoding"
+msgstr ""
+
+#: Api/Gql/Recordings.php:51
+msgid "Please provide a valid id to delete the system recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:334
+msgid "Please provide atleast one existing playback file name"
+msgstr ""
 
 #: assets/js/recordings.js:106
 #, perl-format
@@ -304,11 +406,23 @@ msgstr "ضبط پیام از طریق مرورگر"
 msgid "Record Over Extension"
 msgstr "ضبط پیام از طریق داخلی"
 
+#: Api/Gql/Recordings.php:379
+msgid "Recording added succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:49
+msgid "Recording deleted succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:372
+msgid "Recording updated succefully"
+msgstr ""
+
 #: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
-#: Recordings.class.php:89
+#: Recordings.class.php:93
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -342,6 +456,18 @@ msgid ""
 "through the %s module"
 msgstr ""
 
+#: Api/Gql/Recordings.php:381
+msgid "Sorry unable to add the recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:123
+msgid "Sorry unable to find the system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:99
+msgid "Sorry unable to find the system recordings"
+msgstr ""
+
 #: views/form.php:79
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
@@ -360,7 +486,11 @@ msgstr ""
 msgid "Sound Languages"
 msgstr ""
 
-#: Recordings.class.php:79
+#: Api/Gql/Recordings.php:203
+msgid "Status for the request"
+msgstr ""
+
+#: Recordings.class.php:83
 msgid "Submit"
 msgstr "ثبت"
 
@@ -368,12 +498,21 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:314 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
+msgstr ""
+
+#: Api/Gql/Recordings.php:329
+#, php-format
+msgid "The Name '%s' already exists, please provide a different name."
+msgstr ""
+
+#: Api/Gql/Recordings.php:374
+msgid "The id provided is invalid"
 msgstr ""
 
 #: views/form.php:25
@@ -392,24 +531,24 @@ msgstr ""
 "سیستم با شماره ای که در این بخش وارد کرده اید، تماس می گیرد. پس از قطع شما "
 "می توانید نام فایل را مشخص کنید. این فایل در فهرست بالا قرار می گیرد"
 
-#: Recordings.class.php:442
+#: Recordings.class.php:386
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:439
+#: Recordings.class.php:383
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:445
+#: Recordings.class.php:389
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
-#: Recordings.class.php:144
+#: Recordings.class.php:148
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
@@ -433,11 +572,11 @@ msgid ""
 "version or update your %s"
 msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
-#: Recordings.class.php:349
+#: Recordings.class.php:293
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:434
+#: Recordings.class.php:378
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
@@ -448,6 +587,10 @@ msgstr "نوع فایل پشتیبانی نمی شود"
 #: views/form.php:155
 msgid "Update Required"
 msgstr "نیاز به بروز رسانی"
+
+#: Api/Gql/Recordings.php:29
+msgid "Update a recording in the Sytem Recordings"
+msgstr ""
 
 #: views/form.php:91
 msgid "Upload Recording"
@@ -513,6 +656,46 @@ msgstr ""
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
 msgstr "شما باید یک نام معتبر به پیام ضبط شده اختصاص دهید"
+
+#: Api/Gql/Recordings.php:19
+msgid "addRecording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:406
+msgid "all inputs are provided"
+msgstr ""
+
+#: Api/Gql/Recordings.php:56
+msgid "convertfile"
+msgstr ""
+
+#: Api/Gql/Recordings.php:37
+msgid "deleteRecording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:400
+msgid "please provide 'codec' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:392
+msgid "please provide 'file' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:404
+msgid "please provide 'lang' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:396
+msgid "please provide 'name' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:283
+msgid "temporary"
+msgstr ""
+
+#: Api/Gql/Recordings.php:28
+msgid "updateRecording"
+msgstr ""
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "بروز خطا در ثبت این سند"
