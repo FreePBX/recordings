@@ -140,7 +140,7 @@ class Recordings extends Base {
         $user->addFieldCallback(function() {
 			return [
                 'id' => [
-                    'type' => Type::id(),
+                    'type' => Type::nonNull(Type::Id()),
                     'description' => _('Id of the Recording')
                 ],
                 'name' => [
