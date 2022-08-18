@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>15.0.3.17</version>
+	<version>15.0.3.18</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
   	<more-info>https://wiki.freepbx.org/display/FPG/System+Recordings+Module</more-info>
 	<changelog>
+		*15.0.3.18* Packaging of ver 15.0.3.18
 		*15.0.3.17* FREEPBX-23621 new Gql APIs for system recording module 
 		*15.0.3.16* FREEPBX-23166 Latin Spanish prompts are not accessible in System Recordings 
 		*15.0.3.15* Packaging of ver 15.0.3.15
