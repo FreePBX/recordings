@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:47+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -48,10 +48,6 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
 msgstr ""
 
 #: Api/Gql/Recordings.php:42
@@ -128,12 +124,6 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -401,7 +391,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "הקלטות"
 
@@ -476,7 +466,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
@@ -652,6 +642,13 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות "
+#~ "והכרזות"
 
 #~ msgid "OK"
 #~ msgstr "תקין"

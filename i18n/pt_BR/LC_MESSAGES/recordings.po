@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:47+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -72,10 +72,6 @@ msgid ""
 msgstr ""
 "Adicione qualquer gravação de sistema previamente criada ou uma gravação "
 "adicionada anteriormente"
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Admin"
 
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
@@ -157,13 +153,6 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copiando  %s para %s"
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Cria e gerencia gravações para o sistema, usado por vários módulos (por "
-"exemplo, URA)."
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -442,7 +431,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Gravações"
 
@@ -526,7 +515,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
@@ -730,6 +719,16 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "Admin"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Cria e gerencia gravações para o sistema, usado por vários módulos (por "
+#~ "exemplo, URA)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Ocorreu um erro ao tentar envar este documento"

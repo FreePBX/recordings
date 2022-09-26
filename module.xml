@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>16.0.10</version>
+	<version>16.0.11</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
   	<more-info>https://wiki.freepbx.org/display/F2/System+Recordings+Module</more-info>
 	<changelog>
+		*16.0.11* FREEI-5256 Recording module restore issue fixing 
 		*16.0.10* Packaging of ver 16.0.10
 		*16.0.9* FREEPBX-23621 new Gql APIs for system recording module 
 		*16.0.8* Reverting Bootstrap and dependent libs fixes 

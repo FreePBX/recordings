@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:47+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -65,10 +65,6 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
 msgstr ""
 
 #: Api/Gql/Recordings.php:42
@@ -147,12 +143,6 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Skapar och undehåller systeminspelningar som kan användas av andra moduler"
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -422,7 +412,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Inspelningar"
 
@@ -497,7 +487,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "Systeminspelningar"
 
@@ -673,6 +663,12 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Skapar och undehåller systeminspelningar som kan användas av andra moduler"
 
 #~ msgid "OK"
 #~ msgstr "OK"

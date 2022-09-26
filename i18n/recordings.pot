@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-18 10:10+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,10 +53,6 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
-msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
 msgstr ""
 
 #: Api/Gql/Recordings.php:42
@@ -133,11 +129,6 @@ msgstr ""
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
-msgstr ""
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
 #: Recordings.class.php:88
@@ -422,7 +413,6 @@ msgid "Recording updated succefully"
 msgstr ""
 
 #: install.php:5
-#: recordings.i18n.php:4
 msgid "Recordings"
 msgstr ""
 
@@ -502,7 +492,6 @@ msgid "Supported Languages"
 msgstr ""
 
 #: Recordings.class.php:314
-#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr ""
 

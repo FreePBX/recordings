@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:47+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -58,10 +58,6 @@ msgid ""
 msgstr ""
 "Thêm bất kỳ ghi âm hệ thống được tạo ra trước đó hay một ghi âm đã được thêm "
 "vào trước đó"
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Quản trị viên"
 
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
@@ -143,13 +139,6 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Đang sao chép %s đến %s"
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
-"( ví dụ IVR)."
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -431,7 +420,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
@@ -515,7 +504,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -714,6 +703,16 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "Quản trị viên"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác "
+#~ "nhau ( ví dụ IVR)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"

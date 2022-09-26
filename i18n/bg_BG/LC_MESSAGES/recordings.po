@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX v2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:47+0000\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2014-07-22 13:22+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/recordings/"
@@ -57,10 +57,6 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr ""
-
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Админ"
 
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
@@ -138,13 +134,6 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
-
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Създаване и управление на системни записи, използвани от много други модули "
-"(като IVR)."
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -414,7 +403,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5 recordings.i18n.php:4
+#: install.php:5
 msgid "Recordings"
 msgstr "Записи"
 
@@ -489,7 +478,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "Системни Записи"
 
@@ -665,6 +654,16 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "Админ"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Създаване и управление на системни записи, използвани от много други "
+#~ "модули (като IVR)."
 
 #~ msgid "OK"
 #~ msgstr "OK"
