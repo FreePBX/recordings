@@ -68,7 +68,7 @@ class Restore Extends Base\RestoreBase{
 			   to fix that issue using this logic to skip the files 
 			  File which are considered as directory and name ending with .gsm Or .wav Or .sln Or .sln16
 			   */
-			if($item->isDir() && (substr($item->getPathname(),-6)=='.sln16' || substr($item->getPathname(),-4)=='.sln' || substr($item->getPathname(),-4)=='.gsm' || substr($item->getPathname(),-4)== '.wav')) {
+			if($item->isDir() && (substr($item->getPathname(),-5)=='.g722' || substr($item->getPathname(),-5)=='.ulaw' || substr($item->getPathname(),-5)=='.alaw' || substr($item->getPathname(),-6)=='.sln16' || substr($item->getPathname(),-4)=='.sln' || substr($item->getPathname(),-4)=='.gsm' || substr($item->getPathname(),-4)== '.wav')) {
 				continue;
 			}
 			if($item->isDir()) {
