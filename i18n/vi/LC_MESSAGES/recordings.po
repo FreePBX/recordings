@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-01-13 09:13+0530\n"
+"POT-Creation-Date: 2022-09-26 01:39+0000\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:457
+#: Recordings.class.php:401
 msgid "A PHP extension stopped the file upload"
 msgstr "Máy nhánh PHP đã ngừng tải tệp lên"
 
@@ -47,6 +47,10 @@ msgstr "Thêm ghi âm"
 msgid "Add System Recording"
 msgstr "Thêm Ghi âm hệ thống"
 
+#: Api/Gql/Recordings.php:20
+msgid "Add a new recording to the Sytem Recordings"
+msgstr ""
+
 #: views/form.php:245
 msgid ""
 "Add any previously created system recording or a recording that was added "
@@ -55,9 +59,9 @@ msgstr ""
 "Thêm bất kỳ ghi âm hệ thống được tạo ra trước đó hay một ghi âm đã được thêm "
 "vào trước đó"
 
-#: recordings.i18n.php:6
-msgid "Admin"
-msgstr "Quản trị viên"
+#: Api/Gql/Recordings.php:42
+msgid "An id used to identify your recording"
+msgstr ""
 
 #: assets/js/recordings.js:270
 msgid ""
@@ -87,11 +91,11 @@ msgstr "Cuộc gọi"
 msgid "Call!"
 msgstr "Có cuộc gọi!"
 
-#: Recordings.class.php:461
+#: Recordings.class.php:405
 msgid "Can Not Find Uploaded Files"
 msgstr "Không tìm thấy các tệp đã tải lên"
 
-#: Recordings.class.php:302
+#: Recordings.class.php:774
 msgid "Can not find suitable file in this language"
 msgstr "Không thể tìm thấy tệp phù hợp trong ngôn ngữ này"
 
@@ -127,25 +131,26 @@ msgstr "Kết hợp các tệp"
 msgid "Convert To"
 msgstr "Chuyển đổi thành"
 
+#: Api/Gql/Recordings.php:57
+msgid "Convert existing file into different formats"
+msgstr ""
+
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Đang sao chép %s đến %s"
 
-#: recordings.i18n.php:8
-msgid ""
-"Creates and manages system recordings, used by many other modules (eg, IVR)."
-msgstr ""
-"Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
-"( ví dụ IVR)."
-
-#: Recordings.class.php:84
+#: Recordings.class.php:88
 msgid "Delete"
 msgstr "Xóa"
 
 #: assets/js/recordings.js:318
 msgid "Delete Recording"
 msgstr "Xóa ghi âm"
+
+#: Api/Gql/Recordings.php:38
+msgid "Delete a recording from the Sytem Recordings"
+msgstr ""
 
 #: views/form.php:45
 msgid "Describe this recording"
@@ -154,6 +159,11 @@ msgstr "Mô tả ghi âm này"
 #: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr "Mô tả"
+
+#: Api/Gql/Recordings.php:152 Api/Gql/Recordings.php:247
+#: Api/Gql/Recordings.php:263
+msgid "Description of the Recording"
+msgstr ""
 
 #: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
@@ -171,13 +181,29 @@ msgstr "Chỉnh sửa Ghi âm"
 msgid "Enter Extension"
 msgstr "Nhập máy nhánh"
 
-#: Recordings.class.php:454
+#: Api/Gql/Recordings.php:74
+msgid "Failed to convert the file"
+msgstr ""
+
+#: Recordings.class.php:398
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đĩa không thành công"
 
 #: views/form.php:314
 msgid "Feature Code Password"
 msgstr "Mật khẩu của mã tính năng"
+
+#: Api/Gql/Recordings.php:156 Api/Gql/Recordings.php:251
+msgid "Feature code"
+msgstr ""
+
+#: Api/Gql/Recordings.php:160 Api/Gql/Recordings.php:255
+msgid "Feature code password"
+msgstr ""
+
+#: Api/Gql/Recordings.php:72
+msgid "File Converted succefully"
+msgstr ""
 
 #: views/form.php:57
 #, php-format
@@ -189,18 +215,35 @@ msgstr "Danh sách tệp cho %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:238 Recordings.class.php:403
+#: Recordings.class.php:242 Recordings.class.php:347
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
+
+#: Api/Gql/Recordings.php:271
+msgid "File format to convert"
+msgstr ""
+
+#: Api/Gql/Recordings.php:108 Api/Gql/Recordings.php:267
+msgid "File name"
+msgstr ""
 
 #: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr "Kich cỡ tệp quá lớn. Kích cỡ tối đa cho phép là %s byte"
 
+#: Api/Gql/Recordings.php:67
+#, php-format
+msgid "File with the name '%s' not found in the system"
+msgstr ""
+
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
 msgstr "Nhấn nút ghi âm màu đó để bắt đầu ghi âm từ trình duyệt của bạn"
+
+#: Api/Gql/Recordings.php:144 Api/Gql/Recordings.php:239
+msgid "Id of the Recording"
+msgstr ""
 
 #: views/form.php:273
 msgid ""
@@ -217,6 +260,14 @@ msgstr ""
 "này. Thao tác này sẽ không phá hủy bất kỳ tệp nào đã có trước đó như đã liệt "
 "kê ở trên."
 
+#: Api/Gql/Recordings.php:164
+msgid "Language of recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:259 Api/Gql/Recordings.php:279
+msgid "Language of recording file"
+msgstr ""
+
 #: views/form.php:286
 msgid "Link to Feature Code"
 msgstr "Kết nối tới Mã tính năng"
@@ -225,13 +276,37 @@ msgstr "Kết nối tới Mã tính năng"
 msgid "List Recordings"
 msgstr "Danh sách các ghi âm"
 
-#: Recordings.class.php:451
+#: Api/Gql/Recordings.php:275
+msgid "List of allowed formats to which playback files to be converted"
+msgstr ""
+
+#: Api/Gql/Recordings.php:168
+msgid "List of existing playback files in the system"
+msgstr ""
+
+#: Api/Gql/Recordings.php:121 Api/Gql/Recordings.php:219
+msgid "List of system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:97 Api/Gql/Recordings.php:207
+msgid "List of system recordings"
+msgstr ""
+
+#: Api/Gql/Recordings.php:199
+msgid "Message for the request"
+msgstr ""
+
+#: Recordings.class.php:395
 msgid "Missing a temporary folder"
 msgstr "Đang thiếu một thư mục tạm"
 
 #: views/form.php:17
 msgid "Name"
 msgstr "Tên"
+
+#: Api/Gql/Recordings.php:148 Api/Gql/Recordings.php:243
+msgid "Name of the Recording"
+msgstr ""
 
 #: views/form.php:206
 msgid "Name this file"
@@ -245,7 +320,7 @@ msgstr "Không"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:448
+#: Recordings.class.php:392
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
@@ -294,6 +369,10 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr "Phát bản ghi âm: %s"
 
+#: Api/Gql/Recordings.php:362
+msgid "Playback file name/s provided doesn't exists"
+msgstr ""
+
 #: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
@@ -303,6 +382,18 @@ msgstr ""
 #: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "Vui lòng nhập một tên hợp lệ và lưu"
+
+#: Api/Gql/Recordings.php:319
+msgid "Please provide a name for system recoding"
+msgstr ""
+
+#: Api/Gql/Recordings.php:51
+msgid "Please provide a valid id to delete the system recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:334
+msgid "Please provide atleast one existing playback file name"
+msgstr ""
 
 #: assets/js/recordings.js:106
 #, perl-format
@@ -317,11 +408,23 @@ msgstr "Bản ghi trong trong trình duyệt"
 msgid "Record Over Extension"
 msgstr "Ghi trên máy nhánh"
 
-#: install.php:5 recordings.i18n.php:4
+#: Api/Gql/Recordings.php:379
+msgid "Recording added succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:49
+msgid "Recording deleted succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:372
+msgid "Recording updated succefully"
+msgstr ""
+
+#: install.php:5
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
-#: Recordings.class.php:89
+#: Recordings.class.php:93
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -358,6 +461,18 @@ msgstr ""
 "mà không có các ngôn ngữ đó sẽ có thể có những kết quả không xác định. Vui "
 "lòng cài đặt chúng qua mô đun %s"
 
+#: Api/Gql/Recordings.php:381
+msgid "Sorry unable to add the recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:123
+msgid "Sorry unable to find the system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:99
+msgid "Sorry unable to find the system recordings"
+msgstr ""
+
 #: views/form.php:79
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
@@ -377,7 +492,11 @@ msgstr ""
 msgid "Sound Languages"
 msgstr "Ngôn ngữ âm thanh"
 
-#: Recordings.class.php:79
+#: Api/Gql/Recordings.php:203
+msgid "Status for the request"
+msgstr ""
+
+#: Recordings.class.php:83
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -385,13 +504,22 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:370 recordings.i18n.php:10
+#: Recordings.class.php:314
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
 msgstr "Tên '"
+
+#: Api/Gql/Recordings.php:329
+#, php-format
+msgid "The Name '%s' already exists, please provide a different name."
+msgstr ""
+
+#: Api/Gql/Recordings.php:374
+msgid "The id provided is invalid"
+msgstr ""
 
 #: views/form.php:25
 msgid ""
@@ -409,21 +537,21 @@ msgstr ""
 "Hệ thống sẽ gọi tới máy nhánh mà bạn xác định ở bên trái. Khu cúp máy, bạn "
 "có thể đặt tên tệp và nó sẽ được thay thế tại danh sách nêu trên"
 
-#: Recordings.class.php:442
+#: Recordings.class.php:386
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong mẫu HTML"
 
-#: Recordings.class.php:439
+#: Recordings.class.php:383
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong php.ini"
 
-#: Recordings.class.php:445
+#: Recordings.class.php:389
 msgid "The uploaded file was only partially uploaded"
 msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
-#: Recordings.class.php:144
+#: Recordings.class.php:148
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "Cõ một lỗi xyar ra khi đọc các bản ghi âm hệ thống (%s)"
@@ -449,11 +577,11 @@ msgstr ""
 "Để phát media bạn sẽ cần cập nhật phiên bản mới nhất trình duyệt của mình  "
 "hoặc cập nhật %s"
 
-#: Recordings.class.php:349
+#: Recordings.class.php:293
 msgid "Unknown Error"
 msgstr "Lỗi không xác định"
 
-#: Recordings.class.php:434
+#: Recordings.class.php:378
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 
@@ -464,6 +592,10 @@ msgstr "Kiểu tệp không được hỗ trợ"
 #: views/form.php:155
 msgid "Update Required"
 msgstr "Yêu cầu cập nhật"
+
+#: Api/Gql/Recordings.php:29
+msgid "Update a recording in the Sytem Recordings"
+msgstr ""
 
 #: views/form.php:91
 msgid "Upload Recording"
@@ -531,6 +663,56 @@ msgstr ""
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
 msgstr "Bạn phải cài đặt một tên hợp lệ cho bản ghi âm này"
+
+#: Api/Gql/Recordings.php:19
+msgid "addRecording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:406
+msgid "all inputs are provided"
+msgstr ""
+
+#: Api/Gql/Recordings.php:56
+msgid "convertfile"
+msgstr ""
+
+#: Api/Gql/Recordings.php:37
+msgid "deleteRecording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:400
+msgid "please provide 'codec' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:392
+msgid "please provide 'file' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:404
+msgid "please provide 'lang' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:396
+msgid "please provide 'name' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:283
+msgid "temporary"
+msgstr ""
+
+#: Api/Gql/Recordings.php:28
+msgid "updateRecording"
+msgstr ""
+
+#~ msgid "Admin"
+#~ msgstr "Quản trị viên"
+
+#~ msgid ""
+#~ "Creates and manages system recordings, used by many other modules (eg, "
+#~ "IVR)."
+#~ msgstr ""
+#~ "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác "
+#~ "nhau ( ví dụ IVR)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"
