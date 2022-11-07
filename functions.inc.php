@@ -53,10 +53,10 @@ function recordings_get_config($engine) {
 					if (strpos($item['filename'], '&') === false && trim($item['filename']) != '') {
 						$fcode_pass = (trim($item['fcode_pass']) != '') ? $item['fcode_pass'] : '';
 						$fcode_lang = (trim($item['fcode_lang']) != '') ? ','.$item['fcode_lang'] : '';
-						$ext->add($appcontext, $fcode, '', new ext_gosub('1','s','sub-user-callerid'));
+						$ext->add($appcontext, $fcode, '', new ext_macro('user-callerid'));
 						$ext->add($appcontext, $fcode, '', new ext_wait('2'));
-						$ext->add($appcontext, $fcode, '', new ext_gosub('1','s','sub-systemrecording', 'docheck,'.$item['filename'].','.$fcode_pass.$fcode_lang));
-						//$ext->add($appcontext, $fcode, '', new ext_gosub('1','s','sub-hangup'));
+						$ext->add($appcontext, $fcode, '', new ext_macro('systemrecording', 'docheck,'.$item['filename'].','.$fcode_pass.$fcode_lang));
+						//$ext->add($appcontext, $fcode, '', new ext_macro('hangup'));
 					}
 				}
 			}
@@ -64,7 +64,7 @@ function recordings_get_config($engine) {
 			// moved from modules/core to modules/recordings
 			// since it really belongs here and not there
 			// also provides direct access to $recordings_save_path
-			// which removes a hard-coded value in the sub
+			// which removes a hard-coded value in the macro
 			$context = 'systemrecording-gui';
 			$exten = 'dorecord';
 
@@ -72,7 +72,7 @@ function recordings_get_config($engine) {
 			$ext->add($context, 'h', '', new ext_system('touch ${RECFILE}.finished'));
 			$ext->add($context, 'h', 'exit', new ext_hangup());
 
-			$context = 'sub-systemrecording';
+			$context = 'macro-systemrecording';
 
 			$ext->add($context, 's', '', new ext_gotoif('$["${ARG2}" = ""]','invalid'));
 			$ext->add($context, 's', '', new ext_setvar('TMPLANG','${CHANNEL(language)}'));
@@ -96,19 +96,19 @@ function recordings_get_config($engine) {
 			$exten = 'dochecknolanguage';
 
 			$ext->add($context, $exten, '', new ext_playback('beep'));
-			$ext->add($context, $exten, 'dc_start', new ext_background('${TMPRECFILE},m,,sub-systemrecording'));
+			$ext->add($context, $exten, 'dc_start', new ext_background('${TMPRECFILE},m,,macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'docheck';
 
 			$ext->add($context, $exten, '', new ext_playback('beep'));
-			$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},sub-systemrecording'));
+			$ext->add($context, $exten, 'dc_start', new ext_background('${RECFILE},m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_wait(1));
 			$ext->add($context, $exten, '', new ext_goto(1, 'confmenu'));
 
 			$exten = 'confmenu';
-			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&language&press-3,m,${CHANNEL(language)},sub-systemrecording'));
+			$ext->add($context, $exten, '', new ext_background('to-listen-to-it&press-1&to-accept-recording&press-2&to-rerecord-it&press-star&language&press-3,m,${CHANNEL(language)},macro-systemrecording'));
 			$ext->add($context, $exten, '', new ext_read('RECRESULT', '', 1, '', '', 4));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x*"]', 'dorecord,1'));
 			$ext->add($context, $exten, '', new ext_gotoif('$["x${RECRESULT}"="x1"]', '${LISTEN},2'));

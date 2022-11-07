@@ -34,4 +34,6 @@
 	<supported>
 		<version>17.0</version>
 	</supported>
+	<location>release/2.11/recordings-3.3.11.9.tgz</location>
+	<md5sum>9e52d36bf0e8e680c7c112bd3ba4edde</md5sum>
 </module>
