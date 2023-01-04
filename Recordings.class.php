@@ -198,6 +198,7 @@ class Recordings implements BMO {
 	}
 
 	public function ajaxHandler() {
+		$_REQUEST = $_POST = freepbxGetSanitizedRequest();
 		switch($_REQUEST['command']) {
 			case "gethtml5byid":
 				$media = $this->FreePBX->Media();
