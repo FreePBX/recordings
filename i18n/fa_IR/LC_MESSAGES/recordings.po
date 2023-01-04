@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:44+0000\n"
+"POT-Creation-Date: 2023-01-04 09:59+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:402
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -93,11 +93,11 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:406
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:774
+#: Recordings.class.php:775
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
@@ -192,7 +192,7 @@ msgstr "شماره داخلی مورد نظر"
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:399
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -222,7 +222,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:347
+#: Recordings.class.php:243 Recordings.class.php:348
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:396
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
@@ -326,7 +326,7 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:393
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
@@ -498,7 +498,7 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:315 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
@@ -531,20 +531,20 @@ msgstr ""
 "سیستم با شماره ای که در این بخش وارد کرده اید، تماس می گیرد. پس از قطع شما "
 "می توانید نام فایل را مشخص کنید. این فایل در فهرست بالا قرار می گیرد"
 
-#: Recordings.class.php:386
+#: Recordings.class.php:387
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:383
+#: Recordings.class.php:384
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:389
+#: Recordings.class.php:390
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
@@ -572,11 +572,11 @@ msgid ""
 "version or update your %s"
 msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
-#: Recordings.class.php:293
+#: Recordings.class.php:294
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:378
+#: Recordings.class.php:379
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 

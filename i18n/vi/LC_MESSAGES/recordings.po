@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:44+0000\n"
+"POT-Creation-Date: 2023-01-04 09:59+0000\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:402
 msgid "A PHP extension stopped the file upload"
 msgstr "Máy nhánh PHP đã ngừng tải tệp lên"
 
@@ -95,11 +95,11 @@ msgstr "Cuộc gọi"
 msgid "Call!"
 msgstr "Có cuộc gọi!"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:406
 msgid "Can Not Find Uploaded Files"
 msgstr "Không tìm thấy các tệp đã tải lên"
 
-#: Recordings.class.php:774
+#: Recordings.class.php:775
 msgid "Can not find suitable file in this language"
 msgstr "Không thể tìm thấy tệp phù hợp trong ngôn ngữ này"
 
@@ -196,7 +196,7 @@ msgstr "Nhập máy nhánh"
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:399
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đĩa không thành công"
 
@@ -226,7 +226,7 @@ msgstr "Danh sách tệp cho %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:347
+#: Recordings.class.php:243 Recordings.class.php:348
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
 
@@ -307,7 +307,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:396
 msgid "Missing a temporary folder"
 msgstr "Đang thiếu một thư mục tạm"
 
@@ -331,7 +331,7 @@ msgstr "Không"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:393
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
@@ -515,7 +515,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:315 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -548,17 +548,17 @@ msgstr ""
 "Hệ thống sẽ gọi tới máy nhánh mà bạn xác định ở bên trái. Khu cúp máy, bạn "
 "có thể đặt tên tệp và nó sẽ được thay thế tại danh sách nêu trên"
 
-#: Recordings.class.php:386
+#: Recordings.class.php:387
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong mẫu HTML"
 
-#: Recordings.class.php:383
+#: Recordings.class.php:384
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong php.ini"
 
-#: Recordings.class.php:389
+#: Recordings.class.php:390
 msgid "The uploaded file was only partially uploaded"
 msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
@@ -588,11 +588,11 @@ msgstr ""
 "Để phát media bạn sẽ cần cập nhật phiên bản mới nhất trình duyệt của mình  "
 "hoặc cập nhật %s"
 
-#: Recordings.class.php:293
+#: Recordings.class.php:294
 msgid "Unknown Error"
 msgstr "Lỗi không xác định"
 
-#: Recordings.class.php:378
+#: Recordings.class.php:379
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 

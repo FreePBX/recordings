@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-08 04:44+0000\n"
+"POT-Creation-Date: 2023-01-04 09:59+0000\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:402
 msgid "A PHP extension stopped the file upload"
 msgstr "Uma extensão PHP parou o carregamento do arquivo"
 
@@ -109,11 +109,11 @@ msgstr "Chamar"
 msgid "Call!"
 msgstr "Chamar!"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:406
 msgid "Can Not Find Uploaded Files"
 msgstr "Não é Possível Localizar Arquivos Carregados"
 
-#: Recordings.class.php:774
+#: Recordings.class.php:775
 msgid "Can not find suitable file in this language"
 msgstr "Não é possível encontrar o arquivo adequado neste idioma"
 
@@ -210,7 +210,7 @@ msgstr "Inserir Ramal"
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:399
 msgid "Failed to write file to disk"
 msgstr "Falha ao gravar o arquivo no disco"
 
@@ -240,7 +240,7 @@ msgstr "Lista de Arquivos para %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:347
+#: Recordings.class.php:243 Recordings.class.php:348
 msgid "File does not exist"
 msgstr "Arquivo não existe"
 
@@ -322,7 +322,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:396
 msgid "Missing a temporary folder"
 msgstr "Faltando uma pasta temporária"
 
@@ -346,7 +346,7 @@ msgstr "Não"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:393
 msgid "No file was uploaded"
 msgstr "Nenhum arquivo foi carregado"
 
@@ -526,7 +526,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 
-#: Recordings.class.php:314 recordings.i18n.php:10
+#: Recordings.class.php:315 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
@@ -559,7 +559,7 @@ msgstr ""
 "O sistema chamará o ramal que você especificar à esquerda. Ao desligar você "
 "será capaz de nomear o arquivo e ele será colocado na lista acima"
 
-#: Recordings.class.php:386
+#: Recordings.class.php:387
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -567,11 +567,11 @@ msgstr ""
 "O arquivo enviado excede a diretiva MAX_FILE_SIZE que foi especificada no "
 "formulário HTML"
 
-#: Recordings.class.php:383
+#: Recordings.class.php:384
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "O arquivo carregado excede a diretiva upload_max_filesize no php.ini"
 
-#: Recordings.class.php:389
+#: Recordings.class.php:390
 msgid "The uploaded file was only partially uploaded"
 msgstr "O arquivo enviado foi carregado parcialmente"
 
@@ -601,11 +601,11 @@ msgstr ""
 "Para reproduzir a mídia, você precisará atualizar seu navegador para uma "
 "versão recente ou atualizar seu %s"
 
-#: Recordings.class.php:293
+#: Recordings.class.php:294
 msgid "Unknown Error"
 msgstr "Erro Desconhecido"
 
-#: Recordings.class.php:378
+#: Recordings.class.php:379
 msgid "Unsupported file format"
 msgstr "Formato de arquivo não suportado"
 

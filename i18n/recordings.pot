@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for recordings
-# Copyright (C) 2008-2022 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2023 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 01:38+0000\n"
+"POT-Creation-Date: 2023-01-04 09:59+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:402
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -89,11 +89,11 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:405
+#: Recordings.class.php:406
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:774
+#: Recordings.class.php:775
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:399
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -221,8 +221,8 @@ msgstr ""
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242
-#: Recordings.class.php:347
+#: Recordings.class.php:243
+#: Recordings.class.php:348
 msgid "File does not exist"
 msgstr ""
 
@@ -302,7 +302,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:396
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -328,7 +328,7 @@ msgstr ""
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:393
 msgid "No file was uploaded"
 msgstr ""
 
@@ -501,7 +501,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:314
+#: Recordings.class.php:315
 #: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr ""
@@ -531,17 +531,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:386
+#: Recordings.class.php:387
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:383
+#: Recordings.class.php:384
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:389
+#: Recordings.class.php:390
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -567,11 +567,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:293
+#: Recordings.class.php:294
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:378
+#: Recordings.class.php:379
 msgid "Unsupported file format"
 msgstr ""
 
