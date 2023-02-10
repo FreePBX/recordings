@@ -35,7 +35,7 @@ class Restore Extends Base\RestoreBase{
 				$this->FreePBX->Recordings->updateRecording($config['id'],$config['displayname'],$config['description'],$files,$config['fcode'],$config['fcode_pass']);
 			}
 		}
-		$this->importFeatureCodes($config['features']);
+		$this->importFeatureCodes($configs['features']);
 	}
 	public function nameTest($path,$var){
 		$sysPath = $this->FreePBX->Config->get($var);
