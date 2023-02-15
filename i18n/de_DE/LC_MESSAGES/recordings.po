@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-04 09:59+0000\n"
+"POT-Creation-Date: 2023-02-15 06:38+0000\n"
 "PO-Revision-Date: 2018-07-27 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: Recordings.class.php:402
+#: Recordings.class.php:403
 msgid "A PHP extension stopped the file upload"
 msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
@@ -97,11 +97,11 @@ msgstr "Anruf"
 msgid "Call!"
 msgstr "Anruf!"
 
-#: Recordings.class.php:406
+#: Recordings.class.php:407
 msgid "Can Not Find Uploaded Files"
 msgstr "Es können keine hochgeladenen Dateien gefunden werden"
 
-#: Recordings.class.php:775
+#: Recordings.class.php:776
 msgid "Can not find suitable file in this language"
 msgstr "Es kann keine passende Datei in dieser Sprache gefunden werden"
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:399
+#: Recordings.class.php:400
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -222,7 +222,7 @@ msgstr ""
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:243 Recordings.class.php:348
+#: Recordings.class.php:242 Recordings.class.php:349
 msgid "File does not exist"
 msgstr ""
 
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:396
+#: Recordings.class.php:397
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -321,7 +321,7 @@ msgstr "Nein"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:393
+#: Recordings.class.php:394
 msgid "No file was uploaded"
 msgstr "Es wurde keine Datei hochgeladen"
 
@@ -501,7 +501,7 @@ msgstr "Bestätigen"
 msgid "Supported Languages"
 msgstr "Unterstützte Sprachen"
 
-#: Recordings.class.php:315 recordings.i18n.php:10
+#: Recordings.class.php:316 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Systemaufzeichnungen"
 
@@ -530,17 +530,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:387
+#: Recordings.class.php:388
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:384
+#: Recordings.class.php:385
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:390
+#: Recordings.class.php:391
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -566,11 +566,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:294
+#: Recordings.class.php:295
 msgid "Unknown Error"
 msgstr "Unbekannter Fehler"
 
-#: Recordings.class.php:379
+#: Recordings.class.php:380
 msgid "Unsupported file format"
 msgstr "Nicht unterstütztes Dateiformat"
 
