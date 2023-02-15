@@ -198,7 +198,6 @@ class Recordings implements BMO {
 	}
 
 	public function ajaxHandler() {
-		$_REQUEST = $_POST = freepbxGetSanitizedRequest();
 		switch($_REQUEST['command']) {
 			case "gethtml5byid":
 				$media = $this->FreePBX->Media();
@@ -269,6 +268,8 @@ class Recordings implements BMO {
 			break;
 			case "save":
 				$data = $_POST;
+				$data['name'] = filter_var($data['name'], FILTER_SANITIZE_STRING);
+				$data['description'] = filter_var($data['description'], FILTER_SANITIZE_STRING);
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				} else {
