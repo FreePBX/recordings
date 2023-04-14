@@ -296,7 +296,7 @@ class Recordings implements BMO {
 				}
 			break;
 			case "deleterecording":
-				$files = json_decode($_POST['filenames'],true);
+				$files = json_decode(html_entity_decode($_POST['filenames']),true);
 				foreach($files as $lang => $file) {
 					$file = basename($file);
 					if(file_exists($this->temp."/".$file)) {
