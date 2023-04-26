@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 01:39+0000\n"
+"POT-Creation-Date: 2023-02-15 06:38+0000\n"
 "PO-Revision-Date: 2016-12-10 10:35+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-Country: SPAIN\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:403
 msgid "A PHP extension stopped the file upload"
 msgstr "Una extensión de PHP detuvo la subida del archivo"
 
@@ -57,6 +57,10 @@ msgstr ""
 "Agregue cualquier grabación de sistema previamente creada o una grabación "
 "que se agregó anteriormente"
 
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Administrador"
+
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
 msgstr ""
@@ -89,11 +93,11 @@ msgstr "Llamar"
 msgid "Call!"
 msgstr "Llamar!"
 
-#: Recordings.class.php:405
+#: Recordings.class.php:407
 msgid "Can Not Find Uploaded Files"
 msgstr "No se pueden encontrar los archivos subidos"
 
-#: Recordings.class.php:774
+#: Recordings.class.php:776
 msgid "Can not find suitable file in this language"
 msgstr "No se puede encontrar el archivo adecuado en este idioma"
 
@@ -137,6 +141,13 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copiando %s a %s"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Crea y administra las grabaciones del sistema, utilizado por muchos otros "
+"módulos (por ejemplo, IVR)."
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -183,7 +194,7 @@ msgstr "Introduzca la Extensión"
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:400
 msgid "Failed to write file to disk"
 msgstr "Fallo escritura del archivo al disco"
 
@@ -213,7 +224,7 @@ msgstr "Lista de Archivos para %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:347
+#: Recordings.class.php:242 Recordings.class.php:349
 msgid "File does not exist"
 msgstr "Archivo no existe"
 
@@ -294,7 +305,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:397
 msgid "Missing a temporary folder"
 msgstr "Falta una carpeta temporal"
 
@@ -318,7 +329,7 @@ msgstr "No"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:394
 msgid "No file was uploaded"
 msgstr "No se ha cargado ningún archivo"
 
@@ -415,7 +426,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Grabaciones"
 
@@ -500,7 +511,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas soportados"
 
-#: Recordings.class.php:314
+#: Recordings.class.php:316 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Grabaciones del sistema"
 
@@ -534,7 +545,7 @@ msgstr ""
 "del colgado usted será capaz de nombrar el archivo y se colocará en la lista "
 "de arriba"
 
-#: Recordings.class.php:386
+#: Recordings.class.php:388
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -542,11 +553,11 @@ msgstr ""
 "El archivo subido supera la directiva MAX_FILE_SIZE que se especificó en el "
 "formulario HTML"
 
-#: Recordings.class.php:383
+#: Recordings.class.php:385
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "El archivo subido supera la directiva upload_max_filesize en php.ini"
 
-#: Recordings.class.php:389
+#: Recordings.class.php:391
 msgid "The uploaded file was only partially uploaded"
 msgstr "El archivo subido sólo se cargó parcialmente"
 
@@ -576,11 +587,11 @@ msgstr ""
 "Para reproducir el audio, deberá actualizar su navegador a una versión "
 "reciente o actualizar su %s"
 
-#: Recordings.class.php:293
+#: Recordings.class.php:295
 msgid "Unknown Error"
 msgstr "Error desconocido"
 
-#: Recordings.class.php:378
+#: Recordings.class.php:380
 msgid "Unsupported file format"
 msgstr "Formato no soportado"
 
@@ -703,16 +714,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "Administrador"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Crea y administra las grabaciones del sistema, utilizado por muchos otros "
-#~ "módulos (por ejemplo, IVR)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Un error ha ocurrido intentando enviar este documento"

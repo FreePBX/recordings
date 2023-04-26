@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-26 01:39+0000\n"
+"POT-Creation-Date: 2023-02-15 06:38+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Recordings.class.php:401
+#: Recordings.class.php:403
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -50,6 +50,10 @@ msgid ""
 "previously"
 msgstr ""
 
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr ""
+
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
 msgstr ""
@@ -80,11 +84,11 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:405
+#: Recordings.class.php:407
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:774
+#: Recordings.class.php:776
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -124,6 +128,12 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
 
 #: Recordings.class.php:88
 msgid "Delete"
@@ -170,7 +180,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:398
+#: Recordings.class.php:400
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -200,7 +210,7 @@ msgstr ""
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:347
+#: Recordings.class.php:242 Recordings.class.php:349
 msgid "File does not exist"
 msgstr ""
 
@@ -275,7 +285,7 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:395
+#: Recordings.class.php:397
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -299,7 +309,7 @@ msgstr ""
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:392
+#: Recordings.class.php:394
 msgid "No file was uploaded"
 msgstr ""
 
@@ -391,7 +401,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "הקלטות"
 
@@ -466,7 +476,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:314
+#: Recordings.class.php:316 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
@@ -495,17 +505,17 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:386
+#: Recordings.class.php:388
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:383
+#: Recordings.class.php:385
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:389
+#: Recordings.class.php:391
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -531,11 +541,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:293
+#: Recordings.class.php:295
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:378
+#: Recordings.class.php:380
 msgid "Unsupported file format"
 msgstr ""
 
@@ -642,13 +652,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות "
-#~ "והכרזות"
 
 #~ msgid "OK"
 #~ msgstr "תקין"

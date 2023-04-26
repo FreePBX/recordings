@@ -268,6 +268,8 @@ class Recordings implements BMO {
 			break;
 			case "save":
 				$data = $_POST;
+				$data['name'] = filter_var($data['name'], FILTER_SANITIZE_STRING);
+				$data['description'] = filter_var($data['description'], FILTER_SANITIZE_STRING);
 				if($data['id'] == "0" || !empty($data['id'])) {
 					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				} else {
@@ -294,7 +296,7 @@ class Recordings implements BMO {
 				}
 			break;
 			case "deleterecording":
-				$files = json_decode($_POST['filenames'],true);
+				$files = json_decode(html_entity_decode($_POST['filenames']),true);
 				foreach($files as $lang => $file) {
 					$file = basename($file);
 					if(file_exists($this->temp."/".$file)) {
