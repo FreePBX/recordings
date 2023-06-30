@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: FreePBX - recordings module spanish translation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 16:20+0530\n"
-"PO-Revision-Date: 2021-12-14 21:00+0000\n"
-"Last-Translator: Javier Pastor <jpastor@cerebelum.net>\n"
+"PO-Revision-Date: 2023-06-30 14:19+0000\n"
+"Last-Translator: Santiago Pioli <spioli@sangoma.com>\n"
 "Language-Team: Spanish <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/es/>\n"
 "Language: es_ES\n"
@@ -326,7 +326,7 @@ msgstr "Guardar grabación"
 
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
-msgstr ""
+msgstr "Seleccione una grabación del sistema"
 
 #: views/form.php:5
 #, php-format
