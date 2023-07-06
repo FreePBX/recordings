@@ -12,7 +12,7 @@ class Restore Extends Base\RestoreBase{
 			if($file->getType() == 'recording'){
 				$filename = $file->getPathTo().'/'.$file->getFilename();
 				$filename = $this->nameTest($filename,$file->getBase());
-				$targetdir = dirname($filename);
+				$targetdir = dirname((string) $filename);
 				if(!file_exists($filename)){
 					if(!is_dir($targetdir)) {
 						mkdir($targetdir,0777, true);
@@ -42,8 +42,8 @@ class Restore Extends Base\RestoreBase{
 		if(!$sysPath){
 			return $path;
 		}
-		$file = basename($path);
-		$pathArr = explode('/',$path);
+		$file = basename((string) $path);
+		$pathArr = explode('/',(string) $path);
 		$i = array_search('sounds',$pathArr,true);
 		$pathArr = array_slice($pathArr,$i);
 		return $sysPath.'/'.implode('/',$pathArr);
@@ -68,7 +68,7 @@ class Restore Extends Base\RestoreBase{
 			   to fix that issue using this logic to skip the files 
 			  File which are considered as directory and name ending with .gsm Or .wav Or .sln Or .sln16
 			   */
-			if($item->isDir() && (substr($item->getPathname(),-5)=='.g722' || substr($item->getPathname(),-5)=='.ulaw' || substr($item->getPathname(),-5)=='.alaw' || substr($item->getPathname(),-6)=='.sln16' || substr($item->getPathname(),-4)=='.sln' || substr($item->getPathname(),-4)=='.gsm' || substr($item->getPathname(),-4)== '.wav')) {
+			if($item->isDir() && (str_ends_with((string) $item->getPathname(), '.g722') || str_ends_with((string) $item->getPathname(), '.ulaw') || str_ends_with((string) $item->getPathname(), '.alaw') || str_ends_with((string) $item->getPathname(), '.sln16') || str_ends_with((string) $item->getPathname(), '.sln') || str_ends_with((string) $item->getPathname(), '.gsm') || str_ends_with((string) $item->getPathname(), '.wav'))) {
 				continue;
 			}
 			if($item->isDir()) {

@@ -1,7 +1,7 @@
 <?php if(empty($langs)) { ?>
 	<div class="alert alert-danger"><?php echo sprintf(_("You have no sound packages installed in the %s module. Please install at least one language to use System Recordings"),"<a href='?display=soundlang'>"._("Sound Languages")."</a>")?></div>
 <?php } ?>
-<script>var langs = <?php echo json_encode($langs)?></script>
+<script>var langs = <?php echo json_encode($langs, JSON_THROW_ON_ERROR)?></script>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">

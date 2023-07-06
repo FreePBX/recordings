@@ -2,6 +2,7 @@
 
 namespace FreePBX\modules\Recordings\Api\Gql;
 
+use PDO;
 use GraphQLRelay\Relay;
 use GraphQL\Type\Definition\Type;
 use FreePBX\modules\Api\Gql\Base;
@@ -13,70 +14,64 @@ class Recordings extends Base {
 
 	public function mutationCallback() {
 		if($this->checkAllWriteScope()) {
-			return function() {
-                return [
-                    'addRecording' => Relay::mutationWithClientMutationId([
+			return fn() => [
+       'addRecording' => Relay::mutationWithClientMutationId([
 						'name' => _('addRecording'),
 						'description' => _('Add a new recording to the Sytem Recordings'),
 						'inputFields' => $this->getRecodingInputs(),
 						'outputFields' => $this->getRecodingOutputs(),
-						'mutateAndGetPayload' => function ($input) {
-                            return $this->addUpdateRecordings($input);
-						}
+						'mutateAndGetPayload' => fn($input) => $this->addUpdateRecordings($input)
 					]),
-                    'updateRecording' => Relay::mutationWithClientMutationId([
+       'updateRecording' => Relay::mutationWithClientMutationId([
 						'name' => _('updateRecording'),
 						'description' => _('Update a recording in the Sytem Recordings'),
 						'inputFields' => $this->getRecodingInputs(),
 						'outputFields' => $this->getRecodingOutputs(),
-						'mutateAndGetPayload' => function ($input) {
-                            return $this->addUpdateRecordings($input);
-						}
+						'mutateAndGetPayload' => fn($input) => $this->addUpdateRecordings($input)
 					]),
-                    'deleteRecording' => Relay::mutationWithClientMutationId([
+       'deleteRecording' => Relay::mutationWithClientMutationId([
 						'name' => _('deleteRecording'),
 						'description' => _('Delete a recording from the Sytem Recordings'),
 						'inputFields' => [
-                            'id' => [
+                      'id' => [
 								'type' => Type::nonNull(Type::string()),
 								'description' => _('An id used to identify your recording')
 							]
-                        ],
+                  ],
 						'outputFields' => $this->getRecodingOutputs(),
 						'mutateAndGetPayload' => function ($input) {
-                            if(isset($input['id']) && $input['id'] > 0) {
-                                $this->freepbx->recordings->delRecording($input['id']);
-                                return ['message' => _("Recording deleted succefully"), 'status' => true, 'id' => $input['id']];
-                            } else {
-                                return ['message' => _("Please provide a valid id to delete the system recording"), 'status' => false];
-                            }
+                      if(isset($input['id']) && $input['id'] > 0) {
+                          $this->freepbx->recordings->delRecording($input['id']);
+                          return ['message' => _("Recording deleted succefully"), 'status' => true, 'id' => $input['id']];
+                      } else {
+                          return ['message' => _("Please provide a valid id to delete the system recording"), 'status' => false];
+                      }
 						}
 					]),
-                    'convertfile' => Relay::mutationWithClientMutationId([
+       'convertfile' => Relay::mutationWithClientMutationId([
 						'name' => _('convertfile'),
 						'description' => _('Convert existing file into different formats'),
 						'inputFields' => $this->getRecodingInputs(),
 						'outputFields' => $this->getRecodingOutputs(),
 						'mutateAndGetPayload' => function ($input) {
-                            $validate = $this->InputValidate($input);
-                            if(!$validate['status']) {
-                                return ['message' => $validate['message'], 'status' => false];
-                            }
-                            $fileDetails = $this->freepbx->recordings->fileStatus($input['name']);
-                            if(!$fileDetails) {
-                                return ['message' => sprintf(_("File with the name '%s' not found in the system"),$input['name']), 'status' => false];
-                            }
-                            $input['temporary'] = isset($input['temporary']) ? $input['temporary'] : 0;
-                            $result = $this->freepbx->recordings->convertFiles($input);
-                            if($result['status']) {
-                                return ['message' => (isset($result['message'])) ? $result['message'] : _("File Converted succefully"), 'status' => true];
-                            } else {
-                                return ['message' => (isset($result['message'])) ? $result['message'] : _("Failed to convert the file"), 'status' => false];
-                            }
+                      $validate = $this->InputValidate($input);
+                      if(!$validate['status']) {
+                          return ['message' => $validate['message'], 'status' => false];
+                      }
+                      $fileDetails = $this->freepbx->recordings->fileStatus($input['name']);
+                      if(!$fileDetails) {
+                          return ['message' => sprintf(_("File with the name '%s' not found in the system"),$input['name']), 'status' => false];
+                      }
+                      $input['temporary'] ??= 0;
+                      $result = $this->freepbx->recordings->convertFiles($input);
+                      if($result['status']) {
+                          return ['message' => $result['message'] ?? _("File Converted succefully"), 'status' => true];
+                      } else {
+                          return ['message' => $result['message'] ?? _("Failed to convert the file"), 'status' => false];
+                      }
 						}
 					]),
-                ];
-            };
+   ];
         }
     }
 
@@ -87,9 +82,8 @@ class Recordings extends Base {
 	 */
 	public function queryCallback() {
         if($this->checkAllReadScope()) {
-			return function() {
-				return [
-                    'fetchAllRecordings' => [
+			return fn() => [
+                   'fetchAllRecordings' => [
 						'type' => $this->typeContainer->get('recordings')->getConnectionType(),
 						'resolve' => function ($root, $args) {
 							$res = $this->freepbx->recordings->getAll();
@@ -100,9 +94,9 @@ class Recordings extends Base {
 							}
 						}
 					],
-                    'fetchRecordingFiles' => [
-                        'type' => $this->typeContainer->get('recordings')->getConnectionType(),
-                        'args' => [
+                   'fetchRecordingFiles' => [
+                       'type' => $this->typeContainer->get('recordings')->getConnectionType(),
+                       'args' => [
 							'search' => [
 								'type' => Type::string(),
 								'description' => _('File name'),
@@ -110,22 +104,21 @@ class Recordings extends Base {
 						],
 						'resolve' => function ($root, $args) {
 							$allFiles = $this->freepbx->recordings->getSystemRecordings();
-                            $search = $args['search'];
-                            $res = [];
-                            foreach ($allFiles as $file) {
-                                if (strpos($file['name'], $search) !== false) {
-                                    $res[] = $file['name'];
-                                }
-                            }
+                           $search = $args['search'];
+                           $res = [];
+                           foreach ($allFiles as $file) {
+                               if (str_contains((string) $file['name'], $search)) {
+                                   $res[] = $file['name'];
+                               }
+                           }
 							if (!empty($res)) {
 								return ['message' => _("List of system recording files"), 'status' => true, 'response' => $res];
 							} else {
 								return ['message' => _('Sorry unable to find the system recording files'), 'status' => false];
 							}
 						}
-                    ]
-                ];
-            };
+                   ]
+               ];
         }
     }
 
@@ -133,99 +126,83 @@ class Recordings extends Base {
 		$user = $this->typeContainer->create('recordings');
 		$user->setDescription('Sytem Recordings');
 
-        $user->addInterfaceCallback(function() {
-			return [$this->getNodeDefinition()['nodeInterface']];
-		});
+        $user->addInterfaceCallback(fn() => [$this->getNodeDefinition()['nodeInterface']]);
 
-        $user->addFieldCallback(function() {
-			return [
-                'id' => [
-                    'type' => Type::nonNull(Type::Id()),
-                    'description' => _('Id of the Recording')
-                ],
-                'name' => [
-                    'type' => Type::nonNull(Type::string()),
-                    'description' => _('Name of the Recording')
-                ],
-                'description' => [
-                    'type' => Type::string(),
-                    'description' => _('Description of the Recording')
-                ],
-                'fcode' => [
-                    'type' => Type::id(),
-                    'description' => _('Feature code')
-                ],
-                'fcode_pass' => [
-                    'type' => Type::string(),
-                    'description' => _('Feature code password')
-                ],
-                'language' => [
-                    'type' => Type::string(),
-                    'description' => _('Language of recording')
-                ],
-                'playback' => [
-                    'type' => Type::listOf(Type::String()),
-                    'description' => _('List of existing playback files in the system')
-                ],
-                'status' => [
-                    'type' => Type::boolean(),
-                    'resolve' => function ($payload) {
-                        return $payload['status'];
-                    }
-                ],
-                'message' => [
-                    'type' => Type::string(),
-                    'resolve' => function ($payload) {
-                        return $payload['message'];
-                    }
-                ],
-                'languages' => [
-                    'type' => Type::listOf(Type::String()),
-                    'resolve' => function ($payload) {
-                        return $payload['languages'];
-                    }
-                ]
-            ];
-        });
+        $user->addFieldCallback(fn() => [
+                     'id' => [
+                         'type' => Type::nonNull(Type::Id()),
+                         'description' => _('Id of the Recording')
+                     ],
+                     'name' => [
+                         'type' => Type::nonNull(Type::string()),
+                         'description' => _('Name of the Recording')
+                     ],
+                     'description' => [
+                         'type' => Type::string(),
+                         'description' => _('Description of the Recording')
+                     ],
+                     'fcode' => [
+                         'type' => Type::id(),
+                         'description' => _('Feature code')
+                     ],
+                     'fcode_pass' => [
+                         'type' => Type::string(),
+                         'description' => _('Feature code password')
+                     ],
+                     'language' => [
+                         'type' => Type::string(),
+                         'description' => _('Language of recording')
+                     ],
+                     'playback' => [
+                         'type' => Type::listOf(Type::String()),
+                         'description' => _('List of existing playback files in the system')
+                     ],
+                     'status' => [
+                         'type' => Type::boolean(),
+                         'resolve' => fn($payload) => $payload['status']
+                     ],
+                     'message' => [
+                         'type' => Type::string(),
+                         'resolve' => fn($payload) => $payload['message']
+                     ],
+                     'languages' => [
+                         'type' => Type::listOf(Type::String()),
+                         'resolve' => fn($payload) => $payload['languages']
+                     ]
+                 ]);
 
-        $user->setConnectionResolveNode(function ($edge) {
-			return $edge['node'];
-		});
+        $user->setConnectionResolveNode(fn($edge) => $edge['node']);
 
-        $user->setConnectionFields(function() {
-			return [
-				'message' =>[
-					'type' => Type::string(),
-					'description' => _('Message for the request')
-				],
-				'status' =>[
-					'type' => Type::boolean(),
-					'description' => _('Status for the request')
-				],
-                'recordings' => [
-					'type' => Type::listOf($this->typeContainer->get('recordings')->getObject()),
-					'description' => _('List of system recordings'),
-					'resolve' => function ($root, $args) {
-						$data = array_map(function ($row) {
-                            $row['name'] = $row['displayname'];
-                            $row['playback'] = array_keys($row['files']);
-							return $row;
-						}, isset($root['response']) ? $root['response'] : []);
-						return $data;
-					}
-				],
-                'recodingFiles' => [
-                    'type' => Type::listOf(Type::string()),
-					'description' => _('List of system recording files'),
-					'resolve' => function ($root, $args) {
-						$data = array_map(function ($row) {
-							return $row;
-						}, isset($root['response']) ? $root['response'] : []);
-						return $data;
-					}
-                ]
-            ];
-        });
+        $user->setConnectionFields(fn() => [
+     				'message' =>[
+     					'type' => Type::string(),
+     					'description' => _('Message for the request')
+     				],
+     				'status' =>[
+     					'type' => Type::boolean(),
+     					'description' => _('Status for the request')
+     				],
+                     'recordings' => [
+     					'type' => Type::listOf($this->typeContainer->get('recordings')->getObject()),
+     					'description' => _('List of system recordings'),
+     					'resolve' => function ($root, $args) {
+     						$data = array_map(function ($row) {
+                                 $row['name'] = $row['displayname'];
+                                 $row['playback'] = array_keys($row['files']);
+     							return $row;
+     						}, $root['response'] ?? []);
+     						return $data;
+     					}
+     				],
+                     'recodingFiles' => [
+                         'type' => Type::listOf(Type::string()),
+     					'description' => _('List of system recording files'),
+     					'resolve' => function ($root, $args) {
+     						$data = array_map(fn($row) => $row, $root['response'] ?? []);
+     						return $data;
+     					}
+                     ]
+                 ]);
     }
 
     /**
@@ -293,21 +270,15 @@ class Recordings extends Base {
         return [
 			'status' => [
 				'type' => Type::boolean(),
-				'resolve' => function ($payload) {
-					return $payload['status'];
-				}
+				'resolve' => fn($payload) => $payload['status']
 			],
 			'message' => [
 				'type' => Type::string(),
-				'resolve' => function ($payload) {
-					return $payload['message'];
-				}
+				'resolve' => fn($payload) => $payload['message']
 			],
 			'id' => [
 				'type' => Type::string(),
-				'resolve' => function ($payload) {
-					return isset($payload['id']) ? $payload['id'] : null;
-				}
+				'resolve' => fn($payload) => $payload['id'] ?? null
 			],
 		];
     }
@@ -365,8 +336,8 @@ class Recordings extends Base {
         if(isset($input['id']) && $input['id'] > 0) {
             $check = "SELECT * FROM recordings WHERE id = ?";
             $sth = $this->freepbx->recordings->db->prepare($check);
-            $sth->execute(array($input['id']));
-            $rec = $sth->fetchAll(\PDO::FETCH_ASSOC);
+            $sth->execute([$input['id']]);
+            $rec = $sth->fetchAll(PDO::FETCH_ASSOC);
             if($rec) {
                 $this->freepbx->recordings->updateRecording($input['id'],$input['name'],$input['description'],implode("&",$existingFiles),$input['fcode'],$input['fcode_pass'],$input['language']);
                 return ['message' => _("Recording updated succefully"), 'status' => true, 'id' => $input['id']];

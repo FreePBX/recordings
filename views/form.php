@@ -7,7 +7,7 @@
 			<div class="fpbx-container">
 				<div class="display full-border">
 					<form id="recordings-frm" class="fpbx-submit" name="recordings-frm" action="config.php?display=recordings" method="post" <?php if(isset($data['id'])) {?>data-fpbx-delete="config.php?display=recordings&amp;action=delete&amp;id=<?php echo $data['id']?>"<?php } ?> role="form">
-						<input type="hidden" name="id" id="id" value="<?php echo isset($data['id']) ? $data['id'] : ''?>">
+						<input type="hidden" name="id" id="id" value="<?php echo $data['id'] ?? ''?>">
 						<div class="element-container">
 							<div class="row">
 								<div class="col-md-12">
@@ -17,7 +17,7 @@
 												<label class="control-label" for="name"><?php echo _("Name")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="name"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?php echo isset($data['displayname']) ? $data['displayname'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?php echo $data['displayname'] ?? ''?>"></div>
 										</div>
 									</div>
 									<div class="row">
@@ -37,7 +37,7 @@
 												<label class="control-label" for="description"><?php echo _("Description")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?php echo isset($data['description']) ? $data['description'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?php echo $data['description'] ?? ''?>"></div>
 										</div>
 									</div>
 									<div class="row">
@@ -288,12 +288,12 @@
 											</div>
 											<div class="col-md-9">
 												<span class="radioset">
-													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo (isset($data['fcode']) && ($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<input type="radio" id="fcode-link-yes1" name="fcode-link" value="yes" class="fcode-item" <?php echo (isset($data['fcode']) && ($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-yes1"><?php echo _("Yes")?></label>
-													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo (!isset($data['fcode']) || !($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>>
+													<input type="radio" id="fcode-link-no1" name="fcode-link" value="no" class="fcode-item" <?php echo (!isset($data['fcode']) || !($data['fcode'])) ? "checked" : ""?> <?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? "" : "disabled"?>>
 													<label for="fcode-link-no1"><?php echo _("No")?></label>
 												</span>
-												<strong><span id="fcode-message" data-message="<?php echo isset($data['rec_code']) ? sprintf(_("Optional Feature Code %s"),$data['rec_code']) : ""?>"><?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? sprintf(_("Optional Feature Code %s"),isset($data['rec_code']) ? $data['rec_code'] : "") : _("Not supported on compounded or Non-Existent recordings")?></span></strong>
+												<strong><span id="fcode-message" data-message="<?php echo isset($data['rec_code']) ? sprintf(_("Optional Feature Code %s"),$data['rec_code']) : ""?>"><?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? sprintf(_("Optional Feature Code %s"),$data['rec_code'] ?? "") : _("Not supported on compounded or Non-Existent recordings")?></span></strong>
 											</div>
 										</div>
 									</div>
@@ -314,7 +314,7 @@
 												<label class="control-label" for="fcode-password"><?php echo _("Feature Code Password")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-password"></i>
 											</div>
-											<div class="col-md-9"><input name="fcode_pass" id="fcode_pass" class="form-control fcode-item" value="<?php echo isset($data['fcode_pass']) ? $data['fcode_pass'] : ""?>" <?php echo (isset($data['soundlist']) && (count($data['soundlist']) == 1)) ? "" : "disabled"?>></div>
+											<div class="col-md-9"><input name="fcode_pass" id="fcode_pass" class="form-control fcode-item" value="<?php echo $data['fcode_pass'] ?? ""?>" <?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? "" : "disabled"?>></div>
 										</div>
 									</div>
 									<div class="row">
@@ -359,7 +359,7 @@
 		</div>
 	</div>
 </div>
-<script>var langs = <?php echo json_encode($langs)?>;var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'])?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist']) : "{}"?>;var playbackList = <?php echo isset($data['playbacklist']) ? json_encode($data['playbacklist']) : "[]"?>;</script>
+<script>var langs = <?php echo json_encode($langs, JSON_THROW_ON_ERROR)?>;var supportedHTML5 = "<?php echo $supportedHTML5?>";var supportedFormats = <?php echo json_encode($supported['in'], JSON_THROW_ON_ERROR)?>;var supportedRegExp = "<?php echo implode("|",array_keys($supported['in']))?>";var systemRecordings = <?php echo $jsonsysrecs?>;var soundList = <?php echo isset($data['soundlist']) ? json_encode($data['soundlist'], JSON_THROW_ON_ERROR) : "{}"?>;var playbackList = <?php echo isset($data['playbacklist']) ? json_encode($data['playbacklist'], JSON_THROW_ON_ERROR) : "[]"?>;</script>
 <div id="playbacks">
 </div>
 <div id="recscreen" class="hidden">
@@ -375,7 +375,7 @@
 var record_names = new Array();
 <?php
 if(!empty($record_names)){
-        echo "record_names = " . json_encode($record_names) . ";";
+        echo "record_names = " . json_encode($record_names, JSON_THROW_ON_ERROR) . ";";
 }
 ?>
 </script>

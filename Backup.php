@@ -17,7 +17,7 @@ class Backup Extends Base\BackupBase{
 						$dirpaths = pathinfo($basefilepath.$recordingfile);
 						$path = $dirpaths['dirname'];
 						$dirs[$path] = $path;
-						$this->addFile(basename($recordingfile),$path,'ASTVARLIBDIR',"recording");
+						$this->addFile(basename((string) $recordingfile),$path,'ASTVARLIBDIR',"recording");
 					}
 				}
 			}

@@ -8,7 +8,7 @@ if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 global $recordings_astsnd_path; // PHP5 needs extra convincing of a global
 global $amp_conf;
 $recordings_save_path = $amp_conf['ASTSPOOLDIR']."/tmp/";
-$recordings_astsnd_path = isset($asterisk_conf['astvarlibdir'])?$asterisk_conf['astvarlibdir']:'/var/lib/asterisk';
+$recordings_astsnd_path = $asterisk_conf['astvarlibdir'] ?? '/var/lib/asterisk';
 $recordings_astsnd_path .= "/sounds/";
 
 function recordings_get_config($engine) {
@@ -50,9 +50,9 @@ function recordings_get_config($engine) {
 				if ($fcode != '') {
 					// Do a sanity check, there should be no compound files
 					//
-					if (strpos($item['filename'], '&') === false && trim($item['filename']) != '') {
-						$fcode_pass = (trim($item['fcode_pass']) != '') ? $item['fcode_pass'] : '';
-						$fcode_lang = (trim($item['fcode_lang']) != '') ? ','.$item['fcode_lang'] : '';
+					if (!str_contains((string) $item['filename'], '&') && trim((string) $item['filename']) != '') {
+						$fcode_pass = (trim((string) $item['fcode_pass']) != '') ? $item['fcode_pass'] : '';
+						$fcode_lang = (trim((string) $item['fcode_lang']) != '') ? ','.$item['fcode_lang'] : '';
 						$ext->add($appcontext, $fcode, '', new ext_macro('user-callerid'));
 						$ext->add($appcontext, $fcode, '', new ext_wait('2'));
 						$ext->add($appcontext, $fcode, '', new ext_macro('systemrecording', 'docheck,'.$item['filename'].','.$fcode_pass.$fcode_lang));
@@ -133,7 +133,7 @@ function recordings_get_config($engine) {
 			$ext->add($context, $exten, '', new ext_playback('language&is-set-to'));
 			$ext->add($context, $exten, '', new ext_sayalpha('${TMPLANG}'));
 			$ext->add($context, $exten, '', new ext_playback('after-the-tone'));
-			$langs = \FreePBX::Soundlang()->getLanguages();
+			$langs = FreePBX::Soundlang()->getLanguages();
 			$c = 1;
 			foreach($langs as $l => $d) {
 				$ext->add($context, $exten, '', new ext_background('press-'.$c));
@@ -193,10 +193,10 @@ function recordings_get($id) {
 // returns a associative arrays with keys 'destination' and 'description'
 function recordings_destinations() {
 	$recs = recordings_list();
-	$dests = array();
+	$dests = [];
 	if (!empty($recs)) {
 		foreach ($recs as $r) {
-			$dests[] = array('destination' => "play-system-recording,".$r['id'].",1", 'description' => $r['displayname'], 'category' => "Play Recording", 'edit_url' => 'config.php?display=recordings&action=edit&id='.$r['id']);
+			$dests[] = ['destination' => "play-system-recording,".$r['id'].",1", 'description' => $r['displayname'], 'category' => "Play Recording", 'edit_url' => 'config.php?display=recordings&action=edit&id='.$r['id']];
 		}
 	}
 	return $dests;
@@ -205,14 +205,14 @@ function recordings_destinations() {
 function recordings_check_destinations($dest=true) {
 
 	$rs = recordings_destinations();
-	$rs = is_array($rs) ? $rs : array();
+	$rs = is_array($rs) ? $rs : [];
 
-	$destlist = array();
+	$destlist = [];
 	if (is_array($dest) && empty($dest)) {
 		return $destlist;
 	}
 
-	$results = array();
+	$results = [];
 	if ($dest === true) {
 		$results = $rs;
 	} else {
@@ -224,35 +224,28 @@ function recordings_check_destinations($dest=true) {
 	}
 
 	foreach ($results as $result) {
-		$destlist[] = array(
-			'dest' => $result['destination'],
-			'description' => $result['description'],
-			'edit_url' => $result['edit_url'],
-		);
+		$destlist[] = ['dest' => $result['destination'], 'description' => $result['description'], 'edit_url' => $result['edit_url']];
 	}
 	return $destlist;
 }
 
 
 function recordings_getdest($exten) {
-	return array('play-system-recording,'.$exten.',1');
+	return ['play-system-recording,'.$exten.',1'];
 }
 
 function recordings_getdestinfo($dest) {
 	global $active_modules;
 
 
-	if (substr(trim($dest),0,21) == 'play-system-recording') {
-		$exten = explode(',',$dest);
+	if (str_starts_with(trim((string) $dest), 'play-system-recording')) {
+		$exten = explode(',',(string) $dest);
 
 		$thisexten = recordings_get($exten[1]);
 		if (empty($thisexten)) {
-			return array();
+			return [];
 		} else {
-			return array(
-				'description' => sprintf(_("Play Recording: %s"), $thisexten['displayname']),
-				'edit_url' => 'config.php?display=recordings&action=edit&id='.urlencode($exten[1]),
-			);
+			return ['description' => sprintf(_("Play Recording: %s"), $thisexten['displayname']), 'edit_url' => 'config.php?display=recordings&action=edit&id='.urlencode($exten[1])];
 		}
 	} else {
 		return false;
