@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-07-13 12:14+0000\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -20,7 +20,7 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 2.2-dev\n"
 
-#: Recordings.class.php:403
+#: Recordings.class.php:358
 msgid "A PHP extension stopped the file upload"
 msgstr "PHP-расширение остановило загрузку файла"
 
@@ -60,7 +60,7 @@ msgstr "Добавить любую , ранее созданную систем
 msgid "Admin"
 msgstr "Администратор"
 
-#: Api/Gql/Recordings.php:42
+#: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
 msgstr ""
 
@@ -92,11 +92,11 @@ msgstr "Вызов"
 msgid "Call!"
 msgstr "Вызов!"
 
-#: Recordings.class.php:407
+#: Recordings.class.php:362
 msgid "Can Not Find Uploaded Files"
 msgstr "Невозможно найти загруженные файлы"
 
-#: Recordings.class.php:776
+#: Recordings.class.php:714
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgstr "Совместить файлы"
 msgid "Convert To"
 msgstr "Конвертировать в"
 
-#: Api/Gql/Recordings.php:57
+#: Api/Gql/Recordings.php:53
 msgid "Convert existing file into different formats"
 msgstr ""
 
@@ -148,7 +148,7 @@ msgstr ""
 "Создаёт и управляет системными записями, используемыми в других модулях, "
 "(например Интерактивные меню, и др.)."
 
-#: Recordings.class.php:88
+#: Recordings.class.php:72
 msgid "Delete"
 msgstr "Удалить"
 
@@ -156,7 +156,7 @@ msgstr "Удалить"
 msgid "Delete Recording"
 msgstr "Удалить запись"
 
-#: Api/Gql/Recordings.php:38
+#: Api/Gql/Recordings.php:34
 msgid "Delete a recording from the Sytem Recordings"
 msgstr ""
 
@@ -168,8 +168,8 @@ msgstr "Описать данную запись"
 msgid "Description"
 msgstr "Описание"
 
-#: Api/Gql/Recordings.php:152 Api/Gql/Recordings.php:247
-#: Api/Gql/Recordings.php:263
+#: Api/Gql/Recordings.php:142 Api/Gql/Recordings.php:224
+#: Api/Gql/Recordings.php:240
 msgid "Description of the Recording"
 msgstr ""
 
@@ -189,11 +189,11 @@ msgstr "Редактировать запись"
 msgid "Enter Extension"
 msgstr "Введите внутренний номер"
 
-#: Api/Gql/Recordings.php:74
+#: Api/Gql/Recordings.php:70
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:400
+#: Recordings.class.php:355
 msgid "Failed to write file to disk"
 msgstr "Ошибка записи файла на диск"
 
@@ -201,15 +201,15 @@ msgstr "Ошибка записи файла на диск"
 msgid "Feature Code Password"
 msgstr "Пароль на сервисный код"
 
-#: Api/Gql/Recordings.php:156 Api/Gql/Recordings.php:251
+#: Api/Gql/Recordings.php:146 Api/Gql/Recordings.php:228
 msgid "Feature code"
 msgstr ""
 
-#: Api/Gql/Recordings.php:160 Api/Gql/Recordings.php:255
+#: Api/Gql/Recordings.php:150 Api/Gql/Recordings.php:232
 msgid "Feature code password"
 msgstr ""
 
-#: Api/Gql/Recordings.php:72
+#: Api/Gql/Recordings.php:68
 msgid "File Converted succefully"
 msgstr ""
 
@@ -223,15 +223,15 @@ msgstr "Список файлов для %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:349
+#: Recordings.class.php:205 Recordings.class.php:304
 msgid "File does not exist"
 msgstr "Файл не существует"
 
-#: Api/Gql/Recordings.php:271
+#: Api/Gql/Recordings.php:248
 msgid "File format to convert"
 msgstr ""
 
-#: Api/Gql/Recordings.php:108 Api/Gql/Recordings.php:267
+#: Api/Gql/Recordings.php:102 Api/Gql/Recordings.php:244
 msgid "File name"
 msgstr ""
 
@@ -240,7 +240,7 @@ msgstr ""
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
-#: Api/Gql/Recordings.php:67
+#: Api/Gql/Recordings.php:63
 #, php-format
 msgid "File with the name '%s' not found in the system"
 msgstr ""
@@ -249,7 +249,7 @@ msgstr ""
 msgid "Hit the red record button to start recording from your browser"
 msgstr "Нажмите на красную кнопку  для начала  записи из вашего браузера"
 
-#: Api/Gql/Recordings.php:144 Api/Gql/Recordings.php:239
+#: Api/Gql/Recordings.php:134 Api/Gql/Recordings.php:216
 msgid "Id of the Recording"
 msgstr ""
 
@@ -266,11 +266,11 @@ msgstr ""
 "пересортировать или убрать файлы из списка , но вы сможете добавить файлы в "
 "конец или начало этого файла. Это не удалит существующие файлы ."
 
-#: Api/Gql/Recordings.php:164
+#: Api/Gql/Recordings.php:154
 msgid "Language of recording"
 msgstr ""
 
-#: Api/Gql/Recordings.php:259 Api/Gql/Recordings.php:279
+#: Api/Gql/Recordings.php:236 Api/Gql/Recordings.php:256
 msgid "Language of recording file"
 msgstr ""
 
@@ -282,27 +282,27 @@ msgstr "Линк на Сервисный код"
 msgid "List Recordings"
 msgstr "Список записей"
 
-#: Api/Gql/Recordings.php:275
+#: Api/Gql/Recordings.php:252
 msgid "List of allowed formats to which playback files to be converted"
 msgstr ""
 
-#: Api/Gql/Recordings.php:168
+#: Api/Gql/Recordings.php:158
 msgid "List of existing playback files in the system"
 msgstr ""
 
-#: Api/Gql/Recordings.php:121 Api/Gql/Recordings.php:219
+#: Api/Gql/Recordings.php:115 Api/Gql/Recordings.php:199
 msgid "List of system recording files"
 msgstr ""
 
-#: Api/Gql/Recordings.php:97 Api/Gql/Recordings.php:207
+#: Api/Gql/Recordings.php:91 Api/Gql/Recordings.php:187
 msgid "List of system recordings"
 msgstr ""
 
-#: Api/Gql/Recordings.php:199
+#: Api/Gql/Recordings.php:179
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:397
+#: Recordings.class.php:352
 msgid "Missing a temporary folder"
 msgstr "Неверная временная папка"
 
@@ -310,7 +310,7 @@ msgstr "Неверная временная папка"
 msgid "Name"
 msgstr "Имя"
 
-#: Api/Gql/Recordings.php:148 Api/Gql/Recordings.php:243
+#: Api/Gql/Recordings.php:138 Api/Gql/Recordings.php:220
 msgid "Name of the Recording"
 msgstr ""
 
@@ -326,7 +326,7 @@ msgstr "Нет"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:394
+#: Recordings.class.php:349
 msgid "No file was uploaded"
 msgstr "Файлы не загружены"
 
@@ -366,12 +366,12 @@ msgstr ""
 "Опционально - пароль для защиты доступа к сервисному коду, который позволяет "
 "перезаписать запись."
 
-#: functions.inc.php:253
+#: functions.inc.php:248
 #, php-format
 msgid "Play Recording: %s"
 msgstr ""
 
-#: Api/Gql/Recordings.php:362
+#: Api/Gql/Recordings.php:333
 msgid "Playback file name/s provided doesn't exists"
 msgstr ""
 
@@ -383,15 +383,15 @@ msgstr ""
 msgid "Please enter a valid name and save"
 msgstr "Пожалуйста введите корректное имя и сохраните"
 
-#: Api/Gql/Recordings.php:319
+#: Api/Gql/Recordings.php:290
 msgid "Please provide a name for system recoding"
 msgstr ""
 
-#: Api/Gql/Recordings.php:51
+#: Api/Gql/Recordings.php:47
 msgid "Please provide a valid id to delete the system recording"
 msgstr ""
 
-#: Api/Gql/Recordings.php:334
+#: Api/Gql/Recordings.php:305
 msgid "Please provide atleast one existing playback file name"
 msgstr ""
 
@@ -408,15 +408,15 @@ msgstr "Запись в браузере"
 msgid "Record Over Extension"
 msgstr "Запись с телефона на внутреннем номере"
 
-#: Api/Gql/Recordings.php:379
+#: Api/Gql/Recordings.php:350
 msgid "Recording added succefully"
 msgstr ""
 
-#: Api/Gql/Recordings.php:49
+#: Api/Gql/Recordings.php:45
 msgid "Recording deleted succefully"
 msgstr ""
 
-#: Api/Gql/Recordings.php:372
+#: Api/Gql/Recordings.php:343
 msgid "Recording updated succefully"
 msgstr ""
 
@@ -424,7 +424,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Записи"
 
-#: Recordings.class.php:93
+#: Recordings.class.php:72
 msgid "Reset"
 msgstr "Сброс"
 
@@ -458,15 +458,15 @@ msgid ""
 "through the %s module"
 msgstr ""
 
-#: Api/Gql/Recordings.php:381
+#: Api/Gql/Recordings.php:352
 msgid "Sorry unable to add the recording"
 msgstr ""
 
-#: Api/Gql/Recordings.php:123
+#: Api/Gql/Recordings.php:117
 msgid "Sorry unable to find the system recording files"
 msgstr ""
 
-#: Api/Gql/Recordings.php:99
+#: Api/Gql/Recordings.php:93
 msgid "Sorry unable to find the system recordings"
 msgstr ""
 
@@ -489,11 +489,11 @@ msgstr ""
 msgid "Sound Languages"
 msgstr ""
 
-#: Api/Gql/Recordings.php:203
+#: Api/Gql/Recordings.php:183
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:83
+#: Recordings.class.php:72
 msgid "Submit"
 msgstr "Подтвердить"
 
@@ -501,7 +501,7 @@ msgstr "Подтвердить"
 msgid "Supported Languages"
 msgstr "Поддерживаемые языки"
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Записи в системе"
 
@@ -509,12 +509,12 @@ msgstr "Записи в системе"
 msgid "The Name '"
 msgstr ""
 
-#: Api/Gql/Recordings.php:329
+#: Api/Gql/Recordings.php:300
 #, php-format
 msgid "The Name '%s' already exists, please provide a different name."
 msgstr ""
 
-#: Api/Gql/Recordings.php:374
+#: Api/Gql/Recordings.php:345
 msgid "The id provided is invalid"
 msgstr ""
 
@@ -534,7 +534,7 @@ msgstr ""
 "Система  совершит вызов на внутренний номер ,  указанный  справа . После "
 "завершения вызова вы сможете присвоить имя файлу и он появится в списке"
 
-#: Recordings.class.php:388
+#: Recordings.class.php:343
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -542,17 +542,17 @@ msgstr ""
 "Размер загруженного файла превышает  значение MAX_FILE_SIZE , указанное в "
 "HTML-форме"
 
-#: Recordings.class.php:385
+#: Recordings.class.php:340
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "Размер загруженного  файл превышает  значение upload_max_filesize "
 "directive   , указанное в php.ini"
 
-#: Recordings.class.php:391
+#: Recordings.class.php:346
 msgid "The uploaded file was only partially uploaded"
 msgstr "Файл загружен неполностью"
 
-#: Recordings.class.php:148
+#: Recordings.class.php:125
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -578,11 +578,11 @@ msgstr ""
 "Для проигрывания медиаданных вам необходимо обновить ваш браузер  или "
 "обновить ваш %s"
 
-#: Recordings.class.php:295
+#: Recordings.class.php:258
 msgid "Unknown Error"
 msgstr "Неизвестная ошибка"
 
-#: Recordings.class.php:380
+#: Recordings.class.php:335
 msgid "Unsupported file format"
 msgstr "Не поддерживаемый  формат файла"
 
@@ -594,7 +594,7 @@ msgstr "Не поддерживаемый  тип файла"
 msgid "Update Required"
 msgstr "Требуется обновление"
 
-#: Api/Gql/Recordings.php:29
+#: Api/Gql/Recordings.php:27
 msgid "Update a recording in the Sytem Recordings"
 msgstr ""
 
@@ -660,39 +660,39 @@ msgstr "Вы должны указать корректное имя для да
 msgid "addRecording"
 msgstr ""
 
-#: Api/Gql/Recordings.php:406
+#: Api/Gql/Recordings.php:377
 msgid "all inputs are provided"
 msgstr ""
 
-#: Api/Gql/Recordings.php:56
+#: Api/Gql/Recordings.php:52
 msgid "convertfile"
 msgstr ""
 
-#: Api/Gql/Recordings.php:37
+#: Api/Gql/Recordings.php:33
 msgid "deleteRecording"
 msgstr ""
 
-#: Api/Gql/Recordings.php:400
+#: Api/Gql/Recordings.php:371
 msgid "please provide 'codec' input field"
 msgstr ""
 
-#: Api/Gql/Recordings.php:392
+#: Api/Gql/Recordings.php:363
 msgid "please provide 'file' input field"
 msgstr ""
 
-#: Api/Gql/Recordings.php:404
+#: Api/Gql/Recordings.php:375
 msgid "please provide 'lang' input field"
 msgstr ""
 
-#: Api/Gql/Recordings.php:396
+#: Api/Gql/Recordings.php:367
 msgid "please provide 'name' input field"
 msgstr ""
 
-#: Api/Gql/Recordings.php:283
+#: Api/Gql/Recordings.php:260
 msgid "temporary"
 msgstr ""
 
-#: Api/Gql/Recordings.php:28
+#: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
 
