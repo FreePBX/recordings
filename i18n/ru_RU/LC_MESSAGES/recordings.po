@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: System Recordings\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2019-12-05 16:20+0530\n"
-"PO-Revision-Date: 2022-04-19 05:24+0000\n"
+"PO-Revision-Date: 2023-08-18 07:00+0000\n"
 "Last-Translator: Dmitriy Q <krotesk@ya.ru>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/ru/>\n"
@@ -189,7 +189,7 @@ msgstr "Размер файла слишком велик. Максимальн�
 
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
-msgstr "Нажмите красную кнопку записи, чтобы начать запись из браузера"
+msgstr "Нажмите красную кнопку записи для начала записи из браузера"
 
 #: views/form.php:273
 msgid ""
