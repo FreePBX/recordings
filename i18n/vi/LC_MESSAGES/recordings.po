@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-08-29 13:41+0000\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -515,9 +515,13 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
+
+#: Recordings.class.php:316
+msgid "System Recordings <0>"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"

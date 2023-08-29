@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-08-29 13:41+0000\n"
 "PO-Revision-Date: 2017-03-17 00:22+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -498,9 +498,13 @@ msgstr "Soumettre"
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Enregistrements système"
+
+#: Recordings.class.php:316
+msgid "System Recordings <0>"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"

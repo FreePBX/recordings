@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-08-29 13:41+0000\n"
 "PO-Revision-Date: 2018-07-27 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -501,9 +501,13 @@ msgstr "Bestätigen"
 msgid "Supported Languages"
 msgstr "Unterstützte Sprachen"
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Systemaufzeichnungen"
+
+#: Recordings.class.php:316
+msgid "System Recordings <0>"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
