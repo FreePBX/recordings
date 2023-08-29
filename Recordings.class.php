@@ -313,7 +313,7 @@ class Recordings implements BMO {
 					"Context" => "systemrecording-gui",
 					"Priority" => 1,
 					"Async" => "no",
-					"CallerID" => _("System Recordings"),
+					"CallerID" => _("System Recordings <0>"),
 					"Variable" => "RECFILE=".$this->temp."/".basename($_POST['filename'])
 				));
 				if($status['Response'] == "Success") {
