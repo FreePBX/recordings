@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-08-29 09:31+0000\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -526,9 +526,13 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
+
+#: Recordings.class.php:316
+msgid "System Recordings <0>"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"

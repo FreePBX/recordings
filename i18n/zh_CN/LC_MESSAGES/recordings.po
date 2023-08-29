@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.5 Chinese Translation\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 06:38+0000\n"
+"POT-Creation-Date: 2023-08-29 09:31+0000\n"
 "PO-Revision-Date: 2015-10-21 13:47+0200\n"
 "Last-Translator: james <zhulizhong@gmail.com>\n"
 "Language-Team: Simplified Chinese <http://weblate.freepbx.org/projects/"
@@ -483,9 +483,13 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:316 recordings.i18n.php:10
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "系统录音"
+
+#: Recordings.class.php:316
+msgid "System Recordings <0>"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
