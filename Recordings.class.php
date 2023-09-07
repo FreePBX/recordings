@@ -7,7 +7,7 @@ use ForceUTF8\Encoding;
 use BMO;
 use PDO;
 use Exception;
-
+#[\AllowDynamicProperties]
 class Recordings implements BMO {
 	private bool $initialized = false;
 	private $full_list = null;
