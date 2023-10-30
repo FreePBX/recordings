@@ -193,7 +193,7 @@
 											</div>
 											<div class="col-md-9">
 												<div id="dialer-message" class="alert alert-warning hidden" role="alert"></div>
-												<div id="dialer" class="fade in">
+												<div id="dialer" class="">
 													<div class="input-group">
 														<input type="text" class="form-control" id="record-phone" placeholder="<?php echo _("Enter Extension")?>...">
 														<span class="input-group-btn">
