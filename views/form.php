@@ -201,7 +201,7 @@
 														</span>
 													</div>
 												</div>
-												<div id="dialer-save" class="fade hidden">
+												<div id="dialer-save" class="hidden">
 													<div class="input-group">
 														<input type="text" class="form-control name-check" id="save-phone-input" placeholder="<?php echo _("Name this file")?>">
 														<span class="input-group-btn">
