@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-08-19 10:36+0000\n"
-"PO-Revision-Date: 2023-11-11 13:03+0000\n"
+"PO-Revision-Date: 2023-11-18 16:02+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/pl/>\n"
@@ -34,7 +34,7 @@ msgstr ""
 
 #: views/grid.php:30
 msgid "Actions"
-msgstr ""
+msgstr "Działania"
 
 #: views/form.php:4
 msgid "Add New System Recording"
@@ -57,7 +57,7 @@ msgstr ""
 
 #: recordings.i18n.php:6
 msgid "Admin"
-msgstr ""
+msgstr "Administrator"
 
 #: assets/js/recordings.js:270
 msgid ""
