@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-13 05:50+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -56,6 +56,10 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط شده از قبل"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "مدیر"
 
 #: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
@@ -135,6 +139,13 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "در حال کپی کردن %s به %s"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
+"شوند (مانند منوی صوتی)."
 
 #: Recordings.class.php:72
 msgid "Delete"
@@ -407,7 +418,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
@@ -487,7 +498,7 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:273
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
@@ -685,16 +696,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "مدیر"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
-#~ "شوند (مانند منوی صوتی)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "بروز خطا در ثبت این سند"

@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-13 05:50+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: 2017-03-17 00:22+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -66,6 +66,10 @@ msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
 msgstr ""
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Admin"
 
 #: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
@@ -144,6 +148,11 @@ msgstr ""
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
+msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
 #: Recordings.class.php:72
@@ -414,7 +423,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Enregistrements"
 
@@ -489,7 +498,7 @@ msgstr "Soumettre"
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:273
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Enregistrements système"
 
@@ -665,9 +674,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "Admin"
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Une erreur s'est produite en tentant de soumettre ce document"

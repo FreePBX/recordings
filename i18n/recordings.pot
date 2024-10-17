@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for recordings
-# Copyright (C) 2008-2023 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2024 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-31 06:49+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,6 +53,10 @@ msgstr ""
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
+msgstr ""
+
+#: recordings.i18n.php:6
+msgid "Admin"
 msgstr ""
 
 #: Api/Gql/Recordings.php:38
@@ -129,6 +133,11 @@ msgstr ""
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
+msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
 #: Recordings.class.php:72
@@ -413,6 +422,7 @@ msgid "Recording updated succefully"
 msgstr ""
 
 #: install.php:5
+#: recordings.i18n.php:4
 msgid "Recordings"
 msgstr ""
 
@@ -492,6 +502,7 @@ msgid "Supported Languages"
 msgstr ""
 
 #: Recordings.class.php:273
+#: recordings.i18n.php:10
 msgid "System Recordings"
 msgstr ""
 

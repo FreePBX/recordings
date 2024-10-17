@@ -9,20 +9,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-19 10:36+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: 2023-11-18 16:02+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
 "recordings/pl/>\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: Recordings.class.php:457
+#: Recordings.class.php:358
 msgid "A PHP extension stopped the file upload"
 msgstr "Rozszerzenie PHP zatrzymało przesyłanie plików"
 
@@ -40,13 +40,16 @@ msgstr "Działania"
 msgid "Add New System Recording"
 msgstr ""
 
-#: views/bnav.php:5
-#: views/grid.php:9
+#: views/bnav.php:5 views/grid.php:9
 msgid "Add Recording"
 msgstr ""
 
 #: views/form.php:230
 msgid "Add System Recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:20
+msgid "Add a new recording to the Sytem Recordings"
 msgstr ""
 
 #: views/form.php:245
@@ -59,6 +62,10 @@ msgstr ""
 msgid "Admin"
 msgstr "Administrator"
 
+#: Api/Gql/Recordings.php:38
+msgid "An id used to identify your recording"
+msgstr ""
+
 #: assets/js/recordings.js:270
 msgid ""
 "Are you sure you do not want to convert these files? They may not work "
@@ -67,6 +74,10 @@ msgstr ""
 
 #: assets/js/recordings.js:497
 msgid "Are you sure you wish to discard this recordings?"
+msgstr ""
+
+#: Restore.php:58
+msgid "Asterisk Sounds folder NOT found on Legacy backup !"
 msgstr ""
 
 #: views/form.php:96
@@ -81,16 +92,15 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:461
+#: Recordings.class.php:362
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:302
+#: Recordings.class.php:714
 msgid "Can not find suitable file in this language"
 msgstr ""
 
-#: views/form.php:169
-#: views/form.php:208
+#: views/form.php:169 views/form.php:208
 msgid "Cancel"
 msgstr ""
 
@@ -118,6 +128,10 @@ msgstr ""
 msgid "Convert To"
 msgstr ""
 
+#: Api/Gql/Recordings.php:53
+msgid "Convert existing file into different formats"
+msgstr ""
+
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
@@ -128,7 +142,7 @@ msgid ""
 "Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
-#: Recordings.class.php:84
+#: Recordings.class.php:72
 msgid "Delete"
 msgstr ""
 
@@ -136,18 +150,24 @@ msgstr ""
 msgid "Delete Recording"
 msgstr ""
 
+#: Api/Gql/Recordings.php:34
+msgid "Delete a recording from the Sytem Recordings"
+msgstr ""
+
 #: views/form.php:45
 msgid "Describe this recording"
 msgstr ""
 
-#: views/bnav.php:21
-#: views/form.php:37
-#: views/grid.php:28
+#: views/bnav.php:21 views/form.php:37 views/grid.php:28
 msgid "Description"
 msgstr ""
 
-#: views/bnav.php:20
-#: views/grid.php:27
+#: Api/Gql/Recordings.php:142 Api/Gql/Recordings.php:224
+#: Api/Gql/Recordings.php:240
+msgid "Description of the Recording"
+msgstr ""
+
+#: views/bnav.php:20 views/grid.php:27
 msgid "Display Name"
 msgstr ""
 
@@ -163,7 +183,11 @@ msgstr ""
 msgid "Enter Extension"
 msgstr ""
 
-#: Recordings.class.php:454
+#: Api/Gql/Recordings.php:70
+msgid "Failed to convert the file"
+msgstr ""
+
+#: Recordings.class.php:355
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -171,23 +195,56 @@ msgstr ""
 msgid "Feature Code Password"
 msgstr ""
 
+#: Api/Gql/Recordings.php:146 Api/Gql/Recordings.php:228
+msgid "Feature code"
+msgstr ""
+
+#: Api/Gql/Recordings.php:150 Api/Gql/Recordings.php:232
+msgid "Feature code password"
+msgstr ""
+
+#: Api/Gql/Recordings.php:68
+msgid "File Converted succefully"
+msgstr ""
+
 #: views/form.php:57
 #, php-format
 msgid "File List for %s"
 msgstr ""
 
-#: Recordings.class.php:238
-#: Recordings.class.php:403
+#: Restore.php:21
+#, php-format
+msgid "File Restored %s"
+msgstr ""
+
+#: Recordings.class.php:205 Recordings.class.php:304
 msgid "File does not exist"
 msgstr "Plik nie istnieje"
+
+#: Api/Gql/Recordings.php:248
+msgid "File format to convert"
+msgstr ""
+
+#: Api/Gql/Recordings.php:102 Api/Gql/Recordings.php:244
+msgid "File name"
+msgstr ""
 
 #: assets/js/recordings.js:574
 #, perl-format
 msgid "File size is too large. Max size is %s bytes"
 msgstr ""
 
+#: Api/Gql/Recordings.php:63
+#, php-format
+msgid "File with the name '%s' not found in the system"
+msgstr ""
+
 #: views/form.php:152
 msgid "Hit the red record button to start recording from your browser"
+msgstr ""
+
+#: Api/Gql/Recordings.php:134 Api/Gql/Recordings.php:216
+msgid "Id of the Recording"
 msgstr ""
 
 #: views/form.php:273
@@ -199,6 +256,14 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
+#: Api/Gql/Recordings.php:154
+msgid "Language of recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:236 Api/Gql/Recordings.php:256
+msgid "Language of recording file"
+msgstr ""
+
 #: views/form.php:286
 msgid "Link to Feature Code"
 msgstr ""
@@ -207,7 +272,27 @@ msgstr ""
 msgid "List Recordings"
 msgstr ""
 
-#: Recordings.class.php:451
+#: Api/Gql/Recordings.php:252
+msgid "List of allowed formats to which playback files to be converted"
+msgstr ""
+
+#: Api/Gql/Recordings.php:158
+msgid "List of existing playback files in the system"
+msgstr ""
+
+#: Api/Gql/Recordings.php:115 Api/Gql/Recordings.php:199
+msgid "List of system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:91 Api/Gql/Recordings.php:187
+msgid "List of system recordings"
+msgstr ""
+
+#: Api/Gql/Recordings.php:179
+msgid "Message for the request"
+msgstr ""
+
+#: Recordings.class.php:352
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -215,12 +300,15 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
+#: Api/Gql/Recordings.php:138 Api/Gql/Recordings.php:220
+msgid "Name of the Recording"
+msgstr ""
+
 #: views/form.php:206
 msgid "Name this file"
 msgstr ""
 
-#: views/form.php:266
-#: views/form.php:294
+#: views/form.php:266 views/form.php:294
 msgid "No"
 msgstr ""
 
@@ -228,7 +316,7 @@ msgstr ""
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:448
+#: Recordings.class.php:349
 msgid "No file was uploaded"
 msgstr ""
 
@@ -255,12 +343,6 @@ msgstr ""
 msgid "Not supported on compounded recordings"
 msgstr ""
 
-#: install.php:51
-#: install.php:65
-#: install.php:80
-msgid "OK"
-msgstr ""
-
 #: views/form.php:296
 #, php-format
 msgid "Optional Feature Code %s"
@@ -272,18 +354,33 @@ msgid ""
 "to re-record it."
 msgstr ""
 
-#: functions.inc.php:253
+#: functions.inc.php:248
 #, php-format
 msgid "Play Recording: %s"
+msgstr ""
+
+#: Api/Gql/Recordings.php:333
+msgid "Playback file name/s provided doesn't exists"
 msgstr ""
 
 #: assets/js/recordings.js:853
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
-#: assets/js/recordings.js:488
-#: assets/js/recordings.js:511
+#: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
+msgstr ""
+
+#: Api/Gql/Recordings.php:290
+msgid "Please provide a name for system recoding"
+msgstr ""
+
+#: Api/Gql/Recordings.php:47
+msgid "Please provide a valid id to delete the system recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:305
+msgid "Please provide atleast one existing playback file name"
 msgstr ""
 
 #: assets/js/recordings.js:106
@@ -299,22 +396,41 @@ msgstr ""
 msgid "Record Over Extension"
 msgstr ""
 
-#: install.php:5
-#: recordings.i18n.php:4
+#: Api/Gql/Recordings.php:350
+msgid "Recording added succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:45
+msgid "Recording deleted succefully"
+msgstr ""
+
+#: Api/Gql/Recordings.php:343
+msgid "Recording updated succefully"
+msgstr ""
+
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr ""
 
-#: Recordings.class.php:89
+#: Recordings.class.php:72
 msgid "Reset"
 msgstr ""
 
-#: views/form.php:170
-#: views/form.php:209
+#: Restore.php:56
+msgid ""
+"Restoring sound files from Legacy Backup path : /var/lib/asterisk/sounds"
+msgstr ""
+
+#: Restore.php:23
+#, php-format
+msgid "Same file exists  %s"
+msgstr ""
+
+#: views/form.php:170 views/form.php:209
 msgid "Save"
 msgstr ""
 
-#: install.php:6
-#: assets/js/recordings.js:318
+#: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
 msgstr ""
 
@@ -330,6 +446,18 @@ msgid ""
 "through the %s module"
 msgstr ""
 
+#: Api/Gql/Recordings.php:352
+msgid "Sorry unable to add the recording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:117
+msgid "Sorry unable to find the system recording files"
+msgstr ""
+
+#: Api/Gql/Recordings.php:93
+msgid "Sorry unable to find the system recordings"
+msgstr ""
+
 #: views/form.php:79
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
@@ -339,27 +467,37 @@ msgid ""
 "mode. Anything you upload will then replace this file on save"
 msgstr ""
 
-#: views/form.php:5
-#: views/grid.php:2
+#: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
 msgstr ""
 
-#: Recordings.class.php:79
+#: Api/Gql/Recordings.php:183
+msgid "Status for the request"
+msgstr ""
+
+#: Recordings.class.php:72
 msgid "Submit"
 msgstr ""
 
-#: views/bnav.php:22
-#: views/grid.php:29
+#: views/bnav.php:22 views/grid.php:29
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:370
-#: recordings.i18n.php:10
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
+msgstr ""
+
+#: Api/Gql/Recordings.php:300
+#, php-format
+msgid "The Name '%s' already exists, please provide a different name."
+msgstr ""
+
+#: Api/Gql/Recordings.php:345
+msgid "The id provided is invalid"
 msgstr ""
 
 #: views/form.php:25
@@ -374,21 +512,21 @@ msgid ""
 "will be able to name the file and it will be placed in the list above"
 msgstr ""
 
-#: Recordings.class.php:442
+#: Recordings.class.php:343
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:439
+#: Recordings.class.php:340
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:445
+#: Recordings.class.php:346
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: Recordings.class.php:144
+#: Recordings.class.php:125
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -410,11 +548,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:349
+#: Recordings.class.php:258
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:434
+#: Recordings.class.php:335
 msgid "Unsupported file format"
 msgstr ""
 
@@ -424,6 +562,10 @@ msgstr ""
 
 #: views/form.php:155
 msgid "Update Required"
+msgstr ""
+
+#: Api/Gql/Recordings.php:27
+msgid "Update a recording in the Sytem Recordings"
 msgstr ""
 
 #: views/form.php:91
@@ -437,8 +579,7 @@ msgid ""
 "includes archives (that include multiple files) and multiple files"
 msgstr ""
 
-#: views/form.php:264
-#: views/form.php:292
+#: views/form.php:264 views/form.php:292
 msgid "Yes"
 msgstr ""
 
@@ -479,20 +620,42 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: install.php:53
-#: install.php:67
-#: install.php:82
-msgid "already exists"
+#: Api/Gql/Recordings.php:19
+msgid "addRecording"
 msgstr ""
 
-#: install.php:41
-msgid "checking for fcode field.."
+#: Api/Gql/Recordings.php:377
+msgid "all inputs are provided"
 msgstr ""
 
-#: install.php:70
-msgid "checking for fcode_lang field.."
+#: Api/Gql/Recordings.php:52
+msgid "convertfile"
 msgstr ""
 
-#: install.php:55
-msgid "checking for fcode_pass field.."
+#: Api/Gql/Recordings.php:33
+msgid "deleteRecording"
+msgstr ""
+
+#: Api/Gql/Recordings.php:371
+msgid "please provide 'codec' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:363
+msgid "please provide 'file' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:375
+msgid "please provide 'lang' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:367
+msgid "please provide 'name' input field"
+msgstr ""
+
+#: Api/Gql/Recordings.php:260
+msgid "temporary"
+msgstr ""
+
+#: Api/Gql/Recordings.php:26
+msgid "updateRecording"
 msgstr ""

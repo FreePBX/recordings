@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-13 05:50+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: 2018-07-27 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -59,6 +59,10 @@ msgid ""
 msgstr ""
 "Fügen Sie eine zuvor erstellte Systemaufnahme oder eine zuvor hinzugefügte "
 "Aufnahme hinzu"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Administrator"
 
 #: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
@@ -136,6 +140,11 @@ msgstr ""
 #: assets/js/recordings.js:108
 #, perl-format
 msgid "Copying %s to %s"
+msgstr ""
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
 msgstr ""
 
 #: Recordings.class.php:72
@@ -407,7 +416,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr ""
 
@@ -492,7 +501,7 @@ msgstr "Bestätigen"
 msgid "Supported Languages"
 msgstr "Unterstützte Sprachen"
 
-#: Recordings.class.php:273
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Systemaufzeichnungen"
 
@@ -670,9 +679,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "Administrator"
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"

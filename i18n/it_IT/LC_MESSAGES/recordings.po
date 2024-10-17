@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-13 05:50+0000\n"
+"POT-Creation-Date: 2024-10-17 00:52-0400\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -59,6 +59,10 @@ msgid ""
 msgstr ""
 "Aggiungi qualsiasi registrazione di sistema creata in precedenza o una "
 "registrazione che è stata aggiunta in precedenza"
+
+#: recordings.i18n.php:6
+msgid "Admin"
+msgstr "Amministratore"
 
 #: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
@@ -140,6 +144,13 @@ msgstr ""
 #, perl-format
 msgid "Copying %s to %s"
 msgstr "Copia %s1 su %s2"
+
+#: recordings.i18n.php:8
+msgid ""
+"Creates and manages system recordings, used by many other modules (eg, IVR)."
+msgstr ""
+"Crea e gestisce le registrazioni di sistema, utilizzate da molti altri "
+"moduli (ad es. IVR)."
 
 #: Recordings.class.php:72
 msgid "Delete"
@@ -419,7 +430,7 @@ msgstr ""
 msgid "Recording updated succefully"
 msgstr ""
 
-#: install.php:5
+#: install.php:5 recordings.i18n.php:4
 msgid "Recordings"
 msgstr "Registrazioni"
 
@@ -504,7 +515,7 @@ msgstr "Sottoscrivi"
 msgid "Supported Languages"
 msgstr "Lingue supportate"
 
-#: Recordings.class.php:273
+#: Recordings.class.php:273 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
 
@@ -709,16 +720,6 @@ msgstr ""
 #: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
-
-#~ msgid "Admin"
-#~ msgstr "Amministratore"
-
-#~ msgid ""
-#~ "Creates and manages system recordings, used by many other modules (eg, "
-#~ "IVR)."
-#~ msgstr ""
-#~ "Crea e gestisce le registrazioni di sistema, utilizzate da molti altri "
-#~ "moduli (ad es. IVR)."
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr ""
