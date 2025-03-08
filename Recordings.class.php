@@ -308,6 +308,8 @@ class Recordings implements BMO {
 				$all = $this->getAll();
 				$languageNames = $this->getLanguages();
 				foreach($all as &$recs) {
+					$recs['displayname'] = html_entity_decode($recs['displayname'], ENT_QUOTES);
+					$recs['description'] = html_entity_decode($recs['description'], ENT_QUOTES);
 					foreach($recs['languages'] as &$lang) {
 						$lang = $languageNames[$lang] ?? $lang;
 					}
