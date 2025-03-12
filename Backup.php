@@ -5,7 +5,7 @@ class Backup Extends Base\BackupBase{
 	public function runBackup($id,$transaction){
 		$dirs = [];
 		$base = $this->FreePBX->Config->get('ASTVARLIBDIR');
-		$recs = $this->FreePBX->Recordings->getAll();
+		$recs = $this->FreePBX->Recordings->getAllRecordingsList();
 		foreach($recs as $rec){
 			foreach($rec['files'] as $file){
 				foreach($file as $key => $value){
@@ -25,7 +25,7 @@ class Backup Extends Base\BackupBase{
 		$this->addDirectories($dirs);
 		$this->addDependency('soundlang');
 		$this->addConfigs([
-			'data' => $this->FreePBX->Recordings->getAll(),
+			'data' => $this->FreePBX->Recordings->getAllRecordingsList(),
 			'features' => $this->dumpFeatureCodes()
 		]);
 	}

@@ -823,7 +823,7 @@ function addFile(name, filenames, languages, temp, exists) {
 					}
 				},
 				error: function(data) {
-
+					console.debug(data);
 				},
 			});
 		} else {

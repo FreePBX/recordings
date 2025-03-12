@@ -5,3 +5,12 @@ td.action button {
 td.action img {
 	width:20px;
 }
+
+.modal-header{
+	background: #4C9471;
+	color: white;
+}
+.modal-title{
+	background: #4C9471;
+	color: white;
+}
