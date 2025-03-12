@@ -5,7 +5,7 @@ use BMO;
 use PDO;
 use Exception;
 
-class Recordings implements BMO {
+class Recordings extends \DB_Helper implements BMO {
 	private $initialized = false;
 	private $full_list = null;
 	private $filter_list = array();
@@ -65,13 +65,95 @@ class Recordings implements BMO {
 	public function genConfig() {
 
 	}
+	
+	/**
+	 * getAllDriversInfo
+	 *
+	 * @return array
+	 */
+	public function getAllDriversInfo()
+	{
+		$drivers = [];
+		foreach (glob(__DIR__ . "/drivers/*.php") as $driver) {
+			$name 	= basename($driver);
+			$name 	= explode(".", $name);
+			$name 	= $name[0];
+			$name 	= ucfirst(strtolower($name));
+			$class  = $this->prepareDriverClass($name);
+			$drivers[strtolower($name)] = $class::getInfo();
+		}
+		return $drivers;
+	}
+	
+	/**
+	 * prepareDriverClass
+	 *
+	 * @param  string $driver
+	 * @return string
+	 */
+	private function prepareDriverClass($driver)
+	{
+		$driver = basename($driver);
+		$driver = ucfirst(strtolower($driver));
+		if (!file_exists(__DIR__ . "/drivers/" . $driver . ".php")) {
+			throw new \Exception( sprintf(_("Driver %s does not exist!"), $driver));
+		}
+		return "\FreePBX\modules\Recordings\drivers\\" . $driver;
+	}
+	
+	/**
+	 * getTTSAIFrom
+	 *
+	 * @param  string $engine
+	 * @return string
+	 */
+	public function getTTSAIFrom($engine){
+		switch($engine){			
+			case "none":
+				$result = "";
+				break;
+			case "Elevenlabs":
+				$apiKey 	= $this->getConfig($engine);
+				if(!empty($apiKey)){
+					$converter 	= new \FreePBX\modules\Recordings\drivers\Elevenlabs($apiKey);
+					$voices 	= $converter->getAvailableVoices();
+					if(!empty($voices)){
+						$vars 	 	= ["voices" => $voices];
+						$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
+					}
+					else{
+						$vars 	 	= ["engine" => $engine, "apikey" => $apiKey, "error" => _("Invalid API Key.")];
+						$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
+					}
+				}
+				else{
+					$vars 	 	= ["engine" => $engine, "apikey" => ""];
+					$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
+				}
+				break;
+			case "OpenAI":
+				$apiKey 	= $this->getConfig($engine);
+				if(!empty($apiKey)){
+					$converter 	= new \FreePBX\modules\Recordings\drivers\Openai($apiKey);
+					$voices 	= $converter->getAvailableVoices();
+					$vars 	 	= ["voices" => $voices];
+					$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
+				}
+				else{
+					$vars 	 	= ["engine" => $engine];
+					$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
+				}
+				break;
+		}
+		return $result;
+	}
 
 	public function getRightNav($request) {
 		if(isset($request['action']) && ($request['action'] == 'edit' || $request['action'] == 'add')) {
 			return load_view(__DIR__."/views/bnav.php",array());
 		}
 		return '';
-}
+	}
 
 	public function getActionBar($request){
 		$buttons = array();
@@ -125,7 +207,7 @@ class Recordings implements BMO {
 					}
 				}
 			case "add":
-				$all_records = $this->getAll();
+				$all_records = $this->getAllRecordingsList();
 				$tmp_id = '';
 				if(isset($_REQUEST['id'])){
 					$tmp_id = $_REQUEST['id'];
@@ -146,15 +228,31 @@ class Recordings implements BMO {
 				$message = '';
 				if(json_last_error() !== JSON_ERROR_NONE) {
 					$message = sprintf(_("There was an error reading system recordings (%s)"),json_last_error_msg());
-					freepbx_log(FPBX_LOG_WARNING,"JSON decode error: ".json_last_error_msg());
+					freepbx_log(FPBX_LOG_WARNING,_("JSON decode error: ").json_last_error_msg());
 					$jsonsysrecs = array();
 					$sysrecs = array();
 				}
 				$supportedHTML5 = $media->getSupportedHTML5Formats();
-				$convertto = array_intersect($supported['out'], $this->convert);
-				$recformat = $this->FreePBX->Config->get("MIXMON_FORMAT");
-				$recformat = empty($recformat) || !in_array($recformat,$this->convert) ? "wav" : $recformat;
-				$html = load_view(__DIR__."/views/form.php",array("missingLangs" => $missingLangs, "langs" => $langs, "recformat" => $recformat, "message" => $message, "jsonsysrecs" => $jsonsysrecs, "convertto" => $convertto, "supportedHTML5" => implode(",",$supportedHTML5), "data" => $data, "default" => $default, "supported" => $supported, "langs" => $langs, "sysrecs" => $sysrecs, "record_names" => $record_names));
+				$convertto 		= array_intersect($supported['out'], $this->convert);
+				$recformat 		= $this->FreePBX->Config->get("MIXMON_FORMAT");
+				$recformat 		= empty($recformat) || !in_array($recformat,$this->convert) ? "wav" : $recformat;
+				$drivers   		= $this->getAllDriversInfo();
+				$html = load_view(__DIR__."/views/form.php",[
+					"missingLangs" 		=> $missingLangs, 
+					"langs" 			=> $langs, 
+					"recformat" 		=> $recformat, 
+					"message" 			=> $message, 
+					"jsonsysrecs" 		=> $jsonsysrecs, 
+					"convertto" 		=> $convertto, 
+					"supportedHTML5" 	=> implode(",",$supportedHTML5), 
+					"data" 				=> $data, 
+					"default" 			=> $default, 
+					"supported" 		=> $supported, 
+					"langs" 			=> $langs, 
+					"sysrecs" 			=> $sysrecs, 
+					"record_names" 		=> $record_names,
+					"drivers" 			=> $drivers, 
+				]);
 			break;
 			case "delete":
 				$this->delRecording($_REQUEST['id']);
@@ -181,6 +279,10 @@ class Recordings implements BMO {
 			case "upload":
 			case "save":
 			case "grid":
+			case "ttsform":
+			case "setapikey":
+			case "getapikey":
+			case "ttsConvert":
 				return true;
 			break;
 		}
@@ -198,7 +300,64 @@ class Recordings implements BMO {
 	}
 
 	public function ajaxHandler() {
-		switch($_REQUEST['command']) {
+		$requests = freepbxGetSanitizedRequest();
+		switch($requests['command']) {
+			case "ttsform":
+				return $this->getTTSAIFrom($requests['engine']);
+			case "setapikey":
+				if(!empty($requests['key']) && !empty($requests['engine'])){
+					$apikey = $requests['key'];
+					$engine = $requests['engine'];
+					$this->setConfig($engine, $apikey);
+					return $this->getTTSAIFrom($engine);
+				}
+				return "";
+			case "getapikey":
+				if(!empty($requests['engine'])){
+					$engine = $requests['engine'];
+					return $this->getConfig($engine);
+				}
+				return "";
+			case "ttsConvert":
+				$engine 	= ucfirst(strtolower($requests['engine'])) ?? '';
+				$filename 	= $requests['file_name'] ?? '';
+				$text 		= $requests['text'] ?? '';
+				$voiceId 	= $requests['voiceId'] ?? '';
+				$lang 		= $requests['langCode'] ?? 'en';
+				$stability 	= floatval($requests['stability'] ?? 0.5);
+				$similarity = floatval($requests['similarity'] ?? 0.5);
+			
+				if(empty($engine) || empty($filename) || empty($text) || empty($voiceId)){
+					return ["status" => false, "error" => _("Missing parameters")];					
+				}
+
+				$apiKey = $this->getConfig($engine);
+				if (!$apiKey) {
+					return ["success" => false, "error" => _("Invalid API Key")];
+				}
+
+				try {
+					$className  = "\\FreePBX\\modules\\Recordings\\drivers\\$engine";
+					$converter  = new $className($apiKey);
+					$audioFile 	= $converter->convertToAudio($filename, $text, $voiceId, $lang, $stability, $similarity);
+					if(!empty($audioFile["status"])){
+						return ["status" => false, "message" => $audioFile["message"]];
+					}
+				}
+				catch (Exception $e) {
+					return ["status" => false, "error" => sprintf(_("Error Exception: %s."), $e->getMessage())];
+				}				
+
+
+
+				if($audioFile) {
+					return $audioFile;
+				} 
+				else{
+					return ["status" => false, "message" => _("Error While Convertion")];
+				}
+
+				return false;
 			case "gethtml5byid":
 				$media = $this->FreePBX->Media();
 				$file = "";
@@ -255,6 +414,10 @@ class Recordings implements BMO {
 				} else {
 					$filename = $path . "/" . $_POST['filenames'][$lang];
 				}
+
+				// Check if the audio file comes from AI or not RIFF.
+				$this->fixeRIFF($filename);
+
 				$media->load($filename);
 				$files = $media->generateHTML5();
 				$final = array();
@@ -350,7 +513,7 @@ class Recordings implements BMO {
 				}
 			break;
 			case "grid";
-				$all = $this->getAll();
+				$all = $this->getAllRecordingsList();
 				$languageNames = $this->getLanguages();
 				foreach($all as &$recs) {
 					foreach($recs['languages'] as &$lang) {
@@ -406,6 +569,22 @@ class Recordings implements BMO {
 				}
 				return array("status" => false, "message" => _("Can Not Find Uploaded Files"));
 			break;
+		}
+	}
+
+	/**
+	 * Check if the audio file comes from AI and doesn't include RIFF data.
+	 * @param string  $filename File Name
+	 */
+	public function fixeRIFF($filename){
+		exec("file -b $filename | grep 'RIFF' ", $out, $ret);
+		if($ret === 0 ){
+			dbug(_("An error is occured on RIFF detection."));
+		}
+		if(empty($out[0])){
+			$f 		= str_replace("custom/", "", $_POST["file"]);			
+			$cmd 	= "mv ".$this->temp."/$f.wav $filename";
+			exec($cmd, $out, $ret);
 		}
 	}
 
@@ -647,7 +826,7 @@ class Recordings implements BMO {
 	 * Get all recordings
 	 * @return array Array of recordings
 	 */
-	public function getAll() {
+	public function getAllRecordingsList() {
 		$sql = "SELECT * FROM recordings ORDER BY displayname";
 		$sth = $this->db->prepare($sql);
 		$sth->execute();
@@ -747,6 +926,7 @@ class Recordings implements BMO {
 		set_time_limit(0);
 		$media = $this->FreePBX->Media;
 		$file = $input['file'];
+		$this->fixeRIFF($file);
 		$name = $input['name'];
 		$codec = $input['codec'];
 		$lang = $input['lang'];
