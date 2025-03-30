@@ -1,3 +1,10 @@
+<?php 
+	if(!empty($error)){
+		?>
+		<script>fpbxToast( "<?= $error ?>", "Error" , "error");</script>
+		<?php 
+	}
+?>
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">

@@ -89,7 +89,7 @@ class Recordings extends \DB_Helper implements BMO {
 		$driver = basename($driver);
 		$driver = ucfirst(strtolower($driver));
 		if (!file_exists(__DIR__ . "/drivers/" . $driver . ".php")) {
-			throw new \Exception("Driver [$driver] does not exist!");
+			throw new \Exception( sprintf(_("Driver %s does not exist!"), $driver));
 		}
 		return "\FreePBX\modules\Recordings\drivers\\" . $driver;
 	}
@@ -101,7 +101,7 @@ class Recordings extends \DB_Helper implements BMO {
 	 * @return string
 	 */
 	public function getTTSAIFrom($engine){
-		switch($engine){
+		switch($engine){			
 			case "none":
 				$result = "";
 				break;
@@ -109,6 +109,25 @@ class Recordings extends \DB_Helper implements BMO {
 				$apiKey 	= $this->getConfig($engine);
 				if(!empty($apiKey)){
 					$converter 	= new \FreePBX\modules\Recordings\drivers\Elevenlabs($apiKey);
+					$voices 	= $converter->getAvailableVoices();
+					if(!empty($voices)){
+						$vars 	 	= ["voices" => $voices];
+						$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
+					}
+					else{
+						$vars 	 	= ["engine" => $engine, "apikey" => $apiKey, "error" => _("Invalid API Key.")];
+						$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
+					}
+				}
+				else{
+					$vars 	 	= ["engine" => $engine, "apikey" => ""];
+					$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
+				}
+				break;
+			case "OpenAI":
+				$apiKey 	= $this->getConfig($engine);
+				if(!empty($apiKey)){
+					$converter 	= new \FreePBX\modules\Recordings\drivers\Openai($apiKey);
 					$voices 	= $converter->getAvailableVoices();
 					$vars 	 	= ["voices" => $voices];
 					$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
@@ -277,7 +296,7 @@ class Recordings extends \DB_Helper implements BMO {
 				}
 				return "";
 			case "ttsConvert":
-				$engine 	= $requests['engine'] ?? '';
+				$engine 	= ucfirst(strtolower($requests['engine'])) ?? '';
 				$filename 	= $requests['file_name'] ?? '';
 				$text 		= $requests['text'] ?? '';
 				$voiceId 	= $requests['voiceId'] ?? '';
@@ -285,26 +304,36 @@ class Recordings extends \DB_Helper implements BMO {
 				$stability 	= floatval($requests['stability'] ?? 0.5);
 				$similarity = floatval($requests['similarity'] ?? 0.5);
 			
-				if (empty($engine) || empty($filename) || empty($text) || empty($voiceId)) {
-					return json_encode(["status" => false, "error" => _("Missing parameters")]);					
+				if(empty($engine) || empty($filename) || empty($text) || empty($voiceId)){
+					return ["status" => false, "error" => _("Missing parameters")];					
 				}
 
 				$apiKey = $this->getConfig($engine);
 				if (!$apiKey) {
-					return json_encode(["success" => false, "error" => _("Invalid API Key")]);
+					return ["success" => false, "error" => _("Invalid API Key")];
 				}
-			
-				$converter = new \FreePBX\modules\Recordings\drivers\Elevenlabs($apiKey);
-				$audioFile = $converter->convertToAudio($filename, $text, $voiceId, $lang, $stability, $similarity);
 
-				if ($audioFile) {
-					return json_encode([
-						"status" => true,
-						"file_url" => $audioFile
-					]);
-				} else {
-					return json_encode(["status" => false, "error" => _("Error While Convertion")]);
+				try {
+					$className  = "\\FreePBX\\modules\\Recordings\\drivers\\$engine";
+					$converter  = new $className($apiKey);
+					$audioFile 	= $converter->convertToAudio($filename, $text, $voiceId, $lang, $stability, $similarity);
+					if(!empty($audioFile["status"])){
+						return ["status" => false, "message" => $audioFile["message"]];
+					}
 				}
+				catch (Exception $e) {
+					return ["status" => false, "error" => sprintf(_("Error Exception: %s."), $e->getMessage())];
+				}				
+
+
+
+				if($audioFile) {
+					return $audioFile;
+				} 
+				else{
+					return ["status" => false, "message" => _("Error While Convertion")];
+				}
+
 				return false;
 			case "gethtml5byid":
 				$media = $this->FreePBX->Media();
@@ -522,9 +551,9 @@ class Recordings extends \DB_Helper implements BMO {
 			dbug(_("An error is occured on RIFF detection."));
 		}
 		if(empty($out[0])){
-			$f 		= str_replace("custom/", "", $_POST["file"]);					
-			$cmd 	= "mv /var/spool/asterisk/tmp/$f.wav $filename";
-			exec($cmd,$out, $ret);
+			$f 		= str_replace("custom/", "", $_POST["file"]);			
+			$cmd 	= "mv ".$this->temp."/$f.wav $filename";
+			exec($cmd, $out, $ret);
 		}
 	}
 
