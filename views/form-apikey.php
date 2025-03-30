@@ -1,3 +1,10 @@
+<?php 
+	if(!empty($error)){
+		?>
+		<script>fpbxToast( "<?= $error ?>", "Error" , "error");</script>
+		<?php 
+	}
+?>
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">
@@ -7,7 +14,7 @@
 						<label class="control-label"><?= _("Enter your API Key")?></label>
 					</div>
 					<div class="col-md-9">
-                        <input type="text" id="apikey" class="form-control" placeholder="<?= _("Enter your API Key here.") ?>">
+                        <input type="text" id="apikey" class="form-control" placeholder="<?= _("Enter your API Key here.") ?>" value="<?= $apikey ?>">
 					</div>
 				</div>
 			</div>

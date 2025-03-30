@@ -406,6 +406,18 @@
 	</div>
 </div>
 <script>
+$(document).ready(function() {
+    $(document).on('mouseenter', '.fpbx-help-icon', function() {
+        var target = $(this).data('for');
+        $('#' + target + '-help').fadeIn(200); // Afficher l'aide en douceur
+    });
+
+    $(document).on('mouseleave', '.fpbx-help-icon', function() {
+        var target = $(this).data('for');
+        $('#' + target + '-help').fadeOut(200); // Cacher l'aide
+    });
+});
+
 var record_names = new Array();
 <?php
 if(!empty($record_names)){

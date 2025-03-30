@@ -33,7 +33,7 @@
                         <select name="ttsaiVoice" id="ttsaiVoice" class="form-control" required>
                             <?php foreach ($voices as $voice): ?>
                                 <option value="<?= $voice['voice_id'] ?>">
-                                    <?= $voice['name'] ?> (<?= $voice['labels']['accent'] ?? 'N/A' ?>)
+                                    <?= $voice['name'] ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -48,50 +48,6 @@
 		</div>
 	</div>
 </div>
-<div class="element-container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="form-group">
-					<div class="col-md-3">
-						<label class="control-label"><?= _("Stability")?></label>
-						<i class="fa fa-question-circle fpbx-help-icon" data-for="stability"></i>
-					</div>
-					<div class="col-md-9">
-                        <input type="number" class="form-control" name="stability" id=="stability" step="0.1" min="0" max="1" value="0.5">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<span id="stability-help" class="help-block fpbx-help-block"><?= _("Min: 0, max: 1, step: 0.1. Influences speed. Default value: 0.5.")?></span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
-<div class="element-container">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="row">
-				<div class="form-group">
-					<div class="col-md-3">
-						<label class="control-label"><?= _("Similarity")?></label>
-						<i class="fa fa-question-circle fpbx-help-icon" data-for="similarity"></i>
-					</div>
-					<div class="col-md-9">
-                        <input type="number" class="form-control" name="similarity" step="0.1" min="0" max="1" value="0.5">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<span id="similarity-help" class="help-block fpbx-help-block"><?= _("Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5.")?></span>
-				</div>
-			</div>
-		</div>
-	</div>
-</div> 
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">
@@ -114,7 +70,6 @@
 		</div>
 	</div>
 </div>
-
 <div class="element-container">
 	<div class="row">
 		<div class="col-md-12">
@@ -125,7 +80,7 @@
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="editAPIkey"></i>
 					</div>
 					<div class="col-md-9">
-                        <button class="btn btn-primary" id="editAPIkey" data-toggle="modal" data-target="#modalAPIKey"><?= _("Edit") ?></button>
+                        <a class="btn btn-primary" id="editAPIkey" data-toggle="modal" data-target="#modalAPIKey"><?= _("Edit") ?></a>
 					</div>
 				</div>
 			</div>
@@ -137,7 +92,6 @@
 		</div>
 	</div>
 </div>
-
 <!-- The modal APIKey -->
 <div class="modal fade" id="modalAPIKey" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
