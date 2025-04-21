@@ -7,7 +7,7 @@
 						<label class="control-label"><?= _("Enter your API Key")?></label>
 					</div>
 					<div class="col-md-9">
-                        <input type="text" id="apikey" class="form-control" placeholder="<?= _("Enter your API Key here.") ?>">
+                        <input type="text" id="apikey" class="form-control" placeholder="<?= _("Enter your API Key here.") ?>" value="<?= empty($apikey)? "" : $apikey; ?>">
 					</div>
 				</div>
 			</div>
