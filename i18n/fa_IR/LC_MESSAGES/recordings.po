@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-29 09:31+0000\n"
+"POT-Creation-Date: 2025-04-21 06:45+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:403
+#: Recordings.class.php:566
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -43,7 +43,7 @@ msgstr "افزودن پیام ضبط شده سیستمی جدید"
 msgid "Add Recording"
 msgstr "افزودن پیام ضبط شده"
 
-#: views/form.php:230
+#: views/form.php:264
 msgid "Add System Recording"
 msgstr "افزودن پیام ضبط شده سیستمی"
 
@@ -51,7 +51,7 @@ msgstr "افزودن پیام ضبط شده سیستمی"
 msgid "Add a new recording to the Sytem Recordings"
 msgstr ""
 
-#: views/form.php:245
+#: views/form.php:279
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
@@ -60,6 +60,22 @@ msgstr "افزودن پیام ضبط شده سیستمی یا پیام ضبط ش
 #: recordings.i18n.php:6
 msgid "Admin"
 msgstr "مدیر"
+
+#: assets/js/ttsai.js:52
+msgid "An Ajax error has occurred: "
+msgstr ""
+
+#: assets/js/ttsai.js:71 assets/js/ttsai.js:92
+msgid "An Ajax error is occured! "
+msgstr ""
+
+#: assets/js/ttsai.js:17
+msgid "An Ajax error is occured!! "
+msgstr ""
+
+#: Recordings.class.php:582
+msgid "An error is occured on RIFF detection."
+msgstr ""
 
 #: Api/Gql/Recordings.php:42
 msgid "An id used to identify your recording"
@@ -81,11 +97,15 @@ msgstr "آیا از حذف این پیام ضبط شده مطمئن هستید؟
 msgid "Asterisk Sounds folder NOT found on Legacy backup !"
 msgstr ""
 
-#: views/form.php:96
+#: views/form.php:130
 msgid "Browse"
 msgstr "بارگذاری"
 
-#: views/form.php:200
+#: drivers/Openai.php:71
+msgid "CURL Error: "
+msgstr ""
+
+#: views/form.php:234
 msgid "Call"
 msgstr "برقراری تماس"
 
@@ -93,15 +113,15 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:407
+#: Recordings.class.php:570
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:776
+#: Recordings.class.php:956
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
-#: views/form.php:169 views/form.php:208
+#: views/form.php:203 views/form.php:242
 msgid "Cancel"
 msgstr "لغو"
 
@@ -109,13 +129,13 @@ msgstr "لغو"
 msgid "Check Recording"
 msgstr "بررسی پیام ضبط شده"
 
-#: views/form.php:350
+#: views/form.php:384
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
 msgstr "بررسی تمام فرمت ها برای تبدیل پیام ضبط شده به آن ها"
 
-#: views/form.php:302
+#: views/form.php:336
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -123,11 +143,20 @@ msgstr ""
 "به منظور تغییر این پیام ضبط شده از طریق شماره گیری کد ویژه، این گزینه را "
 "علامت بزنید."
 
-#: views/form.php:258
+#: views/form-Elevenlabs.php:146 views/form-Elevenlabs.php:155
+#: views/form-OpenAI.php:100 views/form-OpenAI.php:109
+msgid "Close"
+msgstr ""
+
+#: views/form.php:292
 msgid "Combine Files"
 msgstr "ترکیب فایل ها"
 
-#: views/form.php:334
+#: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
+msgid "Convert Text to Audio"
+msgstr ""
+
+#: views/form.php:368
 msgid "Convert To"
 msgstr "تبدیل به"
 
@@ -147,7 +176,7 @@ msgstr ""
 "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
 "شوند (مانند منوی صوتی)."
 
-#: Recordings.class.php:88
+#: Recordings.class.php:170
 msgid "Delete"
 msgstr "حذف"
 
@@ -176,27 +205,93 @@ msgstr ""
 msgid "Display Name"
 msgstr "نام قابل نمایش"
 
-#: views/form.php:103
+#: assets/js/ttsai.js:45
+msgid "Download error : "
+msgstr ""
+
+#: Recordings.class.php:99
+#, php-format
+msgid "Driver %s does not exist!"
+msgstr ""
+
+#: views/form.php:137
 msgid "Drop Multiple Files or Archives Here"
 msgstr "چندین فایل یا فایل های فشرده را به اینجا بکشید"
+
+#: views/form-Elevenlabs.php:128 views/form-OpenAI.php:83
+msgid "Edit"
+msgstr ""
+
+#: views/form-Elevenlabs.php:124 views/form-Elevenlabs.php:149
+#: views/form-OpenAI.php:79 views/form-OpenAI.php:103
+msgid "Edit API Key"
+msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
 msgstr ""
 
-#: views/form.php:198
+#: views/form-Elevenlabs.php:134 views/form-OpenAI.php:89
+msgid "Edit your API key."
+msgstr ""
+
+#: drivers/Elevenlabs.php:14
+msgid "Elevenlabs"
+msgstr ""
+
+#: views/form.php:232
 msgid "Enter Extension"
 msgstr "شماره داخلی مورد نظر"
+
+#: views/form-apikey.php:14
+msgid "Enter your API Key"
+msgstr ""
+
+#: views/form-Elevenlabs.php:152 views/form-OpenAI.php:106
+#: views/form-apikey.php:17
+msgid "Enter your API Key here."
+msgstr ""
+
+#: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17
+msgid "Enter your text here."
+msgstr ""
+
+#: Recordings.class.php:348
+#, php-format
+msgid "Error Exception: %s."
+msgstr ""
+
+#: Recordings.class.php:357
+msgid "Error While Convertion"
+msgstr ""
+
+#: drivers/Elevenlabs.php:41
+msgid "Error retrieving voices "
+msgstr ""
+
+#: assets/js/ttsai.js:47 assets/js/ttsai.js:48
+msgid "Error while converting TTS: "
+msgstr ""
+
+#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
+msgid "Error while converting: "
+msgstr ""
+
+#: drivers/Openai.php:79
+#, php-format
+msgid "Error: %d - %s"
+msgstr ""
 
 #: Api/Gql/Recordings.php:74
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:400
+#: Recordings.class.php:563
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
-#: views/form.php:314
+#: views/form.php:348
 msgid "Feature Code Password"
 msgstr "رمز عبور کد ویژه"
 
@@ -212,7 +307,7 @@ msgstr ""
 msgid "File Converted succefully"
 msgstr ""
 
-#: views/form.php:57
+#: views/form.php:91
 #, php-format
 msgid "File List for %s"
 msgstr "فهرست فایل برای %s"
@@ -222,7 +317,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:242 Recordings.class.php:349
+#: Recordings.class.php:401 Recordings.class.php:512
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -244,15 +339,27 @@ msgstr ""
 msgid "File with the name '%s' not found in the system"
 msgstr ""
 
-#: views/form.php:152
+#: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
+msgid "Generate"
+msgstr ""
+
+#: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
+msgid "Generate your audio file."
+msgstr ""
+
+#: views/form.php:186
 msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
+
+#: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
+msgid "Human Voices"
+msgstr ""
 
 #: Api/Gql/Recordings.php:144 Api/Gql/Recordings.php:239
 msgid "Id of the Recording"
 msgstr ""
 
-#: views/form.php:273
+#: views/form.php:307
 msgid ""
 "Instead of chaining files together (of which some applications do not "
 "support playback) combine the files above into a single file. After this is "
@@ -266,6 +373,18 @@ msgstr ""
 "به ابتدا و انتهای این فایل اضافه کنید. این عمل هیچ یک از فایل های لیست بالا "
 "را خراب نمی کند."
 
+#: Recordings.class.php:336
+msgid "Invalid API Key"
+msgstr ""
+
+#: Recordings.class.php:125
+msgid "Invalid API Key."
+msgstr ""
+
+#: Recordings.class.php:231
+msgid "JSON decode error: "
+msgstr ""
+
 #: Api/Gql/Recordings.php:164
 msgid "Language of recording"
 msgstr ""
@@ -274,7 +393,7 @@ msgstr ""
 msgid "Language of recording file"
 msgstr ""
 
-#: views/form.php:286
+#: views/form.php:320
 msgid "Link to Feature Code"
 msgstr "پیوند دادن به کد ویژه"
 
@@ -302,9 +421,21 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:397
+#: views/form-Elevenlabs.php:67
+msgid "Min: 0, max: 1, step: 0.1. Influences speed. Default value: 0.5."
+msgstr ""
+
+#: views/form-Elevenlabs.php:89
+msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
+msgstr ""
+
+#: Recordings.class.php:560
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
+
+#: Recordings.class.php:331
+msgid "Missing parameters"
+msgstr ""
 
 #: views/form.php:17
 msgid "Name"
@@ -314,11 +445,11 @@ msgstr "نام"
 msgid "Name of the Recording"
 msgstr ""
 
-#: views/form.php:206
+#: views/form.php:201 views/form.php:240
 msgid "Name this file"
 msgstr "نام این فایل"
 
-#: views/form.php:266 views/form.php:294
+#: views/form.php:300 views/form.php:328
 msgid "No"
 msgstr "خیر"
 
@@ -326,11 +457,11 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:394
+#: Recordings.class.php:557
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
-#: views/form.php:66
+#: views/form.php:100
 #, php-format
 msgid "No files for %s"
 msgstr "عدم وجود فایل برای %s"
@@ -345,7 +476,11 @@ msgid ""
 "Languages module!"
 msgstr ""
 
-#: views/form.php:296
+#: views/form.php:64
+msgid "None"
+msgstr ""
+
+#: views/form.php:330
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فایل های ضبط شده وجود ندارد"
 
@@ -353,12 +488,16 @@ msgstr "به صورت ترکیبی پشتیبانی نمی شود ویا فای�
 msgid "Not supported on compounded recordings"
 msgstr "برای ضبط ترکیبی پشتیبانی نمی شود"
 
-#: views/form.php:296
+#: drivers/Openai.php:16
+msgid "OpenAI"
+msgstr ""
+
+#: views/form.php:330
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "کد ویژه دلخواه %s"
 
-#: views/form.php:322
+#: views/form.php:356
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -398,11 +537,11 @@ msgstr ""
 msgid "Processing %s for %s in format %s"
 msgstr "پردازش %s برای %s در فرمت %s"
 
-#: views/form.php:122
+#: views/form.php:156
 msgid "Record In Browser"
 msgstr "ضبط پیام از طریق مرورگر"
 
-#: views/form.php:191
+#: views/form.php:225
 msgid "Record Over Extension"
 msgstr "ضبط پیام از طریق داخلی"
 
@@ -422,7 +561,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
-#: Recordings.class.php:93
+#: Recordings.class.php:175
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -436,9 +575,14 @@ msgstr ""
 msgid "Same file exists  %s"
 msgstr ""
 
-#: views/form.php:170 views/form.php:209
+#: views/form-Elevenlabs.php:155 views/form-OpenAI.php:109
+#: views/form-apikey.php:33 views/form.php:204 views/form.php:243
 msgid "Save"
 msgstr "ذخیره"
+
+#: views/form-apikey.php:30
+msgid "Save API Key"
+msgstr ""
 
 #: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
@@ -446,6 +590,18 @@ msgstr "ذخیره پیام ضبط شده"
 
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
+msgstr ""
+
+#: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
+msgid "Select the human voice avaible into the list."
+msgstr ""
+
+#: views/form.php:76
+msgid "Select your engine generating audio file from A.I."
+msgstr ""
+
+#: views/form-Elevenlabs.php:79
+msgid "Similarity"
 msgstr ""
 
 #: views/form.php:5
@@ -468,7 +624,7 @@ msgstr ""
 msgid "Sorry unable to find the system recordings"
 msgstr ""
 
-#: views/form.php:79
+#: views/form.php:113
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
 "top to the bottom. You can click the play icon to preview the files. If a "
@@ -486,11 +642,15 @@ msgstr ""
 msgid "Sound Languages"
 msgstr ""
 
+#: views/form-Elevenlabs.php:57
+msgid "Stability"
+msgstr ""
+
 #: Api/Gql/Recordings.php:203
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:83
+#: Recordings.class.php:165
 msgid "Submit"
 msgstr "ثبت"
 
@@ -502,8 +662,20 @@ msgstr "زبان های تحت پوشش"
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
-#: Recordings.class.php:316
+#: Recordings.class.php:479
 msgid "System Recordings <0>"
+msgstr ""
+
+#: views/form.php:59
+msgid "TTS A.I Engine"
+msgstr ""
+
+#: assets/js/ttsai.js:57
+msgid "Text cannot be empty"
+msgstr ""
+
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7
+msgid "Text to Convert"
 msgstr ""
 
 #: assets/js/recordings.js:25
@@ -527,7 +699,7 @@ msgstr ""
 "نام پیام ضبط شده سیستمی در سیستم فایل. در صورت مشابهت با فایل دیگر، آن فایل "
 "بازنویسی می شود."
 
-#: views/form.php:218
+#: views/form.php:252
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
@@ -535,24 +707,28 @@ msgstr ""
 "سیستم با شماره ای که در این بخش وارد کرده اید، تماس می گیرد. پس از قطع شما "
 "می توانید نام فایل را مشخص کنید. این فایل در فهرست بالا قرار می گیرد"
 
-#: Recordings.class.php:388
+#: drivers/Openai.php:47
+msgid "The text cannot be empty."
+msgstr ""
+
+#: Recordings.class.php:551
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:385
+#: Recordings.class.php:548
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:391
+#: Recordings.class.php:554
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
-#: Recordings.class.php:148
+#: Recordings.class.php:230
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
@@ -561,7 +737,7 @@ msgstr "بروز خطا در خواندن پیام های ضبط شده سیست
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "سیستم ضبط تماسی برای این زبان وجود ندارد. ادامه میدهید؟"
 
-#: views/form.php:179
+#: views/form.php:213
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
@@ -569,18 +745,18 @@ msgstr ""
 "از طریق ایجاد یک درخواست WebRTC شما می توانید از طریق مرورگر کامپیوتر، پیام "
 "صوتی را ضبط کنید"
 
-#: views/form.php:156
+#: views/form.php:190
 #, php-format
 msgid ""
 "To play the media you will need to either update your browser to a recent "
 "version or update your %s"
 msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
-#: Recordings.class.php:295
+#: Recordings.class.php:458
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:380
+#: Recordings.class.php:543
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
@@ -588,7 +764,7 @@ msgstr "فرمت فایل پشتیبانی نمی شود"
 msgid "Unsupported file type"
 msgstr "نوع فایل پشتیبانی نمی شود"
 
-#: views/form.php:155
+#: views/form.php:189
 msgid "Update Required"
 msgstr "نیاز به بروز رسانی"
 
@@ -596,11 +772,11 @@ msgstr "نیاز به بروز رسانی"
 msgid "Update a recording in the Sytem Recordings"
 msgstr ""
 
-#: views/form.php:91
+#: views/form.php:125
 msgid "Upload Recording"
 msgstr "بارگذاری پیام ضبط شده"
 
-#: views/form.php:110
+#: views/form.php:144
 #, php-format
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
@@ -609,7 +785,7 @@ msgstr ""
 "بارگذاری فایل ها از روی سیستم محلی. فرمت های پشتیبانی شده: %s. که شامل آرشیو "
 "(چندین فایل) و چند فایل می باشد"
 
-#: views/form.php:264 views/form.php:292
+#: views/form.php:298 views/form.php:326
 msgid "Yes"
 msgstr "بله"
 
@@ -631,7 +807,7 @@ msgstr ""
 "شما در حالت جایگزینی قرار دارید. فایل اضافه شده توسط شما هنگام ذخیره بجای "
 "فایل سیستمی کنونی قرار می گیرد. آیا از انجام این کار مطمئن هستید؟"
 
-#: views/form.php:73
+#: views/form.php:107
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
@@ -640,7 +816,7 @@ msgstr ""
 "ضبط پایین جایگزین کنید. با کلیک روی هر فایل، سبز رنگ شده و آن را در حالت "
 "جایگزینی قرار می دهد"
 
-#: views/form.php:72
+#: views/form.php:106
 msgid ""
 "You have a missing file for this language. Click any red recording above to "
 "replace it with a recording/upload below. It will then turn green. Once you "
