@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 00:52-0400\n"
+"POT-Creation-Date: 2025-05-05 04:58-0400\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
-#: Recordings.class.php:358
+#: Recordings.class.php:506
 msgid "A PHP extension stopped the file upload"
 msgstr "Un'estensione PHP ha interrotto il caricamento del file"
 
@@ -44,7 +44,7 @@ msgstr "Aggiungi una nuova registrazione di sistema"
 msgid "Add Recording"
 msgstr "Aggiungi Registrazione"
 
-#: views/form.php:230
+#: views/form.php:266
 msgid "Add System Recording"
 msgstr "Aggiungi la registrazione del sistema"
 
@@ -52,7 +52,7 @@ msgstr "Aggiungi la registrazione del sistema"
 msgid "Add a new recording to the Sytem Recordings"
 msgstr ""
 
-#: views/form.php:245
+#: views/form.php:281
 msgid ""
 "Add any previously created system recording or a recording that was added "
 "previously"
@@ -63,6 +63,18 @@ msgstr ""
 #: recordings.i18n.php:6
 msgid "Admin"
 msgstr "Amministratore"
+
+#: assets/js/ttsai.js:53
+msgid "An Ajax error has occurred! Please check the console logs."
+msgstr ""
+
+#: assets/js/ttsai.js:17 assets/js/ttsai.js:67 assets/js/ttsai.js:88
+msgid "An Ajax error is occured!! Please, check console logs."
+msgstr ""
+
+#: Recordings.class.php:522
+msgid "An error is occured on RIFF detection."
+msgstr ""
 
 #: Api/Gql/Recordings.php:38
 msgid "An id used to identify your recording"
@@ -84,11 +96,11 @@ msgstr "Sei sicuro di voler eliminare queste registrazioni?"
 msgid "Asterisk Sounds folder NOT found on Legacy backup !"
 msgstr ""
 
-#: views/form.php:96
+#: views/form.php:132
 msgid "Browse"
 msgstr "Navigare"
 
-#: views/form.php:200
+#: views/form.php:236
 msgid "Call"
 msgstr "Chiamata"
 
@@ -96,15 +108,15 @@ msgstr "Chiamata"
 msgid "Call!"
 msgstr "Chiamata!"
 
-#: Recordings.class.php:362
+#: Recordings.class.php:510
 msgid "Can Not Find Uploaded Files"
 msgstr "Impossibile trovare i file caricati"
 
-#: Recordings.class.php:714
+#: Recordings.class.php:879
 msgid "Can not find suitable file in this language"
 msgstr "Impossibile trovare il file adatto in questa lingua"
 
-#: views/form.php:169 views/form.php:208
+#: views/form.php:205 views/form.php:244
 msgid "Cancel"
 msgstr "Cancella"
 
@@ -112,7 +124,7 @@ msgstr "Cancella"
 msgid "Check Recording"
 msgstr "Controllo Registrazione"
 
-#: views/form.php:350
+#: views/form.php:386
 msgid ""
 "Check all file formats you would like this system recording to be encoded "
 "into"
@@ -120,7 +132,7 @@ msgstr ""
 "Controlla tutti i formati di file in cui desideri che la registrazione del "
 "sistema sia codificata"
 
-#: views/form.php:302
+#: views/form.php:338
 msgid ""
 "Check this box to create an options feature code that will allow this "
 "recording to be changed directly."
@@ -128,11 +140,19 @@ msgstr ""
 "Attivare questa opzione per creare un codice servizio che permetterà di "
 "cambiare questa registrazione direttamente."
 
-#: views/form.php:258
+#: views/form-Elevenlabs.php:110 views/form-Elevenlabs.php:119
+msgid "Close"
+msgstr ""
+
+#: views/form.php:294
 msgid "Combine Files"
 msgstr "Combina i file"
 
-#: views/form.php:334
+#: views/form-Elevenlabs.php:77
+msgid "Convert Text to Audio"
+msgstr ""
+
+#: views/form.php:370
 msgid "Convert To"
 msgstr "Convertire in"
 
@@ -152,7 +172,7 @@ msgstr ""
 "Crea e gestisce le registrazioni di sistema, utilizzate da molti altri "
 "moduli (ad es. IVR)."
 
-#: Recordings.class.php:72
+#: Recordings.class.php:135
 msgid "Delete"
 msgstr "Elimina"
 
@@ -164,11 +184,11 @@ msgstr "Elimina registrazione"
 msgid "Delete a recording from the Sytem Recordings"
 msgstr ""
 
-#: views/form.php:45
+#: views/form.php:47
 msgid "Describe this recording"
 msgstr "Descrivi questa registrazione"
 
-#: views/bnav.php:21 views/form.php:37 views/grid.php:28
+#: views/bnav.php:21 views/form.php:39 views/grid.php:28
 msgid "Description"
 msgstr "Descrizione"
 
@@ -181,27 +201,71 @@ msgstr ""
 msgid "Display Name"
 msgstr "Nome Display"
 
-#: views/form.php:103
+#: assets/js/ttsai.js:46
+msgid "Download error :"
+msgstr ""
+
+#: views/form.php:139
 msgid "Drop Multiple Files or Archives Here"
 msgstr "Rilasciare più file o archivi qui"
+
+#: views/form-Elevenlabs.php:97
+msgid "Edit"
+msgstr ""
+
+#: views/form-Elevenlabs.php:94 views/form-Elevenlabs.php:113
+msgid "Edit API Key"
+msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
 msgstr "Modifica Registrazione"
 
-#: views/form.php:198
+#: drivers/Elevenlabs.php:14
+msgid "Elevenlabs"
+msgstr ""
+
+#: views/form.php:234
 msgid "Enter Extension"
 msgstr "Inserisci estensione"
+
+#: views/form-apikey.php:7
+msgid "Enter your API Key"
+msgstr ""
+
+#: views/form-Elevenlabs.php:116 views/form-apikey.php:10
+msgid "Enter your API Key here."
+msgstr ""
+
+#: views/form-Elevenlabs.php:10
+msgid "Enter your text here."
+msgstr ""
+
+#: Recordings.class.php:306
+msgid "Error While Convertion"
+msgstr ""
+
+#: drivers/Elevenlabs.php:41
+msgid "Error retrieving voices "
+msgstr ""
+
+#: assets/js/ttsai.js:48
+msgid "Error while converting TTS:"
+msgstr ""
+
+#: drivers/Elevenlabs.php:109
+msgid "Error while converting: "
+msgstr ""
 
 #: Api/Gql/Recordings.php:70
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:355
+#: Recordings.class.php:503
 msgid "Failed to write file to disk"
 msgstr "Impossibile scrivere il file su disco"
 
-#: views/form.php:314
+#: views/form.php:350
 msgid "Feature Code Password"
 msgstr "Password Codice Servizio"
 
@@ -217,7 +281,7 @@ msgstr ""
 msgid "File Converted succefully"
 msgstr ""
 
-#: views/form.php:57
+#: views/form.php:93
 #, php-format
 msgid "File List for %s"
 msgstr "Elenco file per %s1"
@@ -227,7 +291,7 @@ msgstr "Elenco file per %s1"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:205 Recordings.class.php:304
+#: Recordings.class.php:349 Recordings.class.php:452
 msgid "File does not exist"
 msgstr "Il file non esiste"
 
@@ -250,17 +314,25 @@ msgstr ""
 msgid "File with the name '%s' not found in the system"
 msgstr ""
 
-#: views/form.php:152
+#: views/form-Elevenlabs.php:80
+msgid "Generate"
+msgstr ""
+
+#: views/form.php:188
 msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 "Premi il pulsante rosso di registrazione per avviare la registrazione dal "
 "tuo browser"
 
+#: views/form-Elevenlabs.php:23
+msgid "Human Voices"
+msgstr ""
+
 #: Api/Gql/Recordings.php:134 Api/Gql/Recordings.php:216
 msgid "Id of the Recording"
 msgstr ""
 
-#: views/form.php:273
+#: views/form.php:309
 msgid ""
 "Instead of chaining files together (of which some applications do not "
 "support playback) combine the files above into a single file. After this is "
@@ -274,6 +346,14 @@ msgstr ""
 "sarai in grado di aggiungere file alla fine o all'inizio di questo file. "
 "Questo non distruggerà alcun file precedentemente esistente elencato sopra."
 
+#: Recordings.class.php:294
+msgid "Invalid API Key"
+msgstr ""
+
+#: Recordings.class.php:189
+msgid "JSON decode error: "
+msgstr ""
+
 #: Api/Gql/Recordings.php:154
 msgid "Language of recording"
 msgstr ""
@@ -282,7 +362,7 @@ msgstr ""
 msgid "Language of recording file"
 msgstr ""
 
-#: views/form.php:286
+#: views/form.php:322
 msgid "Link to Feature Code"
 msgstr "Collega ad un Codice Servizio"
 
@@ -310,11 +390,15 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:352
+#: Recordings.class.php:500
 msgid "Missing a temporary folder"
 msgstr "Manca una cartella temporanea"
 
-#: views/form.php:17
+#: Recordings.class.php:289
+msgid "Missing parameters"
+msgstr ""
+
+#: views/form.php:19
 msgid "Name"
 msgstr "Nome"
 
@@ -322,11 +406,11 @@ msgstr "Nome"
 msgid "Name of the Recording"
 msgstr ""
 
-#: views/form.php:206
+#: views/form.php:203 views/form.php:242
 msgid "Name this file"
 msgstr "Dai un nome a questo file"
 
-#: views/form.php:266 views/form.php:294
+#: views/form.php:302 views/form.php:330
 msgid "No"
 msgstr "No"
 
@@ -334,11 +418,11 @@ msgstr "No"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:349
+#: Recordings.class.php:497
 msgid "No file was uploaded"
 msgstr "Nessun file è stato caricato"
 
-#: views/form.php:66
+#: views/form.php:102
 #, php-format
 msgid "No files for %s"
 msgstr "Nessun file per %s1"
@@ -355,7 +439,11 @@ msgstr ""
 "Nessuna lingua è definita! Devi definirne almeno uno nel modulo Lingue del "
 "suono!"
 
-#: views/form.php:296
+#: views/form.php:66
+msgid "None"
+msgstr ""
+
+#: views/form.php:332
 msgid "Not supported on compounded or Non-Existent recordings"
 msgstr "Non supportato su registrazioni composte o inesistenti"
 
@@ -363,12 +451,12 @@ msgstr "Non supportato su registrazioni composte o inesistenti"
 msgid "Not supported on compounded recordings"
 msgstr "Non supportato su registrazioni composte"
 
-#: views/form.php:296
+#: views/form.php:332
 #, php-format
 msgid "Optional Feature Code %s"
 msgstr "Codice Servizio Opzionale %s1"
 
-#: views/form.php:322
+#: views/form.php:358
 msgid ""
 "Optional password to protect access to this feature code which allows a user "
 "to re-record it."
@@ -410,11 +498,11 @@ msgstr ""
 msgid "Processing %s for %s in format %s"
 msgstr "Elaborazione %s1 per %s2 in formato %s3"
 
-#: views/form.php:122
+#: views/form.php:158
 msgid "Record In Browser"
 msgstr "Registra nel browser"
 
-#: views/form.php:191
+#: views/form.php:227
 msgid "Record Over Extension"
 msgstr "registra sull'estensione"
 
@@ -434,7 +522,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Registrazioni"
 
-#: Recordings.class.php:72
+#: Recordings.class.php:135
 msgid "Reset"
 msgstr "Azzerare"
 
@@ -448,9 +536,14 @@ msgstr ""
 msgid "Same file exists  %s"
 msgstr ""
 
-#: views/form.php:170 views/form.php:209
+#: views/form-Elevenlabs.php:119 views/form-apikey.php:26 views/form.php:206
+#: views/form.php:245
 msgid "Save"
 msgstr "Salva"
+
+#: views/form-apikey.php:23
+msgid "Save API Key"
+msgstr ""
 
 #: install.php:6 assets/js/recordings.js:318
 msgid "Save Recording"
@@ -458,6 +551,14 @@ msgstr "Salva Registrazione"
 
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
+msgstr ""
+
+#: views/form.php:78
+msgid "Select your engine generating audio file from A.I."
+msgstr ""
+
+#: views/form-Elevenlabs.php:61
+msgid "Similarity (0-1, influences tone)"
 msgstr ""
 
 #: views/form.php:5
@@ -483,7 +584,7 @@ msgstr ""
 msgid "Sorry unable to find the system recordings"
 msgstr ""
 
-#: views/form.php:79
+#: views/form.php:115
 msgid ""
 "Sortable File List/Play order. The playback will be done starting from the "
 "top to the bottom. You can click the play icon to preview the files. If a "
@@ -503,11 +604,15 @@ msgstr ""
 msgid "Sound Languages"
 msgstr "Lingue sonore"
 
+#: views/form-Elevenlabs.php:45
+msgid "Stability (0-1, influences speed)"
+msgstr ""
+
 #: Api/Gql/Recordings.php:183
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:72
+#: Recordings.class.php:135
 msgid "Submit"
 msgstr "Sottoscrivi"
 
@@ -515,9 +620,17 @@ msgstr "Sottoscrivi"
 msgid "Supported Languages"
 msgstr "Lingue supportate"
 
-#: Recordings.class.php:273 recordings.i18n.php:10
+#: Recordings.class.php:421 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
+
+#: views/form.php:61
+msgid "TTS A.I Engine"
+msgstr ""
+
+#: views/form-Elevenlabs.php:7
+msgid "Text to Convert"
+msgstr ""
 
 #: assets/js/recordings.js:25
 msgid "The Name '"
@@ -532,7 +645,7 @@ msgstr ""
 msgid "The id provided is invalid"
 msgstr ""
 
-#: views/form.php:25
+#: views/form.php:27
 msgid ""
 "The name of the system recording on the file system. If it conflicts with "
 "another file then this will overwrite it."
@@ -540,7 +653,7 @@ msgstr ""
 "Il nome del sistema che registra sul file system. Se è in conflitto con un "
 "altro file, questo verrà sovrascritto."
 
-#: views/form.php:218
+#: views/form.php:254
 msgid ""
 "The system will call the extension you specify to the left. Upon hangup you "
 "will be able to name the file and it will be placed in the list above"
@@ -548,7 +661,7 @@ msgstr ""
 "Il sistema chiamerà l'estensione specificata a sinistra. In caso di hangup "
 "sarà in grado di nominare il file e verrà inserito nell'elenco in alto"
 
-#: Recordings.class.php:343
+#: Recordings.class.php:491
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -556,15 +669,15 @@ msgstr ""
 "Il file caricato supera la direttiva MAX_FILE_SIZE che è stata specificata "
 "nel modulo HTML"
 
-#: Recordings.class.php:340
+#: Recordings.class.php:488
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Il file caricato supera la direttiva upload_max_filesize in php.ini"
 
-#: Recordings.class.php:346
+#: Recordings.class.php:494
 msgid "The uploaded file was only partially uploaded"
 msgstr "Il file caricato è stato caricato solo parzialmente"
 
-#: Recordings.class.php:125
+#: Recordings.class.php:188
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -575,7 +688,7 @@ msgstr ""
 msgid "This system recording doesnt exist in this language. Continue?"
 msgstr "Questa registrazione di sistema non esiste in questa lingua. Continua?"
 
-#: views/form.php:179
+#: views/form.php:215
 msgid ""
 "This will initate a WebRTC request so that you will be able to record from "
 "you computer in your browser"
@@ -583,7 +696,7 @@ msgstr ""
 "Ciò avvierà una richiesta WebRTC in modo che tu possa registrare dal tuo "
 "computer nel tuo browser"
 
-#: views/form.php:156
+#: views/form.php:192
 #, php-format
 msgid ""
 "To play the media you will need to either update your browser to a recent "
@@ -592,11 +705,11 @@ msgstr ""
 "Per riprodurre i contenuti multimediali dovrai aggiornare il browser a una "
 "versione recente o aggiornare %s1"
 
-#: Recordings.class.php:258
+#: Recordings.class.php:406
 msgid "Unknown Error"
 msgstr "Errore sconosciuto"
 
-#: Recordings.class.php:335
+#: Recordings.class.php:483
 msgid "Unsupported file format"
 msgstr "Formato file non supportato"
 
@@ -604,7 +717,7 @@ msgstr "Formato file non supportato"
 msgid "Unsupported file type"
 msgstr "Tipo di file non supportato"
 
-#: views/form.php:155
+#: views/form.php:191
 msgid "Update Required"
 msgstr "Aggiornamento richiesto"
 
@@ -612,11 +725,11 @@ msgstr "Aggiornamento richiesto"
 msgid "Update a recording in the Sytem Recordings"
 msgstr ""
 
-#: views/form.php:91
+#: views/form.php:127
 msgid "Upload Recording"
 msgstr "Carica registrazione"
 
-#: views/form.php:110
+#: views/form.php:146
 #, php-format
 msgid ""
 "Upload files from your local system. Supported upload formats are: %s. This "
@@ -625,7 +738,7 @@ msgstr ""
 "Carica file dal tuo sistema locale. I formati di caricamento supportati "
 "sono: %s1. Ciò include archivi (che includono più file) e più file"
 
-#: views/form.php:264 views/form.php:292
+#: views/form.php:300 views/form.php:328
 msgid "Yes"
 msgstr "Si"
 
@@ -648,7 +761,7 @@ msgstr ""
 "sostituirà questo quando salvi questa registrazione. Sei sicuro di volerlo "
 "fare?"
 
-#: views/form.php:73
+#: views/form.php:109
 msgid ""
 "You can click any file above to replace it with a recording option below. "
 "Clicking a file will turn it green putting it into replace mode"
@@ -657,7 +770,7 @@ msgstr ""
 "registrazione qui sotto. Facendo clic su un file diventerà verde mettendolo "
 "in modalità di sostituzione"
 
-#: views/form.php:72
+#: views/form.php:108
 msgid ""
 "You have a missing file for this language. Click any red recording above to "
 "replace it with a recording/upload below. It will then turn green. Once you "
