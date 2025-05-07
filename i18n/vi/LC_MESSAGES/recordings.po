@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-05 04:58-0400\n"
+"POT-Creation-Date: 2025-05-07 00:27-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:506
+#: Recordings.class.php:535
 msgid "A PHP extension stopped the file upload"
 msgstr "Máy nhánh PHP đã ngừng tải tệp lên"
 
@@ -63,15 +63,19 @@ msgstr ""
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: assets/js/ttsai.js:53
-msgid "An Ajax error has occurred! Please check the console logs."
+#: assets/js/ttsai.js:52
+msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:17 assets/js/ttsai.js:67 assets/js/ttsai.js:88
-msgid "An Ajax error is occured!! Please, check console logs."
+#: assets/js/ttsai.js:71 assets/js/ttsai.js:92
+msgid "An Ajax error is occured! "
 msgstr ""
 
-#: Recordings.class.php:522
+#: assets/js/ttsai.js:17
+msgid "An Ajax error is occured!! "
+msgstr ""
+
+#: Recordings.class.php:551
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -99,6 +103,10 @@ msgstr ""
 msgid "Browse"
 msgstr "Trình duyệt"
 
+#: drivers/Openai.php:71
+msgid "CURL Error: "
+msgstr ""
+
 #: views/form.php:236
 msgid "Call"
 msgstr "Cuộc gọi"
@@ -107,11 +115,11 @@ msgstr "Cuộc gọi"
 msgid "Call!"
 msgstr "Có cuộc gọi!"
 
-#: Recordings.class.php:510
+#: Recordings.class.php:539
 msgid "Can Not Find Uploaded Files"
 msgstr "Không tìm thấy các tệp đã tải lên"
 
-#: Recordings.class.php:879
+#: Recordings.class.php:908
 msgid "Can not find suitable file in this language"
 msgstr "Không thể tìm thấy tệp phù hợp trong ngôn ngữ này"
 
@@ -139,7 +147,8 @@ msgstr ""
 "Đánh dấu check hộp thoại này để tạo một mã tính năng các tùy chọn mà nó sẽ "
 "cho phép ghi âm thay đổi trực tiếp."
 
-#: views/form-Elevenlabs.php:110 views/form-Elevenlabs.php:119
+#: views/form-Elevenlabs.php:146 views/form-Elevenlabs.php:155
+#: views/form-OpenAI.php:100 views/form-OpenAI.php:109
 msgid "Close"
 msgstr ""
 
@@ -147,7 +156,7 @@ msgstr ""
 msgid "Combine Files"
 msgstr "Kết hợp các tệp"
 
-#: views/form-Elevenlabs.php:77
+#: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -171,7 +180,7 @@ msgstr ""
 "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
 "( ví dụ IVR)."
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Delete"
 msgstr "Xóa"
 
@@ -200,25 +209,35 @@ msgstr ""
 msgid "Display Name"
 msgstr "Hiển thị Tên"
 
-#: assets/js/ttsai.js:46
-msgid "Download error :"
+#: assets/js/ttsai.js:45
+msgid "Download error : "
+msgstr ""
+
+#: Recordings.class.php:92
+#, php-format
+msgid "Driver %s does not exist!"
 msgstr ""
 
 #: views/form.php:139
 msgid "Drop Multiple Files or Archives Here"
 msgstr "Thả các tệp hoặc các tệp nén ở đây"
 
-#: views/form-Elevenlabs.php:97
+#: views/form-Elevenlabs.php:128 views/form-OpenAI.php:83
 msgid "Edit"
 msgstr ""
 
-#: views/form-Elevenlabs.php:94 views/form-Elevenlabs.php:113
+#: views/form-Elevenlabs.php:124 views/form-Elevenlabs.php:149
+#: views/form-OpenAI.php:79 views/form-OpenAI.php:103
 msgid "Edit API Key"
 msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
 msgstr "Chỉnh sửa Ghi âm"
+
+#: views/form-Elevenlabs.php:134 views/form-OpenAI.php:89
+msgid "Edit your API key."
+msgstr ""
 
 #: drivers/Elevenlabs.php:14
 msgid "Elevenlabs"
@@ -228,19 +247,26 @@ msgstr ""
 msgid "Enter Extension"
 msgstr "Nhập máy nhánh"
 
-#: views/form-apikey.php:7
+#: views/form-apikey.php:14
 msgid "Enter your API Key"
 msgstr ""
 
-#: views/form-Elevenlabs.php:116 views/form-apikey.php:10
+#: views/form-Elevenlabs.php:152 views/form-OpenAI.php:106
+#: views/form-apikey.php:17
 msgid "Enter your API Key here."
 msgstr ""
 
-#: views/form-Elevenlabs.php:10
+#: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:306
+#: Recordings.class.php:325
+#, php-format
+msgid "Error Exception: %s."
+msgstr ""
+
+#: Recordings.class.php:334
 msgid "Error While Convertion"
 msgstr ""
 
@@ -248,19 +274,24 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:48
-msgid "Error while converting TTS:"
+#: assets/js/ttsai.js:47 assets/js/ttsai.js:48
+msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109
+#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
 msgid "Error while converting: "
+msgstr ""
+
+#: drivers/Openai.php:79
+#, php-format
+msgid "Error: %d - %s"
 msgstr ""
 
 #: Api/Gql/Recordings.php:70
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:503
+#: Recordings.class.php:532
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đĩa không thành công"
 
@@ -290,7 +321,7 @@ msgstr "Danh sách tệp cho %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:349 Recordings.class.php:452
+#: Recordings.class.php:378 Recordings.class.php:481
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
 
@@ -312,15 +343,19 @@ msgstr "Kich cỡ tệp quá lớn. Kích cỡ tối đa cho phép là %s byte"
 msgid "File with the name '%s' not found in the system"
 msgstr ""
 
-#: views/form-Elevenlabs.php:80
+#: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
 msgid "Generate"
+msgstr ""
+
+#: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
+msgid "Generate your audio file."
 msgstr ""
 
 #: views/form.php:188
 msgid "Hit the red record button to start recording from your browser"
 msgstr "Nhấn nút ghi âm màu đó để bắt đầu ghi âm từ trình duyệt của bạn"
 
-#: views/form-Elevenlabs.php:23
+#: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
 msgid "Human Voices"
 msgstr ""
 
@@ -343,11 +378,15 @@ msgstr ""
 "này. Thao tác này sẽ không phá hủy bất kỳ tệp nào đã có trước đó như đã liệt "
 "kê ở trên."
 
-#: Recordings.class.php:294
+#: Recordings.class.php:313
 msgid "Invalid API Key"
 msgstr ""
 
-#: Recordings.class.php:189
+#: Recordings.class.php:118
+msgid "Invalid API Key."
+msgstr ""
+
+#: Recordings.class.php:208
 msgid "JSON decode error: "
 msgstr ""
 
@@ -387,11 +426,19 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:500
+#: views/form-Elevenlabs.php:67
+msgid "Min: 0, max: 1, step: 0.1. Influences speed. Default value: 0.5."
+msgstr ""
+
+#: views/form-Elevenlabs.php:89
+msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
+msgstr ""
+
+#: Recordings.class.php:529
 msgid "Missing a temporary folder"
 msgstr "Đang thiếu một thư mục tạm"
 
-#: Recordings.class.php:289
+#: Recordings.class.php:308
 msgid "Missing parameters"
 msgstr ""
 
@@ -415,7 +462,7 @@ msgstr "Không"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:497
+#: Recordings.class.php:526
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
@@ -449,6 +496,10 @@ msgstr ""
 #: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "Không hỗ trợ trên các bản ghi âm phức hợp"
+
+#: drivers/Openai.php:16
+msgid "OpenAI"
+msgstr ""
 
 #: views/form.php:332
 #, php-format
@@ -523,7 +574,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -537,12 +588,12 @@ msgstr ""
 msgid "Same file exists  %s"
 msgstr ""
 
-#: views/form-Elevenlabs.php:119 views/form-apikey.php:26 views/form.php:206
-#: views/form.php:245
+#: views/form-Elevenlabs.php:155 views/form-OpenAI.php:109
+#: views/form-apikey.php:33 views/form.php:206 views/form.php:245
 msgid "Save"
 msgstr "Lưu"
 
-#: views/form-apikey.php:23
+#: views/form-apikey.php:30
 msgid "Save API Key"
 msgstr ""
 
@@ -554,12 +605,16 @@ msgstr "Lưu bản ghi âm"
 msgid "Select a system recording"
 msgstr ""
 
+#: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
+msgid "Select the human voice avaible into the list."
+msgstr ""
+
 #: views/form.php:78
 msgid "Select your engine generating audio file from A.I."
 msgstr ""
 
-#: views/form-Elevenlabs.php:61
-msgid "Similarity (0-1, influences tone)"
+#: views/form-Elevenlabs.php:79
+msgid "Similarity"
 msgstr ""
 
 #: views/form.php:5
@@ -604,15 +659,15 @@ msgstr ""
 msgid "Sound Languages"
 msgstr "Ngôn ngữ âm thanh"
 
-#: views/form-Elevenlabs.php:45
-msgid "Stability (0-1, influences speed)"
+#: views/form-Elevenlabs.php:57
+msgid "Stability"
 msgstr ""
 
 #: Api/Gql/Recordings.php:183
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -620,7 +675,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:421 recordings.i18n.php:10
+#: Recordings.class.php:450 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -628,7 +683,11 @@ msgstr "Các bản ghi âm hệ thống"
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: views/form-Elevenlabs.php:7
+#: assets/js/ttsai.js:57
+msgid "Text cannot be empty"
+msgstr ""
+
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7
 msgid "Text to Convert"
 msgstr ""
 
@@ -661,21 +720,25 @@ msgstr ""
 "Hệ thống sẽ gọi tới máy nhánh mà bạn xác định ở bên trái. Khu cúp máy, bạn "
 "có thể đặt tên tệp và nó sẽ được thay thế tại danh sách nêu trên"
 
-#: Recordings.class.php:491
+#: drivers/Openai.php:47
+msgid "The text cannot be empty."
+msgstr ""
+
+#: Recordings.class.php:520
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong mẫu HTML"
 
-#: Recordings.class.php:488
+#: Recordings.class.php:517
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong php.ini"
 
-#: Recordings.class.php:494
+#: Recordings.class.php:523
 msgid "The uploaded file was only partially uploaded"
 msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
-#: Recordings.class.php:188
+#: Recordings.class.php:207
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "Cõ một lỗi xyar ra khi đọc các bản ghi âm hệ thống (%s)"
@@ -701,11 +764,11 @@ msgstr ""
 "Để phát media bạn sẽ cần cập nhật phiên bản mới nhất trình duyệt của mình  "
 "hoặc cập nhật %s"
 
-#: Recordings.class.php:406
+#: Recordings.class.php:435
 msgid "Unknown Error"
 msgstr "Lỗi không xác định"
 
-#: Recordings.class.php:483
+#: Recordings.class.php:512
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 

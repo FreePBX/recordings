@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-05 04:58-0400\n"
+"POT-Creation-Date: 2025-05-07 00:27-0400\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
-#: Recordings.class.php:506
+#: Recordings.class.php:535
 msgid "A PHP extension stopped the file upload"
 msgstr "Un'estensione PHP ha interrotto il caricamento del file"
 
@@ -64,15 +64,19 @@ msgstr ""
 msgid "Admin"
 msgstr "Amministratore"
 
-#: assets/js/ttsai.js:53
-msgid "An Ajax error has occurred! Please check the console logs."
+#: assets/js/ttsai.js:52
+msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:17 assets/js/ttsai.js:67 assets/js/ttsai.js:88
-msgid "An Ajax error is occured!! Please, check console logs."
+#: assets/js/ttsai.js:71 assets/js/ttsai.js:92
+msgid "An Ajax error is occured! "
 msgstr ""
 
-#: Recordings.class.php:522
+#: assets/js/ttsai.js:17
+msgid "An Ajax error is occured!! "
+msgstr ""
+
+#: Recordings.class.php:551
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -100,6 +104,10 @@ msgstr ""
 msgid "Browse"
 msgstr "Navigare"
 
+#: drivers/Openai.php:71
+msgid "CURL Error: "
+msgstr ""
+
 #: views/form.php:236
 msgid "Call"
 msgstr "Chiamata"
@@ -108,11 +116,11 @@ msgstr "Chiamata"
 msgid "Call!"
 msgstr "Chiamata!"
 
-#: Recordings.class.php:510
+#: Recordings.class.php:539
 msgid "Can Not Find Uploaded Files"
 msgstr "Impossibile trovare i file caricati"
 
-#: Recordings.class.php:879
+#: Recordings.class.php:908
 msgid "Can not find suitable file in this language"
 msgstr "Impossibile trovare il file adatto in questa lingua"
 
@@ -140,7 +148,8 @@ msgstr ""
 "Attivare questa opzione per creare un codice servizio che permetterà di "
 "cambiare questa registrazione direttamente."
 
-#: views/form-Elevenlabs.php:110 views/form-Elevenlabs.php:119
+#: views/form-Elevenlabs.php:146 views/form-Elevenlabs.php:155
+#: views/form-OpenAI.php:100 views/form-OpenAI.php:109
 msgid "Close"
 msgstr ""
 
@@ -148,7 +157,7 @@ msgstr ""
 msgid "Combine Files"
 msgstr "Combina i file"
 
-#: views/form-Elevenlabs.php:77
+#: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -172,7 +181,7 @@ msgstr ""
 "Crea e gestisce le registrazioni di sistema, utilizzate da molti altri "
 "moduli (ad es. IVR)."
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Delete"
 msgstr "Elimina"
 
@@ -201,25 +210,35 @@ msgstr ""
 msgid "Display Name"
 msgstr "Nome Display"
 
-#: assets/js/ttsai.js:46
-msgid "Download error :"
+#: assets/js/ttsai.js:45
+msgid "Download error : "
+msgstr ""
+
+#: Recordings.class.php:92
+#, php-format
+msgid "Driver %s does not exist!"
 msgstr ""
 
 #: views/form.php:139
 msgid "Drop Multiple Files or Archives Here"
 msgstr "Rilasciare più file o archivi qui"
 
-#: views/form-Elevenlabs.php:97
+#: views/form-Elevenlabs.php:128 views/form-OpenAI.php:83
 msgid "Edit"
 msgstr ""
 
-#: views/form-Elevenlabs.php:94 views/form-Elevenlabs.php:113
+#: views/form-Elevenlabs.php:124 views/form-Elevenlabs.php:149
+#: views/form-OpenAI.php:79 views/form-OpenAI.php:103
 msgid "Edit API Key"
 msgstr ""
 
 #: views/form.php:4
 msgid "Edit Recording"
 msgstr "Modifica Registrazione"
+
+#: views/form-Elevenlabs.php:134 views/form-OpenAI.php:89
+msgid "Edit your API key."
+msgstr ""
 
 #: drivers/Elevenlabs.php:14
 msgid "Elevenlabs"
@@ -229,19 +248,26 @@ msgstr ""
 msgid "Enter Extension"
 msgstr "Inserisci estensione"
 
-#: views/form-apikey.php:7
+#: views/form-apikey.php:14
 msgid "Enter your API Key"
 msgstr ""
 
-#: views/form-Elevenlabs.php:116 views/form-apikey.php:10
+#: views/form-Elevenlabs.php:152 views/form-OpenAI.php:106
+#: views/form-apikey.php:17
 msgid "Enter your API Key here."
 msgstr ""
 
-#: views/form-Elevenlabs.php:10
+#: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:306
+#: Recordings.class.php:325
+#, php-format
+msgid "Error Exception: %s."
+msgstr ""
+
+#: Recordings.class.php:334
 msgid "Error While Convertion"
 msgstr ""
 
@@ -249,19 +275,24 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:48
-msgid "Error while converting TTS:"
+#: assets/js/ttsai.js:47 assets/js/ttsai.js:48
+msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109
+#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
 msgid "Error while converting: "
+msgstr ""
+
+#: drivers/Openai.php:79
+#, php-format
+msgid "Error: %d - %s"
 msgstr ""
 
 #: Api/Gql/Recordings.php:70
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:503
+#: Recordings.class.php:532
 msgid "Failed to write file to disk"
 msgstr "Impossibile scrivere il file su disco"
 
@@ -291,7 +322,7 @@ msgstr "Elenco file per %s1"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:349 Recordings.class.php:452
+#: Recordings.class.php:378 Recordings.class.php:481
 msgid "File does not exist"
 msgstr "Il file non esiste"
 
@@ -314,8 +345,12 @@ msgstr ""
 msgid "File with the name '%s' not found in the system"
 msgstr ""
 
-#: views/form-Elevenlabs.php:80
+#: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
 msgid "Generate"
+msgstr ""
+
+#: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
+msgid "Generate your audio file."
 msgstr ""
 
 #: views/form.php:188
@@ -324,7 +359,7 @@ msgstr ""
 "Premi il pulsante rosso di registrazione per avviare la registrazione dal "
 "tuo browser"
 
-#: views/form-Elevenlabs.php:23
+#: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
 msgid "Human Voices"
 msgstr ""
 
@@ -346,11 +381,15 @@ msgstr ""
 "sarai in grado di aggiungere file alla fine o all'inizio di questo file. "
 "Questo non distruggerà alcun file precedentemente esistente elencato sopra."
 
-#: Recordings.class.php:294
+#: Recordings.class.php:313
 msgid "Invalid API Key"
 msgstr ""
 
-#: Recordings.class.php:189
+#: Recordings.class.php:118
+msgid "Invalid API Key."
+msgstr ""
+
+#: Recordings.class.php:208
 msgid "JSON decode error: "
 msgstr ""
 
@@ -390,11 +429,19 @@ msgstr ""
 msgid "Message for the request"
 msgstr ""
 
-#: Recordings.class.php:500
+#: views/form-Elevenlabs.php:67
+msgid "Min: 0, max: 1, step: 0.1. Influences speed. Default value: 0.5."
+msgstr ""
+
+#: views/form-Elevenlabs.php:89
+msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
+msgstr ""
+
+#: Recordings.class.php:529
 msgid "Missing a temporary folder"
 msgstr "Manca una cartella temporanea"
 
-#: Recordings.class.php:289
+#: Recordings.class.php:308
 msgid "Missing parameters"
 msgstr ""
 
@@ -418,7 +465,7 @@ msgstr "No"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:497
+#: Recordings.class.php:526
 msgid "No file was uploaded"
 msgstr "Nessun file è stato caricato"
 
@@ -450,6 +497,10 @@ msgstr "Non supportato su registrazioni composte o inesistenti"
 #: assets/js/recordings.js:913
 msgid "Not supported on compounded recordings"
 msgstr "Non supportato su registrazioni composte"
+
+#: drivers/Openai.php:16
+msgid "OpenAI"
+msgstr ""
 
 #: views/form.php:332
 #, php-format
@@ -522,7 +573,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Registrazioni"
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Reset"
 msgstr "Azzerare"
 
@@ -536,12 +587,12 @@ msgstr ""
 msgid "Same file exists  %s"
 msgstr ""
 
-#: views/form-Elevenlabs.php:119 views/form-apikey.php:26 views/form.php:206
-#: views/form.php:245
+#: views/form-Elevenlabs.php:155 views/form-OpenAI.php:109
+#: views/form-apikey.php:33 views/form.php:206 views/form.php:245
 msgid "Save"
 msgstr "Salva"
 
-#: views/form-apikey.php:23
+#: views/form-apikey.php:30
 msgid "Save API Key"
 msgstr ""
 
@@ -553,12 +604,16 @@ msgstr "Salva Registrazione"
 msgid "Select a system recording"
 msgstr ""
 
+#: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
+msgid "Select the human voice avaible into the list."
+msgstr ""
+
 #: views/form.php:78
 msgid "Select your engine generating audio file from A.I."
 msgstr ""
 
-#: views/form-Elevenlabs.php:61
-msgid "Similarity (0-1, influences tone)"
+#: views/form-Elevenlabs.php:79
+msgid "Similarity"
 msgstr ""
 
 #: views/form.php:5
@@ -604,15 +659,15 @@ msgstr ""
 msgid "Sound Languages"
 msgstr "Lingue sonore"
 
-#: views/form-Elevenlabs.php:45
-msgid "Stability (0-1, influences speed)"
+#: views/form-Elevenlabs.php:57
+msgid "Stability"
 msgstr ""
 
 #: Api/Gql/Recordings.php:183
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:135
+#: Recordings.class.php:154
 msgid "Submit"
 msgstr "Sottoscrivi"
 
@@ -620,7 +675,7 @@ msgstr "Sottoscrivi"
 msgid "Supported Languages"
 msgstr "Lingue supportate"
 
-#: Recordings.class.php:421 recordings.i18n.php:10
+#: Recordings.class.php:450 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
 
@@ -628,7 +683,11 @@ msgstr "Registrazioni di Sistema"
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: views/form-Elevenlabs.php:7
+#: assets/js/ttsai.js:57
+msgid "Text cannot be empty"
+msgstr ""
+
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7
 msgid "Text to Convert"
 msgstr ""
 
@@ -661,7 +720,11 @@ msgstr ""
 "Il sistema chiamerà l'estensione specificata a sinistra. In caso di hangup "
 "sarà in grado di nominare il file e verrà inserito nell'elenco in alto"
 
-#: Recordings.class.php:491
+#: drivers/Openai.php:47
+msgid "The text cannot be empty."
+msgstr ""
+
+#: Recordings.class.php:520
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -669,15 +732,15 @@ msgstr ""
 "Il file caricato supera la direttiva MAX_FILE_SIZE che è stata specificata "
 "nel modulo HTML"
 
-#: Recordings.class.php:488
+#: Recordings.class.php:517
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Il file caricato supera la direttiva upload_max_filesize in php.ini"
 
-#: Recordings.class.php:494
+#: Recordings.class.php:523
 msgid "The uploaded file was only partially uploaded"
 msgstr "Il file caricato è stato caricato solo parzialmente"
 
-#: Recordings.class.php:188
+#: Recordings.class.php:207
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -705,11 +768,11 @@ msgstr ""
 "Per riprodurre i contenuti multimediali dovrai aggiornare il browser a una "
 "versione recente o aggiornare %s1"
 
-#: Recordings.class.php:406
+#: Recordings.class.php:435
 msgid "Unknown Error"
 msgstr "Errore sconosciuto"
 
-#: Recordings.class.php:483
+#: Recordings.class.php:512
 msgid "Unsupported file format"
 msgstr "Formato file non supportato"
 
