@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-21 06:45+0000\n"
+"POT-Creation-Date: 2025-05-08 07:38+0000\n"
 "PO-Revision-Date: 2023-11-18 16:02+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
@@ -62,11 +62,11 @@ msgstr ""
 msgid "Admin"
 msgstr "Administrator"
 
-#: assets/js/ttsai.js:52
+#: assets/js/ttsai.js:56
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:71 assets/js/ttsai.js:92
+#: assets/js/ttsai.js:74 assets/js/ttsai.js:95
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -200,7 +200,7 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
-#: assets/js/ttsai.js:45
+#: assets/js/ttsai.js:49
 msgid "Download error : "
 msgstr ""
 
@@ -265,7 +265,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:47 assets/js/ttsai.js:48
+#: assets/js/ttsai.js:51 assets/js/ttsai.js:52
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -506,6 +506,10 @@ msgstr ""
 msgid "Please add at least one Sound Package in the Sound Languages Module"
 msgstr ""
 
+#: assets/js/ttsai.js:32
+msgid "Please enter a name before generating an audio file!!"
+msgstr ""
+
 #: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr ""
@@ -655,7 +659,7 @@ msgstr ""
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:57
+#: assets/js/ttsai.js:61
 msgid "Text cannot be empty"
 msgstr ""
 
