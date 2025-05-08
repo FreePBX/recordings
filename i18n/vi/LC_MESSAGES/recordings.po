@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-07 00:27-0400\n"
+"POT-Creation-Date: 2025-05-08 03:37-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: assets/js/ttsai.js:52
+#: assets/js/ttsai.js:56
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:71 assets/js/ttsai.js:92
+#: assets/js/ttsai.js:74 assets/js/ttsai.js:95
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -209,7 +209,7 @@ msgstr ""
 msgid "Display Name"
 msgstr "Hiển thị Tên"
 
-#: assets/js/ttsai.js:45
+#: assets/js/ttsai.js:49
 msgid "Download error : "
 msgstr ""
 
@@ -274,7 +274,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:47 assets/js/ttsai.js:48
+#: assets/js/ttsai.js:51 assets/js/ttsai.js:52
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -529,6 +529,10 @@ msgstr ""
 "Vui lòng thêm ít nhất một Gói âm thanh ( Sound Package) vào trong Mô đun "
 "Sound Languages"
 
+#: assets/js/ttsai.js:32
+msgid "Please enter a name before generating an audio file!!"
+msgstr ""
+
 #: assets/js/recordings.js:488 assets/js/recordings.js:511
 msgid "Please enter a valid name and save"
 msgstr "Vui lòng nhập một tên hợp lệ và lưu"
@@ -683,7 +687,7 @@ msgstr "Các bản ghi âm hệ thống"
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:57
+#: assets/js/ttsai.js:61
 msgid "Text cannot be empty"
 msgstr ""
 
