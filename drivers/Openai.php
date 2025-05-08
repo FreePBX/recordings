@@ -22,7 +22,7 @@ class Openai {
      * @return array Voices list
      */
     public function getAvailableVoices() {
-        // OpenAI propose 6 voix prédéfinies
+        // OpenAI offers 6 predefined voices
         return [
             ['voice_id' => 'alloy', 'name' => 'Alloy'],
             ['voice_id' => 'echo', 'name' => 'Echo'],

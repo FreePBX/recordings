@@ -28,6 +28,10 @@ $(document).on('click', '#generate', function () {
     var langCode = $('#language').find(":selected").val();
     var stability = $("#stability").val();
     var similarity = $("#similarity").val();
+    if(file_name == ""){
+        fpbxToast( _("Please enter a name before generating an audio file!!"), "Warning" , "warning");
+        return false;
+    }
     if(text != ""){
         $.ajax({
             url: "ajax.php?module=recordings&command=ttsConvert&engine="+engine+"&file_name="+file_name+"&text="+text+"&voiceId="+voicId+"&langCode="+langCode+"&stability="+stability+"&similarity="+similarity,
@@ -56,7 +60,6 @@ $(document).on('click', '#generate', function () {
     else{
         fpbxToast( _("Text cannot be empty"),"Error" , "error");
     }
-
 });
 
 $(document).on('click', '#editAPIkey', function () {
@@ -93,5 +96,7 @@ $(document).on('click', '#saveAPIKey', function () {
             console.error(xhr, status, error);
         }
     });
+    $('#modalAPIKey').modal('hide');
+    $(".modal-backdrop").remove();
  });
 
