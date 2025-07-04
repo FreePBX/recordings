@@ -42,7 +42,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<span id="ttsaiVoice-help" class="help-block fpbx-help-block"><?= _("Select the human voice avaible into the list.")?></span>
+					<span id="ttsaiVoice-help" class="help-block fpbx-help-block"><?= _("Select the human voice avaible into the list. See voice demos: openai.fm")?></span>
 				</div>
 			</div>
 		</div>
