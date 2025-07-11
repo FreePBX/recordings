@@ -25,10 +25,14 @@ class Openai {
         // OpenAI offers 6 predefined voices
         return [
             ['voice_id' => 'alloy', 'name' => 'Alloy'],
+            ['voice_id' => 'ash', 'name' => 'Ash'],
+            ['voice_id' => 'ballad', 'name' => 'Ballad'],
+            ['voice_id' => 'coral', 'name' => 'Coral'],
             ['voice_id' => 'echo', 'name' => 'Echo'],
             ['voice_id' => 'fable', 'name' => 'Fable'],
-            ['voice_id' => 'onyx', 'name' => 'Onyx'],
             ['voice_id' => 'nova', 'name' => 'Nova'],
+            ['voice_id' => 'onyx', 'name' => 'Onyx'],
+            ['voice_id' => 'sage', 'name' => 'Sage'],
             ['voice_id' => 'shimmer', 'name' => 'Shimmer']
         ];
     }
@@ -37,7 +41,7 @@ class Openai {
      * Convert text to audio with custom options
      * @param string $file_name File name
      * @param string $text Text to convert
-     * @param string $voiceId Voice ID (alloy, echo, fable, onyx, nova, shimmer)
+     * @param string $voiceId Voice ID (alloy, ash, ballad, coral, echo, fable, nova, onyx, sage, shimmer)
      * @return string|bool Path file or false
      */
     public function convertToAudio($file_name, $text, $voiceId = null) {
