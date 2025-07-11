@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 03:37-0400\n"
+"POT-Creation-Date: 2025-07-10 23:53-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -103,7 +103,7 @@ msgstr ""
 msgid "Browse"
 msgstr "Trình duyệt"
 
-#: drivers/Openai.php:71
+#: drivers/Openai.php:75
 msgid "CURL Error: "
 msgstr ""
 
@@ -278,11 +278,11 @@ msgstr ""
 msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
+#: drivers/Elevenlabs.php:109 drivers/Openai.php:101 drivers/Openai.php:107
 msgid "Error while converting: "
 msgstr ""
 
-#: drivers/Openai.php:79
+#: drivers/Openai.php:83
 #, php-format
 msgid "Error: %d - %s"
 msgstr ""
@@ -609,8 +609,13 @@ msgstr "Lưu bản ghi âm"
 msgid "Select a system recording"
 msgstr ""
 
-#: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
+#: views/form-Elevenlabs.php:45
 msgid "Select the human voice avaible into the list."
+msgstr ""
+
+#: views/form-OpenAI.php:45
+msgid ""
+"Select the human voice avaible into the list. See voice demos: openai.fm"
 msgstr ""
 
 #: views/form.php:78
@@ -724,7 +729,7 @@ msgstr ""
 "Hệ thống sẽ gọi tới máy nhánh mà bạn xác định ở bên trái. Khu cúp máy, bạn "
 "có thể đặt tên tệp và nó sẽ được thay thế tại danh sách nêu trên"
 
-#: drivers/Openai.php:47
+#: drivers/Openai.php:51
 msgid "The text cannot be empty."
 msgstr ""
 

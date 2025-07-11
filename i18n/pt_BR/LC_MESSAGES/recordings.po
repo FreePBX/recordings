@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-08 03:37-0400\n"
+"POT-Creation-Date: 2025-07-10 23:53-0400\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -117,7 +117,7 @@ msgstr ""
 msgid "Browse"
 msgstr "Visualizar"
 
-#: drivers/Openai.php:71
+#: drivers/Openai.php:75
 msgid "CURL Error: "
 msgstr ""
 
@@ -292,11 +292,11 @@ msgstr ""
 msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
+#: drivers/Elevenlabs.php:109 drivers/Openai.php:101 drivers/Openai.php:107
 msgid "Error while converting: "
 msgstr ""
 
-#: drivers/Openai.php:79
+#: drivers/Openai.php:83
 #, php-format
 msgid "Error: %d - %s"
 msgstr ""
@@ -620,8 +620,13 @@ msgstr "Salvar gravação"
 msgid "Select a system recording"
 msgstr ""
 
-#: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
+#: views/form-Elevenlabs.php:45
 msgid "Select the human voice avaible into the list."
+msgstr ""
+
+#: views/form-OpenAI.php:45
+msgid ""
+"Select the human voice avaible into the list. See voice demos: openai.fm"
 msgstr ""
 
 #: views/form.php:78
@@ -735,7 +740,7 @@ msgstr ""
 "O sistema chamará o ramal que você especificar à esquerda. Ao desligar você "
 "será capaz de nomear o arquivo e ele será colocado na lista acima"
 
-#: drivers/Openai.php:47
+#: drivers/Openai.php:51
 msgid "The text cannot be empty."
 msgstr ""
 
