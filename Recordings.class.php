@@ -75,6 +75,12 @@ class Recordings extends \DB_Helper implements BMO {
 			$class  = $this->prepareDriverClass($name);
 			$drivers[strtolower($name)] = $class::getInfo();
 		}
+		
+		if ($this->FreePBX->Modules->checkStatus('scribe') && method_exists($this->FreePBX->Scribe, 'getAvailableVoices')) {
+			if($this->FreePBX->Scribe->isLicensed()) {
+				$drivers['scribe'] = ['name' => 'Scribe'];
+			}
+		}
 		return $drivers;
 	}
 	
@@ -136,6 +142,12 @@ class Recordings extends \DB_Helper implements BMO {
 					$vars 	 	= ["engine" => $engine];
 					$result 	= load_view(__DIR__."/views/form-apikey.php",$vars);
 				}
+				break;
+			case "Scribe":
+				$voices 	= $this->FreePBX->Scribe->getAvailableVoices();
+				$languages = array_keys($voices);
+				$vars 	 	= ["languages" => $languages, "voices" => $voices];
+				$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
 				break;
 		}
 		return $result;
@@ -306,6 +318,10 @@ class Recordings extends \DB_Helper implements BMO {
 			
 				if(empty($engine) || empty($filename) || empty($text) || empty($voiceId)){
 					return ["status" => false, "error" => _("Missing parameters")];					
+				}
+				if($engine == 'Scribe' && $this->FreePBX->Modules->checkStatus('scribe') && $this->FreePBX->Scribe->isLicensed() && method_exists($this->FreePBX->Scribe, 'convertToAudio')) {
+					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId);
+					return $audioFile;
 				}
 
 				$apiKey = $this->getConfig($engine);
