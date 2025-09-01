@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-10 23:53-0400\n"
+"POT-Creation-Date: 2025-09-01 03:12-0400\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:535
+#: Recordings.class.php:551
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:551
+#: Recordings.class.php:567
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:539
+#: Recordings.class.php:555
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:908
+#: Recordings.class.php:924
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
@@ -153,6 +153,7 @@ msgid "Combine Files"
 msgstr "ترکیب فایل ها"
 
 #: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
+#: views/form-Scribe.php:90
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -176,7 +177,7 @@ msgstr ""
 "ایجاد و مدیریت پیام های ضبط شده سیستمی که توسط ماژول های دیگر استفاده می "
 "شوند (مانند منوی صوتی)."
 
-#: Recordings.class.php:154
+#: Recordings.class.php:166
 msgid "Delete"
 msgstr "حذف"
 
@@ -209,7 +210,7 @@ msgstr "نام قابل نمایش"
 msgid "Download error : "
 msgstr ""
 
-#: Recordings.class.php:92
+#: Recordings.class.php:98
 #, php-format
 msgid "Driver %s does not exist!"
 msgstr ""
@@ -253,16 +254,17 @@ msgid "Enter your API Key here."
 msgstr ""
 
 #: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
-#: views/form-OpenAI.php:11 views/form-OpenAI.php:17
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:72
+#: views/form-Scribe.php:78
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:325
+#: Recordings.class.php:341
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:334
+#: Recordings.class.php:350
 msgid "Error While Convertion"
 msgstr ""
 
@@ -287,7 +289,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:532
+#: Recordings.class.php:548
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -317,7 +319,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:378 Recordings.class.php:481
+#: Recordings.class.php:394 Recordings.class.php:497
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -340,10 +342,12 @@ msgid "File with the name '%s' not found in the system"
 msgstr ""
 
 #: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
+#: views/form-Scribe.php:94
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
+#: views/form-Scribe.php:100
 msgid "Generate your audio file."
 msgstr ""
 
@@ -352,6 +356,7 @@ msgid "Hit the red record button to start recording from your browser"
 msgstr "برای ضبط پیام از طریق مرورگر دکمه قرمز رنگ ضبط را فشار دهید"
 
 #: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
+#: views/form-Scribe.php:38
 msgid "Human Voices"
 msgstr ""
 
@@ -373,15 +378,15 @@ msgstr ""
 "به ابتدا و انتهای این فایل اضافه کنید. این عمل هیچ یک از فایل های لیست بالا "
 "را خراب نمی کند."
 
-#: Recordings.class.php:313
+#: Recordings.class.php:329
 msgid "Invalid API Key"
 msgstr ""
 
-#: Recordings.class.php:118
+#: Recordings.class.php:124
 msgid "Invalid API Key."
 msgstr ""
 
-#: Recordings.class.php:208
+#: Recordings.class.php:220
 msgid "JSON decode error: "
 msgstr ""
 
@@ -429,11 +434,11 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:529
+#: Recordings.class.php:545
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
-#: Recordings.class.php:308
+#: Recordings.class.php:320
 msgid "Missing parameters"
 msgstr ""
 
@@ -457,7 +462,7 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:526
+#: Recordings.class.php:542
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
@@ -506,6 +511,10 @@ msgstr "کلمه عبور دلخواه برای محافظت از امکان ض�
 #: functions.inc.php:248
 #, php-format
 msgid "Play Recording: %s"
+msgstr ""
+
+#: views/form-Scribe.php:47
+msgid "Play Sample Voice"
 msgstr ""
 
 #: Api/Gql/Recordings.php:333
@@ -565,7 +574,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "پیام های ضبط شده"
 
-#: Recordings.class.php:154
+#: Recordings.class.php:166
 msgid "Reset"
 msgstr "بازنشانی"
 
@@ -592,17 +601,33 @@ msgstr ""
 msgid "Save Recording"
 msgstr "ذخیره پیام ضبط شده"
 
+#: views/form-Scribe.php:7
+msgid "Scribe Audio Language"
+msgstr ""
+
+#: views/form-Scribe.php:12
+msgid "Select Scribe Audio Language"
+msgstr ""
+
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
 msgstr ""
 
-#: views/form-Elevenlabs.php:45
+#: views/form-Scribe.php:43
+msgid "Select a voice"
+msgstr ""
+
+#: views/form-Elevenlabs.php:45 views/form-Scribe.php:56
 msgid "Select the human voice avaible into the list."
 msgstr ""
 
 #: views/form-OpenAI.php:45
 msgid ""
 "Select the human voice avaible into the list. See voice demos: openai.fm"
+msgstr ""
+
+#: views/form-Scribe.php:26
+msgid "Select the human voice language avaible into the list."
 msgstr ""
 
 #: views/form.php:78
@@ -659,7 +684,7 @@ msgstr ""
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:154
+#: Recordings.class.php:166
 msgid "Submit"
 msgstr "ثبت"
 
@@ -667,7 +692,7 @@ msgstr "ثبت"
 msgid "Supported Languages"
 msgstr "زبان های تحت پوشش"
 
-#: Recordings.class.php:450 recordings.i18n.php:10
+#: Recordings.class.php:466 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
@@ -679,7 +704,7 @@ msgstr ""
 msgid "Text cannot be empty"
 msgstr ""
 
-#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7 views/form-Scribe.php:68
 msgid "Text to Convert"
 msgstr ""
 
@@ -716,24 +741,24 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:520
+#: Recordings.class.php:536
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:517
+#: Recordings.class.php:533
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:523
+#: Recordings.class.php:539
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
-#: Recordings.class.php:207
+#: Recordings.class.php:219
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "بروز خطا در خواندن پیام های ضبط شده سیستمی (%s)"
@@ -757,11 +782,11 @@ msgid ""
 "version or update your %s"
 msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
-#: Recordings.class.php:435
+#: Recordings.class.php:451
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:512
+#: Recordings.class.php:528
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
