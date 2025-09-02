@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 07:12+0000\n"
+"POT-Creation-Date: 2025-09-02 06:59+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -142,6 +142,10 @@ msgid ""
 msgstr ""
 "به منظور تغییر این پیام ضبط شده از طریق شماره گیری کد ویژه، این گزینه را "
 "علامت بزنید."
+
+#: views/form-Scribe.php:56
+msgid "Choose a human voice from the available options."
+msgstr ""
 
 #: views/form-Elevenlabs.php:146 views/form-Elevenlabs.php:155
 #: views/form-OpenAI.php:100 views/form-OpenAI.php:109
@@ -609,6 +613,10 @@ msgstr ""
 msgid "Select Scribe Audio Language"
 msgstr ""
 
+#: views/form-Scribe.php:26
+msgid "Select a human voice language from the available options."
+msgstr ""
+
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
 msgstr ""
@@ -618,12 +626,7 @@ msgid "Select a voice"
 msgstr ""
 
 #: views/form-Elevenlabs.php:45 views/form-OpenAI.php:45
-#: views/form-Scribe.php:56
 msgid "Select the human voice avaible into the list."
-msgstr ""
-
-#: views/form-Scribe.php:26
-msgid "Select the human voice language avaible into the list."
 msgstr ""
 
 #: views/form.php:76
