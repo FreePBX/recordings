@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-01 03:12-0400\n"
+"POT-Creation-Date: 2025-09-02 02:59-0400\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -168,6 +168,10 @@ msgid ""
 msgstr ""
 "この録音を直接変更できるオプションキーコードを作成する場合はチェックボックス"
 "にチェックをいれます。"
+
+#: views/form-Scribe.php:56
+msgid "Choose a human voice from the available options."
+msgstr ""
 
 #: views/form-Elevenlabs.php:146 views/form-Elevenlabs.php:155
 #: views/form-OpenAI.php:100 views/form-OpenAI.php:109
@@ -632,6 +636,10 @@ msgstr ""
 msgid "Select Scribe Audio Language"
 msgstr ""
 
+#: views/form-Scribe.php:26
+msgid "Select a human voice language from the available options."
+msgstr ""
+
 #: assets/js/recordings.js:619
 msgid "Select a system recording"
 msgstr ""
@@ -640,17 +648,13 @@ msgstr ""
 msgid "Select a voice"
 msgstr ""
 
-#: views/form-Elevenlabs.php:45 views/form-Scribe.php:56
+#: views/form-Elevenlabs.php:45
 msgid "Select the human voice avaible into the list."
 msgstr ""
 
 #: views/form-OpenAI.php:45
 msgid ""
 "Select the human voice avaible into the list. See voice demos: openai.fm"
-msgstr ""
-
-#: views/form-Scribe.php:26
-msgid "Select the human voice language avaible into the list."
 msgstr ""
 
 #: views/form.php:78
