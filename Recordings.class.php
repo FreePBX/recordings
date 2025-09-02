@@ -152,8 +152,9 @@ class Recordings extends \DB_Helper implements BMO {
 				break;
 			case "Scribe":
 				$voices 	= $this->FreePBX->Scribe->getAvailableVoices();
+				$lang_codes = (method_exists($this->FreePBX->Scribe, 'getAvailableLangCodes')) ? $this->FreePBX->Scribe->getAvailableLangCodes() : [];
 				$languages = array_keys($voices);
-				$vars 	 	= ["languages" => $languages, "voices" => $voices];
+				$vars 	 	= ["languages" => $languages, "voices" => $voices, "lang_codes" => $lang_codes];
 				$result 	= load_view(__DIR__."/views/form-".$engine.".php",$vars);
 				break;
 		}

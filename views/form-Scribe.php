@@ -11,11 +11,13 @@
                         <select name="audio_lang" id="audio_lang" class="form-control" required>
 							<option value=""><?php echo _("Select Scribe Audio Language"); ?></option>
                             <?php
-							foreach ($languages as $lang): 
+							foreach ($languages as $lang):
+								$langname = array_key_exists($lang, $lang_codes) ? '[' . $lang_codes[$lang] . ']' : '';
+								$langcodeName = $lang . " " . $langname;
 							?>
-                                <option value="<?= $lang; ?>">
-                                <?= $lang; ?>
-                                </option>
+                                <option value="<?php echo $lang; ?>">
+									<?php echo $langcodeName; ?>
+								</option>
                             <?php endforeach; ?>
                         </select>
 					</div>
