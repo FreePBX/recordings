@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-02 02:59-0400\n"
+"POT-Creation-Date: 2025-09-02 04:23-0400\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:551
+#: Recordings.class.php:552
 msgid "A PHP extension stopped the file upload"
 msgstr "Máy nhánh PHP đã ngừng tải tệp lên"
 
@@ -75,7 +75,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:567
+#: Recordings.class.php:568
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -115,11 +115,11 @@ msgstr "Cuộc gọi"
 msgid "Call!"
 msgstr "Có cuộc gọi!"
 
-#: Recordings.class.php:555
+#: Recordings.class.php:556
 msgid "Can Not Find Uploaded Files"
 msgstr "Không tìm thấy các tệp đã tải lên"
 
-#: Recordings.class.php:924
+#: Recordings.class.php:925
 msgid "Can not find suitable file in this language"
 msgstr "Không thể tìm thấy tệp phù hợp trong ngôn ngữ này"
 
@@ -147,7 +147,7 @@ msgstr ""
 "Đánh dấu check hộp thoại này để tạo một mã tính năng các tùy chọn mà nó sẽ "
 "cho phép ghi âm thay đổi trực tiếp."
 
-#: views/form-Scribe.php:56
+#: views/form-Scribe.php:58
 msgid "Choose a human voice from the available options."
 msgstr ""
 
@@ -161,7 +161,7 @@ msgid "Combine Files"
 msgstr "Kết hợp các tệp"
 
 #: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
-#: views/form-Scribe.php:90
+#: views/form-Scribe.php:92
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -185,7 +185,7 @@ msgstr ""
 "Tạo và quản lý các ghi âm hệ thống, bằng cách sử dụng nhiều mô đun khác nhau "
 "( ví dụ IVR)."
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Delete"
 msgstr "Xóa"
 
@@ -262,17 +262,17 @@ msgid "Enter your API Key here."
 msgstr ""
 
 #: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
-#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:72
-#: views/form-Scribe.php:78
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:74
+#: views/form-Scribe.php:80
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:341
+#: Recordings.class.php:342
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:350
+#: Recordings.class.php:351
 msgid "Error While Convertion"
 msgstr ""
 
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:548
+#: Recordings.class.php:549
 msgid "Failed to write file to disk"
 msgstr "Ghi tệp vào đĩa không thành công"
 
@@ -327,7 +327,7 @@ msgstr "Danh sách tệp cho %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:394 Recordings.class.php:497
+#: Recordings.class.php:395 Recordings.class.php:498
 msgid "File does not exist"
 msgstr "Tệp không tồn tại"
 
@@ -350,12 +350,12 @@ msgid "File with the name '%s' not found in the system"
 msgstr ""
 
 #: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
-#: views/form-Scribe.php:94
+#: views/form-Scribe.php:96
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
-#: views/form-Scribe.php:100
+#: views/form-Scribe.php:102
 msgid "Generate your audio file."
 msgstr ""
 
@@ -364,7 +364,7 @@ msgid "Hit the red record button to start recording from your browser"
 msgstr "Nhấn nút ghi âm màu đó để bắt đầu ghi âm từ trình duyệt của bạn"
 
 #: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
-#: views/form-Scribe.php:38
+#: views/form-Scribe.php:40
 msgid "Human Voices"
 msgstr ""
 
@@ -387,7 +387,7 @@ msgstr ""
 "này. Thao tác này sẽ không phá hủy bất kỳ tệp nào đã có trước đó như đã liệt "
 "kê ở trên."
 
-#: Recordings.class.php:329
+#: Recordings.class.php:330
 msgid "Invalid API Key"
 msgstr ""
 
@@ -395,7 +395,7 @@ msgstr ""
 msgid "Invalid API Key."
 msgstr ""
 
-#: Recordings.class.php:220
+#: Recordings.class.php:221
 msgid "JSON decode error: "
 msgstr ""
 
@@ -443,11 +443,11 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:545
+#: Recordings.class.php:546
 msgid "Missing a temporary folder"
 msgstr "Đang thiếu một thư mục tạm"
 
-#: Recordings.class.php:320
+#: Recordings.class.php:321
 msgid "Missing parameters"
 msgstr ""
 
@@ -471,7 +471,7 @@ msgstr "Không"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:542
+#: Recordings.class.php:543
 msgid "No file was uploaded"
 msgstr "Không có tệp nào được tải lên"
 
@@ -528,7 +528,7 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr "Phát bản ghi âm: %s"
 
-#: views/form-Scribe.php:47
+#: views/form-Scribe.php:49
 msgid "Play Sample Voice"
 msgstr ""
 
@@ -591,7 +591,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "Các bản ghi âm"
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Reset"
 msgstr "Cài đặt lại"
 
@@ -626,7 +626,7 @@ msgstr ""
 msgid "Select Scribe Audio Language"
 msgstr ""
 
-#: views/form-Scribe.php:26
+#: views/form-Scribe.php:28
 msgid "Select a human voice language from the available options."
 msgstr ""
 
@@ -634,7 +634,7 @@ msgstr ""
 msgid "Select a system recording"
 msgstr ""
 
-#: views/form-Scribe.php:43
+#: views/form-Scribe.php:45
 msgid "Select a voice"
 msgstr ""
 
@@ -705,7 +705,7 @@ msgstr ""
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Submit"
 msgstr "Gửi đi"
 
@@ -713,7 +713,7 @@ msgstr "Gửi đi"
 msgid "Supported Languages"
 msgstr "Những ngôn ngữ được hỗ trợ"
 
-#: Recordings.class.php:466 recordings.i18n.php:10
+#: Recordings.class.php:467 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Các bản ghi âm hệ thống"
 
@@ -725,7 +725,7 @@ msgstr ""
 msgid "Text cannot be empty"
 msgstr ""
 
-#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7 views/form-Scribe.php:68
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7 views/form-Scribe.php:70
 msgid "Text to Convert"
 msgstr ""
 
@@ -762,21 +762,21 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:536
+#: Recordings.class.php:537
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong mẫu HTML"
 
-#: Recordings.class.php:533
+#: Recordings.class.php:534
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Tệp tải lên vượt quá kích cỡ tối đa đã quy định trong php.ini"
 
-#: Recordings.class.php:539
+#: Recordings.class.php:540
 msgid "The uploaded file was only partially uploaded"
 msgstr "Tệp tải lên đã chỉ được tải lên từng phần"
 
-#: Recordings.class.php:219
+#: Recordings.class.php:220
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr "Cõ một lỗi xyar ra khi đọc các bản ghi âm hệ thống (%s)"
@@ -802,11 +802,11 @@ msgstr ""
 "Để phát media bạn sẽ cần cập nhật phiên bản mới nhất trình duyệt của mình  "
 "hoặc cập nhật %s"
 
-#: Recordings.class.php:451
+#: Recordings.class.php:452
 msgid "Unknown Error"
 msgstr "Lỗi không xác định"
 
-#: Recordings.class.php:528
+#: Recordings.class.php:529
 msgid "Unsupported file format"
 msgstr "Định dạng tệp không được hỗ trợ"
 

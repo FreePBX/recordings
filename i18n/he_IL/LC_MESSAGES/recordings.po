@@ -7,14 +7,14 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-02 02:59-0400\n"
+"POT-Creation-Date: 2025-09-02 04:23-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: Recordings.class.php:551
+#: Recordings.class.php:552
 msgid "A PHP extension stopped the file upload"
 msgstr ""
 
@@ -66,7 +66,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:567
+#: Recordings.class.php:568
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -104,11 +104,11 @@ msgstr ""
 msgid "Call!"
 msgstr ""
 
-#: Recordings.class.php:555
+#: Recordings.class.php:556
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:924
+#: Recordings.class.php:925
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -132,7 +132,7 @@ msgid ""
 "recording to be changed directly."
 msgstr ""
 
-#: views/form-Scribe.php:56
+#: views/form-Scribe.php:58
 msgid "Choose a human voice from the available options."
 msgstr ""
 
@@ -146,7 +146,7 @@ msgid "Combine Files"
 msgstr ""
 
 #: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
-#: views/form-Scribe.php:90
+#: views/form-Scribe.php:92
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -169,7 +169,7 @@ msgid ""
 msgstr ""
 "צור ונהל הקלטות מערכת אשר בשימוש על ידי מודלים אחרים כגון נתב שיחות והכרזות"
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Delete"
 msgstr "מחק"
 
@@ -246,17 +246,17 @@ msgid "Enter your API Key here."
 msgstr ""
 
 #: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
-#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:72
-#: views/form-Scribe.php:78
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:74
+#: views/form-Scribe.php:80
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:341
+#: Recordings.class.php:342
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:350
+#: Recordings.class.php:351
 msgid "Error While Convertion"
 msgstr ""
 
@@ -281,7 +281,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:548
+#: Recordings.class.php:549
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:394 Recordings.class.php:497
+#: Recordings.class.php:395 Recordings.class.php:498
 msgid "File does not exist"
 msgstr ""
 
@@ -334,12 +334,12 @@ msgid "File with the name '%s' not found in the system"
 msgstr ""
 
 #: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
-#: views/form-Scribe.php:94
+#: views/form-Scribe.php:96
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
-#: views/form-Scribe.php:100
+#: views/form-Scribe.php:102
 msgid "Generate your audio file."
 msgstr ""
 
@@ -348,7 +348,7 @@ msgid "Hit the red record button to start recording from your browser"
 msgstr ""
 
 #: views/form-Elevenlabs.php:29 views/form-OpenAI.php:29
-#: views/form-Scribe.php:38
+#: views/form-Scribe.php:40
 msgid "Human Voices"
 msgstr ""
 
@@ -365,7 +365,7 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: Recordings.class.php:329
+#: Recordings.class.php:330
 msgid "Invalid API Key"
 msgstr ""
 
@@ -373,7 +373,7 @@ msgstr ""
 msgid "Invalid API Key."
 msgstr ""
 
-#: Recordings.class.php:220
+#: Recordings.class.php:221
 msgid "JSON decode error: "
 msgstr ""
 
@@ -421,11 +421,11 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:545
+#: Recordings.class.php:546
 msgid "Missing a temporary folder"
 msgstr ""
 
-#: Recordings.class.php:320
+#: Recordings.class.php:321
 msgid "Missing parameters"
 msgstr ""
 
@@ -449,7 +449,7 @@ msgstr ""
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:542
+#: Recordings.class.php:543
 msgid "No file was uploaded"
 msgstr ""
 
@@ -500,7 +500,7 @@ msgstr ""
 msgid "Play Recording: %s"
 msgstr ""
 
-#: views/form-Scribe.php:47
+#: views/form-Scribe.php:49
 msgid "Play Sample Voice"
 msgstr ""
 
@@ -561,7 +561,7 @@ msgstr ""
 msgid "Recordings"
 msgstr "הקלטות"
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Reset"
 msgstr ""
 
@@ -596,7 +596,7 @@ msgstr ""
 msgid "Select Scribe Audio Language"
 msgstr ""
 
-#: views/form-Scribe.php:26
+#: views/form-Scribe.php:28
 msgid "Select a human voice language from the available options."
 msgstr ""
 
@@ -604,7 +604,7 @@ msgstr ""
 msgid "Select a system recording"
 msgstr ""
 
-#: views/form-Scribe.php:43
+#: views/form-Scribe.php:45
 msgid "Select a voice"
 msgstr ""
 
@@ -666,7 +666,7 @@ msgstr ""
 msgid "Status for the request"
 msgstr ""
 
-#: Recordings.class.php:166
+#: Recordings.class.php:167
 msgid "Submit"
 msgstr ""
 
@@ -674,7 +674,7 @@ msgstr ""
 msgid "Supported Languages"
 msgstr ""
 
-#: Recordings.class.php:466 recordings.i18n.php:10
+#: Recordings.class.php:467 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "הקלטות מערכת"
 
@@ -686,7 +686,7 @@ msgstr ""
 msgid "Text cannot be empty"
 msgstr ""
 
-#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7 views/form-Scribe.php:68
+#: views/form-Elevenlabs.php:7 views/form-OpenAI.php:7 views/form-Scribe.php:70
 msgid "Text to Convert"
 msgstr ""
 
@@ -719,21 +719,21 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:536
+#: Recordings.class.php:537
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:533
+#: Recordings.class.php:534
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:539
+#: Recordings.class.php:540
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
-#: Recordings.class.php:219
+#: Recordings.class.php:220
 #, php-format
 msgid "There was an error reading system recordings (%s)"
 msgstr ""
@@ -755,11 +755,11 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:451
+#: Recordings.class.php:452
 msgid "Unknown Error"
 msgstr ""
 
-#: Recordings.class.php:528
+#: Recordings.class.php:529
 msgid "Unsupported file format"
 msgstr ""
 
