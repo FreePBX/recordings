@@ -23,7 +23,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<span id="audio_lang-help" class="help-block fpbx-help-block"><?= _("Select the human voice language avaible into the list.")?></span>
+					<span id="audio_lang-help" class="help-block fpbx-help-block"><?= _("Select a human voice language from the available options.")?></span>
 				</div>
 			</div>
 		</div>
@@ -53,7 +53,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<span id="ttsaiVoice-help" class="help-block fpbx-help-block"><?= _("Select the human voice avaible into the list.")?></span>
+					<span id="ttsaiVoice-help" class="help-block fpbx-help-block"><?= _("Choose a human voice from the available options.")?></span>
 				</div>
 			</div>
 		</div>
