@@ -33,9 +33,28 @@ $(document).on('click', '#generate', function () {
         return false;
     }
     if(text != ""){
+        // Check for special characters that might cause issues
+        const specialChars = /[&#%+?]/;
+        if (specialChars.test(text)) {
+            const proceed = confirm(_("Your text contains special characters (e.g., #, &). We recommend using words instead of symbols. Do you still want to proceed?"));
+            if (!proceed) {
+                return; // User chose not to proceed
+            }
+        }
+        
         $.ajax({
-            url: "ajax.php?module=recordings&command=ttsConvert&engine="+engine+"&file_name="+file_name+"&text="+text+"&voiceId="+voicId+"&langCode="+langCode+"&stability="+stability+"&similarity="+similarity,
-            dataType:"json",
+            url: "ajax.php?module=recordings&command=ttsConvert",
+            method: "POST",
+            data: {
+                engine: engine,
+                file_name: file_name,
+                text: text,
+                voiceId: voicId,
+                langCode: langCode,
+                stability: stability,
+                similarity: similarity
+            },
+            dataType: "json",
             success: function (json) {
                 if(json.status === true){
                     let fileUrl = json.file_url;

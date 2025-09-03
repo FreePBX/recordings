@@ -71,13 +71,13 @@
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="ttsaiText"></i>
 					</div>
 					<div class="col-md-9">
-                        <textarea name="ttsaiText" id="ttsaiText" maxlength="2000" class="form-control" required placeholder="<?= _("Enter your text here.") ?>"></textarea>
+                        <textarea name="ttsaiText" id="ttsaiText" maxlength="2000" class="form-control" required placeholder="<?= _("Enter your text here, We recommend using words instead of symbols.") ?>"></textarea>
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<span id="ttsaiText-help" class="help-block fpbx-help-block"><?= _("Enter your text here.")?></span>
+					<span id="ttsaiText-help" class="help-block fpbx-help-block"><?= _("Enter your text here, We recommend using words instead of symbols.")?></span>
 				</div>
 			</div>
 		</div>
