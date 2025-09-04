@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-02 08:24+0000\n"
+"POT-Creation-Date: 2025-09-04 05:04+0000\n"
 "PO-Revision-Date: 2017-03-17 00:22+0200\n"
 "Last-Translator: Nicolas <freepbx@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/"
@@ -71,11 +71,11 @@ msgstr ""
 msgid "Admin"
 msgstr "Admin"
 
-#: assets/js/ttsai.js:56
+#: assets/js/ttsai.js:75
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:74 assets/js/ttsai.js:95
+#: assets/js/ttsai.js:93 assets/js/ttsai.js:114
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -218,7 +218,7 @@ msgstr ""
 msgid "Display Name"
 msgstr "Nom affiché"
 
-#: assets/js/ttsai.js:49
+#: assets/js/ttsai.js:68
 msgid "Download error : "
 msgstr ""
 
@@ -265,9 +265,12 @@ msgstr ""
 msgid "Enter your API Key here."
 msgstr ""
 
+#: views/form-Scribe.php:74 views/form-Scribe.php:80
+msgid "Enter your text here, We recommend using words instead of symbols."
+msgstr ""
+
 #: views/form-Elevenlabs.php:11 views/form-Elevenlabs.php:17
-#: views/form-OpenAI.php:11 views/form-OpenAI.php:17 views/form-Scribe.php:74
-#: views/form-Scribe.php:80
+#: views/form-OpenAI.php:11 views/form-OpenAI.php:17
 msgid "Enter your text here."
 msgstr ""
 
@@ -284,7 +287,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:51 assets/js/ttsai.js:52
+#: assets/js/ttsai.js:70 assets/js/ttsai.js:71
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -703,7 +706,7 @@ msgstr ""
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:61
+#: assets/js/ttsai.js:80
 msgid "Text cannot be empty"
 msgstr ""
 
@@ -846,6 +849,12 @@ msgstr ""
 
 #: assets/js/recordings.js:22
 msgid "You must set a valid name for this recording"
+msgstr ""
+
+#: assets/js/ttsai.js:39
+msgid ""
+"Your text contains special characters (e.g., #, &). We recommend using words "
+"instead of symbols. Do you still want to proceed?"
 msgstr ""
 
 #: Api/Gql/Recordings.php:19
