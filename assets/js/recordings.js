@@ -794,7 +794,7 @@ function addFile(name, filenames, languages, temp, exists) {
 			$.ajax({
 				type: 'POST',
 				url: "ajax.php",
-				data: {module: "recordings", command: "gethtml5", file: name, filenames: $("#file-"+id).data("filenames"), temporary: $("#file-"+id).data("temporary"), language: language},
+				data: {module: "recordings", command: "gethtml5", name: name, filenames: $("#file-"+id).data("filenames"), temporary: $("#file-"+id).data("temporary"), language: language},
 				dataType: 'json',
 				timeout: 30000,
 				success: function(data) {
