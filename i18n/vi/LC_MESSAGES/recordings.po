@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 05:04+0000\n"
+"POT-Creation-Date: 2025-09-08 10:38+0000\n"
 "PO-Revision-Date: 2017-07-20 14:30+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/"
@@ -63,11 +63,11 @@ msgstr ""
 msgid "Admin"
 msgstr "Quản trị viên"
 
-#: assets/js/ttsai.js:75
+#: assets/js/ttsai.js:87
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:93 assets/js/ttsai.js:114
+#: assets/js/ttsai.js:115 assets/js/ttsai.js:136
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -119,7 +119,7 @@ msgstr "Có cuộc gọi!"
 msgid "Can Not Find Uploaded Files"
 msgstr "Không tìm thấy các tệp đã tải lên"
 
-#: Recordings.class.php:973
+#: Recordings.class.php:979
 msgid "Can not find suitable file in this language"
 msgstr "Không thể tìm thấy tệp phù hợp trong ngôn ngữ này"
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Display Name"
 msgstr "Hiển thị Tên"
 
-#: assets/js/ttsai.js:68
+#: assets/js/ttsai.js:80
 msgid "Download error : "
 msgstr ""
 
@@ -283,7 +283,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:70 assets/js/ttsai.js:71
+#: assets/js/ttsai.js:82 assets/js/ttsai.js:83
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -565,6 +565,14 @@ msgstr ""
 msgid "Please provide atleast one existing playback file name"
 msgstr ""
 
+#: assets/js/ttsai.js:36
+msgid "Please select a language before generating an audio file!!"
+msgstr ""
+
+#: assets/js/ttsai.js:41
+msgid "Please select a voice before generating an audio file!!"
+msgstr ""
+
 #: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
@@ -678,18 +686,15 @@ msgstr ""
 
 #: views/form.php:113
 msgid ""
-"Sortable File List/Play order. The playback will be done starting from the "
-"top to the bottom. You can click the play icon to preview the files. If a "
-"file is red it is missing for said selected language. Files can be replaced "
-"by clicking them once (which will turn them green) placing them into replace "
-"mode. Anything you upload will then replace this file on save"
+"Sortable File List/Play order. The playback will be starting from the top to "
+"the bottom. You can click the play icon to preview the files. If a file is "
+"red it is missing for said selected language. Files can be replaced by "
+"clicking them once (which will turn them green) placing them into replace "
+"mode. Anything you upload will then replace this file on save. English is "
+"default language. If you are using Scribe TTS feature with Spanish language, "
+"then you need to install Spanish language in Sound languages module and "
+"select Spanish language from the drop-down above."
 msgstr ""
-"Danh sách tệp có thể sắp xếp / Trình tự phát. Tính năng Phát lại sẽ được "
-"thực hiện từ trên xuống dưới. Bạn có thể nhấp vào biểu tượng phát để xem "
-"trước các tệp. Nếu một tệp màu đỏ thì tệp đó bị thiếu ngôn ngữ đã chọn. Các "
-"tệp có thể được thay thế bằng cách nhấp chuột vào chúng  (sẽ biến chúng "
-"thành màu xanh) để đặt chúng ở chế độ thay thế. Mọi thứ bạn tải lên sau đó "
-"sẽ thay thế tệp này khi lưu"
 
 #: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
@@ -723,7 +728,7 @@ msgstr ""
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:80
+#: assets/js/ttsai.js:92
 msgid "Text cannot be empty"
 msgstr ""
 
@@ -891,7 +896,7 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr "Bạn phải cài đặt một tên hợp lệ cho bản ghi âm này"
 
-#: assets/js/ttsai.js:39
+#: assets/js/ttsai.js:49
 msgid ""
 "Your text contains special characters (e.g., #, &). We recommend using words "
 "instead of symbols. Do you still want to proceed?"
@@ -936,6 +941,20 @@ msgstr ""
 #: Api/Gql/Recordings.php:28
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid ""
+#~ "Sortable File List/Play order. The playback will be done starting from "
+#~ "the top to the bottom. You can click the play icon to preview the files. "
+#~ "If a file is red it is missing for said selected language. Files can be "
+#~ "replaced by clicking them once (which will turn them green) placing them "
+#~ "into replace mode. Anything you upload will then replace this file on save"
+#~ msgstr ""
+#~ "Danh sách tệp có thể sắp xếp / Trình tự phát. Tính năng Phát lại sẽ được "
+#~ "thực hiện từ trên xuống dưới. Bạn có thể nhấp vào biểu tượng phát để xem "
+#~ "trước các tệp. Nếu một tệp màu đỏ thì tệp đó bị thiếu ngôn ngữ đã chọn. "
+#~ "Các tệp có thể được thay thế bằng cách nhấp chuột vào chúng  (sẽ biến "
+#~ "chúng thành màu xanh) để đặt chúng ở chế độ thay thế. Mọi thứ bạn tải lên "
+#~ "sau đó sẽ thay thế tệp này khi lưu"
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Đã xảy ra một lỗi khi gửi tài liệu này"
