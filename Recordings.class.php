@@ -568,7 +568,11 @@ class Recordings extends \DB_Helper implements BMO {
 			dbug(_("An error is occured on RIFF detection."));
 		}
 		if(empty($out[0])){
-			$f 		= str_replace("custom/", "", $_POST["file"]);			
+			if (isset($_POST["name"]) && str_starts_with($_POST["name"], "custom/")) {
+				$f = str_replace("custom/", "", $_POST["name"]);
+			} else {
+				$f = str_replace("custom/", "", $_POST["file"]);
+			}
 			$cmd 	= "mv ".$this->temp."/$f.wav $filename";
 			exec($cmd, $out, $ret);
 		}
@@ -895,7 +899,9 @@ class Recordings extends \DB_Helper implements BMO {
 		set_time_limit(0);
 		$media = $this->FreePBX->Media;
 		$file = $input['file'];
-		$this->fixeRIFF($file);
+		$path = (isset($input['temporary']) && $input['temporary']) ? $this->temp : $this->path;
+		$filename = $path . "/" . $file;
+		$this->fixeRIFF($filename);
 		$name = $input['name'];
 		$codec = $input['codec'];
 		$lang = $input['lang'];

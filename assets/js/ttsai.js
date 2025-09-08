@@ -32,6 +32,16 @@ $(document).on('click', '#generate', function () {
         fpbxToast( _("Please enter a name before generating an audio file!!"), "Warning" , "warning");
         return false;
     }
+    if (engine == "Scribe" && $('#audio_lang').val() == ""){
+        fpbxToast( _("Please select a language before generating an audio file!!"), "Warning" , "warning");
+        $("#audio_lang").focus();
+        return false;
+    }
+    if(engine == 'Scribe' && voicId == ""){
+        fpbxToast( _("Please select a voice before generating an audio file!!"), "Warning" , "warning");
+        $("#ttsaiVoice").focus();
+        return false;
+    }
     if(text != ""){
         // Check for special characters that might cause issues
         const specialChars = /[&#%+?]/;
@@ -41,7 +51,9 @@ $(document).on('click', '#generate', function () {
                 return; // User chose not to proceed
             }
         }
-        
+        // Store the original text value before disabling the button
+        originalTextValue = $('#ttsaiText').val();
+        $('#generate').prop('disabled', true).addClass('disabled');
         $.ajax({
             url: "ajax.php?module=recordings&command=ttsConvert",
             method: "POST",
@@ -78,6 +90,16 @@ $(document).on('click', '#generate', function () {
     }
     else{
         fpbxToast( _("Text cannot be empty"),"Error" , "error");
+    }
+});
+
+var originalTextValue = '';
+
+$(document).on('input keyup paste', '#ttsaiText', function () {
+    var currentTextValue = $(this).val();
+    
+    if (currentTextValue !== originalTextValue && currentTextValue !== '') {
+        $('#generate').prop('disabled', false).removeClass('disabled');
     }
 });
 

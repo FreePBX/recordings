@@ -112,7 +112,7 @@
 									</div>
 									<div class="row">
 										<div class="col-md-12">
-											<span id="list-help" class="help-block fpbx-help-block"><?= _("Sortable File List/Play order. The playback will be done starting from the top to the bottom. You can click the play icon to preview the files. If a file is red it is missing for said selected language. Files can be replaced by clicking them once (which will turn them green) placing them into replace mode. Anything you upload will then replace this file on save")?></span>
+											<span id="list-help" class="help-block fpbx-help-block"><?= _("Sortable File List/Play order. The playback will be starting from the top to the bottom. You can click the play icon to preview the files. If a file is red it is missing for said selected language. Files can be replaced by clicking them once (which will turn them green) placing them into replace mode. Anything you upload will then replace this file on save. English is default language. If you are using Scribe TTS feature with Spanish language, then you need to install Spanish language in Sound languages module and select Spanish language from the drop-down above.")?></span>
 										</div>
 									</div>
 								</div>
