@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-04 01:05-0400\n"
+"POT-Creation-Date: 2025-09-08 06:39-0400\n"
 "PO-Revision-Date: 2018-07-27 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -64,11 +64,11 @@ msgstr ""
 msgid "Admin"
 msgstr "Administrator"
 
-#: assets/js/ttsai.js:75
+#: assets/js/ttsai.js:87
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:93 assets/js/ttsai.js:114
+#: assets/js/ttsai.js:115 assets/js/ttsai.js:136
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -121,7 +121,7 @@ msgstr "Anruf!"
 msgid "Can Not Find Uploaded Files"
 msgstr "Es können keine hochgeladenen Dateien gefunden werden"
 
-#: Recordings.class.php:925
+#: Recordings.class.php:931
 msgid "Can not find suitable file in this language"
 msgstr "Es kann keine passende Datei in dieser Sprache gefunden werden"
 
@@ -210,7 +210,7 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
-#: assets/js/ttsai.js:68
+#: assets/js/ttsai.js:80
 msgid "Download error : "
 msgstr ""
 
@@ -279,7 +279,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:70 assets/js/ttsai.js:71
+#: assets/js/ttsai.js:82 assets/js/ttsai.js:83
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -550,6 +550,14 @@ msgstr ""
 msgid "Please provide atleast one existing playback file name"
 msgstr ""
 
+#: assets/js/ttsai.js:36
+msgid "Please select a language before generating an audio file!!"
+msgstr ""
+
+#: assets/js/ttsai.js:41
+msgid "Please select a voice before generating an audio file!!"
+msgstr ""
+
 #: assets/js/recordings.js:106
 #, perl-format
 msgid "Processing %s for %s in format %s"
@@ -669,18 +677,15 @@ msgstr ""
 
 #: views/form.php:115
 msgid ""
-"Sortable File List/Play order. The playback will be done starting from the "
-"top to the bottom. You can click the play icon to preview the files. If a "
-"file is red it is missing for said selected language. Files can be replaced "
-"by clicking them once (which will turn them green) placing them into replace "
-"mode. Anything you upload will then replace this file on save"
+"Sortable File List/Play order. The playback will be starting from the top to "
+"the bottom. You can click the play icon to preview the files. If a file is "
+"red it is missing for said selected language. Files can be replaced by "
+"clicking them once (which will turn them green) placing them into replace "
+"mode. Anything you upload will then replace this file on save. English is "
+"default language. If you are using Scribe TTS feature with Spanish language, "
+"then you need to install Spanish language in Sound languages module and "
+"select Spanish language from the drop-down above."
 msgstr ""
-"Sortierbare Dateiliste / Spielreihenfolge Die Wiedergabe erfolgt von oben "
-"nach unten. Sie können auf das Wiedergabesymbol klicken, um eine Vorschau "
-"der Dateien anzuzeigen. Wenn eine Datei rot ist, fehlt diese für die "
-"ausgewählte Sprache. Dateien können durch einmaliges Klicken ersetzt werden "
-"(wodurch sie grün werden), wodurch sie in den Ersetzungsmodus versetzt "
-"werden. Alles, was Sie hochladen, wird diese Datei beim Speichern ersetzen"
 
 #: views/form.php:5 views/grid.php:2
 msgid "Sound Languages"
@@ -710,7 +715,7 @@ msgstr "Systemaufzeichnungen"
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:80
+#: assets/js/ttsai.js:92
 msgid "Text cannot be empty"
 msgstr ""
 
@@ -857,7 +862,7 @@ msgstr ""
 msgid "You must set a valid name for this recording"
 msgstr ""
 
-#: assets/js/ttsai.js:39
+#: assets/js/ttsai.js:49
 msgid ""
 "Your text contains special characters (e.g., #, &). We recommend using words "
 "instead of symbols. Do you still want to proceed?"
@@ -902,6 +907,21 @@ msgstr ""
 #: Api/Gql/Recordings.php:26
 msgid "updateRecording"
 msgstr ""
+
+#~ msgid ""
+#~ "Sortable File List/Play order. The playback will be done starting from "
+#~ "the top to the bottom. You can click the play icon to preview the files. "
+#~ "If a file is red it is missing for said selected language. Files can be "
+#~ "replaced by clicking them once (which will turn them green) placing them "
+#~ "into replace mode. Anything you upload will then replace this file on save"
+#~ msgstr ""
+#~ "Sortierbare Dateiliste / Spielreihenfolge Die Wiedergabe erfolgt von oben "
+#~ "nach unten. Sie können auf das Wiedergabesymbol klicken, um eine Vorschau "
+#~ "der Dateien anzuzeigen. Wenn eine Datei rot ist, fehlt diese für die "
+#~ "ausgewählte Sprache. Dateien können durch einmaliges Klicken ersetzt "
+#~ "werden (wodurch sie grün werden), wodurch sie in den Ersetzungsmodus "
+#~ "versetzt werden. Alles, was Sie hochladen, wird diese Datei beim "
+#~ "Speichern ersetzen"
 
 #~ msgid "An Error occurred trying to submit this document"
 #~ msgstr "Beim Absenden des Dokuments ist ein Fehler aufgetreten"
