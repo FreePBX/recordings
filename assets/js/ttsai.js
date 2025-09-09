@@ -21,6 +21,11 @@ $('#ttsaiengine').on('change', function() {
 });
 
 $(document).on('click', '#generate', function () {
+    // Prevent click if button is disabled
+    if ($(this).prop('disabled') || $(this).hasClass('disabled')) {
+        return false;
+    }
+    
     var engine = $('#ttsaiengine').find(":selected").val();
     var file_name = $("#name").val().replace(/\.[^/.]+$/, "").replace(/\s|&|<|>|\.|`|'|\*|\?|\"/g, '-').toLowerCase();
     var text = $("#ttsaiText").val();
