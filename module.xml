@@ -2,7 +2,7 @@
 	<rawname>recordings</rawname>
 	<repo>standard</repo>
 	<name>Recordings</name>
-	<version>17.0.2.13</version>
+	<version>17.0.2.14</version>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
@@ -11,6 +11,7 @@
 	<description>Creates and manages system recordings, used by many other modules (eg, IVR).</description>
   	<more-info>https://sangomakb.atlassian.net/wiki/spaces/PG/pages/20808116/PBX+GUI+-+System+Recordings+Module</more-info>
 	<changelog>
+		*17.0.2.14* FREEI-2340 Show TTS- Textarea charactor length and words count 
 		*17.0.2.13* FREEI-2319 fix: prevent click event firing when Generate button is disabled 
 		*17.0.2.12* FREEI-2318 fix: add mandatory validation for language and human voice in Scribe TTS 
 		*17.0.2.11* FREEI-2301 fix:add special character check and improve text guidance 

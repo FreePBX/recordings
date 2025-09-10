@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.2.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 00:50-0400\n"
+"POT-Creation-Date: 2025-09-10 06:06-0400\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Shimi <shimi@shimi.net>\n"
 "MIME-Version: 1.0\n"
@@ -146,7 +146,7 @@ msgid "Combine Files"
 msgstr ""
 
 #: views/form-Elevenlabs.php:101 views/form-OpenAI.php:57
-#: views/form-Scribe.php:92
+#: views/form-Scribe.php:94
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -245,7 +245,7 @@ msgstr ""
 msgid "Enter your API Key here."
 msgstr ""
 
-#: views/form-Scribe.php:74 views/form-Scribe.php:80
+#: views/form-Scribe.php:74 views/form-Scribe.php:82
 msgid "Enter your text here, We recommend using words instead of symbols."
 msgstr ""
 
@@ -337,12 +337,12 @@ msgid "File with the name '%s' not found in the system"
 msgstr ""
 
 #: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
-#: views/form-Scribe.php:96
+#: views/form-Scribe.php:98
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
-#: views/form-Scribe.php:102
+#: views/form-Scribe.php:104
 msgid "Generate your audio file."
 msgstr ""
 
