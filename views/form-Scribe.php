@@ -71,7 +71,9 @@
 						<i class="fa fa-question-circle fpbx-help-icon" data-for="ttsaiText"></i>
 					</div>
 					<div class="col-md-9">
-                        <textarea name="ttsaiText" id="ttsaiText" maxlength="2000" class="form-control" required placeholder="<?= _("Enter your text here, We recommend using words instead of symbols.") ?>"></textarea>
+						<textarea name="ttsaiText" id="ttsaiText" maxlength="2000" class="form-control" required="" placeholder="<?= _("Enter your text here, We recommend using words instead of symbols.")?>"></textarea>
+						<!-- Word count will appear here -->
+						<small id="wordCount" class="help-block text-muted">Words: 0 | Characters: 0/2000</small>
 					</div>
 				</div>
 			</div>
@@ -106,6 +108,22 @@
 	</div>
 </div>
 <script>
+
+	const textarea = document.getElementById("ttsaiText");
+    const wordCount = document.getElementById("wordCount");
+
+    textarea.addEventListener("input", function () {
+        const text = textarea.value;
+
+        // Word count (ignore multiple spaces/newlines)
+        const words = text.trim().length > 0 ? text.trim().split(/\s+/).length : 0;
+
+        // Character count (includes spaces, tabs, newlines)
+        const chars = text.length;
+
+        wordCount.textContent = `Words: ${words} | Characters: ${chars}/2000`;
+    });
+
 	var voices = <?php echo json_encode($voices) ?>;
 	$('#audio_lang').on('change', function () {
 		var lang = $(this).val();
