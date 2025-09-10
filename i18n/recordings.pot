@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-09 04:50+0000\n"
+"POT-Creation-Date: 2025-09-10 10:06+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -156,7 +156,7 @@ msgstr ""
 
 #: views/form-Elevenlabs.php:101
 #: views/form-OpenAI.php:57
-#: views/form-Scribe.php:92
+#: views/form-Scribe.php:94
 msgid "Convert Text to Audio"
 msgstr ""
 
@@ -264,7 +264,7 @@ msgid "Enter your API Key here."
 msgstr ""
 
 #: views/form-Scribe.php:74
-#: views/form-Scribe.php:80
+#: views/form-Scribe.php:82
 msgid "Enter your text here, We recommend using words instead of symbols."
 msgstr ""
 
@@ -366,13 +366,13 @@ msgstr ""
 
 #: views/form-Elevenlabs.php:105
 #: views/form-OpenAI.php:61
-#: views/form-Scribe.php:96
+#: views/form-Scribe.php:98
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111
 #: views/form-OpenAI.php:67
-#: views/form-Scribe.php:102
+#: views/form-Scribe.php:104
 msgid "Generate your audio file."
 msgstr ""
 
