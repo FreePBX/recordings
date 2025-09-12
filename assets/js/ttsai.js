@@ -59,6 +59,9 @@ $(document).on('click', '#generate', function () {
         // Store the original text value before disabling the button
         originalTextValue = $('#ttsaiText').val();
         $('#generate').prop('disabled', true).addClass('disabled');
+        // Show loading indicator
+        $('#generate').html('<i class="fa fa-spinner fa-spin"></i> ' + _("Generating..."));
+        file_name = file_name + "-" + Math.random().toString(36).substring(2, 15);
         $.ajax({
             url: "ajax.php?module=recordings&command=ttsConvert",
             method: "POST",
@@ -87,8 +90,10 @@ $(document).on('click', '#generate', function () {
                     fpbxToast( _("Error while converting TTS: ") + json.message, "Error" , "error");
                     console.error( _("Error while converting TTS: "), json.message);
                 }
+                $('#generate').html(_("Generate"));
             },
             error: function(xhr, status, error) {
+                $('#generate').html(_("Generate"));
                 fpbxToast( _("An Ajax error has occurred: ") + error,"Error" , "error");
             }
         }); 
