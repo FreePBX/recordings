@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 1.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-10 10:06+0000\n"
+"POT-Creation-Date: 2025-09-18 05:43+0000\n"
 "PO-Revision-Date: 2015-12-08 23:09+0200\n"
 "Last-Translator: Andrew <andrew.nagy@the159.com>\n"
 "Language-Team: Russian <http://weblate.freepbx.org/projects/freepbx/"
@@ -60,11 +60,11 @@ msgstr "Добавить любую , ранее созданную систем
 msgid "Admin"
 msgstr "Администратор"
 
-#: assets/js/ttsai.js:92
+#: assets/js/ttsai.js:97
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:120 assets/js/ttsai.js:141
+#: assets/js/ttsai.js:125 assets/js/ttsai.js:146
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
-#: assets/js/ttsai.js:85
+#: assets/js/ttsai.js:88
 msgid "Download error : "
 msgstr ""
 
@@ -280,7 +280,7 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:87 assets/js/ttsai.js:88
+#: assets/js/ttsai.js:90 assets/js/ttsai.js:91
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -350,13 +350,17 @@ msgid "File with the name '%s' not found in the system"
 msgstr ""
 
 #: views/form-Elevenlabs.php:105 views/form-OpenAI.php:61
-#: views/form-Scribe.php:98
+#: views/form-Scribe.php:98 assets/js/ttsai.js:93 assets/js/ttsai.js:96
 msgid "Generate"
 msgstr ""
 
 #: views/form-Elevenlabs.php:111 views/form-OpenAI.php:67
 #: views/form-Scribe.php:104
 msgid "Generate your audio file."
+msgstr ""
+
+#: assets/js/ttsai.js:63
+msgid "Generating..."
 msgstr ""
 
 #: views/form.php:186
@@ -714,7 +718,7 @@ msgstr ""
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:97
+#: assets/js/ttsai.js:102
 msgid "Text cannot be empty"
 msgstr ""
 
