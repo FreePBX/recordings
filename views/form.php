@@ -90,7 +90,7 @@
 									<div class="row">
 										<div class="form-group">
 											<div class="col-md-3">
-												<label class="control-label" for="list"><?= sprintf(_("File List for %s"),"<span class='language'>".isset($langs[$default])??''."</span>")?></label>
+												<label class="control-label" for="list"><?= sprintf(_("File List for %s"),"<span class='language'>".(isset($langs[$default]) ? $langs[$default]: '')."</span>")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="list"></i>
 											</div>
 											<div class="col-md-9">
@@ -99,7 +99,7 @@
 														<option value="<?= $code?>" <?= ($code == $default) ? 'SELECTED': ''?>><?= $lang?></option>
 													<?php } ?>
 												</select>
-												<div id="file-alert" class="alert alert-info <?= !empty($data['soundlist']) ? "hidden" : ""?>" role="alert"><?= sprintf(_("No files for %s"),"<span class='language'>".isset($langs[$default])??''."</span>")?></div>
+												<div id="file-alert" class="alert alert-info <?= !empty($data['soundlist']) ? "hidden" : ""?>" role="alert"><?= sprintf(_("No files for %s"),"<span class='language'>".(isset($langs[$default])? $langs[$default]: '')."</span>")?></div>
 												<ul id="files">
 													<?php if(isset($data['soundlist'])) { foreach($data['soundlist'] as $item) {?>
 														<li id="file-<?= $item['name']?>" class="file"><?= $item['name']?><i class="fa fa-times-circle pull-right text-danger delete-file"></i></li>
