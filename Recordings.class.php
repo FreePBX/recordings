@@ -344,7 +344,7 @@ class Recordings extends \DB_Helper implements BMO {
 					return ["status" => false, "error" => _("Missing parameters")];					
 				}
 				if($engine == 'Scribe' && $this->FreePBX->Modules->checkStatus('scribe') && $this->FreePBX->Scribe->isLicensed() && method_exists($this->FreePBX->Scribe, 'convertToAudio')) {
-					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId);
+					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId,$lang);
 					return $audioFile;
 				}
 
