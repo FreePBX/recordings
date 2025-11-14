@@ -322,7 +322,14 @@ class Recordings extends \DB_Helper implements BMO {
 				}
 				if($engine == 'Scribe' && $this->FreePBX->Modules->checkStatus('scribe') && $this->FreePBX->Scribe->isLicensed() && method_exists($this->FreePBX->Scribe, 'convertToAudio')) {
 					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId,$lang);
-					return $audioFile;
+					if($audioFile) {
+						return $audioFile;
+					} else {
+						return [
+							'status' => false,
+							'message' => _('Unable to convert TTS due to either the scribe limit being reached or an unexpected error. Please refer to the scribe log for more details.')
+						];
+					}
 				}
 
 				$apiKey = $this->getConfig($engine);
