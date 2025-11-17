@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-18 05:43+0000\n"
+"POT-Creation-Date: 2025-11-17 06:40+0000\n"
 "PO-Revision-Date: 2018-07-27 10:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/recordings/de/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 3.0.1\n"
 
-#: Recordings.class.php:583
+#: Recordings.class.php:590
 msgid "A PHP extension stopped the file upload"
 msgstr "Eine PHP Erweiterung hat den Datei Upload gestoppt"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:599
+#: Recordings.class.php:606
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -117,11 +117,11 @@ msgstr "Anruf"
 msgid "Call!"
 msgstr "Anruf!"
 
-#: Recordings.class.php:587
+#: Recordings.class.php:594
 msgid "Can Not Find Uploaded Files"
 msgstr "Es können keine hochgeladenen Dateien gefunden werden"
 
-#: Recordings.class.php:979
+#: Recordings.class.php:986
 msgid "Can not find suitable file in this language"
 msgstr "Es kann keine passende Datei in dieser Sprache gefunden werden"
 
@@ -266,12 +266,12 @@ msgstr ""
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:365
+#: Recordings.class.php:372
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:374
+#: Recordings.class.php:381
 msgid "Error While Convertion"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:580
+#: Recordings.class.php:587
 msgid "Failed to write file to disk"
 msgstr ""
 
@@ -326,7 +326,7 @@ msgstr ""
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:418 Recordings.class.php:529
+#: Recordings.class.php:425 Recordings.class.php:536
 msgid "File does not exist"
 msgstr ""
 
@@ -384,7 +384,7 @@ msgid ""
 "file. This will not destroy any previously existing files listed above."
 msgstr ""
 
-#: Recordings.class.php:353
+#: Recordings.class.php:360
 msgid "Invalid API Key"
 msgstr ""
 
@@ -440,7 +440,7 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:577
+#: Recordings.class.php:584
 msgid "Missing a temporary folder"
 msgstr ""
 
@@ -468,7 +468,7 @@ msgstr "Nein"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:574
+#: Recordings.class.php:581
 msgid "No file was uploaded"
 msgstr "Es wurde keine Datei hochgeladen"
 
@@ -710,7 +710,7 @@ msgstr "Unterstützte Sprachen"
 msgid "System Recordings"
 msgstr "Systemaufzeichnungen"
 
-#: Recordings.class.php:496
+#: Recordings.class.php:503
 msgid "System Recordings <0>"
 msgstr ""
 
@@ -755,17 +755,17 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:568
+#: Recordings.class.php:575
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 
-#: Recordings.class.php:565
+#: Recordings.class.php:572
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 
-#: Recordings.class.php:571
+#: Recordings.class.php:578
 msgid "The uploaded file was only partially uploaded"
 msgstr ""
 
@@ -791,11 +791,17 @@ msgid ""
 "version or update your %s"
 msgstr ""
 
-#: Recordings.class.php:475
+#: Recordings.class.php:353
+msgid ""
+"Unable to convert TTS due to either the scribe limit being reached or an "
+"unexpected error. Please refer to the scribe log for more details."
+msgstr ""
+
+#: Recordings.class.php:482
 msgid "Unknown Error"
 msgstr "Unbekannter Fehler"
 
-#: Recordings.class.php:560
+#: Recordings.class.php:567
 msgid "Unsupported file format"
 msgstr "Nicht unterstütztes Dateiformat"
 

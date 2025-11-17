@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 2.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-18 05:43+0000\n"
+"POT-Creation-Date: 2025-11-17 06:40+0000\n"
 "PO-Revision-Date: 2018-06-07 12:43+0000\n"
 "Last-Translator: Stell0 <stefano.fancello@nethesis.it>\n"
 "Language-Team: Italian <http://*/projects/freepbx/recordings/it/>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-Language: Italian\n"
 "X-Poedit-Country: ITALY\n"
 
-#: Recordings.class.php:583
+#: Recordings.class.php:590
 msgid "A PHP extension stopped the file upload"
 msgstr "Un'estensione PHP ha interrotto il caricamento del file"
 
@@ -76,7 +76,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:599
+#: Recordings.class.php:606
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -116,11 +116,11 @@ msgstr "Chiamata"
 msgid "Call!"
 msgstr "Chiamata!"
 
-#: Recordings.class.php:587
+#: Recordings.class.php:594
 msgid "Can Not Find Uploaded Files"
 msgstr "Impossibile trovare i file caricati"
 
-#: Recordings.class.php:979
+#: Recordings.class.php:986
 msgid "Can not find suitable file in this language"
 msgstr "Impossibile trovare il file adatto in questa lingua"
 
@@ -271,12 +271,12 @@ msgstr ""
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:365
+#: Recordings.class.php:372
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:374
+#: Recordings.class.php:381
 msgid "Error While Convertion"
 msgstr ""
 
@@ -301,7 +301,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:580
+#: Recordings.class.php:587
 msgid "Failed to write file to disk"
 msgstr "Impossibile scrivere il file su disco"
 
@@ -331,7 +331,7 @@ msgstr "Elenco file per %s1"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:418 Recordings.class.php:529
+#: Recordings.class.php:425 Recordings.class.php:536
 msgid "File does not exist"
 msgstr "Il file non esiste"
 
@@ -397,7 +397,7 @@ msgstr ""
 "sarai in grado di aggiungere file alla fine o all'inizio di questo file. "
 "Questo non distruggerà alcun file precedentemente esistente elencato sopra."
 
-#: Recordings.class.php:353
+#: Recordings.class.php:360
 msgid "Invalid API Key"
 msgstr ""
 
@@ -453,7 +453,7 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:577
+#: Recordings.class.php:584
 msgid "Missing a temporary folder"
 msgstr "Manca una cartella temporanea"
 
@@ -481,7 +481,7 @@ msgstr "No"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:574
+#: Recordings.class.php:581
 msgid "No file was uploaded"
 msgstr "Nessun file è stato caricato"
 
@@ -723,7 +723,7 @@ msgstr "Lingue supportate"
 msgid "System Recordings"
 msgstr "Registrazioni di Sistema"
 
-#: Recordings.class.php:496
+#: Recordings.class.php:503
 msgid "System Recordings <0>"
 msgstr ""
 
@@ -772,7 +772,7 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:568
+#: Recordings.class.php:575
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -780,11 +780,11 @@ msgstr ""
 "Il file caricato supera la direttiva MAX_FILE_SIZE che è stata specificata "
 "nel modulo HTML"
 
-#: Recordings.class.php:565
+#: Recordings.class.php:572
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "Il file caricato supera la direttiva upload_max_filesize in php.ini"
 
-#: Recordings.class.php:571
+#: Recordings.class.php:578
 msgid "The uploaded file was only partially uploaded"
 msgstr "Il file caricato è stato caricato solo parzialmente"
 
@@ -816,11 +816,17 @@ msgstr ""
 "Per riprodurre i contenuti multimediali dovrai aggiornare il browser a una "
 "versione recente o aggiornare %s1"
 
-#: Recordings.class.php:475
+#: Recordings.class.php:353
+msgid ""
+"Unable to convert TTS due to either the scribe limit being reached or an "
+"unexpected error. Please refer to the scribe log for more details."
+msgstr ""
+
+#: Recordings.class.php:482
 msgid "Unknown Error"
 msgstr "Errore sconosciuto"
 
-#: Recordings.class.php:560
+#: Recordings.class.php:567
 msgid "Unsupported file format"
 msgstr "Formato file non supportato"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-09-18 05:43+0000\n"
+"POT-Creation-Date: 2025-11-17 06:40+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:583
+#: Recordings.class.php:590
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:599
+#: Recordings.class.php:606
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:587
+#: Recordings.class.php:594
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:979
+#: Recordings.class.php:986
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
@@ -266,12 +266,12 @@ msgstr ""
 msgid "Enter your text here."
 msgstr ""
 
-#: Recordings.class.php:365
+#: Recordings.class.php:372
 #, php-format
 msgid "Error Exception: %s."
 msgstr ""
 
-#: Recordings.class.php:374
+#: Recordings.class.php:381
 msgid "Error While Convertion"
 msgstr ""
 
@@ -296,7 +296,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:580
+#: Recordings.class.php:587
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -326,7 +326,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:418 Recordings.class.php:529
+#: Recordings.class.php:425 Recordings.class.php:536
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -389,7 +389,7 @@ msgstr ""
 "به ابتدا و انتهای این فایل اضافه کنید. این عمل هیچ یک از فایل های لیست بالا "
 "را خراب نمی کند."
 
-#: Recordings.class.php:353
+#: Recordings.class.php:360
 msgid "Invalid API Key"
 msgstr ""
 
@@ -445,7 +445,7 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:577
+#: Recordings.class.php:584
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
@@ -473,7 +473,7 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:574
+#: Recordings.class.php:581
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
@@ -708,7 +708,7 @@ msgstr "زبان های تحت پوشش"
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
-#: Recordings.class.php:496
+#: Recordings.class.php:503
 msgid "System Recordings <0>"
 msgstr ""
 
@@ -757,20 +757,20 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:568
+#: Recordings.class.php:575
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:565
+#: Recordings.class.php:572
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:571
+#: Recordings.class.php:578
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
@@ -798,11 +798,17 @@ msgid ""
 "version or update your %s"
 msgstr "برای پخش مدیا لازم است مرورگر و یا %s خود را بروز نمایید"
 
-#: Recordings.class.php:475
+#: Recordings.class.php:353
+msgid ""
+"Unable to convert TTS due to either the scribe limit being reached or an "
+"unexpected error. Please refer to the scribe log for more details."
+msgstr ""
+
+#: Recordings.class.php:482
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:560
+#: Recordings.class.php:567
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
