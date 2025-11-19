@@ -316,12 +316,12 @@ class Recordings extends \DB_Helper implements BMO {
 				$lang 		= $requests['langCode'] ?? 'en';
 				$stability 	= floatval($requests['stability'] ?? 0.5);
 				$similarity = floatval($requests['similarity'] ?? 0.5);
-			
+				$audioLang 	= $requests['audioLang'] ?? '';
 				if(empty($engine) || empty($filename) || empty($text) || empty($voiceId)){
 					return ["status" => false, "error" => _("Missing parameters")];					
 				}
 				if($engine == 'Scribe' && $this->FreePBX->Modules->checkStatus('scribe') && $this->FreePBX->Scribe->isLicensed() && method_exists($this->FreePBX->Scribe, 'convertToAudio')) {
-					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId,$lang);
+					$audioFile 	= $this->FreePBX->Scribe->convertToAudio($filename, $text, $voiceId,$lang,$audioLang);
 					if($audioFile) {
 						return $audioFile;
 					} else {
