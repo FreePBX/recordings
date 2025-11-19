@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-17 06:40+0000\n"
+"POT-Creation-Date: 2025-11-19 10:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -59,12 +59,12 @@ msgstr ""
 msgid "Admin"
 msgstr ""
 
-#: assets/js/ttsai.js:97
+#: assets/js/ttsai.js:99
 msgid "An Ajax error has occurred: "
 msgstr ""
 
-#: assets/js/ttsai.js:125
-#: assets/js/ttsai.js:146
+#: assets/js/ttsai.js:127
+#: assets/js/ttsai.js:148
 msgid "An Ajax error is occured! "
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
-#: assets/js/ttsai.js:88
+#: assets/js/ttsai.js:90
 msgid "Download error : "
 msgstr ""
 
@@ -288,8 +288,8 @@ msgstr ""
 msgid "Error retrieving voices "
 msgstr ""
 
-#: assets/js/ttsai.js:90
-#: assets/js/ttsai.js:91
+#: assets/js/ttsai.js:92
+#: assets/js/ttsai.js:93
 msgid "Error while converting TTS: "
 msgstr ""
 
@@ -367,8 +367,8 @@ msgstr ""
 #: views/form-Elevenlabs.php:105
 #: views/form-OpenAI.php:61
 #: views/form-Scribe.php:98
-#: assets/js/ttsai.js:93
-#: assets/js/ttsai.js:96
+#: assets/js/ttsai.js:95
+#: assets/js/ttsai.js:98
 msgid "Generate"
 msgstr ""
 
@@ -748,7 +748,7 @@ msgstr ""
 msgid "TTS A.I Engine"
 msgstr ""
 
-#: assets/js/ttsai.js:102
+#: assets/js/ttsai.js:104
 msgid "Text cannot be empty"
 msgstr ""
 
