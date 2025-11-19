@@ -62,6 +62,7 @@ $(document).on('click', '#generate', function () {
         // Show loading indicator
         $('#generate').html('<i class="fa fa-spinner fa-spin"></i> ' + _("Generating..."));
         file_name = file_name + "-" + Math.random().toString(36).substring(2, 15);
+        var audioLang = $('#audio_lang').find(":selected").val();
         $.ajax({
             url: "ajax.php?module=recordings&command=ttsConvert",
             method: "POST",
@@ -72,7 +73,8 @@ $(document).on('click', '#generate', function () {
                 voiceId: voicId,
                 langCode: langCode,
                 stability: stability,
-                similarity: similarity
+                similarity: similarity,
+                audioLang:audioLang
             },
             dataType: "json",
             success: function (json) {
