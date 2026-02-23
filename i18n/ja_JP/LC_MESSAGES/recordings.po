@@ -37,7 +37,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 3.3.11.8\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-19 05:47-0500\n"
+"POT-Creation-Date: 2026-02-23 05:19-0500\n"
 "PO-Revision-Date: 2015-08-05 13:41+0200\n"
 "Last-Translator: Kevin <kevin@qloog.com>\n"
 "Language-Team: Japanese <http://weblate.freepbx.org/projects/freepbx/"
@@ -309,7 +309,8 @@ msgstr ""
 msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109 drivers/Openai.php:101 drivers/Openai.php:107
+#: drivers/Elevenlabs.php:122 drivers/Elevenlabs.php:125 drivers/Openai.php:101
+#: drivers/Openai.php:107
 msgid "Error while converting: "
 msgstr ""
 

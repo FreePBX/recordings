@@ -3,13 +3,13 @@
 # For licensing information, please see the file named LICENSE located in the module directory
 #
 # FreePBX language template for recordings
-# Copyright (C) 2008-2025 Sangoma Technologies, Inc.
+# Copyright (C) 2008-2026 Sangoma Technologies, Inc.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-19 05:47-0500\n"
+"POT-Creation-Date: 2026-02-23 05:19-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -293,7 +293,8 @@ msgstr ""
 msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109
+#: drivers/Elevenlabs.php:122
+#: drivers/Elevenlabs.php:125
 #: drivers/Openai.php:101
 #: drivers/Openai.php:107
 msgid "Error while converting: "
