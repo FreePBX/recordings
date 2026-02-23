@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-11-19 10:46+0000\n"
+"POT-Creation-Date: 2026-02-23 10:25+0000\n"
 "PO-Revision-Date: 2023-11-18 16:02+0000\n"
 "Last-Translator: Szymon Wysokinski <szymon.wysokinski@sqspolska.pl>\n"
 "Language-Team: Polish <http://weblate.freepbx.org/projects/freepbx/"
@@ -278,7 +278,8 @@ msgstr ""
 msgid "Error while converting TTS: "
 msgstr ""
 
-#: drivers/Elevenlabs.php:109 drivers/Openai.php:97 drivers/Openai.php:103
+#: drivers/Elevenlabs.php:122 drivers/Elevenlabs.php:125 drivers/Openai.php:97
+#: drivers/Openai.php:103
 msgid "Error while converting: "
 msgstr ""
 
