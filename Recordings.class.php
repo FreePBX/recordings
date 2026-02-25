@@ -601,17 +601,46 @@ class Recordings extends \DB_Helper implements BMO {
 	 * @param string  $filename File Name
 	 */
 	public function fixeRIFF($filename){
-		exec("file -b $filename | grep 'RIFF' ", $out, $ret);
+		// Validate that the file exists and is a real path
+		if (!file_exists($filename) || !is_file($filename)) {
+			dbug(_("Invalid file path provided to fixeRIFF"));
+			return;
+		}
+		// Get the real path to prevent path traversal
+		$filename = realpath($filename);
+		if ($filename === false) {
+			dbug(_("Unable to resolve file path in fixeRIFF"));
+			return;
+		}
+		// Use escapeshellarg() to prevent command injection
+		$escapedFilename = escapeshellarg($filename);
+		exec("file -b " . $escapedFilename . " | grep 'RIFF' ", $out, $ret);
+
 		if($ret === 0 ){
 			dbug(_("An error is occured on RIFF detection."));
 		}
 		if(empty($out[0])){
+			// Validate and sanitize POST data with strict allowlist
+			$postFile = '';
 			if (isset($_POST["name"]) && str_starts_with($_POST["name"], "custom/")) {
-				$f = str_replace("custom/", "", $_POST["name"]);
-			} else {
-				$f = str_replace("custom/", "", $_POST["file"]);
+				$postFile = str_replace("custom/", "", $_POST["name"]);
+			} else if (isset($_POST["file"])) {
+				$postFile = str_replace("custom/", "", $_POST["file"]);
 			}
-			$cmd 	= "mv ".$this->temp."/$f.wav $filename";
+
+			// Apply strict validation: only alphanumeric, dash, underscore, dot
+			if (!preg_match('/^[a-zA-Z0-9._-]+$/', $postFile)) {
+				dbug(_("Invalid filename format in POST data"));
+				return;
+			}
+
+			// Construct source file path safely
+			$sourceFile = $this->temp . "/" . $postFile . ".wav";
+
+			// Use escapeshellarg() for both arguments to prevent command injection
+			$escapedSource = escapeshellarg($sourceFile);
+			$escapedDest = escapeshellarg($filename);
+			$cmd = "mv " . $escapedSource . " " . $escapedDest;
 			exec($cmd, $out, $ret);
 		}
 	}
