@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX recordings\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-23 10:25+0000\n"
+"POT-Creation-Date: 2026-02-25 11:55+0000\n"
 "PO-Revision-Date: 2011-07-10 09:30+0100\n"
 "Last-Translator: Mikael Carlsson <mickecamino@gmail.com>\n"
 "Language-Team: \n"
@@ -83,7 +83,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:606
+#: Recordings.class.php:620
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Can Not Find Uploaded Files"
 msgstr ""
 
-#: Recordings.class.php:986
+#: Recordings.class.php:1015
 msgid "Can not find suitable file in this language"
 msgstr ""
 
@@ -398,6 +398,14 @@ msgstr ""
 
 #: Recordings.class.php:131
 msgid "Invalid API Key."
+msgstr ""
+
+#: Recordings.class.php:606
+msgid "Invalid file path provided to fixeRIFF"
+msgstr ""
+
+#: Recordings.class.php:633
+msgid "Invalid filename format in POST data"
 msgstr ""
 
 #: Recordings.class.php:244
@@ -798,6 +806,10 @@ msgstr ""
 msgid ""
 "Unable to convert TTS due to either the scribe limit being reached or an "
 "unexpected error. Please refer to the scribe log for more details."
+msgstr ""
+
+#: Recordings.class.php:612
+msgid "Unable to resolve file path in fixeRIFF"
 msgstr ""
 
 #: Recordings.class.php:482
