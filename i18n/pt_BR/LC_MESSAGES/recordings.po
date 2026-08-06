@@ -19,7 +19,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FreePBX 2.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 06:58-0500\n"
+"POT-Creation-Date: 2026-08-06 02:29-0400\n"
 "PO-Revision-Date: 2016-12-16 22:07+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -34,7 +34,7 @@ msgstr ""
 "X-Poedit-Country: BRAZIL\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: Recordings.class.php:559
+#: Recordings.class.php:568
 msgid "A PHP extension stopped the file upload"
 msgstr "Uma extensão PHP parou o carregamento do arquivo"
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:589
+#: Recordings.class.php:598
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -129,11 +129,11 @@ msgstr "Chamar"
 msgid "Call!"
 msgstr "Chamar!"
 
-#: Recordings.class.php:563
+#: Recordings.class.php:572
 msgid "Can Not Find Uploaded Files"
 msgstr "Não é Possível Localizar Arquivos Carregados"
 
-#: Recordings.class.php:967
+#: Recordings.class.php:976
 msgid "Can not find suitable file in this language"
 msgstr "Não é possível encontrar o arquivo adequado neste idioma"
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:556
+#: Recordings.class.php:565
 msgid "Failed to write file to disk"
 msgstr "Falha ao gravar o arquivo no disco"
 
@@ -345,7 +345,7 @@ msgstr "Lista de Arquivos para %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:402 Recordings.class.php:505
+#: Recordings.class.php:402 Recordings.class.php:514
 msgid "File does not exist"
 msgstr "Arquivo não existe"
 
@@ -418,12 +418,16 @@ msgstr ""
 msgid "Invalid API Key."
 msgstr ""
 
-#: Recordings.class.php:575
+#: Recordings.class.php:584
 msgid "Invalid file path provided to fixeRIFF"
 msgstr ""
 
-#: Recordings.class.php:602
+#: Recordings.class.php:611
 msgid "Invalid filename format in POST data"
+msgstr ""
+
+#: Recordings.class.php:443
+msgid "Invalid playback filename"
 msgstr ""
 
 #: Recordings.class.php:221
@@ -474,7 +478,7 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:553
+#: Recordings.class.php:562
 msgid "Missing a temporary folder"
 msgstr "Faltando uma pasta temporária"
 
@@ -502,7 +506,7 @@ msgstr "Não"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:550
+#: Recordings.class.php:559
 msgid "No file was uploaded"
 msgstr "Nenhum arquivo foi carregado"
 
@@ -583,6 +587,10 @@ msgstr ""
 
 #: Api/Gql/Recordings.php:47
 msgid "Please provide a valid id to delete the system recording"
+msgstr ""
+
+#: Recordings.class.php:439
+msgid "Please provide at least one playback file"
 msgstr ""
 
 #: Api/Gql/Recordings.php:305
@@ -745,7 +753,7 @@ msgstr "Enviar"
 msgid "Supported Languages"
 msgstr "Idiomas Suportados"
 
-#: Recordings.class.php:474 recordings.i18n.php:10
+#: Recordings.class.php:483 recordings.i18n.php:10
 msgid "System Recordings"
 msgstr "Gravações do Sistema"
 
@@ -794,7 +802,7 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:544
+#: Recordings.class.php:553
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
@@ -802,11 +810,11 @@ msgstr ""
 "O arquivo enviado excede a diretiva MAX_FILE_SIZE que foi especificada no "
 "formulário HTML"
 
-#: Recordings.class.php:541
+#: Recordings.class.php:550
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr "O arquivo carregado excede a diretiva upload_max_filesize no php.ini"
 
-#: Recordings.class.php:547
+#: Recordings.class.php:556
 msgid "The uploaded file was only partially uploaded"
 msgstr "O arquivo enviado foi carregado parcialmente"
 
@@ -842,15 +850,15 @@ msgid ""
 "unexpected error. Please refer to the scribe log for more details."
 msgstr ""
 
-#: Recordings.class.php:581
+#: Recordings.class.php:590
 msgid "Unable to resolve file path in fixeRIFF"
 msgstr ""
 
-#: Recordings.class.php:459
+#: Recordings.class.php:468
 msgid "Unknown Error"
 msgstr "Erro Desconhecido"
 
-#: Recordings.class.php:536
+#: Recordings.class.php:545
 msgid "Unsupported file format"
 msgstr "Formato de arquivo não suportado"
 
