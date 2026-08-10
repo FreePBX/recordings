@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-02-25 11:55+0000\n"
+"POT-Creation-Date: 2026-08-10 11:54+0000\n"
 "PO-Revision-Date: 2016-05-26 18:54+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: Recordings.class.php:590
+#: Recordings.class.php:599
 msgid "A PHP extension stopped the file upload"
 msgstr "توقف بارگذاری به دلیل خطای PHP"
 
@@ -73,7 +73,7 @@ msgstr ""
 msgid "An Ajax error is occured!! "
 msgstr ""
 
-#: Recordings.class.php:620
+#: Recordings.class.php:629
 msgid "An error is occured on RIFF detection."
 msgstr ""
 
@@ -113,11 +113,11 @@ msgstr "برقراری تماس"
 msgid "Call!"
 msgstr "تماس!"
 
-#: Recordings.class.php:594
+#: Recordings.class.php:603
 msgid "Can Not Find Uploaded Files"
 msgstr "عدم یافتن فایل های بارگذاری شده"
 
-#: Recordings.class.php:1015
+#: Recordings.class.php:1024
 msgid "Can not find suitable file in this language"
 msgstr "فایل مناسبی در این زبان پیدا نشد"
 
@@ -297,7 +297,7 @@ msgstr ""
 msgid "Failed to convert the file"
 msgstr ""
 
-#: Recordings.class.php:587
+#: Recordings.class.php:596
 msgid "Failed to write file to disk"
 msgstr "خطا در نوشتن فایل به روی دیسک"
 
@@ -327,7 +327,7 @@ msgstr "فهرست فایل برای %s"
 msgid "File Restored %s"
 msgstr ""
 
-#: Recordings.class.php:425 Recordings.class.php:536
+#: Recordings.class.php:425 Recordings.class.php:545
 msgid "File does not exist"
 msgstr "فایل موجود نیست"
 
@@ -398,12 +398,16 @@ msgstr ""
 msgid "Invalid API Key."
 msgstr ""
 
-#: Recordings.class.php:606
+#: Recordings.class.php:615
 msgid "Invalid file path provided to fixeRIFF"
 msgstr ""
 
-#: Recordings.class.php:633
+#: Recordings.class.php:642
 msgid "Invalid filename format in POST data"
+msgstr ""
+
+#: Recordings.class.php:466
+msgid "Invalid playback filename"
 msgstr ""
 
 #: Recordings.class.php:244
@@ -454,7 +458,7 @@ msgstr ""
 msgid "Min: 0, max: 1, step: 0.1. Influences tone. Default value: 0.5."
 msgstr ""
 
-#: Recordings.class.php:584
+#: Recordings.class.php:593
 msgid "Missing a temporary folder"
 msgstr "از دست دادن پوشه موقت"
 
@@ -482,7 +486,7 @@ msgstr "خیر"
 msgid "No Recordings Found"
 msgstr ""
 
-#: Recordings.class.php:581
+#: Recordings.class.php:590
 msgid "No file was uploaded"
 msgstr "فایلی بارگذاری نشده است"
 
@@ -559,6 +563,10 @@ msgstr ""
 
 #: Api/Gql/Recordings.php:51
 msgid "Please provide a valid id to delete the system recording"
+msgstr ""
+
+#: Recordings.class.php:462
+msgid "Please provide at least one playback file"
 msgstr ""
 
 #: Api/Gql/Recordings.php:334
@@ -717,7 +725,7 @@ msgstr "زبان های تحت پوشش"
 msgid "System Recordings"
 msgstr "پیام های ضبط شده سیستمی"
 
-#: Recordings.class.php:503
+#: Recordings.class.php:512
 msgid "System Recordings <0>"
 msgstr ""
 
@@ -766,20 +774,20 @@ msgstr ""
 msgid "The text cannot be empty."
 msgstr ""
 
-#: Recordings.class.php:575
+#: Recordings.class.php:584
 msgid ""
 "The uploaded file exceeds the MAX_FILE_SIZE directive that was specified in "
 "the HTML form"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در فرم جهت بارگذاری، بیشتر است"
 
-#: Recordings.class.php:572
+#: Recordings.class.php:581
 msgid "The uploaded file exceeds the upload_max_filesize directive in php.ini"
 msgstr ""
 "حجم فایل بارگذاری شده از حد مجاز تعریف شده در تنظیمات PHP جهت بارگذاری، "
 "بیشتر است"
 
-#: Recordings.class.php:578
+#: Recordings.class.php:587
 msgid "The uploaded file was only partially uploaded"
 msgstr "تنها بخشی از فایل بارگذاری شده است"
 
@@ -813,15 +821,15 @@ msgid ""
 "unexpected error. Please refer to the scribe log for more details."
 msgstr ""
 
-#: Recordings.class.php:612
+#: Recordings.class.php:621
 msgid "Unable to resolve file path in fixeRIFF"
 msgstr ""
 
-#: Recordings.class.php:482
+#: Recordings.class.php:491
 msgid "Unknown Error"
 msgstr "خطای نامشخص"
 
-#: Recordings.class.php:567
+#: Recordings.class.php:576
 msgid "Unsupported file format"
 msgstr "فرمت فایل پشتیبانی نمی شود"
 
