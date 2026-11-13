@@ -434,19 +434,10 @@ class Recordings extends \DB_Helper implements BMO {
 				$data = $_POST;
 				$data['name'] = filter_var($data['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 				$data['description'] = filter_var($data['description'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
-
-				if (empty($data['playback']) || !is_array($data['playback'])) {
-					return ["status" => false, "message" => _("Please provide at least one playback file")];
-				}
-				$playback = $this->validatePlaybackList($data['playback']);
-				if ($playback === false) {
-					return ["status" => false, "message" => _("Invalid playback filename")];
-				}
-				$files = implode("&", $playback);
 				if($data['id'] == "0" || !empty($data['id'])) {
-					$this->updateRecording($data['id'],$data['name'],$data['description'],$files,$data['fcode'],$data['fcode_pass'],$data['language']);
+					$this->updateRecording($data['id'],$data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				} else {
-					$this->addRecording($data['name'],$data['description'],$files,$data['fcode'],$data['fcode_pass'],$data['language']);
+					$this->addRecording($data['name'],$data['description'],implode("&",$data['playback']),$data['fcode'],$data['fcode_pass'],$data['language']);
 				}
 				if(!empty($data['remove'])) {
 					foreach($data['remove'] as $file) {
@@ -803,7 +794,8 @@ class Recordings extends \DB_Helper implements BMO {
 			$file = str_replace($this->path."/","",(string) $file);
 			if(preg_match("/^(\w{2}_\w{2}|\w{2}|\w{2}_\d{3})\/(.*)\.([a-z0-9]{2,})/i",$file,$matches)) {
 				$lang = $matches[1];
-				$name = Encoding::fixUTF8($matches[2]);
+				// $name = Encoding::fixUTF8($matches[2]);
+				$name = Encoding::fixUTF8($matches[2], Encoding::ICONV_IGNORE);
 				if(str_starts_with((string) $name, ".") || preg_match("/^(?:CHANGES|CREDITS|LICENSE)-asterisk-(?:core|extra)-(?:\w\w\_\w\w|\w\w)-(?:\d|\.)*$/i", (string) $name)) {
 					continue;
 				}
@@ -995,29 +987,5 @@ class Recordings extends \DB_Helper implements BMO {
 				return ["status" => true, "name" => $name];
 			}
 		}
-	}
-
-	/**
-	 * Validate client-supplied playback names before DB/dialplan use.
-	 * Allows normal sound ids such as "hello-world" or "custom/my-recording".
-	 * Rejects shell metacharacters / traversal that could reach System(...).
-	 *
-	 * @param array $playback
-	 * @return array|false Clean list, or false if any entry is invalid
-	 */
-	private function validatePlaybackList(array $playback) {
-		$clean = [];
-		foreach ($playback as $file) {
-			$file = trim((string) $file);
-			if ($file === '' || str_contains($file, '..') || str_starts_with($file, '/')) {
-				return false;
-			}
-			// Allowlist only: letters, numbers, . _ - and / for dirs like custom/foo
-			if (!preg_match('/^[A-Za-z0-9][A-Za-z0-9._\/-]*$/', $file)) {
-				return false;
-			}
-			$clean[] = $file;
-		}
-		return empty($clean) ? false : $clean;
 	}
 }
