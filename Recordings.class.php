@@ -803,7 +803,7 @@ class Recordings extends \DB_Helper implements BMO {
 			$file = str_replace($this->path."/","",(string) $file);
 			if(preg_match("/^(\w{2}_\w{2}|\w{2}|\w{2}_\d{3})\/(.*)\.([a-z0-9]{2,})/i",$file,$matches)) {
 				$lang = $matches[1];
-				$name = Encoding::fixUTF8($matches[2]);
+				$name = Encoding::fixUTF8($matches[2], Encoding::ICONV_IGNORE);
 				if(str_starts_with((string) $name, ".") || preg_match("/^(?:CHANGES|CREDITS|LICENSE)-asterisk-(?:core|extra)-(?:\w\w\_\w\w|\w\w)-(?:\d|\.)*$/i", (string) $name)) {
 					continue;
 				}
