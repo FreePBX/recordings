@@ -289,6 +289,13 @@ class Recordings extends Base {
         if(!isset($input['name']) || empty($input['name'])) {
             return ['message' => _('Please provide a name for system recoding'), 'status' => false];
         }
+        // Match the AJAX save path (FILTER_SANITIZE_FULL_SPECIAL_CHARS) so a
+        // delegated API client cannot store raw HTML in the name or description.
+        $input['name'] = filter_var($input['name'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        $input['description'] = filter_var($input['description'] ?? '', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+        if($input['name'] === '' || $input['name'] === false) {
+            return ['message' => _('Please provide a name for system recoding'), 'status' => false];
+        }
         //validate record name exist or not
         $all_records = $this->freepbx->recordings->getAll();
         $tmp_id = '';

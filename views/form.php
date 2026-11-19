@@ -1,3 +1,12 @@
+<?php
+// Names and descriptions may already be entity-encoded by the AJAX save path.
+// Decode once, then escape for the attribute so raw GraphQL values cannot break out
+// and previously encoded values are not encoded a second time.
+$recordingsAttr = static function ($value) {
+	$decoded = html_entity_decode((string) $value, ENT_QUOTES | ENT_HTML401, 'UTF-8');
+	return htmlspecialchars($decoded, ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8');
+};
+?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12">
@@ -19,7 +28,7 @@
 												<label class="control-label" for="name"><?= _("Name")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="name"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?= isset($data['displayname']) ? $data['displayname'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="name" name="name" value="<?= $recordingsAttr($data['displayname'] ?? '') ?>"></div>
 										</div>
 									</div>
 									<div class="row">
@@ -39,7 +48,7 @@
 												<label class="control-label" for="description"><?= _("Description")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="description"></i>
 											</div>
-											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?= isset($data['description']) ? $data['description'] : ''?>"></div>
+											<div class="col-md-9"><input type="text" class="form-control" id="description" name="description" value="<?= $recordingsAttr($data['description'] ?? '') ?>"></div>
 										</div>
 									</div>
 									<div class="row">
@@ -350,7 +359,7 @@
 												<label class="control-label" for="fcode-password"><?= _("Feature Code Password")?></label>
 												<i class="fa fa-question-circle fpbx-help-icon" data-for="fcode-password"></i>
 											</div>
-											<div class="col-md-9"><input name="fcode_pass" id="fcode_pass" class="form-control fcode-item" value="<?php echo $data['fcode_pass'] ?? ""?>" <?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? "" : "disabled"?>></div>
+											<div class="col-md-9"><input name="fcode_pass" id="fcode_pass" class="form-control fcode-item" value="<?= htmlspecialchars((string)($data['fcode_pass'] ?? ''), ENT_QUOTES | ENT_SUBSTITUTE | ENT_HTML401, 'UTF-8') ?>" <?php echo (isset($data['soundlist']) && ((is_countable($data['soundlist']) ? count($data['soundlist']) : 0) == 1)) ? "" : "disabled"?>></div>
 										</div>
 									</div>
 									<div class="row">
@@ -423,7 +432,7 @@ $(document).ready(function() {
 var record_names = new Array();
 <?php
 if(!empty($record_names)){
-	echo "record_names = " . json_encode($record_names, JSON_THROW_ON_ERROR) . ";";
+	echo "record_names = " . json_encode($record_names, JSON_THROW_ON_ERROR | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) . ";";
 }
 ?>
 </script>
